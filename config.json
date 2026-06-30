@@ -33,5 +33,6 @@
   ],
   "bank_videos_per_day": 2,
   "draft_buffer_multiplier": 1.4,
-  "post_first_immediately": true
+  "post_first_immediately": true,
+  "show_follow_cue": true
 }
