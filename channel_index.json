@@ -3142,5 +3142,45 @@
     "quality_score": 44.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "GSrJAf9ETAA",
+    "title": "Why You Can Never Eat Just One Fry",
+    "topic": "Why You Can Never Eat Just One Fry",
+    "date": "2026-06-30",
+    "n": 0
+  },
+  {
+    "video_id": "CXulT5czRP0",
+    "title": "Why Injury Time Feels So Long",
+    "topic": "Why injury time feels longer than it is",
+    "date": "2026-06-30",
+    "n": 290,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 48.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "oxU_w16gRLA",
+    "title": "Why You Always Step On These Lids",
+    "topic": "Why Manholes Are Round",
+    "date": "2026-06-30",
+    "n": 291,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

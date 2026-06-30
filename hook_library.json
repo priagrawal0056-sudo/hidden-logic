@@ -295,5 +295,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Injury Time Feels So Long",
+    "hook_text": "The referee signals five minutes.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration/Contradiction",
+    "first_frame_description": "A close-up of a referee holding up the electronic board showing \"5\" for injury time, with a tense football match playing in the background.",
+    "visual_thesis": "The intense, high-stakes nature of injury time, visually represented by fan reactions and game action, is a deliberate design choice that manipulates our perception of time.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Step On These Lids",
+    "hook_text": "You step on this heavy metal lid every day.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> High-Stakes Contradiction",
+    "first_frame_description": "A close-up, high-angle shot of a sneaker stepping firmly onto a rusted metal manhole cover on a busy city sidewalk.",
+    "visual_thesis": "The geometric impossibility of a circle falling through its own diameter versus a square's diagonal slip.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

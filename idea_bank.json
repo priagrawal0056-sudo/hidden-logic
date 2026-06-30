@@ -31,246 +31,279 @@
     "title": "Why Airports Make You Walk Miles",
     "category": "Airports",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why McDonald's Coke Is Different",
     "category": "Food",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Popcorn Costs More Than The Movie",
     "category": "Food",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Ice Cream Machines Never Work",
     "category": "Food",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Every Hotel Feels Familiar",
     "category": "Design",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Elevators Have Mirrors",
     "category": "Design",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Casinos Hide Time",
     "category": "Design",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Bathroom Doors Never Close",
     "category": "Design",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why IKEA Traps You",
     "category": "Design",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Checkout Lines Make You Spend More",
     "category": "Shopping",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Supermarkets Move Everything Around",
     "category": "Shopping",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Slow Music Makes You Spend More",
     "category": "Shopping",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Chip Bags Are Mostly Air",
     "category": "Food",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Walk To Your Gate Is Always Uphill",
     "category": "Airports",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Shopping Carts Keep Growing",
     "category": "Shopping",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Eyes Buy The Most Expensive Item",
     "category": "Shopping",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Airport Gate Always Changes",
     "category": "Airports",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "The Real Reason TSA Wants Your Laptop",
     "category": "Airports",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Airports Don't Want You Sleeping",
     "category": "Airports",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Hotel Pillows Hurt Your Neck",
     "category": "Design",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Receipts Never End",
     "category": "Design",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Malls Want You Lost",
     "category": "Design",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Spicy Food Makes Your Nose Run",
     "category": "Food",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Suitcase Always Comes Out Last",
     "category": "Airports",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Stores Pump Smells Into The Air",
     "category": "Shopping",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Duty Free Is Always After Security",
     "category": "Airports",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Small Drink Isn't Small",
     "category": "Food",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Menus Trick Your Brain",
     "category": "Food",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Fast Food Fries Are Addictive",
     "category": "Food",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30"
   },
   {
     "title": "Why Escalator Handrails Beat You",
     "category": "Design",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why ATMs Charge You To Get Your Own Money",
     "category": "Money",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Bigger Sizes Cost Barely More",
     "category": "Shopping",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Airports Are Always Freezing",
     "category": "Airports",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Baggage Claim Is So Far From Arrivals",
     "category": "Airports",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Manholes Are Round",
     "category": "Design",
     "viral_score": 10.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-06-30"
   },
   {
     "title": "Why Free Shipping Has A Minimum",

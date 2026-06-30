@@ -1,12 +1,12 @@
 {
-  "channel_avg_views": 423.6,
+  "channel_avg_views": 445.6,
   "topic_clusters": {
     "airport": {
       "videos": 12,
-      "avg_views": 659.2,
+      "avg_views": 659.8,
       "best_views": 1598,
       "recent_views": [
-        1171,
+        1179,
         932,
         922,
         538,
@@ -24,11 +24,11 @@
     },
     "hotel": {
       "videos": 9,
-      "avg_views": 565.8,
+      "avg_views": 565.9,
       "best_views": 1393,
       "recent_views": [
         371,
-        42,
+        43,
         382,
         556,
         694,
@@ -41,10 +41,11 @@
       "avg_avd": null
     },
     "airline": {
-      "videos": 1,
-      "avg_views": 997.0,
+      "videos": 2,
+      "avg_views": 952.5,
       "best_views": 997,
       "recent_views": [
+        908,
         997
       ],
       "avg_stayed_to_watch": null,
@@ -69,11 +70,11 @@
     },
     "traffic": {
       "videos": 7,
-      "avg_views": 457.7,
+      "avg_views": 491.3,
       "best_views": 947,
       "recent_views": [
-        642,
-        682,
+        876,
+        683,
         151,
         947,
         766,
@@ -129,15 +130,17 @@
       "avg_avd": null
     },
     "supermarket": {
-      "videos": 12,
-      "avg_views": 536.1,
+      "videos": 14,
+      "avg_views": 604.6,
       "best_views": 1151,
       "recent_views": [
-        814,
-        519,
+        739,
+        1105,
+        817,
+        703,
         931,
         854,
-        590,
+        591,
         2,
         1,
         18,
@@ -204,10 +207,11 @@
       "avg_avd": null
     },
     "social_behavior": {
-      "videos": 1,
-      "avg_views": 7.0,
-      "best_views": 7,
+      "videos": 2,
+      "avg_views": 175.5,
+      "best_views": 344,
       "recent_views": [
+        344,
         7
       ],
       "avg_stayed_to_watch": null,
@@ -225,13 +229,13 @@
     },
     "technology": {
       "videos": 6,
-      "avg_views": 93.8,
-      "best_views": 196,
+      "avg_views": 100.8,
+      "best_views": 236,
       "recent_views": [
-        196,
+        236,
         104,
         2,
-        3,
+        5,
         176,
         82
       ],
@@ -247,10 +251,11 @@
       "avg_avd": null
     },
     "decision_making": {
-      "videos": 1,
-      "avg_views": 1272.0,
+      "videos": 2,
+      "avg_views": 946.0,
       "best_views": 1272,
       "recent_views": [
+        620,
         1272
       ],
       "avg_stayed_to_watch": null,
@@ -283,5 +288,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-06-30T09:47:23.710855"
+  "last_updated": "2026-06-30T17:17:22.485191"
 }
