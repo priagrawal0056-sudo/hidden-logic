@@ -140,7 +140,8 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
              music_volume: float = 0.10, seg_seconds: float | None = None,
              emphasis_words=None, sfx_dir: str | None = None,
              brand_label: str | None = None, fast_pacing: bool = True,
-             opening_hook_text: str | None = None, show_subscribe_cue: bool = False):
+             opening_hook_text: str | None = None, show_subscribe_cue: bool = False,
+             show_follow_cue: bool = False):
     duration = _audio_duration(timings_path)
     punch_beats = _emphasis_beats(timings_path, emphasis_words)
     
@@ -304,6 +305,18 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
                    "fontcolor=white:box=1:boxcolor=0xCC0000@0.92:boxborderw=22:"
                    "shadowcolor=0x000000@0.7:shadowx=3:shadowy=3:"
                    f"enable='gte(t,{sub_start:.2f})'" + ff)
+        # PERSISTENT FOLLOW CUE: a SMALL, subtle "follow for more" tucked under the wordmark,
+        # shown for the WHOLE video. Unlike the big end-card SUBSCRIBE above, this is NOT a
+        # wind-down - it never interrupts the abrupt ending or the seamless loop, so it doesn't
+        # cost retention. But because ~80% watch muted and never read the description, a constant
+        # tiny visual nudge is the one place a "follow" ask can lift sub-conversion without a
+        # trade-off. Sits just below the top-left "Hidden Logic" wordmark, out of the caption zone.
+        # Toggle via show_follow_cue in config (default off; test it for ~1 week and watch subs).
+        follow = ""
+        if show_follow_cue:
+            follow = (",drawtext=text='\u25B6 follow for more':x=44:y=104:fontsize=30:"
+                      "fontcolor=0xFFFFFF@0.92:box=1:boxcolor=0x000000@0.30:boxborderw=10:"
+                      "shadowcolor=0x000000@0.6:shadowx=2:shadowy=2" + ff)
         # OPENING TEXT HOOK: a big bold claim on-screen for the first ~2.8s. Research: on-
         # screen text during the hook lifts watch time ~18% on faceless Shorts, because most
         # viewers watch the first second with sound off and the text is what stops the swipe.
@@ -323,7 +336,7 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
                 "box=1:boxcolor=0x000000@0.55:boxborderw=18:"
                 "shadowcolor=0x000000@0.7:shadowx=2:shadowy=2:"
                 "enable='lte(t,2.3)'" + ff)
-        brand_chain = f"{brand}{badge}{sub}{hook_overlay},"
+        brand_chain = f"{brand}{badge}{sub}{follow}{hook_overlay},"
     else:
         print("[assemble] no usable font found for branding overlay - skipping wordmark "
               "(video still builds normally)")

@@ -675,7 +675,8 @@ def make_one(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None = No
                       brand_label=brand_label,
                       fast_pacing=bool(cfg.get("fast_pacing", True)),
                       opening_hook_text=hook_text or None,
-                      show_subscribe_cue=bool(cfg.get("show_subscribe_cue", False)))
+                      show_subscribe_cue=bool(cfg.get("show_subscribe_cue", False)),
+                      show_follow_cue=bool(cfg.get("show_follow_cue", False)))
     log(f"Built {out} (accent={accent}, cut={cut_sec}s)")
 
     with open(os.path.join(workdir, "meta.json"), "w", encoding="utf-8") as f:
