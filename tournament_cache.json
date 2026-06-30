@@ -1,0 +1,483 @@
+{
+  "fetched_at": "2026-06-20T09:48:02.801533+00:00",
+  "results": [
+    {
+      "home": "Iran",
+      "away": "New Zealand",
+      "hs": 2,
+      "as": 2,
+      "date": "2026-06-16"
+    },
+    {
+      "home": "France",
+      "away": "Senegal",
+      "hs": 3,
+      "as": 1,
+      "date": "2026-06-16"
+    },
+    {
+      "home": "Iraq",
+      "away": "Norway",
+      "hs": 1,
+      "as": 4,
+      "date": "2026-06-16"
+    },
+    {
+      "home": "Argentina",
+      "away": "Algeria",
+      "hs": 3,
+      "as": 0,
+      "date": "2026-06-17"
+    },
+    {
+      "home": "Austria",
+      "away": "Jordan",
+      "hs": 3,
+      "as": 1,
+      "date": "2026-06-17"
+    },
+    {
+      "home": "Portugal",
+      "away": "Congo DR",
+      "hs": 1,
+      "as": 1,
+      "date": "2026-06-17"
+    },
+    {
+      "home": "England",
+      "away": "Croatia",
+      "hs": 4,
+      "as": 2,
+      "date": "2026-06-17"
+    },
+    {
+      "home": "Ghana",
+      "away": "Panama",
+      "hs": 1,
+      "as": 0,
+      "date": "2026-06-17"
+    },
+    {
+      "home": "Uzbekistan",
+      "away": "Colombia",
+      "hs": 1,
+      "as": 3,
+      "date": "2026-06-18"
+    },
+    {
+      "home": "Czechia",
+      "away": "South Africa",
+      "hs": 1,
+      "as": 1,
+      "date": "2026-06-18"
+    },
+    {
+      "home": "Switzerland",
+      "away": "Bosnia-Herzegovina",
+      "hs": 4,
+      "as": 1,
+      "date": "2026-06-18"
+    },
+    {
+      "home": "Canada",
+      "away": "Qatar",
+      "hs": 6,
+      "as": 0,
+      "date": "2026-06-18"
+    },
+    {
+      "home": "Mexico",
+      "away": "South Korea",
+      "hs": 1,
+      "as": 0,
+      "date": "2026-06-19"
+    },
+    {
+      "home": "United States",
+      "away": "Australia",
+      "hs": 2,
+      "as": 0,
+      "date": "2026-06-19"
+    },
+    {
+      "home": "Scotland",
+      "away": "Morocco",
+      "hs": 0,
+      "as": 1,
+      "date": "2026-06-19"
+    },
+    {
+      "home": "Brazil",
+      "away": "Haiti",
+      "hs": 3,
+      "as": 0,
+      "date": "2026-06-20"
+    },
+    {
+      "home": "Turkey",
+      "away": "Paraguay",
+      "hs": 0,
+      "as": 1,
+      "date": "2026-06-20"
+    }
+  ],
+  "standings": [
+    {
+      "group": "Group A",
+      "rows": [
+        {
+          "team": "Mexico",
+          "pts": 6,
+          "pos": 1
+        },
+        {
+          "team": "South Korea",
+          "pts": 3,
+          "pos": 2
+        },
+        {
+          "team": "Czechia",
+          "pts": 1,
+          "pos": 3
+        },
+        {
+          "team": "South Africa",
+          "pts": 1,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group B",
+      "rows": [
+        {
+          "team": "Canada",
+          "pts": 4,
+          "pos": 1
+        },
+        {
+          "team": "Switzerland",
+          "pts": 4,
+          "pos": 2
+        },
+        {
+          "team": "Bosnia-Herzegovina",
+          "pts": 1,
+          "pos": 3
+        },
+        {
+          "team": "Qatar",
+          "pts": 1,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group C",
+      "rows": [
+        {
+          "team": "Brazil",
+          "pts": 4,
+          "pos": 1
+        },
+        {
+          "team": "Morocco",
+          "pts": 4,
+          "pos": 2
+        },
+        {
+          "team": "Scotland",
+          "pts": 3,
+          "pos": 3
+        },
+        {
+          "team": "Haiti",
+          "pts": 0,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group D",
+      "rows": [
+        {
+          "team": "United States",
+          "pts": 6,
+          "pos": 1
+        },
+        {
+          "team": "Australia",
+          "pts": 3,
+          "pos": 2
+        },
+        {
+          "team": "Paraguay",
+          "pts": 3,
+          "pos": 3
+        },
+        {
+          "team": "Turkey",
+          "pts": 0,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group E",
+      "rows": [
+        {
+          "team": "Germany",
+          "pts": 3,
+          "pos": 1
+        },
+        {
+          "team": "Ivory Coast",
+          "pts": 3,
+          "pos": 2
+        },
+        {
+          "team": "Ecuador",
+          "pts": 0,
+          "pos": 3
+        },
+        {
+          "team": "Cura\u00e7ao",
+          "pts": 0,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group F",
+      "rows": [
+        {
+          "team": "Sweden",
+          "pts": 3,
+          "pos": 1
+        },
+        {
+          "team": "Japan",
+          "pts": 1,
+          "pos": 2
+        },
+        {
+          "team": "Netherlands",
+          "pts": 1,
+          "pos": 2
+        },
+        {
+          "team": "Tunisia",
+          "pts": 0,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group G",
+      "rows": [
+        {
+          "team": "New Zealand",
+          "pts": 1,
+          "pos": 1
+        },
+        {
+          "team": "Iran",
+          "pts": 1,
+          "pos": 2
+        },
+        {
+          "team": "Belgium",
+          "pts": 1,
+          "pos": 3
+        },
+        {
+          "team": "Egypt",
+          "pts": 1,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group H",
+      "rows": [
+        {
+          "team": "Uruguay",
+          "pts": 1,
+          "pos": 1
+        },
+        {
+          "team": "Saudi Arabia",
+          "pts": 1,
+          "pos": 2
+        },
+        {
+          "team": "Spain",
+          "pts": 1,
+          "pos": 3
+        },
+        {
+          "team": "Cape Verde Islands",
+          "pts": 1,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group I",
+      "rows": [
+        {
+          "team": "Norway",
+          "pts": 3,
+          "pos": 1
+        },
+        {
+          "team": "France",
+          "pts": 3,
+          "pos": 2
+        },
+        {
+          "team": "Senegal",
+          "pts": 0,
+          "pos": 3
+        },
+        {
+          "team": "Iraq",
+          "pts": 0,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group J",
+      "rows": [
+        {
+          "team": "Argentina",
+          "pts": 3,
+          "pos": 1
+        },
+        {
+          "team": "Austria",
+          "pts": 3,
+          "pos": 2
+        },
+        {
+          "team": "Jordan",
+          "pts": 0,
+          "pos": 3
+        },
+        {
+          "team": "Algeria",
+          "pts": 0,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group K",
+      "rows": [
+        {
+          "team": "Colombia",
+          "pts": 3,
+          "pos": 1
+        },
+        {
+          "team": "Congo DR",
+          "pts": 1,
+          "pos": 2
+        },
+        {
+          "team": "Portugal",
+          "pts": 1,
+          "pos": 2
+        },
+        {
+          "team": "Uzbekistan",
+          "pts": 0,
+          "pos": 4
+        }
+      ]
+    },
+    {
+      "group": "Group L",
+      "rows": [
+        {
+          "team": "England",
+          "pts": 3,
+          "pos": 1
+        },
+        {
+          "team": "Ghana",
+          "pts": 3,
+          "pos": 2
+        },
+        {
+          "team": "Panama",
+          "pts": 0,
+          "pos": 3
+        },
+        {
+          "team": "Croatia",
+          "pts": 0,
+          "pos": 4
+        }
+      ]
+    }
+  ],
+  "upcoming": [
+    {
+      "home": "Netherlands",
+      "away": "Sweden",
+      "when": "2026-06-20 17:00"
+    },
+    {
+      "home": "Germany",
+      "away": "Ivory Coast",
+      "when": "2026-06-20 20:00"
+    },
+    {
+      "home": "Ecuador",
+      "away": "Cura\u00e7ao",
+      "when": "2026-06-21 00:00"
+    },
+    {
+      "home": "Tunisia",
+      "away": "Japan",
+      "when": "2026-06-21 04:00"
+    },
+    {
+      "home": "Spain",
+      "away": "Saudi Arabia",
+      "when": "2026-06-21 16:00"
+    },
+    {
+      "home": "Belgium",
+      "away": "Iran",
+      "when": "2026-06-21 19:00"
+    },
+    {
+      "home": "Uruguay",
+      "away": "Cape Verde Islands",
+      "when": "2026-06-21 22:00"
+    },
+    {
+      "home": "New Zealand",
+      "away": "Egypt",
+      "when": "2026-06-22 01:00"
+    },
+    {
+      "home": "Argentina",
+      "away": "Austria",
+      "when": "2026-06-22 17:00"
+    },
+    {
+      "home": "France",
+      "away": "Iraq",
+      "when": "2026-06-22 21:00"
+    },
+    {
+      "home": "Norway",
+      "away": "Senegal",
+      "when": "2026-06-23 00:00"
+    }
+  ]
+}

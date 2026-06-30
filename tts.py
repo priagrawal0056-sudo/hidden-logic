@@ -1,0 +1,533 @@
+"""
+tts.py - v3 (robust)
+Free text-to-speech via Microsoft Edge voices (edge-tts).
+Generates an MP3 voiceover plus word-level timings for the animated captions.
+
+Robustness:
+  - retries, then falls back to a different voice
+  - if the service returns audio but no WordBoundary events (happens with some
+    edge-tts versions/voices), word timings are ESTIMATED from the real audio
+    duration, weighted by word length, so captions still sync well
+"""
+import asyncio
+import json
+import os
+import random
+import re
+import subprocess
+
+import edge_tts
+
+
+# ---------------------------------------------------------------- prosody
+_REVEAL_CUES = ("but ", "until ", "then ", "except ", "yet ", "still ",
+                "here's ", "turns out", "nobody ", "somehow ")
+
+
+def _add_prosody(text: str) -> str:
+    """Lightly re-punctuate the script for a more dramatic, produced read:
+      - a beat after the very first sentence (the hook) so it lands
+      - a short pause before reveal/twist cue words ("but", "until", "then"...)
+      - tightened spaces
+    Edge-tts honors commas/periods as micro-pauses. Word content is unchanged, so
+    caption alignment (which matches words, not punctuation) is unaffected."""
+    import re as _re
+    s = text.strip()
+    # ensure a strong beat after the first sentence (hook): turn its end into ". "
+    m = _re.match(r"(.+?[.!?])\s+(.*)", s, _re.S)
+    if m:
+        hook, rest = m.group(1), m.group(2)
+        # add a comma-beat before reveal cues in the body for suspense
+        def cue(mm):
+            return mm.group(1) + ", " + mm.group(2)
+        for w in _REVEAL_CUES:
+            rest = _re.sub(rf"(\w)\s+({_re.escape(w)})", cue, rest, flags=_re.I)
+        s = hook + " " + rest
+    s = _re.sub(r"\s{2,}", " ", s)
+    return s
+
+# Microsoft's newer "Multilingual" neural voices are dramatically more natural
+# than the classic ones (breathing, intonation, less robotic cadence).
+DEFAULT_VOICE = "en-US-AndrewMultilingualNeural"
+VOICE_POOL = [
+    "en-US-AndrewMultilingualNeural",  # warm, very human - the standout (weighted)
+    "en-US-AndrewMultilingualNeural",
+    "en-US-BrianMultilingualNeural",   # friendly, easygoing
+    "en-GB-RyanNeural",                # British, warm, suits football
+]
+FALLBACK_VOICE = "en-US-AndrewNeural"
+
+
+def pick_voice():
+    return random.choice(VOICE_POOL)
+
+
+async def _synth(text: str, mp3_path: str, voice: str):
+    """Stream TTS to file. Returns (n_audio_bytes, word_boundaries)."""
+    text = _add_prosody(text)  # dramatic beats before reveals (produced delivery)
+    rate = random.choice(["+8%", "+11%", "+13%"])  # brisk, retention-friendly pace (slow talking kills retention) - still natural, not clipped
+    communicate = edge_tts.Communicate(text, voice, rate=rate)
+    words = []
+    n_bytes = 0
+    with open(mp3_path, "wb") as f:
+        async for chunk in communicate.stream():
+            if chunk["type"] == "audio":
+                f.write(chunk["data"])
+                n_bytes += len(chunk["data"])
+            elif chunk["type"] == "WordBoundary":
+                words.append({
+                    "word": chunk["text"],
+                    "start": chunk["offset"] / 10_000_000.0,
+                    "end": (chunk["offset"] + chunk["duration"]) / 10_000_000.0,
+                })
+    return n_bytes, words
+
+
+def _align_with_whisper(text: str, mp3_path: str):
+    """If faster-whisper is installed, get TRUE word timestamps from the audio.
+    This makes captions frame-accurate. Optional: pip install faster-whisper"""
+    try:
+        from faster_whisper import WhisperModel
+    except ImportError:
+        return None
+    try:
+        model = WhisperModel("tiny.en", device="cpu", compute_type="int8")
+        segments, _ = model.transcribe(mp3_path, word_timestamps=True, language="en")
+        words = []
+        for seg in segments:
+            for w in (seg.words or []):
+                words.append({"word": w.word.strip(), "start": round(w.start, 3),
+                              "end": round(w.end, 3)})
+        if len(words) >= 5:
+            print(f"[tts] whisper alignment used ({len(words)} words, frame-accurate captions)")
+            return words
+    except Exception as e:
+        print(f"[tts] whisper alignment failed ({e}), falling back to estimation")
+    return None
+
+
+def _speech_end(mp3_path: str, total: float) -> float:
+    """Detect where speech actually ends (trailing silence caused caption drift)."""
+    out = subprocess.run(
+        ["ffmpeg", "-i", mp3_path, "-af", "silencedetect=noise=-35dB:d=0.25",
+         "-f", "null", "-"], capture_output=True, text=True)
+    starts = re.findall(r"silence_start: ([\d.]+)", out.stderr)
+    ends = re.findall(r"silence_end: ([\d.]+)", out.stderr)
+    if starts:
+        last_start = float(starts[-1])
+        # speech ends at last_start if that final silence runs to (or near) EOF
+        if not ends or float(ends[-1]) < last_start or total - float(ends[-1]) < 0.3:
+            return last_start
+    return total
+
+
+SPEECH_SPEED = 1.08  # post-processing tempo (1.0 = off); gentle, not rushed
+VOICE_PITCH = 1.0    # neutral - do NOT deepen. Deepening was part of the "menacing" feel.
+
+
+def _apply_speed(mp3_path: str, factor: float):
+    """Speed up AND trim leading silence: the first word must hit instantly.
+    Dead air at 0:00 is the #1 cause of swipe-aways."""
+    sped = mp3_path + ".sped.mp3"
+    af = "silenceremove=start_periods=1:start_threshold=-40dB:start_silence=0.03:detection=peak"
+    tempo = factor
+    if abs(VOICE_PITCH - 1.0) >= 0.01:
+        # pitch down without changing speed: resample trick + tempo compensation
+        af += f",aresample=48000,asetrate={int(48000*VOICE_PITCH)},aresample=48000"
+        tempo = factor / VOICE_PITCH
+    if abs(tempo - 1.0) >= 0.01:
+        af += f",atempo={tempo:.4f}"
+    # normalize loudness so no video comes out quiet/scary - consistent broadcast level
+    af += ",loudnorm=I=-15:TP=-1.5:LRA=11"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", mp3_path,
+                    "-filter:a", af, sped], check=True)
+    
+    import time
+    for _ in range(10):
+        try:
+            os.replace(sped, mp3_path)
+            break
+        except PermissionError:
+            time.sleep(0.2)
+    else:
+        # If it still fails, try removing first then renaming
+        try:
+            os.remove(mp3_path)
+            os.rename(sped, mp3_path)
+        except Exception:
+            # Fallback if both fail
+            pass
+
+def _audio_duration(mp3_path: str) -> float:
+    out = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", mp3_path],
+        capture_output=True, text=True,
+    )
+    return float(out.stdout.strip())
+
+
+def _estimate_timings(text: str, duration: float) -> list[dict]:
+    """No WordBoundary events received: spread words across the real audio
+    duration, weighted by word length plus pause weight after punctuation."""
+    tokens = [t for t in text.split() if t.strip()]
+    if not tokens:
+        return []
+    LEAD, TAIL = 0.15, 0.30  # small silences at start/end of TTS audio
+    speakable = max(0.5, duration - LEAD - TAIL)
+    weights = []
+    for t in tokens:
+        w = max(2, len(re.sub(r"[^\w]", "", t)))  # length of letters/digits
+        if re.search(r"[.!?]$", t):
+            w += 3   # sentence-end pause
+        elif re.search(r"[,;:]$", t):
+            w += 1.5
+        weights.append(w)
+    total = sum(weights)
+    words, t_cursor = [], LEAD
+    for tok, w in zip(tokens, weights):
+        d = speakable * (w / total)
+        clean = re.sub(r"[^\w'-]", "", tok)
+        words.append({
+            "word": clean or tok,
+            "start": round(t_cursor, 3),
+            "end": round(t_cursor + d * 0.85, 3),  # word ends before its pause
+        })
+        t_cursor += d
+    return words
+
+
+GEMINI_TTS_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
+GEMINI_TTS_MODELS = ["gemini-2.5-flash-preview-tts", "gemini-2.5-pro-preview-tts"]
+GEMINI_VOICES = ["Puck", "Aoede", "Kore"]  # warm, upbeat, friendly (not deep/gravelly)
+TTS_LIST_URL = "https://generativelanguage.googleapis.com/v1beta/models?key={key}&pageSize=200"
+_tts_models = None
+_EL_WARNED = False   # one-time flag so the "no ElevenLabs keys" note prints once per run
+
+# ----- ElevenLabs (premium, most natural voice - the biggest retention lever) -----
+# Key comes from env HL_ELEVENLABS_API_KEY or ELEVENLABS_API_KEY, or config "elevenlabs_api_key".
+# Never hardcode the key. Voice + model are configurable; defaults are a deep narrator voice.
+ELEVENLABS_TTS_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
+ELEVENLABS_DEFAULT_VOICE = "NOpBlnGInO9m6vDvFkFC"
+ELEVENLABS_DEFAULT_MODEL = "eleven_v3"
+
+
+def _elevenlabs_keys_doc():
+    """ElevenLabs keys are read as a POOL by _elevenlabs_keys(): env HL_ELEVENLABS_API_KEYS
+    (comma-separated) and/or config 'elevenlabs_api_keys' (list), plus single-key fallbacks
+    HL_ELEVENLABS_API_KEY / ELEVENLABS_API_KEY / config 'elevenlabs_api_key'."""
+    pass
+
+
+# config injected by synthesize() so this module stays import-light
+_TTS_CFG: dict = {}
+
+# Keys that have failed (401 bad-key or 429 out-of-credits) THIS run - skipped on retry so we
+# don't keep hammering a dead key. Cleared each process start.
+_EL_DEAD_KEYS: set = set()
+# Where the per-video rotation cursor is persisted, so each video uses a DIFFERENT key across
+# runs (not just within one process). Small JSON next to the script.
+_EL_ROTATION_FILE = "el_key_rotation.json"
+
+
+def _elevenlabs_keys() -> list:
+    """Return the pool of ElevenLabs keys, in order. Sources (merged, de-duped, order kept):
+      - env HL_ELEVENLABS_API_KEYS or ELEVENLABS_API_KEYS  (comma/space separated)
+      - config "elevenlabs_api_keys"  (a JSON list)
+      - the single-key fallbacks (env HL_ELEVENLABS_API_KEY / ELEVENLABS_API_KEY / config)
+    Never hardcode keys; these all come from env or config.json."""
+    keys: list = []
+    for env_name in ("HL_ELEVENLABS_API_KEYS", "ELEVENLABS_API_KEYS"):
+        raw = os.getenv(env_name, "")
+        if raw:
+            for part in raw.replace(",", " ").split():
+                part = part.strip()
+                if part:
+                    keys.append(part)
+    cfg_list = _TTS_CFG.get("elevenlabs_api_keys")
+    if isinstance(cfg_list, list):
+        keys.extend([str(k).strip() for k in cfg_list if str(k).strip()])
+    # single-key backward compatibility
+    single = (os.getenv("HL_ELEVENLABS_API_KEY")
+              or os.getenv("ELEVENLABS_API_KEY")
+              or _TTS_CFG.get("elevenlabs_api_key", "") or "")
+    if single:
+        keys.append(single.strip())
+    # de-dupe preserving order
+    seen = set()
+    pool = []
+    for k in keys:
+        if k and k not in seen:
+            seen.add(k)
+            pool.append(k)
+    return pool
+
+
+def _el_next_start_index(pool_size: int) -> int:
+    """Advance and persist the rotation cursor so EACH video starts on a different key."""
+    if pool_size <= 0:
+        return 0
+    idx = 0
+    try:
+        if os.path.exists(_EL_ROTATION_FILE):
+            with open(_EL_ROTATION_FILE, encoding="utf-8") as f:
+                idx = int(json.load(f).get("next", 0))
+    except Exception:
+        idx = 0
+    start = idx % pool_size
+    try:
+        with open(_EL_ROTATION_FILE, "w", encoding="utf-8") as f:
+            json.dump({"next": (start + 1) % pool_size}, f)
+    except Exception:
+        pass
+    return start
+
+
+def _try_elevenlabs(text: str, mp3_path: str, timings_path: str):
+    """ElevenLabs TTS: by far the most natural voice available, which is the single biggest
+    lever on Shorts retention (synthetic-sounding narration is a top swipe-away cause).
+    Returns whisper-aligned word timings, or None to fall through to the free engines
+    (Gemini -> Kokoro -> Edge) if no key is set or the API fails / is out of credits."""
+    pool = _elevenlabs_keys()
+    if not pool:
+        return None
+    import requests
+    voice_id = _TTS_CFG.get("elevenlabs_voice_id", ELEVENLABS_DEFAULT_VOICE)
+    model_id = _TTS_CFG.get("elevenlabs_model_id", ELEVENLABS_DEFAULT_MODEL)
+
+    # Each video starts on a DIFFERENT key (persisted rotation cursor). On failure we fail over
+    # to the next key in the pool. Only when ALL keys are dead/failed do we return None so the
+    # caller falls back to Gemini.
+    n = len(pool)
+    start = _el_next_start_index(n)
+    order = [pool[(start + off) % n] for off in range(n)]
+
+    audio = None
+    used_key = None
+    for ki, key in enumerate(order):
+        # skip keys already known-dead this run (bad key or out of credits)
+        key_tag = key[-6:] if len(key) >= 6 else key
+        if key in _EL_DEAD_KEYS:
+            continue
+        try:
+            r = requests.post(
+                ELEVENLABS_TTS_URL.format(voice_id=voice_id),
+                headers={"xi-api-key": key, "Content-Type": "application/json",
+                         "Accept": "audio/mpeg"},
+                json={
+                    "text": text,
+                    "model_id": model_id,
+                    "voice_settings": {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0,
+                                       "use_speaker_boost": True},
+                },
+                timeout=120,
+            )
+            if r.status_code == 401:
+                print(f"[tts] ElevenLabs key …{key_tag} rejected (401 bad key) - trying next key.")
+                _EL_DEAD_KEYS.add(key)
+                continue
+            if r.status_code == 429:
+                print(f"[tts] ElevenLabs key …{key_tag} out of credits (429) - trying next key.")
+                _EL_DEAD_KEYS.add(key)
+                continue
+            r.raise_for_status()
+            data = r.content
+            if len(data) < 1000:
+                print(f"[tts] ElevenLabs key …{key_tag} returned almost no audio - trying next key.")
+                continue
+            audio = data
+            used_key = key_tag
+            break
+        except Exception as e:
+            print(f"[tts] ElevenLabs key …{key_tag} request failed ({str(e)[:60]}) - trying next key.")
+            continue
+
+    if audio is None:
+        live = sum(1 for k in pool if k not in _EL_DEAD_KEYS)
+        print(f"[tts] All {n} ElevenLabs key(s) failed/exhausted - falling back to Gemini "
+              f"({live} keys still untried may recover next run).")
+        return None
+
+    # ElevenLabs returns MP3 directly. Write it, normalize speed, align timings.
+    with open(mp3_path, "wb") as f:
+        f.write(audio)
+    try:
+        _apply_speed(mp3_path, SPEECH_SPEED)
+    except Exception:
+        pass
+    words = _align_with_whisper(text, mp3_path)
+    if not words:
+        total = _audio_duration(mp3_path)
+        words = _estimate_timings(text, min(total, _speech_end(mp3_path, total)))
+    with open(timings_path, "w", encoding="utf-8") as f:
+        json.dump(words, f, indent=2)
+    print(f"[tts] ElevenLabs voice used (key …{used_key}, voice={voice_id[:8]}…, "
+          f"model={model_id}, {len(words)} words)")
+    return words
+
+
+def _discover_tts_models(api_key: str) -> list:
+    """Find the newest TTS-capable Gemini models this key can use."""
+    global _tts_models
+    if _tts_models:
+        return _tts_models
+    try:
+        import requests
+        r = requests.get(TTS_LIST_URL.format(key=api_key), timeout=30)
+        r.raise_for_status()
+        names = [m["name"].removeprefix("models/") for m in r.json().get("models", [])
+                 if "tts" in m["name"]]
+        names.sort(key=lambda n: ("pro" in n, n), reverse=True)  # flash first (free quota)
+        if names:
+            _tts_models = names[:3]
+            return _tts_models
+    except Exception:
+        pass
+    _tts_models = GEMINI_TTS_MODELS
+    return _tts_models
+
+
+def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
+    """Gemini native TTS: the most natural free voice available. Returns word
+    timings (whisper-aligned or estimated) or None to fall through to Edge."""
+    if not api_key:
+        return None
+    import base64
+    import requests
+    style = ("Read this in a warm, friendly, natural voice - like a real person casually "
+             "telling a friend something genuinely interesting they just discovered. Relaxed and "
+             "conversational, with a slight smile in the voice. Gentle, upbeat energy. NOT deep, "
+             "NOT gravelly, NOT a dramatic movie-trailer or documentary narrator. Just an easy, "
+             "likeable human talking. Light, curious tone, natural rhythm: ")
+    body = {
+        "contents": [{"parts": [{"text": style + text}]}],
+        "generationConfig": {
+            "responseModalities": ["AUDIO"],
+            "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {
+                "voiceName": random.choice(GEMINI_VOICES)}}},
+        },
+    }
+    for model in _discover_tts_models(api_key):
+        try:
+            r = requests.post(GEMINI_TTS_URL.format(model=model, key=api_key),
+                              json=body, timeout=120)
+            if r.status_code in (404, 429):
+                continue
+            r.raise_for_status()
+            part = r.json()["candidates"][0]["content"]["parts"][0]
+            pcm = base64.b64decode(part["inlineData"]["data"])
+        except Exception:
+            continue
+        raw = mp3_path + ".pcm"
+        with open(raw, "wb") as f:
+            f.write(pcm)
+        # Gemini TTS returns 24kHz mono 16-bit PCM
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", "24000",
+                        "-ac", "1", "-i", raw, mp3_path], check=True)
+        os.remove(raw)
+        _apply_speed(mp3_path, SPEECH_SPEED)
+        words = _align_with_whisper(text, mp3_path)
+        if not words:
+            total = _audio_duration(mp3_path)
+            words = _estimate_timings(text, min(total, _speech_end(mp3_path, total)))
+        with open(timings_path, "w", encoding="utf-8") as f:
+            json.dump(words, f, indent=2)
+        print(f"[tts] Gemini TTS used ({model}, {len(words)} words)")
+        return words
+    return None
+
+
+def _try_kokoro(text: str, mp3_path: str, timings_path: str):
+    """Kokoro: open-source local TTS, the most human-sounding free option.
+    Used automatically if installed (pip install kokoro soundfile torch)."""
+    try:
+        from kokoro import KPipeline
+        import soundfile as sf
+        import numpy as np
+    except ImportError:
+        return None
+    pipe = KPipeline(lang_code="a")  # American English
+    chunks = [a for (_, _, a) in pipe(text, voice="am_michael")]
+    audio = np.concatenate(chunks)
+    wav = mp3_path.replace(".mp3", ".wav")
+    sf.write(wav, audio, 24000)
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", wav, mp3_path], check=True)
+    os.remove(wav)
+    _apply_speed(mp3_path, SPEECH_SPEED)
+    words = _align_with_whisper(text, mp3_path) or _estimate_timings(text, _audio_duration(mp3_path))
+    with open(timings_path, "w", encoding="utf-8") as f:
+        json.dump(words, f, indent=2)
+    print(f"[tts] Kokoro local engine used ({len(words)} words)")
+    return words
+
+
+def synthesize(text: str, mp3_path: str, timings_path: str, voice: str = DEFAULT_VOICE,
+               api_key: str = "", engine: str = "auto", cfg: dict | None = None):
+    """Generate voiceover MP3 + word timings JSON. Returns list of word timings.
+    Engine chain (engine="auto"): ElevenLabs (premium, most natural) -> Gemini TTS ->
+    Kokoro (if installed) -> Edge. ElevenLabs is tried first because voice naturalness is
+    the single biggest lever on Shorts retention; it falls through automatically if no key
+    is configured or it errors / runs out of credits."""
+    global _TTS_CFG
+    if cfg:
+        _TTS_CFG = cfg
+    # ElevenLabs first (best quality). Falls through to free engines if unavailable.
+    if engine in ("auto", "elevenlabs"):
+        global _EL_WARNED
+        if engine == "auto" and not _elevenlabs_keys() and not _EL_WARNED:
+            _EL_WARNED = True
+            print("[tts] No ElevenLabs keys set - using the FREE Gemini TTS voice (natural, "
+                  "human-sounding). ElevenLabs is optional and only marginally better; the "
+                  "free Gemini voice is the default and works well.")
+        el = _try_elevenlabs(text, mp3_path, timings_path)
+        if el:
+            return el
+        if engine == "elevenlabs":
+            print("[tts] ElevenLabs unavailable, falling back to free voices")
+    if engine in ("auto", "gemini"):
+        g = _try_gemini_tts(text, mp3_path, timings_path, api_key)
+        if g:
+            return g
+        if engine == "gemini":
+            print("[tts] Gemini TTS unavailable, falling back to Edge")
+    if engine in ("auto", "kokoro"):
+        kokoro = _try_kokoro(text, mp3_path, timings_path)
+        if kokoro:
+            return kokoro
+    attempts = [voice, voice, FALLBACK_VOICE]  # retry same voice once, then fallback
+    last_err = None
+    for v in attempts:
+        try:
+            n_bytes, words = asyncio.run(_synth(text, mp3_path, v))
+        except Exception as e:
+            last_err = e
+            continue
+        if n_bytes < 1000:  # essentially no audio: treat as failure, retry
+            last_err = RuntimeError(f"TTS returned almost no audio with voice {v}")
+            continue
+        if not words:
+            _apply_speed(mp3_path, 1.0)  # trim leading silence (edge path)
+            # audio fine, timing metadata missing: try true alignment, else estimate
+            words = _align_with_whisper(text, mp3_path)
+            if not words:
+                total = _audio_duration(mp3_path)
+                duration = min(total, _speech_end(mp3_path, total))
+                words = _estimate_timings(text, duration)
+                print(f"[tts] estimated {len(words)} word timings "
+                      f"(speech ends {duration:.1f}s of {total:.1f}s audio)")
+        with open(timings_path, "w", encoding="utf-8") as f:
+            json.dump(words, f, indent=2)
+        return words
+    raise RuntimeError(
+        f"TTS failed after retries and fallback voice. Last error: {last_err}. "
+        "Check your internet connection, then try: pip install --upgrade edge-tts"
+    )
+
+
+if __name__ == "__main__":
+    w = synthesize(
+        "You walk in for milk. It's hidden at the very back, on purpose.",
+        "test_voice.mp3", "test_timings.json",
+    )
+    print(f"Generated {len(w)} word timings, audio ends at {w[-1]['end']:.2f}s")
+    os.remove("test_voice.mp3"); os.remove("test_timings.json")

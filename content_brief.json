@@ -1,0 +1,17 @@
+{
+  "date": "2026-06-30",
+  "sample_size": 27,
+  "avg_retention": null,
+  "best_formats": [
+    "story"
+  ],
+  "weak_formats": [],
+  "best_eras": [
+    "unspecified"
+  ],
+  "best_hooks": [
+    "bold_claim",
+    "plain"
+  ],
+  "hot_subjects": []
+}

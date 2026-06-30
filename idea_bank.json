@@ -1,0 +1,3124 @@
+[
+  {
+    "title": "Why Grocery Stores Want You Lost",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": true,
+    "used_date": "2026-06-30"
+  },
+  {
+    "title": "Why Milk Is Never Near The Entrance",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": true,
+    "used_date": "2026-06-30"
+  },
+  {
+    "title": "Why Everything Ends In .99",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": true,
+    "used_date": "2026-06-30"
+  },
+  {
+    "title": "Why You Feel Phantom Vibrations",
+    "category": "Technology",
+    "viral_score": 10.0,
+    "used": true,
+    "used_date": "2026-06-30"
+  },
+  {
+    "title": "Why Airports Make You Walk Miles",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why McDonald's Coke Is Different",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Popcorn Costs More Than The Movie",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Ice Cream Machines Never Work",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Every Hotel Feels Familiar",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Elevators Have Mirrors",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Casinos Hide Time",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Bathroom Doors Never Close",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why IKEA Traps You",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Checkout Lines Make You Spend More",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Supermarkets Move Everything Around",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Slow Music Makes You Spend More",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Chip Bags Are Mostly Air",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Walk To Your Gate Is Always Uphill",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Shopping Carts Keep Growing",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Eyes Buy The Most Expensive Item",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Airport Gate Always Changes",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "The Real Reason TSA Wants Your Laptop",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airports Don't Want You Sleeping",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Hotel Pillows Hurt Your Neck",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Receipts Never End",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Malls Want You Lost",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Spicy Food Makes Your Nose Run",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Suitcase Always Comes Out Last",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Stores Pump Smells Into The Air",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Duty Free Is Always After Security",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Small Drink Isn't Small",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Menus Trick Your Brain",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Fast Food Fries Are Addictive",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Escalator Handrails Beat You",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why ATMs Charge You To Get Your Own Money",
+    "category": "Money",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Bigger Sizes Cost Barely More",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airports Are Always Freezing",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Baggage Claim Is So Far From Arrivals",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Manholes Are Round",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Free Shipping Has A Minimum",
+    "category": "Money",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airports Use Weird Carpets",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Boarding Is Designed To Be Slow",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Restaurants Give You Free Bread",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Buffets Secretly Want You Full",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Bakery Is Near The Door",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Coffee Shops Are Always Slightly Loud",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Gate Always Changes At The Last Minute",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Tray Tables Are So Small",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Office Lights Are Always Too Bright",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Luxury Stores Want You Alone",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airports Freeze Everyone",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Loyalty Cards Track Everything You Buy",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Mannequins Have No Faces",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Cart Wheels Pull To One Side",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Restaurant Booths Feel More Private",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airports Announce Everything Twice",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Bathroom Is Always At The Back Of The Plane",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Bathroom Stall Doors Have A Gap",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Hotel Hallways Feel Endless",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Park Paths Curve Instead Of Going Straight",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Stop Signs Are Octagons",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Elevator Close Buttons Often Don't Work",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Hospital Walls Are That Specific Green",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Credit Cards Give You Points",
+    "category": "Money",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Entrance Is Always On The Right",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Free Samples Make You Buy More",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why There Are No Clocks In A Mall",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Limited Time Offers Feel Urgent",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Empty Shelves Make You Buy Faster",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why McDonald's Coke Tastes Different",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Drive Thru Order Is Always Wrong",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Hot Food Smells Stronger Than Cold",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The First Bite Tastes The Best",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airport Chairs Have Armrests You Can't Lift",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airport Windows Are So Huge",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Window Shades Must Be Up For Takeoff",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Seatbelt Sign Stays On So Long",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Gas Station Canopies Are So Tall",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airport Windows Are Massive",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Pizza Boxes Are Square",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Most Expensive Items Are At Eye Level",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Stores Hide The Cheapest Option",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Buy One Get One Isn't A Deal",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Last Item Feels More Valuable",
+    "category": "Shopping",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Small Drink Floods The Cup Holder",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Restaurants Give You Free Bread First",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Pizza Comes In A Square Box",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Kids Menus Have Mazes On Them",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Fountain Drinks Taste Better Than Cans",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Ketchup Is So Hard To Pour",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Bread Goes Stale Faster In The Fridge",
+    "category": "Food",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airport Food Costs Triple",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airports Have So Many Moving Walkways",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Plane Cabins Smell The Same",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airports Use Confusing Zone Numbers",
+    "category": "Airports",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Every Hotel Room Feels Familiar",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Traffic Lights Are Red Yellow Green",
+    "category": "Design",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airlines Change Prices When You Search Twice",
+    "category": "Money",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Cash Feels Harder To Spend Than Card",
+    "category": "Money",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Charities Ask For A Specific Amount",
+    "category": "Money",
+    "viral_score": 10.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why YouTube Refuses To Let You Leave",
+    "category": "Technology",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Ads Sound Louder Than Everything Else",
+    "category": "Internet",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Online Stores Fake Urgency",
+    "category": "Internet",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why YouTube Autoplays The Next Video",
+    "category": "Technology",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Doomscroll Past Your Bedtime",
+    "category": "Internet",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airport Announcements Repeat Everything",
+    "category": "Airports",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Hotel Mirrors Never Fog",
+    "category": "Design",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Candy Is Right At The Checkout",
+    "category": "Shopping",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Shopping Carts Keep Getting Bigger",
+    "category": "Shopping",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Stores Use Tiny Price Tags On Expensive Things",
+    "category": "Shopping",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Self Checkout Always Says Unexpected Item",
+    "category": "Shopping",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Second Cheapest Wine Sells The Most",
+    "category": "Food",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You're Hungry An Hour After Chinese Food",
+    "category": "Food",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airports Make You Walk So Far",
+    "category": "Airports",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airport Carpets Are So Ugly",
+    "category": "Airports",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Seat In Front Reclines Into Your Knees",
+    "category": "Airports",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Hotel Pillows Are Too Big",
+    "category": "Design",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Banks Are Open Bankers Hours",
+    "category": "Money",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Gift Cards Are A Goldmine For Stores",
+    "category": "Money",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Mortgages Last Thirty Years",
+    "category": "Money",
+    "viral_score": 9.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Websites Beg For Cookies",
+    "category": "Technology",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Red Lights Catch You",
+    "category": "Cars",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Captchas Hate Humans",
+    "category": "Internet",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Companies Make Leaving Difficult",
+    "category": "Internet",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Mirror The Person You're Talking To",
+    "category": "Social",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Everything Is Priced Ending In 99 Cents",
+    "category": "Shopping",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Stores Pump In A Specific Smell",
+    "category": "Shopping",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Stores Play Slow Music",
+    "category": "Shopping",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Sale Signs Are Always Red",
+    "category": "Shopping",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Movie Popcorn Costs More Than The Ticket",
+    "category": "Food",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Restaurant Plates Are So Big Now",
+    "category": "Food",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why TSA Makes You Remove Your Laptop",
+    "category": "Airports",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Boarding Takes Forever",
+    "category": "Airports",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airplane Windows Have A Tiny Hole",
+    "category": "Airports",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Stairs Feel Wrong When One Is The Wrong Height",
+    "category": "Design",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Crosswalk Buttons Often Do Nothing",
+    "category": "Design",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Restaurant Lighting Is Always Dim",
+    "category": "Design",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Library Floors Are So Quiet",
+    "category": "Design",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Bundles Feel Cheaper Than Buying One",
+    "category": "Money",
+    "viral_score": 9.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Apps Desperately Want Permission",
+    "category": "Technology",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Free Trials Want Your Credit Card",
+    "category": "Internet",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Feel Closer After Sharing A Secret",
+    "category": "Social",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Trust Tall People More",
+    "category": "Social",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Keep Buying Things You Already Own",
+    "category": "Home",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Supermarkets Rearrange The Aisles",
+    "category": "Shopping",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Floor Changes Texture Near Deals",
+    "category": "Shopping",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Receipts Are So Long Now",
+    "category": "Shopping",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Cereal Boxes Have So Much Empty Space",
+    "category": "Food",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Diet Soda Tastes Different",
+    "category": "Food",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Planes Board From The Front",
+    "category": "Airports",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why IKEA Forces You Through The Whole Store",
+    "category": "Design",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Public Benches Have Armrests In The Middle",
+    "category": "Design",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Keyboards Aren't In Alphabetical Order",
+    "category": "Design",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Subscriptions Are Easy To Start And Hard To Cancel",
+    "category": "Money",
+    "viral_score": 9.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Winter Kills Your Phone",
+    "category": "Technology",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Netflix Knows You're Lying",
+    "category": "Technology",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Objects Are Closer Than They Appear",
+    "category": "Cars",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Websites Never Forget You",
+    "category": "Internet",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Apps Hide The Exit",
+    "category": "Internet",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Phone Dies Faster In The Cold",
+    "category": "Technology",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Printers Never Work When You Need Them",
+    "category": "Technology",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Free Trials Need Your Card",
+    "category": "Technology",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Comment Sections Turn Toxic",
+    "category": "Internet",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Wave Back At Someone Waving Past You",
+    "category": "Social",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Open The Fridge Again Right After Closing It",
+    "category": "Home",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Can Never Find Scissors When You Need Them",
+    "category": "Home",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Checkout Lines Are Lined With Magazines",
+    "category": "Shopping",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Stores Keep It Slightly Too Cold",
+    "category": "Shopping",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Ice Cream Machine Is Always Broken",
+    "category": "Food",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Fast Food Fries Go Cold So Fast",
+    "category": "Food",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Best Items Are In The Menu Corner",
+    "category": "Food",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airports Dim The Lights Before Landing",
+    "category": "Airports",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Every Elevator Has A Mirror",
+    "category": "Design",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Sales Tax Isn't On The Price Tag",
+    "category": "Money",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Tipping Screens Now Start At 20 Percent",
+    "category": "Money",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Coins Are Different Sizes",
+    "category": "Money",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Gym Memberships Are Hard To Quit",
+    "category": "Money",
+    "viral_score": 9.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Nobody Reads Terms And Conditions",
+    "category": "Internet",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Websites Beg You To Accept Cookies",
+    "category": "Technology",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Netflix Asks If You're Still Watching",
+    "category": "Technology",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Passwords Need A Symbol Now",
+    "category": "Technology",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Red Lights Always Catch You",
+    "category": "Cars",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Wipers Suddenly Squeak",
+    "category": "Cars",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Can't Find The Close Button On Ads",
+    "category": "Internet",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Refresh A Page That Just Loaded",
+    "category": "Internet",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Reaction Videos Get So Many Views",
+    "category": "Internet",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Watch One More Short Every Time",
+    "category": "Internet",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why People Interrupt Each Other Constantly",
+    "category": "Social",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Talk Louder In A Noisy Room",
+    "category": "Social",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Copy The Accent Of People Around You",
+    "category": "Social",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Compliments Feel Awkward To Accept",
+    "category": "Social",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Best Players Take The Last Penalty",
+    "category": "Sports",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Job Interviews Ask Where You'll Be In Five Years",
+    "category": "Work",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Milk Is Always At The Back Of The Store",
+    "category": "Shopping",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Black Friday Crowds Make You Spend More",
+    "category": "Shopping",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Menus Have No Dollar Signs",
+    "category": "Food",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Buffets Put Salad First",
+    "category": "Food",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Soda Tastes Better From A Glass Bottle",
+    "category": "Food",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Fancy Restaurants Serve Tiny Portions",
+    "category": "Food",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Duty Free Is After Security",
+    "category": "Airports",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Airlines Charge For Carry On Bags",
+    "category": "Airports",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Escalator Handrails Move Faster Than The Steps",
+    "category": "Design",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Mall Layouts Make You Lose Direction",
+    "category": "Design",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Door Handles Are At The Same Height Everywhere",
+    "category": "Design",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Hotel Showers Are So Confusing",
+    "category": "Design",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Lottery Jackpots Roll Over",
+    "category": "Money",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Rent Is Due On The First",
+    "category": "Money",
+    "viral_score": 9.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your WiFi Dies When Guests Arrive",
+    "category": "Technology",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Gas Pumps Never Overflow",
+    "category": "Cars",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Highway Gas Costs More",
+    "category": "Cars",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why WiFi Slows Down When People Visit",
+    "category": "Technology",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Phone Chargers Break At The Same Spot",
+    "category": "Technology",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Autocorrect Changes The Right Word",
+    "category": "Technology",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Apps Update Constantly",
+    "category": "Technology",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Unsubscribe Button Is Hidden",
+    "category": "Technology",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Captchas Are Getting Harder",
+    "category": "Technology",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Fuel Gauge Drops Faster Near Empty",
+    "category": "Cars",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Car Alarms Never Stop Anyone",
+    "category": "Cars",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why New Cars Smell That Way",
+    "category": "Cars",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Tires Are Always Black",
+    "category": "Cars",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Websites Fake A Countdown Timer",
+    "category": "Internet",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why First Impressions Stick So Hard",
+    "category": "Social",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Marathon Runners Hit A Wall",
+    "category": "Sports",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Mondays Feel Worse Than They Are",
+    "category": "Work",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Check Email First Thing And Regret It",
+    "category": "Work",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Luxury Stores Keep Almost Nothing On The Shelves",
+    "category": "Shopping",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Bill Comes With Mints",
+    "category": "Food",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Chocolate Melts Right At Body Temperature",
+    "category": "Food",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Casinos Have No Windows Or Clocks",
+    "category": "Design",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Hotel Sheets Are Always White",
+    "category": "Design",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Prices End In Nine Not Zero",
+    "category": "Money",
+    "viral_score": 9.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Phone Chargers Always Die First",
+    "category": "Technology",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Parking Lots Make You Walk",
+    "category": "Cars",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Ads Ruin Everything",
+    "category": "Internet",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Loading Bar Always Sticks At 99 Percent",
+    "category": "Technology",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Bluetooth Disconnects At The Worst Time",
+    "category": "Technology",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Terms And Conditions Are So Long",
+    "category": "Technology",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Car Beeps For Everything",
+    "category": "Cars",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Steering Wheels Are Round",
+    "category": "Cars",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Videos Buffer At The Worst Moment",
+    "category": "Internet",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Clickbait Always Works On You",
+    "category": "Internet",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Groups Make Riskier Decisions",
+    "category": "Social",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Laugh Harder With Friends",
+    "category": "Social",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Remember Insults More Than Praise",
+    "category": "Social",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Goalkeepers Dive The Wrong Way On Penalties",
+    "category": "Sports",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Phone Charges Slower On The Couch",
+    "category": "Home",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Tupperware Lids Never Match",
+    "category": "Home",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Toilet Paper Roll Runs Out At The Worst Time",
+    "category": "Home",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Quietest Person Is Often The Smartest",
+    "category": "Work",
+    "viral_score": 9.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Autocorrect Changes The Right Words",
+    "category": "Technology",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Car Never Stops Beeping",
+    "category": "Cars",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Videos Always Freeze At The Worst Time",
+    "category": "Internet",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Screen Cracks On The First Drop",
+    "category": "Technology",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Ads Are Louder Than The Video",
+    "category": "Technology",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Speed Bumps Feel Different Every Time",
+    "category": "Cars",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Roundabouts Confuse Everyone",
+    "category": "Cars",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Traffic Jams Appear Out Of Nowhere",
+    "category": "Cars",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Recommended Videos Know You Too Well",
+    "category": "Internet",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Free Apps Make The Most Money",
+    "category": "Internet",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Crowds Move Like A Single Organism",
+    "category": "Social",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Home Team Wins More Often",
+    "category": "Sports",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Athletes Wear The Same Socks For Luck",
+    "category": "Sports",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why One Sock Always Goes Missing",
+    "category": "Home",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Cables Tangle In A Drawer",
+    "category": "Home",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Fitted Sheets Are Impossible To Fold",
+    "category": "Home",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The WiFi Is Worst In The Bedroom",
+    "category": "Home",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Work Better At The Last Minute",
+    "category": "Work",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Open Offices Make You Less Productive",
+    "category": "Work",
+    "viral_score": 9.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Every Speed Bump Feels Different",
+    "category": "Cars",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Phone Slows Down After A Year",
+    "category": "Technology",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Group Chats Move Too Fast To Follow",
+    "category": "Internet",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Like People Who Agree With You",
+    "category": "Social",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Eye Contact Feels So Intense",
+    "category": "Social",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Trust The Team In Red",
+    "category": "Sports",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Players Spit So Much",
+    "category": "Sports",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Wave Goes Around A Stadium",
+    "category": "Sports",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The First Corner Decides An F1 Race",
+    "category": "Sports",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Fans Boo The Opposing Keeper",
+    "category": "Sports",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Look Busy When The Boss Walks By",
+    "category": "Work",
+    "viral_score": 9.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Online Stores Say Only 2 Left",
+    "category": "Technology",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Battery Drops From 20 To Dead Instantly",
+    "category": "Technology",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Highway Gas Is More Expensive",
+    "category": "Cars",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Every New Car Looks The Same",
+    "category": "Cars",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Pop Ups Wait Until You're Reading",
+    "category": "Internet",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Crowd Goes Quiet Before A Free Kick",
+    "category": "Sports",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Underdogs Win On Neutral Ground",
+    "category": "Sports",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Toss Matters More Than You Think",
+    "category": "Sports",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why A One Goal Lead Is The Most Dangerous",
+    "category": "Sports",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Last Bit Of Soap Won't Lather",
+    "category": "Home",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Smoke Alarms Beep At 3 AM",
+    "category": "Home",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Light Bulbs Burn Out When You Flip The Switch",
+    "category": "Home",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Lunch Meetings Get Less Done",
+    "category": "Work",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Friday Afternoons Feel Useless",
+    "category": "Work",
+    "viral_score": 9.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Password Rules Keep Getting Worse",
+    "category": "Technology",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Every Car Looks The Same",
+    "category": "Cars",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Websites Remember You Forever",
+    "category": "Technology",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Phone Screens Are Getting Bigger",
+    "category": "Technology",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Gas Pumps Click Off On Their Own",
+    "category": "Cars",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Parking Lots Make You Walk So Far",
+    "category": "Cars",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Headlights Are So Bright Now",
+    "category": "Cars",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Cars Have A Fake Engine Sound",
+    "category": "Cars",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Turn Signal Clicks",
+    "category": "Cars",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Ads Get Louder Than Everything",
+    "category": "Internet",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Online Arguments Never End",
+    "category": "Internet",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Subscribe Buttons Pulse And Bounce",
+    "category": "Internet",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Doorbell Makes The Dog Lose It",
+    "category": "Home",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Junk Drawer Fills Itself",
+    "category": "Home",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Microwave Finishes At 1 Second",
+    "category": "Home",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Best Ideas Come In The Shower Not At Your Desk",
+    "category": "Work",
+    "viral_score": 8.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Steering Wheels Aren't Square",
+    "category": "Cars",
+    "viral_score": 8.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Apps Always Want Notification Permission",
+    "category": "Technology",
+    "viral_score": 8.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Streaming Buffers At The Best Scene",
+    "category": "Technology",
+    "viral_score": 8.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Search Results Are All Ads First",
+    "category": "Internet",
+    "viral_score": 8.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Awkward Silences Feel So Long",
+    "category": "Social",
+    "viral_score": 8.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Shower Gets Cold When The Toilet Flushes",
+    "category": "Home",
+    "viral_score": 8.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Office Is Always Too Cold Or Too Hot",
+    "category": "Work",
+    "viral_score": 8.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Email Threads Never End",
+    "category": "Work",
+    "viral_score": 8.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Wipers Suddenly Get Loud",
+    "category": "Cars",
+    "viral_score": 8.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Cancel Buttons Are Grey And Hard To Find",
+    "category": "Technology",
+    "viral_score": 8.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Side Mirrors Say Objects Are Closer",
+    "category": "Cars",
+    "viral_score": 8.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Slow Lane Moves Faster Sometimes",
+    "category": "Cars",
+    "viral_score": 8.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Notifications Are Red",
+    "category": "Internet",
+    "viral_score": 8.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Nobody Helps In A Big Crowd",
+    "category": "Social",
+    "viral_score": 8.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Small Talk Always Starts With Weather",
+    "category": "Social",
+    "viral_score": 8.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Stadiums Are Loudest Behind The Goal",
+    "category": "Sports",
+    "viral_score": 8.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Remote Always Disappears",
+    "category": "Home",
+    "viral_score": 8.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Meetings Always Run Over",
+    "category": "Work",
+    "viral_score": 8.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Refs Get Blamed For Everything",
+    "category": "Sports",
+    "viral_score": 8.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Printer Jams Before A Deadline",
+    "category": "Work",
+    "viral_score": 8.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Deletes Your Mission At Every Doorway",
+    "category": "Psychology",
+    "viral_score": 8.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You're Suddenly Breathing Manually",
+    "category": "Psychology",
+    "viral_score": 8.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Time Gets Faster Every Year",
+    "category": "Psychology",
+    "viral_score": 8.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Open The Fridge Twice",
+    "category": "Psychology",
+    "viral_score": 8.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Check Your Phone The Second It's In Your Pocket",
+    "category": "Psychology",
+    "viral_score": 8.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Avoid Stepping On Cracks",
+    "category": "Psychology",
+    "viral_score": 8.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Notice The Same Number Everywhere",
+    "category": "Psychology",
+    "viral_score": 8.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why A Last Minute Goal Feels Better",
+    "category": "Sports",
+    "viral_score": 8.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Comebacks Feel Impossible Then Happen",
+    "category": "Sports",
+    "viral_score": 8.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Replays Cringe Moments",
+    "category": "Psychology",
+    "viral_score": 8.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Loves Tomorrow",
+    "category": "Psychology",
+    "viral_score": 8.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Replays Cringe Moments At Night",
+    "category": "Psychology",
+    "viral_score": 8.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Feel Watched When Nobody's There",
+    "category": "Psychology",
+    "viral_score": 8.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Hear Your Name In A Crowded Room",
+    "category": "Psychology",
+    "viral_score": 8.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Think Everyone's Looking At You",
+    "category": "Psychology",
+    "viral_score": 8.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Foot Falls Asleep",
+    "category": "Body",
+    "viral_score": 8.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Voice Sounds Different On Recordings",
+    "category": "Body",
+    "viral_score": 8.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Refuses To Stop Playing That Song",
+    "category": "Psychology",
+    "viral_score": 8.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Hides Objects In Plain Sight",
+    "category": "Psychology",
+    "viral_score": 8.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Cameras Make You Hate Your Own Face",
+    "category": "Psychology",
+    "viral_score": 8.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Body Randomly Glitches",
+    "category": "Body",
+    "viral_score": 8.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Ignores Your Own Tickles",
+    "category": "Psychology",
+    "viral_score": 8.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Smells Unlock Forgotten Memories",
+    "category": "Psychology",
+    "viral_score": 8.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Trust Round Numbers Less Than Odd Ones",
+    "category": "Psychology",
+    "viral_score": 8.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Believe Something More When It's Repeated",
+    "category": "Psychology",
+    "viral_score": 8.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Mishear Lyrics The Same Way Every Time",
+    "category": "Psychology",
+    "viral_score": 8.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Get A Brain Freeze",
+    "category": "Body",
+    "viral_score": 8.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Other People's Yawns Infect You",
+    "category": "Psychology",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Legs Suddenly Stop Working",
+    "category": "Body",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Dreams Self-Destruct",
+    "category": "Psychology",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Is Addicted To Sugar",
+    "category": "Psychology",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Forget Names Two Seconds After Hearing Them",
+    "category": "Psychology",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Reread The Same Line Five Times",
+    "category": "Psychology",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Can't Tickle Yourself",
+    "category": "Psychology",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Wake Up Right Before Your Alarm",
+    "category": "Psychology",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Feel Time Slow Down In A Crash",
+    "category": "Psychology",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Shiver When You're Cold",
+    "category": "Body",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Stomach Growls",
+    "category": "Body",
+    "viral_score": 8.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Mirrors Lie About Your Face",
+    "category": "Psychology",
+    "viral_score": 8.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Thinks Spice Is Fire",
+    "category": "Body",
+    "viral_score": 8.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Knows The Time",
+    "category": "Psychology",
+    "viral_score": 8.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Suddenly Notice Your Own Breathing",
+    "category": "Psychology",
+    "viral_score": 8.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Feel Déjà Vu",
+    "category": "Psychology",
+    "viral_score": 8.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Get Goosebumps When You're Cold",
+    "category": "Body",
+    "viral_score": 8.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Mouth Waters Before You're Sick",
+    "category": "Body",
+    "viral_score": 8.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Nobody Wants The First Bathroom Stall",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Loves Tiny Explosions",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Body Thinks You're Still A Caveman",
+    "category": "Body",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Water Gives You Wrinkly Fingers",
+    "category": "Body",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Thinks Everyone Said Your Name",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Darkness Creates Faces",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Trust Confident People More",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Yawn When You See Someone Yawn",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Do The Opposite When Told What To Do",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Feel Smarter After Agreeing With Someone",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Remember Embarrassment Forever",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Think You're Above Average At Everything",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Defend Bad Decisions You Already Made",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Feel Your Phone Vibrate When It Didn't",
+    "category": "Psychology",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Eye Twitches Randomly",
+    "category": "Body",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Cats Knock Things Off Tables",
+    "category": "Nature",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Moths Fly Into Lights",
+    "category": "Nature",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Lose Track Of Time On Your Phone",
+    "category": "Time",
+    "viral_score": 8.0,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Onions Weaponize Chemistry",
+    "category": "Body",
+    "viral_score": 7.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Remember Songs But Forget Facts",
+    "category": "Psychology",
+    "viral_score": 7.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Can't Stop Watching A Car Crash",
+    "category": "Psychology",
+    "viral_score": 7.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Cuts On Your Fingers Hurt More",
+    "category": "Body",
+    "viral_score": 7.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Can't Stop Once You Start Scratching",
+    "category": "Body",
+    "viral_score": 7.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why A Watched Pot Never Boils",
+    "category": "Time",
+    "viral_score": 7.9,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Eyelid Won't Stop Twitching",
+    "category": "Body",
+    "viral_score": 7.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Brain Can't Explain Laughter",
+    "category": "Body",
+    "viral_score": 7.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Laugh When You're Nervous",
+    "category": "Psychology",
+    "viral_score": 7.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Remember The Start And End But Not The Middle",
+    "category": "Psychology",
+    "viral_score": 7.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Judge A Book By Its First Sentence",
+    "category": "Psychology",
+    "viral_score": 7.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Leaves Change Color In Fall",
+    "category": "Nature",
+    "viral_score": 7.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Flowers Smell Stronger At Night",
+    "category": "Nature",
+    "viral_score": 7.8,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Can't Remember Faces But Never Forget Eyes",
+    "category": "Psychology",
+    "viral_score": 7.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Replay Arguments Hours Later",
+    "category": "Psychology",
+    "viral_score": 7.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Feel Lonelier In A Crowd",
+    "category": "Psychology",
+    "viral_score": 7.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Feel Time Drag When You're Bored",
+    "category": "Psychology",
+    "viral_score": 7.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Get Hiccups",
+    "category": "Body",
+    "viral_score": 7.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Ears Pop On A Plane",
+    "category": "Body",
+    "viral_score": 7.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Hear The Ocean In A Seashell",
+    "category": "Nature",
+    "viral_score": 7.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Last Hour Of Work Drags",
+    "category": "Time",
+    "viral_score": 7.7,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Stretching Feels So Good",
+    "category": "Body",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Forget Your Dreams Instantly",
+    "category": "Psychology",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Want What You Can't Have",
+    "category": "Psychology",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You See Faces In Random Objects",
+    "category": "Psychology",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Fingers Wrinkle In Water",
+    "category": "Body",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Sneeze In Bright Light",
+    "category": "Body",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Blush When Embarrassed",
+    "category": "Body",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Get Butterflies When Nervous",
+    "category": "Body",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Can Smell Rain Before It Falls",
+    "category": "Nature",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Vacations Feel Short In The Moment But Long Looking Back",
+    "category": "Time",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Boring Meetings Slow Down Time",
+    "category": "Time",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Deadlines Make You Faster",
+    "category": "Time",
+    "viral_score": 7.6,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Your Body Vibrates In The Cold",
+    "category": "Body",
+    "viral_score": 7.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Always Pick The Slowest Line",
+    "category": "Psychology",
+    "viral_score": 7.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Believe The First Price You See",
+    "category": "Psychology",
+    "viral_score": 7.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Onions Make You Cry",
+    "category": "Body",
+    "viral_score": 7.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why You Yawn When You're Tired",
+    "category": "Body",
+    "viral_score": 7.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Mosquitoes Bite Some People More",
+    "category": "Nature",
+    "viral_score": 7.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Drive Home Feels Quicker",
+    "category": "Time",
+    "viral_score": 7.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Childhood Summers Felt Endless",
+    "category": "Time",
+    "viral_score": 7.5,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Time Speeds Up As You Get Older",
+    "category": "Psychology",
+    "viral_score": 7.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Dogs Tilt Their Heads",
+    "category": "Nature",
+    "viral_score": 7.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Waiting Feels Longer Than It Is",
+    "category": "Time",
+    "viral_score": 7.4,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Some Days Feel Hotter Than The Temperature",
+    "category": "Nature",
+    "viral_score": 7.3,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Ocean Looks Blue But Water Is Clear",
+    "category": "Nature",
+    "viral_score": 7.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Thunder Comes After Lightning",
+    "category": "Nature",
+    "viral_score": 7.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Moon Follows You In The Car",
+    "category": "Nature",
+    "viral_score": 7.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Weekend Disappears Instantly",
+    "category": "Time",
+    "viral_score": 7.2,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Spicy Food Feels Hot",
+    "category": "Body",
+    "viral_score": 7.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Birds Don't Get Shocked On Power Lines",
+    "category": "Nature",
+    "viral_score": 7.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Bees Die After They Sting",
+    "category": "Nature",
+    "viral_score": 7.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why Spiders Build Webs Overnight",
+    "category": "Nature",
+    "viral_score": 7.1,
+    "used": false,
+    "used_date": null
+  },
+  {
+    "title": "Why The Sky Is Blue But Sunsets Are Red",
+    "category": "Nature",
+    "viral_score": 7.0,
+    "used": false,
+    "used_date": null
+  }
+]

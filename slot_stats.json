@@ -1,0 +1,18 @@
+{
+  "generated": 13,
+  "published": 12,
+  "dropped": 1,
+  "avg_quality": 45.5,
+  "drop_reasons": {
+    "hook_not_physical": 0,
+    "first_frame_low": 0,
+    "topic_recognition_low": 0,
+    "retention_pred_low": 0,
+    "viewer_identity_low": 0,
+    "title_score_low": 0,
+    "quality_floor": 0,
+    "other": 6,
+    "winner_clone": 0,
+    "subcluster_clone": 0
+  }
+}

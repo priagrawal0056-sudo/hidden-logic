@@ -1,0 +1,287 @@
+{
+  "channel_avg_views": 423.6,
+  "topic_clusters": {
+    "airport": {
+      "videos": 12,
+      "avg_views": 659.2,
+      "best_views": 1598,
+      "recent_views": [
+        1171,
+        932,
+        922,
+        538,
+        362,
+        3,
+        116,
+        759,
+        1237,
+        4,
+        268,
+        1598
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "hotel": {
+      "videos": 9,
+      "avg_views": 565.8,
+      "best_views": 1393,
+      "recent_views": [
+        371,
+        42,
+        382,
+        556,
+        694,
+        279,
+        856,
+        519,
+        1393
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "airline": {
+      "videos": 1,
+      "avg_views": 997.0,
+      "best_views": 997,
+      "recent_views": [
+        997
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "mall": {
+      "videos": 8,
+      "avg_views": 163.1,
+      "best_views": 1068,
+      "recent_views": [
+        1068,
+        6,
+        11,
+        4,
+        11,
+        3,
+        1,
+        201
+      ],
+      "avg_stayed_to_watch": 55.0,
+      "avg_avd": 12.4
+    },
+    "traffic": {
+      "videos": 7,
+      "avg_views": 457.7,
+      "best_views": 947,
+      "recent_views": [
+        642,
+        682,
+        151,
+        947,
+        766,
+        9,
+        7
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "escalator": {
+      "videos": 0,
+      "avg_views": 0.0,
+      "best_views": 0,
+      "recent_views": [],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "elevator": {
+      "videos": 5,
+      "avg_views": 229.2,
+      "best_views": 1078,
+      "recent_views": [
+        52,
+        5,
+        2,
+        9,
+        1078
+      ],
+      "avg_stayed_to_watch": 62.2,
+      "avg_avd": 14.0
+    },
+    "gas_station": {
+      "videos": 2,
+      "avg_views": 412.0,
+      "best_views": 822,
+      "recent_views": [
+        2,
+        822
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "restaurant": {
+      "videos": 3,
+      "avg_views": 474.3,
+      "best_views": 895,
+      "recent_views": [
+        895,
+        4,
+        524
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "supermarket": {
+      "videos": 12,
+      "avg_views": 536.1,
+      "best_views": 1151,
+      "recent_views": [
+        814,
+        519,
+        931,
+        854,
+        590,
+        2,
+        1,
+        18,
+        137,
+        1151,
+        287,
+        1129
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "retail_layout": {
+      "videos": 0,
+      "avg_views": 0.0,
+      "best_views": 0,
+      "recent_views": [],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "brain": {
+      "videos": 0,
+      "avg_views": 0.0,
+      "best_views": 0,
+      "recent_views": [],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "social": {
+      "videos": 0,
+      "avg_views": 0.0,
+      "best_views": 0,
+      "recent_views": [],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "memory": {
+      "videos": 3,
+      "avg_views": 121.7,
+      "best_views": 265,
+      "recent_views": [
+        93,
+        265,
+        7
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "attention": {
+      "videos": 1,
+      "avg_views": 3.0,
+      "best_views": 3,
+      "recent_views": [
+        3
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "perception": {
+      "videos": 0,
+      "avg_views": 0.0,
+      "best_views": 0,
+      "recent_views": [],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "social_behavior": {
+      "videos": 1,
+      "avg_views": 7.0,
+      "best_views": 7,
+      "recent_views": [
+        7
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "cognitive_bias": {
+      "videos": 1,
+      "avg_views": 747.0,
+      "best_views": 747,
+      "recent_views": [
+        747
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "technology": {
+      "videos": 6,
+      "avg_views": 93.8,
+      "best_views": 196,
+      "recent_views": [
+        196,
+        104,
+        2,
+        3,
+        176,
+        82
+      ],
+      "avg_stayed_to_watch": 65.5,
+      "avg_avd": 14.5
+    },
+    "internet_behavior": {
+      "videos": 0,
+      "avg_views": 0.0,
+      "best_views": 0,
+      "recent_views": [],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "decision_making": {
+      "videos": 1,
+      "avg_views": 1272.0,
+      "best_views": 1272,
+      "recent_views": [
+        1272
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "habits": {
+      "videos": 0,
+      "avg_views": 0.0,
+      "best_views": 0,
+      "recent_views": [],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "emotions": {
+      "videos": 1,
+      "avg_views": 1265.0,
+      "best_views": 1265,
+      "recent_views": [
+        1265
+      ],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    },
+    "money_psychology": {
+      "videos": 0,
+      "avg_views": 0.0,
+      "best_views": 0,
+      "recent_views": [],
+      "avg_stayed_to_watch": null,
+      "avg_avd": null
+    }
+  },
+  "last_updated": "2026-06-30T09:47:23.710855"
+}

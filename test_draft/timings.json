@@ -1,0 +1,292 @@
+[
+  {
+    "word": "You're",
+    "start": 0.0,
+    "end": 0.48
+  },
+  {
+    "word": "staring",
+    "start": 0.48,
+    "end": 0.78
+  },
+  {
+    "word": "at",
+    "start": 0.78,
+    "end": 0.98
+  },
+  {
+    "word": "a",
+    "start": 0.98,
+    "end": 1.2
+  },
+  {
+    "word": "$10",
+    "start": 1.2,
+    "end": 1.6
+  },
+  {
+    "word": "churro",
+    "start": 1.6,
+    "end": 2.06
+  },
+  {
+    "word": "you",
+    "start": 2.06,
+    "end": 2.32
+  },
+  {
+    "word": "didn't",
+    "start": 2.32,
+    "end": 2.66
+  },
+  {
+    "word": "want.",
+    "start": 2.66,
+    "end": 3.0
+  },
+  {
+    "word": "You",
+    "start": 3.32,
+    "end": 3.4
+  },
+  {
+    "word": "didn't",
+    "start": 3.4,
+    "end": 3.68
+  },
+  {
+    "word": "plan",
+    "start": 3.68,
+    "end": 3.92
+  },
+  {
+    "word": "on",
+    "start": 3.92,
+    "end": 4.18
+  },
+  {
+    "word": "buying",
+    "start": 4.18,
+    "end": 4.36
+  },
+  {
+    "word": "it,",
+    "start": 4.36,
+    "end": 4.66
+  },
+  {
+    "word": "but",
+    "start": 4.7,
+    "end": 4.84
+  },
+  {
+    "word": "the",
+    "start": 4.84,
+    "end": 5.2
+  },
+  {
+    "word": "Park",
+    "start": 5.2,
+    "end": 5.26
+  },
+  {
+    "word": "Path",
+    "start": 5.26,
+    "end": 5.54
+  },
+  {
+    "word": "forced",
+    "start": 5.54,
+    "end": 5.9
+  },
+  {
+    "word": "you",
+    "start": 5.9,
+    "end": 6.16
+  },
+  {
+    "word": "to",
+    "start": 6.16,
+    "end": 6.26
+  },
+  {
+    "word": "weave",
+    "start": 6.26,
+    "end": 6.54
+  },
+  {
+    "word": "past",
+    "start": 6.54,
+    "end": 6.92
+  },
+  {
+    "word": "every",
+    "start": 6.92,
+    "end": 7.46
+  },
+  {
+    "word": "single",
+    "start": 7.46,
+    "end": 7.9
+  },
+  {
+    "word": "window.",
+    "start": 7.9,
+    "end": 8.42
+  },
+  {
+    "word": "Designers",
+    "start": 8.84,
+    "end": 9.22
+  },
+  {
+    "word": "use",
+    "start": 9.22,
+    "end": 9.5
+  },
+  {
+    "word": "winding",
+    "start": 9.5,
+    "end": 9.84
+  },
+  {
+    "word": "paths",
+    "start": 9.84,
+    "end": 10.16
+  },
+  {
+    "word": "to",
+    "start": 10.16,
+    "end": 10.4
+  },
+  {
+    "word": "keep",
+    "start": 10.4,
+    "end": 10.62
+  },
+  {
+    "word": "you",
+    "start": 10.62,
+    "end": 10.84
+  },
+  {
+    "word": "moving.",
+    "start": 10.84,
+    "end": 11.16
+  },
+  {
+    "word": "They",
+    "start": 11.42,
+    "end": 11.54
+  },
+  {
+    "word": "make",
+    "start": 11.54,
+    "end": 11.72
+  },
+  {
+    "word": "sure",
+    "start": 11.72,
+    "end": 11.86
+  },
+  {
+    "word": "you",
+    "start": 11.86,
+    "end": 11.94
+  },
+  {
+    "word": "pass",
+    "start": 11.94,
+    "end": 12.1
+  },
+  {
+    "word": "every",
+    "start": 12.1,
+    "end": 12.48
+  },
+  {
+    "word": "shop.",
+    "start": 12.48,
+    "end": 12.78
+  },
+  {
+    "word": "You're",
+    "start": 13.16,
+    "end": 13.44
+  },
+  {
+    "word": "just",
+    "start": 13.44,
+    "end": 13.72
+  },
+  {
+    "word": "a",
+    "start": 13.72,
+    "end": 13.84
+  },
+  {
+    "word": "pawn",
+    "start": 13.84,
+    "end": 13.98
+  },
+  {
+    "word": "in",
+    "start": 13.98,
+    "end": 14.22
+  },
+  {
+    "word": "their",
+    "start": 14.22,
+    "end": 14.56
+  },
+  {
+    "word": "game.",
+    "start": 14.56,
+    "end": 14.94
+  },
+  {
+    "word": "And",
+    "start": 15.36,
+    "end": 15.44
+  },
+  {
+    "word": "that's",
+    "start": 15.44,
+    "end": 15.74
+  },
+  {
+    "word": "why",
+    "start": 15.74,
+    "end": 15.9
+  },
+  {
+    "word": "you're",
+    "start": 15.9,
+    "end": 16.32
+  },
+  {
+    "word": "staring",
+    "start": 16.32,
+    "end": 16.34
+  },
+  {
+    "word": "at",
+    "start": 16.34,
+    "end": 16.54
+  },
+  {
+    "word": "a",
+    "start": 16.54,
+    "end": 16.72
+  },
+  {
+    "word": "$10",
+    "start": 16.72,
+    "end": 17.04
+  },
+  {
+    "word": "churro.",
+    "start": 17.04,
+    "end": 17.56
+  }
+]

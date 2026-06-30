@@ -1,0 +1,44 @@
+# ============================================================================
+#  Hidden Logic - .gitignore
+#  CRITICAL: keeps secrets and large generated media OUT of version control.
+#  If this folder is ever pushed to a git remote, these must NOT be committed.
+# ============================================================================
+
+# ---- Secrets (NEVER commit these) ----
+config.json
+client_secret.json
+*.pickle
+yt_token.pickle
+token.json
+el_key_rotation.json
+
+# ---- Generated media & per-run output (large, re-creatable) ----
+drafts/
+output/
+exports/
+logs/
+v1_backup/
+*.mp4
+*.mp3
+*.wav
+pipeline_log.txt
+STARTUP_FAILED.txt
+weekly_report.txt
+reply_drafts.txt
+
+# ---- Python caches / envs ----
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.venv311/
+.pytest_cache/
+.ruff_cache/
+
+# ---- Fonts / archives (re-downloadable) ----
+*.zip
+
+# NOTE: the learning-memory JSONs (winner_memory.json, channel_index.json,
+# analytics_memory.json, idea_bank.json, etc.) are intentionally NOT ignored so
+# the channel's learning persists. Remove them here only if you keep that state
+# elsewhere.

@@ -1,0 +1,117 @@
+[
+  {
+    "word": "You",
+    "start": 0.0,
+    "end": 0.2
+  },
+  {
+    "word": "grab",
+    "start": 0.2,
+    "end": 0.32
+  },
+  {
+    "word": "a",
+    "start": 0.32,
+    "end": 0.54
+  },
+  {
+    "word": "small",
+    "start": 0.54,
+    "end": 0.78
+  },
+  {
+    "word": "drink,",
+    "start": 0.78,
+    "end": 1.1
+  },
+  {
+    "word": "and",
+    "start": 1.38,
+    "end": 1.46
+  },
+  {
+    "word": "it's",
+    "start": 1.46,
+    "end": 1.68
+  },
+  {
+    "word": "somehow",
+    "start": 1.68,
+    "end": 1.92
+  },
+  {
+    "word": "floods",
+    "start": 1.92,
+    "end": 2.36
+  },
+  {
+    "word": "the",
+    "start": 2.36,
+    "end": 2.78
+  },
+  {
+    "word": "entire",
+    "start": 2.78,
+    "end": 2.9
+  },
+  {
+    "word": "cup",
+    "start": 2.9,
+    "end": 3.12
+  },
+  {
+    "word": "holder.",
+    "start": 3.12,
+    "end": 3.36
+  },
+  {
+    "word": "There's",
+    "start": 3.8,
+    "end": 3.98
+  },
+  {
+    "word": "a",
+    "start": 3.98,
+    "end": 4.12
+  },
+  {
+    "word": "hidden",
+    "start": 4.12,
+    "end": 4.36
+  },
+  {
+    "word": "reason",
+    "start": 4.36,
+    "end": 4.68
+  },
+  {
+    "word": "airports",
+    "start": 4.68,
+    "end": 5.04
+  },
+  {
+    "word": "design",
+    "start": 5.04,
+    "end": 5.54
+  },
+  {
+    "word": "it",
+    "start": 5.54,
+    "end": 5.76
+  },
+  {
+    "word": "exactly",
+    "start": 5.76,
+    "end": 6.14
+  },
+  {
+    "word": "this",
+    "start": 6.14,
+    "end": 6.38
+  },
+  {
+    "word": "way.",
+    "start": 6.38,
+    "end": 6.58
+  }
+]

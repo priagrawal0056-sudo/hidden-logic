@@ -1,0 +1,8 @@
+edge-tts
+requests
+google-api-python-client
+google-auth-oauthlib
+
+# optional but STRONGLY recommended for best voice + perfect caption sync:
+# pip install kokoro soundfile torch faster-whisper
+pytrends
