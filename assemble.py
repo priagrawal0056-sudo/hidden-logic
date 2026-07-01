@@ -287,7 +287,7 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
     font = _find_font()
     if font:
         ff = f":fontfile='{_ff(font)}'"
-        brand = ("drawtext=text='Hidden Logic':x=40:y=46:fontsize=46:fontcolor=white:"
+        brand = ("drawtext=text='Hidden Logic':x=40:y=186:fontsize=46:fontcolor=white:"
                  "box=1:boxcolor=0x000000@0.38:boxborderw=16:"
                  "shadowcolor=0x000000@0.6:shadowx=2:shadowy=2" + ff)
         badge = ""
@@ -314,7 +314,7 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
         # Toggle via show_follow_cue in config (default off; test it for ~1 week and watch subs).
         follow = ""
         if show_follow_cue:
-            follow = (",drawtext=text='\u25B6 follow for more':x=44:y=104:fontsize=30:"
+            follow = (",drawtext=text='\u25B6 follow for more':x=44:y=244:fontsize=30:"
                       "fontcolor=0xFFFFFF@0.92:box=1:boxcolor=0x000000@0.30:boxborderw=10:"
                       "shadowcolor=0x000000@0.6:shadowx=2:shadowy=2" + ff)
         # OPENING TEXT HOOK: a big bold claim on-screen for the first ~2.8s. Research: on-
