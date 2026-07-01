@@ -1,13 +1,17 @@
 {
   "gemini_api_key": "",
   "pexels_api_key": "",
-  "videos_per_day": 3,
+  "videos_per_day": 5,
   "voice": "",
   "music_file": "music",
   "music_volume": 0.1,
   "publish_slots": [
+    "10:00",
+    "12:00",
+    "13:00",
     "17:00",
-    "20:00"
+    "20:00",
+    "21:00"
   ],
   "llm_provider": "gemini",
   "tts_engine": "auto",
@@ -33,6 +37,6 @@
   ],
   "bank_videos_per_day": 2,
   "draft_buffer_multiplier": 1.4,
-  "post_first_immediately": true,
+  "post_first_immediately": false,
   "show_follow_cue": true
 }
