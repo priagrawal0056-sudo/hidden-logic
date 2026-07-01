@@ -1,8 +1,8 @@
 {
-  "generated": 15,
-  "published": 14,
+  "generated": 20,
+  "published": 19,
   "dropped": 1,
-  "avg_quality": 45.7,
+  "avg_quality": 46.3,
   "drop_reasons": {
     "hook_not_physical": 0,
     "first_frame_low": 0,
@@ -11,8 +11,8 @@
     "viewer_identity_low": 0,
     "title_score_low": 0,
     "quality_floor": 0,
-    "other": 7,
-    "winner_clone": 0,
+    "other": 8,
+    "winner_clone": 1,
     "subcluster_clone": 0
   }
 }

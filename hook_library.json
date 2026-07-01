@@ -317,5 +317,60 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Drive Too Close",
+    "hook_text": "You're flooring it, but that car ahead isn't moving.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction -> Reveal",
+    "first_frame_description": "POV from inside a car, foot pressing the accelerator, looking through the windshield at a car directly ahead that appears to be moving very slowly or not at all, despite the speedometer showing a high speed.",
+    "visual_thesis": "A car ahead appears static or barely moving despite your high speed, due to a brain glitch in perceiving direct approach, leading to tailgating.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Hotel Mirror Is Never For You",
+    "hook_text": "You walk into your hotel room.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Object Identification -> Contradiction/Mystery",
+    "first_frame_description": "POV shot of a person walking into a standard hotel room, immediately focusing on a large mirror positioned opposite the bed.",
+    "visual_thesis": "A large mirror in a hotel room is deliberately placed to create an illusion of luxury and justify price, not just for aesthetics.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Supermarkets Always Move The Eggs",
+    "hook_text": "You reach for the eggs, but the shelf is empty.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A first-person view of a hand reaching toward a grocery shelf where an 'Eggs' sign is visible, but the shelf is completely bare.",
+    "visual_thesis": "Supermarket aisle resets are psychological triggers designed to break consumer habits and increase impulse spending.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Restaurant Menu Feels Too Big",
+    "hook_text": "You grab a restaurant menu.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System",
+    "first_frame_description": "A close-up shot of a hand reaching for and picking up an unusually large, multi-page restaurant menu on a table. The menu immediately looks cumbersome.",
+    "visual_thesis": "Restaurant menus are deliberately designed to be overwhelming, not to offer choice, but to manipulate your ordering decisions and overall experience.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Laugh At The Worst Times",
+    "hook_text": "You just laughed at the worst possible moment.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Contradiction",
+    "first_frame_description": "A close-up on a person's face, eyes wide with a mix of embarrassment and an uncontrollable, nervous giggle escaping their lips, in a solemn or tense environment (e.g., a quiet funeral, a serious meeting).",
+    "visual_thesis": "Nervous laughter isn't awkward; it's a deliberate, primal signal to disarm others in tense situations.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

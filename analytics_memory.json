@@ -348,8 +348,8 @@
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 3.4,
-      "avg_likes_per_1000_views": 14.8,
+      "avg_comments_per_1000_views": 3.1,
+      "avg_likes_per_1000_views": 15.7,
       "avg_returning_viewers": null
     },
     "Why Airport seating": {
@@ -371,7 +371,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 5.7,
+      "avg_likes_per_1000_views": 4.7,
       "avg_returning_viewers": null
     },
     "Why Milk Is Never Near The Entrance": {
@@ -382,7 +382,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 10.9,
+      "avg_likes_per_1000_views": 9.1,
       "avg_returning_viewers": null
     },
     "Why the leader almost never gets overtaken on the last lap": {
@@ -393,7 +393,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 26.3,
+      "avg_likes_per_1000_views": 24.0,
       "avg_returning_viewers": null
     },
     "ON-DEMAND video about Why YouTube Autoplays The Next Video. Tell the single most relatable, surprising explanation behind this universal human experience. Avoid academic design jargon. Make it highly visual, relatable, and focus on the everyday annoyance or quirk of Why YouTube Autoplays The Next Video.": {
@@ -415,7 +415,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 6.5,
       "avg_returning_viewers": null
     },
     "Why people copying accents keeps happening no matter what": {
@@ -426,7 +426,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.7,
+      "avg_likes_per_1000_views": 8.8,
       "avg_returning_viewers": null
     },
     "Why buying things you don't need is definitely not an accident": {
@@ -437,7 +437,29 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 11.3,
+      "avg_likes_per_1000_views": 8.6,
+      "avg_returning_viewers": null
+    },
+    "Why injury time feels longer than it is": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
+      "avg_returning_viewers": null
+    },
+    "Why Manholes Are Round": {
+      "count": 1,
+      "avg_views_first_60m": 38.0,
+      "avg_views_first_6h": 38.0,
+      "avg_views_first_24h": 38.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 26.3,
       "avg_returning_viewers": null
     }
   },
@@ -483,7 +505,7 @@
       "avg_stayed_to_watch": 55.0,
       "avg_avd": 12.4,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 169.2,
+      "avg_likes_per_1000_views": 166.7,
       "avg_returning_viewers": 35.0
     },
     "airport": {
@@ -505,7 +527,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.5,
+      "avg_likes_per_1000_views": 7.4,
       "avg_returning_viewers": null
     },
     "hotel": {
@@ -570,8 +592,8 @@
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 1.7,
-      "avg_likes_per_1000_views": 11.8,
+      "avg_comments_per_1000_views": 1.6,
+      "avg_likes_per_1000_views": 11.1,
       "avg_returning_viewers": null
     },
     "social_behavior": {
@@ -582,7 +604,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.7,
+      "avg_likes_per_1000_views": 8.8,
       "avg_returning_viewers": null
     },
     "decision_making": {
@@ -593,7 +615,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 11.3,
+      "avg_likes_per_1000_views": 8.6,
       "avg_returning_viewers": null
     }
   },
@@ -650,7 +672,7 @@
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 90.9,
+      "avg_likes_per_1000_views": 83.3,
       "avg_returning_viewers": null
     },
     "escalators": {
@@ -979,8 +1001,8 @@
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 3.4,
-      "avg_likes_per_1000_views": 14.8,
+      "avg_comments_per_1000_views": 3.1,
+      "avg_likes_per_1000_views": 15.7,
       "avg_returning_viewers": null
     },
     "gate-seating": {
@@ -1002,7 +1024,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 5.7,
+      "avg_likes_per_1000_views": 4.7,
       "avg_returning_viewers": null
     },
     "store-layout-traps": {
@@ -1013,7 +1035,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 12.2,
+      "avg_likes_per_1000_views": 10.9,
       "avg_returning_viewers": null
     },
     "racing-strategy": {
@@ -1024,7 +1046,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 26.3,
+      "avg_likes_per_1000_views": 24.0,
       "avg_returning_viewers": null
     },
     "autoplay_mechanisms": {
@@ -1057,7 +1079,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 6.5,
       "avg_returning_viewers": null
     },
     "social-mimicry": {
@@ -1068,7 +1090,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.7,
+      "avg_likes_per_1000_views": 8.8,
       "avg_returning_viewers": null
     },
     "Supermarket Design Tricks": {
@@ -1079,7 +1101,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 11.3,
+      "avg_likes_per_1000_views": 8.6,
       "avg_returning_viewers": null
     },
     "store-layout-manipulation": {
@@ -1090,20 +1112,42 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 9.5,
+      "avg_likes_per_1000_views": 7.2,
+      "avg_returning_viewers": null
+    },
+    "time_perception": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
+      "avg_returning_viewers": null
+    },
+    "Safety": {
+      "count": 1,
+      "avg_views_first_60m": 38.0,
+      "avg_views_first_6h": 38.0,
+      "avg_views_first_24h": 38.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 26.3,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 46,
-      "avg_views_first_60m": 399.0,
-      "avg_views_first_6h": 555.1,
-      "avg_views_first_24h": 949.4,
+      "count": 48,
+      "avg_views_first_60m": 373.2,
+      "avg_views_first_6h": 515.3,
+      "avg_views_first_24h": 797.5,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 88.4,
-      "avg_likes_per_1000_views": 132.2,
+      "avg_comments_per_1000_views": 83.5,
+      "avg_likes_per_1000_views": 125.3,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
