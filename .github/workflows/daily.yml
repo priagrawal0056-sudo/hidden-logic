@@ -11,7 +11,7 @@ on:
     # cron is in UTC. Pick a time when you want the run to START.
     # Example: 09:30 UTC. Find your local time -> convert to UTC.
     # (e.g. if you want 3:00pm Singapore time = 07:00 UTC, use '0 7 * * *')
-    - cron: '0 4 * * *'
+    - cron: '0 2 * * *'
   # also lets you trigger a run by hand from the Actions tab (great for testing)
   workflow_dispatch:
 
