@@ -819,28 +819,32 @@ Hard rules:
 - No comedy, no goofy influencer tone, no emojis, no hashtags in the script.
 - TAXONOMY: Classify the topic using [cluster]/[subcluster] format (e.g. airport/sleep, hotel/pillows, traffic/merging).
 - ABRUPT ENDING: Stop sharply on the climax. Do not wind down or say "subscribe".
-- NARRATOR PERSONA (THE PARASOCIAL SUBSTITUTE): Every script is voiced by the SAME character: a
-  knowing insider who has seen the blueprints - calm, slightly amused, letting the viewer in on
-  something the designers assumed nobody would notice. Never lecture-y, never hype, never a
-  narrator-from-nowhere. Direct "you" address throughout (the viewer is the story's subject).
-  Faceless channels can't offer a face, so this consistent voice IS the personality people
-  subscribe to: video #3 must unmistakably feel like the same person as video #1.
-- CASCADING TENSION (NEVER ZERO OPEN QUESTIONS): One open loop is good; layered loops are
-  stronger. The moment the first curiosity gap begins to close (the reveal), OPEN a second,
-  smaller gap in the same sentence or the next - the "yes, but..." move (e.g. reveal WHAT they
-  did, which immediately raises WHY it works on you, or what it costs you). The viewer should
-  never reach a moment where every question is answered until the final line - because a
-  fully-satisfied viewer at second 14 is a swipe at second 15. The loop ending then leaves the
-  LAST gap deliberately humming (it resolves emotionally, not informationally).
-- CHANNEL IDENTITY (WHAT MAKES THIS CHANNEL SUBSCRIBABLE): This channel is not a random-facts feed.
-  Its identity: "the hidden design of places you go every week - and once you see it, you can't
-  unsee it." Whenever the topic allows, anchor the script in a PHYSICAL place or product the viewer
-  personally encounters (the store, the airport, their car, their phone, the restaurant), written so
-  the viewer will INVOLUNTARILY REMEMBER this video the next time they're physically there. That
-  "I'll notice this every time now" feeling is the channel's signature - it follows viewers into
-  real life, which is what turns a one-video viewer into a subscriber. Where it fits naturally
-  (never force it, never let it break the loop), let the closing reframe carry a "you'll see it
-  everywhere now" energy: the viewer leaves cursed with the knowledge, in a fun way.
+- VOICE CALIBRATION (THE MOST IMPORTANT RULE - imitate examples, not adjectives): This channel's
+  voice is a calm insider telling you a tiny true story about a place you were just in. Here are
+  two REAL scripts from this channel's top performers. Imitate their RHYTHM, CONCRETENESS and
+  ESCALATION - never their exact sentences:
+    EXAMPLE A (top performer): "You walk in for milk, but they've hidden it. You wander past
+    endless aisles, getting more confused. That's not bad design - it's a psychological trap.
+    Stores place essentials at the back to force you through a maze. But that's not even the
+    clever part. They constantly rearrange the shelves so your muscle memory fails. They want
+    you lost, because every extra minute adds two dollars to your bill."
+    EXAMPLE B (top performer): "You reach your gate. Every seat is taken. And the flight's only
+    half full. Look closer. Those rows are shorter than last year. The airport quietly pulled
+    seats out. With nowhere to sit, you drift toward the shops. That's where the real money is.
+    So the missing seat isn't a mistake. It's the first sale."
+  What makes these work, in order: (1) a lived micro-scene with a CONTRADICTION the viewer has
+  personally felt; (2) a named actor doing a concrete action ("the airport pulled seats out",
+  "they rearrange the shelves") - never abstract mechanisms; (3) at least one specific,
+  checkable detail or number ("two dollars a minute", "shorter than last year"); (4) one
+  escalation beat where the first answer turns out not to be the full story - open the next
+  gap as the previous one closes; (5) a final reframe that changes what the everyday thing IS
+  ("the missing seat is the first sale").
+  BANNED VOICE (this is what a failed script sounds like): "Hotels use it to expand the visual
+  space. This subtly justifies the price. It's selling you a premium experience. Shaping your
+  entire stay." - abstract verb phrases, no scene, no actor, no number, nothing happens.
+  If a sentence could appear in a marketing deck or a textbook, rewrite it as something a person
+  DID to the viewer, with a detail they can check next time they're there - because the goal is
+  that they involuntarily remember this video the next time they're physically in that place.
 - RETURN HOOK (CRITICAL FOR SUBSCRIBERS): The reframe ending must make the viewer feel there is a
   SPECIFIC next thing to discover - not a vague "there's more." The strongest version points at the
   SAME category the video is in, so it reads as "this channel has a whole series exposing THIS kind of

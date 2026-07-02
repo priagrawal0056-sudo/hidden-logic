@@ -188,6 +188,19 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
     # video graph: each segment = trim + oversize scale + panning crop
     fc = []
     seg_labels = []
+    # Probe each b-roll clip's real duration once, so reuse offsets (below) can never trim
+    # past the end of a short clip. A failed probe stores None -> that clip simply never
+    # gets an offset (safe fallback to old behavior).
+    def _probe_dur(p):
+        try:
+            r = subprocess.run(["ffprobe", "-v", "quiet", "-show_entries", "format=duration",
+                                "-of", "csv=p=0", p], capture_output=True, text=True, timeout=15)
+            return float(r.stdout.strip())
+        except Exception:
+            return None
+    _bg_durs = [_probe_dur(p) for p in bg_paths]
+    _src_use_count = {}
+
     for s in range(n_segs):
         seg_len = durs_array[s]
         frames = int(seg_len * 30)
@@ -198,7 +211,25 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
             src = 0
         else:
             src = s % len(bg_paths)
-        base = (f"[{src}:v]trim=duration={seg_len},setpts=PTS-STARTPTS,"
+        # REUSE OFFSET: when clip supply < segment count, the same clip serves multiple segments.
+        # Previously every segment trimmed from t=0, so a reused clip replayed its EXACT same
+        # opening seconds - visibly "the same clip again". Now each reuse advances its start
+        # offset (~3.5s stride, clamped to the clip's real length), so reuse #2 shows a later
+        # window of the footage - it reads as a different shot of the same scene, which is
+        # exactly what scene consistency wants. The loop-back final segment stays at t=0 ON
+        # PURPOSE: it must mirror the opening frame for the seamless loop. Probe failures
+        # fall back to offset 0 (today's behavior, no worse).
+        if n_segs >= 3 and s == n_segs - 1:
+            start_off = 0.0
+        else:
+            prior_uses = _src_use_count.get(src, 0)
+            clip_dur = _bg_durs[src]
+            start_off = 0.0
+            if prior_uses > 0 and clip_dur and clip_dur > (seg_len + 0.1):
+                start_off = min(prior_uses * 3.5, max(0.0, clip_dur - seg_len - 0.05))
+            _src_use_count[src] = prior_uses + 1
+        base = (f"[{src}:v]trim=start={start_off:.2f}:duration={seg_len},"
+                f"setpts=PTS-STARTPTS,"
                 f"scale={PAN_SCALE_W}:{PAN_SCALE_H}:force_original_aspect_ratio=increase,"
                 f"crop={PAN_SCALE_W}:{PAN_SCALE_H},setsar=1,fps=30,")
         kind = s % 3
