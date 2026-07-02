@@ -6,12 +6,11 @@
   "music_file": "music",
   "music_volume": 0.1,
   "publish_slots": [
-    "10:00",
+    "04:00",
+    "05:00",
+    "09:00",
     "12:00",
-    "13:00",
-    "17:00",
-    "20:00",
-    "21:00"
+    "14:00"
   ],
   "llm_provider": "gemini",
   "tts_engine": "auto",
