@@ -17,6 +17,115 @@ _RATE_LIMITED: set = set()
 CACHE_FILE = "used_clips.json"
 _SCORE_CACHE: dict = {}
 
+# Optional local proof-clip library: drop hand-picked portrait .mp4s into
+# broll_library/<concept>/ (e.g. broll_library/driving/) and the pipeline will use them as a
+# reliable, always-on-anchor fallback. Lets you permanently fix a weak niche.
+BROLL_LIBRARY_DIR = "broll_library"
+
+# Curated, scene-CONSISTENT proof-query banks per concept. Every query in a bank shows the SAME
+# subject/setting, and each bank front-loads shots that VISUALLY PROVE the mechanism (not just
+# scenery). Used to (a) supply anchor-consistent fallbacks and (b) inject a couple of proof
+# shots, so a video never drifts to a different subject (a car video never cuts to a motorcycle).
+SCENE_LIBRARY = {
+    "driving": {
+        "anchor": "a CAR being driven / car traffic (NOT a motorcycle, scooter, bicycle, boat, train or plane)",
+        "queries": ["car driving pov dashboard highway", "car brake lights close up",
+                    "cars bumper to bumper traffic jam", "rear view mirror car approaching",
+                    "highway traffic cars", "car dashboard speedometer close up",
+                    "cars driving close together", "traffic congestion cars"],
+    },
+    "supermarket": {
+        "anchor": "a supermarket / grocery store interior",
+        "queries": ["supermarket aisle wide shot", "grocery store shelves products",
+                    "shopping cart pushing supermarket", "checkout counter groceries scanning",
+                    "supermarket dairy fridge section", "person browsing supermarket shelves"],
+    },
+    "airport": {
+        "anchor": "an airport terminal / air travel",
+        "queries": ["airport terminal walking travelers", "airport departure board gates",
+                    "airport gate waiting seats", "boarding pass close up hand",
+                    "airplane window wing view", "luggage carousel baggage claim"],
+    },
+    "hotel": {
+        "anchor": "a hotel interior",
+        "queries": ["hotel hallway corridor doors", "hotel room bed white sheets",
+                    "hotel lobby reception desk", "keycard hotel door opening"],
+    },
+    "restaurant": {
+        "anchor": "a restaurant / dining setting",
+        "queries": ["restaurant interior tables diners", "restaurant menu close up hands",
+                    "waiter serving food restaurant", "fast food counter ordering"],
+    },
+    "elevator": {
+        "anchor": "an elevator / lift interior",
+        "queries": ["elevator interior doors closing", "elevator buttons panel close up",
+                    "person waiting elevator lobby", "elevator mirror interior"],
+    },
+    "phone": {
+        "anchor": "a smartphone / phone screen being used",
+        "queries": ["person scrolling smartphone close up", "phone notification screen close up",
+                    "hand holding phone texting", "smartphone app scrolling thumb"],
+    },
+    "money": {
+        "anchor": "shopping / prices / paying",
+        "queries": ["price tag close up store", "hand paying card contactless",
+                    "cash register receipt printing", "sale discount tags shop"],
+    },
+}
+
+_CONCEPT_KEYWORDS = {
+    "driving": ["car", "drive", "driving", "traffic", "road", "highway", "lane", "tailgat",
+                "brake", "steering", "speedometer", "commute", "merge", "windshield"],
+    "supermarket": ["supermarket", "grocery", "groceries", "store", "aisle", "checkout", "cart",
+                    "shelf", "shelves", "milk", "dairy"],
+    "airport": ["airport", "flight", "plane", "airplane", "gate", "boarding", "terminal",
+                "luggage", "airline", "flying"],
+    "hotel": ["hotel", "lobby", "sheets", "hallway", "keycard"],
+    "restaurant": ["restaurant", "menu", "diner", "waiter", "buffet", "cafe", "dining"],
+    "elevator": ["elevator", "lift", "escalator"],
+    "phone": ["phone", "smartphone", "app", "scroll", "notification", "swipe", "texting"],
+    "money": ["price", "sale", "discount", "spend", "spending", "buy", "buying", "cost", ".99", "coupon"],
+}
+
+
+def _detect_concept(topic: str, keywords: list, visual_thesis: str = "") -> str | None:
+    """Detect the video's dominant scene concept so ALL clips stay consistent (no car->motorcycle
+    drift) and can be biased toward proof shots."""
+    blob = " ".join([str(topic), str(visual_thesis)] + [str(k) for k in (keywords or [])]).lower()
+    best, best_hits = None, 0
+    for concept, kws in _CONCEPT_KEYWORDS.items():
+        hits = sum(1 for k in kws if k in blob)
+        if hits > best_hits:
+            best, best_hits = concept, hits
+    # Only lock a concept when it's clearly dominant (>=2 signal words); abstract topics
+    # (memory/perception/social) stay unlocked so we don't force a wrong anchor on them.
+    return best if best_hits >= 2 else None
+
+
+def _library_clip(concept: str, downloaded_ids: set, dst_path: str) -> bool:
+    """Copy a hand-picked local clip from broll_library/<concept>/ into dst_path if one is
+    available and unused this video (portrait .mp4). Returns True on success."""
+    if not concept:
+        return False
+    lib = os.path.join(BROLL_LIBRARY_DIR, concept)
+    if not os.path.isdir(lib):
+        return False
+    import shutil
+    for fn in sorted(os.listdir(lib)):
+        if not fn.lower().endswith(".mp4"):
+            continue
+        vid_id = "lib_" + concept + "_" + fn
+        if vid_id in downloaded_ids:
+            continue
+        try:
+            shutil.copy(os.path.join(lib, fn), dst_path)
+            downloaded_ids.add(vid_id)
+            print(f"[visuals] Used local library clip: {concept}/{fn}")
+            return True
+        except Exception:
+            continue
+    return False
+
 def _load_used():
     if os.path.exists(CACHE_FILE):
         try:
@@ -209,7 +318,7 @@ def _get_description(vid: dict) -> str:
 
 def _score_candidates(gemini_key: str, query: str, candidates: list[dict],
                       visual_thesis: str, first_frame_description: str,
-                      topic: str, is_first_frame: bool) -> dict[str, float]:
+                      topic: str, is_first_frame: bool, anchor: str = "") -> dict[str, float]:
     """Score candidates using Gemini. Returns a dict of vid_id -> score (0.0 to 10.0)."""
     if not gemini_key or not candidates:
         return {c["id"]: 10.0 for c in candidates}
@@ -219,7 +328,8 @@ def _score_candidates(gemini_key: str, query: str, candidates: list[dict],
         query,
         visual_thesis,
         first_frame_description,
-        is_first_frame
+        is_first_frame,
+        anchor,
     )
     if cache_key in _SCORE_CACHE:
         print(f"[visuals] Score cache hit for query: '{query}'")
@@ -231,6 +341,13 @@ def _score_candidates(gemini_key: str, query: str, candidates: list[dict],
         desc = _get_description(c)
         candidate_items.append(f"- ID: {c['id']} | Description: {desc}")
     candidates_str = "\n".join(candidate_items)
+
+    anchor_line = ""
+    if anchor:
+        anchor_line = ("\nSCENE ANCHOR (CRITICAL for consistency): every clip in this video must show "
+                       f"{anchor}. Give a score of 0 to ANY clip that shows a different subject, vehicle, "
+                       "or setting than the anchor (even if it looks nice) - the video must never drift to "
+                       "an inconsistent scene.")
 
     prompt = f"""You are a video editor scoring footage for a YouTube Short.
 The Short is about: "{topic}"
@@ -244,7 +361,7 @@ Please score each candidate from 0 to 10 on:
 3. Not being generic, boring, or irrelevant (e.g. random abstract patterns, nature shots, or disconnected footage).
 
 For the first frame (is_first_frame={is_first_frame}), the footage MUST instantly and visually communicate the topic without needing audio or text.
-
+{anchor_line}
 Candidates:
 {candidates_str}
 
@@ -279,7 +396,7 @@ Respond ONLY with a JSON object in this format:
 def _search_and_score(keys: dict, gemini_api_key: str | None, query: str,
                       visual_thesis: str, first_frame_description: str,
                       topic: str, is_first_frame: bool, threshold: float,
-                      skip_scoring: bool = False) -> tuple[list[dict], list[dict]]:
+                      skip_scoring: bool = False, anchor: str = "") -> tuple[list[dict], list[dict]]:
     """Search candidates across providers and score them. Returns (filtered_candidates, all_candidates_sorted)."""
     vids = _search_all(keys, query)
     if not vids:
@@ -288,7 +405,7 @@ def _search_and_score(keys: dict, gemini_api_key: str | None, query: str,
     if gemini_api_key and not skip_scoring:
         scores = _score_candidates(gemini_api_key, query, vids,
                                   visual_thesis, first_frame_description,
-                                  topic, is_first_frame)
+                                  topic, is_first_frame, anchor=anchor)
         for vid in vids:
             vid["score"] = scores.get(vid["id"], 0.0)
         vids.sort(key=lambda x: x.get("score", 0.0), reverse=True)
@@ -303,10 +420,16 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                       pixabay_key: str | None = None, gemini_api_key: str | None = None,
                       visual_thesis: str = "", first_frame_description: str = "", topic: str = "") -> list[str]:
     keys = {"pexels": api_key, "pixabay": pixabay_key}
+    # Lock the whole video to ONE scene concept so clips never drift to a different subject
+    # (the car -> motorcycle problem). anchor is fed to the scorer to reject off-anchor clips.
+    concept = _detect_concept(topic, keywords, visual_thesis)
+    anchor = SCENE_LIBRARY.get(concept, {}).get("anchor", "") if concept else ""
+    if concept:
+        print(f"[visuals] Scene concept: '{concept}' | anchor lock: {anchor}")
     used = _load_used()
     downloaded_ids: set = set()
     paths: list = []
-    
+
     if not keywords:
         keywords = ["cinematic documentary", "abstract logic", "modern design"]
         
@@ -323,7 +446,7 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
         # Search and score candidates
         vids, all_vids = _search_and_score(keys, gemini_api_key, cleaned_q,
                                            visual_thesis, first_frame_description,
-                                           topic, is_first_frame, threshold)
+                                           topic, is_first_frame, threshold, anchor=anchor)
         found = False
         
         # Pass 1: Strict mode - avoid clips used in past videos AND avoid clips already used in THIS video
@@ -384,22 +507,12 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
         # clearly topic-relevant (airport terminal, supermarket aisle, etc.) are still allowed
         # for the first frame; only the generic catch-alls are withheld.
         if not found:
-            q_lower = q.lower()
             generic_fallbacks = ["moody dark", "cinematic shadow", "abstract geometry", "mysterious lighting"]
-            niche_fallbacks = []
-            if any(w in q_lower for w in ["clock", "snooze", "alarm", "sleep", "wake", "bed"]):
-                niche_fallbacks = ["alarm clock", "sleeping bed"]
-            elif any(w in q_lower for w in ["airport", "plane", "flight", "gate"]):
-                niche_fallbacks = ["airplane flying", "airport terminal"]
-            elif any(w in q_lower for w in ["store", "supermarket", "grocery", "mall", "shop", "dairy", "milk", "vegetable"]):
-                niche_fallbacks = ["shopping cart", "supermarket aisle"]
-            elif any(w in q_lower for w in ["hotel", "room", "lobby"]):
-                niche_fallbacks = ["hotel lobby", "hotel room"]
-            elif any(w in q_lower for w in ["traffic", "car", "road", "lane"]):
-                niche_fallbacks = ["highway night", "traffic cars"]
-            elif any(w in q_lower for w in ["elevator", "buttons", "mirror"]):
-                niche_fallbacks = ["elevator elevator"]
-            # First frame: niche (on-topic) fallbacks only. Other frames: niche + generic.
+            # Anchor-consistent, proof-oriented fallbacks from the scene library: keeps the whole
+            # video on ONE subject and biased toward shots that DEMONSTRATE the mechanism, instead
+            # of the old thin "traffic cars"-style fallback that let a car video drift to a bike.
+            niche_fallbacks = list(SCENE_LIBRARY.get(concept, {}).get("queries", []))
+            # First frame: on-anchor library fallbacks only (never a generic dark shot).
             fallbacks = niche_fallbacks if is_first_frame else (niche_fallbacks + generic_fallbacks)
 
             for fq in fallbacks:
@@ -407,7 +520,7 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                 fvids, fall_vids = _search_and_score(keys, gemini_api_key, fq,
                                                      visual_thesis, first_frame_description,
                                                      topic, is_first_frame, threshold,
-                                                     skip_scoring=True)
+                                                     skip_scoring=True, anchor=anchor)
                 for vid in fvids:
                     vid_id = str(vid["id"])
                     if vid_id in downloaded_ids:
@@ -439,6 +552,14 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                     found = True
                     print(f"[visuals] Downloaded relaxed score fallback: {vid_id} (score: {vid.get('score')})")
                     break
+
+        # Pass 4.7: hand-picked LOCAL proof-clip library (always on-anchor) - use this before we
+        # resort to deferring or duplicating, so weak niches can be permanently fixed by the operator.
+        if not found and concept:
+            out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
+            if _library_clip(concept, downloaded_ids, out):
+                paths.append(out)
+                found = True
 
         # Pass 5: Last resort - duplicate previous downloaded clip to preserve segment pacing.
         # For the FIRST frame there is no previous clip, and we refuse to open on a generic one.

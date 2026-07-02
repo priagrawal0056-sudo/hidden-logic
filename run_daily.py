@@ -127,10 +127,8 @@ HASHTAG_STOPWORDS = {
 # consistent, keyword-rich signal about what the channel is (search categorization + channel
 # identity) and tells viewers what to expect. It's the same on every video by design.
 CHANNEL_BLURB = (
-    "Hidden Logic uncovers the hidden reasons behind everyday experiences. Explore airport "
-    "design, hotel layouts, supermarket tricks, traffic systems, consumer behavior, urban "
-    "planning, travel psychology, and the fascinating logic behind the world around us. New "
-    "Shorts daily featuring surprising facts, relatable frustrations, and unexpected explanations."
+    "Hidden Logic reveals the hidden reasons behind everyday things you never stop to question. "
+    "New Shorts every day."
 )
 
 

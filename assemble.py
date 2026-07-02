@@ -220,8 +220,9 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
         "[vcat]curves=preset=medium_contrast,"
         "eq=contrast=1.08:brightness=0.012:saturation=1.20:gamma=0.98,"
         "colorbalance=rs=-0.04:gs=-0.01:bs=0.04:rh=0.04:gh=0.01:bh=-0.03,"
-        "unsharp=5:5:0.45:5:5:0.0,vignette=angle=PI/4.6,"
-        f"drawbox=x=0:y={H-10}:w='iw*t/{duration:.2f}':h=10:color=0xFFC800@0.95:t=fill"
+        "unsharp=5:5:0.45:5:5:0.0,vignette=angle=PI/4.6"
+        # (removed the burned-in gold progress bar: it sat in the bottom 10px, exactly where
+        #  YouTube's own Shorts progress bar + title overlay it, so it was redundant/covered.)
         "[vgrade]"
     )
     # ZOOM-PUNCH on emphasis beats: brief scale pulse synced to key words (a real
@@ -288,8 +289,8 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
     if font:
         ff = f":fontfile='{_ff(font)}'"
         brand = ("drawtext=text='Hidden Logic':x=40:y=186:fontsize=46:fontcolor=white:"
-                 "box=1:boxcolor=0x000000@0.38:boxborderw=16:"
-                 "shadowcolor=0x000000@0.6:shadowx=2:shadowy=2" + ff)
+                 "box=1:boxcolor=0x000000@0.55:boxborderw=16:"
+                 "shadowcolor=0x000000@0.7:shadowx=2:shadowy=2" + ff)
         badge = ""
         if brand_label:
             bl = _esc(brand_label.upper())
