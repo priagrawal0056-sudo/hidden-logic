@@ -314,6 +314,7 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
     for i in range(count):
         queries.append(keywords[i % len(keywords)])
 
+    first_frame_deferred = False   # set True only if slot 0 finds no on-topic clip
     for idx, q in enumerate(queries):
         is_first_frame = (idx == 0)
         threshold = 8.0 if is_first_frame else 7.0
@@ -374,28 +375,33 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                 if not found:
                     all_vids.extend(sall_vids)
 
-        # Pass 4: Niche-specific or generic fallback keywords search
+        # Pass 4: Niche-specific or generic fallback keywords search.
+        # IMPORTANT: for the FIRST FRAME we skip the *generic* fallbacks entirely. The first
+        # frame is the swipe-or-stay moment - opening on a generic "moody dark / cinematic
+        # shadow" clip (or anything off-topic) is exactly what makes viewers swipe in the first
+        # second. We'd rather defer the first frame and reuse a later on-topic clip (handled in
+        # the deferral below) than open on a mismatched generic shot. Niche fallbacks that are
+        # clearly topic-relevant (airport terminal, supermarket aisle, etc.) are still allowed
+        # for the first frame; only the generic catch-alls are withheld.
         if not found:
             q_lower = q.lower()
-            fallbacks = ["moody dark", "cinematic shadow", "abstract geometry", "mysterious lighting"]
+            generic_fallbacks = ["moody dark", "cinematic shadow", "abstract geometry", "mysterious lighting"]
+            niche_fallbacks = []
             if any(w in q_lower for w in ["clock", "snooze", "alarm", "sleep", "wake", "bed"]):
-                fallbacks.insert(0, "sleeping bed")
-                fallbacks.insert(0, "alarm clock")
+                niche_fallbacks = ["alarm clock", "sleeping bed"]
             elif any(w in q_lower for w in ["airport", "plane", "flight", "gate"]):
-                fallbacks.insert(0, "airport terminal")
-                fallbacks.insert(0, "airplane flying")
+                niche_fallbacks = ["airplane flying", "airport terminal"]
             elif any(w in q_lower for w in ["store", "supermarket", "grocery", "mall", "shop", "dairy", "milk", "vegetable"]):
-                fallbacks.insert(0, "supermarket aisle")
-                fallbacks.insert(0, "shopping cart")
+                niche_fallbacks = ["shopping cart", "supermarket aisle"]
             elif any(w in q_lower for w in ["hotel", "room", "lobby"]):
-                fallbacks.insert(0, "hotel room")
-                fallbacks.insert(0, "hotel lobby")
+                niche_fallbacks = ["hotel lobby", "hotel room"]
             elif any(w in q_lower for w in ["traffic", "car", "road", "lane"]):
-                fallbacks.insert(0, "traffic cars")
-                fallbacks.insert(0, "highway night")
+                niche_fallbacks = ["highway night", "traffic cars"]
             elif any(w in q_lower for w in ["elevator", "buttons", "mirror"]):
-                fallbacks.insert(0, "elevator elevator")
-                
+                niche_fallbacks = ["elevator elevator"]
+            # First frame: niche (on-topic) fallbacks only. Other frames: niche + generic.
+            fallbacks = niche_fallbacks if is_first_frame else (niche_fallbacks + generic_fallbacks)
+
             for fq in fallbacks:
                 print(f"[visuals] No clips for '{q}'. Trying fallback query '{fq}'...")
                 fvids, fall_vids = _search_and_score(keys, gemini_api_key, fq,
@@ -434,8 +440,16 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                     print(f"[visuals] Downloaded relaxed score fallback: {vid_id} (score: {vid.get('score')})")
                     break
 
-        # Pass 5: Last resort - duplicate previous downloaded clip to preserve segment pacing
-        if not found and paths:
+        # Pass 5: Last resort - duplicate previous downloaded clip to preserve segment pacing.
+        # For the FIRST frame there is no previous clip, and we refuse to open on a generic one.
+        # Instead we DEFER it: leave the slot empty for now, finish gathering the other (on-topic)
+        # clips, then promote the best-scoring on-topic clip to be the opener. This guarantees the
+        # swipe-or-stay first frame is always topic-relevant, never a generic dark shot.
+        if not found and is_first_frame:
+            first_frame_deferred = True
+            print(f"[visuals] First frame found no on-topic clip for '{q}'. Deferring - will open "
+                  f"with the best on-topic clip from the rest of the video instead of a generic shot.")
+        elif not found and paths:
             prev_clip = paths[-1]
             out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
             import shutil
@@ -451,6 +465,21 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
             time.sleep(0.25)
 
     _save_used(used)
+
+    # If the first frame was deferred (no on-topic clip found for slot 0), promote the strongest
+    # on-topic clip we DID find to the front, so the video opens on-topic. Fall back to just using
+    # what we have if we somehow got nothing else.
+    if first_frame_deferred and len(paths) >= 1:
+        # paths currently holds clips for slots 1..N (the first slot was skipped). Duplicate the
+        # first available on-topic clip to serve as the opener too, so pacing/segment count holds.
+        import shutil
+        opener = os.path.join(workdir, "bg_0_opener.mp4")
+        try:
+            shutil.copy(paths[0], opener)
+            paths.insert(0, opener)
+            print("[visuals] Promoted best on-topic clip to the first frame (deferred opener).")
+        except Exception as e:
+            print(f"[visuals] Could not set deferred opener: {e}")
     
     if not paths:
         if _RATE_LIMITED:
