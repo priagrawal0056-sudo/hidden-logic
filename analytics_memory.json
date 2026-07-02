@@ -41,7 +41,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 5.6,
+      "avg_likes_per_1000_views": 5.5,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by hotel pillows being so big": {
@@ -415,7 +415,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.5,
+      "avg_likes_per_1000_views": 6.6,
       "avg_returning_viewers": null
     },
     "Why people copying accents keeps happening no matter what": {
@@ -426,7 +426,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 8.6,
       "avg_returning_viewers": null
     },
     "Why buying things you don't need is definitely not an accident": {
@@ -461,6 +461,61 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 26.3,
       "avg_returning_viewers": null
+    },
+    "Why your brain thinks the car in front is slower than it is": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
+      "avg_returning_viewers": null
+    },
+    "Why hotel mirrors is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": 9.0,
+      "avg_views_first_6h": 9.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why Supermarkets Rearrange The Aisles": {
+      "count": 1,
+      "avg_views_first_60m": 719.0,
+      "avg_views_first_6h": 719.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 11.1,
+      "avg_returning_viewers": null
+    },
+    "Why restaurant menus being enormous keeps happening no matter what": {
+      "count": 1,
+      "avg_views_first_60m": 6.0,
+      "avg_views_first_6h": 6.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why laughing when nervous is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": 42.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 23.8,
+      "avg_returning_viewers": null
     }
   },
   "clusters": {
@@ -476,7 +531,7 @@
       "avg_returning_viewers": null
     },
     "traffic": {
-      "count": 3,
+      "count": 4,
       "avg_views_first_60m": 69.0,
       "avg_views_first_6h": 270.0,
       "avg_views_first_24h": 860.0,
@@ -505,7 +560,7 @@
       "avg_stayed_to_watch": 55.0,
       "avg_avd": 12.4,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 166.7,
+      "avg_likes_per_1000_views": 164.5,
       "avg_returning_viewers": 35.0
     },
     "airport": {
@@ -593,7 +648,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 1.6,
-      "avg_likes_per_1000_views": 11.1,
+      "avg_likes_per_1000_views": 11.2,
       "avg_returning_viewers": null
     },
     "social_behavior": {
@@ -604,7 +659,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 8.6,
       "avg_returning_viewers": null
     },
     "decision_making": {
@@ -672,7 +727,7 @@
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 83.3,
+      "avg_likes_per_1000_views": 76.9,
       "avg_returning_viewers": null
     },
     "escalators": {
@@ -727,7 +782,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 5.6,
+      "avg_likes_per_1000_views": 5.5,
       "avg_returning_viewers": null
     },
     "consumer_behavior": {
@@ -1061,14 +1116,14 @@
       "avg_returning_viewers": null
     },
     "supermarkets": {
-      "count": 1,
-      "avg_views_first_60m": null,
-      "avg_views_first_6h": null,
+      "count": 2,
+      "avg_views_first_60m": 719.0,
+      "avg_views_first_6h": 719.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 11.1,
       "avg_returning_viewers": null
     },
     "airline-seat-psychology": {
@@ -1079,7 +1134,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.5,
+      "avg_likes_per_1000_views": 6.6,
       "avg_returning_viewers": null
     },
     "social-mimicry": {
@@ -1090,7 +1145,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 8.6,
       "avg_returning_viewers": null
     },
     "Supermarket Design Tricks": {
@@ -1112,7 +1167,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.2,
+      "avg_likes_per_1000_views": 7.3,
       "avg_returning_viewers": null
     },
     "time_perception": {
@@ -1136,18 +1191,62 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 26.3,
       "avg_returning_viewers": null
+    },
+    "perception": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
+      "avg_returning_viewers": null
+    },
+    "psychological_manipulation": {
+      "count": 1,
+      "avg_views_first_60m": 9.0,
+      "avg_views_first_6h": 9.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Restaurant Tricks": {
+      "count": 1,
+      "avg_views_first_60m": 6.0,
+      "avg_views_first_6h": 6.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "social_behavior": {
+      "count": 1,
+      "avg_views_first_60m": 42.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 23.8,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 48,
-      "avg_views_first_60m": 373.2,
-      "avg_views_first_6h": 515.3,
+      "count": 53,
+      "avg_views_first_60m": 333.4,
+      "avg_views_first_6h": 464.6,
       "avg_views_first_24h": 797.5,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 83.5,
-      "avg_likes_per_1000_views": 125.3,
+      "avg_comments_per_1000_views": 68.3,
+      "avg_likes_per_1000_views": 103.8,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

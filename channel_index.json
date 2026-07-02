@@ -3267,5 +3267,70 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "hyrhb2D-DD4",
+    "title": "Why Restaurant Menus Are Always Huge",
+    "topic": "Why Restaurant Menus Are Always Huge",
+    "date": "2026-07-02",
+    "n": 0
+  },
+  {
+    "video_id": "17lpCLeGdkg",
+    "title": "Why You Always Hum That One Song",
+    "topic": "Why You Always Hum That One Song",
+    "date": "2026-07-02",
+    "n": 0
+  },
+  {
+    "video_id": "YTDoNpzOuAw",
+    "title": "Why You Think The Car Ahead Is Crawling",
+    "topic": "Why You Think The Car Ahead Is Crawling",
+    "date": "2026-07-02",
+    "n": 0
+  },
+  {
+    "video_id": "1UxnhC45ucw",
+    "title": "Why Supermarkets Always Move The Bread",
+    "topic": "Why Supermarkets Always Move The Bread",
+    "date": "2026-07-02",
+    "n": 0
+  },
+  {
+    "video_id": "SurD5hhPnmU",
+    "title": "Why You Always Click The Red Arrow",
+    "topic": "Why You Always Click The Red Arrow",
+    "date": "2026-07-02",
+    "n": 0
+  },
+  {
+    "video_id": "8ua-OXp5Jj8",
+    "title": "Why Red Cars Always Look Faster",
+    "topic": "Why drivers in red cars feel faster to you",
+    "date": "2026-07-02",
+    "n": 303,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "pxFDyz531DA",
+    "title": "Why Your Black Tires Should Be White",
+    "topic": "Why Tires Are Always Black",
+    "date": "2026-07-02",
+    "n": 304,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 48.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

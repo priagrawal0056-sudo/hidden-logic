@@ -372,5 +372,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Red Cars Always Look Faster",
+    "hook_text": "You\u2019re merging onto the highway and slam your brakes.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction",
+    "first_frame_description": "POV from a driver's seat looking at a side mirror as a bright red sports car zooms into view, with a 'SPEED' meter overlay that stays constant.",
+    "visual_thesis": "A side-by-side comparison of a red car and a silver car at identical speeds, using a focal-length diagram to show how red light hits the retina.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Black Tires Should Be White",
+    "hook_text": "Your car's black tires? They're actually supposed to be white.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Object -> Contradiction -> Question",
+    "first_frame_description": "Close-up shot of a black car tire, perhaps with a subtle graphic overlay highlighting the black color.",
+    "visual_thesis": "The black color of car tires is a deliberate, engineered design choice for durability and protection, contrasting with their natural white state.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

@@ -1155,15 +1155,17 @@
     "title": "Why The Floor Changes Texture Near Deals",
     "category": "Shopping",
     "viral_score": 9.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Receipts Are So Long Now",
     "category": "Shopping",
     "viral_score": 9.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Cereal Boxes Have So Much Empty Space",
@@ -1183,15 +1185,17 @@
     "title": "Why Planes Board From The Front",
     "category": "Airports",
     "viral_score": 9.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why IKEA Forces You Through The Whole Store",
     "category": "Design",
     "viral_score": 9.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Public Benches Have Armrests In The Middle",
@@ -1218,8 +1222,9 @@
     "title": "Why Winter Kills Your Phone",
     "category": "Technology",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Netflix Knows You're Lying",
@@ -1232,8 +1237,9 @@
     "title": "Why Objects Are Closer Than They Appear",
     "category": "Cars",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Websites Never Forget You",
@@ -1246,15 +1252,17 @@
     "title": "Why Apps Hide The Exit",
     "category": "Internet",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Phone Dies Faster In The Cold",
     "category": "Technology",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Printers Never Work When You Need Them",
@@ -1267,8 +1275,9 @@
     "title": "Why Free Trials Need Your Card",
     "category": "Technology",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Comment Sections Turn Toxic",
@@ -1302,15 +1311,17 @@
     "title": "Why Checkout Lines Are Lined With Magazines",
     "category": "Shopping",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Stores Keep It Slightly Too Cold",
     "category": "Shopping",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Ice Cream Machine Is Always Broken",
@@ -1323,36 +1334,41 @@
     "title": "Why Fast Food Fries Go Cold So Fast",
     "category": "Food",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Best Items Are In The Menu Corner",
     "category": "Food",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Airports Dim The Lights Before Landing",
     "category": "Airports",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Every Elevator Has A Mirror",
     "category": "Design",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Sales Tax Isn't On The Price Tag",
     "category": "Money",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Tipping Screens Now Start At 20 Percent",
@@ -1372,8 +1388,9 @@
     "title": "Why Gym Memberships Are Hard To Quit",
     "category": "Money",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Nobody Reads Terms And Conditions",
@@ -1407,15 +1424,17 @@
     "title": "Why Red Lights Always Catch You",
     "category": "Cars",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Wipers Suddenly Squeak",
     "category": "Cars",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Can't Find The Close Button On Ads",
@@ -1491,22 +1510,25 @@
     "title": "Why Milk Is Always At The Back Of The Store",
     "category": "Shopping",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Black Friday Crowds Make You Spend More",
     "category": "Shopping",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Menus Have No Dollar Signs",
     "category": "Food",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Buffets Put Salad First",
@@ -1526,36 +1548,41 @@
     "title": "Why Fancy Restaurants Serve Tiny Portions",
     "category": "Food",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Duty Free Is After Security",
     "category": "Airports",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Airlines Charge For Carry On Bags",
     "category": "Airports",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Escalator Handrails Move Faster Than The Steps",
     "category": "Design",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Mall Layouts Make You Lose Direction",
     "category": "Design",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Door Handles Are At The Same Height Everywhere",
@@ -1568,8 +1595,9 @@
     "title": "Why Hotel Showers Are So Confusing",
     "category": "Design",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Lottery Jackpots Roll Over",
@@ -1596,15 +1624,17 @@
     "title": "Why Gas Pumps Never Overflow",
     "category": "Cars",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Highway Gas Costs More",
     "category": "Cars",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why WiFi Slows Down When People Visit",
@@ -1617,8 +1647,9 @@
     "title": "Why Phone Chargers Break At The Same Spot",
     "category": "Technology",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Autocorrect Changes The Right Word",
@@ -1631,8 +1662,9 @@
     "title": "Why Apps Update Constantly",
     "category": "Technology",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Unsubscribe Button Is Hidden",
@@ -1652,29 +1684,32 @@
     "title": "Why The Fuel Gauge Drops Faster Near Empty",
     "category": "Cars",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Car Alarms Never Stop Anyone",
     "category": "Cars",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why New Cars Smell That Way",
     "category": "Cars",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Tires Are Always Black",
     "category": "Cars",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02"
   },
   {
     "title": "Why Websites Fake A Countdown Timer",
@@ -1715,8 +1750,9 @@
     "title": "Why Luxury Stores Keep Almost Nothing On The Shelves",
     "category": "Shopping",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Bill Comes With Mints",
@@ -1736,15 +1772,16 @@
     "title": "Why Casinos Have No Windows Or Clocks",
     "category": "Design",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Hotel Sheets Are Always White",
     "category": "Design",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-02"
   },
   {
     "title": "Why Prices End In Nine Not Zero",

@@ -712,5 +712,71 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Click The Red Arrow",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Think The Car Ahead Is Crawling",
+    "views": 73,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "traffic",
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Always Hum That One Song",
+    "views": 19,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "attention",
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Laugh At The Worst Times",
+    "views": 45,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "emotions",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Your Restaurant Menu Feels Too Big",
+    "views": 6,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "restaurant",
+    "quality_score": 48.0
+  },
+  {
+    "title": "Why Your Hotel Mirror Is Never For You",
+    "views": 10,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "hotel",
+    "quality_score": 48.0
   }
 ]
