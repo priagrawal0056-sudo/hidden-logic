@@ -380,9 +380,10 @@ def _to_utc_iso(local_dt) -> str:
 PENDING_COMMENTS_FILE = "pending_comments.json"
 
 
-def _queue_pending_comment(video_id: str, text: str, publish_at: str):
-    """Save a first-comment to post later, once the scheduled video goes public. YouTube rejects
-    comments on still-private scheduled videos, so we stash them here and flush on a later run."""
+def _queue_pending_comment(video_id: str, text: str, publish_at: str, kind: str = "comment"):
+    """Save an engagement action (first-comment or self-like) to run later, once the scheduled
+    video goes public. YouTube rejects comments on still-private scheduled videos (and self-likes
+    on them are unreliable), so we stash both here and flush on a later run."""
     pend = []
     if os.path.exists(PENDING_COMMENTS_FILE):
         try:
@@ -390,9 +391,9 @@ def _queue_pending_comment(video_id: str, text: str, publish_at: str):
                 pend = json.load(f)
         except Exception:
             pend = []
-    # avoid duplicates for the same video
-    if not any(p.get("video_id") == video_id for p in pend):
-        pend.append({"video_id": video_id, "text": text, "publish_at": publish_at})
+    # avoid duplicates for the same (video, action-kind)
+    if not any(p.get("video_id") == video_id and p.get("kind", "comment") == kind for p in pend):
+        pend.append({"video_id": video_id, "text": text, "publish_at": publish_at, "kind": kind})
         with open(PENDING_COMMENTS_FILE, "w", encoding="utf-8") as f:
             json.dump(pend, f, indent=2, ensure_ascii=False)
 
@@ -425,7 +426,10 @@ def _flush_pending_comments(log=print):
             if not ready:
                 still_pending.append(p)
                 continue
-            upload.post_comment(p["video_id"], p["text"])
+            if p.get("kind", "comment") == "like":
+                upload.post_like(p["video_id"])
+            else:
+                upload.post_comment(p["video_id"], p["text"])
             posted += 1
         except Exception:
             # video may still not be public, or transient error - keep it for next run
@@ -834,8 +838,16 @@ def make_one(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None = No
     except Exception as e:
         log(f"Localization failed (non-fatal): {e}")
     try:
-        upload.post_like(url.rsplit("/", 1)[-1])
-        log("Self-liked the upload")
+        _vid_for_like = url.rsplit("/", 1)[-1]
+        if publish_at:
+            # video is SCHEDULED (still private) - self-likes on private videos are unreliable
+            # and were never retried, which is why scheduled videos ended up with no like.
+            # Queue it; the flusher posts it on the next run once the video is live.
+            _queue_pending_comment(_vid_for_like, "", publish_at, kind="like")
+            log("Queued self-like (posts when live)")
+        else:
+            upload.post_like(_vid_for_like)
+            log("Self-liked the upload")
     except Exception as e:
         log(f"Self-like failed (non-fatal): {e}")
     if meta.get("first_comment"):
@@ -1370,10 +1382,14 @@ def run_upload_only(cfg: dict, args, log):
         except Exception as e:
             log(f"Localization failed (non-fatal) for {video_id}: {e}")
 
-        # Self-like
+        # Self-like (queued for scheduled videos - a like on a still-private video is unreliable)
         try:
-            upload.post_like(video_id)
-            log(f"Self-liked {video_id}")
+            if publish_at:
+                _queue_pending_comment(video_id, "", publish_at, kind="like")
+                log(f"Queued self-like for {video_id} (posts when live)")
+            else:
+                upload.post_like(video_id)
+                log(f"Self-liked {video_id}")
         except Exception as e:
             log(f"Self-like failed (non-fatal) for {video_id}: {e}")
 
