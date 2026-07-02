@@ -126,7 +126,29 @@ def pick_unused(n: int, mark_used: bool = True, log=print) -> list:
         return []
     published = _published_titles()
     unused = [it for it in bank if not it.get("used")]
-    unused.sort(key=lambda it: -it.get("viral_score", 0))
+
+    # CHANNEL IDENTITY BOOST: the channel's own data shows a clear winner cluster - topics about
+    # PHYSICAL PLACES the viewer was literally inside this week and PRODUCTS they touched
+    # (grocery 1,355 / McDonald's 1,184 / airport 1,179 / cinema 1,068 / phone 1,036) - and a
+    # clear loser cluster of abstract place-less brain facts (cookies 93, accents 284, waiting
+    # 453). A consistent identity ("the hidden design of places you go every week") also makes
+    # the channel SUBSCRIBABLE instead of a generic facts feed. So on-identity topics get a
+    # score boost and are picked first; off-identity topics aren't deleted - they just sink,
+    # and still surface if the identity pool runs dry.
+    _IDENTITY_WORDS = (
+        "store", "supermarket", "grocery", "shop", "mall", "aisle", "cart", "checkout",
+        "receipt", "price", "airport", "plane", "flight", "airline", "hotel", "restaurant",
+        "menu", "mcdonald", "fast food", "fries", "coffee", "cafe", "drink", "popcorn",
+        "cinema", "movie theater", "theater", "stadium", "gym", "casino", "ikea", "parking",
+        "traffic", "road", "highway", "drive", "car", "gas station", "elevator", "escalator",
+        "bathroom", "toilet", "train", "subway", "bus", "office", "hospital", "waiting room",
+        "queue", "phone", "app", "packaging", "label", "vending", "hotel room", "doctor",
+    )
+    def _identity_bonus(it) -> float:
+        blob = (str(it.get("title", "")) + " " + str(it.get("category", ""))).lower()
+        return 2.0 if any(w in blob for w in _IDENTITY_WORDS) else 0.0
+
+    unused.sort(key=lambda it: -(it.get("viral_score", 0) + _identity_bonus(it)))
 
     chosen = []
     chosen_titles = []

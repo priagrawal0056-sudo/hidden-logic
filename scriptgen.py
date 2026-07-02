@@ -819,6 +819,28 @@ Hard rules:
 - No comedy, no goofy influencer tone, no emojis, no hashtags in the script.
 - TAXONOMY: Classify the topic using [cluster]/[subcluster] format (e.g. airport/sleep, hotel/pillows, traffic/merging).
 - ABRUPT ENDING: Stop sharply on the climax. Do not wind down or say "subscribe".
+- NARRATOR PERSONA (THE PARASOCIAL SUBSTITUTE): Every script is voiced by the SAME character: a
+  knowing insider who has seen the blueprints - calm, slightly amused, letting the viewer in on
+  something the designers assumed nobody would notice. Never lecture-y, never hype, never a
+  narrator-from-nowhere. Direct "you" address throughout (the viewer is the story's subject).
+  Faceless channels can't offer a face, so this consistent voice IS the personality people
+  subscribe to: video #3 must unmistakably feel like the same person as video #1.
+- CASCADING TENSION (NEVER ZERO OPEN QUESTIONS): One open loop is good; layered loops are
+  stronger. The moment the first curiosity gap begins to close (the reveal), OPEN a second,
+  smaller gap in the same sentence or the next - the "yes, but..." move (e.g. reveal WHAT they
+  did, which immediately raises WHY it works on you, or what it costs you). The viewer should
+  never reach a moment where every question is answered until the final line - because a
+  fully-satisfied viewer at second 14 is a swipe at second 15. The loop ending then leaves the
+  LAST gap deliberately humming (it resolves emotionally, not informationally).
+- CHANNEL IDENTITY (WHAT MAKES THIS CHANNEL SUBSCRIBABLE): This channel is not a random-facts feed.
+  Its identity: "the hidden design of places you go every week - and once you see it, you can't
+  unsee it." Whenever the topic allows, anchor the script in a PHYSICAL place or product the viewer
+  personally encounters (the store, the airport, their car, their phone, the restaurant), written so
+  the viewer will INVOLUNTARILY REMEMBER this video the next time they're physically there. That
+  "I'll notice this every time now" feeling is the channel's signature - it follows viewers into
+  real life, which is what turns a one-video viewer into a subscriber. Where it fits naturally
+  (never force it, never let it break the loop), let the closing reframe carry a "you'll see it
+  everywhere now" energy: the viewer leaves cursed with the knowledge, in a fun way.
 - RETURN HOOK (CRITICAL FOR SUBSCRIBERS): The reframe ending must make the viewer feel there is a
   SPECIFIC next thing to discover - not a vague "there's more." The strongest version points at the
   SAME category the video is in, so it reads as "this channel has a whole series exposing THIS kind of
@@ -1055,7 +1077,12 @@ import random as _rnd
 # views of a 48s one (and "watched for longer"). 20-35s is the retention sweet spot; over-length
 # is the single biggest retention killer. A script over this cap is rejected and trimmed. At the
 # channel's narration pace (~2.6-2.7 words/sec) 82 words lands ~30s.
-MAX_SCRIPT_WORDS = 78
+MAX_SCRIPT_WORDS = 100  # hard ceiling; raised from 78 to permit the 30-38s TEST variant below.
+                        # The 78-word/29s finding came from the ROBOTIC-VOICE era (a bad voice makes
+                        # every extra second painful). 2026 research: sub-15s collapsed (can't clear
+                        # the absolute watch-time bar) and 30-45s is the new sweet spot. With the
+                        # human Gemini voice live, we A/B a longer variant at low weight and let the
+                        # channel's own retention data decide. Most videos still target 16-29s.
 
 _LENGTH_VARIANTS = [
     # Calibrated to THIS channel's real retention data AND 2025/26 Shorts research: the 20-35s
@@ -1067,6 +1094,10 @@ _LENGTH_VARIANTS = [
     "HARD CAP - count your words and trim to fit.",
     "60 to 78 words (about 23-29 seconds). A touch longer for a richer story, but NEVER drag - "
     "only use the extra room if the payoff genuinely needs it. HARD CAP at 78 words.",
+    "82 to 100 words (about 31-38 seconds - TEST variant, 2026 research band). Use a two-beat "
+    "structure: hook -> first reveal -> escalation ('but here's the part nobody notices') -> "
+    "deeper payoff -> loop. The extra length must be a SECOND curiosity peak, never slower "
+    "pacing. HARD CAP at 100 words.",
 ]
 
 # Repurposable curiosity-gap hook PATTERNS, distilled from proven scroll-stopping short-form
@@ -1103,7 +1134,7 @@ def _rotate_style() -> tuple[str, str]:
     options used less often. Returns (length_rule, skeleton)."""
     # weight: 55% the proven sweet spot, 30% slightly longer, 15% longest - bias hard
     # toward what the data shows actually retains on THIS channel.
-    length_rule = _rnd.choices(_LENGTH_VARIANTS, weights=[68, 27, 5])[0]
+    length_rule = _rnd.choices(_LENGTH_VARIANTS, weights=[60, 25, 5, 10])[0]  # 10% = 30-38s A/B test
     skeleton = _rnd.choice(_STRUCTURE_VARIANTS)
     return length_rule, skeleton
 
@@ -1642,7 +1673,27 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
         data["trend_heat"] = round(LAST_SEED_TREND, 1)
         data["quality_score"] = score
         
-        is_fidelity_ok = (not strict_topic_lock) or (topic_fidelity >= 8.0 and subject_retention >= 8.0)
+        # TREND MISMATCH GUARD: for TREND seeds, fidelity is a HARD gate regardless of the
+        # strict_topic_lock config. A trend title (e.g. an F1 race) attracts that trend's
+        # audience specifically - if the script drifts to a different subject (e.g. generic
+        # highway driving), those viewers hit a bait-and-switch and swipe instantly, which
+        # kills the video AND teaches the algorithm the channel mismatches its packaging.
+        # (Real case: "Why You Can't Catch The Leader On The Last Lap" - racing title,
+        # semi-truck tailgating script.) Normal evergreen topics keep the configurable gate.
+        _is_trend = False
+        try:
+            import trend_bridge as _tb
+            _is_trend = bool(seed_topic) and _tb.is_trend_seed(seed_topic)
+        except Exception:
+            _is_trend = False
+        if _is_trend:
+            is_fidelity_ok = (topic_fidelity >= 8.0 and subject_retention >= 8.0)
+            if not is_fidelity_ok:
+                print(f"[scriptgen] TREND MISMATCH GUARD: trend seed '{seed_topic}' but fidelity "
+                      f"{topic_fidelity}/10, subject retention {subject_retention}/10 - blocking "
+                      f"(trend titles must match their content or viewers bait-and-switch swipe).")
+        else:
+            is_fidelity_ok = (not strict_topic_lock) or (topic_fidelity >= 8.0 and subject_retention >= 8.0)
         # When the topic is PINNED (idea bank, --hero trend, on-demand) the topic-filter
         # never runs, so filter_scores is empty and "visual" is 0. The old code therefore
         # made this gate ALWAYS fail for pinned topics, forcing every such video to burn all
@@ -1876,7 +1927,11 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
                 revised["winner_cluster_score"] = float(filter_scores.get("winner_similarity", 0))
                 revised["visual_score"] = float(filter_scores.get("visual", 0))
                 
-                revised_fidelity_ok = (not strict_topic_lock) or (revised_fidelity >= 8.0 and revised_retention >= 8.0)
+                # Trend seeds keep the HARD fidelity gate on revision too (see trend mismatch guard above).
+                if _is_trend:
+                    revised_fidelity_ok = (revised_fidelity >= 8.0 and revised_retention >= 8.0)
+                else:
+                    revised_fidelity_ok = (not strict_topic_lock) or (revised_fidelity >= 8.0 and revised_retention >= 8.0)
                 revised_title_gate_ok = rev_title_score >= 24 and rev_title_frust >= 7.0
                 revised_topic_gate_ok = is_topic_gate_ok
                 revised_hook_physical = revised.get("hook_type") == "physical_moment"

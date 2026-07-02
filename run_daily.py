@@ -325,10 +325,18 @@ def _parse_slot(s) -> tuple | None:
 def compute_publish_slots(cfg: dict, n: int) -> list:
     """Build the next n publish datetimes from config 'publish_slots'
     (local times like ["11:00","15:00","19:00","23:00"]), rolling into
-    following days as needed. Returns local datetimes, soonest first."""
+    following days as needed. Returns local datetimes, soonest first.
+
+    ANTI-BOT JITTER: YouTube's 2026 anti-repetitive system flags channels that post at the
+    EXACT same minute every day as bot-like (content-farm fingerprint), which suppresses
+    reach. So each slot gets a random 0-25 minute forward offset, re-rolled every run.
+    Slots stay in their intended windows (a 12:00 slot lands 12:00-12:25) but never
+    repeat the same minute day after day. Forward-only jitter so a slot can't slip into
+    the past relative to the build."""
     slots = cfg.get("publish_slots")
     if not slots:
         return []
+    import random as _jrnd
     now = dt.datetime.now()
     candidates = []
     for day in range(8):
@@ -338,6 +346,7 @@ def compute_publish_slots(cfg: dict, n: int) -> list:
                 continue  # skip malformed entries like "15" missing minutes, bad text, etc.
             h, m = parsed
             t = (now + dt.timedelta(days=day)).replace(hour=h, minute=m, second=0, microsecond=0)
+            t = t + dt.timedelta(minutes=_jrnd.randint(0, 25))  # anti-bot jitter
             if t > now + dt.timedelta(minutes=3):
                 candidates.append(t)
     candidates.sort()  # chronological, so an overnight slot is never skipped
@@ -632,8 +641,14 @@ def make_one(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None = No
         sentence_durs[-1] += (audio_len - last_c)
         
     final_durs = []
-    for d in sentence_durs:
-        if d > 4.5:
+    for i, d in enumerate(sentence_durs):
+        # CUT PACING (2026 retention research): a frame held >4s reads as "static" and triggers
+        # swipes; viral faceless Shorts change visuals every 1-3s. Old threshold (4.5s) let
+        # segments sit right ON the swipe line. Now: no segment over ~3.2s, and the FIRST
+        # segment splits even earlier (>2.4s) so a visible cut lands inside the 0-2.4s hook
+        # zone - early motion is a pattern interrupt exactly where the swipe decision happens.
+        limit = 2.4 if i == 0 else 3.2
+        if d > limit:
             final_durs.extend([d/2, d/2])
         else:
             final_durs.append(d)
