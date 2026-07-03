@@ -3332,5 +3332,101 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "i5-SPFmq6Lg",
+    "title": "baby elephants!",
+    "topic": "baby elephants!",
+    "date": "2026-07-03",
+    "n": 0
+  },
+  {
+    "video_id": "VpXFhyZxbIA",
+    "title": "moms hands!",
+    "topic": "moms hands!",
+    "date": "2026-07-03",
+    "n": 0
+  },
+  {
+    "video_id": "Ki-wN2bSEtY",
+    "title": "dogs will do anything for attention!",
+    "topic": "dogs will do anything for attention!",
+    "date": "2026-07-03",
+    "n": 0
+  },
+  {
+    "video_id": "ejk7Y9DzwnU",
+    "title": "what the dog doin",
+    "topic": "what the dog doin",
+    "date": "2026-07-03",
+    "n": 0
+  },
+  {
+    "video_id": "wzEOHNcq1q0",
+    "title": "broken doggo :(",
+    "topic": "broken doggo :(",
+    "date": "2026-07-03",
+    "n": 0
+  },
+  {
+    "video_id": "hIVK3J7zunQ",
+    "title": "can i pet?",
+    "topic": "can i pet?",
+    "date": "2026-07-03",
+    "n": 0
+  },
+  {
+    "video_id": "VPMnjkaQ-4o",
+    "title": "Why Your Eyes Lie About Race Winners",
+    "topic": "Why a photo finish fools your eyes",
+    "date": "2026-07-03",
+    "n": 311,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "-0_4Nu3EVr8",
+    "title": "Why Your Steering Wheel Has to Be Round",
+    "topic": "Why Steering Wheels Are Round",
+    "date": "2026-07-03",
+    "n": 312,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "ZEKpqj7k1-U",
+    "title": "Why Your Keyboard Isn't In Alphabetical Order",
+    "topic": "Why Keyboards Aren't In Alphabetical Order",
+    "date": "2026-07-03",
+    "n": 313,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

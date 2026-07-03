@@ -1171,15 +1171,17 @@
     "title": "Why Cereal Boxes Have So Much Empty Space",
     "category": "Food",
     "viral_score": 9.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Diet Soda Tastes Different",
     "category": "Food",
     "viral_score": 9.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Planes Board From The Front",
@@ -1201,15 +1203,16 @@
     "title": "Why Public Benches Have Armrests In The Middle",
     "category": "Design",
     "viral_score": 9.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Keyboards Aren't In Alphabetical Order",
     "category": "Design",
     "viral_score": 9.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03"
   },
   {
     "title": "Why Subscriptions Are Easy To Start And Hard To Cancel",
@@ -1787,22 +1790,25 @@
     "title": "Why Prices End In Nine Not Zero",
     "category": "Money",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Phone Chargers Always Die First",
     "category": "Technology",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Parking Lots Make You Walk",
     "category": "Cars",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Ads Ruin Everything",
@@ -1836,15 +1842,16 @@
     "title": "Why Your Car Beeps For Everything",
     "category": "Cars",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Steering Wheels Are Round",
     "category": "Cars",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03"
   },
   {
     "title": "Why Videos Buffer At The Worst Moment",
@@ -1892,8 +1899,9 @@
     "title": "Why Your Phone Charges Slower On The Couch",
     "category": "Home",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Tupperware Lids Never Match",
@@ -1906,8 +1914,9 @@
     "title": "Why The Toilet Paper Roll Runs Out At The Worst Time",
     "category": "Home",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Quietest Person Is Often The Smartest",
@@ -1927,8 +1936,9 @@
     "title": "Why Your Car Never Stops Beeping",
     "category": "Cars",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Videos Always Freeze At The Worst Time",
@@ -1955,22 +1965,25 @@
     "title": "Why Speed Bumps Feel Different Every Time",
     "category": "Cars",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Roundabouts Confuse Everyone",
     "category": "Cars",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Traffic Jams Appear Out Of Nowhere",
     "category": "Cars",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Recommended Videos Know You Too Well",
@@ -1983,8 +1996,9 @@
     "title": "Why Free Apps Make The Most Money",
     "category": "Internet",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Crowds Move Like A Single Organism",
@@ -2046,22 +2060,25 @@
     "title": "Why Open Offices Make You Less Productive",
     "category": "Work",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Every Speed Bump Feels Different",
     "category": "Cars",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Phone Slows Down After A Year",
     "category": "Technology",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Group Chats Move Too Fast To Follow",
@@ -2102,8 +2119,9 @@
     "title": "Why The Wave Goes Around A Stadium",
     "category": "Sports",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The First Corner Decides An F1 Race",
@@ -2123,15 +2141,17 @@
     "title": "Why You Look Busy When The Boss Walks By",
     "category": "Work",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Online Stores Say Only 2 Left",
     "category": "Technology",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Battery Drops From 20 To Dead Instantly",
@@ -2144,15 +2164,17 @@
     "title": "Why Highway Gas Is More Expensive",
     "category": "Cars",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Every New Car Looks The Same",
     "category": "Cars",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Pop Ups Wait Until You're Reading",
@@ -2235,8 +2257,9 @@
     "title": "Why Every Car Looks The Same",
     "category": "Cars",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Websites Remember You Forever",
@@ -2249,43 +2272,49 @@
     "title": "Why Phone Screens Are Getting Bigger",
     "category": "Technology",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Gas Pumps Click Off On Their Own",
     "category": "Cars",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Parking Lots Make You Walk So Far",
     "category": "Cars",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Headlights Are So Bright Now",
     "category": "Cars",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Cars Have A Fake Engine Sound",
     "category": "Cars",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Turn Signal Clicks",
     "category": "Cars",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Ads Get Louder Than Everything",
@@ -2340,15 +2369,17 @@
     "title": "Why Steering Wheels Aren't Square",
     "category": "Cars",
     "viral_score": 8.8,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Apps Always Want Notification Permission",
     "category": "Technology",
     "viral_score": 8.8,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Streaming Buffers At The Best Scene",
@@ -2375,15 +2406,17 @@
     "title": "Why The Shower Gets Cold When The Toilet Flushes",
     "category": "Home",
     "viral_score": 8.8,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Office Is Always Too Cold Or Too Hot",
     "category": "Work",
     "viral_score": 8.8,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Email Threads Never End",
@@ -2396,8 +2429,9 @@
     "title": "Why Wipers Suddenly Get Loud",
     "category": "Cars",
     "viral_score": 8.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Cancel Buttons Are Grey And Hard To Find",
@@ -2410,15 +2444,17 @@
     "title": "Why Side Mirrors Say Objects Are Closer",
     "category": "Cars",
     "viral_score": 8.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Slow Lane Moves Faster Sometimes",
     "category": "Cars",
     "viral_score": 8.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Notifications Are Red",
@@ -2438,22 +2474,25 @@
     "title": "Why Small Talk Always Starts With Weather",
     "category": "Social",
     "viral_score": 8.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Stadiums Are Loudest Behind The Goal",
     "category": "Sports",
     "viral_score": 8.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Remote Always Disappears",
     "category": "Home",
     "viral_score": 8.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Meetings Always Run Over",
@@ -2508,8 +2547,9 @@
     "title": "Why You Check Your Phone The Second It's In Your Pocket",
     "category": "Psychology",
     "viral_score": 8.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Avoid Stepping On Cracks",
@@ -2536,8 +2576,9 @@
     "title": "Why Comebacks Feel Impossible Then Happen",
     "category": "Sports",
     "viral_score": 8.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Brain Replays Cringe Moments",
@@ -2795,8 +2836,9 @@
     "title": "Why Nobody Wants The First Bathroom Stall",
     "category": "Psychology",
     "viral_score": 8.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Brain Loves Tiny Explosions",
@@ -2886,8 +2928,9 @@
     "title": "Why You Feel Your Phone Vibrate When It Didn't",
     "category": "Psychology",
     "viral_score": 8.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Eye Twitches Randomly",
@@ -2914,8 +2957,9 @@
     "title": "Why You Lose Track Of Time On Your Phone",
     "category": "Time",
     "viral_score": 8.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Onions Weaponize Chemistry",
@@ -2935,8 +2979,9 @@
     "title": "Why You Can't Stop Watching A Car Crash",
     "category": "Psychology",
     "viral_score": 7.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-03",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Cuts On Your Fingers Hurt More",

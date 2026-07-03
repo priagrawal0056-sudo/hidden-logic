@@ -426,7 +426,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.6,
+      "avg_likes_per_1000_views": 7.2,
       "avg_returning_viewers": null
     },
     "Why buying things you don't need is definitely not an accident": {
@@ -437,7 +437,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.6,
+      "avg_likes_per_1000_views": 7.4,
       "avg_returning_viewers": null
     },
     "Why injury time feels longer than it is": {
@@ -481,7 +481,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 19.6,
       "avg_returning_viewers": null
     },
     "Why Supermarkets Rearrange The Aisles": {
@@ -492,7 +492,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 11.1,
+      "avg_likes_per_1000_views": 9.5,
       "avg_returning_viewers": null
     },
     "Why restaurant menus being enormous keeps happening no matter what": {
@@ -509,12 +509,34 @@
     "Why laughing when nervous is definitely not an accident": {
       "count": 1,
       "avg_views_first_60m": 42.0,
+      "avg_views_first_6h": 754.0,
+      "avg_views_first_24h": 754.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 6.6,
+      "avg_returning_viewers": null
+    },
+    "Why drivers in red cars feel faster to you": {
+      "count": 1,
+      "avg_views_first_60m": null,
       "avg_views_first_6h": null,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 23.8,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
+      "avg_returning_viewers": null
+    },
+    "Why Tires Are Always Black": {
+      "count": 1,
+      "avg_views_first_60m": 119.0,
+      "avg_views_first_6h": 119.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 8.4,
+      "avg_likes_per_1000_views": 50.4,
       "avg_returning_viewers": null
     }
   },
@@ -648,7 +670,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 1.6,
-      "avg_likes_per_1000_views": 11.2,
+      "avg_likes_per_1000_views": 11.1,
       "avg_returning_viewers": null
     },
     "social_behavior": {
@@ -659,7 +681,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.6,
+      "avg_likes_per_1000_views": 7.2,
       "avg_returning_viewers": null
     },
     "decision_making": {
@@ -670,7 +692,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.6,
+      "avg_likes_per_1000_views": 7.4,
       "avg_returning_viewers": null
     }
   },
@@ -1123,7 +1145,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 11.1,
+      "avg_likes_per_1000_views": 9.5,
       "avg_returning_viewers": null
     },
     "airline-seat-psychology": {
@@ -1145,7 +1167,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.6,
+      "avg_likes_per_1000_views": 7.2,
       "avg_returning_viewers": null
     },
     "Supermarket Design Tricks": {
@@ -1156,7 +1178,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.6,
+      "avg_likes_per_1000_views": 7.4,
       "avg_returning_viewers": null
     },
     "store-layout-manipulation": {
@@ -1211,7 +1233,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 19.6,
       "avg_returning_viewers": null
     },
     "Restaurant Tricks": {
@@ -1228,25 +1250,47 @@
     "social_behavior": {
       "count": 1,
       "avg_views_first_60m": 42.0,
+      "avg_views_first_6h": 754.0,
+      "avg_views_first_24h": 754.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 6.6,
+      "avg_returning_viewers": null
+    },
+    "Perception": {
+      "count": 1,
+      "avg_views_first_60m": null,
       "avg_views_first_6h": null,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 23.8,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
+      "avg_returning_viewers": null
+    },
+    "tires": {
+      "count": 1,
+      "avg_views_first_60m": 119.0,
+      "avg_views_first_6h": 119.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 8.4,
+      "avg_likes_per_1000_views": 50.4,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 53,
-      "avg_views_first_60m": 333.4,
-      "avg_views_first_6h": 464.6,
-      "avg_views_first_24h": 797.5,
+      "count": 55,
+      "avg_views_first_60m": 322.1,
+      "avg_views_first_6h": 461.4,
+      "avg_views_first_24h": 791.3,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 68.3,
-      "avg_likes_per_1000_views": 103.8,
+      "avg_comments_per_1000_views": 65.7,
+      "avg_likes_per_1000_views": 101.4,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

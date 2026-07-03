@@ -394,5 +394,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Your Eyes Lie About Race Winners",
+    "hook_text": "You watch the finish line.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction/Mystery",
+    "first_frame_description": "A high-energy, close-up shot of multiple athletes (e.g., runners, swimmers) intensely approaching a finish line, their bodies blurred with speed, creating a sense of a dead heat.",
+    "visual_thesis": "High-speed cameras reveal what your eyes cannot see in a photo finish, exposing how human vision is tricked by speed.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Steering Wheel Has to Be Round",
+    "hook_text": "You let the steering wheel slide through your palms.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Threat",
+    "first_frame_description": "First-person POV of a driver's hands letting go of a spinning steering wheel inside a moving car.",
+    "visual_thesis": "A driver letting a steering wheel spin back to center, contrasted with a 3D simulation of a square wheel violently snapping and injuring hands.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Keyboard Isn't In Alphabetical Order",
+    "hook_text": "You look down at your keyboard right now.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System",
+    "first_frame_description": "A first-person POV shot looking down at a modern smartphone screen with the keyboard open, thumbs hovering over the scrambled letters.",
+    "visual_thesis": "The QWERTY keyboard layout is a deliberate speed-bump designed for 19th-century mechanical limitations, preserved today solely to protect tech corporate profits by avoiding user retraining.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

@@ -778,5 +778,27 @@
     "hook_type": "physical_moment",
     "cluster": "hotel",
     "quality_score": 48.0
+  },
+  {
+    "title": "Why Your Black Tires Should Be White",
+    "views": 119,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 48.0
+  },
+  {
+    "title": "Why Your Airport Gate Is Always A Mile Away #away #design #psychology",
+    "views": 116,
+    "environment": true,
+    "annoyance": 0,
+    "visual": 8,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "airport",
+    "quality_score": 46.0
   }
 ]

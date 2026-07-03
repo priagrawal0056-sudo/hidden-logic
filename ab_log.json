@@ -841,7 +841,7 @@
     "visual_thesis": "The intentional elongation of airport terminal walkways to force passenger exposure to retail storefronts.",
     "first_frame_description": "A first-person POV shot of a traveler's feet walking through a long, polished airport terminal hallway with bright retail storefronts on both sides.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 5.55
+    "likes_per_1000_views": 5.51
   },
   "_hBwl19pMWE": {
     "variant": "A",
@@ -1297,8 +1297,8 @@
     "viewer_identity_score": 9.0,
     "visual_thesis": "Hands peel foil off a seat-back airline tray of pale chicken, then the camera reveals the real culprit isn't the dry meal but the roaring engine outside the window - you taste with your ears.",
     "first_frame_description": "Extreme close-up of two hands peeling the foil lid off a compartmented airline meal tray on a fold-down seat-back table, revealing a dull, gray-white piece of chicken under harsh cabin lighting.",
-    "comments_per_1000_views": 3.15,
-    "likes_per_1000_views": 15.74,
+    "comments_per_1000_views": 3.14,
+    "likes_per_1000_views": 15.72,
     "views_first_60m": 432,
     "views_first_6h": 432
   },
@@ -1340,7 +1340,7 @@
     "visual_thesis": "A grocery store's floor plan is deliberately engineered \u2014 and periodically re-scrambled \u2014 to keep shoppers disoriented so they wander past more products.",
     "first_frame_description": "POV/overhead shot of a hand pulling a milk jug from a fridge at the very back of a grocery store, with long fluorescent-lit aisles stretching away toward a distant entrance.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 4.67,
+    "likes_per_1000_views": 4.66,
     "views_first_60m": 213,
     "views_first_6h": 519
   },
@@ -1459,7 +1459,7 @@
     "visual_thesis": "A person at a coffee counter whose accent visibly morphs to match the barista's \u2014 shown through two speech subtitles/waveforms drifting until they overlap into one.",
     "first_frame_description": "Close-up at a coffee shop counter: a customer mid-order facing a barista, two distinct subtitle captions appearing under each \u2014 then the customer's caption begins shifting to mirror the barista's spelling and rhythm.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 8.58,
+    "likes_per_1000_views": 7.15,
     "views_first_60m": 344,
     "views_first_6h": 344
   },
@@ -1480,7 +1480,7 @@
     "visual_thesis": "A supermarket is a machine engineered to make you buy what you never needed \u2014 milk buried at the back, slow music, wide aisles, and an oversized cart whose empty space guilt-trips you into filling it.",
     "first_frame_description": "POV gliding through automatic sliding doors into a bright, busy supermarket, hands gripping the bar of a huge, completely empty shopping cart.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 8.63,
+    "likes_per_1000_views": 7.4,
     "views_first_60m": 620,
     "views_first_6h": 620
   },
@@ -1577,7 +1577,7 @@
     "visual_thesis": "A large mirror in a hotel room is deliberately placed to create an illusion of luxury and justify price, not just for aesthetics.",
     "first_frame_description": "POV shot of a person walking into a standard hotel room, immediately focusing on a large mirror positioned opposite the bed.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 0.0,
+    "likes_per_1000_views": 19.61,
     "views_first_60m": 9,
     "views_first_6h": 9
   },
@@ -1598,7 +1598,7 @@
     "visual_thesis": "Supermarket aisle resets are psychological triggers designed to break consumer habits and increase impulse spending.",
     "first_frame_description": "A first-person view of a hand reaching toward a grocery shelf where an 'Eggs' sign is visible, but the shelf is completely bare.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 11.13,
+    "likes_per_1000_views": 9.54,
     "views_first_60m": 719,
     "views_first_6h": 719
   },
@@ -1640,8 +1640,10 @@
     "visual_thesis": "Nervous laughter isn't awkward; it's a deliberate, primal signal to disarm others in tense situations.",
     "first_frame_description": "A close-up on a person's face, eyes wide with a mix of embarrassment and an uncontrollable, nervous giggle escaping their lips, in a solemn or tense environment (e.g., a quiet funeral, a serious meeting).",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 23.81,
-    "views_first_60m": 42
+    "likes_per_1000_views": 6.63,
+    "views_first_60m": 42,
+    "views_first_6h": 754,
+    "views_first_24h": 754
   },
   "8ua-OXp5Jj8": {
     "variant": "A",
@@ -1675,6 +1677,61 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "The black color of car tires is a deliberate, engineered design choice for durability and protection, contrasting with their natural white state.",
-    "first_frame_description": "Close-up shot of a black car tire, perhaps with a subtle graphic overlay highlighting the black color."
+    "first_frame_description": "Close-up shot of a black car tire, perhaps with a subtle graphic overlay highlighting the black color.",
+    "comments_per_1000_views": 8.4,
+    "likes_per_1000_views": 50.42,
+    "views_first_60m": 119,
+    "views_first_6h": 119
+  },
+  "VPMnjkaQ-4o": {
+    "variant": "A",
+    "title": "Why Your Eyes Lie About Race Winners",
+    "date": "2026-07-03",
+    "publish_at": null,
+    "cluster": null,
+    "topic": "Why a photo finish fools your eyes",
+    "subcluster": "Visual Illusions",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 10.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "High-speed cameras reveal what your eyes cannot see in a photo finish, exposing how human vision is tricked by speed.",
+    "first_frame_description": "A high-energy, close-up shot of multiple athletes (e.g., runners, swimmers) intensely approaching a finish line, their bodies blurred with speed, creating a sense of a dead heat."
+  },
+  "-0_4Nu3EVr8": {
+    "variant": "B",
+    "title": "Why Your Steering Wheel Has to Be Round",
+    "date": "2026-07-03",
+    "publish_at": "2026-07-04T04:10:00Z",
+    "cluster": null,
+    "topic": "Why Steering Wheels Are Round",
+    "subcluster": "design-secrets",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A driver letting a steering wheel spin back to center, contrasted with a 3D simulation of a square wheel violently snapping and injuring hands.",
+    "first_frame_description": "First-person POV of a driver's hands letting go of a spinning steering wheel inside a moving car."
+  },
+  "ZEKpqj7k1-U": {
+    "variant": "B",
+    "title": "Why Your Keyboard Isn't In Alphabetical Order",
+    "date": "2026-07-03",
+    "publish_at": "2026-07-04T05:02:00Z",
+    "cluster": null,
+    "topic": "Why Keyboards Aren't In Alphabetical Order",
+    "subcluster": "design_secrets",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The QWERTY keyboard layout is a deliberate speed-bump designed for 19th-century mechanical limitations, preserved today solely to protect tech corporate profits by avoiding user retraining.",
+    "first_frame_description": "A first-person POV shot looking down at a modern smartphone screen with the keyboard open, thumbs hovering over the scrambled letters."
   }
 }
