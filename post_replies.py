@@ -212,6 +212,11 @@ GENERIC_FALLBACKS = [
 
 
 def run_auto_replies(cfg: dict, log=print, max_replies: int = MAX_REPLIES_PER_RUN) -> int:
+    # Config kill-switch: set "auto_replies": false in config.json to disable this feature
+    # entirely (no comment fetching, no replies). Defaults to True to preserve old behavior.
+    if not cfg.get("auto_replies", True):
+        log("auto-replies: disabled in config (auto_replies=false)")
+        return 0
     """Read recent comments, draft + post replies in the channel voice. Returns how many
     were posted. Non-fatal: returns the count so far on any error."""
     global _RAN_THIS_PROCESS
