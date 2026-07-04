@@ -3428,5 +3428,96 @@
     "quality_score": 46.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "qIjDzGtlG8A",
+    "title": "bedtime for cats!",
+    "topic": "bedtime for cats!",
+    "date": "2026-07-04",
+    "n": 0
+  },
+  {
+    "video_id": "no3gHmgsmnI",
+    "title": "owls!",
+    "topic": "owls!",
+    "date": "2026-07-04",
+    "n": 0
+  },
+  {
+    "video_id": "ysMdtotB5js",
+    "title": "elephants being silly!",
+    "topic": "elephants being silly!",
+    "date": "2026-07-04",
+    "n": 0
+  },
+  {
+    "video_id": "jmHzw2NerX4",
+    "title": "monkey!",
+    "topic": "monkey!",
+    "date": "2026-07-04",
+    "n": 0
+  },
+  {
+    "video_id": "thGTJqXg0fg",
+    "title": "sea lion!",
+    "topic": "sea lion!",
+    "date": "2026-07-04",
+    "n": 0
+  },
+  {
+    "video_id": "AULCexFyABw",
+    "title": "adorable \ud83e\udd7a",
+    "topic": "adorable \ud83e\udd7a",
+    "date": "2026-07-04",
+    "n": 0
+  },
+  {
+    "video_id": "PPqyEYhrLhc",
+    "title": "Why You Always Click Agree Without Reading",
+    "topic": "Why Nobody Reads Terms And Conditions",
+    "date": "2026-07-04",
+    "n": 320,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "KKMyp79OONk",
+    "title": "Why You Always Feel Slow In Lane Eight",
+    "topic": "Why sprinters in the outer lanes feel slower",
+    "date": "2026-07-04",
+    "n": 321,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "291Q5596F7c",
+    "title": "Why Your Ears Always Pop On Flights",
+    "topic": "Why Your Ears Pop On A Plane",
+    "date": "2026-07-04",
+    "n": 322,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

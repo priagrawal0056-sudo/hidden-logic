@@ -427,5 +427,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Click Agree Without Reading",
+    "hook_text": "You scroll past thirty thousand words just to click agree.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up of a thumb rapidly scrolling down an endless, tiny-text Terms of Service agreement on a smartphone, ending with a glowing 'Agree' button.",
+    "visual_thesis": "A fast-scrolling phone screen showing a massive terms of service document, contrasted with visual proof of its extreme length and hidden tracking clauses.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Feel Slow In Lane Eight",
+    "hook_text": "You\u2019re sprinting in lane eight and the world stops.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Contradiction",
+    "first_frame_description": "A high-speed POV shot of a runner in the outermost lane of a bright red track, looking toward the distant, stationary stadium seats.",
+    "visual_thesis": "The video will use a split-screen POV comparison between Lane 1 (high blur) and Lane 8 (static background) to prove the parallax effect, followed by a force-vector overlay on a runner.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Ears Always Pop On Flights",
+    "hook_text": "You swallow desperately because airlines are leaking your plane.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden Threat",
+    "first_frame_description": "An extreme close-up of a passenger's tensed jaw swallowing in a window seat, with a digital pressure gauge overlay rapidly dropping.",
+    "visual_thesis": "Contrast the physical tension of a passenger swallowing with a 3D diagram of a plane fuselage venting air to prevent structural explosion.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

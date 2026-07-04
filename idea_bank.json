@@ -1218,8 +1218,9 @@
     "title": "Why Subscriptions Are Easy To Start And Hard To Cancel",
     "category": "Money",
     "viral_score": 9.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Winter Kills Your Phone",
@@ -1233,8 +1234,9 @@
     "title": "Netflix Knows You're Lying",
     "category": "Technology",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Objects Are Closer Than They Appear",
@@ -1248,8 +1250,9 @@
     "title": "Why Websites Never Forget You",
     "category": "Internet",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Apps Hide The Exit",
@@ -1271,8 +1274,9 @@
     "title": "Why Printers Never Work When You Need Them",
     "category": "Technology",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Free Trials Need Your Card",
@@ -1286,29 +1290,33 @@
     "title": "Why Comment Sections Turn Toxic",
     "category": "Internet",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Wave Back At Someone Waving Past You",
     "category": "Social",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Open The Fridge Again Right After Closing It",
     "category": "Home",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Can Never Find Scissors When You Need Them",
     "category": "Home",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Checkout Lines Are Lined With Magazines",
@@ -1330,8 +1338,9 @@
     "title": "Why The Ice Cream Machine Is Always Broken",
     "category": "Food",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Fast Food Fries Go Cold So Fast",
@@ -1377,15 +1386,17 @@
     "title": "Why Tipping Screens Now Start At 20 Percent",
     "category": "Money",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Coins Are Different Sizes",
     "category": "Money",
     "viral_score": 9.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Gym Memberships Are Hard To Quit",
@@ -1399,8 +1410,8 @@
     "title": "Why Nobody Reads Terms And Conditions",
     "category": "Internet",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04"
   },
   {
     "title": "Why Websites Beg You To Accept Cookies",
@@ -3092,8 +3103,8 @@
     "title": "Why Your Ears Pop On A Plane",
     "category": "Body",
     "viral_score": 7.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-04"
   },
   {
     "title": "Why You Hear The Ocean In A Seashell",

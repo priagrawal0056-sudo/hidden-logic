@@ -382,7 +382,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 9.1,
+      "avg_likes_per_1000_views": 8.6,
       "avg_returning_viewers": null
     },
     "Why the leader almost never gets overtaken on the last lap": {
@@ -426,7 +426,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.2,
+      "avg_likes_per_1000_views": 5.7,
       "avg_returning_viewers": null
     },
     "Why buying things you don't need is definitely not an accident": {
@@ -437,7 +437,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.4,
+      "avg_likes_per_1000_views": 6.2,
       "avg_returning_viewers": null
     },
     "Why injury time feels longer than it is": {
@@ -481,7 +481,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 19.6,
+      "avg_likes_per_1000_views": 13.9,
       "avg_returning_viewers": null
     },
     "Why Supermarkets Rearrange The Aisles": {
@@ -514,7 +514,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.6,
+      "avg_likes_per_1000_views": 7.0,
       "avg_returning_viewers": null
     },
     "Why drivers in red cars feel faster to you": {
@@ -535,8 +535,41 @@
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 8.4,
-      "avg_likes_per_1000_views": 50.4,
+      "avg_comments_per_1000_views": 4.8,
+      "avg_likes_per_1000_views": 48.5,
+      "avg_returning_viewers": null
+    },
+    "Why a photo finish fools your eyes": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
+      "avg_returning_viewers": null
+    },
+    "Why Steering Wheels Are Round": {
+      "count": 1,
+      "avg_views_first_60m": 755.0,
+      "avg_views_first_6h": 755.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 9.3,
+      "avg_returning_viewers": null
+    },
+    "Why Keyboards Aren't In Alphabetical Order": {
+      "count": 1,
+      "avg_views_first_60m": 765.0,
+      "avg_views_first_6h": 765.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 3.9,
       "avg_returning_viewers": null
     }
   },
@@ -604,7 +637,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.4,
+      "avg_likes_per_1000_views": 7.1,
       "avg_returning_viewers": null
     },
     "hotel": {
@@ -681,7 +714,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.2,
+      "avg_likes_per_1000_views": 5.7,
       "avg_returning_viewers": null
     },
     "decision_making": {
@@ -692,7 +725,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.4,
+      "avg_likes_per_1000_views": 6.2,
       "avg_returning_viewers": null
     }
   },
@@ -1167,7 +1200,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.2,
+      "avg_likes_per_1000_views": 5.7,
       "avg_returning_viewers": null
     },
     "Supermarket Design Tricks": {
@@ -1178,7 +1211,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.4,
+      "avg_likes_per_1000_views": 6.2,
       "avg_returning_viewers": null
     },
     "store-layout-manipulation": {
@@ -1189,7 +1222,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.3,
+      "avg_likes_per_1000_views": 6.2,
       "avg_returning_viewers": null
     },
     "time_perception": {
@@ -1233,7 +1266,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 19.6,
+      "avg_likes_per_1000_views": 13.9,
       "avg_returning_viewers": null
     },
     "Restaurant Tricks": {
@@ -1255,7 +1288,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.6,
+      "avg_likes_per_1000_views": 7.0,
       "avg_returning_viewers": null
     },
     "Perception": {
@@ -1276,21 +1309,54 @@
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 8.4,
-      "avg_likes_per_1000_views": 50.4,
+      "avg_comments_per_1000_views": 4.8,
+      "avg_likes_per_1000_views": 48.5,
+      "avg_returning_viewers": null
+    },
+    "Visual Illusions": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
+      "avg_returning_viewers": null
+    },
+    "design-secrets": {
+      "count": 1,
+      "avg_views_first_60m": 755.0,
+      "avg_views_first_6h": 755.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 9.3,
+      "avg_returning_viewers": null
+    },
+    "design_secrets": {
+      "count": 1,
+      "avg_views_first_60m": 765.0,
+      "avg_views_first_6h": 765.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 3.9,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 55,
-      "avg_views_first_60m": 322.1,
-      "avg_views_first_6h": 461.4,
+      "count": 58,
+      "avg_views_first_60m": 363.8,
+      "avg_views_first_6h": 491.3,
       "avg_views_first_24h": 791.3,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 65.7,
-      "avg_likes_per_1000_views": 101.4,
+      "avg_comments_per_1000_views": 60.3,
+      "avg_likes_per_1000_views": 93.4,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
