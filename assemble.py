@@ -222,12 +222,13 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
         if n_segs >= 3 and s == n_segs - 1:
             start_off = 0.0
         else:
-            prior_uses = _src_use_count.get(src, 0)
+            _src_key = bg_paths[src]  # key by PATH: duplicate path entries share one counter
+            prior_uses = _src_use_count.get(_src_key, 0)
             clip_dur = _bg_durs[src]
             start_off = 0.0
             if prior_uses > 0 and clip_dur and clip_dur > (seg_len + 0.1):
                 start_off = min(prior_uses * 3.5, max(0.0, clip_dur - seg_len - 0.05))
-            _src_use_count[src] = prior_uses + 1
+            _src_use_count[_src_key] = prior_uses + 1
         base = (f"[{src}:v]trim=start={start_off:.2f}:duration={seg_len},"
                 f"setpts=PTS-STARTPTS,"
                 f"scale={PAN_SCALE_W}:{PAN_SCALE_H}:force_original_aspect_ratio=increase,"

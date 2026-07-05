@@ -1158,8 +1158,12 @@ def _send_digest(cfg: dict, ok: int, fail: int, made: list, replies_posted: int 
             pa = r.get("publish_at")
             if pa:
                 try:
-                    when = (dt.datetime.fromisoformat(pa.replace("Z", "+00:00"))
-                            .astimezone().strftime("%a %I:%M %p"))
+                    _pub_utc = dt.datetime.fromisoformat(pa.replace("Z", "+00:00"))
+                    # Show Singapore time explicitly. .astimezone() on the cloud runner returned
+                    # UTC with no label, so "Sun 04:23 AM" was actually 12:23 PM SGT - correct
+                    # but unreadable. Digest is for a human in Singapore; print SGT.
+                    _pub_sgt = _pub_utc.astimezone(dt.timezone(dt.timedelta(hours=8)))
+                    when = _pub_sgt.strftime("%a %I:%M %p") + " SGT"
                 except Exception:
                     when = pa
             tag = " [preview]" if r.get("preview") else ""
@@ -1841,14 +1845,13 @@ def main():
         # post_first_immediately=False in config, for anyone who'd rather never post off-peak.
         _now_local = dt.datetime.now()
         _post_first_now = cfg.get("post_first_immediately", True)
+        # post_first_immediately=False now means EXACTLY that: never post any video immediately -
+        # every video goes to a configured slot. (The old "peak window" heuristic used the
+        # runner's LOCAL clock; on the UTC cloud runner, its 14:00-23:00 "peak" = 10pm-7am
+        # Singapore, so video #1 kept posting in the middle of the night. Heuristic removed.)
+        _in_peak = bool(_post_first_now)
         if not _post_first_now:
-            _peak_start, _peak_end = 14, 23
-            _in_peak = _peak_start <= _now_local.hour < _peak_end
-        else:
-            _in_peak = True  # force "post #1 now" behavior
-        if not _post_first_now and not _in_peak and slot_times:
-            log(f"Off-peak ({_now_local.strftime('%H:%M')}) and post_first_immediately=False - "
-                f"scheduling all videos to upcoming peak slots.")
+            log("post_first_immediately=False - scheduling ALL videos to configured slots.")
         else:
             log(f"Posting video #1 now; videos #2-{n} scheduled to slots.")
         for slot_idx, draft in enumerate(to_publish):

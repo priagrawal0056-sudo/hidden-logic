@@ -845,6 +845,24 @@ Hard rules:
   If a sentence could appear in a marketing deck or a textbook, rewrite it as something a person
   DID to the viewer, with a detail they can check next time they're there - because the goal is
   that they involuntarily remember this video the next time they're physically in that place.
+  BANNED AI LANGUAGE (hard bans - any of these marks the script as machine-written):
+    * Banned words/phrases: "delve", "unlock", "harness", "elevate", "seamless", "leverage",
+      "navigate", "landscape", "tapestry", "crucial", "ultimately", "essentially", "fascinating",
+      "intriguing", "remarkable", "premium experience", "curated", "optimized", "subtly",
+      "Imagine...", "Picture this", "Here's the thing", "Here's the kicker", "Let that sink in",
+      "mind-blowing", "game-changer", "But here's where it gets interesting".
+    * Banned abstract nouns as the SUBJECT of a sentence: "perception", "experience",
+      "phenomenon", "mechanism", "concept", "process", "design philosophy". A person or a
+      company does something; a "mechanism" never does anything.
+    * Banned: announcing the emotion instead of causing it ("shocking", "surprising", "crazy",
+      "insane"). If the fact is surprising, the viewer will be surprised without being told to be.
+    * Banned: the "It's not just X - it's Y" template more than ONCE per script, and triadic
+      filler lists ("faster, smarter, better").
+  HUMAN RHYTHM (how people actually talk): vary sentence length like speech - a three-word
+  fragment, then a longer sentence, then a medium one. Use contractions everywhere ("it's",
+  "they've", "you're"). Fragments are good. Read every line as if saying it to a friend across
+  a table; if you wouldn't say it out loud that way, rewrite it until you would. The script is
+  SPOKEN, not written.
 - RETURN HOOK (CRITICAL FOR SUBSCRIBERS): The reframe ending must make the viewer feel there is a
   SPECIFIC next thing to discover - not a vague "there's more." The strongest version points at the
   SAME category the video is in, so it reads as "this channel has a whole series exposing THIS kind of
@@ -1172,10 +1190,15 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
     server_busy_hits = 0         # how many models returned 5xx (Google-side outage, NOT our quota)
     RATE_LIMIT_TRIP = 3          # after this many 429s, stop grinding and hand off to Claude fast
     SERVER_BUSY_TRIP = 3         # after this many 5xx, the whole Gemini fleet is busy - bail to Claude
-    for model in _best_models(api_key):
+    for _model_idx, model in enumerate(_best_models(api_key)):
         if model in _dead_models:
             continue
-        for attempt in range(2):
+        # The top premium models write dramatically better scripts than the lite fallbacks
+        # ("airlines are leaking your plane"-grade mush comes from the lite end of the chain).
+        # Give the first two premium models 3 attempts with growing backoff before sliding
+        # down; everything below keeps the fast 2-attempt behavior.
+        _max_tries = 3 if _model_idx < 2 else 2
+        for attempt in range(_max_tries):
             try:
                 r = requests.post(GEMINI_URL.format(model=model, key=api_key), json=body, timeout=90)
                 if r.status_code == 404:
@@ -1215,22 +1238,23 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
                     break  # move on to the next model with no further sleep
                 if r.status_code in (500, 502, 503):
                     # 5xx is a Google-SIDE outage (server busy / overloaded), which is DIFFERENT
-                    # from 429 (our quota). It is NOT fixed by trying other Gemini models - if the
-                    # flash endpoint is throwing 503, the whole fleet is usually overloaded, so
-                    # grinding all 12 models just burns ~a minute of 5s waits. Count the hits and,
-                    # once it's clearly a fleet outage, trip straight to the Claude fallback.
-                    server_busy_hits += 1
+                    # from 429 (our quota). Count a hit only when a MODEL IS EXHAUSTED (all its
+                    # retries spent), not per response - otherwise the premium retries above
+                    # would trip the fleet-bail on a single busy model.
                     last_err = RuntimeError(f"{r.status_code} from {model} (Google server busy, not a quota issue)")
+                    if attempt < _max_tries - 1:
+                        _wait = 5 * (attempt + 1) * (attempt + 1)  # 5s, 20s
+                        print(f"[scriptgen] {model} returned {r.status_code} (server busy, not quota), "
+                              f"retry {attempt + 1}/{_max_tries - 1} in {_wait}s...")
+                        time.sleep(_wait)
+                        continue
+                    server_busy_hits += 1
                     if server_busy_hits >= SERVER_BUSY_TRIP:
                         raise _GeminiQuotaExhausted(
-                            f"Gemini servers busy ({server_busy_hits} models returned 5xx this call). "
+                            f"Gemini servers busy ({server_busy_hits} models exhausted with 5xx this call). "
                             f"This is a Google-side outage, not your quota - handing off to Claude.",
                             is_server_busy=True,
                         )
-                    if attempt == 0:
-                        print(f"[scriptgen] {model} returned {r.status_code} (server busy, not quota), retrying once in 5s...")
-                        time.sleep(5)
-                        continue
                     print(f"[scriptgen] {model} still {r.status_code} (server busy), skipping it for this run")
                     _dead_models.add(model)
                     break

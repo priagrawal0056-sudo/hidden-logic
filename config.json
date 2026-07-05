@@ -22,7 +22,7 @@
   "quality_floor": 46,
   "pixabay_api_key": "",
   "script_ab": true,
-  "strict_topic_lock": false,
+  "strict_topic_lock": true,
   "alert_webhook_url": "",
   "absolute_quality_floor": 40,
   "elevenlabs_voice_id": "NOpBlnGInO9m6vDvFkFC",

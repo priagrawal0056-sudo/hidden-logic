@@ -571,16 +571,19 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
             print(f"[visuals] First frame found no on-topic clip for '{q}'. Deferring - will open "
                   f"with the best on-topic clip from the rest of the video instead of a generic shot.")
         elif not found and paths:
-            prev_clip = paths[-1]
-            out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-            import shutil
-            try:
-                shutil.copy(prev_clip, out)
-                paths.append(out)
-                found = True
-                print(f"[visuals] Failed all search queries for '{q}'. Duplicating previous clip as emergency fallback.")
-            except Exception as e:
-                print(f"[visuals] Emergency fallback copy failed: {e}")
+            # duplicate a RANDOM earlier clip, never the immediately-previous one - adjacent
+            # identical clips read as "the video is looping". With 2+ clips available we
+            # exclude the last; the reuse-offset in assemble then shows a different time
+            # window of whichever clip we copy, so the repeat is nearly invisible.
+            import random as _dup_rnd
+            _pool = paths[:-1] if len(paths) >= 2 else paths
+            prev_clip = _dup_rnd.choice(_pool)
+            # Reference the SAME file (no copy): assemble keys its reuse-offset counter by
+            # path, so a repeated path gets a staggered start time instead of replaying the
+            # identical opening seconds (the 'same clip twice in a row' complaint).
+            paths.append(prev_clip)
+            found = True
+            print(f"[visuals] Failed all search queries for '{q}'. Reusing an earlier clip (assemble offsets it).")
         
         if not (_RATE_LIMITED and "pexels" in _RATE_LIMITED and "pixabay" in _RATE_LIMITED):
             time.sleep(0.25)
@@ -593,14 +596,9 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
     if first_frame_deferred and len(paths) >= 1:
         # paths currently holds clips for slots 1..N (the first slot was skipped). Duplicate the
         # first available on-topic clip to serve as the opener too, so pacing/segment count holds.
-        import shutil
-        opener = os.path.join(workdir, "bg_0_opener.mp4")
-        try:
-            shutil.copy(paths[0], opener)
-            paths.insert(0, opener)
-            print("[visuals] Promoted best on-topic clip to the first frame (deferred opener).")
-        except Exception as e:
-            print(f"[visuals] Could not set deferred opener: {e}")
+        # Same-path reference (no copy) so assemble's per-path reuse offset applies here too.
+        paths.insert(0, paths[0])
+        print("[visuals] Promoted best on-topic clip to the first frame (deferred opener).")
     
     if not paths:
         if _RATE_LIMITED:
