@@ -1417,22 +1417,25 @@
     "title": "Why Websites Beg You To Accept Cookies",
     "category": "Technology",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Netflix Asks If You're Still Watching",
     "category": "Technology",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Passwords Need A Symbol Now",
     "category": "Technology",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Red Lights Always Catch You",
@@ -1454,71 +1457,81 @@
     "title": "Why You Can't Find The Close Button On Ads",
     "category": "Internet",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Refresh A Page That Just Loaded",
     "category": "Internet",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Reaction Videos Get So Many Views",
     "category": "Internet",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Watch One More Short Every Time",
     "category": "Internet",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why People Interrupt Each Other Constantly",
     "category": "Social",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Talk Louder In A Noisy Room",
     "category": "Social",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Copy The Accent Of People Around You",
     "category": "Social",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Compliments Feel Awkward To Accept",
     "category": "Social",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Best Players Take The Last Penalty",
     "category": "Sports",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Job Interviews Ask Where You'll Be In Five Years",
     "category": "Work",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Milk Is Always At The Back Of The Store",
@@ -1548,15 +1561,17 @@
     "title": "Why Buffets Put Salad First",
     "category": "Food",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Soda Tastes Better From A Glass Bottle",
     "category": "Food",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Fancy Restaurants Serve Tiny Portions",
@@ -1602,8 +1617,9 @@
     "title": "Why Door Handles Are At The Same Height Everywhere",
     "category": "Design",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Hotel Showers Are So Confusing",
@@ -1617,22 +1633,25 @@
     "title": "Why Lottery Jackpots Roll Over",
     "category": "Money",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Rent Is Due On The First",
     "category": "Money",
     "viral_score": 9.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your WiFi Dies When Guests Arrive",
     "category": "Technology",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Gas Pumps Never Overflow",
@@ -1654,8 +1673,9 @@
     "title": "Why WiFi Slows Down When People Visit",
     "category": "Technology",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Phone Chargers Break At The Same Spot",
@@ -1669,8 +1689,9 @@
     "title": "Why Autocorrect Changes The Right Word",
     "category": "Technology",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Apps Update Constantly",
@@ -1684,15 +1705,17 @@
     "title": "Why The Unsubscribe Button Is Hidden",
     "category": "Technology",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Captchas Are Getting Harder",
     "category": "Technology",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Fuel Gauge Drops Faster Near Empty",
@@ -1729,36 +1752,41 @@
     "title": "Why Websites Fake A Countdown Timer",
     "category": "Internet",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why First Impressions Stick So Hard",
     "category": "Social",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Marathon Runners Hit A Wall",
     "category": "Sports",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Mondays Feel Worse Than They Are",
     "category": "Work",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Check Email First Thing And Regret It",
     "category": "Work",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Luxury Stores Keep Almost Nothing On The Shelves",
@@ -1772,15 +1800,16 @@
     "title": "Why The Bill Comes With Mints",
     "category": "Food",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05"
   },
   {
     "title": "Why Chocolate Melts Right At Body Temperature",
     "category": "Food",
     "viral_score": 9.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Casinos Have No Windows Or Clocks",
@@ -1825,29 +1854,33 @@
     "title": "Why Ads Ruin Everything",
     "category": "Internet",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Loading Bar Always Sticks At 99 Percent",
     "category": "Technology",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Bluetooth Disconnects At The Worst Time",
     "category": "Technology",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Terms And Conditions Are So Long",
     "category": "Technology",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Car Beeps For Everything",
@@ -1868,43 +1901,49 @@
     "title": "Why Videos Buffer At The Worst Moment",
     "category": "Internet",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Clickbait Always Works On You",
     "category": "Internet",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Groups Make Riskier Decisions",
     "category": "Social",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Laugh Harder With Friends",
     "category": "Social",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Remember Insults More Than Praise",
     "category": "Social",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Goalkeepers Dive The Wrong Way On Penalties",
     "category": "Sports",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Phone Charges Slower On The Couch",
@@ -1918,8 +1957,9 @@
     "title": "Why Tupperware Lids Never Match",
     "category": "Home",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Toilet Paper Roll Runs Out At The Worst Time",
@@ -1933,15 +1973,17 @@
     "title": "Why The Quietest Person Is Often The Smartest",
     "category": "Work",
     "viral_score": 9.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Autocorrect Changes The Right Words",
     "category": "Technology",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Car Never Stops Beeping",
@@ -1955,22 +1997,25 @@
     "title": "Why Videos Always Freeze At The Worst Time",
     "category": "Internet",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Screen Cracks On The First Drop",
     "category": "Technology",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Ads Are Louder Than The Video",
     "category": "Technology",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Speed Bumps Feel Different Every Time",
@@ -2000,8 +2045,9 @@
     "title": "Why Recommended Videos Know You Too Well",
     "category": "Internet",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Free Apps Make The Most Money",
@@ -2015,43 +2061,48 @@
     "title": "Why Crowds Move Like A Single Organism",
     "category": "Social",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Home Team Wins More Often",
     "category": "Sports",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Athletes Wear The Same Socks For Luck",
     "category": "Sports",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why One Sock Always Goes Missing",
     "category": "Home",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Cables Tangle In A Drawer",
     "category": "Home",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Fitted Sheets Are Impossible To Fold",
     "category": "Home",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05"
   },
   {
     "title": "Why The WiFi Is Worst In The Bedroom",
@@ -3222,8 +3273,9 @@
     "title": "Why You Believe The First Price You See",
     "category": "Psychology",
     "viral_score": 7.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Onions Make You Cry",
@@ -3250,8 +3302,9 @@
     "title": "Why The Drive Home Feels Quicker",
     "category": "Time",
     "viral_score": 7.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-05",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Childhood Summers Felt Endless",

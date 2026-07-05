@@ -3519,5 +3519,181 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "AO_dgcMajLE",
+    "title": "babby",
+    "topic": "babby",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "oWdJYiQSsYk",
+    "title": "uno reverse on dog!",
+    "topic": "uno reverse on dog!",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "ucVcXcl7u7I",
+    "title": "funny dog",
+    "topic": "funny dog",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "R6UgE5bTzic",
+    "title": "dogs!",
+    "topic": "dogs!",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "CRsEMWiG4AM",
+    "title": "dog running",
+    "topic": "dog running",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "27gIojMxmIs",
+    "title": "cats being a menace",
+    "topic": "cats being a menace",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "PKoLUPBp2O8",
+    "title": "OH NO!",
+    "topic": "OH NO!",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "wEaKjkd_7FM",
+    "title": "cats ain't slick",
+    "topic": "cats ain't slick",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "n5Gqb851704",
+    "title": "parrots helping out!",
+    "topic": "parrots helping out!",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "6unEQQg9m34",
+    "title": "bedtime for cats!",
+    "topic": "bedtime for cats!",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "2QEHh8LZ9ps",
+    "title": "getting chased by monkeys",
+    "topic": "getting chased by monkeys",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "zNfwbt6LARE",
+    "title": "67",
+    "topic": "67",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "H_x2wyYZCYI",
+    "title": "dinosaur!!",
+    "topic": "dinosaur!!",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "kndVfysoSks",
+    "title": "hungry cat!",
+    "topic": "hungry cat!",
+    "date": "2026-07-05",
+    "n": 0
+  },
+  {
+    "video_id": "TwKksTgthbk",
+    "title": "Why Your Brain Tricks You With Car Bumps",
+    "topic": "TRENDING NOW: why you hold your breath during a high dive",
+    "date": "2026-07-05",
+    "n": 337,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 10,
+    "environment_bonus": 0,
+    "topic_fidelity": 0.0,
+    "subject_retention": 10.0,
+    "quality_score": 48.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "HcHc6D1vl10",
+    "title": "Why You Always Slam Your Brakes",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "date": "2026-07-05",
+    "n": 338,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "dZoxa57GBIQ",
+    "title": "Why You Always Tip More For Mints",
+    "topic": "Why The Bill Comes With Mints",
+    "date": "2026-07-05",
+    "n": 339,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "cylN0HZcRmg",
+    "title": "Why That One Sound Is Everywhere",
+    "topic": "TRENDING NOW: why sprinters in the outer lanes feel slower",
+    "date": "2026-07-05",
+    "n": 340,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "RHAADjWzcYE",
+    "title": "Why You Always Laugh When Nervous",
+    "topic": "Why laughing when nervous keeps happening no matter what",
+    "date": "2026-07-05",
+    "n": 341,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

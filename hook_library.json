@@ -460,5 +460,60 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Your Brain Tricks You With Car Bumps",
+    "hook_text": "You spill coffee.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden Logic Reveal",
+    "first_frame_description": "Close-up of a coffee cup in a car's cup holder, then the car jolts, causing coffee to spill.",
+    "visual_thesis": "Your brain tricks you into feeling exaggerated pain from minor car bumps.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Slam Your Brakes",
+    "hook_text": "You\u2019re cruising at seventy and that car ahead looks frozen.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A first-person POV through a car windshield on a highway, focusing on a distant car that appears stationary.",
+    "visual_thesis": "The 'Looming Effect'\u2014the brain's inability to detect closing speed at a distance due to slow retinal expansion.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Tip More For Mints",
+    "hook_text": "You reach for the mint on your dinner check.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden Trap",
+    "first_frame_description": "A close-up, top-down shot of a hand reaching for a single green mint resting on a black leather restaurant check folder.",
+    "visual_thesis": "A first-person POV of a hand interacting with a restaurant check and mints, using data overlays to show the 'reciprocity' debt forming in real-time.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why That One Sound Is Everywhere",
+    "hook_text": "You scroll past that one sound.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Repetition -> Frustration -> Curiosity Gap",
+    "first_frame_description": "A close-up shot of a hand holding a smartphone, thumb scrolling rapidly through a social media feed (e.g., TikTok or YouTube Shorts). A distinct, recognizable viral sound is playing from the phone.",
+    "visual_thesis": "The illusion of virality created by platform manipulation of audio trends.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Laugh When Nervous",
+    "hook_text": "You're in a silent, serious room.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Setting -> Frustration -> Contradiction",
+    "first_frame_description": "A close-up shot of a person's face, trying to maintain a serious expression in a formal, quiet setting (e.g., a board meeting, a funeral, a library). Their eyes dart nervously, and a slight, involuntary twitch of a smile or a suppressed giggle is visible. The atmosphere is tense and silent.",
+    "visual_thesis": "The body's involuntary nervous laughter is a deliberate, hidden mechanism for emotional regulation.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

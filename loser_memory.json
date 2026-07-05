@@ -800,5 +800,126 @@
     "hook_type": "explainer",
     "cluster": "airport",
     "quality_score": 46.0
+  },
+  {
+    "title": "cats being a menace",
+    "views": 36,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "dog running",
+    "views": 9,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "dogs!",
+    "views": 5,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "funny dog",
+    "views": 6,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "uno reverse on dog!",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "babby",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Always Click Agree Without Reading",
+    "views": 135,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why You Always Abandon Your Online Cart #cart #design #psychology",
+    "views": 151,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 7,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 48.0
+  },
+  {
+    "title": "Why Self Checkout Machines Always Break On Purpose #purpose #design #psychology",
+    "views": 137,
+    "environment": true,
+    "annoyance": 0,
+    "visual": 8,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "supermarket",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Lose Track Of Time In Stores #stores #design #psychology",
+    "views": 201,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why Your Toaster Always Feels Backwards #backwards #design #psychology",
+    "views": 176,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
   }
 ]
