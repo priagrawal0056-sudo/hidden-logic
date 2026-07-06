@@ -451,6 +451,43 @@ def pick_topic(variant: str = "A", publish_at: str | None = None) -> tuple[str, 
                              reverse=True)
     top_3 = sorted_clusters[:3]
     print(f"[scriptgen] Top available clusters: {top_3}")
+
+    # PERFORMANCE FLOOR: the channel's own data shows a ~10x view spread by cluster - relatable
+    # PLACE/OBJECT topics (emotions~1071, decisions~1048, airline~1037, supermarket~666) pull an
+    # order of magnitude more than abstract INTERNAL topics (memory~124, technology~106). Those
+    # low clusters are boring-lecture material no hook can save, and the bank has 90+ proven
+    # place-topics queued, so there is no reason to ever spend a slot on them. We hard-drop any
+    # cluster whose average views sit below a floor, UNLESS it's brand-new (no videos yet, so it
+    # deserves a few exploration shots) or it's a live trend seed. Floor is config-tunable.
+    def _early_cfg_get(key, default):
+        try:
+            import config_loader
+            return config_loader.load_config("config.json").get(key, default)
+        except Exception:
+            try:
+                import json as _j, os as _o
+                if _o.path.exists("config.json"):
+                    with open("config.json", encoding="utf-8") as _f:
+                        return _j.load(_f).get(key, default)
+            except Exception:
+                pass
+        return default
+    _floor = float(_early_cfg_get("min_cluster_avg_views", 200.0))
+    def _cluster_avg(c):
+        info = clusters_info.get(c, {}) or {}
+        return float(info.get("avg_views", 0.0)), int(info.get("videos", 0) or 0)
+    _floored = []
+    for c in list(sorted_clusters):
+        avg, vids = _cluster_avg(c)
+        # keep unproven clusters (vids < 5) so exploration still happens; drop proven duds.
+        if vids >= 5 and avg < _floor:
+            _floored.append(c)
+    if _floored:
+        sorted_clusters = [c for c in sorted_clusters if c not in _floored]
+        available_clusters = [c for c in available_clusters if c not in _floored]
+        top_3 = sorted_clusters[:3]
+        print(f"[scriptgen] Performance floor ({_floor:.0f} views): dropped low-view clusters "
+              f"{sorted(_floored)}; steering to proven place/object topics. Top now: {top_3}")
     
     # Exploit seeds: seeds belonging to top_3 clusters
     exploit_seeds = []
@@ -463,15 +500,16 @@ def pick_topic(variant: str = "A", publish_at: str | None = None) -> tuple[str, 
     for c in other_clusters:
         explore_seeds.extend(winner_memory.ADJACENT_SEEDS.get(c, []))
         
+    _blocked = set(cooldowns) | set(_floored)
     for s in SEEDS:
         c = winner_memory.detect_cluster(s)
-        if c and c in cooldowns:
+        if c and c in _blocked:
             continue
         if s not in exploit_seeds and s not in explore_seeds:
             explore_seeds.append(s)
-            
+
     if not explore_seeds:
-        explore_seeds = [s for s in SEEDS if winner_memory.detect_cluster(s) not in cooldowns]
+        explore_seeds = [s for s in SEEDS if winner_memory.detect_cluster(s) not in _blocked]
     if not explore_seeds:
         explore_seeds = SEEDS
 
