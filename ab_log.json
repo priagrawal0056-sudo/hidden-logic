@@ -1319,7 +1319,7 @@
     "visual_thesis": "A packed airport gate with rows of seats quietly removed, herding standing travelers toward shops and bars where the airport makes its real money.",
     "first_frame_description": "A tired traveler stops at a crowded boarding gate; every seat is occupied and the rows look visibly sparse, with people standing along the edges.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 7.57,
+    "likes_per_1000_views": 7.56,
     "views_first_60m": 1098,
     "views_first_6h": 1171
   },
@@ -1577,7 +1577,7 @@
     "visual_thesis": "A large mirror in a hotel room is deliberately placed to create an illusion of luxury and justify price, not just for aesthetics.",
     "first_frame_description": "POV shot of a person walking into a standard hotel room, immediately focusing on a large mirror positioned opposite the bed.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 12.05,
+    "likes_per_1000_views": 11.76,
     "views_first_60m": 9,
     "views_first_6h": 9
   },
@@ -1598,7 +1598,7 @@
     "visual_thesis": "Supermarket aisle resets are psychological triggers designed to break consumer habits and increase impulse spending.",
     "first_frame_description": "A first-person view of a hand reaching toward a grocery shelf where an 'Eggs' sign is visible, but the shelf is completely bare.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 9.33,
+    "likes_per_1000_views": 9.3,
     "views_first_60m": 719,
     "views_first_6h": 719
   },
@@ -1640,7 +1640,7 @@
     "visual_thesis": "Nervous laughter isn't awkward; it's a deliberate, primal signal to disarm others in tense situations.",
     "first_frame_description": "A close-up on a person's face, eyes wide with a mix of embarrassment and an uncontrollable, nervous giggle escaping their lips, in a solemn or tense environment (e.g., a quiet funeral, a serious meeting).",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 6.86,
+    "likes_per_1000_views": 6.85,
     "views_first_60m": 42,
     "views_first_6h": 754,
     "views_first_24h": 754
@@ -1678,8 +1678,8 @@
     "viewer_identity_score": 10.0,
     "visual_thesis": "The black color of car tires is a deliberate, engineered design choice for durability and protection, contrasting with their natural white state.",
     "first_frame_description": "Close-up shot of a black car tire, perhaps with a subtle graphic overlay highlighting the black color.",
-    "comments_per_1000_views": 4.24,
-    "likes_per_1000_views": 42.37,
+    "comments_per_1000_views": 4.18,
+    "likes_per_1000_views": 41.84,
     "views_first_60m": 119,
     "views_first_6h": 119
   },
@@ -1716,8 +1716,8 @@
     "viewer_identity_score": 9.0,
     "visual_thesis": "A driver letting a steering wheel spin back to center, contrasted with a 3D simulation of a square wheel violently snapping and injuring hands.",
     "first_frame_description": "First-person POV of a driver's hands letting go of a spinning steering wheel inside a moving car.",
-    "comments_per_1000_views": 0.96,
-    "likes_per_1000_views": 5.76,
+    "comments_per_1000_views": 0.95,
+    "likes_per_1000_views": 5.69,
     "views_first_60m": 755,
     "views_first_6h": 755
   },
@@ -1738,7 +1738,7 @@
     "visual_thesis": "The QWERTY keyboard layout is a deliberate speed-bump designed for 19th-century mechanical limitations, preserved today solely to protect tech corporate profits by avoiding user retraining.",
     "first_frame_description": "A first-person POV shot looking down at a modern smartphone screen with the keyboard open, thumbs hovering over the scrambled letters.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 3.73,
+    "likes_per_1000_views": 3.64,
     "views_first_60m": 765,
     "views_first_6h": 765
   },
@@ -1776,7 +1776,7 @@
     "visual_thesis": "The video will use a split-screen POV comparison between Lane 1 (high blur) and Lane 8 (static background) to prove the parallax effect, followed by a force-vector overlay on a runner.",
     "first_frame_description": "A high-speed POV shot of a runner in the outermost lane of a bright red track, looking toward the distant, stationary stadium seats.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 11.92,
+    "likes_per_1000_views": 11.71,
     "views_first_60m": 1007,
     "views_first_6h": 1007
   },
@@ -1797,7 +1797,7 @@
     "visual_thesis": "Contrast the physical tension of a passenger swallowing with a 3D diagram of a plane fuselage venting air to prevent structural explosion.",
     "first_frame_description": "An extreme close-up of a passenger's tensed jaw swallowing in a window seat, with a digital pressure gauge overlay rapidly dropping.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 14.12,
+    "likes_per_1000_views": 12.88,
     "views_first_60m": 779,
     "views_first_6h": 779
   },
@@ -1816,7 +1816,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "Your brain tricks you into feeling exaggerated pain from minor car bumps.",
-    "first_frame_description": "Close-up of a coffee cup in a car's cup holder, then the car jolts, causing coffee to spill."
+    "first_frame_description": "Close-up of a coffee cup in a car's cup holder, then the car jolts, causing coffee to spill.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 286,
+    "views_first_6h": 286
   },
   "HcHc6D1vl10": {
     "variant": "A",
@@ -1833,7 +1837,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 8.5,
     "visual_thesis": "The 'Looming Effect'\u2014the brain's inability to detect closing speed at a distance due to slow retinal expansion.",
-    "first_frame_description": "A first-person POV through a car windshield on a highway, focusing on a distant car that appears stationary."
+    "first_frame_description": "A first-person POV through a car windshield on a highway, focusing on a distant car that appears stationary.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 8.37,
+    "views_first_60m": 478,
+    "views_first_6h": 478
   },
   "dZoxa57GBIQ": {
     "variant": "B",
@@ -1850,7 +1858,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A first-person POV of a hand interacting with a restaurant check and mints, using data overlays to show the 'reciprocity' debt forming in real-time.",
-    "first_frame_description": "A close-up, top-down shot of a hand reaching for a single green mint resting on a black leather restaurant check folder."
+    "first_frame_description": "A close-up, top-down shot of a hand reaching for a single green mint resting on a black leather restaurant check folder.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 12.74,
+    "views_first_60m": 157,
+    "views_first_6h": 157
   },
   "cylN0HZcRmg": {
     "variant": "A",
@@ -1867,7 +1879,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "The illusion of virality created by platform manipulation of audio trends.",
-    "first_frame_description": "A close-up shot of a hand holding a smartphone, thumb scrolling rapidly through a social media feed (e.g., TikTok or YouTube Shorts). A distinct, recognizable viral sound is playing from the phone."
+    "first_frame_description": "A close-up shot of a hand holding a smartphone, thumb scrolling rapidly through a social media feed (e.g., TikTok or YouTube Shorts). A distinct, recognizable viral sound is playing from the phone.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 7.66,
+    "views_first_60m": 261,
+    "views_first_6h": 261
   },
   "RHAADjWzcYE": {
     "variant": "B",
@@ -1884,6 +1900,78 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "The body's involuntary nervous laughter is a deliberate, hidden mechanism for emotional regulation.",
-    "first_frame_description": "A close-up shot of a person's face, trying to maintain a serious expression in a formal, quiet setting (e.g., a board meeting, a funeral, a library). Their eyes dart nervously, and a slight, involuntary twitch of a smile or a suppressed giggle is visible. The atmosphere is tense and silent."
+    "first_frame_description": "A close-up shot of a person's face, trying to maintain a serious expression in a formal, quiet setting (e.g., a board meeting, a funeral, a library). Their eyes dart nervously, and a slight, involuntary twitch of a smile or a suppressed giggle is visible. The atmosphere is tense and silent.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 5,
+    "views_first_6h": 5
+  },
+  "7GSrIAQLifo": {
+    "variant": "B",
+    "title": "Why You Always Catch Other People's Yawns",
+    "date": "2026-07-06",
+    "publish_at": "2026-07-07T07:06:00Z",
+    "cluster": null,
+    "topic": "Why Other People's Yawns Infect You",
+    "subcluster": "psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrating the involuntary neurological reflex of contagious yawning and its link to empathy through brain scans and behavioral footage.",
+    "first_frame_description": "A close-up, high-definition shot of a tired office worker yawning deeply, triggering an immediate reaction from the person sitting opposite them."
+  },
+  "USGPI-63myI": {
+    "variant": "A",
+    "title": "Why Injury Time Feels Like Forever",
+    "date": "2026-07-06",
+    "publish_at": "2026-07-07T09:19:00Z",
+    "cluster": null,
+    "topic": "Why injury time feels longer than it is",
+    "subcluster": "Time Perception",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The chronostasis effect (stopped-clock illusion) triggered by high-stakes visual fixation on a stadium clock.",
+    "first_frame_description": "A high-angle shot of a digital stadium clock showing 90:00, with the red numbers glowing intensely against a dark stadium background."
+  },
+  "UUH3OSqFz2k": {
+    "variant": "B",
+    "title": "Why You Always Hit Snooze Again",
+    "date": "2026-07-06",
+    "publish_at": "2026-07-07T11:02:00Z",
+    "cluster": null,
+    "topic": "Why hitting the snooze button repeatedly makes everyone act predictably",
+    "subcluster": "sleep_habits",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "The snooze button is designed to make you feel worse by repeatedly interrupting your sleep cycles, leading to predictable grogginess.",
+    "first_frame_description": "A hand reaches out from under a blanket to hit the snooze button on an alarm clock next to a bed."
+  },
+  "egbBEA_d9Ps": {
+    "variant": "B",
+    "title": "Why You Can't Tickle Yourself",
+    "date": "2026-07-06",
+    "publish_at": "2026-07-07T12:16:00Z",
+    "cluster": null,
+    "topic": "Why You Can't Tickle Yourself",
+    "subcluster": "neurology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 8.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A side-by-side comparison of self-tickling (no reaction) versus external tickling (extreme reaction), followed by a brain-mapping visual showing the cerebellum's predictive filter.",
+    "first_frame_description": "A close-up shot of a person aggressively poking their own ribs with a confused, completely blank facial expression."
   }
 }

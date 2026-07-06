@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-05",
-  "sample_size": 44,
+  "date": "2026-07-06",
+  "sample_size": 48,
   "avg_retention": null,
   "best_formats": [
     "story"
@@ -10,8 +10,8 @@
     "unspecified"
   ],
   "best_hooks": [
-    "bold_claim",
-    "plain"
+    "plain",
+    "bold_claim"
   ],
   "hot_subjects": [
     "broken doggo"

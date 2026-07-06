@@ -921,5 +921,93 @@
     "hook_type": "explainer",
     "cluster": null,
     "quality_score": 0
+  },
+  {
+    "title": "cute puppy!",
+    "views": 11,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Spiderman!",
+    "views": 8,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Always Laugh When Nervous",
+    "views": 6,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "emotions",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why That One Sound Is Everywhere",
+    "views": 261,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why You Always Tip More For Mints",
+    "views": 140,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Injury Time Feels So Long",
+    "views": 274,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 48.0
+  },
+  {
+    "title": "Why You Always Watch The Next YouTube Video",
+    "views": 259,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 49.0
+  },
+  {
+    "title": "Airport Secrets: Why You're Designed to Meander #secrets #design #psychology",
+    "views": 268,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "airport",
+    "quality_score": 0
   }
 ]

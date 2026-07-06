@@ -3695,5 +3695,121 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "OQ_8-2lYGN8",
+    "title": "Spiderman!",
+    "topic": "Spiderman!",
+    "date": "2026-07-06",
+    "n": 0
+  },
+  {
+    "video_id": "2fSed-VyKko",
+    "title": "cute puppy!",
+    "topic": "cute puppy!",
+    "date": "2026-07-06",
+    "n": 0
+  },
+  {
+    "video_id": "3ylY2oQoFIQ",
+    "title": "MONKEY",
+    "topic": "MONKEY",
+    "date": "2026-07-06",
+    "n": 0
+  },
+  {
+    "video_id": "Rho9uClCx6M",
+    "title": "spider-kitty",
+    "topic": "spider-kitty",
+    "date": "2026-07-06",
+    "n": 0
+  },
+  {
+    "video_id": "RVDh9waI4H0",
+    "title": "how long \ud83d\ude1d",
+    "topic": "how long \ud83d\ude1d",
+    "date": "2026-07-06",
+    "n": 0
+  },
+  {
+    "video_id": "0A1m8oyxe5I",
+    "title": "holding my cat like a baby!",
+    "topic": "holding my cat like a baby!",
+    "date": "2026-07-06",
+    "n": 0
+  },
+  {
+    "video_id": "2kCl_RGaSFU",
+    "title": "scary cat \ud83d\udc79",
+    "topic": "scary cat \ud83d\udc79",
+    "date": "2026-07-06",
+    "n": 0
+  },
+  {
+    "video_id": "_YH94yFBXMM",
+    "title": "Nico baby \ud83d\udc99",
+    "topic": "Nico baby \ud83d\udc99",
+    "date": "2026-07-06",
+    "n": 0
+  },
+  {
+    "video_id": "7GSrIAQLifo",
+    "title": "Why You Always Catch Other People's Yawns",
+    "topic": "Why Other People's Yawns Infect You",
+    "date": "2026-07-06",
+    "n": 350,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "USGPI-63myI",
+    "title": "Why Injury Time Feels Like Forever",
+    "topic": "Why injury time feels longer than it is",
+    "date": "2026-07-06",
+    "n": 351,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "UUH3OSqFz2k",
+    "title": "Why You Always Hit Snooze Again",
+    "topic": "Why hitting the snooze button repeatedly makes everyone act predictably",
+    "date": "2026-07-06",
+    "n": 352,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "egbBEA_d9Ps",
+    "title": "Why You Can't Tickle Yourself",
+    "topic": "Why You Can't Tickle Yourself",
+    "date": "2026-07-06",
+    "n": 353,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

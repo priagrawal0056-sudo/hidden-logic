@@ -2108,15 +2108,17 @@
     "title": "Why The WiFi Is Worst In The Bedroom",
     "category": "Home",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Work Better At The Last Minute",
     "category": "Work",
     "viral_score": 9.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Open Offices Make You Less Productive",
@@ -2146,36 +2148,41 @@
     "title": "Why Group Chats Move Too Fast To Follow",
     "category": "Internet",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Like People Who Agree With You",
     "category": "Social",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Eye Contact Feels So Intense",
     "category": "Social",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Trust The Team In Red",
     "category": "Sports",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Players Spit So Much",
     "category": "Sports",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Wave Goes Around A Stadium",
@@ -2189,15 +2196,17 @@
     "title": "Why The First Corner Decides An F1 Race",
     "category": "Sports",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Fans Boo The Opposing Keeper",
     "category": "Sports",
     "viral_score": 9.1,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Look Busy When The Boss Walks By",
@@ -2219,8 +2228,9 @@
     "title": "Why Your Battery Drops From 20 To Dead Instantly",
     "category": "Technology",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Highway Gas Is More Expensive",
@@ -2242,78 +2252,89 @@
     "title": "Why Pop Ups Wait Until You're Reading",
     "category": "Internet",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Crowd Goes Quiet Before A Free Kick",
     "category": "Sports",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Underdogs Win On Neutral Ground",
     "category": "Sports",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Toss Matters More Than You Think",
     "category": "Sports",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why A One Goal Lead Is The Most Dangerous",
     "category": "Sports",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Last Bit Of Soap Won't Lather",
     "category": "Home",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Smoke Alarms Beep At 3 AM",
     "category": "Home",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Light Bulbs Burn Out When You Flip The Switch",
     "category": "Home",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Lunch Meetings Get Less Done",
     "category": "Work",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Friday Afternoons Feel Useless",
     "category": "Work",
     "viral_score": 9.0,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Password Rules Keep Getting Worse",
     "category": "Technology",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Every Car Looks The Same",
@@ -2327,8 +2348,9 @@
     "title": "Why Websites Remember You Forever",
     "category": "Technology",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Phone Screens Are Getting Bigger",
@@ -2382,50 +2404,57 @@
     "title": "Why Ads Get Louder Than Everything",
     "category": "Internet",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Online Arguments Never End",
     "category": "Internet",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Subscribe Buttons Pulse And Bounce",
     "category": "Internet",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Doorbell Makes The Dog Lose It",
     "category": "Home",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Junk Drawer Fills Itself",
     "category": "Home",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Microwave Finishes At 1 Second",
     "category": "Home",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Best Ideas Come In The Shower Not At Your Desk",
     "category": "Work",
     "viral_score": 8.9,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Steering Wheels Aren't Square",
@@ -2447,22 +2476,25 @@
     "title": "Why Streaming Buffers At The Best Scene",
     "category": "Technology",
     "viral_score": 8.8,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Search Results Are All Ads First",
     "category": "Internet",
     "viral_score": 8.8,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Awkward Silences Feel So Long",
     "category": "Social",
     "viral_score": 8.8,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Shower Gets Cold When The Toilet Flushes",
@@ -2484,8 +2516,9 @@
     "title": "Why Email Threads Never End",
     "category": "Work",
     "viral_score": 8.8,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Wipers Suddenly Get Loud",
@@ -2499,8 +2532,9 @@
     "title": "Why Cancel Buttons Are Grey And Hard To Find",
     "category": "Technology",
     "viral_score": 8.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Side Mirrors Say Objects Are Closer",
@@ -2522,15 +2556,17 @@
     "title": "Why Notifications Are Red",
     "category": "Internet",
     "viral_score": 8.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Nobody Helps In A Big Crowd",
     "category": "Social",
     "viral_score": 8.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Small Talk Always Starts With Weather",
@@ -2560,50 +2596,57 @@
     "title": "Why Meetings Always Run Over",
     "category": "Work",
     "viral_score": 8.7,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Refs Get Blamed For Everything",
     "category": "Sports",
     "viral_score": 8.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Printer Jams Before A Deadline",
     "category": "Work",
     "viral_score": 8.6,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Brain Deletes Your Mission At Every Doorway",
     "category": "Psychology",
     "viral_score": 8.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You're Suddenly Breathing Manually",
     "category": "Psychology",
     "viral_score": 8.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Time Gets Faster Every Year",
     "category": "Psychology",
     "viral_score": 8.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Open The Fridge Twice",
     "category": "Psychology",
     "viral_score": 8.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Check Your Phone The Second It's In Your Pocket",
@@ -2617,22 +2660,25 @@
     "title": "Why You Avoid Stepping On Cracks",
     "category": "Psychology",
     "viral_score": 8.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Notice The Same Number Everywhere",
     "category": "Psychology",
     "viral_score": 8.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why A Last Minute Goal Feels Better",
     "category": "Sports",
     "viral_score": 8.5,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Comebacks Feel Impossible Then Happen",
@@ -2646,176 +2692,199 @@
     "title": "Why Your Brain Replays Cringe Moments",
     "category": "Psychology",
     "viral_score": 8.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Brain Loves Tomorrow",
     "category": "Psychology",
     "viral_score": 8.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Brain Replays Cringe Moments At Night",
     "category": "Psychology",
     "viral_score": 8.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Feel Watched When Nobody's There",
     "category": "Psychology",
     "viral_score": 8.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Hear Your Name In A Crowded Room",
     "category": "Psychology",
     "viral_score": 8.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Think Everyone's Looking At You",
     "category": "Psychology",
     "viral_score": 8.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Foot Falls Asleep",
     "category": "Body",
     "viral_score": 8.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Voice Sounds Different On Recordings",
     "category": "Body",
     "viral_score": 8.4,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Brain Refuses To Stop Playing That Song",
     "category": "Psychology",
     "viral_score": 8.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Brain Hides Objects In Plain Sight",
     "category": "Psychology",
     "viral_score": 8.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Cameras Make You Hate Your Own Face",
     "category": "Psychology",
     "viral_score": 8.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Body Randomly Glitches",
     "category": "Body",
     "viral_score": 8.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Brain Ignores Your Own Tickles",
     "category": "Psychology",
     "viral_score": 8.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Smells Unlock Forgotten Memories",
     "category": "Psychology",
     "viral_score": 8.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Trust Round Numbers Less Than Odd Ones",
     "category": "Psychology",
     "viral_score": 8.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Believe Something More When It's Repeated",
     "category": "Psychology",
     "viral_score": 8.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Mishear Lyrics The Same Way Every Time",
     "category": "Psychology",
     "viral_score": 8.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Get A Brain Freeze",
     "category": "Body",
     "viral_score": 8.3,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Other People's Yawns Infect You",
     "category": "Psychology",
     "viral_score": 8.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06"
   },
   {
     "title": "Why Your Legs Suddenly Stop Working",
     "category": "Body",
     "viral_score": 8.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Dreams Self-Destruct",
     "category": "Psychology",
     "viral_score": 8.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Your Brain Is Addicted To Sugar",
     "category": "Psychology",
     "viral_score": 8.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Forget Names Two Seconds After Hearing Them",
     "category": "Psychology",
     "viral_score": 8.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Reread The Same Line Five Times",
     "category": "Psychology",
     "viral_score": 8.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why You Can't Tickle Yourself",
     "category": "Psychology",
     "viral_score": 8.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06"
   },
   {
     "title": "Why You Wake Up Right Before Your Alarm",
@@ -3359,15 +3428,17 @@
     "title": "Why The Moon Follows You In The Car",
     "category": "Nature",
     "viral_score": 7.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why The Weekend Disappears Instantly",
     "category": "Time",
     "viral_score": 7.2,
-    "used": false,
-    "used_date": null
+    "used": true,
+    "used_date": "2026-07-06",
+    "skipped_as_dup": true
   },
   {
     "title": "Why Spicy Food Feels Hot",

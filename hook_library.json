@@ -515,5 +515,49 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Catch Other People's Yawns",
+    "hook_text": "You watch someone yawn, and your jaw instantly drops.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Biological Reveal",
+    "first_frame_description": "A close-up, high-definition shot of a tired office worker yawning deeply, triggering an immediate reaction from the person sitting opposite them.",
+    "visual_thesis": "Demonstrating the involuntary neurological reflex of contagious yawning and its link to empathy through brain scans and behavioral footage.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Injury Time Feels Like Forever",
+    "hook_text": "You stare at the stadium clock and time breaks.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Mystery",
+    "first_frame_description": "A high-angle shot of a digital stadium clock showing 90:00, with the red numbers glowing intensely against a dark stadium background.",
+    "visual_thesis": "The chronostasis effect (stopped-clock illusion) triggered by high-stakes visual fixation on a stadium clock.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Hit Snooze Again",
+    "hook_text": "You hit snooze, but it's designed to make you feel worse.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction/Hidden System",
+    "first_frame_description": "A hand reaches out from under a blanket to hit the snooze button on an alarm clock next to a bed.",
+    "visual_thesis": "The snooze button is designed to make you feel worse by repeatedly interrupting your sleep cycles, leading to predictable grogginess.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Tickle Yourself",
+    "hook_text": "You dig your fingers into your ribs, but feel nothing.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up shot of a person aggressively poking their own ribs with a confused, completely blank facial expression.",
+    "visual_thesis": "A side-by-side comparison of self-tickling (no reaction) versus external tickling (extreme reaction), followed by a brain-mapping visual showing the cerebellum's predictive filter.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
