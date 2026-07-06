@@ -167,9 +167,24 @@ def _audio_duration(mp3_path: str) -> float:
     return float(out.stdout.strip())
 
 
+def _syllables(word: str) -> float:
+    """Rough syllable count - speech duration tracks syllables far better than raw characters,
+    so caption timing estimated this way drifts much less when whisper isn't available."""
+    w = re.sub(r"[^a-z]", "", word.lower())
+    if not w:
+        return 1.0
+    groups = re.findall(r"[aeiouy]+", w)
+    n = len(groups)
+    if w.endswith("e") and n > 1:  # silent trailing e
+        n -= 1
+    return float(max(1, n))
+
+
 def _estimate_timings(text: str, duration: float) -> list[dict]:
-    """No WordBoundary events received: spread words across the real audio
-    duration, weighted by word length plus pause weight after punctuation."""
+    """No word-level timestamps available: spread words across the real audio duration,
+    weighted by SYLLABLE COUNT (a much better proxy for spoken length than characters) plus
+    pause weight after punctuation. Whisper alignment is strongly preferred; this only runs
+    when whisper is unavailable, and keeps drift small enough that captions still track."""
     tokens = [t for t in text.split() if t.strip()]
     if not tokens:
         return []
@@ -177,11 +192,11 @@ def _estimate_timings(text: str, duration: float) -> list[dict]:
     speakable = max(0.5, duration - LEAD - TAIL)
     weights = []
     for t in tokens:
-        w = max(2, len(re.sub(r"[^\w]", "", t)))  # length of letters/digits
+        w = _syllables(t) + 0.5   # base: syllables (+0.5 floor so 1-syllable words aren't too fast)
         if re.search(r"[.!?]$", t):
-            w += 3   # sentence-end pause
+            w += 2.5   # sentence-end pause
         elif re.search(r"[,;:]$", t):
-            w += 1.5
+            w += 1.2
         weights.append(w)
     total = sum(weights)
     words, t_cursor = [], LEAD
@@ -191,7 +206,7 @@ def _estimate_timings(text: str, duration: float) -> list[dict]:
         words.append({
             "word": clean or tok,
             "start": round(t_cursor, 3),
-            "end": round(t_cursor + d * 0.85, 3),  # word ends before its pause
+            "end": round(t_cursor + d * 0.9, 3),  # word ends just before its pause
         })
         t_cursor += d
     return words

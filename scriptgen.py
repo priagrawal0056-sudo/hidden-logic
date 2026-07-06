@@ -787,16 +787,31 @@ Hard rules:
   "it's costing you", "you're being steered", "it's on purpose", "not an accident" beat a neutral fact.
   Rules: first sentence <=10 words, concrete, present tense, NO preamble, NO "have you ever", NO
   "your brain", NO signature phrase, NO slow setup that delays the gap.
+  NAME A SPECIFIC PLACE OR OBJECT IN THE FIRST LINE (mandatory): the hook must name a CONCRETE,
+  recognizable location or thing - "the grocery store", "your hotel bathroom", "the left lane",
+  "a job interview", "your car's cup holder". A GENERIC container fails: "a silent room", "a
+  serious moment", "a certain situation", "everyday life" are all BANNED as hook settings,
+  because the viewer can't picture themselves there. If the topic is internal/abstract (an
+  emotion, a mental habit), ANCHOR it to the most specific real place it happens: nervous
+  laughter -> "You laugh at a funeral" not "You're in a silent, serious room"; forgetting names
+  -> "You shake a hand and blank on the name" not "You meet someone new". Test: could the viewer
+  draw the scene from the first line? If not, it's too vague - rewrite with a named place/object.
   STRONG (scene + instant gap - the viewer is hooked AND knows what it is):
   - "Your 'small' soda doesn't fit the cup holder. On purpose."
   - "Milk sits at the very back of every store. Not by accident."
   - "Your cart pulls left every single time. Someone designed that."
   - "Hotel sheets are always white. There's a cold reason."
+  - "You laugh at a funeral. Your body did that on purpose."
   WEAK (scene but NO gap, or a gap that's too slow/vague - these STILL get swiped):
   - "You grab a small drink and it floods the cup holder."   (frustration, but no 'why' itch yet)
   - "You walk into a hotel room and set down your bag."        (pure setup, no gap)
   - "Have you ever wondered why..."                            (slow preamble)
   - "Your brain falls for this every time."                   (abstract, no concrete subject)
+  - "You're in a silent, serious room."                       (GENERIC setting, no named place)
+- SPELLING/HOMOPHONE GUARD (the TTS reads the script LITERALLY, so a wrong word is SPOKEN wrong):
+  use the correct word - "brake" (to slow/stop) NOT "break"; "your" vs "you're"; "its" vs "it's";
+  "peak/peek/pique"; "hear/here". Re-read the final script as if speaking it aloud; any homophone
+  error becomes an audible mistake that instantly reads as low-effort/AI. Zero tolerance.
 - MRBEAST RETENTION RULES:
   * 0-3s HOOK (THE MOST IMPORTANT 3 SECONDS - THIS DECIDES EVERYTHING): This is the single most important part of the entire video. 70% of viewers leave here. The hook must be the BEST-crafted sentence in the script. Requirements, ALL mandatory:
     - <=9 words. Shorter is stronger.
@@ -1412,7 +1427,7 @@ Attack the LOWEST-scoring dimensions above directly.
 Script:
 \"\"\"{script}\"\"\"
 
-Rewrite it to fix exactly that weakness while keeping everything that works. Same rules: the ENTIRE script must stay UNDER 80 words (~30 seconds) - CUT, never pad, because shorter Shorts retain far better; every sentence <=15 words and one idea each, storytelling hook <=9 words, escalate -> ~50% pattern interrupt -> twist -> payoff -> signature ending loop, written like a premium cinematic documentary (Think: Vox, Johnny Harris). The first sentence MUST begin with an immediate physical, everyday moment.
+Rewrite it to fix exactly that weakness while keeping everything that works. Same rules: the ENTIRE script must stay UNDER 80 words (~30 seconds) - CUT, never pad, because shorter Shorts retain far better; every sentence <=15 words and one idea each, storytelling hook <=9 words, escalate -> ~50% pattern interrupt -> twist -> payoff -> signature ending loop, written like a premium cinematic documentary (Think: Vox, Johnny Harris). The first sentence MUST begin with an immediate physical, everyday moment AND name a SPECIFIC place or object (not a generic "silent room" / "certain situation" - name the actual funeral, interview, grocery aisle, cup holder). Re-read the final script aloud and fix any homophone the TTS would speak wrong ("brake" not "break", "your" not "you're", "it's" not "its").
 
 Respond ONLY with JSON (keep title/description/hashtags/broll_keywords/emphasis_words consistent with the new script):
 {{"script": "...", "title": "...", "description": "...", "hashtags": ["#shorts","#hiddenlogic","..",".."], "broll_keywords": ["..","..","..","..","..",".."], "emphasis_words": ["..",".."], "first_comment": "..."}}"""
