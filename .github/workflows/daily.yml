@@ -43,7 +43,11 @@ jobs:
 
       - name: Install ffmpeg (GitHub runners have it, but pin it to be safe)
         run: |
-          sudo apt-get update
+          # Remove third-party apt repos (Microsoft/azure-cli) that intermittently break the
+          # runner's `apt-get update` with signature errors. We don't need them - only ffmpeg.
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/azure-cli.list || true
+          # Don't let a partial repo failure abort the whole job.
+          sudo apt-get update || true
           sudo apt-get install -y ffmpeg fonts-liberation
           ffmpeg -version | head -1
 
