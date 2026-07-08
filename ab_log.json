@@ -1796,8 +1796,8 @@
     "viewer_identity_score": 9.0,
     "visual_thesis": "Contrast the physical tension of a passenger swallowing with a 3D diagram of a plane fuselage venting air to prevent structural explosion.",
     "first_frame_description": "An extreme close-up of a passenger's tensed jaw swallowing in a window seat, with a digital pressure gauge overlay rapidly dropping.",
-    "comments_per_1000_views": 0.63,
-    "likes_per_1000_views": 8.76,
+    "comments_per_1000_views": 0.62,
+    "likes_per_1000_views": 9.29,
     "views_first_60m": 779,
     "views_first_6h": 779
   },
@@ -1941,8 +1941,8 @@
     "viewer_identity_score": 9.0,
     "visual_thesis": "The chronostasis effect (stopped-clock illusion) triggered by high-stakes visual fixation on a stadium clock.",
     "first_frame_description": "A high-angle shot of a digital stadium clock showing 90:00, with the red numbers glowing intensely against a dark stadium background.",
-    "comments_per_1000_views": 0.93,
-    "likes_per_1000_views": 11.21
+    "comments_per_1000_views": 0.94,
+    "likes_per_1000_views": 11.24
   },
   "UUH3OSqFz2k": {
     "variant": "B",
@@ -1961,7 +1961,7 @@
     "visual_thesis": "The snooze button is designed to make you feel worse by repeatedly interrupting your sleep cycles, leading to predictable grogginess.",
     "first_frame_description": "A hand reaches out from under a blanket to hit the snooze button on an alarm clock next to a bed.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 10.34
+    "likes_per_1000_views": 10.39
   },
   "egbBEA_d9Ps": {
     "variant": "B",
@@ -1979,8 +1979,8 @@
     "viewer_identity_score": 9.0,
     "visual_thesis": "A side-by-side comparison of self-tickling (no reaction) versus external tickling (extreme reaction), followed by a brain-mapping visual showing the cerebellum's predictive filter.",
     "first_frame_description": "A close-up shot of a person aggressively poking their own ribs with a confused, completely blank facial expression.",
-    "comments_per_1000_views": 3.67,
-    "likes_per_1000_views": 15.61,
+    "comments_per_1000_views": 3.68,
+    "likes_per_1000_views": 15.65,
     "views_first_60m": 1089,
     "views_first_6h": 1089,
     "views_first_24h": 1089
@@ -2018,5 +2018,39 @@
     "viewer_identity_score": 9.0,
     "visual_thesis": "The onion is a booby-trapped organism that only weaponizes its chemistry upon physical breach.",
     "first_frame_description": "A sharp chef's knife edge making the first microscopic incision into a crisp yellow onion skin."
+  },
+  "pyMbKXnd5OM": {
+    "variant": "B",
+    "title": "Why Store Lines Are So Slow",
+    "date": "2026-07-08",
+    "publish_at": "2026-07-09T07:16:00Z",
+    "cluster": null,
+    "topic": "Why waiting in line is definitely not an accident",
+    "subcluster": "waiting_line_manipulation",
+    "hook_type": "physical_moment",
+    "series": "Shopping Psychology",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 10.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "The deliberate slowness of checkout lines is designed to make you buy more impulse items.",
+    "first_frame_description": "A close-up shot of a person's feet or shopping cart, barely moving in a long, crowded checkout line at a grocery or retail store. Impulse buy items are visible on nearby shelves."
+  },
+  "UQY5PSsm7p4": {
+    "variant": "B",
+    "title": "Why You Always Tailgate Slow Cars",
+    "date": "2026-07-08",
+    "publish_at": "2026-07-09T09:23:00Z",
+    "cluster": null,
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "subcluster": "Perception",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "POV driving footage demonstrating the 'looming' effect paired with a retina growth diagram.",
+    "first_frame_description": "POV through a car windshield on a highway, staring at the bumper of a silver sedan."
   }
 }

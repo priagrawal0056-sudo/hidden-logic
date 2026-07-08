@@ -581,5 +581,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Store Lines Are So Slow",
+    "hook_text": "You're stuck in line, barely moving, and it's no accident.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Moment -> Hidden Intent",
+    "first_frame_description": "A close-up shot of a person's feet or shopping cart, barely moving in a long, crowded checkout line at a grocery or retail store. Impulse buy items are visible on nearby shelves.",
+    "visual_thesis": "The deliberate slowness of checkout lines is designed to make you buy more impulse items.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Tailgate Slow Cars",
+    "hook_text": "You\u2019re stuck behind a car that\u2019s barely moving.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "POV through a car windshield on a highway, staring at the bumper of a silver sedan.",
+    "visual_thesis": "POV driving footage demonstrating the 'looming' effect paired with a retina growth diagram.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

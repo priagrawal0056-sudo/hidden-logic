@@ -3918,5 +3918,35 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "pyMbKXnd5OM",
+    "title": "Why Store Lines Are So Slow",
+    "topic": "Why waiting in line is definitely not an accident",
+    "date": "2026-07-08",
+    "n": 367,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 48.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "UQY5PSsm7p4",
+    "title": "Why You Always Tailgate Slow Cars",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "date": "2026-07-08",
+    "n": 368,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

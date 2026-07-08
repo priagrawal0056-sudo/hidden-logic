@@ -1097,5 +1097,27 @@
     "hook_type": "explainer",
     "cluster": "supermarket",
     "quality_score": 0
+  },
+  {
+    "title": "Why Onions Always Make You Cry",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Think Red Cars Are Faster",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 47.0
   }
 ]

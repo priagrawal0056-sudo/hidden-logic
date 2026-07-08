@@ -518,7 +518,7 @@
       "avg_returning_viewers": null
     },
     "Why drivers in red cars feel faster to you": {
-      "count": 1,
+      "count": 2,
       "avg_views_first_60m": null,
       "avg_views_first_6h": null,
       "avg_views_first_24h": null,
@@ -602,7 +602,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.6,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 9.3,
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why you hold your breath during a high dive": {
@@ -668,7 +668,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 10.3,
+      "avg_likes_per_1000_views": 10.4,
       "avg_returning_viewers": null
     },
     "Why You Can't Tickle Yourself": {
@@ -679,7 +679,18 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 3.7,
-      "avg_likes_per_1000_views": 15.6,
+      "avg_likes_per_1000_views": 15.7,
+      "avg_returning_viewers": null
+    },
+    "Why Onions Weaponize Chemistry": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
       "avg_returning_viewers": null
     }
   },
@@ -1486,7 +1497,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.6,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 9.3,
       "avg_returning_viewers": null
     },
     "everyday-phenomena": {
@@ -1563,7 +1574,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 10.3,
+      "avg_likes_per_1000_views": 10.4,
       "avg_returning_viewers": null
     },
     "neurology": {
@@ -1574,13 +1585,35 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 3.7,
-      "avg_likes_per_1000_views": 15.6,
+      "avg_likes_per_1000_views": 15.7,
+      "avg_returning_viewers": null
+    },
+    "visual_bias": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
+      "avg_returning_viewers": null
+    },
+    "Chemistry": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 70,
+      "count": 72,
       "avg_views_first_60m": 403.5,
       "avg_views_first_6h": 496.0,
       "avg_views_first_24h": 828.5,
