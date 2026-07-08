@@ -1009,5 +1009,93 @@
     "hook_type": "explainer",
     "cluster": "airport",
     "quality_score": 0
+  },
+  {
+    "title": "cute kitten",
+    "views": 49,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "flowers!",
+    "views": 31,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "poor cub!",
+    "views": 59,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Always Catch Other People's Yawns",
+    "views": 117,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Your Brain Tricks You With Car Bumps",
+    "views": 298,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 48.0
+  },
+  {
+    "title": "Why You Drive Too Close",
+    "views": 300,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 50.0
+  },
+  {
+    "title": "Why Hotel TVs Are Designed To Annoy You #you #design #psychology",
+    "views": 279,
+    "environment": true,
+    "annoyance": 0,
+    "visual": 7,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "hotel",
+    "quality_score": 45.0
+  },
+  {
+    "title": "IKEA's Maze: It's Designed to Make You Spend #maze #design #psychology",
+    "views": 289,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "supermarket",
+    "quality_score": 0
   }
 ]

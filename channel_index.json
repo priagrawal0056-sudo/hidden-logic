@@ -3811,5 +3811,112 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "5W25MQWGAMI",
+    "title": "poor cub!",
+    "topic": "poor cub!",
+    "date": "2026-07-08",
+    "n": 0
+  },
+  {
+    "video_id": "c6OV621wEdw",
+    "title": "so angry \ud83d\udc79",
+    "topic": "so angry \ud83d\udc79",
+    "date": "2026-07-08",
+    "n": 0
+  },
+  {
+    "video_id": "ZzXcDmnS864",
+    "title": "cats!",
+    "topic": "cats!",
+    "date": "2026-07-08",
+    "n": 0
+  },
+  {
+    "video_id": "L2Myrwfi0LE",
+    "title": "pretending to pet, he took it personally \ud83d\ude2d\ud83d\ude2d",
+    "topic": "pretending to pet, he took it personally \ud83d\ude2d\ud83d\ude2d",
+    "date": "2026-07-08",
+    "n": 0
+  },
+  {
+    "video_id": "Rppq84D9_io",
+    "title": "its 8 o'clock in the morning",
+    "topic": "its 8 o'clock in the morning",
+    "date": "2026-07-08",
+    "n": 0
+  },
+  {
+    "video_id": "BrU6DyV3LwU",
+    "title": "dogs speaking English!",
+    "topic": "dogs speaking English!",
+    "date": "2026-07-07",
+    "n": 0
+  },
+  {
+    "video_id": "JRK5Q9t5M7g",
+    "title": "i guess it didnt taste good \ud83e\udeea\ud83e\udeea",
+    "topic": "i guess it didnt taste good \ud83e\udeea\ud83e\udeea",
+    "date": "2026-07-07",
+    "n": 0
+  },
+  {
+    "video_id": "hy09Q3ArLB8",
+    "title": "money",
+    "topic": "money",
+    "date": "2026-07-07",
+    "n": 0
+  },
+  {
+    "video_id": "X-KBOHhM6zs",
+    "title": "flowers!",
+    "topic": "flowers!",
+    "date": "2026-07-07",
+    "n": 0
+  },
+  {
+    "video_id": "AzG1MBZrdZY",
+    "title": "cute kitten",
+    "topic": "cute kitten",
+    "date": "2026-07-07",
+    "n": 0
+  },
+  {
+    "video_id": "2RoxU1RDGSY",
+    "title": "i think my dog is broken \ud83d\udc38",
+    "topic": "i think my dog is broken \ud83d\udc38",
+    "date": "2026-07-07",
+    "n": 0
+  },
+  {
+    "video_id": "uuu-mK2UTXA",
+    "title": "Why You Think Red Cars Are Faster",
+    "topic": "Why drivers in red cars feel faster to you",
+    "date": "2026-07-08",
+    "n": 365,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "iW2e-D5tYSs",
+    "title": "Why Onions Always Make You Cry",
+    "topic": "Why Onions Weaponize Chemistry",
+    "date": "2026-07-08",
+    "n": 366,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]
