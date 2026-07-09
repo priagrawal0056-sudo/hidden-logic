@@ -448,7 +448,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.9,
-      "avg_likes_per_1000_views": 11.2,
+      "avg_likes_per_1000_views": 11.1,
       "avg_returning_viewers": null
     },
     "Why Manholes Are Round": {
@@ -463,14 +463,14 @@
       "avg_returning_viewers": null
     },
     "Why your brain thinks the car in front is slower than it is": {
-      "count": 2,
-      "avg_views_first_60m": 478.0,
-      "avg_views_first_6h": 478.0,
+      "count": 3,
+      "avg_views_first_60m": 526.0,
+      "avg_views_first_6h": 526.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.9,
+      "avg_likes_per_1000_views": 12.6,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -519,13 +519,13 @@
     },
     "Why drivers in red cars feel faster to you": {
       "count": 2,
-      "avg_views_first_60m": null,
-      "avg_views_first_6h": null,
+      "avg_views_first_60m": 744.0,
+      "avg_views_first_6h": 744.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 18.8,
       "avg_returning_viewers": null
     },
     "Why Tires Are Always Black": {
@@ -536,7 +536,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 4.1,
-      "avg_likes_per_1000_views": 37.2,
+      "avg_likes_per_1000_views": 37.0,
       "avg_returning_viewers": null
     },
     "Why a photo finish fools your eyes": {
@@ -602,7 +602,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.6,
-      "avg_likes_per_1000_views": 9.3,
+      "avg_likes_per_1000_views": 8.0,
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why you hold your breath during a high dive": {
@@ -624,7 +624,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 16.6,
+      "avg_likes_per_1000_views": 16.3,
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why sprinters in the outer lanes feel slower": {
@@ -635,7 +635,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.3,
+      "avg_likes_per_1000_views": 3.5,
       "avg_returning_viewers": null
     },
     "Why laughing when nervous keeps happening no matter what": {
@@ -657,7 +657,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 17.1,
+      "avg_likes_per_1000_views": 16.4,
       "avg_returning_viewers": null
     },
     "Why hitting the snooze button repeatedly makes everyone act predictably": {
@@ -668,7 +668,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 10.4,
+      "avg_likes_per_1000_views": 10.1,
       "avg_returning_viewers": null
     },
     "Why You Can't Tickle Yourself": {
@@ -678,19 +678,30 @@
       "avg_views_first_24h": 1089.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 3.7,
-      "avg_likes_per_1000_views": 15.7,
+      "avg_comments_per_1000_views": 3.6,
+      "avg_likes_per_1000_views": 15.3,
       "avg_returning_viewers": null
     },
     "Why Onions Weaponize Chemistry": {
       "count": 1,
-      "avg_views_first_60m": null,
-      "avg_views_first_6h": null,
+      "avg_views_first_60m": 1142.0,
+      "avg_views_first_6h": 1142.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 4.4,
+      "avg_returning_viewers": null
+    },
+    "Why waiting in line is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": 246.0,
+      "avg_views_first_6h": 246.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     }
   },
@@ -859,7 +870,7 @@
       "avg_stayed_to_watch": 65.5,
       "avg_avd": 14.5,
       "avg_comments_per_1000_views": 750.0,
-      "avg_likes_per_1000_views": 504.0,
+      "avg_likes_per_1000_views": 503.9,
       "avg_returning_viewers": 150.0
     },
     "buttons": {
@@ -1413,14 +1424,14 @@
       "avg_returning_viewers": null
     },
     "Perception": {
-      "count": 1,
-      "avg_views_first_60m": null,
-      "avg_views_first_6h": null,
+      "count": 2,
+      "avg_views_first_60m": 574.0,
+      "avg_views_first_6h": 574.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 17.4,
       "avg_returning_viewers": null
     },
     "tires": {
@@ -1431,7 +1442,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 4.1,
-      "avg_likes_per_1000_views": 37.2,
+      "avg_likes_per_1000_views": 37.0,
       "avg_returning_viewers": null
     },
     "Visual Illusions": {
@@ -1497,7 +1508,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.6,
-      "avg_likes_per_1000_views": 9.3,
+      "avg_likes_per_1000_views": 8.0,
       "avg_returning_viewers": null
     },
     "everyday-phenomena": {
@@ -1519,7 +1530,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 16.6,
+      "avg_likes_per_1000_views": 16.3,
       "avg_returning_viewers": null
     },
     "viral audio": {
@@ -1530,7 +1541,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.3,
+      "avg_likes_per_1000_views": 3.5,
       "avg_returning_viewers": null
     },
     "Human Behavior": {
@@ -1552,7 +1563,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 17.1,
+      "avg_likes_per_1000_views": 16.4,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -1563,7 +1574,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.9,
-      "avg_likes_per_1000_views": 11.2,
+      "avg_likes_per_1000_views": 11.1,
       "avg_returning_viewers": null
     },
     "sleep_habits": {
@@ -1574,7 +1585,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 10.4,
+      "avg_likes_per_1000_views": 10.1,
       "avg_returning_viewers": null
     },
     "neurology": {
@@ -1584,43 +1595,54 @@
       "avg_views_first_24h": 1089.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 3.7,
-      "avg_likes_per_1000_views": 15.7,
+      "avg_comments_per_1000_views": 3.6,
+      "avg_likes_per_1000_views": 15.3,
       "avg_returning_viewers": null
     },
     "visual_bias": {
       "count": 1,
-      "avg_views_first_60m": null,
-      "avg_views_first_6h": null,
+      "avg_views_first_60m": 744.0,
+      "avg_views_first_6h": 744.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 18.8,
       "avg_returning_viewers": null
     },
     "Chemistry": {
       "count": 1,
-      "avg_views_first_60m": null,
-      "avg_views_first_6h": null,
+      "avg_views_first_60m": 1142.0,
+      "avg_views_first_6h": 1142.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 4.4,
+      "avg_returning_viewers": null
+    },
+    "waiting_line_manipulation": {
+      "count": 1,
+      "avg_views_first_60m": 246.0,
+      "avg_views_first_6h": 246.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 72,
-      "avg_views_first_60m": 403.5,
-      "avg_views_first_6h": 496.0,
+      "count": 74,
+      "avg_views_first_60m": 436.6,
+      "avg_views_first_6h": 518.6,
       "avg_views_first_24h": 828.5,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 42.0,
-      "avg_likes_per_1000_views": 67.2,
+      "avg_comments_per_1000_views": 37.8,
+      "avg_likes_per_1000_views": 61.3,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

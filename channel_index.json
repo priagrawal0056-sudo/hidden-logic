@@ -3948,5 +3948,66 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "SyTdDm1YLik",
+    "title": "cheeky doggo!",
+    "topic": "cheeky doggo!",
+    "date": "2026-07-09",
+    "n": 0
+  },
+  {
+    "video_id": "j2-xqhovfaY",
+    "title": "du bist gut genug",
+    "topic": "du bist gut genug",
+    "date": "2026-07-09",
+    "n": 0
+  },
+  {
+    "video_id": "4MYYuA3vmXU",
+    "title": "we have zoo at home!",
+    "topic": "we have zoo at home!",
+    "date": "2026-07-09",
+    "n": 0
+  },
+  {
+    "video_id": "h9ShLQxutFw",
+    "title": "what even is going on...",
+    "topic": "what even is going on...",
+    "date": "2026-07-09",
+    "n": 0
+  },
+  {
+    "video_id": "sch4LQc4Afg",
+    "title": "BUBBLES \ud83e\udee7\ud83e\udee7\ud83e\udee7 have a nice day ahead!",
+    "topic": "BUBBLES \ud83e\udee7\ud83e\udee7\ud83e\udee7 have a nice day ahead!",
+    "date": "2026-07-08",
+    "n": 0
+  },
+  {
+    "video_id": "ISGvGa5pbo8",
+    "title": "understandable, have a nice day\ud83d\ude2d",
+    "topic": "understandable, have a nice day\ud83d\ude2d",
+    "date": "2026-07-08",
+    "n": 0
+  },
+  {
+    "video_id": "bKYTWHSgwTc",
+    "title": "Why You Never See A Last Lap Overtake",
+    "topic": "Why the leader almost never gets overtaken on the last lap",
+    "date": "2026-07-09",
+    "n": 375,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]
