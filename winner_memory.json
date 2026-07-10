@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 1607.9,
+  "channel_avg_views": 1650.2,
   "topic_clusters": {
     "airport": {
       "videos": 12,
@@ -24,13 +24,13 @@
     },
     "hotel": {
       "videos": 10,
-      "avg_views": 498.9,
+      "avg_views": 499.1,
       "best_views": 1401,
       "recent_views": [
-        87,
+        88,
         371,
         45,
-        382,
+        383,
         557,
         694,
         279,
@@ -71,20 +71,20 @@
     },
     "traffic": {
       "videos": 18,
-      "avg_views": 687.1,
-      "best_views": 1750,
+      "avg_views": 738.2,
+      "best_views": 1752,
       "recent_views": [
-        574,
-        744,
-        1385,
-        285,
-        765,
-        303,
-        1750,
-        1037,
-        485,
-        693,
-        300,
+        894,
+        1236,
+        1390,
+        287,
+        768,
+        305,
+        1752,
+        1039,
+        488,
+        694,
+        302,
         958,
         690,
         151,
@@ -131,12 +131,12 @@
     },
     "restaurant": {
       "videos": 6,
-      "avg_views": 486.4,
+      "avg_views": 487.6,
       "best_views": 902,
       "recent_views": [
-        793,
-        34,
-        512,
+        794,
+        38,
+        513,
         902,
         4,
         526
@@ -146,13 +146,13 @@
     },
     "supermarket": {
       "videos": 16,
-      "avg_views": 717.6,
-      "best_views": 1350,
+      "avg_views": 718.0,
+      "best_views": 1351,
       "recent_views": [
-        775,
-        757,
-        973,
-        1350,
+        776,
+        759,
+        974,
+        1351,
         835,
         866,
         939,
@@ -179,27 +179,27 @@
     },
     "brain": {
       "videos": 1,
-      "avg_views": 398.0,
-      "best_views": 398,
+      "avg_views": 400.0,
+      "best_views": 400,
       "recent_views": [
-        398
+        400
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     },
     "social": {
       "videos": 1,
-      "avg_views": 247.0,
-      "best_views": 247,
+      "avg_views": 258.0,
+      "best_views": 258,
       "recent_views": [
-        247
+        258
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     },
     "memory": {
       "videos": 3,
-      "avg_views": 139.0,
+      "avg_views": 120.9,
       "best_views": 266,
       "recent_views": [
         100,
@@ -211,11 +211,11 @@
     },
     "attention": {
       "videos": 3,
-      "avg_views": 441.4,
-      "best_views": 1039,
+      "avg_views": 445.1,
+      "best_views": 1048,
       "recent_views": [
-        1039,
-        136,
+        1048,
+        137,
         3
       ],
       "avg_stayed_to_watch": null,
@@ -231,10 +231,10 @@
     },
     "social_behavior": {
       "videos": 2,
-      "avg_views": 428.2,
-      "best_views": 709,
+      "avg_views": 428.8,
+      "best_views": 710,
       "recent_views": [
-        709,
+        710,
         7
       ],
       "avg_stayed_to_watch": null,
@@ -252,10 +252,10 @@
     },
     "technology": {
       "videos": 7,
-      "avg_views": 102.2,
+      "avg_views": 102.4,
       "best_views": 262,
       "recent_views": [
-        26,
+        27,
         262,
         111,
         2,
@@ -276,10 +276,10 @@
     },
     "decision_making": {
       "videos": 2,
-      "avg_views": 1003.4,
+      "avg_views": 1004.6,
       "best_views": 1274,
       "recent_views": [
-        823,
+        825,
         1274
       ],
       "avg_stayed_to_watch": null,
@@ -295,10 +295,10 @@
     },
     "emotions": {
       "videos": 2,
-      "avg_views": 1032.0,
+      "avg_views": 1032.6,
       "best_views": 1266,
       "recent_views": [
-        876,
+        877,
         1266
       ],
       "avg_stayed_to_watch": null,
@@ -306,14 +306,14 @@
     },
     "money_psychology": {
       "videos": 1,
-      "avg_views": 1057.0,
-      "best_views": 1057,
+      "avg_views": 1081.0,
+      "best_views": 1081,
       "recent_views": [
-        1057
+        1081
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     }
   },
-  "last_updated": "2026-07-09T21:07:33.926685"
+  "last_updated": "2026-07-10T20:52:14.065086"
 }

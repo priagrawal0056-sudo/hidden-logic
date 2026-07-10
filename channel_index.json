@@ -4009,5 +4009,56 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "Gg6Tewf9A9A",
+    "title": "golden retrievers!",
+    "topic": "golden retrievers!",
+    "date": "2026-07-10",
+    "n": 0
+  },
+  {
+    "video_id": "Q8dIJ65RQp0",
+    "title": "black cats!",
+    "topic": "black cats!",
+    "date": "2026-07-10",
+    "n": 0
+  },
+  {
+    "video_id": "dVUsTDcAvb0",
+    "title": "he might be abit dumb",
+    "topic": "he might be abit dumb",
+    "date": "2026-07-10",
+    "n": 0
+  },
+  {
+    "video_id": "HjLUkLj5Omc",
+    "title": "Why You Always Root For The Underdog",
+    "topic": "Why the underdog feels more exciting to watch",
+    "date": "2026-07-10",
+    "n": 379,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 48.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "Nj8_N2_lodw",
+    "title": "Why Hotel Hallways Feel Endless",
+    "topic": "Why hotel hallways feeling endless happens to you constantly",
+    "date": "2026-07-10",
+    "n": 380,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

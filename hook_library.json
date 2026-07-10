@@ -614,5 +614,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Root For The Underdog",
+    "hook_text": "You're rooting for the team losing by twenty.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Observation -> Contradiction -> Hidden Incentive",
+    "first_frame_description": "A wide shot of a basketball court during a game, with the scoreboard prominently displaying the home team down by 20 points in the fourth quarter. The camera then cuts to a close-up of a fan in the stands, eyes glued to the game, a mix of tension and desperate hope on their face.",
+    "visual_thesis": "The visceral experience of watching a sports underdog, from despair to the explosive joy of a comeback, driven by a hidden psychological reward.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Hotel Hallways Feel Endless",
+    "hook_text": "You step into that hotel hallway.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Tease",
+    "first_frame_description": "A first-person perspective shot of someone stepping into a long, dimly lit hotel hallway with identical doors stretching into the distance.",
+    "visual_thesis": "Hotel hallways are deliberately designed to be disorienting and make you crave your room for security and quiet.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
