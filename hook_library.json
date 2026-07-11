@@ -636,5 +636,49 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Free Shipping Costs You More",
+    "hook_text": "You\u2019re staring at a ten dollar shipping fee.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up, high-brightness shot of a smartphone screen showing a shopping cart with the text 'Add $10.01 for FREE Shipping' in red.",
+    "visual_thesis": "The script uses the visual of a 'Free Shipping' progress bar as a psychological trap, proving that the 'filler item' is a deliberate tax rather than a saving.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Order The Second Cheapest Wine",
+    "hook_text": "You point at the second-cheapest wine on the menu.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Relatable Motivation -> System Reveal",
+    "first_frame_description": "A first-person POV shot of a dimly lit restaurant table, holding a leather-bound wine menu with a finger pointing directly at the second-cheapest bottle.",
+    "visual_thesis": "Demonstrate how restaurant menus use psychological pricing layouts to trick customers into buying their lowest-quality, highest-markup wine.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Apps Always Ask When You Win",
+    "hook_text": "You beat the final boss and this pops up.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System Reveal",
+    "first_frame_description": "A close-up of a thumb tapping a glowing 'VICTORY' button on a smartphone screen, which instantly triggers a 'Rate Us' popup.",
+    "visual_thesis": "A screen recording of a mobile game victory immediately interrupted by a 5-star review prompt, followed by a technical overlay showing a 'Dopamine Meter' peaking.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Red Cars Always Seem To Tailgate You",
+    "hook_text": "You slam your brakes, but that red car isn't tailgating.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction",
+    "first_frame_description": "A close-up POV shot looking into a car's rearview mirror, showing a bright red sedan tailgating dangerously close on a highway.",
+    "visual_thesis": "Demonstrate how red wavelengths focus differently on the retina compared to cool colors, creating a depth perception shift that visually pulls red cars closer to the viewer.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

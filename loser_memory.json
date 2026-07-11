@@ -1207,5 +1207,49 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 45.0
+  },
+  {
+    "title": "its eyes dilated!! \ud83e\udd79",
+    "views": 26,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why Hotel Hallways Feel Endless",
+    "views": 10,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "hotel",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Root For The Underdog",
+    "views": 12,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 48.0
+  },
+  {
+    "title": "Why Hotel Pillows Are Designed To Hurt Your Neck #neck #design #psychology",
+    "views": 371,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "hotel",
+    "quality_score": 47.0
   }
 ]

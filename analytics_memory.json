@@ -349,7 +349,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 3.1,
-      "avg_likes_per_1000_views": 15.7,
+      "avg_likes_per_1000_views": 15.6,
       "avg_returning_viewers": null
     },
     "Why Airport seating": {
@@ -525,7 +525,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 16.2,
+      "avg_likes_per_1000_views": 16.0,
       "avg_returning_viewers": null
     },
     "Why Tires Are Always Black": {
@@ -591,7 +591,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 11.6,
+      "avg_likes_per_1000_views": 11.5,
       "avg_returning_viewers": null
     },
     "Why Your Ears Pop On A Plane": {
@@ -624,7 +624,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 16.2,
+      "avg_likes_per_1000_views": 16.1,
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why sprinters in the outer lanes feel slower": {
@@ -657,7 +657,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 16.1,
+      "avg_likes_per_1000_views": 15.9,
       "avg_returning_viewers": null
     },
     "Why hitting the snooze button repeatedly makes everyone act predictably": {
@@ -678,8 +678,8 @@
       "avg_views_first_24h": 1089.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 3.6,
-      "avg_likes_per_1000_views": 16.0,
+      "avg_comments_per_1000_views": 3.5,
+      "avg_likes_per_1000_views": 15.9,
       "avg_returning_viewers": null
     },
     "Why Onions Weaponize Chemistry": {
@@ -702,6 +702,28 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why the underdog feels more exciting to watch": {
+      "count": 1,
+      "avg_views_first_60m": 10.0,
+      "avg_views_first_6h": 10.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 100.0,
+      "avg_returning_viewers": null
+    },
+    "Why hotel hallways feeling endless happens to you constantly": {
+      "count": 1,
+      "avg_views_first_60m": 5.0,
+      "avg_views_first_6h": 5.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 200.0,
       "avg_returning_viewers": null
     }
   },
@@ -1244,7 +1266,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 3.1,
-      "avg_likes_per_1000_views": 15.7,
+      "avg_likes_per_1000_views": 15.6,
       "avg_returning_viewers": null
     },
     "gate-seating": {
@@ -1497,7 +1519,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 11.6,
+      "avg_likes_per_1000_views": 11.5,
       "avg_returning_viewers": null
     },
     "aviation": {
@@ -1530,7 +1552,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 16.2,
+      "avg_likes_per_1000_views": 16.1,
       "avg_returning_viewers": null
     },
     "viral audio": {
@@ -1563,7 +1585,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 16.1,
+      "avg_likes_per_1000_views": 15.9,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -1595,8 +1617,8 @@
       "avg_views_first_24h": 1089.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 3.6,
-      "avg_likes_per_1000_views": 16.0,
+      "avg_comments_per_1000_views": 3.5,
+      "avg_likes_per_1000_views": 15.9,
       "avg_returning_viewers": null
     },
     "visual_bias": {
@@ -1607,7 +1629,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 16.2,
+      "avg_likes_per_1000_views": 16.0,
       "avg_returning_viewers": null
     },
     "Chemistry": {
@@ -1642,18 +1664,40 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Motivation": {
+      "count": 1,
+      "avg_views_first_60m": 10.0,
+      "avg_views_first_6h": 10.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 100.0,
+      "avg_returning_viewers": null
+    },
+    "Design": {
+      "count": 1,
+      "avg_views_first_60m": 5.0,
+      "avg_views_first_6h": 5.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 200.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 75,
-      "avg_views_first_60m": 423.9,
-      "avg_views_first_6h": 503.0,
+      "count": 77,
+      "avg_views_first_60m": 400.8,
+      "avg_views_first_6h": 474.7,
       "avg_views_first_24h": 828.5,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 36.9,
-      "avg_likes_per_1000_views": 59.6,
+      "avg_comments_per_1000_views": 35.2,
+      "avg_likes_per_1000_views": 63.8,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
