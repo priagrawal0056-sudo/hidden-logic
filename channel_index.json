@@ -4130,5 +4130,82 @@
     "quality_score": 48.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "oJg_7E2Rqhk",
+    "title": "eat, sleep, poop, repeat!!",
+    "topic": "eat, sleep, poop, repeat!!",
+    "date": "2026-07-12",
+    "n": 0
+  },
+  {
+    "video_id": "RNFwEqXkW7A",
+    "title": "cat gave birth!!",
+    "topic": "cat gave birth!!",
+    "date": "2026-07-12",
+    "n": 0
+  },
+  {
+    "video_id": "PeC0FTQLaXY",
+    "title": "Why Strangers Always Match Your Pace",
+    "topic": "Why everyone is secretly annoyed by strangers matching your walking speed",
+    "date": "2026-07-12",
+    "n": 388,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "_Xdhjm6wC6Q",
+    "title": "Why You Always Forget Words Mid-Sentence",
+    "topic": "Why you can never escape forgetting a word right in the middle of a sentence",
+    "date": "2026-07-12",
+    "n": 389,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "0gc52yhK8EI",
+    "title": "Why Red Cars Always Look Faster",
+    "topic": "Why drivers in red cars feel faster to you",
+    "date": "2026-07-12",
+    "n": 390,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "j3fWCw16VEo",
+    "title": "Why You Always Check Your Phone",
+    "topic": "Why you can never escape reaching for your phone the instant you're bored",
+    "date": "2026-07-12",
+    "n": 391,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

@@ -1251,5 +1251,71 @@
     "hook_type": "physical_moment",
     "cluster": "hotel",
     "quality_score": 47.0
+  },
+  {
+    "title": "cat gave birth!!",
+    "views": 29,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "eat, sleep, poop, repeat!!",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why Red Cars Always Seem To Tailgate You",
+    "views": 5,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 48.0
+  },
+  {
+    "title": "Why Apps Always Ask When You Win",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "technology",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Order The Second Cheapest Wine",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Free Shipping Costs You More",
+    "views": 7,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "money_psychology",
+    "quality_score": 46.0
   }
 ]

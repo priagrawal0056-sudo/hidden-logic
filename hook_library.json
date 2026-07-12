@@ -680,5 +680,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Strangers Always Match Your Pace",
+    "hook_text": "You\u2019re walking alone and a stranger matches your pace.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Escalating Threat -> Scientific Reframe",
+    "first_frame_description": "A shaky, first-person POV shot of walking on a concrete sidewalk, with a stranger's shadow or legs perfectly in sync in the right-hand periphery.",
+    "visual_thesis": "The video uses a POV sidewalk perspective to establish the frustration, then transitions to a scientific diagram of 'entrainment' (like syncing metronomes) to prove the biological hijack.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Forget Words Mid-Sentence",
+    "hook_text": "You\u2019re mid-sentence when a word suddenly vanishes on purpose.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden Sabotage",
+    "first_frame_description": "A close-up of a person at a dinner table, mouth open in mid-speech, looking suddenly confused and frustrated.",
+    "visual_thesis": "Visualizing the 'Tip of the Tongue' state as a physical roadblock or a security gate inside the brain.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Check Your Phone",
+    "hook_text": "You pull your phone out at every red light.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Hidden System Reveal",
+    "first_frame_description": "A first-person POV shot of a hand grabbing a smartphone over a car steering wheel, with a blurry red traffic light visible through the windshield.",
+    "visual_thesis": "The 'loading' animation on social media apps is a deliberate psychological trigger designed to mimic gambling mechanics.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
