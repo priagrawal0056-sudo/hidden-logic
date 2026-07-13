@@ -713,5 +713,49 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Stare At Wrecks",
+    "hook_text": "You\u2019re crawling past a wreck on the highway.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden Mechanism -> Relatable Frustration",
+    "first_frame_description": "POV from a driver's seat, slow-moving traffic, blue and red flashing lights reflected on the dashboard.",
+    "visual_thesis": "The human brain performing a subconscious data-download of road hazards to update its internal survival map.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Hold Your Breath Diving",
+    "hook_text": "You step off the high dive.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Physiological Mystery",
+    "first_frame_description": "A first-person POV looking down from the edge of a high diving board into a shimmering blue pool.",
+    "visual_thesis": "The human body uses pressurized air as a structural internal brace to protect the spine from impact and strain.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Open The Fridge For No Reason",
+    "hook_text": "You open the fridge again.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction",
+    "first_frame_description": "A close-up shot of a hand reaching for and opening a refrigerator door, revealing a mostly empty interior.",
+    "visual_thesis": "A person repeatedly opening an empty fridge, not out of hunger, but as a subconscious 'lag check' for dopamine, visually represented by brain graphics and refresh icons.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Watch Videos You Didn't Click",
+    "hook_text": "You\u2019re just scrolling, but the video starts without your permission.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden Manipulation",
+    "first_frame_description": "A close-up POV of a thumb hovering over a smartphone screen as a video begins playing automatically with a mute icon in the corner.",
+    "visual_thesis": "A screen recording of a thumb hovering over a video that autoplays, with a '3-second' timer overlay appearing to show the 'view' threshold.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

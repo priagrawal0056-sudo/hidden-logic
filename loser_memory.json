@@ -1317,5 +1317,60 @@
     "hook_type": "physical_moment",
     "cluster": "money_psychology",
     "quality_score": 46.0
+  },
+  {
+    "title": "cat lego!",
+    "views": 28,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Always Check Your Phone",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "technology",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Red Cars Always Look Faster",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Forget Words Mid-Sentence",
+    "views": 5,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "memory",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Strangers Always Match Your Pace",
+    "views": 3,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
   }
 ]
