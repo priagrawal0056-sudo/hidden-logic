@@ -525,7 +525,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 24.9,
+      "avg_likes_per_1000_views": 21.2,
       "avg_returning_viewers": null
     },
     "Why Tires Are Always Black": {
@@ -712,7 +712,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 38.5,
+      "avg_likes_per_1000_views": 35.7,
       "avg_returning_viewers": null
     },
     "Why hotel hallways feeling endless happens to you constantly": {
@@ -723,7 +723,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 30.3,
+      "avg_likes_per_1000_views": 28.6,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by free shipping working on you": {
@@ -789,6 +789,50 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 111.1,
+      "avg_returning_viewers": null
+    },
+    "TRENDING NOW: why you can't look away from a crash replay": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why you hold your breath during a high dive": {
+      "count": 1,
+      "avg_views_first_60m": 7.0,
+      "avg_views_first_6h": 7.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why you can never escape opening the fridge for no reason": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why autoplay starting before you decide makes everyone act predictably": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     }
@@ -813,7 +857,7 @@
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
       "avg_comments_per_1000_views": 300.0,
-      "avg_likes_per_1000_views": 314.1,
+      "avg_likes_per_1000_views": 311.8,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -1193,9 +1237,9 @@
       "avg_returning_viewers": null
     },
     "Psychology": {
-      "count": 4,
-      "avg_views_first_60m": 3.0,
-      "avg_views_first_6h": 3.0,
+      "count": 5,
+      "avg_views_first_60m": 2.3,
+      "avg_views_first_6h": 2.3,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -1519,7 +1563,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 12.2,
+      "avg_likes_per_1000_views": 12.1,
       "avg_returning_viewers": null
     },
     "tires": {
@@ -1651,7 +1695,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 24.8,
+      "avg_likes_per_1000_views": 21.1,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -1739,7 +1783,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 38.5,
+      "avg_likes_per_1000_views": 35.7,
       "avg_returning_viewers": null
     },
     "Design": {
@@ -1750,7 +1794,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 30.3,
+      "avg_likes_per_1000_views": 28.6,
       "avg_returning_viewers": null
     },
     "dining": {
@@ -1794,20 +1838,53 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 111.1,
+      "avg_returning_viewers": null
+    },
+    "survival-instincts": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Survival Instincts": {
+      "count": 1,
+      "avg_views_first_60m": 7.0,
+      "avg_views_first_6h": 7.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "subconscious habits": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 85,
-      "avg_views_first_60m": 328.6,
-      "avg_views_first_6h": 387.0,
+      "count": 89,
+      "avg_views_first_60m": 301.4,
+      "avg_views_first_6h": 354.4,
       "avg_views_first_24h": 828.5,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 29.7,
-      "avg_likes_per_1000_views": 50.4,
+      "avg_comments_per_1000_views": 27.5,
+      "avg_likes_per_1000_views": 48.5,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

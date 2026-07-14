@@ -757,5 +757,49 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Walk To The Back For Milk",
+    "hook_text": "You walk into the store for one gallon of milk.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden Trap",
+    "first_frame_description": "A first-person POV of a shopper pushing a cart into a bright grocery store, looking down a seemingly endless main aisle.",
+    "visual_thesis": "The grocery store layout is a psychological trap designed to increase dwell time and impulse spending through physical distance and floor texture changes.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Copy Accents",
+    "hook_text": "You\u2019re talking to a tourist and suddenly, you\u2019re mimicking them.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System",
+    "first_frame_description": "A close-up of a person looking panicked and embarrassed while talking to a tourist holding a map.",
+    "visual_thesis": "The 'Chameleon Effect' is a biological safety mechanism used to de-escalate strangers by syncing nervous systems.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Mall Escalators Are Never Near The Entrance",
+    "hook_text": "You walk into a mall.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Implicit Question",
+    "first_frame_description": "POV shot of a person walking through the main entrance of a brightly lit, modern shopping mall, looking around expectantly.",
+    "visual_thesis": "Mall escalators are deliberately placed far from entrances to increase dwell time and spending, and the down escalators are even further to make you forget your intention to leave.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Brake Too Late",
+    "hook_text": "You slam your brakes because the car ahead looks parked.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Hidden Sensory Glitch",
+    "first_frame_description": "POV from inside a car on a highway, looking through the windshield at a red sedan's brake lights suddenly illuminating.",
+    "visual_thesis": "A driver's POV of a car ahead slowing down, with a graphic overlay showing the slow rate of visual expansion on the retina compared to rapid lateral movement.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

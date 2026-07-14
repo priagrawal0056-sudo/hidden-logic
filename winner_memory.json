@@ -1,9 +1,9 @@
 {
-  "channel_avg_views": 1669.2,
+  "channel_avg_views": 1672.8,
   "topic_clusters": {
     "airport": {
       "videos": 12,
-      "avg_views": 684.6,
+      "avg_views": 663.5,
       "best_views": 1608,
       "recent_views": [
         1190,
@@ -24,10 +24,10 @@
     },
     "hotel": {
       "videos": 11,
-      "avg_views": 441.0,
+      "avg_views": 441.5,
       "best_views": 1402,
       "recent_views": [
-        33,
+        35,
         88,
         371,
         45,
@@ -35,7 +35,7 @@
         557,
         694,
         279,
-        858,
+        860,
         522,
         1402
       ],
@@ -72,13 +72,13 @@
     },
     "traffic": {
       "videos": 20,
-      "avg_views": 661.6,
+      "avg_views": 656.5,
       "best_views": 1754,
       "recent_views": [
-        5,
-        17,
-        905,
-        1259,
+        8,
+        21,
+        906,
+        1260,
         1395,
         293,
         774,
@@ -109,14 +109,14 @@
     },
     "elevator": {
       "videos": 5,
-      "avg_views": 230.4,
-      "best_views": 1084,
+      "avg_views": 230.6,
+      "best_views": 1085,
       "recent_views": [
         52,
         5,
         2,
         9,
-        1084
+        1085
       ],
       "avg_stayed_to_watch": 62.2,
       "avg_avd": 14.0
@@ -149,7 +149,7 @@
     },
     "supermarket": {
       "videos": 16,
-      "avg_views": 709.5,
+      "avg_views": 701.7,
       "best_views": 1353,
       "recent_views": [
         776,
@@ -192,20 +192,20 @@
     },
     "social": {
       "videos": 1,
-      "avg_views": 266.0,
-      "best_views": 266,
+      "avg_views": 267.0,
+      "best_views": 267,
       "recent_views": [
-        266
+        267
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     },
     "memory": {
       "videos": 4,
-      "avg_views": 84.6,
+      "avg_views": 85.6,
       "best_views": 266,
       "recent_views": [
-        5,
+        8,
         100,
         266,
         7
@@ -255,14 +255,15 @@
       "avg_avd": null
     },
     "technology": {
-      "videos": 9,
-      "avg_views": 77.3,
-      "best_views": 263,
+      "videos": 10,
+      "avg_views": 61.5,
+      "best_views": 264,
       "recent_views": [
-        3,
-        12,
-        35,
-        263,
+        2,
+        10,
+        14,
+        36,
+        264,
         111,
         2,
         6,
@@ -312,15 +313,15 @@
     },
     "money_psychology": {
       "videos": 2,
-      "avg_views": 557.0,
-      "best_views": 1101,
+      "avg_views": 558.5,
+      "best_views": 1102,
       "recent_views": [
-        13,
-        1101
+        15,
+        1102
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     }
   },
-  "last_updated": "2026-07-13T20:37:15.782347"
+  "last_updated": "2026-07-14T20:22:11.255616"
 }
