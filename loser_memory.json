@@ -1416,5 +1416,49 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 48.0
+  },
+  {
+    "title": "Why You Always Brake Too Late",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Mall Escalators Are Never Near The Entrance",
+    "views": 5,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "elevator",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why You Always Copy Accents",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "social_behavior",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Walk To The Back For Milk",
+    "views": 5,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "supermarket",
+    "quality_score": 46.0
   }
 ]

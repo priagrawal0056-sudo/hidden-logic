@@ -4340,5 +4340,53 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "JYHP_Ovnk1E",
+    "title": "Why Your Shopping Cart Pulls Left",
+    "topic": "Why buying things you don't need makes everyone act predictably",
+    "date": "2026-07-15",
+    "n": 401,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "yv2PJA0FL9M",
+    "title": "Why Goalies Always Dive Wrong",
+    "topic": "Why the goalkeeper almost always dives the wrong way",
+    "date": "2026-07-15",
+    "n": 402,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "27yYlLPIejU",
+    "title": "Why You Can't Escape Viral Trends",
+    "topic": "TRENDING NOW: why the leader almost never gets overtaken on the last lap",
+    "date": "2026-07-15",
+    "n": 403,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

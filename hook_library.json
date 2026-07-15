@@ -801,5 +801,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Your Shopping Cart Pulls Left",
+    "hook_text": "You grab a shopping cart.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up shot of a hand grabbing the handle of a shopping cart in a brightly lit supermarket aisle. The cart immediately begins to veer noticeably to the left.",
+    "visual_thesis": "A shopping cart veering left, revealing a deliberate design to steer shoppers towards expensive items on the right.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Goalies Always Dive Wrong",
+    "hook_text": "You\u2019re staring at the white penalty spot.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Counter-intuitive Failure",
+    "first_frame_description": "Extreme close-up of a soccer ball being placed on a chalky white penalty spot, stadium lights reflecting off the leather.",
+    "visual_thesis": "The visual contrast between a frantic, failed dive and the statistical success of standing perfectly still.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Escape Viral Trends",
+    "hook_text": "You scroll past it.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Repetition -> Frustration",
+    "first_frame_description": "A hand scrolling down a social media feed on a smartphone, a specific viral video or meme appearing multiple times.",
+    "visual_thesis": "The algorithm creates an inescapable 'invisible wall' of trending content.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
