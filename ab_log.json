@@ -1797,7 +1797,7 @@
     "visual_thesis": "Contrast the physical tension of a passenger swallowing with a 3D diagram of a plane fuselage venting air to prevent structural explosion.",
     "first_frame_description": "An extreme close-up of a passenger's tensed jaw swallowing in a window seat, with a digital pressure gauge overlay rapidly dropping.",
     "comments_per_1000_views": 0.57,
-    "likes_per_1000_views": 7.97,
+    "likes_per_1000_views": 7.96,
     "views_first_60m": 779,
     "views_first_6h": 779
   },
@@ -1980,7 +1980,7 @@
     "visual_thesis": "A side-by-side comparison of self-tickling (no reaction) versus external tickling (extreme reaction), followed by a brain-mapping visual showing the cerebellum's predictive filter.",
     "first_frame_description": "A close-up shot of a person aggressively poking their own ribs with a confused, completely blank facial expression.",
     "comments_per_1000_views": 3.52,
-    "likes_per_1000_views": 15.85,
+    "likes_per_1000_views": 15.83,
     "views_first_60m": 1089,
     "views_first_6h": 1089,
     "views_first_24h": 1089
@@ -2002,7 +2002,7 @@
     "visual_thesis": "Red cars appear to move faster than they actually do due to visual bias, making them seem closer and more immediate.",
     "first_frame_description": "A POV shot from inside a car, looking out at a red car speeding past on a multi-lane road.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 15.89,
+    "likes_per_1000_views": 15.86,
     "views_first_60m": 744,
     "views_first_6h": 744
   },
@@ -2023,7 +2023,7 @@
     "visual_thesis": "The onion is a booby-trapped organism that only weaponizes its chemistry upon physical breach.",
     "first_frame_description": "A sharp chef's knife edge making the first microscopic incision into a crisp yellow onion skin.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 4.27,
+    "likes_per_1000_views": 4.26,
     "views_first_60m": 1142,
     "views_first_6h": 1142
   },
@@ -2065,7 +2065,7 @@
     "visual_thesis": "POV driving footage demonstrating the 'looming' effect paired with a retina growth diagram.",
     "first_frame_description": "POV through a car windshield on a highway, staring at the bumper of a silver sedan.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 12.15,
+    "likes_per_1000_views": 12.14,
     "views_first_60m": 574,
     "views_first_6h": 574
   },
@@ -2107,7 +2107,7 @@
     "visual_thesis": "The visceral experience of watching a sports underdog, from despair to the explosive joy of a comeback, driven by a hidden psychological reward.",
     "first_frame_description": "A wide shot of a basketball court during a game, with the scoreboard prominently displaying the home team down by 20 points in the fourth quarter. The camera then cuts to a close-up of a fan in the stands, eyes glued to the game, a mix of tension and desperate hope on their face.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 30.3,
+    "likes_per_1000_views": 25.64,
     "views_first_60m": 10,
     "views_first_6h": 10
   },
@@ -2128,7 +2128,7 @@
     "visual_thesis": "Hotel hallways are deliberately designed to be disorienting and make you crave your room for security and quiet.",
     "first_frame_description": "A first-person perspective shot of someone stepping into a long, dimly lit hotel hallway with identical doors stretching into the distance.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 27.78,
+    "likes_per_1000_views": 22.73,
     "views_first_60m": 5,
     "views_first_6h": 5
   },
@@ -2170,7 +2170,7 @@
     "visual_thesis": "Demonstrate how restaurant menus use psychological pricing layouts to trick customers into buying their lowest-quality, highest-markup wine.",
     "first_frame_description": "A first-person POV shot of a dimly lit restaurant table, holding a leather-bound wine menu with a finger pointing directly at the second-cheapest bottle.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 90.91,
+    "likes_per_1000_views": 55.56,
     "views_first_60m": 3,
     "views_first_6h": 3
   },
@@ -2212,7 +2212,7 @@
     "visual_thesis": "Demonstrate how red wavelengths focus differently on the retina compared to cool colors, creating a depth perception shift that visually pulls red cars closer to the viewer.",
     "first_frame_description": "A close-up POV shot looking into a car's rearview mirror, showing a bright red sedan tailgating dangerously close on a highway.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 37.04,
+    "likes_per_1000_views": 27.78,
     "views_first_60m": 5,
     "views_first_6h": 5
   },
@@ -2296,7 +2296,7 @@
     "visual_thesis": "The 'loading' animation on social media apps is a deliberate psychological trigger designed to mimic gambling mechanics.",
     "first_frame_description": "A first-person POV shot of a hand grabbing a smartphone over a car steering wheel, with a blurry red traffic light visible through the windshield.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 76.92,
+    "likes_per_1000_views": 50.0,
     "views_first_60m": 3,
     "views_first_6h": 3
   },
@@ -2483,7 +2483,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "A shopping cart veering left, revealing a deliberate design to steer shoppers towards expensive items on the right.",
-    "first_frame_description": "A close-up shot of a hand grabbing the handle of a shopping cart in a brightly lit supermarket aisle. The cart immediately begins to veer noticeably to the left."
+    "first_frame_description": "A close-up shot of a hand grabbing the handle of a shopping cart in a brightly lit supermarket aisle. The cart immediately begins to veer noticeably to the left.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 22,
+    "views_first_6h": 22
   },
   "yv2PJA0FL9M": {
     "variant": "B",
@@ -2500,7 +2504,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The visual contrast between a frantic, failed dive and the statistical success of standing perfectly still.",
-    "first_frame_description": "Extreme close-up of a soccer ball being placed on a chalky white penalty spot, stadium lights reflecting off the leather."
+    "first_frame_description": "Extreme close-up of a soccer ball being placed on a chalky white penalty spot, stadium lights reflecting off the leather.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 23,
+    "views_first_6h": 23
   },
   "27yYlLPIejU": {
     "variant": "B",
@@ -2517,6 +2525,44 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "The algorithm creates an inescapable 'invisible wall' of trending content.",
-    "first_frame_description": "A hand scrolling down a social media feed on a smartphone, a specific viral video or meme appearing multiple times."
+    "first_frame_description": "A hand scrolling down a social media feed on a smartphone, a specific viral video or meme appearing multiple times.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 13,
+    "views_first_6h": 13
+  },
+  "CjMzFyxU1Xc": {
+    "variant": "B",
+    "title": "Why Your Room Shrinks In The Dark",
+    "date": "2026-07-16",
+    "publish_at": "2026-07-17T07:02:00Z",
+    "cluster": null,
+    "topic": "The psychological reason behind a room feeling smaller in the dark",
+    "subcluster": "Perception",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Your brain actively redraws your perceived environment in darkness, making it feel smaller as a primal protective response.",
+    "first_frame_description": "POV shot of someone stepping into a completely dark bedroom, with only faint outlines visible, immediately followed by a subtle visual effect of the room's perceived boundaries closing in slightly."
+  },
+  "5XXIBPEAay8": {
+    "variant": "A",
+    "title": "Why You Can't Pass On The Last Lap",
+    "date": "2026-07-16",
+    "publish_at": "2026-07-17T09:10:00Z",
+    "cluster": null,
+    "topic": "Why the leader almost never gets overtaken on the last lap",
+    "subcluster": "Racing",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The script demonstrates how a lead car uses aerodynamic turbulence ('dirty air') as a defensive tool to physically destabilize the following car's handling.",
+    "first_frame_description": "A high-speed POV shot from a race car's cockpit, inches away from the vibrating rear wing of the car in front at 200mph."
   }
 }

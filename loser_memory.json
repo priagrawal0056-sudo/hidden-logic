@@ -1460,5 +1460,49 @@
     "hook_type": "physical_moment",
     "cluster": "supermarket",
     "quality_score": 46.0
+  },
+  {
+    "title": "cute kitten!",
+    "views": 51,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "spider kitty!",
+    "views": 22,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Can't Escape Viral Trends",
+    "views": 8,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Your Shopping Cart Pulls Left",
+    "views": 15,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "supermarket",
+    "quality_score": 47.0
   }
 ]

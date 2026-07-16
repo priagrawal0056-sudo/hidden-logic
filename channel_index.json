@@ -4388,5 +4388,53 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "Mr2zhAukiNE",
+    "title": "spider kitty!",
+    "topic": "spider kitty!",
+    "date": "2026-07-16",
+    "n": 0
+  },
+  {
+    "video_id": "OrnSdNuyi1E",
+    "title": "cute kitten!",
+    "topic": "cute kitten!",
+    "date": "2026-07-16",
+    "n": 0
+  },
+  {
+    "video_id": "CjMzFyxU1Xc",
+    "title": "Why Your Room Shrinks In The Dark",
+    "topic": "The psychological reason behind a room feeling smaller in the dark",
+    "date": "2026-07-16",
+    "n": 406,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "5XXIBPEAay8",
+    "title": "Why You Can't Pass On The Last Lap",
+    "topic": "Why the leader almost never gets overtaken on the last lap",
+    "date": "2026-07-16",
+    "n": 407,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 44.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

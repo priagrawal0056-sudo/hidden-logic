@@ -834,5 +834,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Your Room Shrinks In The Dark",
+    "hook_text": "You walk into your dark bedroom.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Contradiction",
+    "first_frame_description": "POV shot of someone stepping into a completely dark bedroom, with only faint outlines visible, immediately followed by a subtle visual effect of the room's perceived boundaries closing in slightly.",
+    "visual_thesis": "Your brain actively redraws your perceived environment in darkness, making it feel smaller as a primal protective response.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Pass On The Last Lap",
+    "hook_text": "You\u2019re inches from the leader but your car is sliding.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Moment -> Hidden System",
+    "first_frame_description": "A high-speed POV shot from a race car's cockpit, inches away from the vibrating rear wing of the car in front at 200mph.",
+    "visual_thesis": "The script demonstrates how a lead car uses aerodynamic turbulence ('dirty air') as a defensive tool to physically destabilize the following car's handling.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
