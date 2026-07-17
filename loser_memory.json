@@ -1504,5 +1504,27 @@
     "hook_type": "physical_moment",
     "cluster": "supermarket",
     "quality_score": 47.0
+  },
+  {
+    "title": "Why You Can't Pass On The Last Lap",
+    "views": 8,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 44.0
+  },
+  {
+    "title": "Why Your Room Shrinks In The Dark",
+    "views": 8,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
   }
 ]
