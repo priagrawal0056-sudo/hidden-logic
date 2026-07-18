@@ -4436,5 +4436,41 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "YKyLgLljjW8",
+    "title": "Why You Always Lose To Red Teams",
+    "topic": "Why you always lose to teams wearing red",
+    "date": "2026-07-18",
+    "n": 408,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "HsZROVypgwQ",
+    "title": "Why Loading Bars Always Stop At 99",
+    "topic": "Why loading bars that clearly lie keeps happening no matter what",
+    "date": "2026-07-18",
+    "n": 409,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 10,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

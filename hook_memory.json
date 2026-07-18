@@ -1,13 +1,13 @@
 {
   "physical_moment": {
     "videos": 123,
-    "avg_views": 462.1,
+    "avg_views": 464.3,
     "stayed_to_watch": 59.8,
     "avd": 13.4
   },
   "explainer": {
     "videos": 103,
-    "avg_views": 2697.7,
+    "avg_views": 2752.7,
     "stayed_to_watch": null,
     "avd": null
   }

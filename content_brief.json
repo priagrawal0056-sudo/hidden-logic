@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-17",
-  "sample_size": 49,
+  "date": "2026-07-18",
+  "sample_size": 50,
   "avg_retention": null,
   "best_formats": [
     "story"
@@ -10,7 +10,8 @@
     "unspecified"
   ],
   "best_hooks": [
-    "plain"
+    "plain",
+    "bold_claim"
   ],
   "hot_subjects": []
 }

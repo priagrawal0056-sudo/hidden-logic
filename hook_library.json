@@ -856,5 +856,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Lose To Red Teams",
+    "hook_text": "You're sprinting toward the goal against a red jersey.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Biological Frustration",
+    "first_frame_description": "A high-intensity close-up of a player's panicked eyes with a blurred bright red jersey filling the foreground.",
+    "visual_thesis": "The 'Red Effect' creates a biological and systemic disadvantage for opponents through amygdala triggers and referee perception bias.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Loading Bars Always Stop At 99",
+    "hook_text": "That loading bar at ninety-nine percent is lying to you.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Frustration -> System Reveal",
+    "first_frame_description": "A high-definition close-up of a blue loading bar frozen at 99% on a laptop screen, with a blurry coffee shop background.",
+    "visual_thesis": "The video visually proves that the 'stuck' 99% loading bar is a deliberate UI choice designed to manipulate user trust through artificial delay.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
