@@ -4472,5 +4472,38 @@
     "quality_score": 47.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "eleOXYYnlWA",
+    "title": "Why You Always Tip When They Flip The Screen",
+    "topic": "Why the tip screen flipping around to face you is definitely not an accident",
+    "date": "2026-07-19",
+    "n": 410,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "T_dUR_PY4po",
+    "title": "Why You Can't Breathe On High Dives",
+    "topic": "Why you hold your breath during a high dive",
+    "date": "2026-07-19",
+    "n": 411,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

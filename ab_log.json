@@ -1797,7 +1797,7 @@
     "visual_thesis": "Contrast the physical tension of a passenger swallowing with a 3D diagram of a plane fuselage venting air to prevent structural explosion.",
     "first_frame_description": "An extreme close-up of a passenger's tensed jaw swallowing in a window seat, with a digital pressure gauge overlay rapidly dropping.",
     "comments_per_1000_views": 0.57,
-    "likes_per_1000_views": 7.93,
+    "likes_per_1000_views": 7.92,
     "views_first_60m": 779,
     "views_first_6h": 779
   },
@@ -2002,7 +2002,7 @@
     "visual_thesis": "Red cars appear to move faster than they actually do due to visual bias, making them seem closer and more immediate.",
     "first_frame_description": "A POV shot from inside a car, looking out at a red car speeding past on a multi-lane road.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 15.75,
+    "likes_per_1000_views": 15.74,
     "views_first_60m": 744,
     "views_first_6h": 744
   },
@@ -2065,7 +2065,7 @@
     "visual_thesis": "POV driving footage demonstrating the 'looming' effect paired with a retina growth diagram.",
     "first_frame_description": "POV through a car windshield on a highway, staring at the bumper of a silver sedan.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 12.05,
+    "likes_per_1000_views": 12.04,
     "views_first_60m": 574,
     "views_first_6h": 574
   },
@@ -2107,7 +2107,7 @@
     "visual_thesis": "The visceral experience of watching a sports underdog, from despair to the explosive joy of a comeback, driven by a hidden psychological reward.",
     "first_frame_description": "A wide shot of a basketball court during a game, with the scoreboard prominently displaying the home team down by 20 points in the fourth quarter. The camera then cuts to a close-up of a fan in the stands, eyes glued to the game, a mix of tension and desperate hope on their face.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 20.0,
+    "likes_per_1000_views": 19.61,
     "views_first_60m": 10,
     "views_first_6h": 10
   },
@@ -2128,7 +2128,7 @@
     "visual_thesis": "Hotel hallways are deliberately designed to be disorienting and make you crave your room for security and quiet.",
     "first_frame_description": "A first-person perspective shot of someone stepping into a long, dimly lit hotel hallway with identical doors stretching into the distance.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 17.86,
+    "likes_per_1000_views": 16.95,
     "views_first_60m": 5,
     "views_first_6h": 5
   },
@@ -2212,7 +2212,7 @@
     "visual_thesis": "Demonstrate how red wavelengths focus differently on the retina compared to cool colors, creating a depth perception shift that visually pulls red cars closer to the viewer.",
     "first_frame_description": "A close-up POV shot looking into a car's rearview mirror, showing a bright red sedan tailgating dangerously close on a highway.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 21.74,
+    "likes_per_1000_views": 21.28,
     "views_first_60m": 5,
     "views_first_6h": 5
   },
@@ -2296,7 +2296,7 @@
     "visual_thesis": "The 'loading' animation on social media apps is a deliberate psychological trigger designed to mimic gambling mechanics.",
     "first_frame_description": "A first-person POV shot of a hand grabbing a smartphone over a car steering wheel, with a blurry red traffic light visible through the windshield.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 34.48,
+    "likes_per_1000_views": 35.71,
     "views_first_60m": 3,
     "views_first_6h": 3
   },
@@ -2527,7 +2527,7 @@
     "visual_thesis": "The algorithm creates an inescapable 'invisible wall' of trending content.",
     "first_frame_description": "A hand scrolling down a social media feed on a smartphone, a specific viral video or meme appearing multiple times.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 25.64,
+    "likes_per_1000_views": 20.0,
     "views_first_60m": 13,
     "views_first_6h": 13
   },
@@ -2588,7 +2588,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The 'Red Effect' creates a biological and systemic disadvantage for opponents through amygdala triggers and referee perception bias.",
-    "first_frame_description": "A high-intensity close-up of a player's panicked eyes with a blurred bright red jersey filling the foreground."
+    "first_frame_description": "A high-intensity close-up of a player's panicked eyes with a blurred bright red jersey filling the foreground.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
   },
   "HsZROVypgwQ": {
     "variant": "B",
@@ -2605,6 +2609,44 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The video visually proves that the 'stuck' 99% loading bar is a deliberate UI choice designed to manipulate user trust through artificial delay.",
-    "first_frame_description": "A high-definition close-up of a blue loading bar frozen at 99% on a laptop screen, with a blurry coffee shop background."
+    "first_frame_description": "A high-definition close-up of a blue loading bar frozen at 99% on a laptop screen, with a blurry coffee shop background.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 4,
+    "views_first_6h": 4
+  },
+  "eleOXYYnlWA": {
+    "variant": "B",
+    "title": "Why You Always Tip When They Flip The Screen",
+    "date": "2026-07-19",
+    "publish_at": "2026-07-20T07:07:00Z",
+    "cluster": null,
+    "topic": "Why the tip screen flipping around to face you is definitely not an accident",
+    "subcluster": "Consumerism",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The 'guilt-gap' is a deliberate UI design choice that weaponizes social pressure from other customers to force higher tips.",
+    "first_frame_description": "A first-person view of a hand rotating a white digital payment tablet toward the camera in a brightly lit coffee shop."
+  },
+  "T_dUR_PY4po": {
+    "variant": "A",
+    "title": "Why You Can't Breathe On High Dives",
+    "date": "2026-07-19",
+    "publish_at": "2026-07-20T09:22:00Z",
+    "cluster": null,
+    "topic": "Why you hold your breath during a high dive",
+    "subcluster": "Survival Reflexes",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A high-speed dive shot paired with an internal anatomical overlay showing the glottis reflex locking the airway mid-air.",
+    "first_frame_description": "A first-person POV looking down from a 10-meter Olympic diving board, toes over the edge."
   }
 }

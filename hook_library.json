@@ -878,5 +878,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Tip When They Flip The Screen",
+    "hook_text": "You grab your coffee and the cashier flips the screen.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System Reveal",
+    "first_frame_description": "A first-person view of a hand rotating a white digital payment tablet toward the camera in a brightly lit coffee shop.",
+    "visual_thesis": "The 'guilt-gap' is a deliberate UI design choice that weaponizes social pressure from other customers to force higher tips.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Breathe On High Dives",
+    "hook_text": "You jump off the high dive.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Physical Crisis",
+    "first_frame_description": "A first-person POV looking down from a 10-meter Olympic diving board, toes over the edge.",
+    "visual_thesis": "A high-speed dive shot paired with an internal anatomical overlay showing the glottis reflex locking the airway mid-air.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

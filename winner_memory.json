@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 1741.0,
+  "channel_avg_views": 1675.2,
   "topic_clusters": {
     "airport": {
       "videos": 12,
@@ -24,10 +24,10 @@
     },
     "hotel": {
       "videos": 11,
-      "avg_views": 459.8,
+      "avg_views": 460.3,
       "best_views": 1405,
       "recent_views": [
-        56,
+        60,
         88,
         371,
         45,
@@ -55,16 +55,16 @@
     },
     "mall": {
       "videos": 9,
-      "avg_views": 141.7,
+      "avg_views": 142.4,
       "best_views": 1076,
       "recent_views": [
-        20,
+        24,
         1076,
         6,
         13,
         4,
         12,
-        3,
+        4,
         1,
         201
       ],
@@ -73,19 +73,19 @@
     },
     "traffic": {
       "videos": 21,
-      "avg_views": 636.8,
-      "best_views": 1765,
+      "avg_views": 607.4,
+      "best_views": 1767,
       "recent_views": [
-        60,
+        68,
         30,
-        46,
-        913,
-        1270,
+        47,
+        914,
+        1271,
         1402,
         294,
         775,
         306,
-        1765,
+        1767,
         1044,
         488,
         695,
@@ -111,10 +111,10 @@
     },
     "elevator": {
       "videos": 6,
-      "avg_views": 188.6,
+      "avg_views": 190.5,
       "best_views": 1086,
       "recent_views": [
-        48,
+        56,
         52,
         5,
         2,
@@ -152,11 +152,11 @@
     },
     "supermarket": {
       "videos": 18,
-      "avg_views": 571.1,
+      "avg_views": 572.1,
       "best_views": 1354,
       "recent_views": [
-        71,
-        30,
+        82,
+        32,
         776,
         763,
         976,
@@ -207,10 +207,10 @@
     },
     "memory": {
       "videos": 4,
-      "avg_views": 93.2,
+      "avg_views": 94.2,
       "best_views": 266,
       "recent_views": [
-        31,
+        34,
         100,
         266,
         7
@@ -261,11 +261,12 @@
       "avg_avd": null
     },
     "technology": {
-      "videos": 10,
-      "avg_views": 70.7,
+      "videos": 11,
+      "avg_views": 63.5,
       "best_views": 265,
       "recent_views": [
-        32,
+        4,
+        34,
         29,
         38,
         36,
@@ -319,15 +320,15 @@
     },
     "money_psychology": {
       "videos": 2,
-      "avg_views": 567.0,
+      "avg_views": 568.0,
       "best_views": 1105,
       "recent_views": [
-        29,
+        31,
         1105
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     }
   },
-  "last_updated": "2026-07-18T19:55:50.943151"
+  "last_updated": "2026-07-19T20:10:32.560715"
 }

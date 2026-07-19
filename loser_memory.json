@@ -1526,5 +1526,27 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 47.0
+  },
+  {
+    "title": "Why Loading Bars Always Stop At 99",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why You Always Lose To Red Teams",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
   }
 ]

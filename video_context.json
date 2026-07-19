@@ -412,5 +412,17 @@
     "topic": "Why loading bars that clearly lie keeps happening no matter what",
     "visual_thesis": "The video visually proves that the 'stuck' 99% loading bar is a deliberate UI choice designed to manipulate user trust through artificial delay.",
     "script": "That loading bar at ninety-nine percent is lying to you. You check your Wi-Fi, but the signal is perfect. You think it’s a glitch, but it’s a design choice. Most loading bars are fake. If they finished instantly, you wouldn't trust the result. Developers purposely stall that final one percent to prove the machine worked hard. It’s a psychological trick called the labor illusion. Without this fake delay, you’d never believe the work is done. Which is why..."
+  },
+  "eleOXYYnlWA": {
+    "title": "Why You Always Tip When They Flip The Screen",
+    "topic": "Why the tip screen flipping around to face you is definitely not an accident",
+    "visual_thesis": "The 'guilt-gap' is a deliberate UI design choice that weaponizes social pressure from other customers to force higher tips.",
+    "script": "You grab your coffee and the cashier flips the screen. It’s not an accident. Those giant 20% buttons are placed exactly where your thumb naturally rests. But that’s not even the clever part. By making the 'No Tip' button tiny and gray, they trigger a 'guilt-gap.' They know you’ll pay extra just so the person behind you doesn't see you click it. It’s not a transaction; it’s a public performance. And it starts the moment..."
+  },
+  "T_dUR_PY4po": {
+    "title": "Why You Can't Breathe On High Dives",
+    "topic": "Why you hold your breath during a high dive",
+    "visual_thesis": "A high-speed dive shot paired with an internal anatomical overlay showing the glottis reflex locking the airway mid-air.",
+    "script": "You jump off the high dive. Instantly, your lungs lock tight. You haven't hit the water, but you’re already suffocating. This isn't fear. It’s a glitch in your survival hardware. Your brain assumes you’re already drowning, so it slams your throat shut to protect you. This reflex overrides your will the second..."
   }
 }
