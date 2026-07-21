@@ -911,5 +911,60 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Secretly Regret Winning Arguments",
+    "hook_text": "You won that argument, but you lost.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Contradiction -> Frustration (Winning -> Losing)",
+    "first_frame_description": "A close-up on a person's face, initially showing a smug, triumphant smirk after making a point, which quickly fades into a subtle, almost imperceptible flicker of unease or hollowness in their eyes.",
+    "visual_thesis": "The fleeting, hollow triumph of 'winning' an argument versus the visible emotional distance and loss of connection it creates.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why IKEA Forces You Down One Path",
+    "hook_text": "You step onto IKEA's path and get trapped on purpose.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System",
+    "first_frame_description": "A first-person POV shot looking down at the bright yellow arrows painted on the gray floor of an IKEA showroom path.",
+    "visual_thesis": "IKEA's winding path is a deliberate psychological maze designed to trigger impulse buying by disorienting the shopper.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Every Price Tag Ends In Ninety Nine",
+    "hook_text": "You stare at a tag ending in nine ninety-nine.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Subversion -> Hidden Incentive Reveal",
+    "first_frame_description": "First-person perspective of a hand holding a retail product with a stark white $9.99 price tag.",
+    "visual_thesis": "A retail shelf tag showing $9.99 immediately cuts to overlay graphics demonstrating cashier register mechanics.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Voice Drops In Libraries",
+    "hook_text": "You step into a library.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Observation -> Mystery",
+    "first_frame_description": "A person steps through the entrance of a quiet, well-lit library, looking around with a slightly hushed expression.",
+    "visual_thesis": "Libraries are acoustically designed to subtly manipulate your senses, making you instinctively lower your voice.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Red Cars Always Look Faster To You",
+    "hook_text": "You tap your brakes when a red car appears.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "Driver's POV looking in side mirror at a red sedan trailing behind on a highway.",
+    "visual_thesis": "Demonstrate the visual processing lag of color wavelengths causing perception of phantom speed in driving mirror footage.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
