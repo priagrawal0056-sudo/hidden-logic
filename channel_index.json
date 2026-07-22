@@ -4602,5 +4602,50 @@
     "quality_score": 46.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "HJFXKlhe3RA",
+    "title": "Why You Always Face The Elevator Door",
+    "topic": "Why you can never escape everyone facing forward in elevators",
+    "date": "2026-07-22",
+    "n": 418,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "iVtRnURQhQk",
+    "title": "Why You Always Interrupt People",
+    "topic": "The psychological reason behind people interrupting each other",
+    "date": "2026-07-22",
+    "n": 419,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "wr_E89Ib4JI",
+    "title": "Why You Always Think The Ref Is Cheating",
+    "topic": "Why fans blame the referee even when they're wrong",
+    "date": "2026-07-22",
+    "n": 420,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

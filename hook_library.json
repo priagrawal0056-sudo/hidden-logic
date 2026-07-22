@@ -966,5 +966,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Face The Elevator Door",
+    "hook_text": "You step into an elevator.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Automatic Behavior -> Curiosity Gap",
+    "first_frame_description": "POV shot of someone stepping into a crowded elevator. All other occupants are already inside, standing shoulder-to-shoulder, uniformly facing the closed elevator doors.",
+    "visual_thesis": "People in an elevator, all uniformly facing the door, highlighting the unspoken social rules and the discomfort of breaking them.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Interrupt People",
+    "hook_text": "You're talking.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden Reason Tease",
+    "first_frame_description": "Two people are engaged in conversation. One person is visibly speaking, and the other person abruptly starts speaking over them, interrupting the first speaker mid-sentence.",
+    "visual_thesis": "Demonstrating the brain's rapid predictive processing causing premature speech and interruptions.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Think The Ref Is Cheating",
+    "hook_text": "You scream at the ref, but your brain lied first.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Hidden Biological Manipulation",
+    "first_frame_description": "A fan leaning forward off a couch yelling at a high-definition TV showing a referee making a signal, with a neon brain graphic lighting up.",
+    "visual_thesis": "A split-screen comparison showing camera replay versus an animated brain overlay shifting the ball's position in real time.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

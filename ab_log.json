@@ -2693,7 +2693,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "The fleeting, hollow triumph of 'winning' an argument versus the visible emotional distance and loss of connection it creates.",
-    "first_frame_description": "A close-up on a person's face, initially showing a smug, triumphant smirk after making a point, which quickly fades into a subtle, almost imperceptible flicker of unease or hollowness in their eyes."
+    "first_frame_description": "A close-up on a person's face, initially showing a smug, triumphant smirk after making a point, which quickly fades into a subtle, almost imperceptible flicker of unease or hollowness in their eyes.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "0TVn9hso-pU": {
     "variant": "B",
@@ -2710,7 +2714,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "IKEA's winding path is a deliberate psychological maze designed to trigger impulse buying by disorienting the shopper.",
-    "first_frame_description": "A first-person POV shot looking down at the bright yellow arrows painted on the gray floor of an IKEA showroom path."
+    "first_frame_description": "A first-person POV shot looking down at the bright yellow arrows painted on the gray floor of an IKEA showroom path.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
   },
   "bJtZCB7U7dY": {
     "variant": "A",
@@ -2727,7 +2735,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A retail shelf tag showing $9.99 immediately cuts to overlay graphics demonstrating cashier register mechanics.",
-    "first_frame_description": "First-person perspective of a hand holding a retail product with a stark white $9.99 price tag."
+    "first_frame_description": "First-person perspective of a hand holding a retail product with a stark white $9.99 price tag.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 4,
+    "views_first_6h": 4
   },
   "ypiX2PSur2U": {
     "variant": "B",
@@ -2744,7 +2756,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "Libraries are acoustically designed to subtly manipulate your senses, making you instinctively lower your voice.",
-    "first_frame_description": "A person steps through the entrance of a quiet, well-lit library, looking around with a slightly hushed expression."
+    "first_frame_description": "A person steps through the entrance of a quiet, well-lit library, looking around with a slightly hushed expression.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "B35Regdcl8E": {
     "variant": "B",
@@ -2761,6 +2777,61 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate the visual processing lag of color wavelengths causing perception of phantom speed in driving mirror footage.",
-    "first_frame_description": "Driver's POV looking in side mirror at a red sedan trailing behind on a highway."
+    "first_frame_description": "Driver's POV looking in side mirror at a red sedan trailing behind on a highway.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
+  },
+  "HJFXKlhe3RA": {
+    "variant": "A",
+    "title": "Why You Always Face The Elevator Door",
+    "date": "2026-07-22",
+    "publish_at": "2026-07-23T07:13:00Z",
+    "cluster": null,
+    "topic": "Why you can never escape everyone facing forward in elevators",
+    "subcluster": "unwritten rules",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "People in an elevator, all uniformly facing the door, highlighting the unspoken social rules and the discomfort of breaking them.",
+    "first_frame_description": "POV shot of someone stepping into a crowded elevator. All other occupants are already inside, standing shoulder-to-shoulder, uniformly facing the closed elevator doors."
+  },
+  "iVtRnURQhQk": {
+    "variant": "B",
+    "title": "Why You Always Interrupt People",
+    "date": "2026-07-22",
+    "publish_at": "2026-07-23T09:14:00Z",
+    "cluster": null,
+    "topic": "The psychological reason behind people interrupting each other",
+    "subcluster": "social behavior",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "Demonstrating the brain's rapid predictive processing causing premature speech and interruptions.",
+    "first_frame_description": "Two people are engaged in conversation. One person is visibly speaking, and the other person abruptly starts speaking over them, interrupting the first speaker mid-sentence."
+  },
+  "wr_E89Ib4JI": {
+    "variant": "B",
+    "title": "Why You Always Think The Ref Is Cheating",
+    "date": "2026-07-22",
+    "publish_at": "2026-07-23T11:20:00Z",
+    "cluster": null,
+    "topic": "Why fans blame the referee even when they're wrong",
+    "subcluster": "psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A split-screen comparison showing camera replay versus an animated brain overlay shifting the ball's position in real time.",
+    "first_frame_description": "A fan leaning forward off a couch yelling at a high-definition TV showing a referee making a signal, with a neon brain graphic lighting up."
   }
 }
