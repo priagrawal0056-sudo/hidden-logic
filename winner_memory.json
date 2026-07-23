@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 1384.4,
+  "channel_avg_views": 1365.5,
   "topic_clusters": {
     "airport": {
       "videos": 12,
@@ -73,10 +73,10 @@
     },
     "traffic": {
       "videos": 22,
-      "avg_views": 564.7,
+      "avg_views": 542.7,
       "best_views": 1769,
       "recent_views": [
-        1,
+        2,
         68,
         29,
         50,
@@ -111,10 +111,11 @@
       "avg_avd": null
     },
     "elevator": {
-      "videos": 6,
-      "avg_views": 190.9,
+      "videos": 7,
+      "avg_views": 155.7,
       "best_views": 1086,
       "recent_views": [
+        3,
         58,
         52,
         5,
@@ -153,21 +154,21 @@
     },
     "supermarket": {
       "videos": 19,
-      "avg_views": 530.8,
-      "best_views": 1356,
+      "avg_views": 530.9,
+      "best_views": 1357,
       "recent_views": [
-        2,
+        3,
         85,
         32,
         776,
         763,
         976,
-        1356,
+        1357,
         835,
         866,
         944,
         855,
-        592,
+        593,
         4,
         1,
         18,
@@ -241,10 +242,11 @@
       "avg_avd": null
     },
     "social_behavior": {
-      "videos": 3,
-      "avg_views": 218.6,
+      "videos": 4,
+      "avg_views": 153.0,
       "best_views": 713,
       "recent_views": [
+        0,
         30,
         713,
         7
@@ -264,11 +266,11 @@
     },
     "technology": {
       "videos": 14,
-      "avg_views": 50.7,
+      "avg_views": 50.9,
       "best_views": 265,
       "recent_views": [
-        1,
-        4,
+        2,
+        5,
         10,
         18,
         36,
@@ -287,10 +289,10 @@
     },
     "internet_behavior": {
       "videos": 1,
-      "avg_views": 1.0,
-      "best_views": 1,
+      "avg_views": 2.0,
+      "best_views": 2,
       "recent_views": [
-        1
+        2
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
@@ -337,5 +339,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-07-22T20:20:19.809543"
+  "last_updated": "2026-07-23T20:19:31.486130"
 }

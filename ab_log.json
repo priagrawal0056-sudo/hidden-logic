@@ -805,7 +805,7 @@
     "visual_thesis": "The physical layout of checkout aisles is a deliberate psychological trap designed to maximize impulse purchases.",
     "first_frame_description": "A first-person POV shot of a customer standing in a winding, narrow checkout queue surrounded by high-contrast candy displays.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 6.76
+    "likes_per_1000_views": 6.75
   },
   "mMhM0OpGXOU": {
     "variant": "A",
@@ -2170,7 +2170,7 @@
     "visual_thesis": "Demonstrate how restaurant menus use psychological pricing layouts to trick customers into buying their lowest-quality, highest-markup wine.",
     "first_frame_description": "A first-person POV shot of a dimly lit restaurant table, holding a leather-bound wine menu with a finger pointing directly at the second-cheapest bottle.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 64.52,
+    "likes_per_1000_views": 60.61,
     "views_first_60m": 3,
     "views_first_6h": 3
   },
@@ -2798,7 +2798,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "People in an elevator, all uniformly facing the door, highlighting the unspoken social rules and the discomfort of breaking them.",
-    "first_frame_description": "POV shot of someone stepping into a crowded elevator. All other occupants are already inside, standing shoulder-to-shoulder, uniformly facing the closed elevator doors."
+    "first_frame_description": "POV shot of someone stepping into a crowded elevator. All other occupants are already inside, standing shoulder-to-shoulder, uniformly facing the closed elevator doors.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "iVtRnURQhQk": {
     "variant": "B",
@@ -2815,7 +2819,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "Demonstrating the brain's rapid predictive processing causing premature speech and interruptions.",
-    "first_frame_description": "Two people are engaged in conversation. One person is visibly speaking, and the other person abruptly starts speaking over them, interrupting the first speaker mid-sentence."
+    "first_frame_description": "Two people are engaged in conversation. One person is visibly speaking, and the other person abruptly starts speaking over them, interrupting the first speaker mid-sentence.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "wr_E89Ib4JI": {
     "variant": "B",
@@ -2832,6 +2840,61 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A split-screen comparison showing camera replay versus an animated brain overlay shifting the ball's position in real time.",
-    "first_frame_description": "A fan leaning forward off a couch yelling at a high-definition TV showing a referee making a signal, with a neon brain graphic lighting up."
+    "first_frame_description": "A fan leaning forward off a couch yelling at a high-definition TV showing a referee making a signal, with a neon brain graphic lighting up.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
+  },
+  "wXoI-fpzKk8": {
+    "variant": "A",
+    "title": "Why You Can't Stop Humming That Song",
+    "date": "2026-07-23",
+    "publish_at": "2026-07-24T07:10:00Z",
+    "cluster": null,
+    "topic": "Why you can never escape songs getting stuck in your head",
+    "subcluster": "Cognitive Biases",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The brain is a pattern-matching machine that gets stuck on 'unfinished' loops, a glitch exploited by both music and social media algorithms.",
+    "first_frame_description": "A close-up of a person scrubbing a plate with a frustrated expression, while a glowing 'loading' circle pulses over their forehead."
+  },
+  "UldoEV5-g5M": {
+    "variant": "B",
+    "title": "Why Restaurants Give You Giant Menus",
+    "date": "2026-07-23",
+    "publish_at": "2026-07-24T09:00:00Z",
+    "cluster": null,
+    "topic": "Why restaurant menus being enormous is definitely not an accident",
+    "subcluster": "Psychology",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The oversized menu acts as a physical blinder to isolate the diner and increase spending.",
+    "first_frame_description": "A diner's POV of a massive, leather-bound menu unfolding to cover the entire table and block the view of the restaurant."
+  },
+  "V4k4YUWgHpo": {
+    "variant": "A",
+    "title": "Why Photo Finishes Always Fool Your Eyes",
+    "date": "2026-07-23",
+    "publish_at": "2026-07-24T11:05:00Z",
+    "cluster": null,
+    "topic": "Why a photo finish fools your eyes",
+    "subcluster": "line_scan_cameras",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate that photo finish images plot time along the horizontal axis rather than spatial width.",
+    "first_frame_description": "A high-resolution frozen photo finish image of two Olympic sprinters crossing a finish line, with a red digital line scanning across."
   }
 }

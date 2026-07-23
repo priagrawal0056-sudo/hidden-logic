@@ -1636,5 +1636,38 @@
     "hook_type": "physical_moment",
     "cluster": "internet_behavior",
     "quality_score": 49.0
+  },
+  {
+    "title": "Why You Always Think The Ref Is Cheating",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Interrupt People",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "social_behavior",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Face The Elevator Door",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "elevator",
+    "quality_score": 46.0
   }
 ]
