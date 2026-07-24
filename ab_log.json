@@ -1340,7 +1340,7 @@
     "visual_thesis": "A grocery store's floor plan is deliberately engineered \u2014 and periodically re-scrambled \u2014 to keep shoppers disoriented so they wander past more products.",
     "first_frame_description": "POV/overhead shot of a hand pulling a milk jug from a fridge at the very back of a grocery store, with long fluorescent-lit aisles stretching away toward a distant entrance.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 4.62,
+    "likes_per_1000_views": 4.61,
     "views_first_60m": 213,
     "views_first_6h": 519
   },
@@ -2170,7 +2170,7 @@
     "visual_thesis": "Demonstrate how restaurant menus use psychological pricing layouts to trick customers into buying their lowest-quality, highest-markup wine.",
     "first_frame_description": "A first-person POV shot of a dimly lit restaurant table, holding a leather-bound wine menu with a finger pointing directly at the second-cheapest bottle.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 60.61,
+    "likes_per_1000_views": 57.14,
     "views_first_60m": 3,
     "views_first_6h": 3
   },
@@ -2861,7 +2861,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The brain is a pattern-matching machine that gets stuck on 'unfinished' loops, a glitch exploited by both music and social media algorithms.",
-    "first_frame_description": "A close-up of a person scrubbing a plate with a frustrated expression, while a glowing 'loading' circle pulses over their forehead."
+    "first_frame_description": "A close-up of a person scrubbing a plate with a frustrated expression, while a glowing 'loading' circle pulses over their forehead.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "UldoEV5-g5M": {
     "variant": "B",
@@ -2878,7 +2882,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The oversized menu acts as a physical blinder to isolate the diner and increase spending.",
-    "first_frame_description": "A diner's POV of a massive, leather-bound menu unfolding to cover the entire table and block the view of the restaurant."
+    "first_frame_description": "A diner's POV of a massive, leather-bound menu unfolding to cover the entire table and block the view of the restaurant.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "V4k4YUWgHpo": {
     "variant": "A",
@@ -2895,6 +2903,61 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate that photo finish images plot time along the horizontal axis rather than spatial width.",
-    "first_frame_description": "A high-resolution frozen photo finish image of two Olympic sprinters crossing a finish line, with a red digital line scanning across."
+    "first_frame_description": "A high-resolution frozen photo finish image of two Olympic sprinters crossing a finish line, with a red digital line scanning across.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 250.0,
+    "views_first_60m": 4,
+    "views_first_6h": 4
+  },
+  "P7zFoiNFoCA": {
+    "variant": "A",
+    "title": "Why Injury Time Feels Longer Than The Match",
+    "date": "2026-07-24",
+    "publish_at": "2026-07-25T07:14:00Z",
+    "cluster": null,
+    "topic": "Why injury time feels longer than it is",
+    "subcluster": "time_perception",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A stadium scoreboard clock at 90:00 counting up alongside a graphic showing brain visual cortex frame rates accelerating during high-anxiety stoppage time.",
+    "first_frame_description": "A view from stadium seats staring up at a bright scoreboard showing 90:00 with '+5' displayed in flashing red."
+  },
+  "vTia2-FfNE4": {
+    "variant": "B",
+    "title": "Why Grocery Stores Always Move Everything",
+    "date": "2026-07-24",
+    "publish_at": "2026-07-25T09:20:00Z",
+    "cluster": "supermarket",
+    "topic": "Why grocery stores rearranging the shelves keeps happening no matter what",
+    "subcluster": "Psychology",
+    "hook_type": "physical_moment",
+    "series": "Designed To Keep You Shopping",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The transition from a shopper moving fast on 'autopilot' to a shopper standing still, looking confused, and then grabbing an unplanned item.",
+    "first_frame_description": "A first-person POV of a hand reaching for a shelf where milk usually is, only to find it's now filled with expensive organic soda."
+  },
+  "CeHY1P80Cq8": {
+    "variant": "B",
+    "title": "Why You Get Stuck In Traffic For No Reason",
+    "date": "2026-07-24",
+    "publish_at": "2026-07-25T11:05:00Z",
+    "cluster": null,
+    "topic": "Why traffic jams appearing out of nowhere is definitely not an accident",
+    "subcluster": "Traffic",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The script uses the 'phantom traffic jam' phenomenon to explain why traffic exists without accidents, requiring top-down shockwave simulations for visual proof.",
+    "first_frame_description": "A first-person POV through a car windshield showing a sea of red brake lights on a highway at a complete standstill."
   }
 }

@@ -1669,5 +1669,38 @@
     "hook_type": "physical_moment",
     "cluster": "elevator",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Photo Finishes Always Fool Your Eyes",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 44.0
+  },
+  {
+    "title": "Why Restaurants Give You Giant Menus",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.5,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "restaurant",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Can't Stop Humming That Song",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "attention",
+    "quality_score": 47.0
   }
 ]

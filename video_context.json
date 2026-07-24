@@ -496,5 +496,23 @@
     "topic": "Why a photo finish fools your eyes",
     "visual_thesis": "Demonstrate that photo finish images plot time along the horizontal axis rather than spatial width.",
     "script": "You stare at a photo finish that isn't a picture. You swear the runner on the left crossed first. But the camera isn't capturing the track. It only records one vertical strip of the line. So the horizontal axis isn't space—it's time. That means a stretched body just stayed on the line longer. You're reading time as distance, which is why..."
+  },
+  "P7zFoiNFoCA": {
+    "title": "Why Injury Time Feels Longer Than The Match",
+    "topic": "Why injury time feels longer than it is",
+    "visual_thesis": "A stadium scoreboard clock at 90:00 counting up alongside a graphic showing brain visual cortex frame rates accelerating during high-anxiety stoppage time.",
+    "script": "You stare at the stadium clock as extra time freezes. Five extra minutes feel like thirty, but it isn't referee incompetence. In high stress, your amygdala overclocks your eyes to capture double the visual frames. But that's not even the real reason. The ball is actually in play for less than two minutes of stoppage time. Your hyper-alert brain stretches those silent dead-ball pauses into actual slow motion. Your perception only warps like this whenever..."
+  },
+  "vTia2-FfNE4": {
+    "title": "Why Grocery Stores Always Move Everything",
+    "topic": "Why grocery stores rearranging the shelves keeps happening no matter what",
+    "visual_thesis": "The transition from a shopper moving fast on 'autopilot' to a shopper standing still, looking confused, and then grabbing an unplanned item.",
+    "script": "You walk into your grocery store and everything's moved. The eggs aren't where they were yesterday. Stores deliberately shatter your muscle memory to kill your mental autopilot. When you stop gliding and start searching, your brain enters 'scanning mode.' This isn't just annoying—it’s a trap. Searching triggers decision fatigue that spikes impulse buys by sixty percent. They’re forcing you to look at everything you didn't come for. You walk into your grocery store..."
+  },
+  "CeHY1P80Cq8": {
+    "title": "Why You Get Stuck In Traffic For No Reason",
+    "topic": "Why traffic jams appearing out of nowhere is definitely not an accident",
+    "visual_thesis": "The script uses the 'phantom traffic jam' phenomenon to explain why traffic exists without accidents, requiring top-down shockwave simulations for visual proof.",
+    "script": "You’re crawling through traffic for miles, but there’s no accident. Suddenly the road clears and you’re doing sixty again. You think it’s just volume, but you’re actually trapped inside a ghost. It's not a crash or a lane closure. It's something much smaller. One driver miles ahead just tapped their brakes for a split second. That tiny ripple amplified backwards, stopping thousands of cars behind them. It’s a design flaw that ensures..."
   }
 }

@@ -1032,5 +1032,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Injury Time Feels Longer Than The Match",
+    "hook_text": "You stare at the stadium clock as extra time freezes.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Physical Contradiction",
+    "first_frame_description": "A view from stadium seats staring up at a bright scoreboard showing 90:00 with '+5' displayed in flashing red.",
+    "visual_thesis": "A stadium scoreboard clock at 90:00 counting up alongside a graphic showing brain visual cortex frame rates accelerating during high-anxiety stoppage time.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Grocery Stores Always Move Everything",
+    "hook_text": "You walk into your grocery store and everything's moved.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A first-person POV of a hand reaching for a shelf where milk usually is, only to find it's now filled with expensive organic soda.",
+    "visual_thesis": "The transition from a shopper moving fast on 'autopilot' to a shopper standing still, looking confused, and then grabbing an unplanned item.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Get Stuck In Traffic For No Reason",
+    "hook_text": "You\u2019re crawling through traffic for miles, but there\u2019s no accident.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Frustration -> Mystery",
+    "first_frame_description": "A first-person POV through a car windshield showing a sea of red brake lights on a highway at a complete standstill.",
+    "visual_thesis": "The script uses the 'phantom traffic jam' phenomenon to explain why traffic exists without accidents, requiring top-down shockwave simulations for visual proof.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

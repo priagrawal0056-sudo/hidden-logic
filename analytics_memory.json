@@ -540,14 +540,14 @@
       "avg_returning_viewers": null
     },
     "Why a photo finish fools your eyes": {
-      "count": 1,
-      "avg_views_first_60m": null,
-      "avg_views_first_6h": null,
+      "count": 2,
+      "avg_views_first_60m": 4.0,
+      "avg_views_first_6h": 4.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 250.0,
       "avg_returning_viewers": null
     },
     "Why Steering Wheels Are Round": {
@@ -745,7 +745,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 60.6,
+      "avg_likes_per_1000_views": 57.1,
       "avg_returning_viewers": null
     },
     "Why apps begging for a review at the perfect moment keeps happening no matter what": {
@@ -1016,6 +1016,28 @@
       "count": 1,
       "avg_views_first_60m": 0.0,
       "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why you can never escape songs getting stuck in your head": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why restaurant menus being enormous is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -1424,9 +1446,9 @@
       "avg_returning_viewers": null
     },
     "Psychology": {
-      "count": 7,
-      "avg_views_first_60m": 7.0,
-      "avg_views_first_6h": 7.0,
+      "count": 8,
+      "avg_views_first_60m": 6.0,
+      "avg_views_first_6h": 6.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -1992,7 +2014,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 60.6,
+      "avg_likes_per_1000_views": 57.1,
       "avg_returning_viewers": null
     },
     "Social Behavior": {
@@ -2236,18 +2258,40 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Cognitive Biases": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "line_scan_cameras": {
+      "count": 1,
+      "avg_views_first_60m": 4.0,
+      "avg_views_first_6h": 4.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 250.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 111,
-      "avg_views_first_60m": 208.7,
-      "avg_views_first_6h": 243.4,
+      "count": 114,
+      "avg_views_first_60m": 200.2,
+      "avg_views_first_6h": 233.3,
       "avg_views_first_24h": 828.5,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 19.7,
-      "avg_likes_per_1000_views": 33.9,
+      "avg_comments_per_1000_views": 18.9,
+      "avg_likes_per_1000_views": 35.7,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
