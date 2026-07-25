@@ -1702,5 +1702,38 @@
     "hook_type": "physical_moment",
     "cluster": "attention",
     "quality_score": 47.0
+  },
+  {
+    "title": "Why You Get Stuck In Traffic For No Reason",
+    "views": 3,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Grocery Stores Always Move Everything",
+    "views": 5,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "supermarket",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Injury Time Feels Longer Than The Match",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
   }
 ]

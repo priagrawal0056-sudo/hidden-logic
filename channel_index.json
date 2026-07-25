@@ -4747,5 +4747,39 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "Js-REyjRbtY",
+    "title": "Why Free Trials Always Demand Your Card",
+    "topic": "Why free trials that demand a card upfront is definitely not an accident",
+    "date": "2026-07-25",
+    "n": 427,
+    "source": "pool",
+    "visual_score": 8.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "3sN_3suDvyw",
+    "title": "Why You Always Feel Slower In Outer Lanes",
+    "topic": "Why sprinters in the outer lanes feel slower",
+    "date": "2026-07-25",
+    "n": 428,
+    "source": "pool",
+    "relatability_score": 8,
+    "memory_trigger_score": 8,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 42.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

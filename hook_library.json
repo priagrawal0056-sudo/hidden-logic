@@ -1065,5 +1065,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Free Trials Always Demand Your Card",
+    "hook_text": "You click 'free trial' but they demand your card.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up of a finger hovering over a glowing 'Start Free Trial' button on a laptop screen, with a giant red 'Credit Card Required' box popping up.",
+    "visual_thesis": "Demonstrate how the upfront credit card requirement on free trials is a deliberate psychological trap designed to exploit forgetfulness and make cancellation difficult.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Feel Slower In Outer Lanes",
+    "hook_text": "You sprint on the outer lane and instantly feel slow.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Unnatural Sensation",
+    "first_frame_description": "First-person POV of a runner sprinting on lane 8 of a red running track, watching white lane lines pass by unusually slowly.",
+    "visual_thesis": "Show a sprinter running on the outermost track lane with animated visual speed lines moving slowly past their field of view compared to an inner lane.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

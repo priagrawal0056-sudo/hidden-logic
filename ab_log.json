@@ -2212,7 +2212,7 @@
     "visual_thesis": "Demonstrate how red wavelengths focus differently on the retina compared to cool colors, creating a depth perception shift that visually pulls red cars closer to the viewer.",
     "first_frame_description": "A close-up POV shot looking into a car's rearview mirror, showing a bright red sedan tailgating dangerously close on a highway.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 20.0,
+    "likes_per_1000_views": 19.61,
     "views_first_60m": 5,
     "views_first_6h": 5
   },
@@ -2905,7 +2905,7 @@
     "visual_thesis": "Demonstrate that photo finish images plot time along the horizontal axis rather than spatial width.",
     "first_frame_description": "A high-resolution frozen photo finish image of two Olympic sprinters crossing a finish line, with a red digital line scanning across.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 250.0,
+    "likes_per_1000_views": 200.0,
     "views_first_60m": 4,
     "views_first_6h": 4
   },
@@ -2924,7 +2924,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A stadium scoreboard clock at 90:00 counting up alongside a graphic showing brain visual cortex frame rates accelerating during high-anxiety stoppage time.",
-    "first_frame_description": "A view from stadium seats staring up at a bright scoreboard showing 90:00 with '+5' displayed in flashing red."
+    "first_frame_description": "A view from stadium seats staring up at a bright scoreboard showing 90:00 with '+5' displayed in flashing red.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "vTia2-FfNE4": {
     "variant": "B",
@@ -2941,7 +2945,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The transition from a shopper moving fast on 'autopilot' to a shopper standing still, looking confused, and then grabbing an unplanned item.",
-    "first_frame_description": "A first-person POV of a hand reaching for a shelf where milk usually is, only to find it's now filled with expensive organic soda."
+    "first_frame_description": "A first-person POV of a hand reaching for a shelf where milk usually is, only to find it's now filled with expensive organic soda.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 5,
+    "views_first_6h": 5
   },
   "CeHY1P80Cq8": {
     "variant": "B",
@@ -2958,6 +2966,44 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The script uses the 'phantom traffic jam' phenomenon to explain why traffic exists without accidents, requiring top-down shockwave simulations for visual proof.",
-    "first_frame_description": "A first-person POV through a car windshield showing a sea of red brake lights on a highway at a complete standstill."
+    "first_frame_description": "A first-person POV through a car windshield showing a sea of red brake lights on a highway at a complete standstill.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 3,
+    "views_first_6h": 3
+  },
+  "Js-REyjRbtY": {
+    "variant": "B",
+    "title": "Why Free Trials Always Demand Your Card",
+    "date": "2026-07-25",
+    "publish_at": "2026-07-26T07:24:00Z",
+    "cluster": null,
+    "topic": "Why free trials that demand a card upfront is definitely not an accident",
+    "subcluster": "dark-patterns",
+    "hook_type": "physical_moment",
+    "series": "Money & Pricing Tricks",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate how the upfront credit card requirement on free trials is a deliberate psychological trap designed to exploit forgetfulness and make cancellation difficult.",
+    "first_frame_description": "A close-up of a finger hovering over a glowing 'Start Free Trial' button on a laptop screen, with a giant red 'Credit Card Required' box popping up."
+  },
+  "3sN_3suDvyw": {
+    "variant": "A",
+    "title": "Why You Always Feel Slower In Outer Lanes",
+    "date": "2026-07-25",
+    "publish_at": "2026-07-26T09:16:00Z",
+    "cluster": "traffic",
+    "topic": "Why sprinters in the outer lanes feel slower",
+    "subcluster": "perceptual_illusions",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 8.5,
+    "retention_prediction": 8.8,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 8.5,
+    "visual_thesis": "Show a sprinter running on the outermost track lane with animated visual speed lines moving slowly past their field of view compared to an inner lane.",
+    "first_frame_description": "First-person POV of a runner sprinting on lane 8 of a red running track, watching white lane lines pass by unusually slowly."
   }
 }
