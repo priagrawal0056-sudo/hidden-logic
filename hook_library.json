@@ -1087,5 +1087,49 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Grab Your Phone When Bored",
+    "hook_text": "You grab your phone the second an elevator stops.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Hidden System Reveal",
+    "first_frame_description": "First-person perspective inside a modern elevator as the doors open and a hand reflexively pulls a smartphone out of a pocket.",
+    "visual_thesis": "Demonstrating how artificial UX delays and slot-machine mechanics force reflexive phone grabbing during brief moments of stillness.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Heights Make Your Legs Lock Up",
+    "hook_text": "You watch someone balance and your calves lock on purpose.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Physical Reaction -> Hidden System",
+    "first_frame_description": "First-person POV view standing on the dizzying edge of a skyscraper crane looking down at tiny traffic below.",
+    "visual_thesis": "Demonstrating how watching high-altitude balance videos triggers involuntary leg muscle contractions via mirror neurons simulating a fall.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why The Middle Seat Is Supposed To Hurt",
+    "hook_text": "Your elbows jam into an economy middle seat on purpose.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Hidden Intent",
+    "first_frame_description": "Tight close-up of a passenger's elbows wedged tightly between two strangers in a cramped economy middle seat.",
+    "visual_thesis": "Demonstrating how airline middle seats are intentionally designed to be uncomfortable to drive paid seat upgrades.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Forget Names Instantly",
+    "hook_text": "You shake a stranger's hand and instantly forget their name.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Relatable Frustration -> Hidden Mechanism",
+    "first_frame_description": "A first-person POV of reaching out to shake a hand in a brightly lit office lobby.",
+    "visual_thesis": "A first-person POV of shaking a hand while the speaker's name text literally dissolves into static on screen.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
