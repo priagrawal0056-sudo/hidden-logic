@@ -547,7 +547,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 125.0,
+      "avg_likes_per_1000_views": 111.1,
       "avg_returning_viewers": null
     },
     "Why Steering Wheels Are Round": {
@@ -1071,6 +1071,50 @@
       "count": 1,
       "avg_views_first_60m": 1.0,
       "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why reaching for your phone the instant you're bored is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": 3.0,
+      "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why you tense up watching someone balance": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why nobody wanting to sit in the middle seat is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why everyone is secretly annoyed by names being so easy to forget": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -1963,14 +2007,14 @@
       "avg_returning_viewers": null
     },
     "neurology": {
-      "count": 1,
-      "avg_views_first_60m": 1089.0,
-      "avg_views_first_6h": 1089.0,
+      "count": 2,
+      "avg_views_first_60m": 545.5,
+      "avg_views_first_6h": 545.5,
       "avg_views_first_24h": 1089.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 3.5,
-      "avg_likes_per_1000_views": 15.8,
+      "avg_comments_per_1000_views": 1.8,
+      "avg_likes_per_1000_views": 7.9,
       "avg_returning_viewers": null
     },
     "visual_bias": {
@@ -2311,7 +2355,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 125.0,
+      "avg_likes_per_1000_views": 111.1,
       "avg_returning_viewers": null
     },
     "Traffic": {
@@ -2346,18 +2390,51 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "habit_loops": {
+      "count": 1,
+      "avg_views_first_60m": 3.0,
+      "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Passenger Experience": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "social_glitches": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 119,
-      "avg_views_first_60m": 187.5,
-      "avg_views_first_6h": 218.3,
+      "count": 123,
+      "avg_views_first_60m": 178.4,
+      "avg_views_first_6h": 207.6,
       "avg_views_first_24h": 828.5,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 17.8,
-      "avg_likes_per_1000_views": 32.7,
+      "avg_comments_per_1000_views": 17.0,
+      "avg_likes_per_1000_views": 31.1,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

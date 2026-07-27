@@ -4844,5 +4844,39 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "QdTN84yhfQY",
+    "title": "Why You Can Never Overtake The Lead Car",
+    "topic": "Why the leader almost never gets overtaken on the last lap",
+    "date": "2026-07-27",
+    "n": 433,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "YmF_Fuglypw",
+    "title": "Why You Always Click Headlines You Hate",
+    "topic": "Why you can never escape clicking on clickbait",
+    "date": "2026-07-27",
+    "n": 434,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

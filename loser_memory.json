@@ -1757,5 +1757,49 @@
     "hook_type": "physical_moment",
     "cluster": "traffic",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Forget Names Instantly",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "memory",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why The Middle Seat Is Supposed To Hurt",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Heights Make Your Legs Lock Up",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Grab Your Phone When Bored",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "technology",
+    "quality_score": 47.0
   }
 ]

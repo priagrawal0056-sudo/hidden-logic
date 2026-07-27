@@ -1131,5 +1131,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Can Never Overtake The Lead Car",
+    "hook_text": "You floor the gas, but second place always loses.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Relatable Frustration -> Hidden System Tease",
+    "first_frame_description": "First-person cockpit view of a race car pressing the accelerator right behind the leader on a final lap curve, with animated airflow streams showing red chaotic turbulence hitting the windshield.",
+    "visual_thesis": "A 3D aerodynamic airflow simulation showing a leading race car leaving a destructive wake of turbulence that strips downforce and starves the air intake of the chasing car.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Click Headlines You Hate",
+    "hook_text": "You\u2019re scrolling past a headline that\u2019s designed to hurt.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System",
+    "first_frame_description": "A POV shot of a thumb hovering over a smartphone screen, a red-tinted headline visible with one word blacked out.",
+    "visual_thesis": "Demonstrating the 'Information Gap' as a neurological irritation by showing headlines with missing words and brain-activity overlays.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

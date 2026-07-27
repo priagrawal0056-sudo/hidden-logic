@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 1337.3,
+  "channel_avg_views": 1321.8,
   "topic_clusters": {
     "airport": {
       "videos": 12,
@@ -73,18 +73,18 @@
     },
     "traffic": {
       "videos": 25,
-      "avg_views": 464.8,
+      "avg_views": 472.9,
       "best_views": 1769,
       "recent_views": [
-        2,
+        3,
         1,
-        5,
+        7,
         3,
         68,
         29,
         51,
         915,
-        1275,
+        1276,
         1405,
         294,
         775,
@@ -158,10 +158,10 @@
     },
     "supermarket": {
       "videos": 20,
-      "avg_views": 495.5,
+      "avg_views": 495.8,
       "best_views": 1358,
       "recent_views": [
-        9,
+        12,
         4,
         85,
         32,
@@ -174,7 +174,7 @@
         944,
         855,
         593,
-        4,
+        5,
         1,
         18,
         137,
@@ -214,10 +214,11 @@
       "avg_avd": null
     },
     "memory": {
-      "videos": 4,
-      "avg_views": 94.6,
+      "videos": 5,
+      "avg_views": 74.2,
       "best_views": 266,
       "recent_views": [
+        0,
         35,
         100,
         266,
@@ -228,10 +229,10 @@
     },
     "attention": {
       "videos": 4,
-      "avg_views": 267.2,
+      "avg_views": 266.9,
       "best_views": 1055,
       "recent_views": [
-        5,
+        4,
         1055,
         137,
         3
@@ -249,10 +250,10 @@
     },
     "social_behavior": {
       "videos": 4,
-      "avg_views": 153.3,
+      "avg_views": 153.0,
       "best_views": 713,
       "recent_views": [
-        1,
+        0,
         30,
         713,
         7
@@ -271,10 +272,11 @@
       "avg_avd": null
     },
     "technology": {
-      "videos": 14,
-      "avg_views": 51.5,
+      "videos": 15,
+      "avg_views": 48.0,
       "best_views": 265,
       "recent_views": [
+        2,
         2,
         7,
         10,
@@ -345,5 +347,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-07-26T20:17:17.521362"
+  "last_updated": "2026-07-27T20:51:50.094238"
 }
