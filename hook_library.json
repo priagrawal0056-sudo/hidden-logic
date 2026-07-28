@@ -1153,5 +1153,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Think Red Cars Are Speeding",
+    "hook_text": "You check your mirror and panic\u2014that red car looks dangerously fast.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Spatial Illusion",
+    "first_frame_description": "Driver perspective inside a car interior, looking directly into the rearview mirror at a bright red sedan filling the frame.",
+    "visual_thesis": "Rearview mirror POV showing a red car appearing closer and faster than a synchronized grey car alongside split-screen neural timing diagrams.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Everyone Is Buying This $60 Chocolate",
+    "hook_text": "You\u2019re paying sixty dollars for a chocolate bar.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up of a thick, gold-flecked chocolate bar being snapped open to reveal a bright green pistachio filling, with a '$60.00' price tag overlay.",
+    "visual_thesis": "The viral 'crunch' of the Dubai chocolate bar is an engineered acoustic product, not just a snack.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Every Store Asks For Tips",
+    "hook_text": "You\u2019re buying a coffee.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up, first-person POV of a hand holding a coffee cup as a cashier swivels a white iPad screen toward the camera with tip options visible.",
+    "visual_thesis": "The 'iPad Flip' is a calculated psychological tool used to guilt consumers into subsidizing corporate labor costs.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

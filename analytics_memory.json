@@ -386,14 +386,14 @@
       "avg_returning_viewers": null
     },
     "Why the leader almost never gets overtaken on the last lap": {
-      "count": 3,
-      "avg_views_first_60m": 144.7,
-      "avg_views_first_6h": 144.7,
+      "count": 4,
+      "avg_views_first_60m": 109.0,
+      "avg_views_first_6h": 109.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.9,
+      "avg_likes_per_1000_views": 5.9,
       "avg_returning_viewers": null
     },
     "ON-DEMAND video about Why YouTube Autoplays The Next Video. Tell the single most relatable, surprising explanation behind this universal human experience. Avoid academic design jargon. Make it highly visual, relatable, and focus on the everyday annoyance or quirk of Why YouTube Autoplays The Next Video.": {
@@ -1115,6 +1115,17 @@
       "count": 1,
       "avg_views_first_60m": 2.0,
       "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why you can never escape clicking on clickbait": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -2423,18 +2434,40 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "racing_aerodynamics": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Digital Manipulation": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 123,
-      "avg_views_first_60m": 178.4,
-      "avg_views_first_6h": 207.6,
+      "count": 125,
+      "avg_views_first_60m": 174.2,
+      "avg_views_first_6h": 202.7,
       "avg_views_first_24h": 828.5,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 17.0,
-      "avg_likes_per_1000_views": 31.1,
+      "avg_comments_per_1000_views": 16.6,
+      "avg_likes_per_1000_views": 30.4,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

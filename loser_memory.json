@@ -1801,5 +1801,27 @@
     "hook_type": "physical_moment",
     "cluster": "technology",
     "quality_score": 47.0
+  },
+  {
+    "title": "Why You Always Click Headlines You Hate",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Can Never Overtake The Lead Car",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 45.0
   }
 ]

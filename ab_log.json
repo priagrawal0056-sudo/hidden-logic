@@ -3113,7 +3113,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A 3D aerodynamic airflow simulation showing a leading race car leaving a destructive wake of turbulence that strips downforce and starves the air intake of the chasing car.",
-    "first_frame_description": "First-person cockpit view of a race car pressing the accelerator right behind the leader on a final lap curve, with animated airflow streams showing red chaotic turbulence hitting the windshield."
+    "first_frame_description": "First-person cockpit view of a race car pressing the accelerator right behind the leader on a final lap curve, with animated airflow streams showing red chaotic turbulence hitting the windshield.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
   },
   "YmF_Fuglypw": {
     "variant": "A",
@@ -3130,6 +3134,61 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrating the 'Information Gap' as a neurological irritation by showing headlines with missing words and brain-activity overlays.",
-    "first_frame_description": "A POV shot of a thumb hovering over a smartphone screen, a red-tinted headline visible with one word blacked out."
+    "first_frame_description": "A POV shot of a thumb hovering over a smartphone screen, a red-tinted headline visible with one word blacked out.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
+  },
+  "t8pY07hmeCs": {
+    "variant": "B",
+    "title": "Why You Always Think Red Cars Are Speeding",
+    "date": "2026-07-28",
+    "publish_at": "2026-07-29T07:12:00Z",
+    "cluster": "traffic",
+    "topic": "Why drivers in red cars feel faster to you",
+    "subcluster": "optical_illusions",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Rearview mirror POV showing a red car appearing closer and faster than a synchronized grey car alongside split-screen neural timing diagrams.",
+    "first_frame_description": "Driver perspective inside a car interior, looking directly into the rearview mirror at a bright red sedan filling the frame."
+  },
+  "et0BUTPQDiQ": {
+    "variant": "B",
+    "title": "Why Everyone Is Buying This $60 Chocolate",
+    "date": "2026-07-28",
+    "publish_at": "2026-07-29T09:23:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why the goalkeeper almost always dives the wrong way",
+    "subcluster": "food",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The viral 'crunch' of the Dubai chocolate bar is an engineered acoustic product, not just a snack.",
+    "first_frame_description": "A close-up of a thick, gold-flecked chocolate bar being snapped open to reveal a bright green pistachio filling, with a '$60.00' price tag overlay."
+  },
+  "CA6dqq6ji6I": {
+    "variant": "B",
+    "title": "Why Every Store Asks For Tips",
+    "date": "2026-07-28",
+    "publish_at": "2026-07-29T11:22:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why you hold your breath during a high dive",
+    "subcluster": "social_pressure",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The 'iPad Flip' is a calculated psychological tool used to guilt consumers into subsidizing corporate labor costs.",
+    "first_frame_description": "A close-up, first-person POV of a hand holding a coffee cup as a cashier swivels a white iPad screen toward the camera with tip options visible."
   }
 }
