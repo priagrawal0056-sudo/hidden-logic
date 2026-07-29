@@ -4927,5 +4927,53 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "5IxcVICwNrc",
+    "title": "Why Self-Checkouts Always Freeze On You",
+    "topic": "Why self-checkout always needing the attendant is definitely not an accident",
+    "date": "2026-07-29",
+    "n": 438,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "4IRd4uGmH-8",
+    "title": "Why Last Minute Goals Hurt Twice As Much",
+    "topic": "Why a last-minute goal feels better than an early one",
+    "date": "2026-07-29",
+    "n": 439,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "44-H5m-V8ww",
+    "title": "Why You Always Cry at Bank Ads",
+    "topic": "Why everyone is secretly annoyed by tearing up at ads you don't care about",
+    "date": "2026-07-29",
+    "n": 440,
+    "source": "pool",
+    "visual_score": 8.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

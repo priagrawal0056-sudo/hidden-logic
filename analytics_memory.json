@@ -518,14 +518,14 @@
       "avg_returning_viewers": null
     },
     "Why drivers in red cars feel faster to you": {
-      "count": 5,
-      "avg_views_first_60m": 188.8,
-      "avg_views_first_6h": 188.8,
+      "count": 6,
+      "avg_views_first_60m": 151.0,
+      "avg_views_first_6h": 151.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 7.1,
       "avg_returning_viewers": null
     },
     "Why Tires Are Always Black": {
@@ -606,9 +606,9 @@
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why you hold your breath during a high dive": {
-      "count": 1,
-      "avg_views_first_60m": 286.0,
-      "avg_views_first_6h": 286.0,
+      "count": 2,
+      "avg_views_first_60m": 143.0,
+      "avg_views_first_6h": 143.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -1132,6 +1132,17 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "TRENDING NOW: why the goalkeeper almost always dives the wrong way": {
+      "count": 1,
+      "avg_views_first_60m": 3.0,
+      "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "clusters": {
@@ -1147,14 +1158,14 @@
       "avg_returning_viewers": null
     },
     "traffic": {
-      "count": 9,
-      "avg_views_first_60m": 165.4,
-      "avg_views_first_6h": 222.9,
+      "count": 10,
+      "avg_views_first_60m": 144.8,
+      "avg_views_first_6h": 195.0,
       "avg_views_first_24h": 860.0,
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
-      "avg_comments_per_1000_views": 214.3,
-      "avg_likes_per_1000_views": 218.7,
+      "avg_comments_per_1000_views": 187.5,
+      "avg_likes_per_1000_views": 191.4,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -2456,18 +2467,51 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "optical_illusions": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "food": {
+      "count": 1,
+      "avg_views_first_60m": 3.0,
+      "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "social_pressure": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 125,
-      "avg_views_first_60m": 174.2,
-      "avg_views_first_6h": 202.7,
+      "count": 128,
+      "avg_views_first_60m": 168.2,
+      "avg_views_first_6h": 195.6,
       "avg_views_first_24h": 828.5,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 16.6,
-      "avg_likes_per_1000_views": 30.4,
+      "avg_comments_per_1000_views": 16.1,
+      "avg_likes_per_1000_views": 29.5,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

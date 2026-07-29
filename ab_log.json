@@ -3155,7 +3155,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Rearview mirror POV showing a red car appearing closer and faster than a synchronized grey car alongside split-screen neural timing diagrams.",
-    "first_frame_description": "Driver perspective inside a car interior, looking directly into the rearview mirror at a bright red sedan filling the frame."
+    "first_frame_description": "Driver perspective inside a car interior, looking directly into the rearview mirror at a bright red sedan filling the frame.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "et0BUTPQDiQ": {
     "variant": "B",
@@ -3172,7 +3176,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The viral 'crunch' of the Dubai chocolate bar is an engineered acoustic product, not just a snack.",
-    "first_frame_description": "A close-up of a thick, gold-flecked chocolate bar being snapped open to reveal a bright green pistachio filling, with a '$60.00' price tag overlay."
+    "first_frame_description": "A close-up of a thick, gold-flecked chocolate bar being snapped open to reveal a bright green pistachio filling, with a '$60.00' price tag overlay.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 3,
+    "views_first_6h": 3
   },
   "CA6dqq6ji6I": {
     "variant": "B",
@@ -3189,6 +3197,61 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The 'iPad Flip' is a calculated psychological tool used to guilt consumers into subsidizing corporate labor costs.",
-    "first_frame_description": "A close-up, first-person POV of a hand holding a coffee cup as a cashier swivels a white iPad screen toward the camera with tip options visible."
+    "first_frame_description": "A close-up, first-person POV of a hand holding a coffee cup as a cashier swivels a white iPad screen toward the camera with tip options visible.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
+  },
+  "5IxcVICwNrc": {
+    "variant": "B",
+    "title": "Why Self-Checkouts Always Freeze On You",
+    "date": "2026-07-29",
+    "publish_at": "2026-07-30T07:11:00Z",
+    "cluster": null,
+    "topic": "Why self-checkout always needing the attendant is definitely not an accident",
+    "subcluster": "self_checkout",
+    "hook_type": "physical_moment",
+    "series": "Supermarket Secrets",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Self-checkout terminals are programmed to trigger artificial errors to force employee eye contact and psychologically deter theft.",
+    "first_frame_description": "First-person point-of-view placing a grocery item onto a self-checkout scale as the overhead red beacon flashes violently."
+  },
+  "4IRd4uGmH-8": {
+    "variant": "B",
+    "title": "Why Last Minute Goals Hurt Twice As Much",
+    "date": "2026-07-29",
+    "publish_at": "2026-07-30T09:21:00Z",
+    "cluster": null,
+    "topic": "Why a last-minute goal feels better than an early one",
+    "subcluster": "peak_end_rule",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Animated EEG timeline of sports fan brain showing high dopamine during early lead, flatline middle, and steep crash at minute 90.",
+    "first_frame_description": "First-person POV gripping cold stadium bleachers while scoreboard lights flip from green lead to red loss in the 90th minute."
+  },
+  "44-H5m-V8ww": {
+    "variant": "A",
+    "title": "Why You Always Cry at Bank Ads",
+    "date": "2026-07-29",
+    "publish_at": "2026-07-30T11:12:00Z",
+    "cluster": null,
+    "topic": "Why everyone is secretly annoyed by tearing up at ads you don't care about",
+    "subcluster": "Marketing Manipulation",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The script demonstrates that emotional responses to advertising are involuntary physiological triggers caused by specific audio frequencies mimicking human distress.",
+    "first_frame_description": "A tight macro shot of a human eye welling with a tear, reflecting a generic blue corporate bank logo on a TV screen."
   }
 }

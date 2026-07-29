@@ -1186,5 +1186,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Self-Checkouts Always Freeze On You",
+    "hook_text": "You set an item down and the self-checkout flashes red.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> System Reveal",
+    "first_frame_description": "First-person point-of-view placing a grocery item onto a self-checkout scale as the overhead red beacon flashes violently.",
+    "visual_thesis": "Self-checkout terminals are programmed to trigger artificial errors to force employee eye contact and psychologically deter theft.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Last Minute Goals Hurt Twice As Much",
+    "hook_text": "You grip the cold bleachers as a late goal hits.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Emotional Paradox -> Scientific Pivot",
+    "first_frame_description": "First-person POV gripping cold stadium bleachers while scoreboard lights flip from green lead to red loss in the 90th minute.",
+    "visual_thesis": "Animated EEG timeline of sports fan brain showing high dopamine during early lead, flatline middle, and steep crash at minute 90.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Cry at Bank Ads",
+    "hook_text": "You\u2019re staring at a bank ad and your eyes well up.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Moment -> Hidden System",
+    "first_frame_description": "A tight macro shot of a human eye welling with a tear, reflecting a generic blue corporate bank logo on a TV screen.",
+    "visual_thesis": "The script demonstrates that emotional responses to advertising are involuntary physiological triggers caused by specific audio frequencies mimicking human distress.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
