@@ -4975,5 +4975,53 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "r9RzlZ0Prd4",
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "topic": "Why drivers in red cars feel faster to you",
+    "date": "2026-07-30",
+    "n": 441,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "wePg4xCvJjM",
+    "title": "Why Your Room Feels Smaller At Night",
+    "topic": "Why a room feeling smaller in the dark is a universal experience",
+    "date": "2026-07-30",
+    "n": 442,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 8.5,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "IWpQxvrrSwY",
+    "title": "Why Soccer Injury Time Feels Endless",
+    "topic": "TRENDING NOW: why injury time feels longer than it is",
+    "date": "2026-07-30",
+    "n": 443,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 0.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

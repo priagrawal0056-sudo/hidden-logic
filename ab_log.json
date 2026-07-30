@@ -3073,7 +3073,7 @@
     "visual_thesis": "Demonstrating how airline middle seats are intentionally designed to be uncomfortable to drive paid seat upgrades.",
     "first_frame_description": "Tight close-up of a passenger's elbows wedged tightly between two strangers in a cramped economy middle seat.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 0.0,
+    "likes_per_1000_views": 200.0,
     "views_first_60m": 0,
     "views_first_6h": 0
   },
@@ -3218,7 +3218,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Self-checkout terminals are programmed to trigger artificial errors to force employee eye contact and psychologically deter theft.",
-    "first_frame_description": "First-person point-of-view placing a grocery item onto a self-checkout scale as the overhead red beacon flashes violently."
+    "first_frame_description": "First-person point-of-view placing a grocery item onto a self-checkout scale as the overhead red beacon flashes violently.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "4IRd4uGmH-8": {
     "variant": "B",
@@ -3235,7 +3239,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Animated EEG timeline of sports fan brain showing high dopamine during early lead, flatline middle, and steep crash at minute 90.",
-    "first_frame_description": "First-person POV gripping cold stadium bleachers while scoreboard lights flip from green lead to red loss in the 90th minute."
+    "first_frame_description": "First-person POV gripping cold stadium bleachers while scoreboard lights flip from green lead to red loss in the 90th minute.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "44-H5m-V8ww": {
     "variant": "A",
@@ -3252,6 +3260,61 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The script demonstrates that emotional responses to advertising are involuntary physiological triggers caused by specific audio frequencies mimicking human distress.",
-    "first_frame_description": "A tight macro shot of a human eye welling with a tear, reflecting a generic blue corporate bank logo on a TV screen."
+    "first_frame_description": "A tight macro shot of a human eye welling with a tear, reflecting a generic blue corporate bank logo on a TV screen.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
+  },
+  "r9RzlZ0Prd4": {
+    "variant": "B",
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "date": "2026-07-30",
+    "publish_at": "2026-07-31T07:07:00Z",
+    "cluster": null,
+    "topic": "Why drivers in red cars feel faster to you",
+    "subcluster": "visual_illusions",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate that red car perception is a biological trick of retinal wavelength processing rather than actual speed.",
+    "first_frame_description": "Driver's perspective inside a vehicle on a highway as a bright red sedan glides past in the adjacent lane."
+  },
+  "wePg4xCvJjM": {
+    "variant": "A",
+    "title": "Why Your Room Feels Smaller At Night",
+    "date": "2026-07-30",
+    "publish_at": "2026-07-31T09:19:00Z",
+    "cluster": "mall",
+    "topic": "Why a room feeling smaller in the dark is a universal experience",
+    "subcluster": "Spatial Awareness",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The brain expands its 'peripersonal space' buffer in the dark to prevent collisions, creating the illusion of shrinking rooms.",
+    "first_frame_description": "A first-person POV of a hand flicking a bedroom light switch, transitioning to darkness where the walls subtly zoom inward."
+  },
+  "IWpQxvrrSwY": {
+    "variant": "B",
+    "title": "Why Soccer Injury Time Feels Endless",
+    "date": "2026-07-30",
+    "publish_at": "2026-07-31T11:07:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why injury time feels longer than it is",
+    "subcluster": "time_perception",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 8.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "Soccer injury time feels endless because it's designed to manipulate your time perception and focus through a lack of a visible countdown.",
+    "first_frame_description": "Close-up shot of a soccer game's scoreboard showing 'Injury Time' or a referee holding up the added time board, with tense players and fans in the background."
   }
 }

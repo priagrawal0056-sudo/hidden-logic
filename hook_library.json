@@ -1219,5 +1219,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "hook_text": "A red car zooms past you on the highway.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction",
+    "first_frame_description": "Driver's perspective inside a vehicle on a highway as a bright red sedan glides past in the adjacent lane.",
+    "visual_thesis": "Demonstrate that red car perception is a biological trick of retinal wavelength processing rather than actual speed.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Room Feels Smaller At Night",
+    "hook_text": "You turn off your bedroom light and the walls move.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Sensory Distortion",
+    "first_frame_description": "A first-person POV of a hand flicking a bedroom light switch, transitioning to darkness where the walls subtly zoom inward.",
+    "visual_thesis": "The brain expands its 'peripersonal space' buffer in the dark to prevent collisions, creating the illusion of shrinking rooms.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Soccer Injury Time Feels Endless",
+    "hook_text": "You're on the edge of your seat, watching soccer injury time.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Moment -> Frustration -> Hidden Reason",
+    "first_frame_description": "Close-up shot of a soccer game's scoreboard showing 'Injury Time' or a referee holding up the added time board, with tense players and fans in the background.",
+    "visual_thesis": "Soccer injury time feels endless because it's designed to manipulate your time perception and focus through a lack of a visible countdown.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

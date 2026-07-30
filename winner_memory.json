@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 1314.1,
+  "channel_avg_views": 1297.0,
   "topic_clusters": {
     "airport": {
       "videos": 12,
@@ -72,16 +72,17 @@
       "avg_avd": 12.4
     },
     "traffic": {
-      "videos": 27,
-      "avg_views": 432.7,
+      "videos": 28,
+      "avg_views": 412.2,
       "best_views": 1769,
       "recent_views": [
         0,
         2,
+        2,
         5,
         2,
         8,
-        4,
+        3,
         68,
         29,
         51,
@@ -117,10 +118,10 @@
     },
     "elevator": {
       "videos": 7,
-      "avg_views": 163.0,
+      "avg_views": 163.2,
       "best_views": 1089,
       "recent_views": [
-        5,
+        6,
         58,
         52,
         5,
@@ -159,10 +160,11 @@
       "avg_avd": null
     },
     "supermarket": {
-      "videos": 20,
-      "avg_views": 506.5,
+      "videos": 21,
+      "avg_views": 482.2,
       "best_views": 1358,
       "recent_views": [
+        1,
         12,
         4,
         85,
@@ -217,10 +219,10 @@
     },
     "memory": {
       "videos": 5,
-      "avg_views": 74.5,
+      "avg_views": 74.7,
       "best_views": 266,
       "recent_views": [
-        1,
+        2,
         35,
         100,
         266,
@@ -252,10 +254,10 @@
     },
     "social_behavior": {
       "videos": 4,
-      "avg_views": 167.0,
+      "avg_views": 166.7,
       "best_views": 713,
       "recent_views": [
-        1,
+        0,
         30,
         713,
         7
@@ -275,11 +277,11 @@
     },
     "technology": {
       "videos": 15,
-      "avg_views": 48.7,
+      "avg_views": 48.6,
       "best_views": 265,
       "recent_views": [
         5,
-        3,
+        2,
         7,
         10,
         19,
@@ -299,10 +301,10 @@
     },
     "internet_behavior": {
       "videos": 2,
-      "avg_views": 1.5,
+      "avg_views": 1.0,
       "best_views": 2,
       "recent_views": [
-        1,
+        0,
         2
       ],
       "avg_stayed_to_watch": null,
@@ -350,5 +352,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-07-29T20:16:31.067125"
+  "last_updated": "2026-07-30T20:39:27.548527"
 }

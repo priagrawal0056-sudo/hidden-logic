@@ -1108,7 +1108,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 200.0,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by names being so easy to forget": {
@@ -1137,6 +1137,39 @@
       "count": 1,
       "avg_views_first_60m": 3.0,
       "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why self-checkout always needing the attendant is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why a last-minute goal feels better than an early one": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why everyone is secretly annoyed by tearing up at ads you don't care about": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -2432,7 +2465,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 200.0,
       "avg_returning_viewers": null
     },
     "social_glitches": {
@@ -2500,18 +2533,51 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "self_checkout": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "peak_end_rule": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Marketing Manipulation": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 128,
-      "avg_views_first_60m": 168.2,
-      "avg_views_first_6h": 195.6,
+      "count": 131,
+      "avg_views_first_60m": 162.6,
+      "avg_views_first_6h": 189.0,
       "avg_views_first_24h": 828.5,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 16.1,
-      "avg_likes_per_1000_views": 29.5,
+      "avg_comments_per_1000_views": 15.6,
+      "avg_likes_per_1000_views": 30.6,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

@@ -1845,5 +1845,38 @@
     "hook_type": "physical_moment",
     "cluster": "traffic",
     "quality_score": 44.0
+  },
+  {
+    "title": "Why You Always Cry at Bank Ads",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Last Minute Goals Hurt Twice As Much",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Self-Checkouts Always Freeze On You",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "supermarket",
+    "quality_score": 46.0
   }
 ]
