@@ -5023,5 +5023,41 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "xZPv4Y1wyAo",
+    "title": "Why You Always Lose To Teams Wearing Red",
+    "topic": "Why you always lose to teams wearing red",
+    "date": "2026-07-31",
+    "n": 444,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "ejYQyiGc2Xc",
+    "title": "Why Your Cereal Box Feels Lighter",
+    "topic": "TRENDING NOW: why you always lose to teams wearing red",
+    "date": "2026-07-31",
+    "n": 445,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 10,
+    "environment_bonus": 0,
+    "topic_fidelity": 9.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

@@ -3073,7 +3073,7 @@
     "visual_thesis": "Demonstrating how airline middle seats are intentionally designed to be uncomfortable to drive paid seat upgrades.",
     "first_frame_description": "Tight close-up of a passenger's elbows wedged tightly between two strangers in a cramped economy middle seat.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 200.0,
+    "likes_per_1000_views": 250.0,
     "views_first_60m": 0,
     "views_first_6h": 0
   },
@@ -3281,7 +3281,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate that red car perception is a biological trick of retinal wavelength processing rather than actual speed.",
-    "first_frame_description": "Driver's perspective inside a vehicle on a highway as a bright red sedan glides past in the adjacent lane."
+    "first_frame_description": "Driver's perspective inside a vehicle on a highway as a bright red sedan glides past in the adjacent lane.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "wePg4xCvJjM": {
     "variant": "A",
@@ -3298,7 +3302,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The brain expands its 'peripersonal space' buffer in the dark to prevent collisions, creating the illusion of shrinking rooms.",
-    "first_frame_description": "A first-person POV of a hand flicking a bedroom light switch, transitioning to darkness where the walls subtly zoom inward."
+    "first_frame_description": "A first-person POV of a hand flicking a bedroom light switch, transitioning to darkness where the walls subtly zoom inward.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "IWpQxvrrSwY": {
     "variant": "B",
@@ -3315,6 +3323,44 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "Soccer injury time feels endless because it's designed to manipulate your time perception and focus through a lack of a visible countdown.",
-    "first_frame_description": "Close-up shot of a soccer game's scoreboard showing 'Injury Time' or a referee holding up the added time board, with tense players and fans in the background."
+    "first_frame_description": "Close-up shot of a soccer game's scoreboard showing 'Injury Time' or a referee holding up the added time board, with tense players and fans in the background.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
+  },
+  "xZPv4Y1wyAo": {
+    "variant": "A",
+    "title": "Why You Always Lose To Teams Wearing Red",
+    "date": "2026-07-31",
+    "publish_at": "2026-08-01T07:02:00Z",
+    "cluster": null,
+    "topic": "Why you always lose to teams wearing red",
+    "subcluster": "Psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The color red triggers subconscious biological submission in opponents and bias in referees.",
+    "first_frame_description": "A first-person POV looking down at muddy soccer cleats on a green pitch, stepping up to face an opponent wearing a vibrant, solid red jersey."
+  },
+  "ejYQyiGc2Xc": {
+    "variant": "B",
+    "title": "Why Your Cereal Box Feels Lighter",
+    "date": "2026-07-31",
+    "publish_at": "2026-08-01T09:21:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why you always lose to teams wearing red",
+    "subcluster": "shrinkflation",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 10.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "Side-by-side comparison of old vs. new product packaging revealing a size reduction, while a brain graphic illustrates visual bias.",
+    "first_frame_description": "A hand reaches into a brightly lit grocery store aisle and grabs a colorful cereal box from the shelf."
   }
 }

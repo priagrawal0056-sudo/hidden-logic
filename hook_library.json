@@ -1252,5 +1252,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Lose To Teams Wearing Red",
+    "hook_text": "You always lose matches against opponents wearing red.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Frustration -> Hidden System",
+    "first_frame_description": "A first-person POV looking down at muddy soccer cleats on a green pitch, stepping up to face an opponent wearing a vibrant, solid red jersey.",
+    "visual_thesis": "The color red triggers subconscious biological submission in opponents and bias in referees.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Cereal Box Feels Lighter",
+    "hook_text": "You just grabbed a cereal box.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden Intent",
+    "first_frame_description": "A hand reaches into a brightly lit grocery store aisle and grabs a colorful cereal box from the shelf.",
+    "visual_thesis": "Side-by-side comparison of old vs. new product packaging revealing a size reduction, while a brain graphic illustrates visual bias.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

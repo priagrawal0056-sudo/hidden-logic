@@ -1878,5 +1878,27 @@
     "hook_type": "physical_moment",
     "cluster": "supermarket",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Your Room Feels Smaller At Night",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.5,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "mall",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 46.0
   }
 ]
