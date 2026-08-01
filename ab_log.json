@@ -3327,7 +3327,8 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
     "views_first_60m": 2,
-    "views_first_6h": 2
+    "views_first_6h": 2,
+    "views_first_24h": 9
   },
   "xZPv4Y1wyAo": {
     "variant": "A",
@@ -3344,7 +3345,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The color red triggers subconscious biological submission in opponents and bias in referees.",
-    "first_frame_description": "A first-person POV looking down at muddy soccer cleats on a green pitch, stepping up to face an opponent wearing a vibrant, solid red jersey."
+    "first_frame_description": "A first-person POV looking down at muddy soccer cleats on a green pitch, stepping up to face an opponent wearing a vibrant, solid red jersey.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "ejYQyiGc2Xc": {
     "variant": "B",
@@ -3361,6 +3366,44 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "Side-by-side comparison of old vs. new product packaging revealing a size reduction, while a brain graphic illustrates visual bias.",
-    "first_frame_description": "A hand reaches into a brightly lit grocery store aisle and grabs a colorful cereal box from the shelf."
+    "first_frame_description": "A hand reaches into a brightly lit grocery store aisle and grabs a colorful cereal box from the shelf.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
+  },
+  "tBPth2tBm7k": {
+    "variant": "A",
+    "title": "Why Apps Only Ask For Reviews When You Win",
+    "date": "2026-08-01",
+    "publish_at": "2026-08-02T07:23:00Z",
+    "cluster": null,
+    "topic": "Why everyone is secretly annoyed by apps begging for a review at the perfect moment",
+    "subcluster": "dark-patterns",
+    "hook_type": "physical_moment",
+    "series": "App & Website Tricks",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate how mobile apps use real-time emotional tracking and dopamine spikes to manipulate user rating behavior.",
+    "first_frame_description": "A close-up first-person POV of a thumb hovering over a smartphone screen showing a vibrant 'VICTORY!' game screen, with a native App Store review pop-up suddenly overlaying it."
+  },
+  "pnKDl7fdoig": {
+    "variant": "A",
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "date": "2026-08-01",
+    "publish_at": "2026-08-02T09:18:00Z",
+    "cluster": "traffic",
+    "topic": "Why drivers in red cars feel faster to you",
+    "subcluster": "perception_psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Side-by-side driver perspective showing matching speedometers while red wavelength light hit retina faster than silver car.",
+    "first_frame_description": "First-person driver POV looking through a windshield as a bright red sedan glides past in the adjacent lane."
   }
 }

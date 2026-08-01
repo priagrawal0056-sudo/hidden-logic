@@ -1274,5 +1274,16 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Apps Only Ask For Reviews When You Win",
+    "hook_text": "You just beat the hardest level on your phone.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System",
+    "first_frame_description": "A close-up first-person POV of a thumb hovering over a smartphone screen showing a vibrant 'VICTORY!' game screen, with a native App Store review pop-up suddenly overlaying it.",
+    "visual_thesis": "Demonstrate how mobile apps use real-time emotional tracking and dopamine spikes to manipulate user rating behavior.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

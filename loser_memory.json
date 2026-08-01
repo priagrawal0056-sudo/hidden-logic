@@ -1900,5 +1900,27 @@
     "hook_type": "physical_moment",
     "cluster": "traffic",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Your Cereal Box Feels Lighter",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Lose To Teams Wearing Red",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
   }
 ]
