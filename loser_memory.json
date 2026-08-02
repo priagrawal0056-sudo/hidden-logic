@@ -1922,5 +1922,16 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Apps Only Ask For Reviews When You Win",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "technology",
+    "quality_score": 46.0
   }
 ]

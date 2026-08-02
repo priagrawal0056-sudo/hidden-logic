@@ -518,14 +518,14 @@
       "avg_returning_viewers": null
     },
     "Why drivers in red cars feel faster to you": {
-      "count": 7,
-      "avg_views_first_60m": 126.0,
-      "avg_views_first_6h": 126.0,
+      "count": 8,
+      "avg_views_first_60m": 108.6,
+      "avg_views_first_6h": 108.6,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 5.9,
+      "avg_likes_per_1000_views": 5.0,
       "avg_returning_viewers": null
     },
     "Why Tires Are Always Black": {
@@ -1209,6 +1209,17 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Why everyone is secretly annoyed by apps begging for a review at the perfect moment": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "clusters": {
@@ -1224,14 +1235,14 @@
       "avg_returning_viewers": null
     },
     "traffic": {
-      "count": 10,
-      "avg_views_first_60m": 144.8,
-      "avg_views_first_6h": 195.0,
+      "count": 11,
+      "avg_views_first_60m": 129.1,
+      "avg_views_first_6h": 173.8,
       "avg_views_first_24h": 860.0,
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
-      "avg_comments_per_1000_views": 187.5,
-      "avg_likes_per_1000_views": 191.4,
+      "avg_comments_per_1000_views": 166.7,
+      "avg_likes_per_1000_views": 170.1,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -2458,9 +2469,9 @@
       "avg_returning_viewers": null
     },
     "dark-patterns": {
-      "count": 1,
-      "avg_views_first_60m": 1.0,
-      "avg_views_first_6h": 1.0,
+      "count": 2,
+      "avg_views_first_60m": 1.5,
+      "avg_views_first_6h": 1.5,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -2632,18 +2643,29 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "perception_psychology": {
+      "count": 1,
+      "avg_views_first_60m": 4.0,
+      "avg_views_first_6h": 4.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 136,
-      "avg_views_first_60m": 154.1,
-      "avg_views_first_6h": 179.0,
+      "count": 138,
+      "avg_views_first_60m": 151.0,
+      "avg_views_first_6h": 175.4,
       "avg_views_first_24h": 737.4,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 14.8,
-      "avg_likes_per_1000_views": 29.6,
+      "avg_comments_per_1000_views": 14.5,
+      "avg_likes_per_1000_views": 29.0,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

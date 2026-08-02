@@ -1285,5 +1285,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why The Medium Popcorn Is A Trap",
+    "hook_text": "You order medium popcorn, but the menu is rigged.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Manipulation Reveal",
+    "first_frame_description": "A first-person POV looking at a glowing cinema menu board with three popcorn buckets: Small $4.00, Medium $6.50, and Large $7.00.",
+    "visual_thesis": "A side-by-side comparison of small, medium, and large popcorn buckets with their prices, highlighting how the medium's price is mathematically positioned to push buyers to the large.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Injury Time Feels Like An Hour",
+    "hook_text": "You watch injury time because your brain secretly doubles it.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Physical Frustration -> System Tease",
+    "first_frame_description": "Close-up of a stadium clock at 90:00 showing 5 minutes of injury time added, as tense fans grip stadium railings.",
+    "visual_thesis": "A split-screen comparing a real-time stadium clock with high-frequency brain scan visuals capturing rapid visual frames during high-stakes stoppage time.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

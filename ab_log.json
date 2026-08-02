@@ -3387,7 +3387,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate how mobile apps use real-time emotional tracking and dopamine spikes to manipulate user rating behavior.",
-    "first_frame_description": "A close-up first-person POV of a thumb hovering over a smartphone screen showing a vibrant 'VICTORY!' game screen, with a native App Store review pop-up suddenly overlaying it."
+    "first_frame_description": "A close-up first-person POV of a thumb hovering over a smartphone screen showing a vibrant 'VICTORY!' game screen, with a native App Store review pop-up suddenly overlaying it.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
   },
   "pnKDl7fdoig": {
     "variant": "A",
@@ -3404,6 +3408,44 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Side-by-side driver perspective showing matching speedometers while red wavelength light hit retina faster than silver car.",
-    "first_frame_description": "First-person driver POV looking through a windshield as a bright red sedan glides past in the adjacent lane."
+    "first_frame_description": "First-person driver POV looking through a windshield as a bright red sedan glides past in the adjacent lane.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 4,
+    "views_first_6h": 4
+  },
+  "B-pm3hpH5Ak": {
+    "variant": "B",
+    "title": "Why The Medium Popcorn Is A Trap",
+    "date": "2026-08-02",
+    "publish_at": "2026-08-03T07:07:00Z",
+    "cluster": null,
+    "topic": "The psychological reason behind always picking the medium size",
+    "subcluster": "Pricing Hacks",
+    "hook_type": "physical_moment",
+    "series": "Money & Pricing Tricks",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A side-by-side comparison of small, medium, and large popcorn buckets with their prices, highlighting how the medium's price is mathematically positioned to push buyers to the large.",
+    "first_frame_description": "A first-person POV looking at a glowing cinema menu board with three popcorn buckets: Small $4.00, Medium $6.50, and Large $7.00."
+  },
+  "I9htPvh2SVk": {
+    "variant": "A",
+    "title": "Why Injury Time Feels Like An Hour",
+    "date": "2026-08-02",
+    "publish_at": "2026-08-03T09:10:00Z",
+    "cluster": null,
+    "topic": "Why injury time feels longer than it is",
+    "subcluster": "psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A split-screen comparing a real-time stadium clock with high-frequency brain scan visuals capturing rapid visual frames during high-stakes stoppage time.",
+    "first_frame_description": "Close-up of a stadium clock at 90:00 showing 5 minutes of injury time added, as tense fans grip stadium railings."
   }
 }
