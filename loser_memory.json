@@ -1933,5 +1933,27 @@
     "hook_type": "physical_moment",
     "cluster": "technology",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Injury Time Feels Like An Hour",
+    "views": 7,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why The Medium Popcorn Is A Trap",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
   }
 ]

@@ -3429,7 +3429,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A side-by-side comparison of small, medium, and large popcorn buckets with their prices, highlighting how the medium's price is mathematically positioned to push buyers to the large.",
-    "first_frame_description": "A first-person POV looking at a glowing cinema menu board with three popcorn buckets: Small $4.00, Medium $6.50, and Large $7.00."
+    "first_frame_description": "A first-person POV looking at a glowing cinema menu board with three popcorn buckets: Small $4.00, Medium $6.50, and Large $7.00.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "I9htPvh2SVk": {
     "variant": "A",
@@ -3446,6 +3450,27 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A split-screen comparing a real-time stadium clock with high-frequency brain scan visuals capturing rapid visual frames during high-stakes stoppage time.",
-    "first_frame_description": "Close-up of a stadium clock at 90:00 showing 5 minutes of injury time added, as tense fans grip stadium railings."
+    "first_frame_description": "Close-up of a stadium clock at 90:00 showing 5 minutes of injury time added, as tense fans grip stadium railings.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 142.86,
+    "views_first_60m": 7,
+    "views_first_6h": 7
+  },
+  "bMqoWIH_x_0": {
+    "variant": "A",
+    "title": "Why You Can't Look Away From Crash Videos",
+    "date": "2026-08-03",
+    "publish_at": "2026-08-04T07:21:00Z",
+    "cluster": null,
+    "topic": "Why you can't look away from a crash replay",
+    "subcluster": "survival_instincts",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The brain mistakes smartphone screen footage of car crashes for active nearby predators or lethal hazards, overriding conscious control to collect danger data.",
+    "first_frame_description": "Close-up of a finger hovering motionless over a smartphone screen playing violent highway crash dashcam footage."
   }
 }

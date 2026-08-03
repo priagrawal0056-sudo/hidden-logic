@@ -1307,5 +1307,16 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Look Away From Crash Videos",
+    "hook_text": "Your thumb freezes on crash videos for a dark reason.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Misconception Shattered",
+    "first_frame_description": "Close-up of a finger hovering motionless over a smartphone screen playing violent highway crash dashcam footage.",
+    "visual_thesis": "The brain mistakes smartphone screen footage of car crashes for active nearby predators or lethal hazards, overriding conscious control to collect danger data.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

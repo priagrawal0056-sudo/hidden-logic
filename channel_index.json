@@ -5126,5 +5126,23 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "bMqoWIH_x_0",
+    "title": "Why You Can't Look Away From Crash Videos",
+    "topic": "Why you can't look away from a crash replay",
+    "date": "2026-08-03",
+    "n": 450,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]
