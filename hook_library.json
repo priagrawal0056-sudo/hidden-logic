@@ -1318,5 +1318,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Stop Scrolling At Night",
+    "hook_text": "You scroll past midnight because engineers secretly erased the bottom.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Hidden Mechanism Reveal",
+    "first_frame_description": "First-person view in a pitch-black room of a thumb continuously scrolling on a bright smartphone screen",
+    "visual_thesis": "Dark bedroom setting with glowing smartphone displaying continuous social feed with UI overlay highlighting missing pagination cues",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You See The Same Videos",
+    "hook_text": "You scroll past the same video three times today.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Mystery",
+    "first_frame_description": "A close-up, high-angle POV of a thumb flicking upward on a smartphone screen showing a recognizable viral video interface.",
+    "visual_thesis": "A POV of a thumb scrolling through a social media feed where every third video is the exact same viral clip, transitioning to a heat-map of a brain 'lighting up' when it sees the pattern.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Whisper Back In Libraries",
+    "hook_text": "You whisper in a library, and everyone instantly copies you.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Relatable Mystery",
+    "first_frame_description": "A first-person POV looking across a wooden library table at a friend who suddenly leans in and whispers, with bookshelves blurred in the background.",
+    "visual_thesis": "Demonstrate how a sudden drop in vocal volume triggers an involuntary, evolutionary threat-detection reflex in bystanders, forcing them to mimic the whisper.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

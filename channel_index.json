@@ -5144,5 +5144,53 @@
     "quality_score": 47.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "jnfLZ4aejok",
+    "title": "Why You Can't Stop Scrolling At Night",
+    "topic": "Why infinite feeds you can't put down is a universal experience",
+    "date": "2026-08-04",
+    "n": 451,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "bSi1RukvBn8",
+    "title": "Why You See The Same Videos",
+    "topic": "TRENDING NOW: why your brain thinks the car in front is slower than it is",
+    "date": "2026-08-04",
+    "n": 452,
+    "source": "pool",
+    "visual_score": 8.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 48.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "gZgfSlssz5c",
+    "title": "Why You Always Whisper Back In Libraries",
+    "topic": "Why lowering your voice in a library makes everyone act predictably",
+    "date": "2026-08-04",
+    "n": 453,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 8,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

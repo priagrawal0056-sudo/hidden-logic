@@ -448,7 +448,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.3,
-      "avg_likes_per_1000_views": 51.3,
+      "avg_likes_per_1000_views": 34.0,
       "avg_returning_viewers": null
     },
     "Why Manholes Are Round": {
@@ -1225,6 +1225,17 @@
       "count": 1,
       "avg_views_first_60m": 1.0,
       "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why you can't look away from a crash replay": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -2091,7 +2102,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 29.7,
+      "avg_likes_per_1000_views": 21.0,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -2676,18 +2687,29 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "survival_instincts": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 140,
-      "avg_views_first_60m": 148.1,
-      "avg_views_first_6h": 171.9,
+      "count": 141,
+      "avg_views_first_60m": 146.6,
+      "avg_views_first_6h": 170.1,
       "avg_views_first_24h": 737.4,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 14.3,
-      "avg_likes_per_1000_views": 29.8,
+      "avg_comments_per_1000_views": 14.1,
+      "avg_likes_per_1000_views": 29.1,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
