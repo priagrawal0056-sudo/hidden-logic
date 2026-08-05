@@ -5192,5 +5192,50 @@
     "quality_score": 47.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "JdVq47kg5To",
+    "title": "Why You Always Rewatch The Same Show",
+    "topic": "Why rewatching the same shows keeps happening no matter what",
+    "date": "2026-08-05",
+    "n": 454,
+    "source": "pool",
+    "visual_score": 8.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "Xi9CAFpD-Ss",
+    "title": "Why You Always Rewatch The Same Show",
+    "topic": "Why you can never escape rewatching the same shows",
+    "date": "2026-08-05",
+    "n": 455,
+    "source": "pool",
+    "visual_score": 8.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "IhcagYcrJzs",
+    "title": "Why The Car In Front Of You Always Feels Slow",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "date": "2026-08-05",
+    "n": 456,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

@@ -1351,5 +1351,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Rewatch The Same Show",
+    "hook_text": "You scroll past thousands of shows just to rewatch one.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Relatable Contradiction",
+    "first_frame_description": "POV sitting on a dark couch holding a TV remote, scrolling endlessly through a streaming movie menu before clicking a familiar sitcom.",
+    "visual_thesis": "Rewatching familiar shows is a neurological safety tactic to force cortisol levels down before sleep.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why The Car In Front Of You Always Feels Slow",
+    "hook_text": "You stare at the car ahead, furious they're crawling.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction -> Psychological Reveal",
+    "first_frame_description": "First-person POV behind the steering wheel on a highway, staring directly at the rear bumper of a silver sedan.",
+    "visual_thesis": "Driver POV focusing tightly on a lead car's rear bumper while side scenery is graphically masked to visually demonstrate loss of velocity perception.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
