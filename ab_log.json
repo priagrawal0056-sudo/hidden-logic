@@ -3452,7 +3452,7 @@
     "visual_thesis": "A split-screen comparing a real-time stadium clock with high-frequency brain scan visuals capturing rapid visual frames during high-stakes stoppage time.",
     "first_frame_description": "Close-up of a stadium clock at 90:00 showing 5 minutes of injury time added, as tense fans grip stadium railings.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 111.11,
+    "likes_per_1000_views": 100.0,
     "views_first_60m": 7,
     "views_first_6h": 7
   },
@@ -3555,7 +3555,9 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Rewatching familiar shows is a neurological safety tactic to force cortisol levels down before sleep.",
-    "first_frame_description": "POV sitting on a dark couch holding a TV remote, scrolling endlessly through a streaming movie menu before clicking a familiar sitcom."
+    "first_frame_description": "POV sitting on a dark couch holding a TV remote, scrolling endlessly through a streaming movie menu before clicking a familiar sitcom.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0
   },
   "Xi9CAFpD-Ss": {
     "variant": "A",
@@ -3572,7 +3574,9 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The video demonstrates how streaming platforms manipulate user fatigue by dynamically rearranging the homepage layout based on micro-interactions like trailer hover times.",
-    "first_frame_description": "A first-person POV of a dark living room, a hand holding a TV remote pointing at a glowing television screen displaying the Netflix homepage focused on 'The Office'."
+    "first_frame_description": "A first-person POV of a dark living room, a hand holding a TV remote pointing at a glowing television screen displaying the Netflix homepage focused on 'The Office'.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0
   },
   "IhcagYcrJzs": {
     "variant": "A",
@@ -3589,6 +3593,79 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Driver POV focusing tightly on a lead car's rear bumper while side scenery is graphically masked to visually demonstrate loss of velocity perception.",
-    "first_frame_description": "First-person POV behind the steering wheel on a highway, staring directly at the rear bumper of a silver sedan."
+    "first_frame_description": "First-person POV behind the steering wheel on a highway, staring directly at the rear bumper of a silver sedan.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0,
+    "views_first_24h": 0
+  },
+  "VLMYEGxRXI0": {
+    "variant": "B",
+    "title": "Why Airline Food Tastes So Weird",
+    "date": "2026-08-07",
+    "publish_at": "2026-08-08T07:09:00Z",
+    "cluster": null,
+    "topic": "The psychological reason behind airline meal quality",
+    "subcluster": "sensory perception",
+    "hook_type": "physical_moment",
+    "series": "Airport Logic",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "Airlines deliberately over-season food to compensate for passengers' dulled senses at altitude, making 'bad' food a calculated attempt at normalcy.",
+    "first_frame_description": "Close-up of a person's hand holding a plastic fork, about to take a bite of a bland-looking airline meal in a cramped airplane seat. Their expression is slightly hesitant or resigned."
+  },
+  "BB1UQjYMKh4": {
+    "variant": "A",
+    "title": "Why You Always See The Same Viral Dance",
+    "date": "2026-08-07",
+    "publish_at": "2026-08-08T09:06:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why the underdog feels more exciting to watch",
+    "subcluster": "viral trends",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "The hidden algorithms and social psychology that make you engage with ubiquitous viral trends.",
+    "first_frame_description": "Close-up of a hand holding a smartphone, thumb scrolling rapidly through a social media feed, showing various short video clips."
+  },
+  "CVKPE87UZWg": {
+    "variant": "B",
+    "title": "Why Your Team Loses Right After Going 1-0 Up",
+    "date": "2026-08-07",
+    "publish_at": "2026-08-08T11:21:00Z",
+    "cluster": null,
+    "topic": "Why a 1-0 lead is the most dangerous scoreline",
+    "subcluster": "tactical_traps",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Visualizing player tactical heatmaps collapsing backward immediately after a 1-0 goal to prove loss aversion in real time.",
+    "first_frame_description": "A close-up view of fans celebrating a 1-0 goal in a stadium, overlaid with dynamic tactical arrows retreating toward their own goal."
+  },
+  "DOy696ZUjpE": {
+    "variant": "A",
+    "title": "Why Stores Always Rearrange Everything",
+    "date": "2026-08-07",
+    "publish_at": "2026-08-08T12:21:00Z",
+    "cluster": null,
+    "topic": "Why grocery stores rearranging the shelves is a universal experience",
+    "subcluster": "Consumer Psychology",
+    "hook_type": "physical_moment",
+    "series": "Shopping Psychology",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The grocery store is a maze designed to break your habits and force visual scanning of high-margin items.",
+    "first_frame_description": "A first-person POV shot of a shopper standing in a grocery aisle, looking confused at shelves that have been stripped or moved."
   }
 }

@@ -1373,5 +1373,49 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Airline Food Tastes So Weird",
+    "hook_text": "You bite into your airline meal.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System",
+    "first_frame_description": "Close-up of a person's hand holding a plastic fork, about to take a bite of a bland-looking airline meal in a cramped airplane seat. Their expression is slightly hesitant or resigned.",
+    "visual_thesis": "Airlines deliberately over-season food to compensate for passengers' dulled senses at altitude, making 'bad' food a calculated attempt at normalcy.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always See The Same Viral Dance",
+    "hook_text": "You scroll your feed.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Observation -> Contradiction",
+    "first_frame_description": "Close-up of a hand holding a smartphone, thumb scrolling rapidly through a social media feed, showing various short video clips.",
+    "visual_thesis": "The hidden algorithms and social psychology that make you engage with ubiquitous viral trends.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Team Loses Right After Going 1-0 Up",
+    "hook_text": "You watch your team score first and celebrate.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Sudden Trap Reveal",
+    "first_frame_description": "A close-up view of fans celebrating a 1-0 goal in a stadium, overlaid with dynamic tactical arrows retreating toward their own goal.",
+    "visual_thesis": "Visualizing player tactical heatmaps collapsing backward immediately after a 1-0 goal to prove loss aversion in real time.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Stores Always Rearrange Everything",
+    "hook_text": "You walk into the pasta aisle and everything is gone.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden Logic",
+    "first_frame_description": "A first-person POV shot of a shopper standing in a grocery aisle, looking confused at shelves that have been stripped or moved.",
+    "visual_thesis": "The grocery store is a maze designed to break your habits and force visual scanning of high-margin items.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

@@ -448,7 +448,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.3,
-      "avg_likes_per_1000_views": 40.7,
+      "avg_likes_per_1000_views": 37.0,
       "avg_returning_viewers": null
     },
     "Why Manholes Are Round": {
@@ -463,14 +463,14 @@
       "avg_returning_viewers": null
     },
     "Why your brain thinks the car in front is slower than it is": {
-      "count": 4,
-      "avg_views_first_60m": 352.0,
-      "avg_views_first_6h": 352.0,
-      "avg_views_first_24h": null,
+      "count": 5,
+      "avg_views_first_60m": 264.0,
+      "avg_views_first_6h": 264.0,
+      "avg_views_first_24h": 0.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.6,
+      "avg_likes_per_1000_views": 4.9,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -1269,6 +1269,28 @@
       "count": 1,
       "avg_views_first_60m": 0.0,
       "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why rewatching the same shows keeps happening no matter what": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why you can never escape rewatching the same shows": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -2135,7 +2157,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 24.4,
+      "avg_likes_per_1000_views": 22.5,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -2535,10 +2557,10 @@
       "avg_returning_viewers": null
     },
     "perceptual_illusions": {
-      "count": 1,
-      "avg_views_first_60m": 2.0,
-      "avg_views_first_6h": 2.0,
-      "avg_views_first_24h": null,
+      "count": 2,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": 0.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -2764,18 +2786,40 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Habits": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "ConsumerHabits": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 144,
-      "avg_views_first_60m": 142.4,
-      "avg_views_first_6h": 165.2,
-      "avg_views_first_24h": 737.4,
+      "count": 147,
+      "avg_views_first_60m": 141.0,
+      "avg_views_first_6h": 163.6,
+      "avg_views_first_24h": 663.7,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 13.8,
-      "avg_likes_per_1000_views": 28.5,
+      "avg_comments_per_1000_views": 13.4,
+      "avg_likes_per_1000_views": 27.6,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

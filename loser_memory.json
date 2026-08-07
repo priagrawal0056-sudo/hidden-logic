@@ -1999,5 +1999,27 @@
     "hook_type": "physical_moment",
     "cluster": "technology",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why The Car In Front Of You Always Feels Slow",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Rewatch The Same Show",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "habits",
+    "quality_score": 46.0
   }
 ]

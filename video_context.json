@@ -694,5 +694,29 @@
     "topic": "Why your brain thinks the car in front is slower than it is",
     "visual_thesis": "Driver POV focusing tightly on a lead car's rear bumper while side scenery is graphically masked to visually demonstrate loss of velocity perception.",
     "script": "You stare at the car ahead, furious they're crawling. But check your dash. They're actually matching your speed. Your eyes are locked on their tailgate, completely blinding your peripheral vision. Your brain can only calculate velocity through passing scenery. Stripping away side motion tricks your brain into a visual slow-motion illusion every time..."
+  },
+  "VLMYEGxRXI0": {
+    "title": "Why Airline Food Tastes So Weird",
+    "topic": "The psychological reason behind airline meal quality",
+    "visual_thesis": "Airlines deliberately over-season food to compensate for passengers' dulled senses at altitude, making 'bad' food a calculated attempt at normalcy.",
+    "script": "You bite into your airline meal. It tastes like nothing. That's not an accident. Up at 35,000 feet, your senses are dulled. Your taste buds lose 30% sensitivity to salt and sweet. Dry cabin air also numbs your smell, 80% of flavor. So airlines heavily over-season everything. They're not bad cooks. They're just battling your body. Trying to make your meal taste normal. You'll never un-taste it."
+  },
+  "BB1UQjYMKh4": {
+    "title": "Why You Always See The Same Viral Dance",
+    "topic": "TRENDING NOW: why the underdog feels more exciting to watch",
+    "visual_thesis": "The hidden algorithms and social psychology that make you engage with ubiquitous viral trends.",
+    "script": "You scroll your feed. Suddenly, everyone is doing that one dance. It feels random, but it's not. Algorithms push content already performing well. The more views, the more it's shown. But that's not the clever part. Your brain sees 'everyone else' doing it. This triggers a powerful social proof bias. You watch, not because it's good, but because you don't want to miss out. It's why trends feel so urgent. You're not choosing to watch; your brain is just trying to fit in."
+  },
+  "CVKPE87UZWg": {
+    "title": "Why Your Team Loses Right After Going 1-0 Up",
+    "topic": "Why a 1-0 lead is the most dangerous scoreline",
+    "visual_thesis": "Visualizing player tactical heatmaps collapsing backward immediately after a 1-0 goal to prove loss aversion in real time.",
+    "script": "You watch your team score first and celebrate. But a 1-0 lead isn't safety—it's a psychological trap. The moment you go ahead, loss aversion kicks in. Your brain shifts from trying to win to fearing a loss. Players subconsciously retreat, dropping ten yards deeper. This hands the opponent total control, forcing relentless pressure. That lead didn't protect you—it invited the disaster. Which is why you always panic when..."
+  },
+  "DOy696ZUjpE": {
+    "title": "Why Stores Always Rearrange Everything",
+    "topic": "Why grocery stores rearranging the shelves is a universal experience",
+    "visual_thesis": "The grocery store is a maze designed to break your habits and force visual scanning of high-margin items.",
+    "script": "You walk into the pasta aisle and everything is gone. You’re wandering aimlessly, searching for the red box you always buy. This isn't a restocking error. It’s a psychological reset designed to kill your muscle memory. By forcing your eyes to scan every shelf, they increase \"unplanned discovery\" by 300%. You aren't lost; you're being forced to window shop for things you don't need. That's why..."
   }
 }
