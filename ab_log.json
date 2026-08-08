@@ -3615,7 +3615,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "Airlines deliberately over-season food to compensate for passengers' dulled senses at altitude, making 'bad' food a calculated attempt at normalcy.",
-    "first_frame_description": "Close-up of a person's hand holding a plastic fork, about to take a bite of a bland-looking airline meal in a cramped airplane seat. Their expression is slightly hesitant or resigned."
+    "first_frame_description": "Close-up of a person's hand holding a plastic fork, about to take a bite of a bland-looking airline meal in a cramped airplane seat. Their expression is slightly hesitant or resigned.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 4,
+    "views_first_6h": 4
   },
   "BB1UQjYMKh4": {
     "variant": "A",
@@ -3632,7 +3636,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "The hidden algorithms and social psychology that make you engage with ubiquitous viral trends.",
-    "first_frame_description": "Close-up of a hand holding a smartphone, thumb scrolling rapidly through a social media feed, showing various short video clips."
+    "first_frame_description": "Close-up of a hand holding a smartphone, thumb scrolling rapidly through a social media feed, showing various short video clips.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "CVKPE87UZWg": {
     "variant": "B",
@@ -3649,7 +3657,10 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Visualizing player tactical heatmaps collapsing backward immediately after a 1-0 goal to prove loss aversion in real time.",
-    "first_frame_description": "A close-up view of fans celebrating a 1-0 goal in a stadium, overlaid with dynamic tactical arrows retreating toward their own goal."
+    "first_frame_description": "A close-up view of fans celebrating a 1-0 goal in a stadium, overlaid with dynamic tactical arrows retreating toward their own goal.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0
   },
   "DOy696ZUjpE": {
     "variant": "A",
@@ -3666,6 +3677,43 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The grocery store is a maze designed to break your habits and force visual scanning of high-margin items.",
-    "first_frame_description": "A first-person POV shot of a shopper standing in a grocery aisle, looking confused at shelves that have been stripped or moved."
+    "first_frame_description": "A first-person POV shot of a shopper standing in a grocery aisle, looking confused at shelves that have been stripped or moved.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0
+  },
+  "C7Fe2MxaoCU": {
+    "variant": "A",
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "date": "2026-08-08",
+    "publish_at": "2026-08-09T07:01:00Z",
+    "cluster": "traffic",
+    "topic": "Why drivers in red cars feel faster to you",
+    "subcluster": "optical_illusions",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A dashcam perspective showing a red car passing alongside a speed gun reading legal limit, overlaid with a retina wavelength light diagram.",
+    "first_frame_description": "First-person driver perspective looking through a windshield on a highway as a vibrant red sports car blasts past in the left lane."
+  },
+  "qZx-KjE5z0I": {
+    "variant": "A",
+    "title": "Why You Smile When Getting Yelled At",
+    "date": "2026-08-08",
+    "publish_at": "2026-08-09T09:00:00Z",
+    "cluster": null,
+    "topic": "Why everyone is secretly annoyed by laughing when nervous",
+    "subcluster": "social_anxiety",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The video demonstrates that nervous smiling is an involuntary biological survival mechanism, not a social choice, by contrasting high-stress situations with the brain's internal chemical override.",
+    "first_frame_description": "A close-up of a stressed employee getting scolded by an angry boss, desperately trying to suppress a growing, involuntary smile."
   }
 }

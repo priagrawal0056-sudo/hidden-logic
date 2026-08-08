@@ -1417,5 +1417,16 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Smile When Getting Yelled At",
+    "hook_text": "You're getting yelled at, and your face smiles on purpose.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Relatable Frustration",
+    "first_frame_description": "A close-up of a stressed employee getting scolded by an angry boss, desperately trying to suppress a growing, involuntary smile.",
+    "visual_thesis": "The video demonstrates that nervous smiling is an involuntary biological survival mechanism, not a social choice, by contrasting high-stress situations with the brain's internal chemical override.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

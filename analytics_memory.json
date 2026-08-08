@@ -1297,6 +1297,50 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "The psychological reason behind airline meal quality": {
+      "count": 1,
+      "avg_views_first_60m": 4.0,
+      "avg_views_first_6h": 4.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "TRENDING NOW: why the underdog feels more exciting to watch": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why a 1-0 lead is the most dangerous scoreline": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why grocery stores rearranging the shelves is a universal experience": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "clusters": {
@@ -1765,14 +1809,14 @@
       "avg_returning_viewers": null
     },
     "Consumer Psychology": {
-      "count": 1,
-      "avg_views_first_60m": null,
+      "count": 2,
+      "avg_views_first_60m": 0.0,
       "avg_views_first_6h": null,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     },
     "Fast Food Engineering": {
@@ -2808,18 +2852,51 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "sensory perception": {
+      "count": 1,
+      "avg_views_first_60m": 4.0,
+      "avg_views_first_6h": 4.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "viral trends": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "tactical_traps": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 147,
-      "avg_views_first_60m": 141.0,
-      "avg_views_first_6h": 163.6,
+      "count": 151,
+      "avg_views_first_60m": 135.8,
+      "avg_views_first_6h": 160.5,
       "avg_views_first_24h": 663.7,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 13.4,
-      "avg_likes_per_1000_views": 27.6,
+      "avg_comments_per_1000_views": 12.9,
+      "avg_likes_per_1000_views": 26.7,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

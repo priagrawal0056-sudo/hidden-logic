@@ -2021,5 +2021,49 @@
     "hook_type": "physical_moment",
     "cluster": "habits",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Stores Always Rearrange Everything",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.5,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Your Team Loses Right After Going 1-0 Up",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always See The Same Viral Dance",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "perception",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Airline Food Tastes So Weird",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "airline",
+    "quality_score": 47.0
   }
 ]

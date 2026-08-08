@@ -5297,5 +5297,39 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "C7Fe2MxaoCU",
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "topic": "Why drivers in red cars feel faster to you",
+    "date": "2026-08-08",
+    "n": 461,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "qZx-KjE5z0I",
+    "title": "Why You Smile When Getting Yelled At",
+    "topic": "Why everyone is secretly annoyed by laughing when nervous",
+    "date": "2026-08-08",
+    "n": 462,
+    "source": "pool",
+    "visual_score": 8.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]
