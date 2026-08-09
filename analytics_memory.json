@@ -518,14 +518,14 @@
       "avg_returning_viewers": null
     },
     "Why drivers in red cars feel faster to you": {
-      "count": 8,
-      "avg_views_first_60m": 108.6,
-      "avg_views_first_6h": 108.6,
+      "count": 9,
+      "avg_views_first_60m": 95.0,
+      "avg_views_first_6h": 95.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 5.0,
+      "avg_likes_per_1000_views": 4.4,
       "avg_returning_viewers": null
     },
     "Why Tires Are Always Black": {
@@ -745,7 +745,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 57.1,
+      "avg_likes_per_1000_views": 54.0,
       "avg_returning_viewers": null
     },
     "Why apps begging for a review at the perfect moment keeps happening no matter what": {
@@ -1108,7 +1108,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 250.0,
+      "avg_likes_per_1000_views": 200.0,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by names being so easy to forget": {
@@ -1323,8 +1323,8 @@
     "Why a 1-0 lead is the most dangerous scoreline": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 4.0,
+      "avg_views_first_24h": 4.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -1334,7 +1334,18 @@
     "Why grocery stores rearranging the shelves is a universal experience": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": 0.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why everyone is secretly annoyed by laughing when nervous": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -1356,14 +1367,14 @@
       "avg_returning_viewers": null
     },
     "traffic": {
-      "count": 11,
-      "avg_views_first_60m": 129.1,
-      "avg_views_first_6h": 173.8,
+      "count": 12,
+      "avg_views_first_60m": 116.2,
+      "avg_views_first_6h": 156.4,
       "avg_views_first_24h": 860.0,
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
-      "avg_comments_per_1000_views": 166.7,
-      "avg_likes_per_1000_views": 170.1,
+      "avg_comments_per_1000_views": 150.0,
+      "avg_likes_per_1000_views": 153.1,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -1811,8 +1822,8 @@
     "Consumer Psychology": {
       "count": 2,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": 0.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -2311,7 +2322,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 57.1,
+      "avg_likes_per_1000_views": 54.0,
       "avg_returning_viewers": null
     },
     "Social Behavior": {
@@ -2630,7 +2641,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 250.0,
+      "avg_likes_per_1000_views": 200.0,
       "avg_returning_viewers": null
     },
     "social_glitches": {
@@ -2667,7 +2678,7 @@
       "avg_returning_viewers": null
     },
     "optical_illusions": {
-      "count": 1,
+      "count": 2,
       "avg_views_first_60m": 0.0,
       "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
@@ -2878,7 +2889,18 @@
     "tactical_traps": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
+      "avg_views_first_6h": 4.0,
+      "avg_views_first_24h": 4.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "social_anxiety": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -2889,14 +2911,14 @@
   },
   "hook_types": {
     "physical_moment": {
-      "count": 151,
-      "avg_views_first_60m": 135.8,
-      "avg_views_first_6h": 160.5,
-      "avg_views_first_24h": 663.7,
+      "count": 153,
+      "avg_views_first_60m": 133.3,
+      "avg_views_first_6h": 154.7,
+      "avg_views_first_24h": 553.4,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 12.9,
-      "avg_likes_per_1000_views": 26.7,
+      "avg_comments_per_1000_views": 12.7,
+      "avg_likes_per_1000_views": 25.8,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

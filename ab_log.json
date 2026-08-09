@@ -2170,7 +2170,7 @@
     "visual_thesis": "Demonstrate how restaurant menus use psychological pricing layouts to trick customers into buying their lowest-quality, highest-markup wine.",
     "first_frame_description": "A first-person POV shot of a dimly lit restaurant table, holding a leather-bound wine menu with a finger pointing directly at the second-cheapest bottle.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 57.14,
+    "likes_per_1000_views": 54.05,
     "views_first_60m": 3,
     "views_first_6h": 3
   },
@@ -3073,7 +3073,7 @@
     "visual_thesis": "Demonstrating how airline middle seats are intentionally designed to be uncomfortable to drive paid seat upgrades.",
     "first_frame_description": "Tight close-up of a passenger's elbows wedged tightly between two strangers in a cramped economy middle seat.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 250.0,
+    "likes_per_1000_views": 200.0,
     "views_first_60m": 0,
     "views_first_6h": 0
   },
@@ -3660,7 +3660,9 @@
     "first_frame_description": "A close-up view of fans celebrating a 1-0 goal in a stadium, overlaid with dynamic tactical arrows retreating toward their own goal.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 0
+    "views_first_60m": 0,
+    "views_first_6h": 4,
+    "views_first_24h": 4
   },
   "DOy696ZUjpE": {
     "variant": "A",
@@ -3680,7 +3682,9 @@
     "first_frame_description": "A first-person POV shot of a shopper standing in a grocery aisle, looking confused at shelves that have been stripped or moved.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 0
+    "views_first_60m": 0,
+    "views_first_6h": 0,
+    "views_first_24h": 0
   },
   "C7Fe2MxaoCU": {
     "variant": "A",
@@ -3697,7 +3701,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A dashcam perspective showing a red car passing alongside a speed gun reading legal limit, overlaid with a retina wavelength light diagram.",
-    "first_frame_description": "First-person driver perspective looking through a windshield on a highway as a vibrant red sports car blasts past in the left lane."
+    "first_frame_description": "First-person driver perspective looking through a windshield on a highway as a vibrant red sports car blasts past in the left lane.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "qZx-KjE5z0I": {
     "variant": "A",
@@ -3714,6 +3722,61 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The video demonstrates that nervous smiling is an involuntary biological survival mechanism, not a social choice, by contrasting high-stress situations with the brain's internal chemical override.",
-    "first_frame_description": "A close-up of a stressed employee getting scolded by an angry boss, desperately trying to suppress a growing, involuntary smile."
+    "first_frame_description": "A close-up of a stressed employee getting scolded by an angry boss, desperately trying to suppress a growing, involuntary smile.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
+  },
+  "UBcFbJb1eSM": {
+    "variant": "B",
+    "title": "Why You Always Lose To Red Teams",
+    "date": "2026-08-09",
+    "publish_at": "2026-08-10T07:10:00Z",
+    "cluster": null,
+    "topic": "Why you always lose to teams wearing red",
+    "subcluster": "Subconscious Bias",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrating how red uniforms induce physiological stress and referee bias against opponents using stadium visuals and stats.",
+    "first_frame_description": "POV from stadium seats watching opponents in bright red jerseys celebrate while the scoreboard highlights a loss."
+  },
+  "QRyUgmQRsKA": {
+    "variant": "A",
+    "title": "Why You Can't Escape Strangers Walking Next To You",
+    "date": "2026-08-09",
+    "publish_at": "2026-08-10T09:07:00Z",
+    "cluster": null,
+    "topic": "Why you can never escape strangers matching your walking speed",
+    "subcluster": "walking_sync",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate that walking speed synchronization is an involuntary neurological reflex (entrainment) triggered by peripheral vision to prevent crowd collisions.",
+    "first_frame_description": "A first-person POV shot walking quickly down a crowded city sidewalk, closing the distance to a stranger's heels, then suddenly matching their stride in perfect, awkward synchronization."
+  },
+  "0RRuQ6m7b4w": {
+    "variant": "A",
+    "title": "Why You Can't Find The Unsubscribe Button",
+    "date": "2026-08-09",
+    "publish_at": "2026-08-10T11:20:00Z",
+    "cluster": null,
+    "topic": "Why you can never escape the unsubscribe button hiding from you",
+    "subcluster": "Email Marketing",
+    "hook_type": "physical_moment",
+    "series": "App & Website Tricks",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate how hidden unsubscribe links manipulate email client algorithms to bypass spam filters.",
+    "first_frame_description": "A first-person POV shot of a thumb scrolling rapidly to the bottom of a cluttered retail promo email on a smartphone."
   }
 }

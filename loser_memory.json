@@ -2065,5 +2065,16 @@
     "hook_type": "physical_moment",
     "cluster": "airline",
     "quality_score": 47.0
+  },
+  {
+    "title": "Why You Smile When Getting Yelled At",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
   }
 ]

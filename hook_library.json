@@ -1428,5 +1428,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Escape Strangers Walking Next To You",
+    "hook_text": "You speed up to pass a stranger, but they match you.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A first-person POV shot walking quickly down a crowded city sidewalk, closing the distance to a stranger's heels, then suddenly matching their stride in perfect, awkward synchronization.",
+    "visual_thesis": "Demonstrate that walking speed synchronization is an involuntary neurological reflex (entrainment) triggered by peripheral vision to prevent crowd collisions.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Find The Unsubscribe Button",
+    "hook_text": "You scroll to unsubscribe, but the button is deliberately invisible.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Reveal",
+    "first_frame_description": "A first-person POV shot of a thumb scrolling rapidly to the bottom of a cluttered retail promo email on a smartphone.",
+    "visual_thesis": "Demonstrate how hidden unsubscribe links manipulate email client algorithms to bypass spam filters.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
