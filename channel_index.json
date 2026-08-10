@@ -5379,5 +5379,38 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "3CJfyPO-bso",
+    "title": "Why Your Legs Tense Up Watching Someone Balance",
+    "topic": "Why you tense up watching someone balance",
+    "date": "2026-08-10",
+    "n": 466,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "dNoRb7HItWI",
+    "title": "Why You Always Get The Middle Seat",
+    "topic": "Why nobody wanting to sit in the middle seat keeps happening no matter what",
+    "date": "2026-08-10",
+    "n": 467,
+    "source": "pool",
+    "visual_score": 8.5,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

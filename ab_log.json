@@ -3743,7 +3743,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrating how red uniforms induce physiological stress and referee bias against opponents using stadium visuals and stats.",
-    "first_frame_description": "POV from stadium seats watching opponents in bright red jerseys celebrate while the scoreboard highlights a loss."
+    "first_frame_description": "POV from stadium seats watching opponents in bright red jerseys celebrate while the scoreboard highlights a loss.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "QRyUgmQRsKA": {
     "variant": "A",
@@ -3760,7 +3764,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate that walking speed synchronization is an involuntary neurological reflex (entrainment) triggered by peripheral vision to prevent crowd collisions.",
-    "first_frame_description": "A first-person POV shot walking quickly down a crowded city sidewalk, closing the distance to a stranger's heels, then suddenly matching their stride in perfect, awkward synchronization."
+    "first_frame_description": "A first-person POV shot walking quickly down a crowded city sidewalk, closing the distance to a stranger's heels, then suddenly matching their stride in perfect, awkward synchronization.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "0RRuQ6m7b4w": {
     "variant": "A",
@@ -3777,6 +3785,43 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate how hidden unsubscribe links manipulate email client algorithms to bypass spam filters.",
-    "first_frame_description": "A first-person POV shot of a thumb scrolling rapidly to the bottom of a cluttered retail promo email on a smartphone."
+    "first_frame_description": "A first-person POV shot of a thumb scrolling rapidly to the bottom of a cluttered retail promo email on a smartphone.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0
+  },
+  "3CJfyPO-bso": {
+    "variant": "B",
+    "title": "Why Your Legs Tense Up Watching Someone Balance",
+    "date": "2026-08-10",
+    "publish_at": "2026-08-11T07:05:00Z",
+    "cluster": null,
+    "topic": "Why you tense up watching someone balance",
+    "subcluster": "reflexes",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Show high-altitude balancing POV shots paired with anatomical brain and leg muscle stimulation graphics to prove the involuntary bracing mechanism.",
+    "first_frame_description": "First-person perspective looking down over a high cliff edge with a person walking a slackline, instantly recognizable height stress."
+  },
+  "dNoRb7HItWI": {
+    "variant": "B",
+    "title": "Why You Always Get The Middle Seat",
+    "date": "2026-08-10",
+    "publish_at": "2026-08-11T09:20:00Z",
+    "cluster": null,
+    "topic": "Why nobody wanting to sit in the middle seat keeps happening no matter what",
+    "subcluster": "airlines",
+    "hook_type": "physical_moment",
+    "series": "Airport Logic",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The middle seat isn't bad luck; it's a combination of airline upgrade manipulation and weight-balancing algorithms.",
+    "first_frame_description": "Close-up POV of a passenger squeezing into a cramped middle seat between two passengers, looking down at a tiny 17-inch space."
   }
 }
