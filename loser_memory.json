@@ -2098,5 +2098,27 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 47.0
+  },
+  {
+    "title": "Why You Always Get The Middle Seat",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.5,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Your Legs Tense Up Watching Someone Balance",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
   }
 ]

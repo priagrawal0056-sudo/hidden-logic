@@ -1472,5 +1472,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Your Brain Only Trusts Home Kits",
+    "hook_text": "You pass the ball directly to the wrong team.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden Friction",
+    "first_frame_description": "First-person POV on a green soccer pitch passing the ball directly to a opposing player wearing a grey away kit.",
+    "visual_thesis": "Showing rapid eye-tracking contrast between immediate home kit recognition and away kit peripheral blindness.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why That Tip Screen Always Flips Around",
+    "hook_text": "You grab a coffee, and the screen flips on purpose.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System Reveal",
+    "first_frame_description": "A first-person view of a hand picking up a paper coffee cup from a wooden cafe counter, as a white iPad payment stand begins to pivot toward the camera.",
+    "visual_thesis": "The physical act of a tablet screen rotating at a checkout counter is a deliberate psychological trigger designed to force public compliance.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

@@ -3073,7 +3073,7 @@
     "visual_thesis": "Demonstrating how airline middle seats are intentionally designed to be uncomfortable to drive paid seat upgrades.",
     "first_frame_description": "Tight close-up of a passenger's elbows wedged tightly between two strangers in a cramped economy middle seat.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 200.0,
+    "likes_per_1000_views": 166.67,
     "views_first_60m": 0,
     "views_first_6h": 0
   },
@@ -3452,7 +3452,7 @@
     "visual_thesis": "A split-screen comparing a real-time stadium clock with high-frequency brain scan visuals capturing rapid visual frames during high-stakes stoppage time.",
     "first_frame_description": "Close-up of a stadium clock at 90:00 showing 5 minutes of injury time added, as tense fans grip stadium railings.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 100.0,
+    "likes_per_1000_views": 90.91,
     "views_first_60m": 7,
     "views_first_6h": 7
   },
@@ -3788,7 +3788,9 @@
     "first_frame_description": "A first-person POV shot of a thumb scrolling rapidly to the bottom of a cluttered retail promo email on a smartphone.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 0
+    "views_first_60m": 0,
+    "views_first_6h": 2,
+    "views_first_24h": 2
   },
   "3CJfyPO-bso": {
     "variant": "B",
@@ -3805,7 +3807,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Show high-altitude balancing POV shots paired with anatomical brain and leg muscle stimulation graphics to prove the involuntary bracing mechanism.",
-    "first_frame_description": "First-person perspective looking down over a high cliff edge with a person walking a slackline, instantly recognizable height stress."
+    "first_frame_description": "First-person perspective looking down over a high cliff edge with a person walking a slackline, instantly recognizable height stress.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "dNoRb7HItWI": {
     "variant": "B",
@@ -3822,6 +3828,44 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The middle seat isn't bad luck; it's a combination of airline upgrade manipulation and weight-balancing algorithms.",
-    "first_frame_description": "Close-up POV of a passenger squeezing into a cramped middle seat between two passengers, looking down at a tiny 17-inch space."
+    "first_frame_description": "Close-up POV of a passenger squeezing into a cramped middle seat between two passengers, looking down at a tiny 17-inch space.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
+  },
+  "rnVQWieUsws": {
+    "variant": "A",
+    "title": "Why Your Brain Only Trusts Home Kits",
+    "date": "2026-08-11",
+    "publish_at": "2026-08-12T07:24:00Z",
+    "cluster": null,
+    "topic": "Why you instantly trust a team in their home kit",
+    "subcluster": "neuroscience",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Showing rapid eye-tracking contrast between immediate home kit recognition and away kit peripheral blindness.",
+    "first_frame_description": "First-person POV on a green soccer pitch passing the ball directly to a opposing player wearing a grey away kit."
+  },
+  "-tfk-zzsRCM": {
+    "variant": "A",
+    "title": "Why That Tip Screen Always Flips Around",
+    "date": "2026-08-11",
+    "publish_at": "2026-08-12T09:16:00Z",
+    "cluster": null,
+    "topic": "Why everyone is secretly annoyed by the tip screen flipping around to face you",
+    "subcluster": "dark patterns",
+    "hook_type": "physical_moment",
+    "series": "Money & Pricing Tricks",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The physical act of a tablet screen rotating at a checkout counter is a deliberate psychological trigger designed to force public compliance.",
+    "first_frame_description": "A first-person view of a hand picking up a paper coffee cup from a wooden cafe counter, as a white iPad payment stand begins to pivot toward the camera."
   }
 }

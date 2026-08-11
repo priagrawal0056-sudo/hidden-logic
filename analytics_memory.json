@@ -448,7 +448,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.3,
-      "avg_likes_per_1000_views": 37.0,
+      "avg_likes_per_1000_views": 34.0,
       "avg_returning_viewers": null
     },
     "Why Manholes Are Round": {
@@ -1090,9 +1090,9 @@
       "avg_returning_viewers": null
     },
     "Why you tense up watching someone balance": {
-      "count": 1,
-      "avg_views_first_60m": 2.0,
-      "avg_views_first_6h": 2.0,
+      "count": 2,
+      "avg_views_first_60m": 1.5,
+      "avg_views_first_6h": 1.5,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -1108,7 +1108,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 200.0,
+      "avg_likes_per_1000_views": 166.7,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by names being so easy to forget": {
@@ -1367,7 +1367,18 @@
     "Why you can never escape the unsubscribe button hiding from you": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": 2.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why nobody wanting to sit in the middle seat keeps happening no matter what": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -2234,7 +2245,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 22.5,
+      "avg_likes_per_1000_views": 21.0,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -2513,7 +2524,7 @@
       "avg_returning_viewers": null
     },
     "reflexes": {
-      "count": 1,
+      "count": 2,
       "avg_views_first_60m": 1.0,
       "avg_views_first_6h": 1.0,
       "avg_views_first_24h": null,
@@ -2663,7 +2674,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 200.0,
+      "avg_likes_per_1000_views": 166.7,
       "avg_returning_viewers": null
     },
     "social_glitches": {
@@ -2955,7 +2966,18 @@
     "Email Marketing": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": 2.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "airlines": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -2966,14 +2988,14 @@
   },
   "hook_types": {
     "physical_moment": {
-      "count": 156,
-      "avg_views_first_60m": 129.8,
-      "avg_views_first_6h": 151.9,
-      "avg_views_first_24h": 553.4,
+      "count": 158,
+      "avg_views_first_60m": 127.6,
+      "avg_views_first_6h": 147.9,
+      "avg_views_first_24h": 511.0,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 12.4,
-      "avg_likes_per_1000_views": 25.1,
+      "avg_comments_per_1000_views": 12.2,
+      "avg_likes_per_1000_views": 24.4,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
