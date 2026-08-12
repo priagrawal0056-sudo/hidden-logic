@@ -1,9 +1,9 @@
 {
-  "channel_avg_views": 1325.9,
+  "channel_avg_views": 1324.3,
   "topic_clusters": {
     "airport": {
       "videos": 12,
-      "avg_views": 722.4,
+      "avg_views": 705.3,
       "best_views": 1615,
       "recent_views": [
         1191,
@@ -75,7 +75,7 @@
     },
     "traffic": {
       "videos": 33,
-      "avg_views": 354.9,
+      "avg_views": 360.2,
       "best_views": 1769,
       "recent_views": [
         1,
@@ -168,10 +168,10 @@
     },
     "supermarket": {
       "videos": 22,
-      "avg_views": 473.8,
+      "avg_views": 460.8,
       "best_views": 1360,
       "recent_views": [
-        0,
+        1,
         5,
         20,
         4,
@@ -286,11 +286,12 @@
       "avg_avd": null
     },
     "technology": {
-      "videos": 19,
-      "avg_views": 35.4,
+      "videos": 20,
+      "avg_views": 32.9,
       "best_views": 265,
       "recent_views": [
         0,
+        2,
         0,
         2,
         3,
@@ -369,5 +370,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-08-11T17:02:33.703960"
+  "last_updated": "2026-08-12T17:01:54.884048"
 }

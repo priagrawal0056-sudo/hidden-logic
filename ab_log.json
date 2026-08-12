@@ -3830,7 +3830,7 @@
     "visual_thesis": "The middle seat isn't bad luck; it's a combination of airline upgrade manipulation and weight-balancing algorithms.",
     "first_frame_description": "Close-up POV of a passenger squeezing into a cramped middle seat between two passengers, looking down at a tiny 17-inch space.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 0.0,
+    "likes_per_1000_views": 500.0,
     "views_first_60m": 0,
     "views_first_6h": 0
   },
@@ -3849,7 +3849,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Showing rapid eye-tracking contrast between immediate home kit recognition and away kit peripheral blindness.",
-    "first_frame_description": "First-person POV on a green soccer pitch passing the ball directly to a opposing player wearing a grey away kit."
+    "first_frame_description": "First-person POV on a green soccer pitch passing the ball directly to a opposing player wearing a grey away kit.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
   },
   "-tfk-zzsRCM": {
     "variant": "A",
@@ -3866,6 +3870,61 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The physical act of a tablet screen rotating at a checkout counter is a deliberate psychological trigger designed to force public compliance.",
-    "first_frame_description": "A first-person view of a hand picking up a paper coffee cup from a wooden cafe counter, as a white iPad payment stand begins to pivot toward the camera."
+    "first_frame_description": "A first-person view of a hand picking up a paper coffee cup from a wooden cafe counter, as a white iPad payment stand begins to pivot toward the camera.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
+  },
+  "W3IZWjJXvKw": {
+    "variant": "A",
+    "title": "Why Theme Park Lines Never Seem To End",
+    "date": "2026-08-12",
+    "publish_at": "2026-08-13T07:13:00Z",
+    "cluster": null,
+    "topic": "Why you can never escape theme park queues that never seem to end",
+    "subcluster": "theme-parks",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Theme park queues use physical layout tricks and psychological wait-time manipulation to hide their true length and keep crowds compliant.",
+    "first_frame_description": "A first-person POV shot stepping into a crowded, winding theme park queue line with high walls blocking the view ahead."
+  },
+  "IVrYY58JOrY": {
+    "variant": "A",
+    "title": "Why Self-Checkouts Always Need An Attendant",
+    "date": "2026-08-12",
+    "publish_at": "2026-08-13T09:13:00Z",
+    "cluster": null,
+    "topic": "Why you can never escape self-checkout always needing the attendant",
+    "subcluster": "Self-Checkout",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.6,
+    "visual_thesis": "A first-person perspective of a self-checkout machine flashing a red error screen, transitioning to a graphic showing how weight sensors trigger security alerts.",
+    "first_frame_description": "First-person POV of a hand placing a plastic grocery bag onto a self-checkout scale, as the screen instantly flashes a red 'Assistance Required' warning."
+  },
+  "-pGBXKq6qNU": {
+    "variant": "B",
+    "title": "Why You Hold Your Breath Before A High Dive",
+    "date": "2026-08-12",
+    "publish_at": "2026-08-13T11:11:00Z",
+    "cluster": null,
+    "topic": "Why you hold your breath during a high dive",
+    "subcluster": "Involuntary Reflexes",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Visual progression from a tense POV standing on a 10-meter board edge to a transparent 3D anatomical model showing vocal cords sealing the airway and pressure cushioning thoracic organs.",
+    "first_frame_description": "First-person POV standing at the edge of a towering 10-meter high dive platform, toes curling over the textured board above deep blue water."
   }
 }

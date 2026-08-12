@@ -1494,5 +1494,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Theme Park Lines Never Seem To End",
+    "hook_text": "You step into a theme park line built to lie.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Reveal",
+    "first_frame_description": "A first-person POV shot stepping into a crowded, winding theme park queue line with high walls blocking the view ahead.",
+    "visual_thesis": "Theme park queues use physical layout tricks and psychological wait-time manipulation to hide their true length and keep crowds compliant.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Self-Checkouts Always Need An Attendant",
+    "hook_text": "You place a bag down and the screen instantly freezes.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Instant System Failure -> Hidden Intent Reveal",
+    "first_frame_description": "First-person POV of a hand placing a plastic grocery bag onto a self-checkout scale, as the screen instantly flashes a red 'Assistance Required' warning.",
+    "visual_thesis": "A first-person perspective of a self-checkout machine flashing a red error screen, transitioning to a graphic showing how weight sensors trigger security alerts.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Hold Your Breath Before A High Dive",
+    "hook_text": "You step onto a high dive and your chest locks.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Involuntary Response -> Hidden Biological System",
+    "first_frame_description": "First-person POV standing at the edge of a towering 10-meter high dive platform, toes curling over the textured board above deep blue water.",
+    "visual_thesis": "Visual progression from a tense POV standing on a 10-meter board edge to a transparent 3D anatomical model showing vocal cords sealing the airway and pressure cushioning thoracic organs.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
