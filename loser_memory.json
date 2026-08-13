@@ -2142,5 +2142,38 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 45.0
+  },
+  {
+    "title": "Why You Hold Your Breath Before A High Dive",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 45.0
+  },
+  {
+    "title": "Why Self-Checkouts Always Need An Attendant",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "supermarket",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Theme Park Lines Never Seem To End",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "mall",
+    "quality_score": 48.0
   }
 ]

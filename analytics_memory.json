@@ -804,8 +804,8 @@
       "avg_returning_viewers": null
     },
     "Why you hold your breath during a high dive": {
-      "count": 3,
-      "avg_views_first_60m": 8.3,
+      "count": 4,
+      "avg_views_first_60m": 6.8,
       "avg_views_first_6h": 8.3,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
@@ -1383,7 +1383,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 500.0,
+      "avg_likes_per_1000_views": 333.3,
       "avg_returning_viewers": null
     },
     "Why you instantly trust a team in their home kit": {
@@ -1398,6 +1398,28 @@
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by the tip screen flipping around to face you": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why you can never escape theme park queues that never seem to end": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why you can never escape self-checkout always needing the attendant": {
       "count": 1,
       "avg_views_first_60m": 0.0,
       "avg_views_first_6h": 0.0,
@@ -3004,7 +3026,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 500.0,
+      "avg_likes_per_1000_views": 333.3,
       "avg_returning_viewers": null
     },
     "neuroscience": {
@@ -3028,18 +3050,51 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "theme-parks": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Self-Checkout": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Involuntary Reflexes": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 160,
-      "avg_views_first_60m": 125.4,
-      "avg_views_first_6h": 145.4,
+      "count": 163,
+      "avg_views_first_60m": 122.3,
+      "avg_views_first_6h": 142.9,
       "avg_views_first_24h": 511.0,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 12.0,
-      "avg_likes_per_1000_views": 28.0,
+      "avg_comments_per_1000_views": 11.7,
+      "avg_likes_per_1000_views": 26.0,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

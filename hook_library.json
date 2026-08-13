@@ -1527,5 +1527,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Airports Change Your Gate Last Minute",
+    "hook_text": "You sit down at your gate, but they moved it deliberately.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Hidden Intent Reveal",
+    "first_frame_description": "First-person POV sitting in crowded airport gate seats looking up at a digital screen flashing bright red text switching from Gate B4 to Gate E29.",
+    "visual_thesis": "Visual proof of automated airport gate assignment software trading departing passenger convenience to avoid idle aircraft ramp delay fees.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Hear Your Name In Loud Rooms",
+    "hook_text": "You sit in a loud room and instantly hear your name.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Subconscious Reality",
+    "first_frame_description": "First-person perspective sitting at a crowded, brightly lit diner table surrounded by blurred, talking people with visual audio wave clutter.",
+    "visual_thesis": "Show a visual waveform of chaotic room noise being actively isolated and decrypted by a subconscious brain overlay.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Cars Ahead Look Slower Than They Are",
+    "hook_text": "You floor the gas behind a ridiculously slow car.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Relatable Frustration -> Counterintuitive Truth",
+    "first_frame_description": "First-person driver POV on a highway looking through the windshield at a taillight bumper ahead, tapping the accelerator in frustration.",
+    "visual_thesis": "Demonstrating the optical loom effect: showing how a car ahead looks static until exponential angular expansion occurs at close range.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

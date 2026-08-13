@@ -3830,7 +3830,7 @@
     "visual_thesis": "The middle seat isn't bad luck; it's a combination of airline upgrade manipulation and weight-balancing algorithms.",
     "first_frame_description": "Close-up POV of a passenger squeezing into a cramped middle seat between two passengers, looking down at a tiny 17-inch space.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 500.0,
+    "likes_per_1000_views": 333.33,
     "views_first_60m": 0,
     "views_first_6h": 0
   },
@@ -3891,7 +3891,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Theme park queues use physical layout tricks and psychological wait-time manipulation to hide their true length and keep crowds compliant.",
-    "first_frame_description": "A first-person POV shot stepping into a crowded, winding theme park queue line with high walls blocking the view ahead."
+    "first_frame_description": "A first-person POV shot stepping into a crowded, winding theme park queue line with high walls blocking the view ahead.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "IVrYY58JOrY": {
     "variant": "A",
@@ -3908,7 +3912,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.6,
     "visual_thesis": "A first-person perspective of a self-checkout machine flashing a red error screen, transitioning to a graphic showing how weight sensors trigger security alerts.",
-    "first_frame_description": "First-person POV of a hand placing a plastic grocery bag onto a self-checkout scale, as the screen instantly flashes a red 'Assistance Required' warning."
+    "first_frame_description": "First-person POV of a hand placing a plastic grocery bag onto a self-checkout scale, as the screen instantly flashes a red 'Assistance Required' warning.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "-pGBXKq6qNU": {
     "variant": "B",
@@ -3925,6 +3933,60 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Visual progression from a tense POV standing on a 10-meter board edge to a transparent 3D anatomical model showing vocal cords sealing the airway and pressure cushioning thoracic organs.",
-    "first_frame_description": "First-person POV standing at the edge of a towering 10-meter high dive platform, toes curling over the textured board above deep blue water."
+    "first_frame_description": "First-person POV standing at the edge of a towering 10-meter high dive platform, toes curling over the textured board above deep blue water.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2
+  },
+  "wpZfoBbrcew": {
+    "variant": "A",
+    "title": "Why Airports Change Your Gate Last Minute",
+    "date": "2026-08-13",
+    "publish_at": "2026-08-14T07:12:00Z",
+    "cluster": null,
+    "topic": "Why everyone is secretly annoyed by airport gates changing at the last minute",
+    "subcluster": "airport_psychology",
+    "hook_type": "physical_moment",
+    "series": "Airport Logic",
+    "predicted_views_score": 9.2,
+    "retention_prediction": 9.3,
+    "first_frame_score": 9.6,
+    "viewer_identity_score": 9.1,
+    "visual_thesis": "Visual proof of automated airport gate assignment software trading departing passenger convenience to avoid idle aircraft ramp delay fees.",
+    "first_frame_description": "First-person POV sitting in crowded airport gate seats looking up at a digital screen flashing bright red text switching from Gate B4 to Gate E29."
+  },
+  "wN9pfdwAe08": {
+    "variant": "B",
+    "title": "Why You Always Hear Your Name In Loud Rooms",
+    "date": "2026-08-13",
+    "publish_at": "2026-08-14T09:02:00Z",
+    "cluster": null,
+    "topic": "Why hearing your name across a noisy room is definitely not an accident",
+    "subcluster": "auditory_perception",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Show a visual waveform of chaotic room noise being actively isolated and decrypted by a subconscious brain overlay.",
+    "first_frame_description": "First-person perspective sitting at a crowded, brightly lit diner table surrounded by blurred, talking people with visual audio wave clutter."
+  },
+  "AoEL9NS-Piw": {
+    "variant": "A",
+    "title": "Why Cars Ahead Look Slower Than They Are",
+    "date": "2026-08-13",
+    "publish_at": "2026-08-14T11:06:00Z",
+    "cluster": null,
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "subcluster": "Driving Illusions",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrating the optical loom effect: showing how a car ahead looks static until exponential angular expansion occurs at close range.",
+    "first_frame_description": "First-person driver POV on a highway looking through the windshield at a taillight bumper ahead, tapping the accelerator in frustration."
   }
 }

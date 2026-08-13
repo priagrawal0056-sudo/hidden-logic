@@ -5494,5 +5494,53 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "wpZfoBbrcew",
+    "title": "Why Airports Change Your Gate Last Minute",
+    "topic": "Why everyone is secretly annoyed by airport gates changing at the last minute",
+    "date": "2026-08-13",
+    "n": 473,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "wN9pfdwAe08",
+    "title": "Why You Always Hear Your Name In Loud Rooms",
+    "topic": "Why hearing your name across a noisy room is definitely not an accident",
+    "date": "2026-08-13",
+    "n": 474,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 8.5,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "AoEL9NS-Piw",
+    "title": "Why Cars Ahead Look Slower Than They Are",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "date": "2026-08-13",
+    "n": 475,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]
