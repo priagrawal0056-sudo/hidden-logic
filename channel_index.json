@@ -5542,5 +5542,41 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "kIbLdeF0BMU",
+    "title": "Why You Can't Stop Online Arguments",
+    "topic": "Why everyone is secretly annoyed by online arguments feeling endless",
+    "date": "2026-08-14",
+    "n": 476,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 8,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "wXdsnxQlEQc",
+    "title": "Why You Always Lose to Red Teams",
+    "topic": "Why you always lose to teams wearing red",
+    "date": "2026-08-14",
+    "n": 477,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

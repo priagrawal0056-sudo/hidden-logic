@@ -1560,5 +1560,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Stop Online Arguments",
+    "hook_text": "Those three bouncing dots are a psychological trap.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System",
+    "first_frame_description": "A close-up, high-contrast shot of a smartphone screen in a dark room, showing the '...' typing animation in a messaging app.",
+    "visual_thesis": "The 'typing' indicator is a deliberate psychological anchor that exploits the Zeigarnik effect to keep users trapped in digital conflict.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Lose to Red Teams",
+    "hook_text": "Step onto the field against the red team.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Immediate Loss",
+    "first_frame_description": "A POV shot of a player's cleats stepping onto a green pitch, looking up at a wall of players in bright red jerseys.",
+    "visual_thesis": "The psychological and officiating advantage of the color red in competitive sports.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

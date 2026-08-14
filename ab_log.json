@@ -3830,7 +3830,7 @@
     "visual_thesis": "The middle seat isn't bad luck; it's a combination of airline upgrade manipulation and weight-balancing algorithms.",
     "first_frame_description": "Close-up POV of a passenger squeezing into a cramped middle seat between two passengers, looking down at a tiny 17-inch space.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 333.33,
+    "likes_per_1000_views": 200.0,
     "views_first_60m": 0,
     "views_first_6h": 0
   },
@@ -3936,7 +3936,9 @@
     "first_frame_description": "First-person POV standing at the edge of a towering 10-meter high dive platform, toes curling over the textured board above deep blue water.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 2
+    "views_first_60m": 2,
+    "views_first_6h": 2,
+    "views_first_24h": 2
   },
   "wpZfoBbrcew": {
     "variant": "A",
@@ -3953,7 +3955,11 @@
     "first_frame_score": 9.6,
     "viewer_identity_score": 9.1,
     "visual_thesis": "Visual proof of automated airport gate assignment software trading departing passenger convenience to avoid idle aircraft ramp delay fees.",
-    "first_frame_description": "First-person POV sitting in crowded airport gate seats looking up at a digital screen flashing bright red text switching from Gate B4 to Gate E29."
+    "first_frame_description": "First-person POV sitting in crowded airport gate seats looking up at a digital screen flashing bright red text switching from Gate B4 to Gate E29.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "wN9pfdwAe08": {
     "variant": "B",
@@ -3970,7 +3976,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Show a visual waveform of chaotic room noise being actively isolated and decrypted by a subconscious brain overlay.",
-    "first_frame_description": "First-person perspective sitting at a crowded, brightly lit diner table surrounded by blurred, talking people with visual audio wave clutter."
+    "first_frame_description": "First-person perspective sitting at a crowded, brightly lit diner table surrounded by blurred, talking people with visual audio wave clutter.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "AoEL9NS-Piw": {
     "variant": "A",
@@ -3987,6 +3997,43 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrating the optical loom effect: showing how a car ahead looks static until exponential angular expansion occurs at close range.",
-    "first_frame_description": "First-person driver POV on a highway looking through the windshield at a taillight bumper ahead, tapping the accelerator in frustration."
+    "first_frame_description": "First-person driver POV on a highway looking through the windshield at a taillight bumper ahead, tapping the accelerator in frustration.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0
+  },
+  "kIbLdeF0BMU": {
+    "variant": "A",
+    "title": "Why You Can't Stop Online Arguments",
+    "date": "2026-08-14",
+    "publish_at": "2026-08-15T07:04:00Z",
+    "cluster": "internet_behavior",
+    "topic": "Why everyone is secretly annoyed by online arguments feeling endless",
+    "subcluster": "Social Media",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The 'typing' indicator is a deliberate psychological anchor that exploits the Zeigarnik effect to keep users trapped in digital conflict.",
+    "first_frame_description": "A close-up, high-contrast shot of a smartphone screen in a dark room, showing the '...' typing animation in a messaging app."
+  },
+  "wXdsnxQlEQc": {
+    "variant": "A",
+    "title": "Why You Always Lose to Red Teams",
+    "date": "2026-08-14",
+    "publish_at": "2026-08-15T09:13:00Z",
+    "cluster": null,
+    "topic": "Why you always lose to teams wearing red",
+    "subcluster": "Sports Bias",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The psychological and officiating advantage of the color red in competitive sports.",
+    "first_frame_description": "A POV shot of a player's cleats stepping onto a green pitch, looking up at a wall of players in bright red jerseys."
   }
 }

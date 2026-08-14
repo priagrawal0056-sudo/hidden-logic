@@ -2175,5 +2175,38 @@
     "hook_type": "physical_moment",
     "cluster": "mall",
     "quality_score": 48.0
+  },
+  {
+    "title": "Why Cars Ahead Look Slower Than They Are",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why You Always Hear Your Name In Loud Rooms",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.5,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Airports Change Your Gate Last Minute",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "airport",
+    "quality_score": 47.0
   }
 ]
