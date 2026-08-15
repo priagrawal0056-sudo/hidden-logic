@@ -2208,5 +2208,16 @@
     "hook_type": "physical_moment",
     "cluster": "airport",
     "quality_score": 47.0
+  },
+  {
+    "title": "Why You Can't Stop Online Arguments",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "internet_behavior",
+    "quality_score": 47.0
   }
 ]

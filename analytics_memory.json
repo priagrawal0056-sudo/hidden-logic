@@ -465,8 +465,8 @@
     "Why your brain thinks the car in front is slower than it is": {
       "count": 6,
       "avg_views_first_60m": 211.2,
-      "avg_views_first_6h": 264.0,
-      "avg_views_first_24h": 0.0,
+      "avg_views_first_6h": 211.4,
+      "avg_views_first_24h": 0.5,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -914,9 +914,9 @@
       "avg_returning_viewers": null
     },
     "Why you always lose to teams wearing red": {
-      "count": 3,
-      "avg_views_first_60m": 1.3,
-      "avg_views_first_6h": 1.3,
+      "count": 4,
+      "avg_views_first_60m": 1.2,
+      "avg_views_first_6h": 1.2,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -1451,6 +1451,17 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Why everyone is secretly annoyed by online arguments feeling endless": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "clusters": {
@@ -1606,6 +1617,17 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 7.3,
+      "avg_returning_viewers": null
+    },
+    "internet_behavior": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     }
   },
@@ -2546,9 +2568,9 @@
       "avg_returning_viewers": null
     },
     "Sports Bias": {
-      "count": 1,
-      "avg_views_first_60m": 2.0,
-      "avg_views_first_6h": 2.0,
+      "count": 2,
+      "avg_views_first_60m": 1.5,
+      "avg_views_first_6h": 1.5,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -3131,7 +3153,18 @@
     "Driving Illusions": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": 1.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Social Media": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -3142,14 +3175,14 @@
   },
   "hook_types": {
     "physical_moment": {
-      "count": 166,
-      "avg_views_first_60m": 119.3,
-      "avg_views_first_6h": 139.4,
-      "avg_views_first_24h": 474.6,
+      "count": 168,
+      "avg_views_first_60m": 117.4,
+      "avg_views_first_6h": 136.0,
+      "avg_views_first_24h": 443.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 11.5,
-      "avg_likes_per_1000_views": 24.4,
+      "avg_comments_per_1000_views": 11.3,
+      "avg_likes_per_1000_views": 24.1,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

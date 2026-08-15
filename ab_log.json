@@ -4000,7 +4000,9 @@
     "first_frame_description": "First-person driver POV on a highway looking through the windshield at a taillight bumper ahead, tapping the accelerator in frustration.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 0
+    "views_first_60m": 0,
+    "views_first_6h": 1,
+    "views_first_24h": 1
   },
   "kIbLdeF0BMU": {
     "variant": "A",
@@ -4017,7 +4019,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The 'typing' indicator is a deliberate psychological anchor that exploits the Zeigarnik effect to keep users trapped in digital conflict.",
-    "first_frame_description": "A close-up, high-contrast shot of a smartphone screen in a dark room, showing the '...' typing animation in a messaging app."
+    "first_frame_description": "A close-up, high-contrast shot of a smartphone screen in a dark room, showing the '...' typing animation in a messaging app.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "wXdsnxQlEQc": {
     "variant": "A",
@@ -4034,6 +4040,44 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The psychological and officiating advantage of the color red in competitive sports.",
-    "first_frame_description": "A POV shot of a player's cleats stepping onto a green pitch, looking up at a wall of players in bright red jerseys."
+    "first_frame_description": "A POV shot of a player's cleats stepping onto a green pitch, looking up at a wall of players in bright red jerseys.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
+  },
+  "nMjLI37XXPE": {
+    "variant": "B",
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "date": "2026-08-15",
+    "publish_at": "2026-08-16T07:08:00Z",
+    "cluster": "traffic",
+    "topic": "Why drivers in red cars feel faster to you",
+    "subcluster": "visual_illusions",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate chromostereopsis by showing red light focusing behind the retina, forcing the visual cortex to artificially jump the car forward and create perceived speed.",
+    "first_frame_description": "Windshield POV of a driver watching a red coupe cut past on a highway while an overhead radar camera displays 55 MPH."
+  },
+  "R2N9IxvS_3g": {
+    "variant": "B",
+    "title": "Why You Can't Forget That One Embarrassing Thing",
+    "date": "2026-08-15",
+    "publish_at": "2026-08-16T09:23:00Z",
+    "cluster": null,
+    "topic": "The psychological reason behind remembering embarrassing moments forever",
+    "subcluster": "cognitive_biases",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate that the brain processes social embarrassment using the exact same neural pathways as physical survival threats.",
+    "first_frame_description": "A close-up, high-contrast POV shot of someone staring wide-eyed at a dark bedroom ceiling at 3 AM, with a sweat drop on their forehead."
   }
 }
