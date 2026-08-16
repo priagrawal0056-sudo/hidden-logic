@@ -1593,5 +1593,49 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Swear The Ref Cheated",
+    "hook_text": "You jump off the couch screaming at the referee.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden Mechanism",
+    "first_frame_description": "First-person living room view jumping off a couch, furiously pointing at a TV screen showing a controversial sports referee call.",
+    "visual_thesis": "A side-by-side stadium replay showing how opposing fan brains literally process identical visual motion differently.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Self-Checkout Always Thinks You're Stealing",
+    "hook_text": "You drop a bag of chips into the bin.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System Reveal",
+    "first_frame_description": "A first-person view of a hand placing a crinkly bag of potato chips into a plastic-bagged checkout bin, with the kiosk screen visible in the background.",
+    "visual_thesis": "A split-screen showing a POV of a self-checkout kiosk screen turning red, contrasted with an overhead 'AI vision' view that highlights the shopper's hand speed with a digital tracking box.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Malls Make You Walk Miles",
+    "hook_text": "You\u2019re forced to walk miles just to go up.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Reveal",
+    "first_frame_description": "POV of a person at a mall entrance looking down a long hallway at a distant escalator.",
+    "visual_thesis": "The 'Long Walk' layout",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Ticket Apps Pretend Seats Are Sold Out",
+    "hook_text": "You click buy and every seat grays out on purpose.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction",
+    "first_frame_description": "Close-up POV of a finger tapping 'Buy Tickets' on a smartphone concert app as a stadium seating chart grays out completely.",
+    "visual_thesis": "Screen recording of a concert seating map instantly turning gray, then revealing locked backend inventory and price-hiked resale dots.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

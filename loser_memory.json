@@ -2219,5 +2219,16 @@
     "hook_type": "physical_moment",
     "cluster": "internet_behavior",
     "quality_score": 47.0
+  },
+  {
+    "title": "Why You Can't Forget That One Embarrassing Thing",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "memory",
+    "quality_score": 46.0
   }
 ]
