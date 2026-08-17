@@ -5674,5 +5674,35 @@
     "quality_score": 47.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "nkq0KuXswwg",
+    "title": "Why Your Phone Secretly Dims Itself",
+    "topic": "TRENDING NOW: why sprinters in the outer lanes feel slower",
+    "date": "2026-08-17",
+    "n": 484,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 48.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "hsYtHQauZU4",
+    "title": "Why You Always Slam Your Brakes On The Highway",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "date": "2026-08-17",
+    "n": 485,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

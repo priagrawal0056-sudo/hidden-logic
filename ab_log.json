@@ -4103,7 +4103,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.4,
     "visual_thesis": "A side-by-side stadium replay showing how opposing fan brains literally process identical visual motion differently.",
-    "first_frame_description": "First-person living room view jumping off a couch, furiously pointing at a TV screen showing a controversial sports referee call."
+    "first_frame_description": "First-person living room view jumping off a couch, furiously pointing at a TV screen showing a controversial sports referee call.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "VpbSRbA7Ye8": {
     "variant": "B",
@@ -4120,7 +4124,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "A split-screen showing a POV of a self-checkout kiosk screen turning red, contrasted with an overhead 'AI vision' view that highlights the shopper's hand speed with a digital tracking box.",
-    "first_frame_description": "A first-person view of a hand placing a crinkly bag of potato chips into a plastic-bagged checkout bin, with the kiosk screen visible in the background."
+    "first_frame_description": "A first-person view of a hand placing a crinkly bag of potato chips into a plastic-bagged checkout bin, with the kiosk screen visible in the background.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "-lqnQ0UI8s0": {
     "variant": "B",
@@ -4137,7 +4145,10 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.5,
     "visual_thesis": "The 'Long Walk' layout",
-    "first_frame_description": "POV of a person at a mall entrance looking down a long hallway at a distant escalator."
+    "first_frame_description": "POV of a person at a mall entrance looking down a long hallway at a distant escalator.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0
   },
   "jaPAiSSeIls": {
     "variant": "A",
@@ -4154,6 +4165,43 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Screen recording of a concert seating map instantly turning gray, then revealing locked backend inventory and price-hiked resale dots.",
-    "first_frame_description": "Close-up POV of a finger tapping 'Buy Tickets' on a smartphone concert app as a stadium seating chart grays out completely."
+    "first_frame_description": "Close-up POV of a finger tapping 'Buy Tickets' on a smartphone concert app as a stadium seating chart grays out completely.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0
+  },
+  "nkq0KuXswwg": {
+    "variant": "B",
+    "title": "Why Your Phone Secretly Dims Itself",
+    "date": "2026-08-17",
+    "publish_at": "2026-08-18T07:20:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why sprinters in the outer lanes feel slower",
+    "subcluster": "tech secrets",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.5,
+    "retention_prediction": 9.5,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.5,
+    "visual_thesis": "Demonstrate the physical frustration of a phone screen dimming in bright sunlight despite auto-brightness being disabled, backed by thermal imaging of the internal processor.",
+    "first_frame_description": "First-person POV stepping out of a doorway into bright sunlight, holding a smartphone that instantly dims to near-blackness."
+  },
+  "hsYtHQauZU4": {
+    "variant": "B",
+    "title": "Why You Always Slam Your Brakes On The Highway",
+    "date": "2026-08-17",
+    "publish_at": "2026-08-18T09:23:00Z",
+    "cluster": null,
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "subcluster": "driving_illusions",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate the non-linear visual looming expansion curve of a vehicle in front from a driver's POV.",
+    "first_frame_description": "Driver POV behind a car on a fast highway, suddenly stepping hard on the brake pedal as the car in front rapidly expands in view."
   }
 }

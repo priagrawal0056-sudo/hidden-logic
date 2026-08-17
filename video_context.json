@@ -856,5 +856,17 @@
     "topic": "TRENDING NOW: why the leader almost never gets overtaken on the last lap",
     "visual_thesis": "Screen recording of a concert seating map instantly turning gray, then revealing locked backend inventory and price-hiked resale dots.",
     "script": "You click buy and every seat grays out on purpose. You think thousands of fans beat you to it. In reality, ticket apps artificially lock half the stadium. By hiding blue dots, they trigger instant panic. Minutes later, those same seats reappear as official resale at triple the price. You're trapped in an artificial shortage every single time..."
+  },
+  "nkq0KuXswwg": {
+    "title": "Why Your Phone Secretly Dims Itself",
+    "topic": "TRENDING NOW: why sprinters in the outer lanes feel slower",
+    "visual_thesis": "Demonstrate the physical frustration of a phone screen dimming in bright sunlight despite auto-brightness being disabled, backed by thermal imaging of the internal processor.",
+    "script": "You step outside, and your phone screen instantly dims. Your auto-brightness is off, but it stays dark. It's not a glitch—your phone is secretly panicking. Inside, the processor is reaching critical heat limits. To prevent permanent damage, it secretly throttles your screen. But it hides the warning so you don't blame the manufacturer. Instead, it tricks you into thinking your eyes are just adjusting..."
+  },
+  "hsYtHQauZU4": {
+    "title": "Why You Always Slam Your Brakes On The Highway",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "visual_thesis": "Demonstrate the non-linear visual looming expansion curve of a vehicle in front from a driver's POV.",
+    "script": "You slam your brakes behind a crawling highway car. You thought you had endless space. But your eyes cannot accurately measure straight-line depth. At a distance, a car's visual size barely changes, making it look frozen. In the final hundred feet, its image suddenly explodes in your eyes. That rapid optical illusion is why..."
   }
 }

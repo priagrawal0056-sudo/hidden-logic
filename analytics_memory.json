@@ -892,14 +892,14 @@
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why the leader almost never gets overtaken on the last lap": {
-      "count": 1,
-      "avg_views_first_60m": 13.0,
+      "count": 2,
+      "avg_views_first_60m": 6.5,
       "avg_views_first_6h": 13.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 17.5,
+      "avg_likes_per_1000_views": 8.8,
       "avg_returning_viewers": null
     },
     "The psychological reason behind a room feeling smaller in the dark": {
@@ -1013,7 +1013,7 @@
       "avg_returning_viewers": null
     },
     "Why fans blame the referee even when they're wrong": {
-      "count": 1,
+      "count": 2,
       "avg_views_first_60m": 0.0,
       "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
@@ -1467,6 +1467,28 @@
       "count": 1,
       "avg_views_first_60m": 1.0,
       "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "TRENDING NOW: why first corner crashes happen on every race start": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why escalators placed far from the entrance makes everyone act predictably": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": null,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -2700,9 +2722,9 @@
       "avg_returning_viewers": null
     },
     "Cognitive Biases": {
-      "count": 1,
-      "avg_views_first_60m": 1.0,
-      "avg_views_first_6h": 1.0,
+      "count": 2,
+      "avg_views_first_60m": 0.5,
+      "avg_views_first_6h": 0.5,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -3193,18 +3215,51 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Retail Systems": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Retail Design": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "live_events": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 170,
-      "avg_views_first_60m": 115.6,
-      "avg_views_first_6h": 133.9,
+      "count": 174,
+      "avg_views_first_60m": 112.0,
+      "avg_views_first_6h": 131.8,
       "avg_views_first_24h": 443.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 11.1,
-      "avg_likes_per_1000_views": 23.7,
+      "avg_comments_per_1000_views": 10.8,
+      "avg_likes_per_1000_views": 23.0,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

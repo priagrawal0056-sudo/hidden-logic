@@ -1637,5 +1637,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Your Phone Secretly Dims Itself",
+    "hook_text": "You step outside, and your phone screen instantly dims.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Reveal",
+    "first_frame_description": "First-person POV stepping out of a doorway into bright sunlight, holding a smartphone that instantly dims to near-blackness.",
+    "visual_thesis": "Demonstrate the physical frustration of a phone screen dimming in bright sunlight despite auto-brightness being disabled, backed by thermal imaging of the internal processor.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Slam Your Brakes On The Highway",
+    "hook_text": "You slam your brakes behind a crawling highway car.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Spatial Distortion -> Perception Reveal",
+    "first_frame_description": "Driver POV behind a car on a fast highway, suddenly stepping hard on the brake pedal as the car in front rapidly expands in view.",
+    "visual_thesis": "Demonstrate the non-linear visual looming expansion curve of a vehicle in front from a driver's POV.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

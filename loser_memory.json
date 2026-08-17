@@ -2230,5 +2230,49 @@
     "hook_type": "physical_moment",
     "cluster": "memory",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Ticket Apps Pretend Seats Are Sold Out",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "technology",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Malls Make You Walk Miles",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "mall",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Self-Checkout Always Thinks You're Stealing",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "supermarket",
+    "quality_score": 48.0
+  },
+  {
+    "title": "Why You Swear The Ref Cheated",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
   }
 ]
