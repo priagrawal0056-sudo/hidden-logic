@@ -463,14 +463,14 @@
       "avg_returning_viewers": null
     },
     "Why your brain thinks the car in front is slower than it is": {
-      "count": 6,
-      "avg_views_first_60m": 211.2,
-      "avg_views_first_6h": 211.4,
+      "count": 7,
+      "avg_views_first_60m": 176.0,
+      "avg_views_first_6h": 176.2,
       "avg_views_first_24h": 0.5,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 4.0,
+      "avg_likes_per_1000_views": 3.3,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -628,14 +628,14 @@
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why sprinters in the outer lanes feel slower": {
-      "count": 1,
-      "avg_views_first_60m": 261.0,
-      "avg_views_first_6h": 261.0,
+      "count": 2,
+      "avg_views_first_60m": 130.5,
+      "avg_views_first_6h": 130.5,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 3.4,
+      "avg_likes_per_1000_views": 1.7,
       "avg_returning_viewers": null
     },
     "Why laughing when nervous keeps happening no matter what": {
@@ -894,8 +894,8 @@
     "TRENDING NOW: why the leader almost never gets overtaken on the last lap": {
       "count": 2,
       "avg_views_first_60m": 6.5,
-      "avg_views_first_6h": 13.0,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 8.0,
+      "avg_views_first_24h": 3.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -1471,7 +1471,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 333.3,
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why first corner crashes happen on every race start": {
@@ -1488,8 +1488,8 @@
     "Why escalators placed far from the entrance makes everyone act predictably": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": 1.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -3213,7 +3213,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 333.3,
       "avg_returning_viewers": null
     },
     "Retail Systems": {
@@ -3230,8 +3230,8 @@
     "Retail Design": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": 1.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -3241,7 +3241,29 @@
     "live_events": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
+      "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": 3.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "tech secrets": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "driving_illusions": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -3252,14 +3274,14 @@
   },
   "hook_types": {
     "physical_moment": {
-      "count": 174,
-      "avg_views_first_60m": 112.0,
-      "avg_views_first_6h": 131.8,
-      "avg_views_first_24h": 443.1,
+      "count": 176,
+      "avg_views_first_60m": 110.4,
+      "avg_views_first_6h": 127.8,
+      "avg_views_first_24h": 391.2,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 10.8,
-      "avg_likes_per_1000_views": 23.0,
+      "avg_comments_per_1000_views": 10.7,
+      "avg_likes_per_1000_views": 25.0,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 1284.1,
+  "channel_avg_views": 1228.3,
   "topic_clusters": {
     "airport": {
       "videos": 13,
@@ -7,7 +7,7 @@
       "best_views": 1615,
       "recent_views": [
         2,
-        1191,
+        1192,
         945,
         923,
         544,
@@ -76,11 +76,13 @@
       "avg_avd": 12.4
     },
     "traffic": {
-      "videos": 35,
-      "avg_views": 323.0,
+      "videos": 37,
+      "avg_views": 296.0,
       "best_views": 1769,
       "recent_views": [
-        2,
+        0,
+        0,
+        8,
         2,
         3,
         0,
@@ -129,10 +131,10 @@
     },
     "elevator": {
       "videos": 8,
-      "avg_views": 107.2,
+      "avg_views": 107.5,
       "best_views": 1089,
       "recent_views": [
-        0,
+        1,
         7,
         58,
         52,
@@ -234,10 +236,10 @@
     },
     "memory": {
       "videos": 6,
-      "avg_views": 45.1,
+      "avg_views": 45.4,
       "best_views": 266,
       "recent_views": [
-        2,
+        3,
         1,
         35,
         100,
@@ -249,7 +251,7 @@
     },
     "attention": {
       "videos": 4,
-      "avg_views": 377.0,
+      "avg_views": 241.4,
       "best_views": 1055,
       "recent_views": [
         6,
@@ -295,10 +297,10 @@
     },
     "technology": {
       "videos": 21,
-      "avg_views": 25.9,
+      "avg_views": 26.1,
       "best_views": 265,
       "recent_views": [
-        0,
+        3,
         1,
         5,
         0,
@@ -380,5 +382,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-08-17T16:33:59.654294"
+  "last_updated": "2026-08-18T16:37:34.997921"
 }

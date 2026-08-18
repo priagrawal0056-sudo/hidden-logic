@@ -5704,5 +5704,38 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "s209gssEBLM",
+    "title": "Why IKEA Forces You Through A Maze",
+    "topic": "The psychological reason behind IKEA forcing you down one long path",
+    "date": "2026-08-18",
+    "n": 486,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "p7tHQ6U_j3k",
+    "title": "Why You Always Lose To Teams In Red",
+    "topic": "Why you always lose to teams wearing red",
+    "date": "2026-08-18",
+    "n": 487,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

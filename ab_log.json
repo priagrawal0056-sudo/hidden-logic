@@ -4084,7 +4084,7 @@
     "visual_thesis": "Demonstrate that the brain processes social embarrassment using the exact same neural pathways as physical survival threats.",
     "first_frame_description": "A close-up, high-contrast POV shot of someone staring wide-eyed at a dark bedroom ceiling at 3 AM, with a sweat drop on their forehead.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 0.0,
+    "likes_per_1000_views": 333.33,
     "views_first_60m": 1,
     "views_first_6h": 1
   },
@@ -4148,7 +4148,9 @@
     "first_frame_description": "POV of a person at a mall entrance looking down a long hallway at a distant escalator.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 0
+    "views_first_60m": 0,
+    "views_first_6h": 1,
+    "views_first_24h": 1
   },
   "jaPAiSSeIls": {
     "variant": "A",
@@ -4168,7 +4170,9 @@
     "first_frame_description": "Close-up POV of a finger tapping 'Buy Tickets' on a smartphone concert app as a stadium seating chart grays out completely.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 0
+    "views_first_60m": 0,
+    "views_first_6h": 3,
+    "views_first_24h": 3
   },
   "nkq0KuXswwg": {
     "variant": "B",
@@ -4185,7 +4189,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.5,
     "visual_thesis": "Demonstrate the physical frustration of a phone screen dimming in bright sunlight despite auto-brightness being disabled, backed by thermal imaging of the internal processor.",
-    "first_frame_description": "First-person POV stepping out of a doorway into bright sunlight, holding a smartphone that instantly dims to near-blackness."
+    "first_frame_description": "First-person POV stepping out of a doorway into bright sunlight, holding a smartphone that instantly dims to near-blackness.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "hsYtHQauZU4": {
     "variant": "B",
@@ -4202,6 +4210,44 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate the non-linear visual looming expansion curve of a vehicle in front from a driver's POV.",
-    "first_frame_description": "Driver POV behind a car on a fast highway, suddenly stepping hard on the brake pedal as the car in front rapidly expands in view."
+    "first_frame_description": "Driver POV behind a car on a fast highway, suddenly stepping hard on the brake pedal as the car in front rapidly expands in view.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
+  },
+  "s209gssEBLM": {
+    "variant": "B",
+    "title": "Why IKEA Forces You Through A Maze",
+    "date": "2026-08-18",
+    "publish_at": "2026-08-19T07:04:00Z",
+    "cluster": null,
+    "topic": "The psychological reason behind IKEA forcing you down one long path",
+    "subcluster": "consumer_behavior",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The video visually maps the psychological exhaustion of IKEA's one-way layout, proving how spatial design triggers impulse buying.",
+    "first_frame_description": "First-person POV walking through the sliding glass doors of a bright blue and yellow IKEA entrance, holding an empty shopping bag."
+  },
+  "p7tHQ6U_j3k": {
+    "variant": "A",
+    "title": "Why You Always Lose To Teams In Red",
+    "date": "2026-08-18",
+    "publish_at": "2026-08-19T09:15:00Z",
+    "cluster": null,
+    "topic": "Why you always lose to teams wearing red",
+    "subcluster": "psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrating how seeing red jerseys causes a 50-millisecond reaction delay using frame-by-frame sports footage.",
+    "first_frame_description": "Close-up of a sports stadium scoreboard showing a home team losing to an opponent wearing bright red jerseys."
   }
 }

@@ -1659,5 +1659,16 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why IKEA Forces You Through A Maze",
+    "hook_text": "You walk into IKEA, but they've trapped you.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Relatable Frustration -> Hidden System Reveal",
+    "first_frame_description": "First-person POV walking through the sliding glass doors of a bright blue and yellow IKEA entrance, holding an empty shopping bag.",
+    "visual_thesis": "The video visually maps the psychological exhaustion of IKEA's one-way layout, proving how spatial design triggers impulse buying.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
