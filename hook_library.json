@@ -1670,5 +1670,16 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Your Team Always Collapses After Scoring First",
+    "hook_text": "You watch your team score first, then quietly fall apart.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden Mechanism",
+    "first_frame_description": "Close-up of a soccer stadium scoreboard ticking from 0-0 to 1-0 as a crowded stadium reacts.",
+    "visual_thesis": "A stadium scoreboard changing to 1-0 instantly cuts to defensive player posture versus aggressive opponent counter-attacks, highlighted by brain activation graphics.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

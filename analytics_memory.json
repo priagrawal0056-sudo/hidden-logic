@@ -914,9 +914,9 @@
       "avg_returning_viewers": null
     },
     "Why you always lose to teams wearing red": {
-      "count": 4,
-      "avg_views_first_60m": 1.2,
-      "avg_views_first_6h": 1.2,
+      "count": 5,
+      "avg_views_first_60m": 1.4,
+      "avg_views_first_6h": 1.4,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -1495,6 +1495,17 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "The psychological reason behind IKEA forcing you down one long path": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "clusters": {
@@ -1776,14 +1787,14 @@
       "avg_returning_viewers": null
     },
     "consumer_behavior": {
-      "count": 1,
-      "avg_views_first_60m": null,
-      "avg_views_first_6h": null,
+      "count": 2,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     },
     "tech_hacks": {
@@ -2359,14 +2370,14 @@
       "avg_returning_viewers": null
     },
     "psychology": {
-      "count": 6,
-      "avg_views_first_60m": 3.8,
-      "avg_views_first_6h": 3.8,
+      "count": 7,
+      "avg_views_first_60m": 3.5,
+      "avg_views_first_6h": 3.5,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 21.0,
+      "avg_likes_per_1000_views": 18.0,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -3274,14 +3285,14 @@
   },
   "hook_types": {
     "physical_moment": {
-      "count": 176,
-      "avg_views_first_60m": 110.4,
-      "avg_views_first_6h": 127.8,
+      "count": 178,
+      "avg_views_first_60m": 108.7,
+      "avg_views_first_6h": 126.0,
       "avg_views_first_24h": 391.2,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 10.7,
-      "avg_likes_per_1000_views": 25.0,
+      "avg_comments_per_1000_views": 10.5,
+      "avg_likes_per_1000_views": 24.7,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

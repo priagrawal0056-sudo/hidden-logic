@@ -4231,7 +4231,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The video visually maps the psychological exhaustion of IKEA's one-way layout, proving how spatial design triggers impulse buying.",
-    "first_frame_description": "First-person POV walking through the sliding glass doors of a bright blue and yellow IKEA entrance, holding an empty shopping bag."
+    "first_frame_description": "First-person POV walking through the sliding glass doors of a bright blue and yellow IKEA entrance, holding an empty shopping bag.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
   },
   "p7tHQ6U_j3k": {
     "variant": "A",
@@ -4248,6 +4252,27 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrating how seeing red jerseys causes a 50-millisecond reaction delay using frame-by-frame sports footage.",
-    "first_frame_description": "Close-up of a sports stadium scoreboard showing a home team losing to an opponent wearing bright red jerseys."
+    "first_frame_description": "Close-up of a sports stadium scoreboard showing a home team losing to an opponent wearing bright red jerseys.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
+  },
+  "KDTqGrXqHDA": {
+    "variant": "B",
+    "title": "Why Your Team Always Collapses After Scoring First",
+    "date": "2026-08-19",
+    "publish_at": "2026-08-20T07:10:00Z",
+    "cluster": null,
+    "topic": "Why a 1-0 lead is the most dangerous scoreline",
+    "subcluster": "loss_aversion",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A stadium scoreboard changing to 1-0 instantly cuts to defensive player posture versus aggressive opponent counter-attacks, highlighted by brain activation graphics.",
+    "first_frame_description": "Close-up of a soccer stadium scoreboard ticking from 0-0 to 1-0 as a crowded stadium reacts."
   }
 }

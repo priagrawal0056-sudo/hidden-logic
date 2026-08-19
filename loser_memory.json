@@ -2296,5 +2296,16 @@
     "hook_type": "physical_moment",
     "cluster": "technology",
     "quality_score": 48.0
+  },
+  {
+    "title": "Why IKEA Forces You Through A Maze",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "supermarket",
+    "quality_score": 47.0
   }
 ]
