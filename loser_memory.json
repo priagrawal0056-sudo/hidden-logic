@@ -2307,5 +2307,16 @@
     "hook_type": "physical_moment",
     "cluster": "supermarket",
     "quality_score": 47.0
+  },
+  {
+    "title": "Why Your Team Always Collapses After Scoring First",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 45.0
   }
 ]

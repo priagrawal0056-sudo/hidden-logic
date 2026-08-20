@@ -1681,5 +1681,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Fall For Free Shipping",
+    "hook_text": "You added a useless candle just to get free shipping.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up of an online checkout screen showing a shopping cart with a progress bar that reads: 'You are $15 away from FREE shipping!' with a cursor hovering over a useless candle.",
+    "visual_thesis": "The checkout screen progress bar manipulating the user into spending more money to avoid a shipping fee.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Lungs Lock On The High Dive",
+    "hook_text": "You step onto the high dive and your lungs instantly lock.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Physical Reaction",
+    "first_frame_description": "First-person perspective standing on the narrow edge of a high dive board looking down at the blue water far below.",
+    "visual_thesis": "Show POV of stepping onto a towering pool diving board, transitioning into an anatomical diagram of the diaphragm locking like a marine mammal underwater.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Progress Bar Always Freezes At 99%",
+    "hook_text": "You stare at a loading bar lying to your face.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Deception Reveal",
+    "first_frame_description": "A macro close-up of a laptop screen showing a download progress bar frozen at 99% with a spinning loading wheel.",
+    "visual_thesis": "Progress bars are artificial user-interface illusions designed to manipulate human psychology rather than show actual data transfer speeds.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

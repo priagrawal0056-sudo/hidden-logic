@@ -5756,5 +5756,53 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "wKzQ3W0PoFw",
+    "title": "Why You Always Fall For Free Shipping",
+    "topic": "Why free shipping working on you is a universal experience",
+    "date": "2026-08-20",
+    "n": 489,
+    "source": "pool",
+    "visual_score": 8.5,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "gLiq7n-1CSk",
+    "title": "Why Your Lungs Lock On The High Dive",
+    "topic": "Why you hold your breath during a high dive",
+    "date": "2026-08-20",
+    "n": 490,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 44.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "uinfYRSozkQ",
+    "title": "Why Your Progress Bar Always Freezes At 99%",
+    "topic": "Why loading bars that clearly lie is a universal experience",
+    "date": "2026-08-20",
+    "n": 491,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]
