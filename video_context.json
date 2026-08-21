@@ -904,5 +904,23 @@
     "topic": "Why loading bars that clearly lie is a universal experience",
     "visual_thesis": "Progress bars are artificial user-interface illusions designed to manipulate human psychology rather than show actual data transfer speeds.",
     "script": "You stare at a loading bar lying to your face. Computers actually download files in chaotic, erratic bursts. If you saw the real speed, you’d panic. So designers coded fake, smooth progress to calm you down. But that’s not even the clever part. They intentionally stall the bar at ninety-nine percent. This fake delay triggers anxiety, making the sudden finish feel incredibly satisfying. It’s a psychological trap designed to make you stare at a loading bar"
+  },
+  "kjLv2m3GVjk": {
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "topic": "Why drivers in red cars feel faster to you",
+    "visual_thesis": "Side-by-side dashboard video comparing a red car and a grey car at identical speeds, overlaid with optical wavelength diagrams showing red reaching the retina faster.",
+    "script": "You slam your brakes when a red car approaches. It looks like it's aggressively speeding past you. But it's going the exact same speed. Your retinas process red light wavelengths milliseconds faster than cool colors. That speed difference tricks your brain into seeing red objects closer than they are. You aren't misjudging traffic—your eyes are actively lying, so..."
+  },
+  "7oVDqDkfV7k": {
+    "title": "Why Grocery Stores Always Rearrange Shelves",
+    "topic": "The psychological reason behind grocery stores rearranging the shelves",
+    "visual_thesis": "A confused shopper looking at a rearranged grocery aisle, contrasted with eye-tracking heatmaps showing how disorientation forces eyes onto high-margin impulse items.",
+    "script": "You reach for the Oreos, but they've moved again. Grocery stores rearrange shelves to break your brain. They destroy layouts to disrupt your physical muscle memory. Because autopilot shoppers buy less. But it gets worse. Being lost forces your eyes onto expensive impulse buys. Every extra minute adds two dollars to your receipt. So when you can't find the bread... You aren't forgetful. You're being targeted. And that's why..."
+  },
+  "P2vP7AHbi6E": {
+    "title": "Why Giant Menus Make You Spend More",
+    "topic": "Why everyone is secretly annoyed by giant menus costing you more",
+    "visual_thesis": "Demonstrate how massive menus cause choice overload and use visual anchors to manipulate eye tracking toward high-margin items.",
+    "script": "You open a massive, ten-page diner menu. It's actually designed to drain your wallet. With eighty options staring at you, your brain panics. But they don't want you ordering just anything. To escape the stress, your eyes dart to the top right. That's where they place the 'anchor'—the most expensive steak. It makes a thirty-dollar burger look cheap, forcing you to overpay when..."
   }
 }

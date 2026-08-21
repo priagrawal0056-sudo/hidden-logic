@@ -1714,5 +1714,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Grocery Stores Always Rearrange Shelves",
+    "hook_text": "You reach for the Oreos, but they've moved again.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Reveal",
+    "first_frame_description": "A first-person POV of a hand reaching toward a grocery store shelf where Oreos usually are, only to find a completely different product in its place.",
+    "visual_thesis": "A confused shopper looking at a rearranged grocery aisle, contrasted with eye-tracking heatmaps showing how disorientation forces eyes onto high-margin impulse items.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Giant Menus Make You Spend More",
+    "hook_text": "You open a massive, ten-page diner menu.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Hidden Financial Trap",
+    "first_frame_description": "A first-person POV shot of hands opening an overwhelmingly large, laminated diner menu packed with tiny text.",
+    "visual_thesis": "Demonstrate how massive menus cause choice overload and use visual anchors to manipulate eye tracking toward high-margin items.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

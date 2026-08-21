@@ -804,9 +804,9 @@
       "avg_returning_viewers": null
     },
     "Why you hold your breath during a high dive": {
-      "count": 4,
-      "avg_views_first_60m": 6.8,
-      "avg_views_first_6h": 6.8,
+      "count": 5,
+      "avg_views_first_60m": 5.8,
+      "avg_views_first_6h": 5.8,
       "avg_views_first_24h": 2.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -1506,6 +1506,28 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Why free shipping working on you is a universal experience": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why loading bars that clearly lie is a universal experience": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "clusters": {
@@ -1919,8 +1941,8 @@
       "avg_returning_viewers": null
     },
     "Psychology": {
-      "count": 10,
-      "avg_views_first_60m": 5.2,
+      "count": 11,
+      "avg_views_first_60m": 4.7,
       "avg_views_first_6h": 5.2,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
@@ -3292,18 +3314,40 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Pricing Traps": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "survival_reflexes": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 179,
-      "avg_views_first_60m": 108.0,
-      "avg_views_first_6h": 125.0,
+      "count": 182,
+      "avg_views_first_60m": 105.7,
+      "avg_views_first_6h": 123.2,
       "avg_views_first_24h": 391.2,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 10.4,
-      "avg_likes_per_1000_views": 24.5,
+      "avg_comments_per_1000_views": 10.2,
+      "avg_likes_per_1000_views": 24.0,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

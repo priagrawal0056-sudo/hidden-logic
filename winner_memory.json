@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 901.7,
+  "channel_avg_views": 847.3,
   "topic_clusters": {
     "airport": {
       "videos": 13,
@@ -25,10 +25,10 @@
     },
     "hotel": {
       "videos": 11,
-      "avg_views": 444.8,
+      "avg_views": 445.1,
       "best_views": 1407,
       "recent_views": [
-        62,
+        64,
         89,
         371,
         45,
@@ -77,12 +77,12 @@
     },
     "traffic": {
       "videos": 37,
-      "avg_views": 262.9,
+      "avg_views": 245.0,
       "best_views": 1769,
       "recent_views": [
-        1,
-        0,
-        9,
+        2,
+        2,
+        10,
         2,
         3,
         0,
@@ -175,11 +175,11 @@
     },
     "supermarket": {
       "videos": 25,
-      "avg_views": 290.4,
-      "best_views": 1364,
+      "avg_views": 290.5,
+      "best_views": 1366,
       "recent_views": [
-        6,
-        2,
+        7,
+        1,
         1,
         1,
         5,
@@ -190,7 +190,7 @@
         776,
         763,
         976,
-        1364,
+        1366,
         835,
         868,
         944,
@@ -372,10 +372,11 @@
       "avg_avd": null
     },
     "money_psychology": {
-      "videos": 2,
-      "avg_views": 569.0,
+      "videos": 3,
+      "avg_views": 325.6,
       "best_views": 1106,
       "recent_views": [
+        1,
         32,
         1106
       ],
@@ -383,5 +384,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-08-20T16:41:00.145941"
+  "last_updated": "2026-08-21T16:40:41.393900"
 }

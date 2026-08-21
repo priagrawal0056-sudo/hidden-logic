@@ -4294,7 +4294,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The checkout screen progress bar manipulating the user into spending more money to avoid a shipping fee.",
-    "first_frame_description": "A close-up of an online checkout screen showing a shopping cart with a progress bar that reads: 'You are $15 away from FREE shipping!' with a cursor hovering over a useless candle."
+    "first_frame_description": "A close-up of an online checkout screen showing a shopping cart with a progress bar that reads: 'You are $15 away from FREE shipping!' with a cursor hovering over a useless candle.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "gLiq7n-1CSk": {
     "variant": "B",
@@ -4311,7 +4315,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Show POV of stepping onto a towering pool diving board, transitioning into an anatomical diagram of the diaphragm locking like a marine mammal underwater.",
-    "first_frame_description": "First-person perspective standing on the narrow edge of a high dive board looking down at the blue water far below."
+    "first_frame_description": "First-person perspective standing on the narrow edge of a high dive board looking down at the blue water far below.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
   },
   "uinfYRSozkQ": {
     "variant": "A",
@@ -4328,6 +4336,60 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "Progress bars are artificial user-interface illusions designed to manipulate human psychology rather than show actual data transfer speeds.",
-    "first_frame_description": "A macro close-up of a laptop screen showing a download progress bar frozen at 99% with a spinning loading wheel."
+    "first_frame_description": "A macro close-up of a laptop screen showing a download progress bar frozen at 99% with a spinning loading wheel.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0
+  },
+  "kjLv2m3GVjk": {
+    "variant": "B",
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "date": "2026-08-21",
+    "publish_at": "2026-08-22T07:16:00Z",
+    "cluster": "traffic",
+    "topic": "Why drivers in red cars feel faster to you",
+    "subcluster": "Visual Illusions",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Side-by-side dashboard video comparing a red car and a grey car at identical speeds, overlaid with optical wavelength diagrams showing red reaching the retina faster.",
+    "first_frame_description": "First-person driver perspective on a busy highway slamming hand on steering wheel as a bright red car fills the side mirror."
+  },
+  "7oVDqDkfV7k": {
+    "variant": "B",
+    "title": "Why Grocery Stores Always Rearrange Shelves",
+    "date": "2026-08-21",
+    "publish_at": "2026-08-22T09:24:00Z",
+    "cluster": "supermarket",
+    "topic": "The psychological reason behind grocery stores rearranging the shelves",
+    "subcluster": "marketing",
+    "hook_type": "physical_moment",
+    "series": "Shopping Psychology",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A confused shopper looking at a rearranged grocery aisle, contrasted with eye-tracking heatmaps showing how disorientation forces eyes onto high-margin impulse items.",
+    "first_frame_description": "A first-person POV of a hand reaching toward a grocery store shelf where Oreos usually are, only to find a completely different product in its place."
+  },
+  "P2vP7AHbi6E": {
+    "variant": "A",
+    "title": "Why Giant Menus Make You Spend More",
+    "date": "2026-08-21",
+    "publish_at": "2026-08-22T11:17:00Z",
+    "cluster": null,
+    "topic": "Why everyone is secretly annoyed by giant menus costing you more",
+    "subcluster": "menu_design",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate how massive menus cause choice overload and use visual anchors to manipulate eye tracking toward high-margin items.",
+    "first_frame_description": "A first-person POV shot of hands opening an overwhelmingly large, laminated diner menu packed with tiny text."
   }
 }

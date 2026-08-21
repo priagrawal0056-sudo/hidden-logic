@@ -2318,5 +2318,38 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 45.0
+  },
+  {
+    "title": "Why Your Progress Bar Always Freezes At 99%",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Your Lungs Lock On The High Dive",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 44.0
+  },
+  {
+    "title": "Why You Always Fall For Free Shipping",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.5,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "money_psychology",
+    "quality_score": 46.0
   }
 ]
