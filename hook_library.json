@@ -1736,5 +1736,60 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Ads Make You Cry For Nothing",
+    "hook_text": "You just cried at an ad.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Reaction -> Hidden Intent Reveal",
+    "first_frame_description": "A close-up of a person's face, eyes slightly red and watery, looking intently at a glowing screen (TV or phone) reflecting a generic, emotionally charged advertisement (e.g., a family reunion, a scenic landscape).",
+    "visual_thesis": "Ads deliberately trigger emotions to create memory, not to sell the product directly, making you cry for a feeling they manufactured and attached to their brand.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Phone Screen Dims In The Sun",
+    "hook_text": "You're sitting outside and your phone screen secretly dims on purpose.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Reveal",
+    "first_frame_description": "First-person POV of a hand holding a smartphone on a bright, sunny outdoor patio, with the screen suddenly dropping in brightness while a thumb drags the brightness slider to 100% to no effect.",
+    "visual_thesis": "A 3D cross-section animation of a smartphone processor overheating under direct sunlight, showing power being diverted away from the screen's LED backlight to the CPU.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Photo Finishes Always Look Fake",
+    "hook_text": "You pause a photo finish and the winner looks fake.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Disbelief -> Hidden Mechanism Reveal",
+    "first_frame_description": "A extreme zoom-in on an Olympic runner crossing the finish line with a strangely warped, stretched torso.",
+    "visual_thesis": "Photo finish cameras do not record 2D space, but rather slice time into vertical pixels at the finish line, distorting physical shapes.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why People Always Interrupt You",
+    "hook_text": "You start speaking, and someone instantly cuts you off.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> System Reveal",
+    "first_frame_description": "A close-up of a person opening their mouth to speak at a crowded dinner table, with a digital millisecond timer starting above their head.",
+    "visual_thesis": "A split-screen millisecond timer comparing the slow speed of brain word-planning against the ultra-fast speed of conversational turn-taking.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Feel Behind On Trends",
+    "hook_text": "You open your feed.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up shot of a person's hand scrolling rapidly through a social media feed on their phone, showing various short video clips featuring a popular, recognizable viral sound or dance trend.",
+    "visual_thesis": "Platforms manipulate social media trends to die faster, making users constantly crave new content and feel behind.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

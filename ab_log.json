@@ -4339,7 +4339,9 @@
     "first_frame_description": "A macro close-up of a laptop screen showing a download progress bar frozen at 99% with a spinning loading wheel.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 0
+    "views_first_60m": 0,
+    "views_first_6h": 8,
+    "views_first_24h": 8
   },
   "kjLv2m3GVjk": {
     "variant": "B",
@@ -4356,7 +4358,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Side-by-side dashboard video comparing a red car and a grey car at identical speeds, overlaid with optical wavelength diagrams showing red reaching the retina faster.",
-    "first_frame_description": "First-person driver perspective on a busy highway slamming hand on steering wheel as a bright red car fills the side mirror."
+    "first_frame_description": "First-person driver perspective on a busy highway slamming hand on steering wheel as a bright red car fills the side mirror.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "7oVDqDkfV7k": {
     "variant": "B",
@@ -4373,7 +4379,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A confused shopper looking at a rearranged grocery aisle, contrasted with eye-tracking heatmaps showing how disorientation forces eyes onto high-margin impulse items.",
-    "first_frame_description": "A first-person POV of a hand reaching toward a grocery store shelf where Oreos usually are, only to find a completely different product in its place."
+    "first_frame_description": "A first-person POV of a hand reaching toward a grocery store shelf where Oreos usually are, only to find a completely different product in its place.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "P2vP7AHbi6E": {
     "variant": "A",
@@ -4390,6 +4400,94 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate how massive menus cause choice overload and use visual anchors to manipulate eye tracking toward high-margin items.",
-    "first_frame_description": "A first-person POV shot of hands opening an overwhelmingly large, laminated diner menu packed with tiny text."
+    "first_frame_description": "A first-person POV shot of hands opening an overwhelmingly large, laminated diner menu packed with tiny text.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1
+  },
+  "4Y1Nh1EsmPM": {
+    "variant": "B",
+    "title": "Why Ads Make You Cry For Nothing",
+    "date": "2026-08-22",
+    "publish_at": "2026-08-23T07:25:00Z",
+    "cluster": null,
+    "topic": "Why tearing up at ads you don't care about keeps happening no matter what",
+    "subcluster": "Emotional Manipulation",
+    "hook_type": "physical_moment",
+    "series": "Shopping Psychology",
+    "predicted_views_score": 10.0,
+    "retention_prediction": 10.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "Ads deliberately trigger emotions to create memory, not to sell the product directly, making you cry for a feeling they manufactured and attached to their brand.",
+    "first_frame_description": "A close-up of a person's face, eyes slightly red and watery, looking intently at a glowing screen (TV or phone) reflecting a generic, emotionally charged advertisement (e.g., a family reunion, a scenic landscape)."
+  },
+  "tbY4-bwwS9g": {
+    "variant": "B",
+    "title": "Why Your Phone Screen Dims In The Sun",
+    "date": "2026-08-22",
+    "publish_at": "2026-08-23T09:10:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why injury time feels longer than it is",
+    "subcluster": "tech mysteries",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A 3D cross-section animation of a smartphone processor overheating under direct sunlight, showing power being diverted away from the screen's LED backlight to the CPU.",
+    "first_frame_description": "First-person POV of a hand holding a smartphone on a bright, sunny outdoor patio, with the screen suddenly dropping in brightness while a thumb drags the brightness slider to 100% to no effect."
+  },
+  "bz7xxSo1h8s": {
+    "variant": "A",
+    "title": "Why Photo Finishes Always Look Fake",
+    "date": "2026-08-22",
+    "publish_at": "2026-08-23T11:17:00Z",
+    "cluster": null,
+    "topic": "Why a photo finish fools your eyes",
+    "subcluster": "slit_scan_technology",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Photo finish cameras do not record 2D space, but rather slice time into vertical pixels at the finish line, distorting physical shapes.",
+    "first_frame_description": "A extreme zoom-in on an Olympic runner crossing the finish line with a strangely warped, stretched torso."
+  },
+  "d6rAcoOR69g": {
+    "variant": "A",
+    "title": "Why People Always Interrupt You",
+    "date": "2026-08-22",
+    "publish_at": "2026-08-23T12:16:00Z",
+    "cluster": null,
+    "topic": "Why you can never escape people interrupting each other",
+    "subcluster": "communication",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A split-screen millisecond timer comparing the slow speed of brain word-planning against the ultra-fast speed of conversational turn-taking.",
+    "first_frame_description": "A close-up of a person opening their mouth to speak at a crowded dinner table, with a digital millisecond timer starting above their head."
+  },
+  "eLm7whgfXPY": {
+    "variant": "A",
+    "title": "Why You Feel Behind On Trends",
+    "date": "2026-08-22",
+    "publish_at": "2026-08-23T13:47:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why a 1-0 lead is the most dangerous scoreline",
+    "subcluster": "trends",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "Platforms manipulate social media trends to die faster, making users constantly crave new content and feel behind.",
+    "first_frame_description": "A close-up shot of a person's hand scrolling rapidly through a social media feed on their phone, showing various short video clips featuring a popular, recognizable viral sound or dance trend."
   }
 }

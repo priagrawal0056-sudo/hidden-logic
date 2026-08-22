@@ -518,14 +518,14 @@
       "avg_returning_viewers": null
     },
     "Why drivers in red cars feel faster to you": {
-      "count": 10,
-      "avg_views_first_60m": 84.6,
-      "avg_views_first_6h": 84.6,
+      "count": 11,
+      "avg_views_first_60m": 76.1,
+      "avg_views_first_6h": 76.1,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 3.9,
+      "avg_likes_per_1000_views": 3.5,
       "avg_returning_viewers": null
     },
     "Why Tires Are Always Black": {
@@ -1521,6 +1521,28 @@
     "Why loading bars that clearly lie is a universal experience": {
       "count": 1,
       "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 8.0,
+      "avg_views_first_24h": 8.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "The psychological reason behind grocery stores rearranging the shelves": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why everyone is secretly annoyed by giant menus costing you more": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
       "avg_views_first_6h": null,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
@@ -1543,14 +1565,14 @@
       "avg_returning_viewers": null
     },
     "traffic": {
-      "count": 13,
-      "avg_views_first_60m": 105.7,
-      "avg_views_first_6h": 142.3,
+      "count": 14,
+      "avg_views_first_60m": 96.9,
+      "avg_views_first_6h": 130.4,
       "avg_views_first_24h": 860.0,
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
-      "avg_comments_per_1000_views": 136.4,
-      "avg_likes_per_1000_views": 139.2,
+      "avg_comments_per_1000_views": 125.0,
+      "avg_likes_per_1000_views": 127.6,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -1587,14 +1609,14 @@
       "avg_returning_viewers": null
     },
     "supermarket": {
-      "count": 8,
-      "avg_views_first_60m": 242.2,
-      "avg_views_first_6h": 446.0,
+      "count": 9,
+      "avg_views_first_60m": 193.8,
+      "avg_views_first_6h": 334.5,
       "avg_views_first_24h": 817.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 5.9,
+      "avg_likes_per_1000_views": 4.9,
       "avg_returning_viewers": null
     },
     "hotel": {
@@ -1943,8 +1965,8 @@
     "Psychology": {
       "count": 11,
       "avg_views_first_60m": 4.7,
-      "avg_views_first_6h": 5.2,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 5.6,
+      "avg_views_first_24h": 8.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -2282,14 +2304,14 @@
       "avg_returning_viewers": null
     },
     "Visual Illusions": {
-      "count": 1,
-      "avg_views_first_60m": null,
-      "avg_views_first_6h": null,
+      "count": 2,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     },
     "design-secrets": {
@@ -3336,18 +3358,40 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "marketing": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "menu_design": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 182,
-      "avg_views_first_60m": 105.7,
-      "avg_views_first_6h": 123.2,
-      "avg_views_first_24h": 391.2,
+      "count": 185,
+      "avg_views_first_60m": 103.4,
+      "avg_views_first_6h": 120.7,
+      "avg_views_first_24h": 369.9,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 10.2,
-      "avg_likes_per_1000_views": 24.0,
+      "avg_comments_per_1000_views": 10.0,
+      "avg_likes_per_1000_views": 23.6,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

@@ -2351,5 +2351,27 @@
     "hook_type": "physical_moment",
     "cluster": "money_psychology",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Giant Menus Make You Spend More",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "restaurant",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Grocery Stores Always Rearrange Shelves",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "supermarket",
+    "quality_score": 46.0
   }
 ]
