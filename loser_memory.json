@@ -2373,5 +2373,60 @@
     "hook_type": "physical_moment",
     "cluster": "supermarket",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why You Feel Behind On Trends",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why People Always Interrupt You",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "social_behavior",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Photo Finishes Always Look Fake",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Your Phone Screen Dims In The Sun",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "technology",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Ads Make You Cry For Nothing",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 49.0
   }
 ]

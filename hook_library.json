@@ -1791,5 +1791,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Every Video Has This Game Underneath",
+    "hook_text": "You open TikTok and immediately see a split-screen game.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up POV of a hand scrolling on a smartphone, landing on a split-screen video showing a cartoon clip on top and colorful mobile gameplay on the bottom.",
+    "visual_thesis": "Demonstrate the split-screen video format with Subway Surfers gameplay on the bottom and a clip on top, highlighting how eye-tracking heatmaps focus on the gameplay to force retention.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Injury Time Always Feels Endless",
+    "hook_text": "You stare at the referee's watch during injury time.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Universal Frustration -> Brain Mechanism Reveal",
+    "first_frame_description": "A close-up of a nervous football fan in a roaring stadium staring intensely at a referee tapping his wristwatch at 90:00.",
+    "visual_thesis": "A dramatic close-up of a sweating soccer player looking up at a glowing stadium clock at 90:00 with +4 added time, shifting into a high-frame-rate brain memory processing graphic.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

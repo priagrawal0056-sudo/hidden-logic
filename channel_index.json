@@ -5934,5 +5934,39 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "d749iQLzZ-k",
+    "title": "Why Every Video Has This Game Underneath",
+    "topic": "TRENDING NOW: why you tense up watching someone balance",
+    "date": "2026-08-23",
+    "n": 500,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "_NevRI8wlww",
+    "title": "Why Injury Time Always Feels Endless",
+    "topic": "Why injury time feels longer than it is",
+    "date": "2026-08-23",
+    "n": 501,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

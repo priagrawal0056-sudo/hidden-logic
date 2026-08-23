@@ -4403,7 +4403,9 @@
     "first_frame_description": "A first-person POV shot of hands opening an overwhelmingly large, laminated diner menu packed with tiny text.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 1
+    "views_first_60m": 1,
+    "views_first_6h": 1,
+    "views_first_24h": 1
   },
   "4Y1Nh1EsmPM": {
     "variant": "B",
@@ -4420,7 +4422,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "Ads deliberately trigger emotions to create memory, not to sell the product directly, making you cry for a feeling they manufactured and attached to their brand.",
-    "first_frame_description": "A close-up of a person's face, eyes slightly red and watery, looking intently at a glowing screen (TV or phone) reflecting a generic, emotionally charged advertisement (e.g., a family reunion, a scenic landscape)."
+    "first_frame_description": "A close-up of a person's face, eyes slightly red and watery, looking intently at a glowing screen (TV or phone) reflecting a generic, emotionally charged advertisement (e.g., a family reunion, a scenic landscape).",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "tbY4-bwwS9g": {
     "variant": "B",
@@ -4437,7 +4443,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A 3D cross-section animation of a smartphone processor overheating under direct sunlight, showing power being diverted away from the screen's LED backlight to the CPU.",
-    "first_frame_description": "First-person POV of a hand holding a smartphone on a bright, sunny outdoor patio, with the screen suddenly dropping in brightness while a thumb drags the brightness slider to 100% to no effect."
+    "first_frame_description": "First-person POV of a hand holding a smartphone on a bright, sunny outdoor patio, with the screen suddenly dropping in brightness while a thumb drags the brightness slider to 100% to no effect.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
   },
   "bz7xxSo1h8s": {
     "variant": "A",
@@ -4454,7 +4464,10 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Photo finish cameras do not record 2D space, but rather slice time into vertical pixels at the finish line, distorting physical shapes.",
-    "first_frame_description": "A extreme zoom-in on an Olympic runner crossing the finish line with a strangely warped, stretched torso."
+    "first_frame_description": "A extreme zoom-in on an Olympic runner crossing the finish line with a strangely warped, stretched torso.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2
   },
   "d6rAcoOR69g": {
     "variant": "A",
@@ -4471,7 +4484,10 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A split-screen millisecond timer comparing the slow speed of brain word-planning against the ultra-fast speed of conversational turn-taking.",
-    "first_frame_description": "A close-up of a person opening their mouth to speak at a crowded dinner table, with a digital millisecond timer starting above their head."
+    "first_frame_description": "A close-up of a person opening their mouth to speak at a crowded dinner table, with a digital millisecond timer starting above their head.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2
   },
   "eLm7whgfXPY": {
     "variant": "A",
@@ -4488,6 +4504,43 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "Platforms manipulate social media trends to die faster, making users constantly crave new content and feel behind.",
-    "first_frame_description": "A close-up shot of a person's hand scrolling rapidly through a social media feed on their phone, showing various short video clips featuring a popular, recognizable viral sound or dance trend."
+    "first_frame_description": "A close-up shot of a person's hand scrolling rapidly through a social media feed on their phone, showing various short video clips featuring a popular, recognizable viral sound or dance trend.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0
+  },
+  "d749iQLzZ-k": {
+    "variant": "B",
+    "title": "Why Every Video Has This Game Underneath",
+    "date": "2026-08-23",
+    "publish_at": "2026-08-24T07:21:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why you tense up watching someone balance",
+    "subcluster": "internet culture",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate the split-screen video format with Subway Surfers gameplay on the bottom and a clip on top, highlighting how eye-tracking heatmaps focus on the gameplay to force retention.",
+    "first_frame_description": "A close-up POV of a hand scrolling on a smartphone, landing on a split-screen video showing a cartoon clip on top and colorful mobile gameplay on the bottom."
+  },
+  "_NevRI8wlww": {
+    "variant": "B",
+    "title": "Why Injury Time Always Feels Endless",
+    "date": "2026-08-23",
+    "publish_at": "2026-08-24T09:08:00Z",
+    "cluster": null,
+    "topic": "Why injury time feels longer than it is",
+    "subcluster": "neuroscience",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A dramatic close-up of a sweating soccer player looking up at a glowing stadium clock at 90:00 with +4 added time, shifting into a high-frame-rate brain memory processing graphic.",
+    "first_frame_description": "A close-up of a nervous football fan in a roaring stadium staring intensely at a referee tapping his wristwatch at 90:00."
   }
 }
