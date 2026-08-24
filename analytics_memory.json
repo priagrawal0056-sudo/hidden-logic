@@ -441,14 +441,14 @@
       "avg_returning_viewers": null
     },
     "Why injury time feels longer than it is": {
-      "count": 4,
-      "avg_views_first_60m": 4.0,
-      "avg_views_first_6h": 4.0,
+      "count": 5,
+      "avg_views_first_60m": 3.0,
+      "avg_views_first_6h": 3.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 0.3,
-      "avg_likes_per_1000_views": 34.0,
+      "avg_comments_per_1000_views": 0.2,
+      "avg_likes_per_1000_views": 25.5,
       "avg_returning_viewers": null
     },
     "Why Manholes Are Round": {
@@ -542,8 +542,8 @@
     "Why a photo finish fools your eyes": {
       "count": 3,
       "avg_views_first_60m": 3.0,
-      "avg_views_first_6h": 4.0,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 4.5,
+      "avg_views_first_24h": 5.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -1565,8 +1565,8 @@
     "Why you can never escape people interrupting each other": {
       "count": 1,
       "avg_views_first_60m": 2.0,
-      "avg_views_first_6h": null,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": 3.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -1576,7 +1576,18 @@
     "TRENDING NOW: why a 1-0 lead is the most dangerous scoreline": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": 2.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "TRENDING NOW: why you tense up watching someone balance": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -3195,9 +3206,9 @@
       "avg_returning_viewers": null
     },
     "neuroscience": {
-      "count": 1,
-      "avg_views_first_60m": 2.0,
-      "avg_views_first_6h": 2.0,
+      "count": 2,
+      "avg_views_first_60m": 1.5,
+      "avg_views_first_6h": 1.5,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -3439,8 +3450,8 @@
     "slit_scan_technology": {
       "count": 1,
       "avg_views_first_60m": 2.0,
-      "avg_views_first_6h": null,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 5.0,
+      "avg_views_first_24h": 5.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -3450,8 +3461,8 @@
     "communication": {
       "count": 1,
       "avg_views_first_60m": 2.0,
-      "avg_views_first_6h": null,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": 3.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -3461,7 +3472,18 @@
     "trends": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": 2.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "internet culture": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -3472,14 +3494,14 @@
   },
   "hook_types": {
     "physical_moment": {
-      "count": 190,
-      "avg_views_first_60m": 100.0,
-      "avg_views_first_6h": 118.1,
-      "avg_views_first_24h": 350.5,
+      "count": 192,
+      "avg_views_first_60m": 98.6,
+      "avg_views_first_6h": 114.2,
+      "avg_views_first_24h": 303.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 9.7,
-      "avg_likes_per_1000_views": 22.8,
+      "avg_comments_per_1000_views": 9.6,
+      "avg_likes_per_1000_views": 22.5,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

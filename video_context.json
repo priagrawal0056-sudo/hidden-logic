@@ -964,5 +964,23 @@
     "topic": "Why injury time feels longer than it is",
     "visual_thesis": "A dramatic close-up of a sweating soccer player looking up at a glowing stadium clock at 90:00 with +4 added time, shifting into a high-frame-rate brain memory processing graphic.",
     "script": "You stare at the referee's watch during injury time. Those four extra minutes always feel like half an hour. But stadium clocks aren't dragging—your brain is. When stress spikes, your brain over-samples sensory input, packing twice as many memories into every second. It creates a mental slow-motion video that turns simple delays into agony, which is why"
+  },
+  "6IrCokIp--E": {
+    "title": "Why Unsubscribe Buttons Are Always Invisible",
+    "topic": "Why the unsubscribe button hiding from you happens to you constantly",
+    "visual_thesis": "Demonstrating how ultra-low contrast unsubscribe buttons delay user action to manipulate active user analytics.",
+    "script": "You squint at your screen hunting for an invisible unsubscribe link. It isn't an accident that it's light gray against white. Websites reduce text contrast to trigger instant visual fatigue. But that's not even the main trick. Forcing your eyes to hunt delays your click past three seconds. That delay legally re-classifies you as an active user to advertisers. And that hidden metric is why"
+  },
+  "AuLDP8zVrs4": {
+    "title": "Why You Can Never Overtake The Leader On The Last Lap",
+    "topic": "Why the leader almost never gets overtaken on the last lap",
+    "visual_thesis": "Show an F1 car approaching to overtake, transitioning to an aerodynamic CFD airflow diagram illustrating how the lead car's dirty air wake suffocates the trailing car's front wing.",
+    "script": "You press the gas, but the leader creates an invisible wall. On the final lap, your front tires instantly lose grip. It looks like driver error, but your aero wings just died. The lead car isn't just pulling away—it is blasting a turbulent wake of dirty air into your chassis. This destroys all downforce, leaving you helpless right as..."
+  },
+  "nxfI4fCA-eE": {
+    "title": "Why Your TV Shows Ads When You Pause",
+    "topic": "TRENDING NOW: why sprinters in the outer lanes feel slower",
+    "visual_thesis": "Streaming platforms are weaponizing the pause button to monetize your undivided attention when you least expect it.",
+    "script": "You pause your TV and an ad instantly appears. It feels like a cheap glitch. But it’s actually a calculated trap. Streaming apps know you look away during normal commercial breaks. But when you hit pause, your eyes are glued to the screen. They track this peak attention to charge brands triple. So they deliberately delay the screen dimming to freeze your gaze. Which is why, the exact second..."
   }
 }

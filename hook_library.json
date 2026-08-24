@@ -1813,5 +1813,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Unsubscribe Buttons Are Always Invisible",
+    "hook_text": "You squint at your screen hunting for an invisible unsubscribe link.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System Tease",
+    "first_frame_description": "Close-up POV shot of a smartphone screen showing an email footer with an almost invisible light-gray unsubscribe link.",
+    "visual_thesis": "Demonstrating how ultra-low contrast unsubscribe buttons delay user action to manipulate active user analytics.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Can Never Overtake The Leader On The Last Lap",
+    "hook_text": "You press the gas, but the leader creates an invisible wall.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Unseen Barrier",
+    "first_frame_description": "Cockpit POV of a racing car pulling out from behind another car on a straight track, with dynamic aerodynamic airflow lines appearing red and chaotic between them.",
+    "visual_thesis": "Show an F1 car approaching to overtake, transitioning to an aerodynamic CFD airflow diagram illustrating how the lead car's dirty air wake suffocates the trailing car's front wing.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your TV Shows Ads When You Pause",
+    "hook_text": "You pause your TV and an ad instantly appears.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A close-up of a hand pressing the pause button on a sleek TV remote, instantly transitioning to a bright, intrusive ad popping up over a paused movie in a dimly lit living room.",
+    "visual_thesis": "Streaming platforms are weaponizing the pause button to monetize your undivided attention when you least expect it.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

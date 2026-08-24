@@ -4467,7 +4467,9 @@
     "first_frame_description": "A extreme zoom-in on an Olympic runner crossing the finish line with a strangely warped, stretched torso.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 2
+    "views_first_60m": 2,
+    "views_first_6h": 5,
+    "views_first_24h": 5
   },
   "d6rAcoOR69g": {
     "variant": "A",
@@ -4487,7 +4489,9 @@
     "first_frame_description": "A close-up of a person opening their mouth to speak at a crowded dinner table, with a digital millisecond timer starting above their head.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 2
+    "views_first_60m": 2,
+    "views_first_6h": 3,
+    "views_first_24h": 3
   },
   "eLm7whgfXPY": {
     "variant": "A",
@@ -4507,7 +4511,9 @@
     "first_frame_description": "A close-up shot of a person's hand scrolling rapidly through a social media feed on their phone, showing various short video clips featuring a popular, recognizable viral sound or dance trend.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 0
+    "views_first_60m": 0,
+    "views_first_6h": 2,
+    "views_first_24h": 2
   },
   "d749iQLzZ-k": {
     "variant": "B",
@@ -4524,7 +4530,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate the split-screen video format with Subway Surfers gameplay on the bottom and a clip on top, highlighting how eye-tracking heatmaps focus on the gameplay to force retention.",
-    "first_frame_description": "A close-up POV of a hand scrolling on a smartphone, landing on a split-screen video showing a cartoon clip on top and colorful mobile gameplay on the bottom."
+    "first_frame_description": "A close-up POV of a hand scrolling on a smartphone, landing on a split-screen video showing a cartoon clip on top and colorful mobile gameplay on the bottom.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "_NevRI8wlww": {
     "variant": "B",
@@ -4541,6 +4551,61 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A dramatic close-up of a sweating soccer player looking up at a glowing stadium clock at 90:00 with +4 added time, shifting into a high-frame-rate brain memory processing graphic.",
-    "first_frame_description": "A close-up of a nervous football fan in a roaring stadium staring intensely at a referee tapping his wristwatch at 90:00."
+    "first_frame_description": "A close-up of a nervous football fan in a roaring stadium staring intensely at a referee tapping his wristwatch at 90:00.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
+  },
+  "6IrCokIp--E": {
+    "variant": "A",
+    "title": "Why Unsubscribe Buttons Are Always Invisible",
+    "date": "2026-08-24",
+    "publish_at": "2026-08-25T07:07:00Z",
+    "cluster": null,
+    "topic": "Why the unsubscribe button hiding from you happens to you constantly",
+    "subcluster": "Dark Patterns",
+    "hook_type": "physical_moment",
+    "series": "App & Website Tricks",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrating how ultra-low contrast unsubscribe buttons delay user action to manipulate active user analytics.",
+    "first_frame_description": "Close-up POV shot of a smartphone screen showing an email footer with an almost invisible light-gray unsubscribe link."
+  },
+  "AuLDP8zVrs4": {
+    "variant": "A",
+    "title": "Why You Can Never Overtake The Leader On The Last Lap",
+    "date": "2026-08-24",
+    "publish_at": "2026-08-25T09:06:00Z",
+    "cluster": null,
+    "topic": "Why the leader almost never gets overtaken on the last lap",
+    "subcluster": "aerodynamics",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Show an F1 car approaching to overtake, transitioning to an aerodynamic CFD airflow diagram illustrating how the lead car's dirty air wake suffocates the trailing car's front wing.",
+    "first_frame_description": "Cockpit POV of a racing car pulling out from behind another car on a straight track, with dynamic aerodynamic airflow lines appearing red and chaotic between them."
+  },
+  "nxfI4fCA-eE": {
+    "variant": "B",
+    "title": "Why Your TV Shows Ads When You Pause",
+    "date": "2026-08-24",
+    "publish_at": "2026-08-25T11:06:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why sprinters in the outer lanes feel slower",
+    "subcluster": "streaming tech",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Streaming platforms are weaponizing the pause button to monetize your undivided attention when you least expect it.",
+    "first_frame_description": "A close-up of a hand pressing the pause button on a sleek TV remote, instantly transitioning to a bright, intrusive ad popping up over a paused movie in a dimly lit living room."
   }
 }
