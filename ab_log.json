@@ -3073,7 +3073,7 @@
     "visual_thesis": "Demonstrating how airline middle seats are intentionally designed to be uncomfortable to drive paid seat upgrades.",
     "first_frame_description": "Tight close-up of a passenger's elbows wedged tightly between two strangers in a cramped economy middle seat.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 166.67,
+    "likes_per_1000_views": 125.0,
     "views_first_60m": 0,
     "views_first_6h": 0
   },
@@ -4572,7 +4572,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrating how ultra-low contrast unsubscribe buttons delay user action to manipulate active user analytics.",
-    "first_frame_description": "Close-up POV shot of a smartphone screen showing an email footer with an almost invisible light-gray unsubscribe link."
+    "first_frame_description": "Close-up POV shot of a smartphone screen showing an email footer with an almost invisible light-gray unsubscribe link.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
   },
   "AuLDP8zVrs4": {
     "variant": "A",
@@ -4589,7 +4593,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Show an F1 car approaching to overtake, transitioning to an aerodynamic CFD airflow diagram illustrating how the lead car's dirty air wake suffocates the trailing car's front wing.",
-    "first_frame_description": "Cockpit POV of a racing car pulling out from behind another car on a straight track, with dynamic aerodynamic airflow lines appearing red and chaotic between them."
+    "first_frame_description": "Cockpit POV of a racing car pulling out from behind another car on a straight track, with dynamic aerodynamic airflow lines appearing red and chaotic between them.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "nxfI4fCA-eE": {
     "variant": "B",
@@ -4606,6 +4614,43 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Streaming platforms are weaponizing the pause button to monetize your undivided attention when you least expect it.",
-    "first_frame_description": "A close-up of a hand pressing the pause button on a sleek TV remote, instantly transitioning to a bright, intrusive ad popping up over a paused movie in a dimly lit living room."
+    "first_frame_description": "A close-up of a hand pressing the pause button on a sleek TV remote, instantly transitioning to a bright, intrusive ad popping up over a paused movie in a dimly lit living room.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0
+  },
+  "QlbULZRU7sk": {
+    "variant": "B",
+    "title": "Why The Car In Front Always Feels Too Slow",
+    "date": "2026-08-25",
+    "publish_at": "2026-08-26T07:25:00Z",
+    "cluster": null,
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "subcluster": "Driving",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate the loom effect/visual expansion curve from a driver's perspective to visually prove why sudden brake-slamming occurs.",
+    "first_frame_description": "First-person driver view staring at a red sedan ahead on a highway, suddenly stomping on the brake pedal as the car appears to instantly enlarge."
+  },
+  "VXkoAsUcxn0": {
+    "variant": "A",
+    "title": "Why You Instantly Get Road Rage",
+    "date": "2026-08-25",
+    "publish_at": "2026-08-26T09:12:00Z",
+    "cluster": "traffic",
+    "topic": "Why everyone is secretly annoyed by road rage hitting instantly",
+    "subcluster": "driving_habits",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate how isolated cabin environments strip away human facial cues and trigger predatory threat perception.",
+    "first_frame_description": "First-person perspective of hands white-knuckling a steering wheel while staring through a dark tinted windshield."
   }
 }

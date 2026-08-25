@@ -1846,5 +1846,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why The Car In Front Always Feels Too Slow",
+    "hook_text": "The car in front of you is moving painfully slow.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Subversion -> Delayed Explanation",
+    "first_frame_description": "First-person driver view staring at a red sedan ahead on a highway, suddenly stomping on the brake pedal as the car appears to instantly enlarge.",
+    "visual_thesis": "Demonstrate the loom effect/visual expansion curve from a driver's perspective to visually prove why sudden brake-slamming occurs.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Instantly Get Road Rage",
+    "hook_text": "You grab the wheel and instantly snap at someone.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Immediate Escalation",
+    "first_frame_description": "First-person perspective of hands white-knuckling a steering wheel while staring through a dark tinted windshield.",
+    "visual_thesis": "Demonstrate how isolated cabin environments strip away human facial cues and trigger predatory threat perception.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

@@ -2450,5 +2450,38 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Your TV Shows Ads When You Pause",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why You Can Never Overtake The Leader On The Last Lap",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 45.0
+  },
+  {
+    "title": "Why Unsubscribe Buttons Are Always Invisible",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.5,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
   }
 ]

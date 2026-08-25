@@ -6017,5 +6017,38 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "QlbULZRU7sk",
+    "title": "Why The Car In Front Always Feels Too Slow",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "date": "2026-08-25",
+    "n": 505,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "VXkoAsUcxn0",
+    "title": "Why You Instantly Get Road Rage",
+    "topic": "Why everyone is secretly annoyed by road rage hitting instantly",
+    "date": "2026-08-25",
+    "n": 506,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 8,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

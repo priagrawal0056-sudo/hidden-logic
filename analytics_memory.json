@@ -386,14 +386,14 @@
       "avg_returning_viewers": null
     },
     "Why the leader almost never gets overtaken on the last lap": {
-      "count": 4,
-      "avg_views_first_60m": 109.0,
-      "avg_views_first_6h": 109.0,
+      "count": 5,
+      "avg_views_first_60m": 87.4,
+      "avg_views_first_6h": 87.4,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 5.9,
+      "avg_likes_per_1000_views": 4.7,
       "avg_returning_viewers": null
     },
     "ON-DEMAND video about Why YouTube Autoplays The Next Video. Tell the single most relatable, surprising explanation behind this universal human experience. Avoid academic design jargon. Make it highly visual, relatable, and focus on the everyday annoyance or quirk of Why YouTube Autoplays The Next Video.": {
@@ -628,14 +628,14 @@
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why sprinters in the outer lanes feel slower": {
-      "count": 2,
-      "avg_views_first_60m": 130.5,
+      "count": 3,
+      "avg_views_first_60m": 87.0,
       "avg_views_first_6h": 130.5,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 1.7,
+      "avg_likes_per_1000_views": 1.1,
       "avg_returning_viewers": null
     },
     "Why laughing when nervous keeps happening no matter what": {
@@ -1108,7 +1108,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 166.7,
+      "avg_likes_per_1000_views": 125.0,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by names being so easy to forget": {
@@ -1585,6 +1585,17 @@
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why you tense up watching someone balance": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why the unsubscribe button hiding from you happens to you constantly": {
       "count": 1,
       "avg_views_first_60m": 0.0,
       "avg_views_first_6h": 0.0,
@@ -2894,7 +2905,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 166.7,
+      "avg_likes_per_1000_views": 125.0,
       "avg_returning_viewers": null
     },
     "social_glitches": {
@@ -3490,18 +3501,51 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Dark Patterns": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "aerodynamics": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "streaming tech": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 192,
-      "avg_views_first_60m": 98.6,
-      "avg_views_first_6h": 114.2,
+      "count": 195,
+      "avg_views_first_60m": 96.7,
+      "avg_views_first_6h": 112.7,
       "avg_views_first_24h": 303.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 9.6,
-      "avg_likes_per_1000_views": 22.5,
+      "avg_comments_per_1000_views": 9.4,
+      "avg_likes_per_1000_views": 21.8,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
