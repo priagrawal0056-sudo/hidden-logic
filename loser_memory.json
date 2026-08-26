@@ -2483,5 +2483,27 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 47.0
+  },
+  {
+    "title": "Why You Instantly Get Road Rage",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why The Car In Front Always Feels Too Slow",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 47.0
   }
 ]

@@ -6050,5 +6050,35 @@
     "quality_score": 46.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "dDha5aTWDKY",
+    "title": "Why Slow Cars Suddenly Look Like They Stopped",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "date": "2026-08-26",
+    "n": 507,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "F_E4oatj_3w",
+    "title": "Why That Song Won't Leave Your Head",
+    "topic": "The psychological reason behind songs getting stuck in your head",
+    "date": "2026-08-26",
+    "n": 508,
+    "source": "pool",
+    "visual_score": 8.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 50.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

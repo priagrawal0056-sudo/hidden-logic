@@ -1868,5 +1868,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Slow Cars Suddenly Look Like They Stopped",
+    "hook_text": "You tailgate a slow car that suddenly looks completely stopped.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Perceptual Illusion",
+    "first_frame_description": "First-person POV through a windshield tailgating a silver sedan on a highway with the speedometer showing 60 MPH.",
+    "visual_thesis": "POV highway driving showing a car ahead expanding exponentially in the visual field while speedometer stays constant at 60 MPH.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why That Song Won't Leave Your Head",
+    "hook_text": "That song stuck in your head? Your brain *wants* it there.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Question -> Reveal/Contradiction",
+    "first_frame_description": "A person (viewer proxy) looks slightly annoyed or distracted, perhaps tapping their foot or humming subtly, with a thought bubble showing a repeating musical note or a snippet of lyrics, instantly conveying a song stuck in their head.",
+    "visual_thesis": "The brain actively tries to complete an incomplete musical pattern, causing songs to get stuck in your head.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

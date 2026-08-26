@@ -4617,7 +4617,9 @@
     "first_frame_description": "A close-up of a hand pressing the pause button on a sleek TV remote, instantly transitioning to a bright, intrusive ad popping up over a paused movie in a dimly lit living room.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
-    "views_first_60m": 0
+    "views_first_60m": 0,
+    "views_first_6h": 3,
+    "views_first_24h": 3
   },
   "QlbULZRU7sk": {
     "variant": "B",
@@ -4634,7 +4636,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate the loom effect/visual expansion curve from a driver's perspective to visually prove why sudden brake-slamming occurs.",
-    "first_frame_description": "First-person driver view staring at a red sedan ahead on a highway, suddenly stomping on the brake pedal as the car appears to instantly enlarge."
+    "first_frame_description": "First-person driver view staring at a red sedan ahead on a highway, suddenly stomping on the brake pedal as the car appears to instantly enlarge.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "VXkoAsUcxn0": {
     "variant": "A",
@@ -4651,6 +4657,44 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate how isolated cabin environments strip away human facial cues and trigger predatory threat perception.",
-    "first_frame_description": "First-person perspective of hands white-knuckling a steering wheel while staring through a dark tinted windshield."
+    "first_frame_description": "First-person perspective of hands white-knuckling a steering wheel while staring through a dark tinted windshield.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
+  },
+  "dDha5aTWDKY": {
+    "variant": "A",
+    "title": "Why Slow Cars Suddenly Look Like They Stopped",
+    "date": "2026-08-26",
+    "publish_at": "2026-08-27T07:08:00Z",
+    "cluster": null,
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "subcluster": "psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "POV highway driving showing a car ahead expanding exponentially in the visual field while speedometer stays constant at 60 MPH.",
+    "first_frame_description": "First-person POV through a windshield tailgating a silver sedan on a highway with the speedometer showing 60 MPH."
+  },
+  "F_E4oatj_3w": {
+    "variant": "B",
+    "title": "Why That Song Won't Leave Your Head",
+    "date": "2026-08-26",
+    "publish_at": "2026-08-27T09:06:00Z",
+    "cluster": null,
+    "topic": "The psychological reason behind songs getting stuck in your head",
+    "subcluster": "everyday_phenomena",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "The brain actively tries to complete an incomplete musical pattern, causing songs to get stuck in your head.",
+    "first_frame_description": "A person (viewer proxy) looks slightly annoyed or distracted, perhaps tapping their foot or humming subtly, with a thought bubble showing a repeating musical note or a snippet of lyrics, instantly conveying a song stuck in their head."
   }
 }

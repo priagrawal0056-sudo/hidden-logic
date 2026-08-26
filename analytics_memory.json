@@ -463,14 +463,14 @@
       "avg_returning_viewers": null
     },
     "Why your brain thinks the car in front is slower than it is": {
-      "count": 7,
-      "avg_views_first_60m": 176.0,
-      "avg_views_first_6h": 176.2,
+      "count": 8,
+      "avg_views_first_60m": 151.0,
+      "avg_views_first_6h": 151.1,
       "avg_views_first_24h": 0.5,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 3.3,
+      "avg_likes_per_1000_views": 2.8,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -630,8 +630,8 @@
     "TRENDING NOW: why sprinters in the outer lanes feel slower": {
       "count": 3,
       "avg_views_first_60m": 87.0,
-      "avg_views_first_6h": 130.5,
-      "avg_views_first_24h": null,
+      "avg_views_first_6h": 88.0,
+      "avg_views_first_24h": 3.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
@@ -1605,6 +1605,17 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Why everyone is secretly annoyed by road rage hitting instantly": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "clusters": {
@@ -1620,14 +1631,14 @@
       "avg_returning_viewers": null
     },
     "traffic": {
-      "count": 14,
-      "avg_views_first_60m": 96.9,
-      "avg_views_first_6h": 130.4,
+      "count": 15,
+      "avg_views_first_60m": 89.5,
+      "avg_views_first_6h": 120.5,
       "avg_views_first_24h": 860.0,
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
-      "avg_comments_per_1000_views": 125.0,
-      "avg_likes_per_1000_views": 127.6,
+      "avg_comments_per_1000_views": 115.4,
+      "avg_likes_per_1000_views": 117.8,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -3527,7 +3538,29 @@
     "streaming tech": {
       "count": 1,
       "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": null,
+      "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": 3.0,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Driving": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "driving_habits": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -3538,14 +3571,14 @@
   },
   "hook_types": {
     "physical_moment": {
-      "count": 195,
-      "avg_views_first_60m": 96.7,
-      "avg_views_first_6h": 112.7,
-      "avg_views_first_24h": 303.1,
+      "count": 197,
+      "avg_views_first_60m": 95.4,
+      "avg_views_first_6h": 110.5,
+      "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 9.4,
-      "avg_likes_per_1000_views": 21.8,
+      "avg_comments_per_1000_views": 9.3,
+      "avg_likes_per_1000_views": 21.6,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
