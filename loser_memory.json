@@ -2505,5 +2505,27 @@
     "hook_type": "physical_moment",
     "cluster": "traffic",
     "quality_score": 47.0
+  },
+  {
+    "title": "Why That Song Won't Leave Your Head",
+    "views": 3,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "attention",
+    "quality_score": 50.0
+  },
+  {
+    "title": "Why Slow Cars Suddenly Look Like They Stopped",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 46.0
   }
 ]

@@ -4678,7 +4678,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "POV highway driving showing a car ahead expanding exponentially in the visual field while speedometer stays constant at 60 MPH.",
-    "first_frame_description": "First-person POV through a windshield tailgating a silver sedan on a highway with the speedometer showing 60 MPH."
+    "first_frame_description": "First-person POV through a windshield tailgating a silver sedan on a highway with the speedometer showing 60 MPH.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "F_E4oatj_3w": {
     "variant": "B",
@@ -4695,6 +4699,44 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "The brain actively tries to complete an incomplete musical pattern, causing songs to get stuck in your head.",
-    "first_frame_description": "A person (viewer proxy) looks slightly annoyed or distracted, perhaps tapping their foot or humming subtly, with a thought bubble showing a repeating musical note or a snippet of lyrics, instantly conveying a song stuck in their head."
+    "first_frame_description": "A person (viewer proxy) looks slightly annoyed or distracted, perhaps tapping their foot or humming subtly, with a thought bubble showing a repeating musical note or a snippet of lyrics, instantly conveying a song stuck in their head.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 3,
+    "views_first_6h": 3
+  },
+  "e08EnOFGlpI": {
+    "variant": "B",
+    "title": "Why Goalkeepers Always Dive The Wrong Way",
+    "date": "2026-08-28",
+    "publish_at": "2026-08-28T07:04:00Z",
+    "cluster": null,
+    "topic": "Why the goalkeeper almost always dives the wrong way",
+    "subcluster": "Psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Goalkeepers prioritize the appearance of effort over statistical success to avoid social blame.",
+    "first_frame_description": "A high-angle wide shot of a soccer penalty kick where the goalkeeper lunges violently to the left while the ball rolls slowly into the center of the net."
+  },
+  "QGyQRa_iV5Q": {
+    "variant": "A",
+    "title": "Why You Always Wake Up Before Your Alarm",
+    "date": "2026-08-28",
+    "publish_at": "2026-08-28T09:10:00Z",
+    "cluster": null,
+    "topic": "Why waking up before your alarm is a universal experience",
+    "subcluster": "sleep",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "A person in bed, eyes open, minutes before their alarm, looking tired despite the quiet morning, as if their body is in a struggle.",
+    "first_frame_description": "Close-up shot of a person's face in bed, eyes open, looking slightly tired or pensive, with a digital alarm clock on a bedside table showing a time a few minutes before the set alarm."
   }
 }

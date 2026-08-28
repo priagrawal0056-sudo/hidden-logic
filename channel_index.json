@@ -6080,5 +6080,38 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "e08EnOFGlpI",
+    "title": "Why Goalkeepers Always Dive The Wrong Way",
+    "topic": "Why the goalkeeper almost always dives the wrong way",
+    "date": "2026-08-28",
+    "n": 509,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "QGyQRa_iV5Q",
+    "title": "Why You Always Wake Up Before Your Alarm",
+    "topic": "Why waking up before your alarm is a universal experience",
+    "date": "2026-08-28",
+    "n": 510,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

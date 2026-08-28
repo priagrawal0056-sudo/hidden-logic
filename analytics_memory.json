@@ -463,14 +463,14 @@
       "avg_returning_viewers": null
     },
     "Why your brain thinks the car in front is slower than it is": {
-      "count": 8,
-      "avg_views_first_60m": 151.0,
-      "avg_views_first_6h": 151.1,
+      "count": 9,
+      "avg_views_first_60m": 132.2,
+      "avg_views_first_6h": 132.4,
       "avg_views_first_24h": 0.5,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 2.8,
+      "avg_likes_per_1000_views": 2.5,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -1616,6 +1616,17 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "The psychological reason behind songs getting stuck in your head": {
+      "count": 1,
+      "avg_views_first_60m": 3.0,
+      "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "clusters": {
@@ -2480,14 +2491,14 @@
       "avg_returning_viewers": null
     },
     "psychology": {
-      "count": 7,
-      "avg_views_first_60m": 3.5,
-      "avg_views_first_6h": 3.5,
+      "count": 8,
+      "avg_views_first_60m": 3.1,
+      "avg_views_first_6h": 3.1,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 18.0,
+      "avg_likes_per_1000_views": 15.8,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -3567,18 +3578,29 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "everyday_phenomena": {
+      "count": 1,
+      "avg_views_first_60m": 3.0,
+      "avg_views_first_6h": 3.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 197,
-      "avg_views_first_60m": 95.4,
-      "avg_views_first_6h": 110.5,
+      "count": 199,
+      "avg_views_first_60m": 94.2,
+      "avg_views_first_6h": 109.1,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 9.3,
-      "avg_likes_per_1000_views": 21.6,
+      "avg_comments_per_1000_views": 9.2,
+      "avg_likes_per_1000_views": 21.3,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

@@ -1,9 +1,9 @@
 {
-  "channel_avg_views": 748.0,
+  "channel_avg_views": 764.6,
   "topic_clusters": {
     "airport": {
       "videos": 13,
-      "avg_views": 532.9,
+      "avg_views": 570.6,
       "best_views": 1615,
       "recent_views": [
         5,
@@ -25,16 +25,16 @@
     },
     "hotel": {
       "videos": 11,
-      "avg_views": 479.7,
+      "avg_views": 479.9,
       "best_views": 1407,
       "recent_views": [
         64,
         89,
-        371,
+        372,
         45,
         385,
         560,
-        694,
+        695,
         279,
         861,
         522,
@@ -57,7 +57,7 @@
     },
     "mall": {
       "videos": 11,
-      "avg_views": 93.5,
+      "avg_views": 100.0,
       "best_views": 1076,
       "recent_views": [
         2,
@@ -76,12 +76,13 @@
       "avg_avd": 12.4
     },
     "traffic": {
-      "videos": 42,
-      "avg_views": 178.7,
+      "videos": 43,
+      "avg_views": 176.1,
       "best_views": 1772,
       "recent_views": [
         1,
-        1,
+        2,
+        3,
         3,
         2,
         6,
@@ -181,7 +182,7 @@
     },
     "supermarket": {
       "videos": 26,
-      "avg_views": 276.1,
+      "avg_views": 283.1,
       "best_views": 1368,
       "recent_views": [
         1,
@@ -244,7 +245,7 @@
     },
     "memory": {
       "videos": 6,
-      "avg_views": 45.4,
+      "avg_views": 46.6,
       "best_views": 266,
       "recent_views": [
         3,
@@ -258,10 +259,11 @@
       "avg_avd": null
     },
     "attention": {
-      "videos": 4,
-      "avg_views": 241.4,
+      "videos": 5,
+      "avg_views": 152.0,
       "best_views": 1055,
       "recent_views": [
+        3,
         6,
         1055,
         137,
@@ -306,10 +308,10 @@
     },
     "technology": {
       "videos": 23,
-      "avg_views": 25.2,
+      "avg_views": 24.8,
       "best_views": 265,
       "recent_views": [
-        1,
+        0,
         13,
         5,
         1,
@@ -394,5 +396,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-08-26T16:53:04.397466"
+  "last_updated": "2026-08-28T00:49:18.653351"
 }
