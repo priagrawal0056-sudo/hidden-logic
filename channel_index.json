@@ -6113,5 +6113,50 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "zIIjY2Lquhc",
+    "title": "Why Elevators Always Shut In Your Face",
+    "topic": "Why elevator doors closing the moment you run is definitely not an accident",
+    "date": "2026-08-29",
+    "n": 511,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "p8YC6SsaqFs",
+    "title": "Why You Always Forget Where You Put Your Keys",
+    "topic": "Why forgetting where you put your keys is definitely not an accident",
+    "date": "2026-08-29",
+    "n": 512,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "FqvYBKEqQOw",
+    "title": "Why The Car In Front Feels So Slow",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "date": "2026-08-29",
+    "n": 513,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

@@ -1912,5 +1912,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Elevators Always Shut In Your Face",
+    "hook_text": "You sprint for the elevator, but it shuts on purpose.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System Tease",
+    "first_frame_description": "First-person perspective running down a modern corporate hallway toward elevator doors closing with a red overlay indicating blind spots.",
+    "visual_thesis": "A dramatic cut between a person running down an office hallway and a technical diagram showing elevator sensor beams stopping sharply at the door threshold.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Forget Where You Put Your Keys",
+    "hook_text": "You toss your keys on the counter.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden Mechanism",
+    "first_frame_description": "A first-person POV shot of a hand tossing a set of brass keys onto a cluttered kitchen counter.",
+    "visual_thesis": "The brain actively blocks the recording of routine physical actions to conserve energy, treating everyday tasks like spam mail.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why The Car In Front Feels So Slow",
+    "hook_text": "You grip the wheel behind a slow car, completely deceived.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Visual Contradiction",
+    "first_frame_description": "Driver POV gripping steering wheel tightly behind a sedan on a highway with dashboard speedometer showing 60 MPH.",
+    "visual_thesis": "Visual contrast showing high-speed side window optical flow versus stationary-looking centered windshield perspective.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

@@ -470,7 +470,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 2.5,
+      "avg_likes_per_1000_views": 3.7,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -881,14 +881,14 @@
       "avg_returning_viewers": null
     },
     "Why the goalkeeper almost always dives the wrong way": {
-      "count": 1,
-      "avg_views_first_60m": 23.0,
-      "avg_views_first_6h": 23.0,
+      "count": 2,
+      "avg_views_first_60m": 541.5,
+      "avg_views_first_6h": 541.5,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 4.7,
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why the leader almost never gets overtaken on the last lap": {
@@ -1614,7 +1614,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 7.1,
       "avg_returning_viewers": null
     },
     "The psychological reason behind songs getting stuck in your head": {
@@ -1626,6 +1626,17 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why waking up before your alarm is a universal experience": {
+      "count": 1,
+      "avg_views_first_60m": 972.0,
+      "avg_views_first_6h": 972.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 14.4,
       "avg_returning_viewers": null
     }
   },
@@ -1649,7 +1660,7 @@
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
       "avg_comments_per_1000_views": 115.4,
-      "avg_likes_per_1000_views": 117.8,
+      "avg_likes_per_1000_views": 118.3,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -2040,14 +2051,14 @@
       "avg_returning_viewers": null
     },
     "Psychology": {
-      "count": 11,
-      "avg_views_first_60m": 4.7,
-      "avg_views_first_6h": 5.6,
+      "count": 12,
+      "avg_views_first_60m": 110.2,
+      "avg_views_first_6h": 111.0,
       "avg_views_first_24h": 8.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.9,
       "avg_returning_viewers": null
     },
     "airport-security": {
@@ -2498,7 +2509,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 15.8,
+      "avg_likes_per_1000_views": 16.5,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -3565,7 +3576,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 3.9,
       "avg_returning_viewers": null
     },
     "driving_habits": {
@@ -3576,7 +3587,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 7.1,
       "avg_returning_viewers": null
     },
     "everyday_phenomena": {
@@ -3589,17 +3600,28 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "sleep": {
+      "count": 1,
+      "avg_views_first_60m": 972.0,
+      "avg_views_first_6h": 972.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 14.4,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 199,
-      "avg_views_first_60m": 94.2,
-      "avg_views_first_6h": 109.1,
+      "count": 201,
+      "avg_views_first_60m": 105.9,
+      "avg_views_first_6h": 120.7,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 9.2,
+      "avg_comments_per_1000_views": 9.1,
       "avg_likes_per_1000_views": 21.3,
       "avg_returning_viewers": 180.0
     },

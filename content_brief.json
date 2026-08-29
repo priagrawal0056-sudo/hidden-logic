@@ -1,10 +1,16 @@
 {
-  "date": "2026-08-09",
+  "date": "2026-08-29",
   "sample_size": 3,
   "avg_retention": null,
-  "best_formats": [],
+  "best_formats": [
+    "story"
+  ],
   "weak_formats": [],
-  "best_eras": [],
-  "best_hooks": [],
+  "best_eras": [
+    "unspecified"
+  ],
+  "best_hooks": [
+    "plain"
+  ],
   "hot_subjects": []
 }
