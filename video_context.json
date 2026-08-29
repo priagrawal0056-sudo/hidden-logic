@@ -1036,5 +1036,23 @@
     "topic": "Why your brain thinks the car in front is slower than it is",
     "visual_thesis": "Visual contrast showing high-speed side window optical flow versus stationary-looking centered windshield perspective.",
     "script": "You grip the wheel behind a slow car, completely deceived. Check your speedometer—they’re actually going sixty. Your brain judges speed using side-window peripheral motion. But when a car stays centered in your windshield, peripheral motion vanishes. Without rapid visual expansion, your visual cortex miscalculates and reads them as frozen. Tailgating actually makes them look slower, so every time you tailgate..."
+  },
+  "NNknoMKoCw0": {
+    "title": "Why You Always Copy People Sitting Across From You",
+    "topic": "Why you can never escape mirroring how the person across from you sits",
+    "visual_thesis": "Two people sitting across from each other at a cafe table, perfectly mirroring each other's physical movements in real-time.",
+    "script": "You copy the posture of whoever sits across from you. They lean in, so you lean in. They cross their arms, and you do too. You think you're just being polite. But your brain is actually running a hostage negotiation tactic. If you stop, the silence instantly becomes hostile. This subconscious trap is why"
+  },
+  "j0-UWGFvcD4": {
+    "title": "Why Library Whispers Are So Annoying",
+    "topic": "Why everyone is secretly annoyed by lowering your voice in a library",
+    "visual_thesis": "Contrast between smooth, blue audio waves (background hum) and sharp, red, jagged spikes (whisper) overlaid on a library setting.",
+    "script": "You’re staring at your book when a whisper hijacks your brain. That tiny hiss three desks away is actually louder than a shout. Your brain easily filters out steady, rhythmic hums. But whispering creates sharp, jagged audio fragments. It mimics the frequency of a distress signal. Your mind is forced to decode these broken patterns. You aren't being sensitive. A whisper hits harder because it triggers your survival instinct. You’re staring at your book..."
+  },
+  "qjIQp4d88-Y": {
+    "title": "Why Olympic Photo Finishes Look So Fake",
+    "topic": "Why a photo finish fools your eyes",
+    "visual_thesis": "A photo finish camera captures only a 1-pixel line over time, converting the horizontal axis of the photo from physical space into elapsed time.",
+    "script": "You pause an Olympic finish line on your screen. The runners look stretched, smeared, and strangely fake. But it isn't a digital glitch. The background track is missing because this camera doesn't shoot video at all. It locks onto one millimeter of paint, capturing ten thousand slices every second. Then it stitches them left to right. You aren't looking at a picture of space. You're looking at a graph of time every time..."
   }
 }

@@ -463,14 +463,14 @@
       "avg_returning_viewers": null
     },
     "Why your brain thinks the car in front is slower than it is": {
-      "count": 9,
-      "avg_views_first_60m": 132.2,
-      "avg_views_first_6h": 132.4,
+      "count": 10,
+      "avg_views_first_60m": 212.3,
+      "avg_views_first_6h": 212.4,
       "avg_views_first_24h": 0.5,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 3.7,
+      "avg_likes_per_1000_views": 4.1,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -1636,7 +1636,29 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 14.4,
+      "avg_likes_per_1000_views": 14.2,
+      "avg_returning_viewers": null
+    },
+    "Why elevator doors closing the moment you run is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": 288.0,
+      "avg_views_first_6h": 288.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 6.9,
+      "avg_returning_viewers": null
+    },
+    "Why forgetting where you put your keys is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": 260.0,
+      "avg_views_first_6h": 260.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     }
   },
@@ -2975,14 +2997,14 @@
       "avg_returning_viewers": null
     },
     "optical_illusions": {
-      "count": 2,
-      "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": 0.0,
+      "count": 3,
+      "avg_views_first_60m": 284.3,
+      "avg_views_first_6h": 284.3,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 2.3,
       "avg_returning_viewers": null
     },
     "food": {
@@ -3609,20 +3631,42 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 14.4,
+      "avg_likes_per_1000_views": 14.2,
+      "avg_returning_viewers": null
+    },
+    "Architecture & Engineering": {
+      "count": 1,
+      "avg_views_first_60m": 288.0,
+      "avg_views_first_6h": 288.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 6.9,
+      "avg_returning_viewers": null
+    },
+    "cognitive_glitches": {
+      "count": 1,
+      "avg_views_first_60m": 260.0,
+      "avg_views_first_6h": 260.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 201,
-      "avg_views_first_60m": 105.9,
-      "avg_views_first_6h": 120.7,
+      "count": 204,
+      "avg_views_first_60m": 112.6,
+      "avg_views_first_6h": 127.2,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 9.1,
-      "avg_likes_per_1000_views": 21.3,
+      "avg_comments_per_1000_views": 8.9,
+      "avg_likes_per_1000_views": 21.0,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

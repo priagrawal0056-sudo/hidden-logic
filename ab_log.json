@@ -4659,7 +4659,7 @@
     "visual_thesis": "Demonstrate how isolated cabin environments strip away human facial cues and trigger predatory threat perception.",
     "first_frame_description": "First-person perspective of hands white-knuckling a steering wheel while staring through a dark tinted windshield.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 7.09,
+    "likes_per_1000_views": 7.1,
     "views_first_60m": 1,
     "views_first_6h": 1
   },
@@ -4680,7 +4680,7 @@
     "visual_thesis": "POV highway driving showing a car ahead expanding exponentially in the visual field while speedometer stays constant at 60 MPH.",
     "first_frame_description": "First-person POV through a windshield tailgating a silver sedan on a highway with the speedometer showing 60 MPH.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 6.23,
+    "likes_per_1000_views": 6.19,
     "views_first_60m": 1,
     "views_first_6h": 1
   },
@@ -4722,7 +4722,7 @@
     "visual_thesis": "Goalkeepers prioritize the appearance of effort over statistical success to avoid social blame.",
     "first_frame_description": "A high-angle wide shot of a soccer penalty kick where the goalkeeper lunges violently to the left while the ball rolls slowly into the center of the net.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 9.43,
+    "likes_per_1000_views": 9.39,
     "views_first_60m": 1060,
     "views_first_6h": 1060
   },
@@ -4743,7 +4743,7 @@
     "visual_thesis": "A person in bed, eyes open, minutes before their alarm, looking tired despite the quiet morning, as if their body is in a struggle.",
     "first_frame_description": "Close-up shot of a person's face in bed, eyes open, looking slightly tired or pensive, with a digital alarm clock on a bedside table showing a time a few minutes before the set alarm.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 14.4,
+    "likes_per_1000_views": 14.21,
     "views_first_60m": 972,
     "views_first_6h": 972
   },
@@ -4762,7 +4762,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A dramatic cut between a person running down an office hallway and a technical diagram showing elevator sensor beams stopping sharply at the door threshold.",
-    "first_frame_description": "First-person perspective running down a modern corporate hallway toward elevator doors closing with a red overlay indicating blind spots."
+    "first_frame_description": "First-person perspective running down a modern corporate hallway toward elevator doors closing with a red overlay indicating blind spots.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 6.94,
+    "views_first_60m": 288,
+    "views_first_6h": 288
   },
   "p8YC6SsaqFs": {
     "variant": "B",
@@ -4779,7 +4783,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The brain actively blocks the recording of routine physical actions to conserve energy, treating everyday tasks like spam mail.",
-    "first_frame_description": "A first-person POV shot of a hand tossing a set of brass keys onto a cluttered kitchen counter."
+    "first_frame_description": "A first-person POV shot of a hand tossing a set of brass keys onto a cluttered kitchen counter.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 260,
+    "views_first_6h": 260
   },
   "FqvYBKEqQOw": {
     "variant": "A",
@@ -4796,6 +4804,61 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Visual contrast showing high-speed side window optical flow versus stationary-looking centered windshield perspective.",
-    "first_frame_description": "Driver POV gripping steering wheel tightly behind a sedan on a highway with dashboard speedometer showing 60 MPH."
+    "first_frame_description": "Driver POV gripping steering wheel tightly behind a sedan on a highway with dashboard speedometer showing 60 MPH.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 7.03,
+    "views_first_60m": 853,
+    "views_first_6h": 853
+  },
+  "NNknoMKoCw0": {
+    "variant": "A",
+    "title": "Why You Always Copy People Sitting Across From You",
+    "date": "2026-08-29",
+    "publish_at": "2026-08-30T07:07:00Z",
+    "cluster": null,
+    "topic": "Why you can never escape mirroring how the person across from you sits",
+    "subcluster": "social_behavior",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Two people sitting across from each other at a cafe table, perfectly mirroring each other's physical movements in real-time.",
+    "first_frame_description": "A close-up split-screen of two people sitting at a cafe table, both simultaneously crossing their arms in identical fashion."
+  },
+  "j0-UWGFvcD4": {
+    "variant": "A",
+    "title": "Why Library Whispers Are So Annoying",
+    "date": "2026-08-29",
+    "publish_at": "2026-08-30T09:03:00Z",
+    "cluster": null,
+    "topic": "Why everyone is secretly annoyed by lowering your voice in a library",
+    "subcluster": "sensory_annoyance",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Contrast between smooth, blue audio waves (background hum) and sharp, red, jagged spikes (whisper) overlaid on a library setting.",
+    "first_frame_description": "A close-up of a student's face in a library, eyes snapping up from a textbook with a look of intense irritation."
+  },
+  "qjIQp4d88-Y": {
+    "variant": "A",
+    "title": "Why Olympic Photo Finishes Look So Fake",
+    "date": "2026-08-29",
+    "publish_at": "2026-08-30T11:00:00Z",
+    "cluster": null,
+    "topic": "Why a photo finish fools your eyes",
+    "subcluster": "camera_technology",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A photo finish camera captures only a 1-pixel line over time, converting the horizontal axis of the photo from physical space into elapsed time.",
+    "first_frame_description": "A TV screen showing a frozen Olympic 100m finish line photo where the runner's body looks strangely warped and the track background is solid white."
   }
 }

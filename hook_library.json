@@ -1945,5 +1945,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Copy People Sitting Across From You",
+    "hook_text": "You copy the posture of whoever sits across from you.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Subconscious Trap",
+    "first_frame_description": "A close-up split-screen of two people sitting at a cafe table, both simultaneously crossing their arms in identical fashion.",
+    "visual_thesis": "Two people sitting across from each other at a cafe table, perfectly mirroring each other's physical movements in real-time.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Library Whispers Are So Annoying",
+    "hook_text": "You\u2019re staring at your book when a whisper hijacks your brain.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Hidden System Reveal",
+    "first_frame_description": "A close-up of a student's face in a library, eyes snapping up from a textbook with a look of intense irritation.",
+    "visual_thesis": "Contrast between smooth, blue audio waves (background hum) and sharp, red, jagged spikes (whisper) overlaid on a library setting.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Olympic Photo Finishes Look So Fake",
+    "hook_text": "You pause an Olympic finish line on your screen.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Visual Anomaly -> Hidden Mechanism -> Reality Reframe",
+    "first_frame_description": "A TV screen showing a frozen Olympic 100m finish line photo where the runner's body looks strangely warped and the track background is solid white.",
+    "visual_thesis": "A photo finish camera captures only a 1-pixel line over time, converting the horizontal axis of the photo from physical space into elapsed time.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

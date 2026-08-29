@@ -1,14 +1,14 @@
 {
-  "channel_avg_views": 787.5,
+  "channel_avg_views": 781.7,
   "topic_clusters": {
     "airport": {
       "videos": 13,
-      "avg_views": 570.6,
+      "avg_views": 570.7,
       "best_views": 1615,
       "recent_views": [
         5,
         1192,
-        945,
+        946,
         923,
         544,
         363,
@@ -76,16 +76,17 @@
       "avg_avd": 12.4
     },
     "traffic": {
-      "videos": 43,
-      "avg_views": 249.8,
+      "videos": 44,
+      "avg_views": 273.9,
       "best_views": 1772,
       "recent_views": [
-        963,
-        564,
+        865,
+        967,
+        563,
         259,
         4,
         2,
-        7,
+        8,
         2,
         2,
         7,
@@ -107,7 +108,7 @@
         51,
         915,
         1276,
-        1405,
+        1406,
         294,
         775,
         306,
@@ -136,10 +137,11 @@
       "avg_avd": null
     },
     "elevator": {
-      "videos": 8,
-      "avg_views": 112.3,
+      "videos": 9,
+      "avg_views": 150.8,
       "best_views": 1089,
       "recent_views": [
+        292,
         2,
         7,
         58,
@@ -165,10 +167,10 @@
     },
     "restaurant": {
       "videos": 8,
-      "avg_views": 253.7,
+      "avg_views": 254.3,
       "best_views": 903,
       "recent_views": [
-        1,
+        3,
         4,
         795,
         39,
@@ -244,10 +246,11 @@
       "avg_avd": null
     },
     "memory": {
-      "videos": 6,
-      "avg_views": 46.6,
+      "videos": 7,
+      "avg_views": 100.2,
       "best_views": 266,
       "recent_views": [
+        261,
         3,
         1,
         35,
@@ -260,10 +263,10 @@
     },
     "attention": {
       "videos": 6,
-      "avg_views": 376.2,
+      "avg_views": 379.7,
       "best_views": 1055,
       "recent_views": [
-        972,
+        985,
         5,
         6,
         1055,
@@ -285,11 +288,11 @@
     },
     "social_behavior": {
       "videos": 5,
-      "avg_views": 95.8,
+      "avg_views": 96.2,
       "best_views": 714,
       "recent_views": [
         5,
-        0,
+        2,
         30,
         714,
         7
@@ -320,7 +323,7 @@
         0,
         2,
         3,
-        5,
+        6,
         5,
         7,
         16,
@@ -386,16 +389,16 @@
     },
     "money_psychology": {
       "videos": 3,
-      "avg_views": 228.2,
-      "best_views": 1106,
+      "avg_views": 228.4,
+      "best_views": 1107,
       "recent_views": [
         1,
         32,
-        1106
+        1107
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     }
   },
-  "last_updated": "2026-08-29T00:30:37.789696"
+  "last_updated": "2026-08-29T19:20:02.695187"
 }
