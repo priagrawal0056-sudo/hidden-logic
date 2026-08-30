@@ -540,14 +540,14 @@
       "avg_returning_viewers": null
     },
     "Why a photo finish fools your eyes": {
-      "count": 3,
-      "avg_views_first_60m": 3.0,
-      "avg_views_first_6h": 4.5,
+      "count": 4,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 3.0,
       "avg_views_first_24h": 5.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 55.6,
+      "avg_likes_per_1000_views": 37.0,
       "avg_returning_viewers": null
     },
     "Why Steering Wheels Are Round": {
@@ -1647,13 +1647,35 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.9,
+      "avg_likes_per_1000_views": 6.8,
       "avg_returning_viewers": null
     },
     "Why forgetting where you put your keys is definitely not an accident": {
       "count": 1,
       "avg_views_first_60m": 260.0,
       "avg_views_first_6h": 260.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why you can never escape mirroring how the person across from you sits": {
+      "count": 1,
+      "avg_views_first_60m": 701.0,
+      "avg_views_first_6h": 701.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 4.3,
+      "avg_returning_viewers": null
+    },
+    "Why everyone is secretly annoyed by lowering your voice in a library": {
+      "count": 1,
+      "avg_views_first_60m": 191.0,
+      "avg_views_first_6h": 191.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -2381,14 +2403,14 @@
       "avg_returning_viewers": null
     },
     "social_behavior": {
-      "count": 1,
-      "avg_views_first_60m": 42.0,
-      "avg_views_first_6h": 754.0,
+      "count": 2,
+      "avg_views_first_60m": 371.5,
+      "avg_views_first_6h": 727.5,
       "avg_views_first_24h": 754.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.8,
+      "avg_likes_per_1000_views": 5.6,
       "avg_returning_viewers": null
     },
     "Perception": {
@@ -3642,7 +3664,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.9,
+      "avg_likes_per_1000_views": 6.8,
       "avg_returning_viewers": null
     },
     "cognitive_glitches": {
@@ -3655,18 +3677,40 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "sensory_annoyance": {
+      "count": 1,
+      "avg_views_first_60m": 191.0,
+      "avg_views_first_6h": 191.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "camera_technology": {
+      "count": 1,
+      "avg_views_first_60m": 0.0,
+      "avg_views_first_6h": 0.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 204,
-      "avg_views_first_60m": 112.6,
-      "avg_views_first_6h": 127.2,
+      "count": 207,
+      "avg_views_first_60m": 116.0,
+      "avg_views_first_6h": 130.3,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 8.9,
-      "avg_likes_per_1000_views": 21.0,
+      "avg_comments_per_1000_views": 8.7,
+      "avg_likes_per_1000_views": 20.7,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

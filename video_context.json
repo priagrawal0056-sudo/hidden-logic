@@ -1054,5 +1054,23 @@
     "topic": "Why a photo finish fools your eyes",
     "visual_thesis": "A photo finish camera captures only a 1-pixel line over time, converting the horizontal axis of the photo from physical space into elapsed time.",
     "script": "You pause an Olympic finish line on your screen. The runners look stretched, smeared, and strangely fake. But it isn't a digital glitch. The background track is missing because this camera doesn't shoot video at all. It locks onto one millimeter of paint, capturing ten thousand slices every second. Then it stitches them left to right. You aren't looking at a picture of space. You're looking at a graph of time every time..."
+  },
+  "mMN8iq2DpVA": {
+    "title": "Why You Always Walk Miles To The Escalator",
+    "topic": "Why escalators placed far from the entrance happens to you constantly",
+    "visual_thesis": "The long walk to a distant escalator is a deliberate retail strategy to increase impulse purchases.",
+    "script": "You walk into a store. That far-off escalator is costing you money right now. You just need the next floor. But it's never close. You’re forced past rows of displays. This isn’t accidental. That long walk to the escalator? It’s a calculated journey. Every extra minute browsing raises impulse purchases. They make you walk to empty your wallet."
+  },
+  "Kt0En4-Ppsc": {
+    "title": "Why Traffic Jams Appear Out Of Nowhere",
+    "topic": "The psychological reason behind traffic jams appearing out of nowhere",
+    "visual_thesis": "Demonstrate how a single driver's minor braking action triggers a cascading, amplifying wave of brake lights that travels backward through a line of cars, eventually bringing traffic to a complete standstill.",
+    "script": "You slam on your brakes for a fake traffic jam. There is no accident. No construction. Yet thousands of cars are completely stopped. It's because human brains can't process deceleration smoothly. One driver taps their brakes. The next driver panics and over-brakes. This tiny psychological delay amplifies with every single car. By the twentieth car, the highway is a parking lot. You're stuck in the ghost of a mistake made miles ahead..."
+  },
+  "n6Uy2nMqXjI": {
+    "title": "Why Late Goals Make You Scream Louder",
+    "topic": "Why a last-minute goal feels better than an early one",
+    "visual_thesis": "A brain chemical baseline graph plummeting across 89 minutes of tension before launching into a vertical dopamine contrast spike at minute 90.",
+    "script": "You scream ten times louder for a last-minute goal. You've suffered through eighty-nine agonizing, scoreless minutes when the ball finally hits the net. Minute five brings a mild smile, but minute ninety triggers pure hysteria. It’s not just because time ran out. While you waited, rising stress crashed your chemical baseline into the dirt. So when relief strikes, your brain registers a violent contrast spike—mistaking pure stress relief for extreme joy. You aren't actually celebrating the goal, which is why..."
   }
 }

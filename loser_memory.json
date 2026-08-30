@@ -2538,5 +2538,27 @@
     "hook_type": "physical_moment",
     "cluster": "memory",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Olympic Photo Finishes Look So Fake",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
+  },
+  {
+    "title": "Why Library Whispers Are So Annoying",
+    "views": 191,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
   }
 ]

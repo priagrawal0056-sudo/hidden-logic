@@ -4722,7 +4722,7 @@
     "visual_thesis": "Goalkeepers prioritize the appearance of effort over statistical success to avoid social blame.",
     "first_frame_description": "A high-angle wide shot of a soccer penalty kick where the goalkeeper lunges violently to the left while the ball rolls slowly into the center of the net.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 9.39,
+    "likes_per_1000_views": 9.37,
     "views_first_60m": 1060,
     "views_first_6h": 1060
   },
@@ -4743,7 +4743,7 @@
     "visual_thesis": "A person in bed, eyes open, minutes before their alarm, looking tired despite the quiet morning, as if their body is in a struggle.",
     "first_frame_description": "Close-up shot of a person's face in bed, eyes open, looking slightly tired or pensive, with a digital alarm clock on a bedside table showing a time a few minutes before the set alarm.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 14.21,
+    "likes_per_1000_views": 14.2,
     "views_first_60m": 972,
     "views_first_6h": 972
   },
@@ -4764,7 +4764,7 @@
     "visual_thesis": "A dramatic cut between a person running down an office hallway and a technical diagram showing elevator sensor beams stopping sharply at the door threshold.",
     "first_frame_description": "First-person perspective running down a modern corporate hallway toward elevator doors closing with a red overlay indicating blind spots.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 6.94,
+    "likes_per_1000_views": 6.83,
     "views_first_60m": 288,
     "views_first_6h": 288
   },
@@ -4806,7 +4806,7 @@
     "visual_thesis": "Visual contrast showing high-speed side window optical flow versus stationary-looking centered windshield perspective.",
     "first_frame_description": "Driver POV gripping steering wheel tightly behind a sedan on a highway with dashboard speedometer showing 60 MPH.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 7.03,
+    "likes_per_1000_views": 6.89,
     "views_first_60m": 853,
     "views_first_6h": 853
   },
@@ -4825,7 +4825,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Two people sitting across from each other at a cafe table, perfectly mirroring each other's physical movements in real-time.",
-    "first_frame_description": "A close-up split-screen of two people sitting at a cafe table, both simultaneously crossing their arms in identical fashion."
+    "first_frame_description": "A close-up split-screen of two people sitting at a cafe table, both simultaneously crossing their arms in identical fashion.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 4.28,
+    "views_first_60m": 701,
+    "views_first_6h": 701
   },
   "j0-UWGFvcD4": {
     "variant": "A",
@@ -4842,7 +4846,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Contrast between smooth, blue audio waves (background hum) and sharp, red, jagged spikes (whisper) overlaid on a library setting.",
-    "first_frame_description": "A close-up of a student's face in a library, eyes snapping up from a textbook with a look of intense irritation."
+    "first_frame_description": "A close-up of a student's face in a library, eyes snapping up from a textbook with a look of intense irritation.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 191,
+    "views_first_6h": 191
   },
   "qjIQp4d88-Y": {
     "variant": "A",
@@ -4859,6 +4867,61 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A photo finish camera captures only a 1-pixel line over time, converting the horizontal axis of the photo from physical space into elapsed time.",
-    "first_frame_description": "A TV screen showing a frozen Olympic 100m finish line photo where the runner's body looks strangely warped and the track background is solid white."
+    "first_frame_description": "A TV screen showing a frozen Olympic 100m finish line photo where the runner's body looks strangely warped and the track background is solid white.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
+  },
+  "mMN8iq2DpVA": {
+    "variant": "A",
+    "title": "Why You Always Walk Miles To The Escalator",
+    "date": "2026-08-30",
+    "publish_at": "2026-08-31T07:24:00Z",
+    "cluster": null,
+    "topic": "Why escalators placed far from the entrance happens to you constantly",
+    "subcluster": "store_layout_manipulation",
+    "hook_type": "physical_moment",
+    "series": "Shopping Psychology",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.5,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "The long walk to a distant escalator is a deliberate retail strategy to increase impulse purchases.",
+    "first_frame_description": "A wide shot from a shopper's perspective, looking into a large, brightly lit department store entrance. The desired escalator is visible but appears significantly far away, requiring a long walk past various product displays."
+  },
+  "Kt0En4-Ppsc": {
+    "variant": "B",
+    "title": "Why Traffic Jams Appear Out Of Nowhere",
+    "date": "2026-08-30",
+    "publish_at": "2026-08-31T09:21:00Z",
+    "cluster": null,
+    "topic": "The psychological reason behind traffic jams appearing out of nowhere",
+    "subcluster": "traffic",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate how a single driver's minor braking action triggers a cascading, amplifying wave of brake lights that travels backward through a line of cars, eventually bringing traffic to a complete standstill.",
+    "first_frame_description": "A first-person POV shot from inside a car dashboard as the driver suddenly slams on the brakes, with a sea of red brake lights lighting up ahead on a clear highway."
+  },
+  "n6Uy2nMqXjI": {
+    "variant": "A",
+    "title": "Why Late Goals Make You Scream Louder",
+    "date": "2026-08-30",
+    "publish_at": "2026-08-31T11:17:00Z",
+    "cluster": null,
+    "topic": "Why a last-minute goal feels better than an early one",
+    "subcluster": "psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A brain chemical baseline graph plummeting across 89 minutes of tension before launching into a vertical dopamine contrast spike at minute 90.",
+    "first_frame_description": "Close-up of a fan in a packed stadium gripping their head at 89:50 on the scoreboard, screaming in agony before exploding into jubilation."
   }
 }

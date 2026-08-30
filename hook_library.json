@@ -1978,5 +1978,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Walk Miles To The Escalator",
+    "hook_text": "You walk into a store.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Reveal",
+    "first_frame_description": "A wide shot from a shopper's perspective, looking into a large, brightly lit department store entrance. The desired escalator is visible but appears significantly far away, requiring a long walk past various product displays.",
+    "visual_thesis": "The long walk to a distant escalator is a deliberate retail strategy to increase impulse purchases.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Traffic Jams Appear Out Of Nowhere",
+    "hook_text": "You slam on your brakes for a fake traffic jam.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A first-person POV shot from inside a car dashboard as the driver suddenly slams on the brakes, with a sea of red brake lights lighting up ahead on a clear highway.",
+    "visual_thesis": "Demonstrate how a single driver's minor braking action triggers a cascading, amplifying wave of brake lights that travels backward through a line of cars, eventually bringing traffic to a complete standstill.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Late Goals Make You Scream Louder",
+    "hook_text": "You scream ten times louder for a last-minute goal.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Contrast Mystery",
+    "first_frame_description": "Close-up of a fan in a packed stadium gripping their head at 89:50 on the scoreboard, screaming in agony before exploding into jubilation.",
+    "visual_thesis": "A brain chemical baseline graph plummeting across 89 minutes of tension before launching into a vertical dopamine contrast spike at minute 90.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
