@@ -470,7 +470,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 4.1,
+      "avg_likes_per_1000_views": 4.0,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -547,7 +547,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 37.0,
+      "avg_likes_per_1000_views": 38.5,
       "avg_returning_viewers": null
     },
     "Why Steering Wheels Are Round": {
@@ -1156,14 +1156,14 @@
       "avg_returning_viewers": null
     },
     "Why a last-minute goal feels better than an early one": {
-      "count": 1,
-      "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": 0.0,
+      "count": 2,
+      "avg_views_first_60m": 369.5,
+      "avg_views_first_6h": 369.5,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 2.7,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by tearing up at ads you don't care about": {
@@ -1669,7 +1669,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 4.3,
+      "avg_likes_per_1000_views": 4.6,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by lowering your voice in a library": {
@@ -1680,6 +1680,28 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why escalators placed far from the entrance happens to you constantly": {
+      "count": 1,
+      "avg_views_first_60m": 917.0,
+      "avg_views_first_6h": 917.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 12.0,
+      "avg_returning_viewers": null
+    },
+    "The psychological reason behind traffic jams appearing out of nowhere": {
+      "count": 1,
+      "avg_views_first_60m": 206.0,
+      "avg_views_first_6h": 206.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 4.8,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     }
@@ -2410,7 +2432,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 5.6,
+      "avg_likes_per_1000_views": 5.7,
       "avg_returning_viewers": null
     },
     "Perception": {
@@ -2546,14 +2568,14 @@
       "avg_returning_viewers": null
     },
     "psychology": {
-      "count": 8,
-      "avg_views_first_60m": 3.1,
-      "avg_views_first_6h": 3.1,
+      "count": 9,
+      "avg_views_first_60m": 95.1,
+      "avg_views_first_6h": 95.1,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 16.5,
+      "avg_likes_per_1000_views": 15.3,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -3026,7 +3048,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 2.3,
+      "avg_likes_per_1000_views": 2.0,
       "avg_returning_viewers": null
     },
     "food": {
@@ -3697,20 +3719,42 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 4.5,
+      "avg_returning_viewers": null
+    },
+    "store_layout_manipulation": {
+      "count": 1,
+      "avg_views_first_60m": 917.0,
+      "avg_views_first_6h": 917.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 12.0,
+      "avg_returning_viewers": null
+    },
+    "traffic": {
+      "count": 1,
+      "avg_views_first_60m": 206.0,
+      "avg_views_first_6h": 206.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 4.8,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 207,
-      "avg_views_first_60m": 116.0,
-      "avg_views_first_6h": 130.3,
+      "count": 210,
+      "avg_views_first_60m": 125.1,
+      "avg_views_first_6h": 139.2,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 8.7,
-      "avg_likes_per_1000_views": 20.7,
+      "avg_comments_per_1000_views": 8.6,
+      "avg_likes_per_1000_views": 20.4,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

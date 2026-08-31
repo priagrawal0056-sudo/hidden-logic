@@ -6258,5 +6258,38 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "GoKXbdtQBYo",
+    "title": "Why Your Phone Stays On 1% For So Long",
+    "topic": "TRENDING NOW: why drivers in red cars feel faster to you",
+    "date": "2026-08-31",
+    "n": 520,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "3Vs5fYkQA7A",
+    "title": "Why You Always Argue Over Photo Finishes",
+    "topic": "Why a photo finish fools your eyes",
+    "date": "2026-08-31",
+    "n": 521,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

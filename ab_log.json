@@ -4659,7 +4659,7 @@
     "visual_thesis": "Demonstrate how isolated cabin environments strip away human facial cues and trigger predatory threat perception.",
     "first_frame_description": "First-person perspective of hands white-knuckling a steering wheel while staring through a dark tinted windshield.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 7.1,
+    "likes_per_1000_views": 7.12,
     "views_first_60m": 1,
     "views_first_6h": 1
   },
@@ -4722,7 +4722,7 @@
     "visual_thesis": "Goalkeepers prioritize the appearance of effort over statistical success to avoid social blame.",
     "first_frame_description": "A high-angle wide shot of a soccer penalty kick where the goalkeeper lunges violently to the left while the ball rolls slowly into the center of the net.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 9.37,
+    "likes_per_1000_views": 9.35,
     "views_first_60m": 1060,
     "views_first_6h": 1060
   },
@@ -4806,7 +4806,7 @@
     "visual_thesis": "Visual contrast showing high-speed side window optical flow versus stationary-looking centered windshield perspective.",
     "first_frame_description": "Driver POV gripping steering wheel tightly behind a sedan on a highway with dashboard speedometer showing 60 MPH.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 6.89,
+    "likes_per_1000_views": 5.99,
     "views_first_60m": 853,
     "views_first_6h": 853
   },
@@ -4827,7 +4827,7 @@
     "visual_thesis": "Two people sitting across from each other at a cafe table, perfectly mirroring each other's physical movements in real-time.",
     "first_frame_description": "A close-up split-screen of two people sitting at a cafe table, both simultaneously crossing their arms in identical fashion.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 4.28,
+    "likes_per_1000_views": 4.58,
     "views_first_60m": 701,
     "views_first_6h": 701
   },
@@ -4869,7 +4869,7 @@
     "visual_thesis": "A photo finish camera captures only a 1-pixel line over time, converting the horizontal axis of the photo from physical space into elapsed time.",
     "first_frame_description": "A TV screen showing a frozen Olympic 100m finish line photo where the runner's body looks strangely warped and the track background is solid white.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 0.0,
+    "likes_per_1000_views": 4.48,
     "views_first_60m": 0,
     "views_first_6h": 0
   },
@@ -4888,7 +4888,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "The long walk to a distant escalator is a deliberate retail strategy to increase impulse purchases.",
-    "first_frame_description": "A wide shot from a shopper's perspective, looking into a large, brightly lit department store entrance. The desired escalator is visible but appears significantly far away, requiring a long walk past various product displays."
+    "first_frame_description": "A wide shot from a shopper's perspective, looking into a large, brightly lit department store entrance. The desired escalator is visible but appears significantly far away, requiring a long walk past various product displays.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 12.0,
+    "views_first_60m": 917,
+    "views_first_6h": 917
   },
   "Kt0En4-Ppsc": {
     "variant": "B",
@@ -4905,7 +4909,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate how a single driver's minor braking action triggers a cascading, amplifying wave of brake lights that travels backward through a line of cars, eventually bringing traffic to a complete standstill.",
-    "first_frame_description": "A first-person POV shot from inside a car dashboard as the driver suddenly slams on the brakes, with a sea of red brake lights lighting up ahead on a clear highway."
+    "first_frame_description": "A first-person POV shot from inside a car dashboard as the driver suddenly slams on the brakes, with a sea of red brake lights lighting up ahead on a clear highway.",
+    "comments_per_1000_views": 4.85,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 206,
+    "views_first_6h": 206
   },
   "n6Uy2nMqXjI": {
     "variant": "A",
@@ -4922,6 +4930,44 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A brain chemical baseline graph plummeting across 89 minutes of tension before launching into a vertical dopamine contrast spike at minute 90.",
-    "first_frame_description": "Close-up of a fan in a packed stadium gripping their head at 89:50 on the scoreboard, screaming in agony before exploding into jubilation."
+    "first_frame_description": "Close-up of a fan in a packed stadium gripping their head at 89:50 on the scoreboard, screaming in agony before exploding into jubilation.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 5.41,
+    "views_first_60m": 739,
+    "views_first_6h": 739
+  },
+  "GoKXbdtQBYo": {
+    "variant": "B",
+    "title": "Why Your Phone Stays On 1% For So Long",
+    "date": "2026-08-31",
+    "publish_at": "2026-09-01T07:10:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why drivers in red cars feel faster to you",
+    "subcluster": "smartphones",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.5,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.5,
+    "visual_thesis": "A side-by-side comparison of a phone's UI showing 1% battery versus a technical schematic showing the actual chemical reserve remaining to prevent cell degradation.",
+    "first_frame_description": "First-person POV of a thumb scrolling on a smartphone, suddenly stopping as the battery indicator in the top right corner flashes red at 1%."
+  },
+  "3Vs5fYkQA7A": {
+    "variant": "B",
+    "title": "Why You Always Argue Over Photo Finishes",
+    "date": "2026-08-31",
+    "publish_at": "2026-09-01T09:09:00Z",
+    "cluster": null,
+    "topic": "Why a photo finish fools your eyes",
+    "subcluster": "illusions",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A photo finish is not a frozen moment in space, but a stitched-together graph of pure time.",
+    "first_frame_description": "A split-screen of an incredibly close Olympic track finish, with a red line down the middle, and a hand pointing closely at the screen."
   }
 }

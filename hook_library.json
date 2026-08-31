@@ -2011,5 +2011,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Your Phone Stays On 1% For So Long",
+    "hook_text": "You look down at one percent battery.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Hidden Truth Reveal",
+    "first_frame_description": "First-person POV of a thumb scrolling on a smartphone, suddenly stopping as the battery indicator in the top right corner flashes red at 1%.",
+    "visual_thesis": "A side-by-side comparison of a phone's UI showing 1% battery versus a technical schematic showing the actual chemical reserve remaining to prevent cell degradation.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Argue Over Photo Finishes",
+    "hook_text": "That photo finish you're arguing over is actually a lie.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Illusion Reveal",
+    "first_frame_description": "A split-screen of an incredibly close Olympic track finish, with a red line down the middle, and a hand pointing closely at the screen.",
+    "visual_thesis": "A photo finish is not a frozen moment in space, but a stitched-together graph of pure time.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

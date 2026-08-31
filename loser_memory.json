@@ -2560,5 +2560,16 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Traffic Jams Appear Out Of Nowhere",
+    "views": 201,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 46.0
   }
 ]
