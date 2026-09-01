@@ -540,14 +540,14 @@
       "avg_returning_viewers": null
     },
     "Why a photo finish fools your eyes": {
-      "count": 4,
-      "avg_views_first_60m": 2.0,
-      "avg_views_first_6h": 3.0,
+      "count": 5,
+      "avg_views_first_60m": 260.2,
+      "avg_views_first_6h": 261.0,
       "avg_views_first_24h": 5.0,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 38.5,
+      "avg_likes_per_1000_views": 31.1,
       "avg_returning_viewers": null
     },
     "Why Steering Wheels Are Round": {
@@ -1163,7 +1163,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 2.7,
+      "avg_likes_per_1000_views": 2.2,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by tearing up at ads you don't care about": {
@@ -1669,7 +1669,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 4.6,
+      "avg_likes_per_1000_views": 4.5,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by lowering your voice in a library": {
@@ -1701,8 +1701,19 @@
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 4.8,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_comments_per_1000_views": 2.3,
+      "avg_likes_per_1000_views": 4.5,
+      "avg_returning_viewers": null
+    },
+    "TRENDING NOW: why drivers in red cars feel faster to you": {
+      "count": 1,
+      "avg_views_first_60m": 1071.0,
+      "avg_views_first_6h": 1071.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.9,
+      "avg_likes_per_1000_views": 9.3,
       "avg_returning_viewers": null
     }
   },
@@ -2084,14 +2095,14 @@
       "avg_returning_viewers": null
     },
     "smartphones": {
-      "count": 1,
-      "avg_views_first_60m": null,
-      "avg_views_first_6h": null,
+      "count": 2,
+      "avg_views_first_60m": 1071.0,
+      "avg_views_first_6h": 1071.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": null,
-      "avg_likes_per_1000_views": null,
+      "avg_comments_per_1000_views": 0.9,
+      "avg_likes_per_1000_views": 9.3,
       "avg_returning_viewers": null
     },
     "secrets": {
@@ -2575,7 +2586,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 15.3,
+      "avg_likes_per_1000_views": 15.2,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -3719,7 +3730,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 4.5,
+      "avg_likes_per_1000_views": 3.8,
       "avg_returning_viewers": null
     },
     "store_layout_manipulation": {
@@ -3740,21 +3751,32 @@
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 4.8,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_comments_per_1000_views": 2.3,
+      "avg_likes_per_1000_views": 4.5,
+      "avg_returning_viewers": null
+    },
+    "illusions": {
+      "count": 1,
+      "avg_views_first_60m": 1035.0,
+      "avg_views_first_6h": 1035.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 9.7,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 210,
-      "avg_views_first_60m": 125.1,
-      "avg_views_first_6h": 139.2,
+      "count": 212,
+      "avg_views_first_60m": 136.1,
+      "avg_views_first_6h": 150.0,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 8.6,
-      "avg_likes_per_1000_views": 20.4,
+      "avg_comments_per_1000_views": 8.5,
+      "avg_likes_per_1000_views": 20.3,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
