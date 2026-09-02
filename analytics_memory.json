@@ -1701,8 +1701,8 @@
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 2.3,
-      "avg_likes_per_1000_views": 4.5,
+      "avg_comments_per_1000_views": 1.1,
+      "avg_likes_per_1000_views": 6.8,
       "avg_returning_viewers": null
     },
     "TRENDING NOW: why drivers in red cars feel faster to you": {
@@ -1713,7 +1713,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.9,
-      "avg_likes_per_1000_views": 9.3,
+      "avg_likes_per_1000_views": 9.1,
       "avg_returning_viewers": null
     }
   },
@@ -2102,7 +2102,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.9,
-      "avg_likes_per_1000_views": 9.3,
+      "avg_likes_per_1000_views": 9.1,
       "avg_returning_viewers": null
     },
     "secrets": {
@@ -3751,8 +3751,8 @@
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
-      "avg_comments_per_1000_views": 2.3,
-      "avg_likes_per_1000_views": 4.5,
+      "avg_comments_per_1000_views": 1.1,
+      "avg_likes_per_1000_views": 6.8,
       "avg_returning_viewers": null
     },
     "illusions": {
@@ -3763,7 +3763,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 9.7,
+      "avg_likes_per_1000_views": 9.6,
       "avg_returning_viewers": null
     }
   },

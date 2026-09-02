@@ -1,14 +1,14 @@
 {
-  "channel_avg_views": 803.9,
+  "channel_avg_views": 814.2,
   "topic_clusters": {
     "airport": {
       "videos": 13,
-      "avg_views": 572.6,
+      "avg_views": 573.4,
       "best_views": 1615,
       "recent_views": [
         7,
         1192,
-        966,
+        977,
         926,
         544,
         363,
@@ -25,10 +25,10 @@
     },
     "hotel": {
       "videos": 11,
-      "avg_views": 480.0,
+      "avg_views": 480.9,
       "best_views": 1407,
       "recent_views": [
-        64,
+        74,
         89,
         372,
         46,
@@ -57,7 +57,7 @@
     },
     "mall": {
       "videos": 11,
-      "avg_views": 105.5,
+      "avg_views": 105.7,
       "best_views": 1076,
       "recent_views": [
         2,
@@ -68,7 +68,7 @@
         13,
         4,
         12,
-        12,
+        14,
         2,
         201
       ],
@@ -77,16 +77,16 @@
     },
     "traffic": {
       "videos": 46,
-      "avg_views": 324.0,
+      "avg_views": 343.4,
       "best_views": 1772,
       "recent_views": [
-        1071,
-        403,
+        1104,
+        880,
         1002,
-        970,
+        975,
         562,
         259,
-        5,
+        6,
         2,
         8,
         2,
@@ -140,11 +140,11 @@
     },
     "elevator": {
       "videos": 10,
-      "avg_views": 304.5,
+      "avg_views": 304.7,
       "best_views": 1089,
       "recent_views": [
         920,
-        293,
+        294,
         2,
         7,
         58,
@@ -187,11 +187,11 @@
     },
     "supermarket": {
       "videos": 26,
-      "avg_views": 303.5,
+      "avg_views": 312.0,
       "best_views": 1368,
       "recent_views": [
         1,
-        7,
+        8,
         1,
         1,
         1,
@@ -315,7 +315,7 @@
     },
     "technology": {
       "videos": 23,
-      "avg_views": 25.5,
+      "avg_views": 25.7,
       "best_views": 265,
       "recent_views": [
         0,
@@ -403,5 +403,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-09-01T19:19:18.667699"
+  "last_updated": "2026-09-02T19:19:14.091247"
 }

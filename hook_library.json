@@ -2033,5 +2033,49 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Stores Hide The Milk At The Back",
+    "hook_text": "You run into the store just for milk.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Debunking Myth",
+    "first_frame_description": "A first-person POV shot walking through automatic grocery store sliding doors, looking down a long, brightly lit center aisle.",
+    "visual_thesis": "The grocery store layout is a deliberate financial trap designed to maximize walking distance for basic essentials.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Cars Ahead of You Suddenly Look Stopped",
+    "hook_text": "You slam your brakes because the car ahead suddenly stopped.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A first-person POV from inside a car on a highway, showing the driver's hands gripping the steering wheel as the red brake lights of the SUV directly ahead suddenly flash bright red.",
+    "visual_thesis": "The human eye cannot linearly calculate closing speed, causing objects moving directly toward us to appear stationary until they are dangerously close.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Stores Put The Most Expensive Item First",
+    "hook_text": "You walk into a store and see a ten-thousand-dollar watch.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction",
+    "first_frame_description": "POV walking into a high-end boutique, camera pans to a gold watch with a massive '$10,000' price tag in sharp focus.",
+    "visual_thesis": "The 'Anchor' effect: showing a high-priced item first to make subsequent prices seem lower by comparison.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why The Dark Makes Your Room Feel Tiny",
+    "hook_text": "You turn off your bedroom lights and instantly freeze.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Biological Contradiction",
+    "first_frame_description": "A first-person POV of a hand flipping a bedroom light switch, instantly plunging a highly recognizable, cozy bedroom into pitch blackness.",
+    "visual_thesis": "Demonstrating the contraction of the human 'peripersonal space' safety bubble using a glowing 3D overlay that shrinks tightly around a silhouette when the lights go out.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
