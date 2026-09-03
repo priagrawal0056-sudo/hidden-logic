@@ -2571,5 +2571,38 @@
     "hook_type": "physical_moment",
     "cluster": "traffic",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why The Dark Makes Your Room Feel Tiny",
+    "views": 3,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Cars Ahead of You Suddenly Look Stopped",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "traffic",
+    "quality_score": 44.0
+  },
+  {
+    "title": "Why Stores Hide The Milk At The Back",
+    "views": 53,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "supermarket",
+    "quality_score": 46.0
   }
 ]

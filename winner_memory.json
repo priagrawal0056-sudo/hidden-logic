@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 814.2,
+  "channel_avg_views": 804.0,
   "topic_clusters": {
     "airport": {
       "videos": 13,
@@ -56,10 +56,11 @@
       "avg_avd": null
     },
     "mall": {
-      "videos": 11,
-      "avg_views": 105.7,
+      "videos": 12,
+      "avg_views": 86.4,
       "best_views": 1076,
       "recent_views": [
+        3,
         2,
         7,
         28,
@@ -76,15 +77,16 @@
       "avg_avd": 12.4
     },
     "traffic": {
-      "videos": 46,
-      "avg_views": 343.4,
+      "videos": 47,
+      "avg_views": 331.5,
       "best_views": 1772,
       "recent_views": [
-        1104,
-        880,
+        1,
+        1116,
+        881,
         1002,
         975,
-        562,
+        563,
         259,
         6,
         2,
@@ -140,10 +142,10 @@
     },
     "elevator": {
       "videos": 10,
-      "avg_views": 304.7,
+      "avg_views": 304.9,
       "best_views": 1089,
       "recent_views": [
-        920,
+        921,
         294,
         2,
         7,
@@ -186,10 +188,11 @@
       "avg_avd": null
     },
     "supermarket": {
-      "videos": 26,
-      "avg_views": 312.0,
+      "videos": 27,
+      "avg_views": 291.6,
       "best_views": 1368,
       "recent_views": [
+        53,
         1,
         8,
         1,
@@ -266,10 +269,10 @@
     },
     "attention": {
       "videos": 6,
-      "avg_views": 380.3,
+      "avg_views": 380.8,
       "best_views": 1055,
       "recent_views": [
-        986,
+        988,
         6,
         6,
         1055,
@@ -315,7 +318,7 @@
     },
     "technology": {
       "videos": 23,
-      "avg_views": 25.7,
+      "avg_views": 25.9,
       "best_views": 265,
       "recent_views": [
         0,
@@ -391,10 +394,11 @@
       "avg_avd": null
     },
     "money_psychology": {
-      "videos": 3,
-      "avg_views": 228.4,
+      "videos": 4,
+      "avg_views": 416.1,
       "best_views": 1107,
       "recent_views": [
+        729,
         1,
         32,
         1107
@@ -403,5 +407,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-09-02T19:19:14.091247"
+  "last_updated": "2026-09-03T19:13:49.001621"
 }

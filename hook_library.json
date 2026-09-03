@@ -2077,5 +2077,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Your 'Quick' Email Drains You",
+    "hook_text": "You open your laptop.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System Reveal",
+    "first_frame_description": "A person sits at a desk, opening a laptop. The screen shows an email interface.",
+    "visual_thesis": "An initial time estimate creates a mental anchor that, when exceeded, visibly drains focus and traps the individual in a self-punishing mental game.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Tailgate Large SUVs",
+    "hook_text": "You creep dangerously close to large SUVs without realizing it.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden Mechanism",
+    "first_frame_description": "Driver POV behind the wheel on a crowded highway, tailgating closely behind a massive black SUV bumper.",
+    "visual_thesis": "Demonstrating how retinal optical expansion rates trick drivers into misjudging distance to large vehicles versus small cars.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

@@ -4659,7 +4659,7 @@
     "visual_thesis": "Demonstrate how isolated cabin environments strip away human facial cues and trigger predatory threat perception.",
     "first_frame_description": "First-person perspective of hands white-knuckling a steering wheel while staring through a dark tinted windshield.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 7.12,
+    "likes_per_1000_views": 7.1,
     "views_first_60m": 1,
     "views_first_6h": 1
   },
@@ -4722,7 +4722,7 @@
     "visual_thesis": "Goalkeepers prioritize the appearance of effort over statistical success to avoid social blame.",
     "first_frame_description": "A high-angle wide shot of a soccer penalty kick where the goalkeeper lunges violently to the left while the ball rolls slowly into the center of the net.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 9.35,
+    "likes_per_1000_views": 9.34,
     "views_first_60m": 1060,
     "views_first_6h": 1060
   },
@@ -4743,7 +4743,7 @@
     "visual_thesis": "A person in bed, eyes open, minutes before their alarm, looking tired despite the quiet morning, as if their body is in a struggle.",
     "first_frame_description": "Close-up shot of a person's face in bed, eyes open, looking slightly tired or pensive, with a digital alarm clock on a bedside table showing a time a few minutes before the set alarm.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 14.2,
+    "likes_per_1000_views": 14.17,
     "views_first_60m": 972,
     "views_first_6h": 972
   },
@@ -4890,7 +4890,7 @@
     "visual_thesis": "The long walk to a distant escalator is a deliberate retail strategy to increase impulse purchases.",
     "first_frame_description": "A wide shot from a shopper's perspective, looking into a large, brightly lit department store entrance. The desired escalator is visible but appears significantly far away, requiring a long walk past various product displays.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 11.96,
+    "likes_per_1000_views": 11.94,
     "views_first_60m": 917,
     "views_first_6h": 917
   },
@@ -4911,7 +4911,7 @@
     "visual_thesis": "Demonstrate how a single driver's minor braking action triggers a cascading, amplifying wave of brake lights that travels backward through a line of cars, eventually bringing traffic to a complete standstill.",
     "first_frame_description": "A first-person POV shot from inside a car dashboard as the driver suddenly slams on the brakes, with a sea of red brake lights lighting up ahead on a clear highway.",
     "comments_per_1000_views": 1.14,
-    "likes_per_1000_views": 6.82,
+    "likes_per_1000_views": 6.81,
     "views_first_60m": 206,
     "views_first_6h": 206
   },
@@ -4952,8 +4952,8 @@
     "viewer_identity_score": 9.5,
     "visual_thesis": "A side-by-side comparison of a phone's UI showing 1% battery versus a technical schematic showing the actual chemical reserve remaining to prevent cell degradation.",
     "first_frame_description": "First-person POV of a thumb scrolling on a smartphone, suddenly stopping as the battery indicator in the top right corner flashes red at 1%.",
-    "comments_per_1000_views": 0.91,
-    "likes_per_1000_views": 9.06,
+    "comments_per_1000_views": 0.9,
+    "likes_per_1000_views": 8.95,
     "views_first_60m": 1071,
     "views_first_6h": 1071
   },
@@ -4974,7 +4974,7 @@
     "visual_thesis": "A photo finish is not a frozen moment in space, but a stitched-together graph of pure time.",
     "first_frame_description": "A split-screen of an incredibly close Olympic track finish, with a red line down the middle, and a hand pointing closely at the screen.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 9.59,
+    "likes_per_1000_views": 9.57,
     "views_first_60m": 1035,
     "views_first_6h": 1035
   },
@@ -4993,7 +4993,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The grocery store layout is a deliberate financial trap designed to maximize walking distance for basic essentials.",
-    "first_frame_description": "A first-person POV shot walking through automatic grocery store sliding doors, looking down a long, brightly lit center aisle."
+    "first_frame_description": "A first-person POV shot walking through automatic grocery store sliding doors, looking down a long, brightly lit center aisle.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 53,
+    "views_first_6h": 53
   },
   "d4A6JQ-0-lo": {
     "variant": "A",
@@ -5010,7 +5014,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The human eye cannot linearly calculate closing speed, causing objects moving directly toward us to appear stationary until they are dangerously close.",
-    "first_frame_description": "A first-person POV from inside a car on a highway, showing the driver's hands gripping the steering wheel as the red brake lights of the SUV directly ahead suddenly flash bright red."
+    "first_frame_description": "A first-person POV from inside a car on a highway, showing the driver's hands gripping the steering wheel as the red brake lights of the SUV directly ahead suddenly flash bright red.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 1,
+    "views_first_6h": 1
   },
   "7zpfkYuYF4M": {
     "variant": "B",
@@ -5027,7 +5035,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The 'Anchor' effect: showing a high-priced item first to make subsequent prices seem lower by comparison.",
-    "first_frame_description": "POV walking into a high-end boutique, camera pans to a gold watch with a massive '$10,000' price tag in sharp focus."
+    "first_frame_description": "POV walking into a high-end boutique, camera pans to a gold watch with a massive '$10,000' price tag in sharp focus.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 10.77,
+    "views_first_60m": 743,
+    "views_first_6h": 743
   },
   "Lhgt3Dx8EPs": {
     "variant": "A",
@@ -5044,6 +5056,44 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrating the contraction of the human 'peripersonal space' safety bubble using a glowing 3D overlay that shrinks tightly around a silhouette when the lights go out.",
-    "first_frame_description": "A first-person POV of a hand flipping a bedroom light switch, instantly plunging a highly recognizable, cozy bedroom into pitch blackness."
+    "first_frame_description": "A first-person POV of a hand flipping a bedroom light switch, instantly plunging a highly recognizable, cozy bedroom into pitch blackness.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
+  },
+  "rPt8PhWddtA": {
+    "variant": "A",
+    "title": "Why Your 'Quick' Email Drains You",
+    "date": "2026-09-03",
+    "publish_at": "2026-09-04T07:08:00Z",
+    "cluster": null,
+    "topic": "TRENDING NOW: why the leader almost never gets overtaken on the last lap",
+    "subcluster": "Cognitive Bias",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 10.0,
+    "retention_prediction": 10.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "An initial time estimate creates a mental anchor that, when exceeded, visibly drains focus and traps the individual in a self-punishing mental game.",
+    "first_frame_description": "A person sits at a desk, opening a laptop. The screen shows an email interface."
+  },
+  "XV9sJGDtLf4": {
+    "variant": "A",
+    "title": "Why You Always Tailgate Large SUVs",
+    "date": "2026-09-03",
+    "publish_at": "2026-09-04T09:10:00Z",
+    "cluster": "traffic",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "subcluster": "visual_illusions",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrating how retinal optical expansion rates trick drivers into misjudging distance to large vehicles versus small cars.",
+    "first_frame_description": "Driver POV behind the wheel on a crowded highway, tailgating closely behind a massive black SUV bumper."
   }
 }

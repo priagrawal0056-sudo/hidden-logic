@@ -6357,5 +6357,41 @@
     "quality_score": 47.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "rPt8PhWddtA",
+    "title": "Why Your 'Quick' Email Drains You",
+    "topic": "TRENDING NOW: why the leader almost never gets overtaken on the last lap",
+    "date": "2026-09-03",
+    "n": 526,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 9,
+    "environment_bonus": 0,
+    "topic_fidelity": 0.0,
+    "subject_retention": 0.0,
+    "quality_score": 47.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "XV9sJGDtLf4",
+    "title": "Why You Always Tailgate Large SUVs",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "date": "2026-09-03",
+    "n": 527,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

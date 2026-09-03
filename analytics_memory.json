@@ -463,14 +463,14 @@
       "avg_returning_viewers": null
     },
     "Why your brain thinks the car in front is slower than it is": {
-      "count": 10,
-      "avg_views_first_60m": 212.3,
-      "avg_views_first_6h": 212.4,
+      "count": 11,
+      "avg_views_first_60m": 191.2,
+      "avg_views_first_6h": 191.3,
       "avg_views_first_24h": 0.5,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 4.0,
+      "avg_likes_per_1000_views": 3.6,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -1691,7 +1691,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 12.0,
+      "avg_likes_per_1000_views": 11.9,
       "avg_returning_viewers": null
     },
     "The psychological reason behind traffic jams appearing out of nowhere": {
@@ -1713,7 +1713,40 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.9,
-      "avg_likes_per_1000_views": 9.1,
+      "avg_likes_per_1000_views": 8.9,
+      "avg_returning_viewers": null
+    },
+    "Why milk being at the very back of the store keeps happening no matter what": {
+      "count": 1,
+      "avg_views_first_60m": 53.0,
+      "avg_views_first_6h": 53.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "Why believing the first price you see is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": 743.0,
+      "avg_views_first_6h": 743.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 10.8,
+      "avg_returning_viewers": null
+    },
+    "Why you can never escape a room feeling smaller in the dark": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
     }
   },
@@ -1730,14 +1763,14 @@
       "avg_returning_viewers": null
     },
     "traffic": {
-      "count": 15,
-      "avg_views_first_60m": 89.5,
-      "avg_views_first_6h": 120.5,
+      "count": 16,
+      "avg_views_first_60m": 83.2,
+      "avg_views_first_6h": 111.9,
       "avg_views_first_24h": 860.0,
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
-      "avg_comments_per_1000_views": 115.4,
-      "avg_likes_per_1000_views": 118.3,
+      "avg_comments_per_1000_views": 107.1,
+      "avg_likes_per_1000_views": 109.9,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -1752,14 +1785,14 @@
       "avg_returning_viewers": 210.0
     },
     "mall": {
-      "count": 5,
-      "avg_views_first_60m": 22.0,
-      "avg_views_first_6h": 92.0,
+      "count": 6,
+      "avg_views_first_60m": 17.0,
+      "avg_views_first_6h": 69.5,
       "avg_views_first_24h": 445.0,
       "avg_stayed_to_watch": 55.0,
       "avg_avd": 12.4,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 123.4,
+      "avg_likes_per_1000_views": 98.7,
       "avg_returning_viewers": 35.0
     },
     "airport": {
@@ -2102,7 +2135,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.9,
-      "avg_likes_per_1000_views": 9.1,
+      "avg_likes_per_1000_views": 8.9,
       "avg_returning_viewers": null
     },
     "secrets": {
@@ -2546,14 +2579,14 @@
       "avg_returning_viewers": null
     },
     "Consumer Behavior": {
-      "count": 1,
-      "avg_views_first_60m": 157.0,
-      "avg_views_first_6h": 157.0,
+      "count": 2,
+      "avg_views_first_60m": 450.0,
+      "avg_views_first_6h": 450.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 16.0,
+      "avg_likes_per_1000_views": 13.4,
       "avg_returning_viewers": null
     },
     "viral audio": {
@@ -3741,7 +3774,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 12.0,
+      "avg_likes_per_1000_views": 11.9,
       "avg_returning_viewers": null
     },
     "traffic": {
@@ -3765,18 +3798,51 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 9.6,
       "avg_returning_viewers": null
+    },
+    "layout": {
+      "count": 1,
+      "avg_views_first_60m": 53.0,
+      "avg_views_first_6h": 53.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "driving illusions": {
+      "count": 1,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
+    },
+    "spatial_psychology": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 212,
-      "avg_views_first_60m": 136.1,
-      "avg_views_first_6h": 150.0,
+      "count": 216,
+      "avg_views_first_60m": 137.5,
+      "avg_views_first_6h": 151.2,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 8.5,
-      "avg_likes_per_1000_views": 20.3,
+      "avg_comments_per_1000_views": 8.3,
+      "avg_likes_per_1000_views": 19.9,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
