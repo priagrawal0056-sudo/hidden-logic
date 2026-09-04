@@ -4827,7 +4827,7 @@
     "visual_thesis": "Two people sitting across from each other at a cafe table, perfectly mirroring each other's physical movements in real-time.",
     "first_frame_description": "A close-up split-screen of two people sitting at a cafe table, both simultaneously crossing their arms in identical fashion.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 4.55,
+    "likes_per_1000_views": 4.54,
     "views_first_60m": 701,
     "views_first_6h": 701
   },
@@ -4932,7 +4932,7 @@
     "visual_thesis": "A brain chemical baseline graph plummeting across 89 minutes of tension before launching into a vertical dopamine contrast spike at minute 90.",
     "first_frame_description": "Close-up of a fan in a packed stadium gripping their head at 89:50 on the scoreboard, screaming in agony before exploding into jubilation.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 4.48,
+    "likes_per_1000_views": 4.49,
     "views_first_60m": 739,
     "views_first_6h": 739
   },
@@ -4952,8 +4952,8 @@
     "viewer_identity_score": 9.5,
     "visual_thesis": "A side-by-side comparison of a phone's UI showing 1% battery versus a technical schematic showing the actual chemical reserve remaining to prevent cell degradation.",
     "first_frame_description": "First-person POV of a thumb scrolling on a smartphone, suddenly stopping as the battery indicator in the top right corner flashes red at 1%.",
-    "comments_per_1000_views": 0.9,
-    "likes_per_1000_views": 8.95,
+    "comments_per_1000_views": 0.89,
+    "likes_per_1000_views": 8.86,
     "views_first_60m": 1071,
     "views_first_6h": 1071
   },
@@ -4974,7 +4974,7 @@
     "visual_thesis": "A photo finish is not a frozen moment in space, but a stitched-together graph of pure time.",
     "first_frame_description": "A split-screen of an incredibly close Olympic track finish, with a red line down the middle, and a hand pointing closely at the screen.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 9.57,
+    "likes_per_1000_views": 9.56,
     "views_first_60m": 1035,
     "views_first_6h": 1035
   },
@@ -5037,7 +5037,7 @@
     "visual_thesis": "The 'Anchor' effect: showing a high-priced item first to make subsequent prices seem lower by comparison.",
     "first_frame_description": "POV walking into a high-end boutique, camera pans to a gold watch with a massive '$10,000' price tag in sharp focus.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 10.77,
+    "likes_per_1000_views": 8.19,
     "views_first_60m": 743,
     "views_first_6h": 743
   },
@@ -5077,7 +5077,11 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 10.0,
     "visual_thesis": "An initial time estimate creates a mental anchor that, when exceeded, visibly drains focus and traps the individual in a self-punishing mental game.",
-    "first_frame_description": "A person sits at a desk, opening a laptop. The screen shows an email interface."
+    "first_frame_description": "A person sits at a desk, opening a laptop. The screen shows an email interface.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 10,
+    "views_first_6h": 10
   },
   "XV9sJGDtLf4": {
     "variant": "A",
@@ -5094,6 +5098,44 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrating how retinal optical expansion rates trick drivers into misjudging distance to large vehicles versus small cars.",
-    "first_frame_description": "Driver POV behind the wheel on a crowded highway, tailgating closely behind a massive black SUV bumper."
+    "first_frame_description": "Driver POV behind the wheel on a crowded highway, tailgating closely behind a massive black SUV bumper.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 9,
+    "views_first_6h": 9
+  },
+  "abyL33SLKhc": {
+    "variant": "B",
+    "title": "Why Red Cars Always Make You Slam Your Brakes",
+    "date": "2026-09-04",
+    "publish_at": "2026-09-05T07:16:00Z",
+    "cluster": "traffic",
+    "topic": "Why drivers in red cars feel faster to you",
+    "subcluster": "driving-psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate the visual delay of red light wavelengths on the human retina causing a perceived distance distortion of a red vehicle on a highway.",
+    "first_frame_description": "POV of a driver slamming their hands onto a steering wheel, braking hard behind a bright red sedan on a sunny highway."
+  },
+  "2MfuOY5EDPc": {
+    "variant": "A",
+    "title": "Why You Always Spend More on Giant Menus",
+    "date": "2026-09-04",
+    "publish_at": "2026-09-05T09:10:00Z",
+    "cluster": "restaurant",
+    "topic": "Why you can never escape giant menus costing you more",
+    "subcluster": "restaurant_tricks",
+    "hook_type": "physical_moment",
+    "series": "Money & Pricing Tricks",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Giant menus use choice fatigue and eye-tracking layouts to force customers into buying high-margin items.",
+    "first_frame_description": "A first-person POV of hands opening an overwhelmingly large, laminated diner menu packed with tiny text."
   }
 }

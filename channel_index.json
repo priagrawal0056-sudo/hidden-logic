@@ -6393,5 +6393,41 @@
     "quality_score": 45.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "abyL33SLKhc",
+    "title": "Why Red Cars Always Make You Slam Your Brakes",
+    "topic": "Why drivers in red cars feel faster to you",
+    "date": "2026-09-04",
+    "n": 528,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "2MfuOY5EDPc",
+    "title": "Why You Always Spend More on Giant Menus",
+    "topic": "Why you can never escape giant menus costing you more",
+    "date": "2026-09-04",
+    "n": 529,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 8,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 48.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

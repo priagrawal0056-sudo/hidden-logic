@@ -1120,5 +1120,17 @@
     "topic": "Why your brain thinks the car in front is slower than it is",
     "visual_thesis": "Demonstrating how retinal optical expansion rates trick drivers into misjudging distance to large vehicles versus small cars.",
     "script": "You creep dangerously close to large SUVs without realizing it. You swear you're keeping a safe distance. But your retina never measures actual depth. It only tracks how fast an image expands on your eye. Because a massive vehicle fills your field of view, its edges expand far slower. It looks stationary right until you slam your brakes. Which is why..."
+  },
+  "abyL33SLKhc": {
+    "title": "Why Red Cars Always Make You Slam Your Brakes",
+    "topic": "Why drivers in red cars feel faster to you",
+    "visual_thesis": "Demonstrate the visual delay of red light wavelengths on the human retina causing a perceived distance distortion of a red vehicle on a highway.",
+    "script": "You slam your brakes because red cars look too close. But they are actually driving at your exact speed. Your eyes are lying to you. Red wavelengths take longer for your retinas to process. This tiny signal delay panics your brain. So it literally hallucinates the car closer to force a faster reaction. It's a built-in survival glitch. Which is why you always..."
+  },
+  "2MfuOY5EDPc": {
+    "title": "Why You Always Spend More on Giant Menus",
+    "topic": "Why you can never escape giant menus costing you more",
+    "visual_thesis": "Giant menus use choice fatigue and eye-tracking layouts to force customers into buying high-margin items.",
+    "script": "You open a giant menu and instantly lose money. That massive list of eighty dishes is designed to exhaust your brain. But they don't actually want you reading it. Designers use a hidden layout called the Golden Triangle to steer your eyes. But that's not even the clever part. They trigger choice fatigue so your panicking brain grabs the highest-margin item. You didn't actually want that expensive steak. You paid six extra dollars just to escape. Which is why..."
   }
 }

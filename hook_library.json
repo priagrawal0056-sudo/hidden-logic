@@ -2099,5 +2099,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Red Cars Always Make You Slam Your Brakes",
+    "hook_text": "You slam your brakes because red cars look too close.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden Illusion",
+    "first_frame_description": "POV of a driver slamming their hands onto a steering wheel, braking hard behind a bright red sedan on a sunny highway.",
+    "visual_thesis": "Demonstrate the visual delay of red light wavelengths on the human retina causing a perceived distance distortion of a red vehicle on a highway.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Spend More on Giant Menus",
+    "hook_text": "You open a giant menu and instantly lose money.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Financial Loss",
+    "first_frame_description": "A first-person POV of hands opening an overwhelmingly large, laminated diner menu packed with tiny text.",
+    "visual_thesis": "Giant menus use choice fatigue and eye-tracking layouts to force customers into buying high-margin items.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

@@ -2604,5 +2604,27 @@
     "hook_type": "physical_moment",
     "cluster": "supermarket",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why You Always Tailgate Large SUVs",
+    "views": 9,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 45.0
+  },
+  {
+    "title": "Why Your 'Quick' Email Drains You",
+    "views": 10,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
   }
 ]
