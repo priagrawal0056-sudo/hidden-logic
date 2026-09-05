@@ -1,14 +1,14 @@
 {
-  "channel_avg_views": 802.5,
+  "channel_avg_views": 818.7,
   "topic_clusters": {
     "airport": {
       "videos": 13,
-      "avg_views": 573.4,
+      "avg_views": 573.6,
       "best_views": 1615,
       "recent_views": [
         7,
         1192,
-        977,
+        979,
         926,
         544,
         363,
@@ -57,10 +57,10 @@
     },
     "mall": {
       "videos": 12,
-      "avg_views": 86.4,
+      "avg_views": 86.6,
       "best_views": 1076,
       "recent_views": [
-        3,
+        4,
         2,
         7,
         28,
@@ -77,14 +77,15 @@
       "avg_avd": 12.4
     },
     "traffic": {
-      "videos": 48,
-      "avg_views": 320.9,
+      "videos": 49,
+      "avg_views": 354.5,
       "best_views": 1772,
       "recent_views": [
-        9,
+        1076,
+        10,
         6,
-        1130,
-        881,
+        1140,
+        878,
         1002,
         975,
         563,
@@ -172,10 +173,11 @@
       "avg_avd": null
     },
     "restaurant": {
-      "videos": 8,
-      "avg_views": 254.4,
-      "best_views": 903,
+      "videos": 9,
+      "avg_views": 441.4,
+      "best_views": 981,
       "recent_views": [
+        981,
         3,
         4,
         795,
@@ -190,10 +192,10 @@
     },
     "supermarket": {
       "videos": 27,
-      "avg_views": 291.8,
+      "avg_views": 307.9,
       "best_views": 1369,
       "recent_views": [
-        55,
+        56,
         1,
         8,
         1,
@@ -270,10 +272,10 @@
     },
     "attention": {
       "videos": 6,
-      "avg_views": 381.1,
+      "avg_views": 381.4,
       "best_views": 1055,
       "recent_views": [
-        988,
+        989,
         7,
         6,
         1055,
@@ -319,7 +321,7 @@
     },
     "technology": {
       "videos": 23,
-      "avg_views": 25.9,
+      "avg_views": 27.1,
       "best_views": 265,
       "recent_views": [
         0,
@@ -351,7 +353,7 @@
     },
     "internet_behavior": {
       "videos": 3,
-      "avg_views": 1.0,
+      "avg_views": 0.8,
       "best_views": 2,
       "recent_views": [
         0,
@@ -408,5 +410,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-09-04T18:55:49.185677"
+  "last_updated": "2026-09-05T18:02:47.872927"
 }

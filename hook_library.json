@@ -2121,5 +2121,49 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Red Cars Always Look Like They're Tailgating",
+    "hook_text": "A red car looks dangerously close in your mirror.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "Driver's POV looking into the rearview mirror at an aggressive red sports car grill appearing inches away on a highway.",
+    "visual_thesis": "A rear-view mirror view showing a red car appearing alarmingly close, overlaid with a side-by-side split showing the actual safe distance versus the 10% perceived visual compression.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Old Smells Bring Back Everything",
+    "hook_text": "You smell old Play-Doh.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Immediate Consequence -> Contradiction/Mystery",
+    "first_frame_description": "A close-up shot of a hand opening a yellow Play-Doh container, then a finger pressing into the soft clay, implying the act of smelling.",
+    "visual_thesis": "The brain's direct, rewired connection between childhood smells and indelible memories.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Walk Like Strangers",
+    "hook_text": "You're walking behind a stranger and your legs are hijacked.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System",
+    "first_frame_description": "A tight, low-angle shot of two pairs of sneakers on a city sidewalk hitting the pavement in perfect, robotic unison.",
+    "visual_thesis": "Entrainment: The biological energy-saving hack that forces you to sync with strangers.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Spend $200 When Buying One Thing",
+    "hook_text": "You grab paper towels and somehow spend two hundred dollars.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Unintended Outcome",
+    "first_frame_description": "First-person perspective walking through store aisles with paper towels in a shopping cart filled with impulse purchases.",
+    "visual_thesis": "Show how retail merchandise displays intentionally pair items to create visual dissatisfaction with existing household goods.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
