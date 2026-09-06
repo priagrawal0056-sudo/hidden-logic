@@ -2626,5 +2626,16 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 47.0
+  },
+  {
+    "title": "Why Old Smells Bring Back Everything",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
   }
 ]

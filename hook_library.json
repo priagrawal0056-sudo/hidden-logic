@@ -2165,5 +2165,16 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Cheer For Underdogs",
+    "hook_text": "You jump off the couch when the underdog scores.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Psychological Reveal",
+    "first_frame_description": "Wide shot of a fan leaping off a living room sofa in excitement while watching a sports match on a bright TV screen.",
+    "visual_thesis": "A fan leaping off a living room couch screaming as an unexpected underdog team scores on screen.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
