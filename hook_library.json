@@ -2176,5 +2176,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Last-Minute Goals Feel 10x Better",
+    "hook_text": "You scream at last-second goals because your brain got tricked.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System Tease",
+    "first_frame_description": "Close-up of a fan jumping off a couch in a dark living room as a soccer match clock hits 89:59.",
+    "visual_thesis": "A brain graphic accumulating pressure behind a digital dam during a tied match clock, exploding into a massive dopamine surge on a 90th-minute goal.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Grocery Carts Are Suddenly Huge",
+    "hook_text": "You grab a grocery cart, but it's actually a trap.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden Trap",
+    "first_frame_description": "A first-person POV shot of hands grabbing the cold metal handle of a massive, empty shopping cart inside a brightly lit supermarket.",
+    "visual_thesis": "Demonstrate how retail stores use oversized shopping carts to psychologically manipulate shoppers into buying more food.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

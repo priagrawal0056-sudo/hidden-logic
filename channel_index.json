@@ -6511,5 +6511,39 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "kY7Y9R3GY08",
+    "title": "Why Last-Minute Goals Feel 10x Better",
+    "topic": "Why a last-minute goal feels better than an early one",
+    "date": "2026-09-07",
+    "n": 535,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 45.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "khqHj9f4GZc",
+    "title": "Why Grocery Carts Are Suddenly Huge",
+    "topic": "Why everyone is secretly annoyed by shopping carts getting bigger every decade",
+    "date": "2026-09-07",
+    "n": 536,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

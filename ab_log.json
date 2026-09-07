@@ -5121,7 +5121,7 @@
     "visual_thesis": "Demonstrate the visual delay of red light wavelengths on the human retina causing a perceived distance distortion of a red vehicle on a highway.",
     "first_frame_description": "POV of a driver slamming their hands onto a steering wheel, braking hard behind a bright red sedan on a sunny highway.",
     "comments_per_1000_views": 0.9,
-    "likes_per_1000_views": 5.39,
+    "likes_per_1000_views": 5.4,
     "views_first_60m": 1076,
     "views_first_6h": 1076
   },
@@ -5142,7 +5142,7 @@
     "visual_thesis": "Giant menus use choice fatigue and eye-tracking layouts to force customers into buying high-margin items.",
     "first_frame_description": "A first-person POV of hands opening an overwhelmingly large, laminated diner menu packed with tiny text.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 17.7,
+    "likes_per_1000_views": 17.63,
     "views_first_60m": 981,
     "views_first_6h": 981
   },
@@ -5163,7 +5163,7 @@
     "visual_thesis": "A rear-view mirror view showing a red car appearing alarmingly close, overlaid with a side-by-side split showing the actual safe distance versus the 10% perceived visual compression.",
     "first_frame_description": "Driver's POV looking into the rearview mirror at an aggressive red sports car grill appearing inches away on a highway.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 9.13,
+    "likes_per_1000_views": 8.82,
     "views_first_60m": 876,
     "views_first_6h": 876
   },
@@ -5205,7 +5205,7 @@
     "visual_thesis": "Entrainment: The biological energy-saving hack that forces you to sync with strangers.",
     "first_frame_description": "A tight, low-angle shot of two pairs of sneakers on a city sidewalk hitting the pavement in perfect, robotic unison.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 11.16,
+    "likes_per_1000_views": 10.96,
     "views_first_60m": 986,
     "views_first_6h": 986
   },
@@ -5225,8 +5225,8 @@
     "viewer_identity_score": 9.0,
     "visual_thesis": "Show how retail merchandise displays intentionally pair items to create visual dissatisfaction with existing household goods.",
     "first_frame_description": "First-person perspective walking through store aisles with paper towels in a shopping cart filled with impulse purchases.",
-    "comments_per_1000_views": 1.15,
-    "likes_per_1000_views": 11.49,
+    "comments_per_1000_views": 1.0,
+    "likes_per_1000_views": 10.0,
     "views_first_60m": 870,
     "views_first_6h": 870
   },
@@ -5245,6 +5245,44 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A fan leaping off a living room couch screaming as an unexpected underdog team scores on screen.",
-    "first_frame_description": "Wide shot of a fan leaping off a living room sofa in excitement while watching a sports match on a bright TV screen."
+    "first_frame_description": "Wide shot of a fan leaping off a living room sofa in excitement while watching a sports match on a bright TV screen.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 11.15,
+    "views_first_60m": 269,
+    "views_first_6h": 269
+  },
+  "kY7Y9R3GY08": {
+    "variant": "A",
+    "title": "Why Last-Minute Goals Feel 10x Better",
+    "date": "2026-09-07",
+    "publish_at": "2026-09-08T07:07:00Z",
+    "cluster": null,
+    "topic": "Why a last-minute goal feels better than an early one",
+    "subcluster": "psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "A brain graphic accumulating pressure behind a digital dam during a tied match clock, exploding into a massive dopamine surge on a 90th-minute goal.",
+    "first_frame_description": "Close-up of a fan jumping off a couch in a dark living room as a soccer match clock hits 89:59."
+  },
+  "khqHj9f4GZc": {
+    "variant": "A",
+    "title": "Why Grocery Carts Are Suddenly Huge",
+    "date": "2026-09-07",
+    "publish_at": "2026-09-08T09:19:00Z",
+    "cluster": null,
+    "topic": "Why everyone is secretly annoyed by shopping carts getting bigger every decade",
+    "subcluster": "manipulation",
+    "hook_type": "physical_moment",
+    "series": "Supermarket Secrets",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Demonstrate how retail stores use oversized shopping carts to psychologically manipulate shoppers into buying more food.",
+    "first_frame_description": "A first-person POV shot of hands grabbing the cold metal handle of a massive, empty shopping cart inside a brightly lit supermarket."
   }
 }
