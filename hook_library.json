@@ -2198,5 +2198,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Stay In Long Lines",
+    "hook_text": "You turn the corner and see another hundred people.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Frustration Reveal",
+    "first_frame_description": "A first-person POV shot walking around a wooden fence corner into a massive, packed zig-zagging queue at a theme park.",
+    "visual_thesis": "Theme park queues use switchback geometry and narrow corridors as a psychological 'sunk cost' trap to prevent guests from leaving the line.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Referees Always Favor Home Teams",
+    "hook_text": "You scream at a referee, but he's already hijacked.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Unfair Manipulation -> Hidden Mechanism",
+    "first_frame_description": "First-person perspective from crowded stadium seats screaming down at a soccer referee on the pitch.",
+    "visual_thesis": "Visualizing referee stress responses and brain activity under crowd pressure to prove stadium noise dictates referee calls.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Turn Into A Monster Driving",
+    "hook_text": "You shut your car door.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden Perception Reveal",
+    "first_frame_description": "Close-up of a hand shutting a car door from the inside, with the interior of the car visible, suggesting the start of a journey.",
+    "visual_thesis": "The car's interior, specifically the glass, physically and psychologically isolates drivers, transforming their perception of other people into mere obstacles, leading to instant road rage.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

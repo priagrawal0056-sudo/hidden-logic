@@ -4722,7 +4722,7 @@
     "visual_thesis": "Goalkeepers prioritize the appearance of effort over statistical success to avoid social blame.",
     "first_frame_description": "A high-angle wide shot of a soccer penalty kick where the goalkeeper lunges violently to the left while the ball rolls slowly into the center of the net.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 9.34,
+    "likes_per_1000_views": 9.33,
     "views_first_60m": 1060,
     "views_first_6h": 1060
   },
@@ -5120,8 +5120,8 @@
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate the visual delay of red light wavelengths on the human retina causing a perceived distance distortion of a red vehicle on a highway.",
     "first_frame_description": "POV of a driver slamming their hands onto a steering wheel, braking hard behind a bright red sedan on a sunny highway.",
-    "comments_per_1000_views": 0.9,
-    "likes_per_1000_views": 5.4,
+    "comments_per_1000_views": 0.89,
+    "likes_per_1000_views": 5.36,
     "views_first_60m": 1076,
     "views_first_6h": 1076
   },
@@ -5142,7 +5142,7 @@
     "visual_thesis": "Giant menus use choice fatigue and eye-tracking layouts to force customers into buying high-margin items.",
     "first_frame_description": "A first-person POV of hands opening an overwhelmingly large, laminated diner menu packed with tiny text.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 17.63,
+    "likes_per_1000_views": 17.56,
     "views_first_60m": 981,
     "views_first_6h": 981
   },
@@ -5163,7 +5163,7 @@
     "visual_thesis": "A rear-view mirror view showing a red car appearing alarmingly close, overlaid with a side-by-side split showing the actual safe distance versus the 10% perceived visual compression.",
     "first_frame_description": "Driver's POV looking into the rearview mirror at an aggressive red sports car grill appearing inches away on a highway.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 8.82,
+    "likes_per_1000_views": 8.88,
     "views_first_60m": 876,
     "views_first_6h": 876
   },
@@ -5205,7 +5205,7 @@
     "visual_thesis": "Entrainment: The biological energy-saving hack that forces you to sync with strangers.",
     "first_frame_description": "A tight, low-angle shot of two pairs of sneakers on a city sidewalk hitting the pavement in perfect, robotic unison.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 10.96,
+    "likes_per_1000_views": 10.95,
     "views_first_60m": 986,
     "views_first_6h": 986
   },
@@ -5226,7 +5226,7 @@
     "visual_thesis": "Show how retail merchandise displays intentionally pair items to create visual dissatisfaction with existing household goods.",
     "first_frame_description": "First-person perspective walking through store aisles with paper towels in a shopping cart filled with impulse purchases.",
     "comments_per_1000_views": 1.0,
-    "likes_per_1000_views": 10.0,
+    "likes_per_1000_views": 10.02,
     "views_first_60m": 870,
     "views_first_6h": 870
   },
@@ -5247,7 +5247,7 @@
     "visual_thesis": "A fan leaping off a living room couch screaming as an unexpected underdog team scores on screen.",
     "first_frame_description": "Wide shot of a fan leaping off a living room sofa in excitement while watching a sports match on a bright TV screen.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 11.15,
+    "likes_per_1000_views": 14.08,
     "views_first_60m": 269,
     "views_first_6h": 269
   },
@@ -5266,7 +5266,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "A brain graphic accumulating pressure behind a digital dam during a tied match clock, exploding into a massive dopamine surge on a 90th-minute goal.",
-    "first_frame_description": "Close-up of a fan jumping off a couch in a dark living room as a soccer match clock hits 89:59."
+    "first_frame_description": "Close-up of a fan jumping off a couch in a dark living room as a soccer match clock hits 89:59.",
+    "comments_per_1000_views": 1.2,
+    "likes_per_1000_views": 9.59,
+    "views_first_60m": 834,
+    "views_first_6h": 834
   },
   "khqHj9f4GZc": {
     "variant": "A",
@@ -5283,6 +5287,61 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate how retail stores use oversized shopping carts to psychologically manipulate shoppers into buying more food.",
-    "first_frame_description": "A first-person POV shot of hands grabbing the cold metal handle of a massive, empty shopping cart inside a brightly lit supermarket."
+    "first_frame_description": "A first-person POV shot of hands grabbing the cold metal handle of a massive, empty shopping cart inside a brightly lit supermarket.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 25,
+    "views_first_6h": 25
+  },
+  "Xhkf_xi_KmQ": {
+    "variant": "B",
+    "title": "Why You Always Stay In Long Lines",
+    "date": "2026-09-08",
+    "publish_at": "2026-09-09T07:23:00Z",
+    "cluster": null,
+    "topic": "Why theme park queues that never seem to end makes everyone act predictably",
+    "subcluster": "Environmental Design",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Theme park queues use switchback geometry and narrow corridors as a psychological 'sunk cost' trap to prevent guests from leaving the line.",
+    "first_frame_description": "A first-person POV shot walking around a wooden fence corner into a massive, packed zig-zagging queue at a theme park."
+  },
+  "Z1v8E_wmESY": {
+    "variant": "A",
+    "title": "Why Referees Always Favor Home Teams",
+    "date": "2026-09-08",
+    "publish_at": "2026-09-09T09:04:00Z",
+    "cluster": null,
+    "topic": "Why home crowds actually change the score",
+    "subcluster": "referee_bias",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "Visualizing referee stress responses and brain activity under crowd pressure to prove stadium noise dictates referee calls.",
+    "first_frame_description": "First-person perspective from crowded stadium seats screaming down at a soccer referee on the pitch."
+  },
+  "7JwuHPs2sKw": {
+    "variant": "A",
+    "title": "Why You Turn Into A Monster Driving",
+    "date": "2026-09-08",
+    "publish_at": "2026-09-09T11:24:00Z",
+    "cluster": null,
+    "topic": "Why road rage hitting instantly is a universal experience",
+    "subcluster": "Driving Behavior",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "The car's interior, specifically the glass, physically and psychologically isolates drivers, transforming their perception of other people into mere obstacles, leading to instant road rage.",
+    "first_frame_description": "Close-up of a hand shutting a car door from the inside, with the interior of the car visible, suggesting the start of a journey."
   }
 }
