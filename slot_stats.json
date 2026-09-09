@@ -1,6 +1,6 @@
 {
-  "generated": 197,
-  "published": 196,
+  "generated": 201,
+  "published": 200,
   "dropped": 1,
   "avg_quality": 46.4,
   "drop_reasons": {
@@ -11,8 +11,8 @@
     "viewer_identity_low": 0,
     "title_score_low": 0,
     "quality_floor": 0,
-    "other": 301,
-    "winner_clone": 3,
+    "other": 303,
+    "winner_clone": 4,
     "subcluster_clone": 0
   }
 }

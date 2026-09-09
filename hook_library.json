@@ -2231,5 +2231,49 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why Cars In Front Always Feel Slower",
+    "hook_text": "You're tailgating a car that feels completely frozen.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Moment -> Frustration -> Hidden Illusion",
+    "first_frame_description": "First-person POV through a windshield tailgating a silver sedan at 70 MPH on an open highway.",
+    "visual_thesis": "Visualizing how optical loom suppression at high speed causes drivers to misjudge closing velocity.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Airports Already Knew Your Gate Would Change",
+    "hook_text": "You just checked your boarding pass.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Contradiction",
+    "first_frame_description": "A close-up of a hand holding a boarding pass, then a quick cut to an airport departure screen showing a gate number, which then visibly changes or flashes a new gate number.",
+    "visual_thesis": "Airport gate changes are not random errors but deliberate, pre-planned system optimizations for airline revenue and ground time, which can be visually demonstrated by showing gate screens, control rooms, and aircraft movements.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Download Always Stops At 99 Percent",
+    "hook_text": "You stare at a download stuck at ninety-nine percent.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Reveal",
+    "first_frame_description": "A first-person POV of a glowing computer monitor in a dark room, showing a massive installation progress bar stuck at 99% with a spinning loading wheel.",
+    "visual_thesis": "A close-up of a loading bar stalling at 99% while a timer freezes, contrasted with behind-the-scenes code showing a forced delay.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Forget Why You Walked Into A Room",
+    "hook_text": "You walk into a room.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Reveal",
+    "first_frame_description": "A person steps through a doorway into an empty room, then pauses with a slightly confused or blank expression, looking around as if having forgotten something.",
+    "visual_thesis": "The act of walking through a doorway triggers a brain mechanism that archives old thoughts and prioritizes new environmental awareness, framed as an ancient survival reflex.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

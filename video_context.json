@@ -1192,5 +1192,29 @@
     "topic": "Why road rage hitting instantly is a universal experience",
     "visual_thesis": "The car's interior, specifically the glass, physically and psychologically isolates drivers, transforming their perception of other people into mere obstacles, leading to instant road rage.",
     "script": "You shut your car door. Your brain sees obstacles. You’re usually calm. But that slow driver feels like a personal insult. You'd never scream at someone in a grocery line. So why does the wheel change you? It's not the traffic. It's the isolation. The glass literally stops your brain from seeing people. Behind the wheel, your brain sees only obstacles."
+  },
+  "Xm5GqeSJ2e8": {
+    "title": "Why Cars In Front Always Feel Slower",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "visual_thesis": "Visualizing how optical loom suppression at high speed causes drivers to misjudge closing velocity.",
+    "script": "You're tailgating a car that feels completely frozen. Trees are flying past, but their bumper barely grows. You think they're crawling, so you rage and hit the gas. Except they're actually going seventy. Your brain calculates relative speed by watching objects expand. At highway distance, that expansion is imperceptible. Your visual cortex glitches, reading zero expansion as zero movement. So you accelerate directly into a car that never slowed down."
+  },
+  "2T3isBD1nEk": {
+    "title": "Airports Already Knew Your Gate Would Change",
+    "topic": "Why airport gates changing at the last minute happens to you constantly",
+    "visual_thesis": "Airport gate changes are not random errors but deliberate, pre-planned system optimizations for airline revenue and ground time, which can be visually demonstrated by showing gate screens, control rooms, and aircraft movements.",
+    "script": "You just checked your boarding pass. Then your gate changes. It's not a glitch. Airports use a 'gate management system'. Its goal isn't your convenience. It's optimizing ground time and *airline* revenue. If a flight lands early, or another is delayed, your gate moves. This minimizes idle time for other aircraft. They already knew your gate would change. It's a constant, calculated shuffle."
+  },
+  "SZtm9suPQuI": {
+    "title": "Why Your Download Always Stops At 99 Percent",
+    "topic": "Why you can never escape the download stuck at 99 percent",
+    "visual_thesis": "A close-up of a loading bar stalling at 99% while a timer freezes, contrasted with behind-the-scenes code showing a forced delay.",
+    "script": "You stare at a download stuck at ninety-nine percent. It's actually frozen on purpose. Your computer has no idea when the file will finish. So developers program progress bars to lie to you. They glide smoothly to make you feel good. But that's not even the clever part. They stall it because if you saw the real speed, you'd quit. They trap you when you've already invested your time, which is why..."
+  },
+  "n_lvlHV-fS8": {
+    "title": "Why You Forget Why You Walked Into A Room",
+    "topic": "Why everyone is secretly annoyed by forgetting why you entered a room",
+    "visual_thesis": "The act of walking through a doorway triggers a brain mechanism that archives old thoughts and prioritizes new environmental awareness, framed as an ancient survival reflex.",
+    "script": "You walk into a room. Then... blank. That frustrating moment isn't forgetfulness. It's designed. Your brain sees a 'new scene' when you cross a doorway. It literally archives your old thoughts. Like closing a browser tab. But here's the real trick: your brain prioritizes new threats. It's an ancient survival reflex. Always ready for the next space you enter."
   }
 }

@@ -2648,5 +2648,16 @@
     "hook_type": "physical_moment",
     "cluster": "supermarket",
     "quality_score": 46.0
+  },
+  {
+    "title": "Why You Turn Into A Monster Driving",
+    "views": 221,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 10.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
   }
 ]

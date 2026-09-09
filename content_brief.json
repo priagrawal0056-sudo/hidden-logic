@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-08",
-  "sample_size": 24,
+  "date": "2026-09-09",
+  "sample_size": 26,
   "avg_retention": null,
   "best_formats": [
     "story"
@@ -10,6 +10,7 @@
     "unspecified"
   ],
   "best_hooks": [
+    "number",
     "plain"
   ],
   "hot_subjects": []
