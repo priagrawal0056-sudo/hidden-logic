@@ -463,14 +463,14 @@
       "avg_returning_viewers": null
     },
     "Why your brain thinks the car in front is slower than it is": {
-      "count": 12,
-      "avg_views_first_60m": 174.6,
-      "avg_views_first_6h": 174.7,
+      "count": 13,
+      "avg_views_first_60m": 195.4,
+      "avg_views_first_6h": 195.5,
       "avg_views_first_24h": 0.5,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 3.3,
+      "avg_likes_per_1000_views": 3.8,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -1812,7 +1812,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 9.2,
+      "avg_likes_per_1000_views": 8.1,
       "avg_returning_viewers": null
     },
     "Why home crowds actually change the score": {
@@ -1823,7 +1823,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 17.3,
+      "avg_likes_per_1000_views": 9.8,
       "avg_returning_viewers": null
     },
     "Why road rage hitting instantly is a universal experience": {
@@ -1834,7 +1834,40 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 18.1,
+      "avg_likes_per_1000_views": 15.4,
+      "avg_returning_viewers": null
+    },
+    "Why airport gates changing at the last minute happens to you constantly": {
+      "count": 1,
+      "avg_views_first_60m": 1078.0,
+      "avg_views_first_6h": 1078.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 5.6,
+      "avg_returning_viewers": null
+    },
+    "Why you can never escape the download stuck at 99 percent": {
+      "count": 1,
+      "avg_views_first_60m": 300.0,
+      "avg_views_first_6h": 300.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 16.7,
+      "avg_returning_viewers": null
+    },
+    "Why everyone is secretly annoyed by forgetting why you entered a room": {
+      "count": 1,
+      "avg_views_first_60m": 679.0,
+      "avg_views_first_6h": 679.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 1.5,
       "avg_returning_viewers": null
     }
   },
@@ -1851,14 +1884,14 @@
       "avg_returning_viewers": null
     },
     "traffic": {
-      "count": 19,
-      "avg_views_first_60m": 183.9,
-      "avg_views_first_6h": 207.5,
+      "count": 20,
+      "avg_views_first_60m": 197.2,
+      "avg_views_first_6h": 219.6,
       "avg_views_first_24h": 860.0,
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
-      "avg_comments_per_1000_views": 88.3,
-      "avg_likes_per_1000_views": 91.3,
+      "avg_comments_per_1000_views": 83.4,
+      "avg_likes_per_1000_views": 86.8,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -4005,7 +4038,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 9.2,
+      "avg_likes_per_1000_views": 8.1,
       "avg_returning_viewers": null
     },
     "referee_bias": {
@@ -4016,7 +4049,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 17.3,
+      "avg_likes_per_1000_views": 9.8,
       "avg_returning_viewers": null
     },
     "Driving Behavior": {
@@ -4027,20 +4060,64 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 18.1,
+      "avg_likes_per_1000_views": 15.4,
+      "avg_returning_viewers": null
+    },
+    "Visual Glitches": {
+      "count": 1,
+      "avg_views_first_60m": 424.0,
+      "avg_views_first_6h": 424.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 9.4,
+      "avg_returning_viewers": null
+    },
+    "airport_operations": {
+      "count": 1,
+      "avg_views_first_60m": 1078.0,
+      "avg_views_first_6h": 1078.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 5.6,
+      "avg_returning_viewers": null
+    },
+    "user_experience": {
+      "count": 1,
+      "avg_views_first_60m": 300.0,
+      "avg_views_first_6h": 300.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 16.7,
+      "avg_returning_viewers": null
+    },
+    "everyday-annoyance": {
+      "count": 1,
+      "avg_views_first_60m": 679.0,
+      "avg_views_first_6h": 679.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 1.5,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 230,
-      "avg_views_first_60m": 167.9,
-      "avg_views_first_6h": 180.7,
+      "count": 234,
+      "avg_views_first_60m": 177.4,
+      "avg_views_first_6h": 189.9,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 7.7,
-      "avg_likes_per_1000_views": 19.1,
+      "avg_comments_per_1000_views": 7.6,
+      "avg_likes_per_1000_views": 18.9,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
