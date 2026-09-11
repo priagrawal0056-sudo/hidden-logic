@@ -1,12 +1,12 @@
 {
-  "channel_avg_views": 849.7,
+  "channel_avg_views": 851.9,
   "topic_clusters": {
     "airport": {
       "videos": 14,
-      "avg_views": 677.4,
+      "avg_views": 679.6,
       "best_views": 1615,
       "recent_views": [
-        1160,
+        1173,
         7,
         1192,
         981,
@@ -79,14 +79,15 @@
       "avg_avd": 12.4
     },
     "traffic": {
-      "videos": 52,
-      "avg_views": 392.5,
+      "videos": 53,
+      "avg_views": 445.7,
       "best_views": 1772,
       "recent_views": [
-        424,
-        460,
-        909,
-        1122,
+        1051,
+        809,
+        879,
+        910,
+        1123,
         11,
         6,
         1141,
@@ -167,10 +168,11 @@
       "avg_avd": 14.0
     },
     "gas_station": {
-      "videos": 2,
-      "avg_views": 412.5,
+      "videos": 3,
+      "avg_views": 166.2,
       "best_views": 822,
       "recent_views": [
+        2,
         3,
         822
       ],
@@ -222,7 +224,7 @@
         855,
         593,
         5,
-        1,
+        2,
         18,
         137,
         1156,
@@ -262,10 +264,10 @@
     },
     "memory": {
       "videos": 9,
-      "avg_views": 203.1,
-      "best_views": 679,
+      "avg_views": 242.5,
+      "best_views": 889,
       "recent_views": [
-        679,
+        889,
         2,
         264,
         3,
@@ -419,5 +421,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-09-10T19:03:13.142132"
+  "last_updated": "2026-09-11T19:05:00.595699"
 }

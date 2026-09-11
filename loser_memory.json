@@ -2659,5 +2659,27 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Gas Pumps Are Painfully Slow",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "gas_station",
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why You Always Buy The Second Cheapest Wine",
+    "views": 162,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
   }
 ]
