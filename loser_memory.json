@@ -2681,5 +2681,27 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 47.0
+  },
+  {
+    "title": "an unofficial modded version on DLSS 5 is doing something wild on GTA V's menu",
+    "views": 105,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "restaurant",
+    "quality_score": 0
+  },
+  {
+    "title": "Why Your TV Always Starts The Trailer",
+    "views": 6,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 8.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 46.0
   }
 ]

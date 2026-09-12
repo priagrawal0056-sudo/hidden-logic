@@ -2319,5 +2319,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Copy How People Sit",
+    "hook_text": "You sit across from someone and copy how they sit.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Subversion",
+    "first_frame_description": "A split-screen showing two people sitting in office chairs opposite each other, simultaneously crossing their right legs in perfect sync.",
+    "visual_thesis": "Demonstrate that mirroring posture is a subconscious survival reflex rather than conscious empathy through side-by-side behavioral comparisons.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Elevator Doors Always Close On You",
+    "hook_text": "You sprint for the elevator, but the doors shut on purpose.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System Tease",
+    "first_frame_description": "First-person POV sprinting down a brightly lit office hallway as elevator doors rapidly slide shut.",
+    "visual_thesis": "Demonstrating how elevator light sensors fail to detect approaching runners while exit-triggers accelerate door closures.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

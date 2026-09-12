@@ -6763,5 +6763,60 @@
     "quality_score": 46.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "lWImXVqcR5s",
+    "title": "an unofficial modded version on DLSS 5 is doing something wild on GTA V's menu",
+    "topic": "an unofficial modded version on DLSS 5 is doing something wild on GTA V's menu",
+    "date": "2026-09-12",
+    "n": 0
+  },
+  {
+    "video_id": "c2wfoCz6RPU",
+    "title": "Why Red Cars Always Look Like They're Speeding",
+    "topic": "Why drivers in red cars feel faster to you",
+    "date": "2026-09-12",
+    "n": 551,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "h4iWpDI6TuY",
+    "title": "Why You Always Copy How People Sit",
+    "topic": "Why mirroring how the person across from you sits is definitely not an accident",
+    "date": "2026-09-12",
+    "n": 552,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 8,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "4R6mFlVVlqg",
+    "title": "Why Elevator Doors Always Close On You",
+    "topic": "Why elevator doors closing the moment you run keeps happening no matter what",
+    "date": "2026-09-12",
+    "n": 553,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

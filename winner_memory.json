@@ -1,15 +1,15 @@
 {
-  "channel_avg_views": 851.9,
+  "channel_avg_views": 848.9,
   "topic_clusters": {
     "airport": {
       "videos": 14,
-      "avg_views": 679.6,
+      "avg_views": 679.7,
       "best_views": 1615,
       "recent_views": [
         1173,
         7,
         1192,
-        981,
+        982,
         929,
         544,
         363,
@@ -58,10 +58,10 @@
     },
     "mall": {
       "videos": 13,
-      "avg_views": 229.9,
+      "avg_views": 230.2,
       "best_views": 1076,
       "recent_views": [
-        993,
+        995,
         5,
         2,
         7,
@@ -80,15 +80,15 @@
     },
     "traffic": {
       "videos": 53,
-      "avg_views": 445.7,
+      "avg_views": 454.8,
       "best_views": 1772,
       "recent_views": [
-        1051,
-        809,
+        1060,
+        918,
         879,
-        910,
+        912,
         1123,
-        11,
+        12,
         6,
         1141,
         878,
@@ -169,10 +169,10 @@
     },
     "gas_station": {
       "videos": 3,
-      "avg_views": 166.2,
+      "avg_views": 167.4,
       "best_views": 822,
       "recent_views": [
-        2,
+        4,
         3,
         822
       ],
@@ -180,10 +180,11 @@
       "avg_avd": null
     },
     "restaurant": {
-      "videos": 9,
-      "avg_views": 489.7,
+      "videos": 10,
+      "avg_views": 412.7,
       "best_views": 1028,
       "recent_views": [
+        105,
         1028,
         3,
         4,
@@ -264,10 +265,10 @@
     },
     "memory": {
       "videos": 9,
-      "avg_views": 242.5,
-      "best_views": 889,
+      "avg_views": 250.2,
+      "best_views": 930,
       "recent_views": [
-        889,
+        930,
         2,
         264,
         3,
@@ -282,7 +283,7 @@
     },
     "attention": {
       "videos": 6,
-      "avg_views": 464.7,
+      "avg_views": 399.1,
       "best_views": 1055,
       "recent_views": [
         989,
@@ -306,10 +307,11 @@
       "avg_avd": null
     },
     "social_behavior": {
-      "videos": 5,
-      "avg_views": 127.8,
-      "best_views": 714,
+      "videos": 6,
+      "avg_views": 419.6,
+      "best_views": 1003,
       "recent_views": [
+        1003,
         7,
         2,
         30,
@@ -330,10 +332,11 @@
       "avg_avd": null
     },
     "technology": {
-      "videos": 24,
-      "avg_views": 114.6,
+      "videos": 25,
+      "avg_views": 105.8,
       "best_views": 999,
       "recent_views": [
+        6,
         999,
         0,
         15,
@@ -421,5 +424,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-09-11T19:05:00.595699"
+  "last_updated": "2026-09-12T18:15:50.323545"
 }
