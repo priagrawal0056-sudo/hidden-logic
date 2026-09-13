@@ -1,14 +1,14 @@
 {
+  "physical_moment": {
+    "videos": 268,
+    "avg_views": 337.2,
+    "stayed_to_watch": 59.8,
+    "avd": 13.9
+  },
   "explainer": {
     "videos": 104,
-    "avg_views": 2849.1,
+    "avg_views": 2857.4,
     "stayed_to_watch": null,
     "avd": null
-  },
-  "physical_moment": {
-    "videos": 265,
-    "avg_views": 329.5,
-    "stayed_to_watch": 59.8,
-    "avd": 13.4
   }
 }

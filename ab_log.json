@@ -4892,7 +4892,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 11.94,
     "views_first_60m": 917,
-    "views_first_6h": 917
+    "views_first_6h": 917,
+    "avd": 12.0,
+    "retention": 44.43
   },
   "Kt0En4-Ppsc": {
     "variant": "B",
@@ -4913,7 +4915,9 @@
     "comments_per_1000_views": 1.14,
     "likes_per_1000_views": 6.83,
     "views_first_60m": 206,
-    "views_first_6h": 206
+    "views_first_6h": 206,
+    "avd": 12.0,
+    "retention": 37.28
   },
   "n6Uy2nMqXjI": {
     "variant": "A",
@@ -4934,7 +4938,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 4.49,
     "views_first_60m": 739,
-    "views_first_6h": 739
+    "views_first_6h": 739,
+    "avd": 15.0,
+    "retention": 42.44
   },
   "GoKXbdtQBYo": {
     "variant": "B",
@@ -4952,10 +4958,12 @@
     "viewer_identity_score": 9.5,
     "visual_thesis": "A side-by-side comparison of a phone's UI showing 1% battery versus a technical schematic showing the actual chemical reserve remaining to prevent cell degradation.",
     "first_frame_description": "First-person POV of a thumb scrolling on a smartphone, suddenly stopping as the battery indicator in the top right corner flashes red at 1%.",
-    "comments_per_1000_views": 0.88,
-    "likes_per_1000_views": 8.76,
+    "comments_per_1000_views": 0.87,
+    "likes_per_1000_views": 8.75,
     "views_first_60m": 1071,
-    "views_first_6h": 1071
+    "views_first_6h": 1071,
+    "avd": 16.0,
+    "retention": 65.64
   },
   "3Vs5fYkQA7A": {
     "variant": "B",
@@ -4976,7 +4984,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 9.54,
     "views_first_60m": 1035,
-    "views_first_6h": 1035
+    "views_first_6h": 1035,
+    "avd": 12.0,
+    "retention": 41.83
   },
   "6U7Bfxd7thI": {
     "variant": "B",
@@ -4997,7 +5007,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
     "views_first_60m": 53,
-    "views_first_6h": 53
+    "views_first_6h": 53,
+    "avd": 15.0,
+    "retention": 52.43
   },
   "d4A6JQ-0-lo": {
     "variant": "A",
@@ -5018,7 +5030,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
     "views_first_60m": 1,
-    "views_first_6h": 1
+    "views_first_6h": 1,
+    "avd": 22.0,
+    "retention": 81.12
   },
   "7zpfkYuYF4M": {
     "variant": "B",
@@ -5039,7 +5053,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 8.18,
     "views_first_60m": 743,
-    "views_first_6h": 743
+    "views_first_6h": 743,
+    "avd": 16.0,
+    "retention": 59.77
   },
   "Lhgt3Dx8EPs": {
     "variant": "A",
@@ -5060,7 +5076,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
     "views_first_60m": 2,
-    "views_first_6h": 2
+    "views_first_6h": 2,
+    "avd": 15.0,
+    "retention": 54.28999999999999
   },
   "rPt8PhWddtA": {
     "variant": "A",
@@ -5081,7 +5099,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
     "views_first_60m": 10,
-    "views_first_6h": 10
+    "views_first_6h": 10,
+    "avd": 6.0,
+    "retention": 10.58
   },
   "XV9sJGDtLf4": {
     "variant": "A",
@@ -5102,7 +5122,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
     "views_first_60m": 9,
-    "views_first_6h": 9
+    "views_first_6h": 9,
+    "avd": 9.0,
+    "retention": 37.99
   },
   "abyL33SLKhc": {
     "variant": "B",
@@ -5123,7 +5145,9 @@
     "comments_per_1000_views": 0.89,
     "likes_per_1000_views": 5.34,
     "views_first_60m": 1076,
-    "views_first_6h": 1076
+    "views_first_6h": 1076,
+    "avd": 14.0,
+    "retention": 54.18999999999999
   },
   "2MfuOY5EDPc": {
     "variant": "A",
@@ -5144,7 +5168,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 17.51,
     "views_first_60m": 981,
-    "views_first_6h": 981
+    "views_first_6h": 981,
+    "avd": 14.0,
+    "retention": 43.83
   },
   "Aw7I8eva9SM": {
     "variant": "B",
@@ -5163,9 +5189,11 @@
     "visual_thesis": "A rear-view mirror view showing a red car appearing alarmingly close, overlaid with a side-by-side split showing the actual safe distance versus the 10% perceived visual compression.",
     "first_frame_description": "Driver's POV looking into the rearview mirror at an aggressive red sports car grill appearing inches away on a highway.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 8.77,
+    "likes_per_1000_views": 8.76,
     "views_first_60m": 876,
-    "views_first_6h": 876
+    "views_first_6h": 876,
+    "avd": 13.0,
+    "retention": 44.2
   },
   "q7b2ZX_aWC8": {
     "variant": "A",
@@ -5186,7 +5214,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
     "views_first_60m": 0,
-    "views_first_6h": 0
+    "views_first_6h": 0,
+    "avd": 0.0,
+    "retention": 0.0
   },
   "m9rmKS67-64": {
     "variant": "A",
@@ -5205,9 +5235,11 @@
     "visual_thesis": "Entrainment: The biological energy-saving hack that forces you to sync with strangers.",
     "first_frame_description": "A tight, low-angle shot of two pairs of sneakers on a city sidewalk hitting the pavement in perfect, robotic unison.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 10.84,
+    "likes_per_1000_views": 10.86,
     "views_first_60m": 986,
-    "views_first_6h": 986
+    "views_first_6h": 986,
+    "avd": 15.0,
+    "retention": 65.21
   },
   "435flCjJtO0": {
     "variant": "B",
@@ -5226,9 +5258,11 @@
     "visual_thesis": "Show how retail merchandise displays intentionally pair items to create visual dissatisfaction with existing household goods.",
     "first_frame_description": "First-person perspective walking through store aisles with paper towels in a shopping cart filled with impulse purchases.",
     "comments_per_1000_views": 1.0,
-    "likes_per_1000_views": 10.01,
+    "likes_per_1000_views": 10.0,
     "views_first_60m": 870,
-    "views_first_6h": 870
+    "views_first_6h": 870,
+    "avd": 12.0,
+    "retention": 38.74
   },
   "i1y7I07aelE": {
     "variant": "B",
@@ -5247,9 +5281,11 @@
     "visual_thesis": "A fan leaping off a living room couch screaming as an unexpected underdog team scores on screen.",
     "first_frame_description": "Wide shot of a fan leaping off a living room sofa in excitement while watching a sports match on a bright TV screen.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 17.3,
+    "likes_per_1000_views": 17.24,
     "views_first_60m": 269,
-    "views_first_6h": 269
+    "views_first_6h": 269,
+    "avd": 10.0,
+    "retention": 45.2
   },
   "kY7Y9R3GY08": {
     "variant": "A",
@@ -5270,7 +5306,9 @@
     "comments_per_1000_views": 1.07,
     "likes_per_1000_views": 8.57,
     "views_first_60m": 834,
-    "views_first_6h": 834
+    "views_first_6h": 834,
+    "avd": 14.0,
+    "retention": 50.91
   },
   "khqHj9f4GZc": {
     "variant": "A",
@@ -5291,7 +5329,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
     "views_first_60m": 25,
-    "views_first_6h": 25
+    "views_first_6h": 25,
+    "avd": 15.0,
+    "retention": 54.339999999999996
   },
   "Xhkf_xi_KmQ": {
     "variant": "B",
@@ -5312,7 +5352,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 8.04,
     "views_first_60m": 980,
-    "views_first_6h": 980
+    "views_first_6h": 980,
+    "avd": 14.0,
+    "retention": 52.190000000000005
   },
   "Z1v8E_wmESY": {
     "variant": "A",
@@ -5333,7 +5375,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 9.79,
     "views_first_60m": 463,
-    "views_first_6h": 463
+    "views_first_6h": 463,
+    "avd": 13.0,
+    "retention": 44.62
   },
   "7JwuHPs2sKw": {
     "variant": "A",
@@ -5354,7 +5398,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 7.96,
     "views_first_60m": 221,
-    "views_first_6h": 221
+    "views_first_6h": 221,
+    "avd": 15.0,
+    "retention": 60.760000000000005
   },
   "Xm5GqeSJ2e8": {
     "variant": "A",
@@ -5375,7 +5421,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 7.63,
     "views_first_60m": 424,
-    "views_first_6h": 424
+    "views_first_6h": 424,
+    "avd": 31.0,
+    "retention": 94.65
   },
   "2T3isBD1nEk": {
     "variant": "A",
@@ -5396,7 +5444,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 5.97,
     "views_first_60m": 1078,
-    "views_first_6h": 1078
+    "views_first_6h": 1078,
+    "avd": 18.0,
+    "retention": 68.66
   },
   "SZtm9suPQuI": {
     "variant": "A",
@@ -5415,9 +5465,11 @@
     "visual_thesis": "A close-up of a loading bar stalling at 99% while a timer freezes, contrasted with behind-the-scenes code showing a forced delay.",
     "first_frame_description": "A first-person POV of a glowing computer monitor in a dark room, showing a massive installation progress bar stuck at 99% with a spinning loading wheel.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 15.23,
+    "likes_per_1000_views": 17.07,
     "views_first_60m": 300,
-    "views_first_6h": 300
+    "views_first_6h": 300,
+    "avd": 14.0,
+    "retention": 53.510000000000005
   },
   "n_lvlHV-fS8": {
     "variant": "A",
@@ -5438,7 +5490,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 1.08,
     "views_first_60m": 679,
-    "views_first_6h": 679
+    "views_first_6h": 679,
+    "avd": 16.0,
+    "retention": 60.309999999999995
   },
   "XKKPWj4gkxs": {
     "variant": "B",
@@ -5457,7 +5511,7 @@
     "visual_thesis": "The second-cheapest wine on a restaurant menu is a psychological trap designed to unload the lowest-quality, highest-markup bottle on prideful customers.",
     "first_frame_description": "A first-person POV close-up of a finger pointing at the second-cheapest price option on a textured leather restaurant wine menu.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 7.67,
+    "likes_per_1000_views": 6.2,
     "views_first_60m": 175,
     "views_first_6h": 175
   },
@@ -5478,7 +5532,7 @@
     "visual_thesis": "Demonstrate how the human eye misfocuses red light wavelengths, causing the brain to artificially offset red cars forward in space.",
     "first_frame_description": "First-person view looking into a rear-view mirror at a bright red sports car appearing aggressively close on the highway.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 13.23,
+    "likes_per_1000_views": 13.97,
     "views_first_60m": 1051,
     "views_first_6h": 1051
   },
@@ -5520,7 +5574,7 @@
     "visual_thesis": "The visual thesis contrasts the striker's eye gaze with their actual hip rotation to prove how goalkeepers are biologically baited into diving the wrong way.",
     "first_frame_description": "A tight, high-contrast close-up of a soccer striker's eyes intensely staring toward the left post, with the blurry figure of a goalkeeper in the background.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 13.11,
+    "likes_per_1000_views": 12.03,
     "views_first_60m": 1068,
     "views_first_6h": 1068
   },
@@ -5541,7 +5595,7 @@
     "visual_thesis": "The TV interface is a predator-prey relationship designed to hijack the viewer's biological reflexes before they can scroll away.",
     "first_frame_description": "A close-up POV of a hand holding a remote pointed at a TV screen where a movie description is suddenly replaced by a loud, high-motion trailer.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 0.0,
+    "likes_per_1000_views": 6.94,
     "views_first_60m": 6,
     "views_first_6h": 6
   },
@@ -5562,7 +5616,7 @@
     "visual_thesis": "Our collective panic to escape slow lines creates a mathematically predictable bottleneck that stores exploit.",
     "first_frame_description": "A first-person POV walking up to a grocery store checkout lane with two people in it, while the adjacent lane has a massive line.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 8.19,
+    "likes_per_1000_views": 7.1,
     "views_first_60m": 977,
     "views_first_6h": 977
   },
@@ -5581,7 +5635,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Driver perspective in highway traffic watching a red car pass in the side mirror, transitioning to visual ray-tracing of retina wavelength processing.",
-    "first_frame_description": "Driver side-mirror view on a busy highway as a bright red sedan passes by in the fast lane."
+    "first_frame_description": "Driver side-mirror view on a busy highway as a bright red sedan passes by in the fast lane.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 3.71,
+    "views_first_60m": 809,
+    "views_first_6h": 809
   },
   "h4iWpDI6TuY": {
     "variant": "B",
@@ -5598,7 +5656,11 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate that mirroring posture is a subconscious survival reflex rather than conscious empathy through side-by-side behavioral comparisons.",
-    "first_frame_description": "A split-screen showing two people sitting in office chairs opposite each other, simultaneously crossing their right legs in perfect sync."
+    "first_frame_description": "A split-screen showing two people sitting in office chairs opposite each other, simultaneously crossing their right legs in perfect sync.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 6.56,
+    "views_first_60m": 305,
+    "views_first_6h": 305
   },
   "4R6mFlVVlqg": {
     "variant": "B",
@@ -5615,6 +5677,10 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrating how elevator light sensors fail to detect approaching runners while exit-triggers accelerate door closures.",
-    "first_frame_description": "First-person POV sprinting down a brightly lit office hallway as elevator doors rapidly slide shut."
+    "first_frame_description": "First-person POV sprinting down a brightly lit office hallway as elevator doors rapidly slide shut.",
+    "comments_per_1000_views": 1.24,
+    "likes_per_1000_views": 26.05,
+    "views_first_60m": 806,
+    "views_first_6h": 806
   }
 }
