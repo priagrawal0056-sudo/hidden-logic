@@ -34,6 +34,11 @@ __pycache__/
 .venv311/
 .pytest_cache/
 .ruff_cache/
+.runtime/
+outputs/
+state/credible/*.lock
+state/credible/*.tmp
+config.local.json
 
 # ---- Fonts / archives (re-downloadable) ----
 *.zip

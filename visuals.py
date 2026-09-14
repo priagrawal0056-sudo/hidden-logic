@@ -321,7 +321,7 @@ def _score_candidates(gemini_key: str, query: str, candidates: list[dict],
                       topic: str, is_first_frame: bool, anchor: str = "") -> dict[str, float]:
     """Score candidates using Gemini. Returns a dict of vid_id -> score (0.0 to 10.0)."""
     if not gemini_key or not candidates:
-        return {c["id"]: 10.0 for c in candidates}
+        return {c["id"]: 0.0 for c in candidates}
 
     cache_key = (
         topic,
@@ -334,7 +334,7 @@ def _score_candidates(gemini_key: str, query: str, candidates: list[dict],
     if cache_key in _SCORE_CACHE:
         print(f"[visuals] Score cache hit for query: '{query}'")
         cached_scores = _SCORE_CACHE[cache_key]
-        return {c["id"]: cached_scores.get(c["id"], 10.0) for c in candidates}
+        return {c["id"]: cached_scores.get(c["id"], 0.0) for c in candidates}
 
     candidate_items = []
     for c in candidates:
@@ -390,8 +390,8 @@ Respond ONLY with a JSON object in this format:
         _SCORE_CACHE[cache_key] = scores
         return scores
     except Exception as e:
-        print(f"[visuals] Candidate scoring failed: {e}. Defaulting all to 10.0")
-        return {c["id"]: 10.0 for c in candidates}
+        print("[visuals] Candidate scoring unavailable; footage remains unverified.")
+        return {c["id"]: 0.0 for c in candidates}
 
 def _search_and_score(keys: dict, gemini_api_key: str | None, query: str,
                       visual_thesis: str, first_frame_description: str,
