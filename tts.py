@@ -17,6 +17,56 @@ import re
 import subprocess
 
 import edge_tts
+from assemble import _ffmpeg
+
+
+def _pause_removals(words, silences, threshold=.65, keep=.32):
+    """Trim only detected silence inside a long measured inter-word gap."""
+    cuts = []
+    for left, right in zip(words, words[1:]):
+        low, high = float(left['end']) + .06, float(right['start']) - .06
+        for start, end in silences:
+            a, b = max(low, start), min(high, end)
+            if b - a > threshold:
+                cuts.append((a + keep/2, b - keep/2))
+    return cuts
+
+
+def tighten_long_pauses(voice_path, timings_path):
+    """Keep ordinary breaths. Re-map captions after trimming isolated long silence."""
+    with open(timings_path, encoding='utf-8') as source:
+        words = json.load(source)
+    detection = subprocess.run([_ffmpeg(), '-hide_banner', '-i', voice_path, '-af',
+                                'silencedetect=noise=-45dB:d=0.65', '-f', 'null', '-'],
+                               capture_output=True, text=True, check=True)
+    silences, start = [], None
+    for event, value in re.findall(r'silence_(start|end): ([\d.]+)', detection.stderr):
+        if event == 'start':
+            start = float(value)
+        elif start is not None:
+            silences.append((start, float(value)))
+            start = None
+    cuts = _pause_removals(words, silences)
+    if cuts:
+        segments, previous = [], 0.0
+        for i, (a, b) in enumerate(cuts):
+            segments.append(f'[0:a]atrim=start={previous}:end={a},asetpts=PTS-STARTPTS[p{i}]')
+            previous = b
+        segments.append(f'[0:a]atrim=start={previous},asetpts=PTS-STARTPTS[p{len(cuts)}]')
+        segments.append(''.join(f'[p{i}]' for i in range(len(cuts)+1)) + f'concat=n={len(cuts)+1}:v=0:a=1[out]')
+        temporary = voice_path + '.tightened.mp3'
+        subprocess.run([_ffmpeg(), '-v', 'error', '-y', '-i', voice_path, '-filter_complex',
+                        ';'.join(segments), '-map', '[out]', '-c:a', 'libmp3lame', '-b:a', '192k', temporary], check=True)
+        for word in words:
+            for key in ('start', 'end'):
+                old = word[key]
+                word[key] = round(old - sum(b-a for a,b in cuts if b <= old), 6)
+        os.replace(temporary, voice_path)
+        with open(timings_path, 'w', encoding='utf-8') as output:
+            json.dump(words, output, indent=2)
+    with open(voice_path + '.pause-edits.json', 'w', encoding='utf-8') as output:
+        json.dump({'removed_intervals':cuts, 'removed_seconds':sum(b-a for a,b in cuts)}, output, indent=2)
+    return words
 
 
 # ---------------------------------------------------------------- prosody
@@ -25,26 +75,8 @@ _REVEAL_CUES = ("but ", "until ", "then ", "except ", "yet ", "still ",
 
 
 def _add_prosody(text: str) -> str:
-    """Lightly re-punctuate the script for a more dramatic, produced read:
-      - a beat after the very first sentence (the hook) so it lands
-      - a short pause before reveal/twist cue words ("but", "until", "then"...)
-      - tightened spaces
-    Edge-tts honors commas/periods as micro-pauses. Word content is unchanged, so
-    caption alignment (which matches words, not punctuation) is unaffected."""
-    import re as _re
-    s = text.strip()
-    # ensure a strong beat after the first sentence (hook): turn its end into ". "
-    m = _re.match(r"(.+?[.!?])\s+(.*)", s, _re.S)
-    if m:
-        hook, rest = m.group(1), m.group(2)
-        # add a comma-beat before reveal cues in the body for suspense
-        def cue(mm):
-            return mm.group(1) + ", " + mm.group(2)
-        for w in _REVEAL_CUES:
-            rest = _re.sub(rf"(\w)\s+({_re.escape(w)})", cue, rest, flags=_re.I)
-        s = hook + " " + rest
-    s = _re.sub(r"\s{2,}", " ", s)
-    return s
+    """Keep the writer's punctuation; do not manufacture suspense pauses."""
+    return re.sub(r"\s+", " ", text).strip()
 
 # Microsoft's newer "Multilingual" neural voices are dramatically more natural
 # than the classic ones (breathing, intonation, less robotic cadence).
@@ -59,14 +91,14 @@ FALLBACK_VOICE = "en-US-AndrewNeural"
 
 
 def pick_voice():
-    return random.choice(VOICE_POOL)
+    return DEFAULT_VOICE
 
 
 async def _synth(text: str, mp3_path: str, voice: str):
     """Stream TTS to file. Returns (n_audio_bytes, word_boundaries)."""
-    text = _add_prosody(text)  # dramatic beats before reveals (produced delivery)
-    rate = random.choice(["+8%", "+11%", "+13%"])  # brisk, retention-friendly pace (slow talking kills retention) - still natural, not clipped
-    communicate = edge_tts.Communicate(text, voice, rate=rate)
+    text = _add_prosody(text)
+    rate = _TTS_CFG.get("edge_voice_rate", "+0%")
+    communicate = edge_tts.Communicate(text, voice, rate=rate, boundary="WordBoundary")
     words = []
     n_bytes = 0
     with open(mp3_path, "wb") as f:
@@ -91,18 +123,22 @@ def _align_with_whisper(text: str, mp3_path: str):
     except ImportError:
         return None
     try:
-        model = WhisperModel("tiny.en", device="cpu", compute_type="int8")
-        segments, _ = model.transcribe(mp3_path, word_timestamps=True, language="en")
+        model = WhisperModel(_TTS_CFG.get("alignment_model", "base.en"), device="cpu", compute_type="int8")
+        segments, _ = model.transcribe(mp3_path, word_timestamps=True, language="en",
+                                       vad_filter=True, condition_on_previous_text=False,
+                                       beam_size=1, hallucination_silence_threshold=0.5)
         words = []
         for seg in segments:
             for w in (seg.words or []):
                 words.append({"word": w.word.strip(), "start": round(w.start, 3),
                               "end": round(w.end, 3)})
-        if len(words) >= 5:
-            print(f"[tts] whisper alignment used ({len(words)} words, frame-accurate captions)")
+        if words:
+            from assemble import sentence_segments
+            sentence_segments(words, text)  # Reject missing, repeated or substituted narration.
+            print(f"[tts] measured alignment used ({len(words)} words; transcript checked)")
             return words
     except Exception as e:
-        print(f"[tts] whisper alignment failed ({e}), falling back to estimation")
+        print(f"[tts] measured alignment unavailable ({type(e).__name__})")
     return None
 
 
@@ -121,7 +157,7 @@ def _speech_end(mp3_path: str, total: float) -> float:
     return total
 
 
-SPEECH_SPEED = 1.08  # post-processing tempo (1.0 = off); gentle, not rushed
+SPEECH_SPEED = 1.0  # post-processing tempo (1.0 = off); gentle, not rushed
 VOICE_PITCH = 1.0    # neutral - do NOT deepen. Deepening was part of the "menacing" feel.
 
 
@@ -139,7 +175,7 @@ def _apply_speed(mp3_path: str, factor: float):
         af += f",atempo={tempo:.4f}"
     # normalize loudness so no video comes out quiet/scary - consistent broadcast level
     af += ",loudnorm=I=-15:TP=-1.5:LRA=11"
-    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", mp3_path,
+    subprocess.run([_ffmpeg(), "-y", "-v", "error", "-i", mp3_path,
                     "-filter:a", af, sped], check=True)
     
     import time
@@ -205,6 +241,7 @@ def _estimate_timings(text: str, duration: float) -> list[dict]:
         clean = re.sub(r"[^\w'-]", "", tok)
         words.append({
             "word": clean or tok,
+            "estimated": True,
             "start": round(t_cursor, 3),
             "end": round(t_cursor + d * 0.9, 3),  # word ends just before its pause
         })
@@ -409,25 +446,37 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
         return None
     import base64
     import requests
-    style = ("Read this in a warm, friendly, natural voice - like a real person casually "
-             "telling a friend something genuinely interesting they just discovered. Relaxed and "
-             "conversational, with a slight smile in the voice. Gentle, upbeat energy. NOT deep, "
-             "NOT gravelly, NOT a dramatic movie-trailer or documentary narrator. Just an easy, "
-             "likeable human talking. Light, curious tone, natural rhythm: ")
+    style = _TTS_CFG.get("narration_direction", (
+        "Read only the SCRIPT below. Speak as an interested, matter-of-fact person explaining "
+        "something they have noticed to one listener. Let the opening observation sound curious, "
+        "then become clear and assured as you explain the answer. Emphasize the actual contrast "
+        "in the sentences, not every noun. Vary sentence melody and the length of natural pauses. "
+        "Let short lines land; connect the explanatory phrases smoothly. Finish with a relaxed, "
+        "conclusive falling tone. Avoid a uniform announcer cadence, exaggerated cheerfulness, "
+        "whispering, theatrical suspense and added laughs or filler words. Do not speak these directions."
+    ))
+    style += (" Keep connected phrases flowing within each sentence; don't pause after every "
+              "few words or reset into an announcer voice at each line. Speak to one friend, "
+              "with understated curiosity and emphasis on the meaningful contrast. Let the "
+              "final invitation sound like part of the conversation, without a sales pitch. "
+              "Read exactly the script, without added words or performed laughter.")
     body = {
-        "contents": [{"parts": [{"text": style + text}]}],
+        "contents": [{"parts": [{"text": style + "\n\nSCRIPT:\n" + text}]}],
         "generationConfig": {
             "responseModalities": ["AUDIO"],
             "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {
-                "voiceName": random.choice(GEMINI_VOICES)}}},
+                "voiceName": _TTS_CFG.get("gemini_voice", "Orus")}}},
         },
     }
-    for model in _discover_tts_models(api_key):
+    for model in [_TTS_CFG.get("gemini_tts_model", "gemini-3.1-flash-tts-preview")]:
         try:
             r = requests.post(GEMINI_TTS_URL.format(model=model, key=api_key),
                               json=body, timeout=120)
-            if r.status_code in (404, 429):
-                continue
+            if r.status_code in (401, 403, 429):
+                print(f"[tts] Gemini narration unavailable (HTTP {r.status_code}); stopping without changing voices.")
+                return None
+            if r.status_code == 404:
+                return None
             r.raise_for_status()
             part = r.json()["candidates"][0]["content"]["parts"][0]
             pcm = base64.b64decode(part["inlineData"]["data"])
@@ -437,14 +486,13 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
         with open(raw, "wb") as f:
             f.write(pcm)
         # Gemini TTS returns 24kHz mono 16-bit PCM
-        subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", "24000",
+        subprocess.run([_ffmpeg(), "-y", "-v", "error", "-f", "s16le", "-ar", "24000",
                         "-ac", "1", "-i", raw, mp3_path], check=True)
         os.remove(raw)
         _apply_speed(mp3_path, SPEECH_SPEED)
         words = _align_with_whisper(text, mp3_path)
         if not words:
-            total = _audio_duration(mp3_path)
-            words = _estimate_timings(text, min(total, _speech_end(mp3_path, total)))
+            raise RuntimeError("Gemini narration needs verified word timings; estimated cuts are disabled")
         with open(timings_path, "w", encoding="utf-8") as f:
             json.dump(words, f, indent=2)
         print(f"[tts] Gemini TTS used ({model}, {len(words)} words)")
@@ -484,8 +532,12 @@ def synthesize(text: str, mp3_path: str, timings_path: str, voice: str = DEFAULT
     the single biggest lever on Shorts retention; it falls through automatically if no key
     is configured or it errors / runs out of credits."""
     global _TTS_CFG
-    if cfg:
-        _TTS_CFG = cfg
+    _TTS_CFG = dict(cfg or {})
+    allow_fallback = bool(_TTS_CFG.get("allow_voice_fallback", False))
+    if engine == "auto" and not allow_fallback:
+        engine = _TTS_CFG.get("preferred_tts_engine", "gemini")
+    if engine not in ("auto", "gemini", "elevenlabs", "kokoro", "edge"):
+        raise ValueError("Unsupported narration engine")
     # ElevenLabs first (best quality). Falls through to free engines if unavailable.
     if engine in ("auto", "elevenlabs"):
         global _EL_WARNED
@@ -497,19 +549,25 @@ def synthesize(text: str, mp3_path: str, timings_path: str, voice: str = DEFAULT
         el = _try_elevenlabs(text, mp3_path, timings_path)
         if el:
             return el
+        if engine == "elevenlabs" and not allow_fallback:
+            raise RuntimeError("Selected ElevenLabs narration unavailable; voice substitution disabled")
         if engine == "elevenlabs":
             print("[tts] ElevenLabs unavailable, falling back to free voices")
     if engine in ("auto", "gemini"):
         g = _try_gemini_tts(text, mp3_path, timings_path, api_key)
         if g:
             return g
+        if engine == "gemini" and not allow_fallback:
+            raise RuntimeError("Selected Gemini narration unavailable; voice substitution disabled. Check connection/quota.")
         if engine == "gemini":
             print("[tts] Gemini TTS unavailable, falling back to Edge")
     if engine in ("auto", "kokoro"):
         kokoro = _try_kokoro(text, mp3_path, timings_path)
         if kokoro:
             return kokoro
-    attempts = [voice, voice, FALLBACK_VOICE]  # retry same voice once, then fallback
+        if engine == "kokoro" and not allow_fallback:
+            raise RuntimeError("Selected local narration unavailable; voice substitution disabled")
+    attempts = [voice, voice] + ([FALLBACK_VOICE] if allow_fallback else [])  # retry same voice once, then fallback
     last_err = None
     for v in attempts:
         try:

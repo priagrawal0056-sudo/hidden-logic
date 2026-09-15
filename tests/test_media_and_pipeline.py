@@ -60,7 +60,7 @@ class PipelineTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)/'output';state=Path(tmp)/'state';root.mkdir()
             reserves=[episode(i) for i in range(9)]
-            for ep in reserves: ep['production_version']=3
+            for ep in reserves: ep['production_version']=config['production_version']
             save(root/'reserve.json',reserves)
             for ep in reserves: save(root/'episodes'/ep['id']/'episode.json',ep)
             backend=Mock();backend.find.return_value=None

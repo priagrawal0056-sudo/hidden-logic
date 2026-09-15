@@ -231,6 +231,16 @@ def _download(video: dict, out_path: str) -> bool:
         return False
     with open(out_path, "wb") as fh:
         fh.write(data.content)
+    # Keep provider identity when files are renamed or cropped downstream.
+    import hashlib
+    record = {'source_id':video['id'], 'provider':video['provider'],
+              'source_url':video.get('url',''),
+              'license': 'https://www.pexels.com/license/' if video['provider']=='pexels'
+                         else 'https://pixabay.com/service/license-summary/',
+              'assessment_status':video.get('assessment_status','unverified'),
+              'sha256':hashlib.sha256(data.content).hexdigest()}
+    with open(out_path+'.source.json','w',encoding='utf-8') as manifest:
+        json.dump(record,manifest,indent=2)
     return True
 
 def _refine_query(q: str) -> str:
@@ -408,12 +418,14 @@ def _search_and_score(keys: dict, gemini_api_key: str | None, query: str,
                                   topic, is_first_frame, anchor=anchor)
         for vid in vids:
             vid["score"] = scores.get(vid["id"], 0.0)
+            vid["assessment_status"] = "metadata_ranked_not_frame_verified"
         vids.sort(key=lambda x: x.get("score", 0.0), reverse=True)
         filtered = [v for v in vids if v.get("score", 0.0) >= threshold]
         return filtered, vids
     else:
         for vid in vids:
-            vid["score"] = 10.0
+            vid["score"] = 0.0
+            vid["assessment_status"] = "unverified"
         return vids, vids
 
 def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: int = 4,
@@ -431,13 +443,12 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
     paths: list = []
 
     if not keywords:
-        keywords = ["cinematic documentary", "abstract logic", "modern design"]
+        raise ValueError("Scene-specific footage queries are required")
         
     queries = []
     for i in range(count):
         queries.append(keywords[i % len(keywords)])
 
-    first_frame_deferred = False   # set True only if slot 0 finds no on-topic clip
     for idx, q in enumerate(queries):
         is_first_frame = (idx == 0)
         threshold = 8.0 if is_first_frame else 7.0
@@ -507,7 +518,7 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
         # clearly topic-relevant (airport terminal, supermarket aisle, etc.) are still allowed
         # for the first frame; only the generic catch-alls are withheld.
         if not found:
-            generic_fallbacks = ["moody dark", "cinematic shadow", "abstract geometry", "mysterious lighting"]
+            generic_fallbacks = []  # Never fill a scene with unrelated atmosphere.
             # Anchor-consistent, proof-oriented fallbacks from the scene library: keeps the whole
             # video on ONE subject and biased toward shots that DEMONSTRATE the mechanism, instead
             # of the old thin "traffic cars"-style fallback that let a car video drift to a bike.
@@ -536,23 +547,6 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                 else:
                     all_vids.extend(fall_vids)
 
-        # Pass 4.5: Relaxed Score Pass - if we couldn't find any candidate satisfying the threshold,
-        # try the highest scored candidate we collected from all search query passes.
-        if not found and all_vids:
-            all_vids.sort(key=lambda x: x.get("score", 0.0), reverse=True)
-            print(f"[visuals] No clips met threshold {threshold} for '{q}'. Trying relaxed score fallback...")
-            for vid in all_vids:
-                vid_id = str(vid["id"])
-                if vid_id in downloaded_ids:
-                    continue
-                out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-                if _download(vid, out):
-                    downloaded_ids.add(vid_id)
-                    paths.append(out)
-                    found = True
-                    print(f"[visuals] Downloaded relaxed score fallback: {vid_id} (score: {vid.get('score')})")
-                    break
-
         # Pass 4.7: hand-picked LOCAL proof-clip library (always on-anchor) - use this before we
         # resort to deferring or duplicating, so weak niches can be permanently fixed by the operator.
         if not found and concept:
@@ -561,55 +555,30 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                 paths.append(out)
                 found = True
 
-        # Pass 5: Last resort - duplicate previous downloaded clip to preserve segment pacing.
-        # For the FIRST frame there is no previous clip, and we refuse to open on a generic one.
-        # Instead we DEFER it: leave the slot empty for now, finish gathering the other (on-topic)
-        # clips, then promote the best-scoring on-topic clip to be the opener. This guarantees the
-        # swipe-or-stay first frame is always topic-relevant, never a generic dark shot.
-        if not found and is_first_frame:
-            first_frame_deferred = True
-            print(f"[visuals] First frame found no on-topic clip for '{q}'. Deferring - will open "
-                  f"with the best on-topic clip from the rest of the video instead of a generic shot.")
-        elif not found and paths:
-            # duplicate a RANDOM earlier clip, never the immediately-previous one - adjacent
-            # identical clips read as "the video is looping". With 2+ clips available we
-            # exclude the last; the reuse-offset in assemble then shows a different time
-            # window of whichever clip we copy, so the repeat is nearly invisible.
-            import random as _dup_rnd
-            _pool = paths[:-1] if len(paths) >= 2 else paths
-            prev_clip = _dup_rnd.choice(_pool)
-            # Reference the SAME file (no copy): assemble keys its reuse-offset counter by
-            # path, so a repeated path gets a staggered start time instead of replaying the
-            # identical opening seconds (the 'same clip twice in a row' complaint).
-            paths.append(prev_clip)
-            found = True
-            print(f"[visuals] Failed all search queries for '{q}'. Reusing an earlier clip (assemble offsets it).")
-        
+        if not found:
+            raise RuntimeError(f"Missing distinct footage for scene {idx + 1}: {q}. Select another topic; do not repeat a clip.")
+
         if not (_RATE_LIMITED and "pexels" in _RATE_LIMITED and "pixabay" in _RATE_LIMITED):
             time.sleep(0.25)
 
     _save_used(used)
 
-    # If the first frame was deferred (no on-topic clip found for slot 0), promote the strongest
-    # on-topic clip we DID find to the front, so the video opens on-topic. Fall back to just using
-    # what we have if we somehow got nothing else.
-    if first_frame_deferred and len(paths) >= 1:
-        # paths currently holds clips for slots 1..N (the first slot was skipped). Duplicate the
-        # first available on-topic clip to serve as the opener too, so pacing/segment count holds.
-        # Same-path reference (no copy) so assemble's per-path reuse offset applies here too.
-        paths.insert(0, paths[0])
-        print("[visuals] Promoted best on-topic clip to the first frame (deferred opener).")
-    
     if not paths:
         if _RATE_LIMITED:
             raise RuntimeError("Could not get clips: source(s) rate-limited "
                                f"({', '.join(sorted(_RATE_LIMITED))}). Try again later.")
         raise RuntimeError("Could not download any background clips from Pexels/Pixabay")
         
-    if len(paths) < count:
-        print(f"[visuals] WARNING: only {len(paths)} distinct clips for {count} segments "
-              f"(sources thin or rate-limited); video will use fewer, longer cuts")
-              
+    if len(paths) != count:
+        raise RuntimeError("Incomplete footage coverage")
+    import hashlib
+    fingerprints = []
+    for path in paths:
+        with open(path, "rb") as clip:
+            fingerprints.append(hashlib.file_digest(clip, "sha256").hexdigest())
+    if len(set(fingerprints)) != len(fingerprints):
+        raise RuntimeError("Duplicate footage content; select distinct shots")
+
     return paths
 
 PHOTO_URL = "https://api.pexels.com/v1/search"

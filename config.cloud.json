@@ -10,7 +10,7 @@
     "20:00"
   ],
   "llm_provider": "gemini",
-  "tts_engine": "auto",
+  "tts_engine": "gemini",
   "min_quality": 47,
   "footballdata_api_key": "",
   "sequel_threshold": 500,
@@ -34,5 +34,10 @@
   "bank_videos_per_day": 2,
   "draft_buffer_multiplier": 1.4,
   "post_first_immediately": true,
-  "show_follow_cue": true
+  "show_follow_cue": true,
+  "preferred_tts_engine": "gemini",
+  "gemini_tts_model": "gemini-3.1-flash-tts-preview",
+  "gemini_voice": "Orus",
+  "allow_voice_fallback": false,
+  "narration_direction": "A relaxed, observant person talking to one friend, with understated dry amusement at the opening question. A lively question, a brief pause, then a clear practical answer. Let the contrast between product and price carry the emphasis. Natural changes of pitch and pace, no uniform documentary cadence, no exaggerated cheerfulness. Read only the script. Do not add words, laughter or sound effects."
 }

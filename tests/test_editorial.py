@@ -47,8 +47,9 @@ class EditorialTests(unittest.TestCase):
             with patch('credible.pipeline.synthesize',side_effect=voice) as synth, \
                  patch('credible.pipeline.timeline_checks'), patch('credible.pipeline.render') as render, \
                  patch('credible.pipeline.rendered_checks',side_effect=[{'passed':True},ValueError('Rendered video missing'),{'passed':True}]):
-                first=prepare(ep,root,settings())
-                second=prepare(first,root,settings())
+                legacy={**settings(),'production_version':3}
+                first=prepare(ep,root,legacy)
+                second=prepare(first,root,legacy)
                 self.assertEqual(synth.call_count,1)
                 self.assertEqual(render.call_count,2)
                 self.assertEqual(second['status'],'ready')

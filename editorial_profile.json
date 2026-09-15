@@ -1,0 +1,21 @@
+{
+  "timezone": "Asia/Singapore",
+  "publish_slots": ["15:00", "19:00", "21:30"],
+  "videos_per_day": 3,
+  "post_first_immediately": false,
+  "tts_engine": "gemini",
+  "preferred_tts_engine": "gemini",
+  "gemini_tts_model": "gemini-3.1-flash-tts-preview",
+  "gemini_voice": "Orus",
+  "allow_voice_fallback": false,
+  "narration_direction": "Explain one concrete thing to a friend. Sound curious at the question, clear at the answer, and lightly amused only where the words warrant it. Carry thoughts across sentence boundaries. Vary emphasis and pace naturally; no announcer cadence, forced slang, added laughter or extra words. Read the complete script as one connected take.",
+  "music_file": "music/level-bed.mp3",
+  "music_bed_gain": 0.14,
+  "editorial_effects": false,
+  "opening_hook_text": false,
+  "show_follow_cue": false,
+  "show_subscribe_cue": false,
+  "diagram_target_seconds": 5.0,
+  "diagram_max_seconds": 8.0,
+  "caption_accent": "gold"
+}

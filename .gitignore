@@ -21,6 +21,7 @@ v1_backup/
 *.mp4
 *.mp3
 *.wav
+!music/level-bed.mp3
 pipeline_log.txt
 STARTUP_FAILED.txt
 weekly_report.txt

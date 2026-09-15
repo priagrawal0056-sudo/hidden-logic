@@ -9,8 +9,9 @@ from .seeds import RECIPES, build_recipe
 
 
 def production_fingerprint(config):
+    from editorial_media import fingerprint
     files = ['media.py','storyboard.py','authored_boards.py','authored_evidence.py','seeds.py','evidence.py','quality.py']
-    return digest([config, [(f,(Path(__file__).parent/f).read_text(encoding='utf-8')) for f in files]])
+    return digest([config, fingerprint(), [(f,(Path(__file__).parent/f).read_text(encoding='utf-8')) for f in files]])
 
 
 def require_pilot_review(config, path='state/credible/pilot_review.json'):
@@ -40,12 +41,12 @@ def build(root, source_root):
         try:
             source=sources[recipe[0]]; doc=docs[source['url']]
             save(root/'evidence'/(digest(source['url'])[:20]+'.json'),doc)
-            episode=build_recipe(recipe, source, doc)
+            episode=build_recipe(recipe, source, doc, version=config['production_version'])
             verify_support(episode['evidence'], docs)
             print('Preparing:',recipe[0],flush=True)
             episode=prepare(episode,root,config)
             episodes.append(episode)
-            print('Ready:',recipe[0],episode['duration'],'answer ends',episode['scenes'][1]['narration_end'],flush=True)
+            print('Ready:',recipe[0],episode['duration'],'answer ends',episode.get('first_answer_end'),flush=True)
         except Exception as exc:
             errors.append({'topic':recipe[0], 'error':str(exc)[:200]})
             print('Pilot rejected:',recipe[0],str(exc)[:200],flush=True)
@@ -59,7 +60,7 @@ def build(root, source_root):
     for ep in episodes:
         folder='episodes/'+ep['id']
         cards.append(f'''<article><small>{html.escape(ep['pillar'])} · {ep['duration']:.1f}s ·
-          first answer ends {ep['scenes'][1]['narration_end']:.2f}s</small>
+          first answer ends {ep.get('first_answer_end', ep['scenes'][1].get('narration_end',0)):.2f}s</small>
           <h2>{html.escape(ep['title'])}</h2><video controls preload="metadata" src="{folder}/short.mp4"></video>
           <p>{html.escape(' '.join(ep['beats']))}</p>
           <a href="{folder}/episode.json">Evidence and checks</a></article>''')
@@ -83,6 +84,6 @@ def build(root, source_root):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
-    parser.add_argument('--output',type=Path,default=Path('outputs/pilots-v3'))
+    parser.add_argument('--output',type=Path,default=Path('outputs/pilots-v4'))
     parser.add_argument('--source-root',type=Path,default=Path('outputs/credible'))
     args=parser.parse_args();build(args.output,args.source_root)

@@ -15,7 +15,7 @@ WrapStyle: 0
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Word,Anton,112,&H00FFFFFF,&H00FFFFFF,&H00101010,&HC8000000,0,0,0,0,100,100,1,0,1,10,4,8,140,140,540,1
+Style: Word,Anton,88,&H00FFFFFF,&H00FFFFFF,&H00101010,&HC8000000,0,0,0,0,100,100,1,0,1,5,2,8,110,210,1240,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -37,12 +37,12 @@ ACCENT_PALETTE = {
     "green":  r"{\c&H66FF66&}",   # lime
     "orange": r"{\c&H1488FF&}",   # vivid orange
 }
-POP = r"{\fad(50,0)\fscx70\fscy70\t(0,90,\fscx100\fscy100)}"
-POP_FIRST = r"{\fad(50,0)\fscx80\fscy80\t(0,90,\fscx115\fscy115)}"  # opening caption pops to 115%: frame 0 doubles as the thumbnail
+POP = r"{\q2}"  # Stable phrase captions, without a size pulse.
+POP_FIRST = r"{\q2}"  # Stable phrase captions, without a size pulse.
 # OPENING HOOK style: holds a full hook PHRASE (several words) on the first frame, which is
 # what the Shorts feed grabs as the de-facto thumbnail. Pops in but stays at 100% (not 115%)
 # so a longer phrase doesn't overflow, and \q2 keeps natural word-wrapping to 2-3 lines.
-POP_HOOK = r"{\q2\fad(60,0)\fscx88\fscy88\t(0,110,\fscx100\fscy100)}"
+POP_HOOK = r"{\q2}"  # Stable phrase captions, without a size pulse.
 
 
 def _ts(seconds: float) -> str:
@@ -59,7 +59,7 @@ def _norm(w: str) -> str:
 def _ends_sentence(w: str) -> bool:
     """True if the word visually ends a sentence/clause, so a caption group should not
     pair it with the first word of the next sentence (e.g. avoid 'TRICK. THE' cards)."""
-    return bool(re.search(r"[.!?][\"'\)\]]*\s*$", str(w)))
+    return bool(re.search(r"[.!?,;][\"'\)\]]*\s*$", str(w)))
 
 
 def _visible_len(token: str) -> int:
@@ -68,26 +68,19 @@ def _visible_len(token: str) -> int:
     return len(re.sub(r"\{[^}]*\}", "", token))
 
 
-def _wrap_ass(parts: list[str], max_chars_per_line: int = 14) -> str:
+def _wrap_ass(parts: list[str], max_chars_per_line: int = 22) -> str:
     """Join colored tokens into ASS text with hard line breaks (\\N) so a long opening hook
     phrase wraps to 2-3 balanced lines instead of overflowing one line off-screen."""
-    lines, cur, cur_len = [], [], 0
-    for tok in parts:
-        vlen = _visible_len(tok)
-        # +1 for the space if the line already has content
-        if cur and cur_len + 1 + vlen > max_chars_per_line:
-            lines.append(" ".join(cur))
-            cur, cur_len = [tok], vlen
-        else:
-            cur.append(tok)
-            cur_len += (1 + vlen) if cur_len else vlen
-    if cur:
-        lines.append(" ".join(cur))
-    return r"\N".join(lines)
+    if not parts:
+        return ''
+    if len(parts) == 1 or _visible_len(' '.join(parts)) <= max_chars_per_line:
+        return ' '.join(parts)
+    split = min(range(1,len(parts)), key=lambda i: max(_visible_len(' '.join(parts[:i])), _visible_len(' '.join(parts[i:]))))
+    return ' '.join(parts[:split]) + r'\N' + ' '.join(parts[split:])
 
 
 def build_ass(timings_path: str, ass_path: str, emphasis_words: list[str] | None = None,
-              group_size: int = 2, accent: str | None = None, opening_group: int = 5):
+              group_size: int = 5, accent: str | None = None, opening_group: int = 5):
     # Build emphasis lookups: single words AND multi-word phrases ("on purpose",
     # "empty space"). The old code matched single tokens only, so any multi-word emphasis
     # the script author flagged (e.g. "ONE THING") never received the gold pop.
@@ -131,6 +124,16 @@ def build_ass(timings_path: str, ass_path: str, emphasis_words: list[str] | None
     OPENING_HOLD = 0.6   # the hook claim lingers a touch longer (it is the de-facto thumbnail)
     while i < n:
         size = opening_group if first else group_size
+        # Keep short clauses together and avoid leaving a tiny verb phrase alone.
+        remaining = 0
+        for word in words[i:i+10]:
+            remaining += 1
+            if _ends_sentence(word['word']):
+                break
+        if not first and 6 <= remaining <= 7:
+            size = remaining
+        elif not first and 8 <= remaining <= 9:
+            size = remaining - 5
         # Accumulate up to `size` words, but stop early at a sentence boundary so the
         # sentence-ending word is the LAST word in its card.
         chunk_idx = []
@@ -164,12 +167,22 @@ def build_ass(timings_path: str, ass_path: str, emphasis_words: list[str] | None
                 parts.append(f"{accent_color}{token}{WHITE}")
             else:
                 parts.append(token)
-        if first:
-            # the opening phrase can overflow one line, so wrap it manually into ~2-3
-            # balanced lines using ASS hard breaks (\N).
-            text = _wrap_ass(parts, max_chars_per_line=14)
-        else:
-            text = " ".join(parts)
+        text = _wrap_ass(parts, max_chars_per_line=22)
+        from PIL import ImageFont
+        from assemble import _find_font
+        font_path = _find_font()
+        if not font_path:
+            raise RuntimeError('Caption font unavailable for safe-zone measurement')
+        visible = re.sub(r'\{[^}]*\}', '', text).split(r'\N')
+        size = 88
+        while size >= 32:
+            font = ImageFont.truetype(font_path, size)
+            if max(font.getlength(line) + len(line) for line in visible) <= 740 and len(visible)*(size*1.25) <= 350:
+                break
+            size -= 2
+        if size < 32:
+            raise ValueError('Caption cannot fit the safe zone')
+        text = rf'{{\fs{size}}}' + text
         style = POP_HOOK if first else POP
         lines.append(f"Dialogue: 0,{_ts(start)},{_ts(end)},Word,,0,0,0,,{style}{text}")
         i = nxt

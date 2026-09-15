@@ -64,10 +64,13 @@ RECIPES = [
 ]
 
 
-def build_recipe(recipe, source, document):
+def build_recipe(recipe, source, document, version=3):
     from .authored_evidence import PASSAGES
     from .evidence import normalize
     key, title, claim, subject, kind, beats, labels, anchor = recipe
+    if version >= 4:
+        from .approved_seeds import BEATS, QUERIES
+        beats = BEATS[key]
     passages = PASSAGES[key]
     if any(normalize(p).casefold() not in normalize(document['text']).casefold() for p in passages):
         raise ValueError(f'Source changed: reviewed supporting passage missing for {key}')
@@ -76,7 +79,8 @@ def build_recipe(recipe, source, document):
             'claim_id': key + '-mechanism-v1', 'subject': subject,
             'pillar': source['pillar'], 'format': 'comparison' if kind == 'comparison' else 'process',
             'scene_kind': 'storyboard', 'beats': beats, 'labels': labels,
-            'production_version': 3, 'storyboard': board(key),
+            'production_version': version, 'storyboard': board(key),
+            'broll_keywords': QUERIES[key] if version >= 4 else [],
             'source_label': source['publisher'],
             'evidence': [{'claim': claim, 'source_url': source['url'], 'passage': passage,
                           'scope': 'Only the described system; illustrations are not measurements.',

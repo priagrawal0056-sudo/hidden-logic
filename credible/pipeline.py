@@ -38,11 +38,19 @@ def prepare(episode, root, config):
     folder = root / 'episodes' / episode['id']
     folder.mkdir(parents=True, exist_ok=True)
     previous = read(folder / 'episode.json')
-    narration_signature = digest([episode['beats'],config['voice'],config.get('voice_rate')])
+    from editorial_media import fingerprint
+    style = fingerprint() if config['production_version'] >= 4 else []
+    from config_loader import load_config
+    media_config = load_config() if config['production_version']>=4 else {}
+    voice_style = [[k,media_config.get(k)] for k in
+                   ('tts_engine','gemini_voice','gemini_tts_model','narration_direction','allow_voice_fallback')]
+    voice_style += [entry for entry in style if entry[0]=='tts.py']
+    narration_signature = digest([episode['beats'],config['voice'],config.get('voice_rate'),voice_style])
     renderer_signature = digest([(name,file_hash(Path(__file__).parent/name))
                                 for name in ('media.py','storyboard.py','quality.py')])
     signature = digest([narration_signature,episode['storyboard'],episode['evidence'],episode['source_label'],
-                        config['width'],config['height'],config['fps'],config['production_version'],renderer_signature])
+                        config['width'],config['height'],config['fps'],config['production_version'],renderer_signature,
+                        style, episode.get('broll_keywords'), episode.get('sound_cues')])
     if previous and previous.get('quality', {}).get('passed') and previous.get('render_signature') == signature:
         try:
             previous['quality'] = rendered_checks(previous, folder, config)
@@ -55,9 +63,19 @@ def prepare(episode, root, config):
     episode = copy.deepcopy(episode)
     voice_asset = next((a for a in (previous or {}).get('assets',[]) if a.get('path')=='voice.mp3'),None)
     if (previous and previous.get('narration_signature')==narration_signature and voice_asset
-            and (folder/'voice.mp3').exists() and file_hash(folder/'voice.mp3')==voice_asset['sha256']):
-        for key in ('duration','scenes','captions','voice','assets'):
-            episode[key]=copy.deepcopy(previous[key])
+            and (folder/'voice.mp3').exists() and file_hash(folder/'voice.mp3')==voice_asset['sha256']
+            and (config['production_version'] < 4 or
+                 ((folder/'timings.json').exists() and file_hash(folder/'timings.json')==previous.get('timing_sha256')))):
+        for key in ('duration','scenes','captions','voice','assets','beats_timing','first_answer_end'):
+            if key in previous: episode[key]=copy.deepcopy(previous[key])
+        if config['production_version'] >= 4:
+            # Missing picture assets can be rebuilt without regenerating the voice.
+            import captions
+            from editorial_media import caption_records
+            captions.build_ass(str(folder/'timings.json'),str(folder/'captions.ass'),accent='gold')
+            episode['captions'] = caption_records(folder/'captions.ass')
+            episode['assets'] = [voice_asset]
+            episode['scenes'] = episode['beats_timing']
     else:
         episode = synthesize(episode, folder, config)
     timeline_checks(episode, folder, config)
@@ -67,6 +85,8 @@ def prepare(episode, root, config):
     episode['render_version'] = config['production_version']
     episode['render_signature'] = signature
     episode['narration_signature'] = narration_signature
+    if config['production_version'] >= 4:
+        episode['timing_sha256'] = file_hash(folder/'timings.json')
     episode['status'] = 'ready'
     save(folder / 'episode.json', episode)
     return episode
@@ -86,7 +106,7 @@ def seed_reserve(root, config, docs, catalog, state, reserve, errors, limit=9):
         if source['url'] not in docs:
             continue
         try:
-            episode = build_recipe(recipe, source, docs[source['url']])
+            episode = build_recipe(recipe, source, docs[source['url']], version=config['production_version'])
             if duplicate(episode, history(state, reserve)):
                 continue
             verify_support(episode['evidence'], docs)
@@ -111,6 +131,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
     # Preview state is isolated: dry runs cannot consume real slots or learning data.
     if mode != 'publish':
         state_dir = root / 'preview-state'
+    config['clip_history_path'] = str(state_dir/'used_clips.json')
     with lock(state_dir / 'pipeline.lock'):
         state = read(state_dir / 'production.json', {'schema_version': 2, 'slots': {}})
         reserve = read(root / 'reserve.json', [])
@@ -132,7 +153,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
             catalog += discover(catalog, root/'evidence', state_dir/'discovery.json')
         docs, source_errors = documents(root, catalog)
         errors.extend(source_errors)
-        # Bootstrap renders require no model key. They are also the quota fallback.
+        # Authored scripts need no writer calls; new Orus narration still needs TTS quota.
         seed_reserve(root, config, docs, catalog, state, reserve, errors, config['reserve_target'])
         if mode == 'bootstrap':
             save(root / 'run-report.json', {'reserve_ready': sum(r.get('status') == 'ready' for r in reserve), 'errors': errors})

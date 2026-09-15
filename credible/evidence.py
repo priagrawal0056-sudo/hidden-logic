@@ -75,6 +75,7 @@ def verify_support(evidence, documents):
 
 class FreeModel:
     def __init__(self, config):
+        self.production_version = config.get('production_version',4)
         self.key = os.environ.get('HL_GEMINI_API_KEY', '')
         self.model = config['model']
         self.remaining = config['max_model_calls']
@@ -114,7 +115,8 @@ Never invent motives, sinister intent, universal claims, numbers, or unsupported
 Write 48-58 words. Hook and first answer COMBINED must be at most 12 spoken words.
 Deliver a complete useful answer in beat two, finished before six seconds.
 Four short narration beats: recognizable hook, answer, demonstration, complete resolution.
-No subscribe request, withheld answer, canned curiosity pivot or unfinished loop.
+After a complete callback to the opening, finish with a brief spoken Follow Hidden Logic request.
+No withheld answer, canned curiosity pivot or unfinished loop. The CTA is within the word budget.
 Choose technology, travel or shopping. Make an original, visually demonstrable explanation.
 Sound like a knowledgeable friend describing one thing they can point at.
 Use contractions where natural, vary sentence lengths, and let the diagram do some explaining.
@@ -123,12 +125,18 @@ experience, no script directions in spoken beats, no performative outrage or fak
 An everyday place should look ordinary: never use horror or surreal imagery for a mundane topic.
 Design a different visual composition for this topic. Draw the actual mechanism, not labels
 passing through the same three boxes. All four storyboard states must support the narration.
-Use scene_kind storyboard. The complete JSON drawing plan will be rendered as written.
+Use scene_kind storyboard. States two and three become one longer mechanism demonstration;
+the rest uses distinct real footage. Do not narrate visual actions that only exist in states one or four.
+Provide broll_keywords: at least three distinct searches for the actual subject with different
+actions or framings, such as a product close-up, scanner in use, and shelf label detail.
+Avoid repeated hands approaching the same scanner, logos as focal points or identifiable staff.
+Provide first_comment: one specific viewer-experience question. Do not claim it will be auto-posted.
 Keep labels <=24 characters. Illustrations and invented example values must be labelled.
 Return a JSON object with title, claim, claim_id (canonical mechanism), subject (narrow topic),
 pillar, format (demonstration/comparison/process), beats (four strings), labels (four strings),
 scene_kind, evidence (list of claim, passage_id, scope; copy an existing passage_id),
-needs_corroboration (true for surprising quantitative or disputed causal claims), storyboard.
+needs_corroboration (true for surprising quantitative or disputed causal claims), storyboard,
+broll_keywords, first_comment, sound_cues (zero to two objects: unique exact phrase and kind scan/chime).
 '''
 
 
@@ -171,7 +179,7 @@ def generate_episode(model, documents, history, arm):
                 evidence.update(reference)
             verify_support(data.get('evidence'), documents)
             data['scene_kind'] = 'storyboard'
-            data['production_version'] = 3
+            data['production_version'] = getattr(model,'production_version',4)
             data['source_label'] = documents[data['evidence'][0]['source_url']]['publisher']
             validate_storyboard(data.get('storyboard'))
             break

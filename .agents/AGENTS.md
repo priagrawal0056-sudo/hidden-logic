@@ -6,8 +6,14 @@ The audience should recognize the situation and understand a supported mechanism
 - Facts come before the hook. Attach primary-source support to each core claim.
 - Never require manipulation, sinister intent, certainty, or universal behaviour.
 - Deliver a useful answer by six seconds, then demonstrate it visually.
-- Finish the explanation. No forced cliffhanger, subscription pitch, or unfinished loop.
-- Use original explanatory graphics; label illustrative numbers as examples.
+- Finish the explanation with a callback and a brief spoken follow invitation after
+  the payoff, as requested by the owner. No forced cliffhanger or unfinished loop.
+- Keep the approved original editor and real topic-specific footage. Add one useful
+  mechanism demonstration; label illustrative numbers. Let complete explanations
+  stay on screen longer instead of using arbitrary rapid cuts.
+- One caption layer, no duplicated concept/CTA text. Never reuse a source video
+  within a Short, including alternate trims or crops. Retain the selected Orus
+  voice, continuous-script request, measured word timing and quiet music bed.
 - Preserve claim scope and uncertainty through every rewrite and visual label.
 - Do not repeat the same claim within 90 days or narrow subject within 14 days.
 - Distinguish stayed-to-watch, average percentage viewed, and engaged views.

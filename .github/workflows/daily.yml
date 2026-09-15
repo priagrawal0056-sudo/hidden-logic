@@ -21,6 +21,8 @@ jobs:
     env:
       PYTHONUNBUFFERED: '1'
       HL_GEMINI_API_KEY: ${{ secrets.HL_GEMINI_API_KEY }}
+      HL_PEXELS_API_KEY: ${{ secrets.HL_PEXELS_API_KEY }}
+      HL_PIXABAY_API_KEY: ${{ secrets.HL_PIXABAY_API_KEY }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,13 +43,14 @@ jobs:
       - uses: actions/cache/restore@v4
         with:
           path: outputs/credible
-          key: credible-reserve-v3-${{ github.run_id }}
-          restore-keys: credible-reserve-v3-
+          key: credible-reserve-v4-${{ github.run_id }}
+          restore-keys: credible-reserve-v4-
       - name: Restore authoritative reserve manifest
         run: |
           mkdir -p outputs/credible
           if [ -f state/credible/reserve.json ]; then cp state/credible/reserve.json outputs/credible/reserve.json; fi
       - name: Restore YouTube credentials
+        if: inputs.mode == 'publish' || github.event_name == 'schedule'
         env:
           TOKEN_B64: ${{ secrets.YT_TOKEN_B64 }}
           CLIENT_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
@@ -58,13 +61,13 @@ jobs:
           REQUESTED_MODE: ${{ inputs.mode || 'publish' }}
         run: python -m credible.pipeline --mode "$REQUESTED_MODE"
       - name: Persist explicit state files
-        if: always()
+        if: always() && (inputs.mode == 'publish' || github.event_name == 'schedule')
         run: python -m credible.state_io
       - uses: actions/cache/save@v4
         if: always()
         with:
           path: outputs/credible
-          key: credible-reserve-v3-${{ github.run_id }}
+          key: credible-reserve-v4-${{ github.run_id }}
       - name: Save review artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -76,6 +79,9 @@ jobs:
             outputs/credible/episodes/*/contact-sheet.jpg
             outputs/credible/episodes/*/episode.json
             outputs/credible/episodes/*/short.mp4
+            outputs/credible/episodes/*/captions.ass
+            outputs/credible/episodes/*/edit-plan.json
+            outputs/credible/episodes/*/*.audio-quality.json
             outputs/credible/evidence/
             outputs/preview/
       - name: Remove credentials

@@ -18,7 +18,7 @@ def editorial_checks(episode, history=()):
     banned = ('have you ever wondered', "here's the thing", 'mind-blowing',
               'this changes everything', 'stay until the end', 'you won\'t believe',
               'in this simple illustration', 'as an ai', 'insert hook', '[pause]',
-              'subscribe', 'narrator:', 'voiceover:')
+              'narrator:', 'voiceover:')
     if any(phrase in script for phrase in banned):
         raise ValueError('Stock phrasing or leaked production instruction')
     if re.search(r'\byou always\b', script+' '+episode['title'].casefold()):
@@ -48,20 +48,25 @@ def script_checks(episode):
     if episode.get('scene_kind') not in SCENES:
         raise ValueError('Unsupported animation component')
     script = ' '.join(beats)
-    if not 45 <= len(tokens(script)) <= 70:
+    if not 45 <= len(tokens(script)) <= (75 if episode.get('production_version',0)>=4 else 70):
         raise ValueError('Script length outside editorial bounds')
     if len(tokens(beats[0])) > 11:
         raise ValueError('Opening too long')
-    if re.search(r'\b(subscribe|sinister|hostage strategy|biological surrender)\b', script, re.I):
-        raise ValueError('Unsupported dramatic framing or spoken CTA')
+    if re.search(r'\b(sinister|hostage strategy|biological surrender)\b', script, re.I):
+        raise ValueError('Unsupported dramatic framing')
     if (not re.search(r'[.!?]$', script.strip()) or re.search(r'(which is why|right as|because)[.!?\s]*$', script, re.I)):
         raise ValueError('Incomplete ending')
     if episode.get('evidence_status') != 'source_checked':
         raise ValueError('Evidence not verified')
     if episode.get('editorial_review', {}).get('title_matches') is not True:
         raise ValueError('Title promise not verified')
-    if episode.get('production_version') == 3:
+    if episode.get('production_version',0) >= 3:
         editorial_checks(episode)
+    if episode.get('production_version',0) >= 4:
+        if not re.search(r'\b(?:follow|subscribe to) Hidden Logic\b',' '.join(script.split()[-15:]),re.I):
+            raise ValueError('Short closing spoken CTA required after payoff')
+        if not episode.get('broll_keywords') or len(set(episode['broll_keywords'])) < 3:
+            raise ValueError('Distinct topic-specific footage queries required')
     return True
 
 
@@ -71,14 +76,18 @@ def timeline_checks(episode, folder, config):
     if not config['duration_min'] <= duration <= config['duration_max']:
         raise ValueError('Measured duration outside trial band')
     scenes = episode['scenes']
-    if len(scenes) != 4 or abs(scenes[0]['start']) > .01 or abs(scenes[-1]['end'] - duration) > .1:
+    modern = episode.get('production_version',0) >= 4
+    if (not scenes or (not modern and len(scenes) != 4)
+            or abs(scenes[0]['start']) > .01 or abs(scenes[-1]['end'] - duration) > .1):
         raise ValueError('Incomplete scene coverage')
     for a, b in zip(scenes, scenes[1:]):
         if abs(a['end'] - b['start']) > .01:
             raise ValueError('Gap or overlap between scenes')
-    if scenes[1]['start'] > 6:
+    if not modern and scenes[1]['start'] > 6:
         raise ValueError('First answer arrives too late')
     if episode.get('production_version') == 3 and scenes[1].get('narration_end', scenes[1]['end']) > 6:
+        raise ValueError('First useful answer must finish within six seconds')
+    if modern and episode.get('first_answer_end',float('inf')) > 6:
         raise ValueError('First useful answer must finish within six seconds')
     draw = ImageDraw.Draw(Image.new('RGB', (540,960)))
     previous_end = 0
@@ -88,12 +97,16 @@ def timeline_checks(episode, folder, config):
         if caption['start'] < previous_end - .01:
             raise ValueError('Overlapping captions')
         previous_end = caption['end']
-        if len(wrap(draw, caption['text'], font(30), 422)) > 2:
+        if not modern and len(wrap(draw, caption['text'], font(30), 422)) > 2:
             raise ValueError('Caption overflow')
     spoken = tokens(' '.join(episode['beats']))
     captioned = tokens(' '.join(c['text'] for c in episode['captions']))
     if spoken != captioned:
         raise ValueError('Caption/narration mismatch')
+    if modern:
+        from editorial_media import caption_records
+        if caption_records(Path(folder)/'captions.ass') != episode['captions']:
+            raise ValueError('Caption file differs from checked captions')
     for asset in episode.get('assets', []):
         if asset.get('path'):
             path = Path(folder) / asset['path']
@@ -123,6 +136,16 @@ def rendered_checks(episode, folder, config):
     silences = re.findall(r'silence_start:\s*([\d.]+)', result.stderr)
     if any(float(s) < episode['duration'] - 1.5 for s in silences):
         raise ValueError('Unexpected narration silence')
+    if episode.get('production_version',0) >= 4:
+        from assemble import _measure_loudness
+        measured = _measure_loudness(str(path))
+        if abs(float(measured['input_i'])+14) > .7 or float(measured['input_tp']) > -1.2:
+            raise ValueError('Final encoded loudness outside approved bounds')
+        stock = [s.get('source_id') for s in episode['scenes'] if s.get('kind')=='stock']
+        if len(stock)<2 or None in stock or len(stock)!=len(set(stock)):
+            raise ValueError('Distinct stock sources required')
+        if sum(s.get('kind')=='diagram' for s in episode['scenes']) != 1:
+            raise ValueError('One visible mechanism demonstration required')
     editorial = ['stock_phrasing', 'executable_storyboard', 'diagram_bounds', 'visual_state_changes'] if episode.get('production_version') == 3 else []
     return {'passed': True, 'checks': editorial + ['source_record', 'title_promise', 'complete_script',
         'duration', 'captions', 'scene_coverage', 'asset_hashes', 'decode', 'black_frames', 'audio_peak', 'silence'],

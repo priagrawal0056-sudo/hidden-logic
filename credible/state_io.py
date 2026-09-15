@@ -5,7 +5,7 @@ import subprocess
 from pathlib import Path
 
 FILES = ('production.json', 'analytics.json', 'legacy_analytics.json',
-         'experiment_report.json', 'reserve.json', 'discovery.json', 'pilot_review.json')
+         'experiment_report.json', 'reserve.json', 'discovery.json', 'pilot_review.json', 'used_clips.json')
 
 
 def checkpoint(root='outputs/credible'):

@@ -211,6 +211,9 @@ async def _voice(text, path, voice, rate='+0%'):
 
 
 def synthesize(episode, folder, config):
+    if episode.get('production_version', 0) >= 4:
+        from .approved import synthesize as approved_synthesize
+        return approved_synthesize(episode, folder, config)
     path = Path(folder) / 'voice.mp3'
     text = ' '.join(episode['beats'])
     for attempt in range(2):
@@ -309,6 +312,9 @@ def editorial_frame(episode, elapsed, config):
 
 
 def render(episode, folder, config):
+    if episode.get('production_version', 0) >= 4:
+        from .approved import render as approved_render
+        return approved_render(episode, folder, config)
     folder = Path(folder)
     width, height, fps = config['width'], config['height'], config['fps']
     frames = math.ceil(episode['duration']*fps)
