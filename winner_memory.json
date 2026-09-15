@@ -1,16 +1,16 @@
 {
-  "channel_avg_views": 861.6,
+  "channel_avg_views": 870.5,
   "topic_clusters": {
     "airport": {
       "videos": 14,
-      "avg_views": 679.7,
+      "avg_views": 679.8,
       "best_views": 1615,
       "recent_views": [
         1173,
         7,
         1192,
         982,
-        929,
+        930,
         544,
         363,
         4,
@@ -26,12 +26,12 @@
     },
     "hotel": {
       "videos": 11,
-      "avg_views": 481.1,
+      "avg_views": 481.3,
       "best_views": 1407,
       "recent_views": [
         74,
         89,
-        373,
+        375,
         46,
         386,
         560,
@@ -58,7 +58,7 @@
     },
     "mall": {
       "videos": 13,
-      "avg_views": 230.3,
+      "avg_views": 242.7,
       "best_views": 1078,
       "recent_views": [
         995,
@@ -80,25 +80,25 @@
     },
     "traffic": {
       "videos": 54,
-      "avg_views": 466.1,
+      "avg_views": 468.8,
       "best_views": 1772,
       "recent_views": [
-        809,
-        1074,
-        918,
-        879,
-        913,
+        871,
+        1079,
+        914,
+        875,
+        915,
         1123,
         12,
         6,
         1143,
         878,
         1002,
-        976,
+        978,
         563,
         259,
         6,
-        2,
+        3,
         8,
         2,
         2,
@@ -132,14 +132,14 @@
         302,
         960,
         690,
-        151,
+        153,
         950,
         767,
         9,
         7
       ],
       "avg_stayed_to_watch": null,
-      "avg_avd": 16.5
+      "avg_avd": 16.3
     },
     "escalator": {
       "videos": 0,
@@ -151,10 +151,10 @@
     },
     "elevator": {
       "videos": 11,
-      "avg_views": 411.6,
-      "best_views": 1092,
+      "avg_views": 435.1,
+      "best_views": 1101,
       "recent_views": [
-        806,
+        1101,
         921,
         294,
         2,
@@ -171,24 +171,24 @@
     },
     "gas_station": {
       "videos": 3,
-      "avg_views": 167.4,
+      "avg_views": 168.0,
       "best_views": 822,
       "recent_views": [
-        4,
+        5,
         3,
         822
       ],
       "avg_stayed_to_watch": null,
-      "avg_avd": null
+      "avg_avd": 6.0
     },
     "restaurant": {
       "videos": 10,
-      "avg_views": 572.3,
-      "best_views": 1028,
+      "avg_views": 614.6,
+      "best_views": 1113,
       "recent_views": [
-        903,
+        1113,
         1028,
-        3,
+        5,
         4,
         795,
         40,
@@ -202,15 +202,15 @@
     },
     "supermarket": {
       "videos": 28,
-      "avg_views": 304.1,
+      "avg_views": 304.4,
       "best_views": 1369,
       "recent_views": [
-        63,
+        64,
         56,
-        1,
+        2,
         8,
         1,
-        1,
+        2,
         1,
         5,
         21,
@@ -224,9 +224,9 @@
         835,
         868,
         947,
-        855,
+        857,
         593,
-        5,
+        8,
         2,
         18,
         137,
@@ -299,10 +299,11 @@
       "avg_avd": null
     },
     "perception": {
-      "videos": 1,
-      "avg_views": 13.0,
-      "best_views": 13,
+      "videos": 2,
+      "avg_views": 583.0,
+      "best_views": 963,
       "recent_views": [
+        963,
         13
       ],
       "avg_stayed_to_watch": null,
@@ -321,24 +322,24 @@
         7
       ],
       "avg_stayed_to_watch": null,
-      "avg_avd": null
+      "avg_avd": 15.0
     },
     "cognitive_bias": {
       "videos": 1,
-      "avg_views": 748.0,
-      "best_views": 748,
+      "avg_views": 750.0,
+      "best_views": 750,
       "recent_views": [
-        748
+        750
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     },
     "technology": {
       "videos": 25,
-      "avg_views": 117.2,
+      "avg_views": 126.0,
       "best_views": 1000,
       "recent_views": [
-        144,
+        252,
         1000,
         0,
         17,
@@ -365,7 +366,7 @@
         86
       ],
       "avg_stayed_to_watch": 65.5,
-      "avg_avd": 13.2
+      "avg_avd": 10.5
     },
     "internet_behavior": {
       "videos": 3,
@@ -402,10 +403,10 @@
     },
     "emotions": {
       "videos": 3,
-      "avg_views": 541.0,
+      "avg_views": 541.5,
       "best_views": 1271,
       "recent_views": [
-        8,
+        9,
         877,
         1271
       ],
@@ -426,5 +427,5 @@
       "avg_avd": 16.0
     }
   },
-  "last_updated": "2026-09-13T18:41:19.676871"
+  "last_updated": "2026-09-14T20:15:24.295071"
 }
