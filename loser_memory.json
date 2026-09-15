@@ -2703,5 +2703,38 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 46.0
+  },
+  {
+    "title": "Why Tip Screens Make You Feel Watched",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "technology",
+    "quality_score": 0
+  },
+  {
+    "title": "Why Your Online Arguments Never Finish",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "internet_behavior",
+    "quality_score": 0
+  },
+  {
+    "title": "hes just a baby \ud83e\udd7a\ud83e\udd7a",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
   }
 ]
