@@ -45,6 +45,9 @@ def plan_scenes(words, script, config, diagram_index=1):
         result.append({'start': cursor, 'end': cursor+duration,
                        'kind': 'diagram' if i == start else 'stock'})
         cursor += duration
+    last_words = [w['word'].lower().strip('.,!?') for w in words if w['start']>=result[-1]['start']]
+    if last_words and last_words[0] in ('follow','subscribe'):
+        result[-1]['kind'] = 'callback'
     return result
 
 
@@ -62,6 +65,33 @@ def diagram_frame(meta, progress):
     from PIL import Image, ImageDraw, ImageFont
     image = Image.new('RGB', (1080, 1920), '#121a24')
     draw = ImageDraw.Draw(image)
+    if meta.get('_callback') and meta.get('diagram_type') == 'barcode_lookup':
+        # A new final-state composition, not a replay of the earlier animation.
+        # The price remains at its resolved value throughout the spoken CTA.
+        font = ImageFont.truetype(assemble._find_font(),60)
+        price = ImageFont.truetype(assemble._find_font(),118)
+        small = ImageFont.truetype(assemble._find_font(),28)
+        ease = 1-(1-progress)**3
+        product_y = int(345-35*ease)
+        draw.text((150,240),'ILLUSTRATIVE PRICE',font=small,fill='#b8c4d2')
+        draw.rounded_rectangle((150,product_y,890,product_y+235),radius=24,fill='#243142',outline='#f4c650',width=4)
+        draw.text((520,product_y+30),'ITEM CODE',font=font,anchor='mt',fill='white')
+        x=355
+        for width in [5,2,7,3,2,6,3,5,2,4,7,2,3,5,2,6]:
+            draw.rectangle((x,product_y+125,x+width*2,product_y+195),fill='white'); x+=width*2+12
+        price_y=int(790-20*ease)
+        draw.rounded_rectangle((150,price_y,890,price_y+280),radius=24,fill='#243142',outline='#f4c650',width=4)
+        draw.text((520,price_y+26),'CURRENT PRICE',font=font,anchor='mt',fill='white')
+        draw.text((520,price_y+102),'$3.00',font=price,anchor='mt',fill='#f4c650')
+        top=product_y+250; bottom=price_y-25
+        draw.line((520,top,520,bottom),fill='#f4c650',width=6)
+        draw.polygon([(507,bottom-14),(533,bottom-14),(520,bottom+3)],fill='#f4c650')
+        # A single lookup travels down the connection, then settles on the result.
+        phase=max(0,min(1,(progress-.1)/.65))
+        if 0<phase<1:
+            y=top+(bottom-top)*phase
+            draw.ellipse((509,y-11,531,y+11),fill='white')
+        return image
     if meta.get('diagram_type') == 'barcode_lookup':
         font = ImageFont.truetype(assemble._find_font(), 60)
         detail = ImageFont.truetype(assemble._find_font(), 42)
@@ -95,14 +125,18 @@ def diagram_frame(meta, progress):
     plan = meta.get('storyboard')
     validate_storyboard(plan)
     # Show the mechanism and its changed state, with a readable final hold.
-    state = plan[1] if progress < .38 else plan[2]
-    local = progress/.38 if progress < .38 else min(1, (progress-.38)/.42)
+    state = plan[3] if meta.get('_callback') else plan[1] if progress < .38 else plan[2]
+    local = progress if meta.get('_callback') else progress/.38 if progress < .38 else min(1, (progress-.38)/.42)
     canvas = Image.new('RGB', (540,960), '#121a24')
     draw_storyboard(ImageDraw.Draw(canvas), state, local)
     image.paste(canvas.crop((20,200,500,690)).resize((960,980)), (30,220))
     if state['example']:
         small = ImageFont.truetype(assemble._find_font(), 30)
         draw.text((110, 160), 'ILLUSTRATIVE EXAMPLE', font=small, fill='#b8c4d2')
+    if meta.get('_callback'):
+        # Gentle continuous reframing even when the final-state objects settle.
+        inset=round(10*progress)
+        image=image.crop((inset,inset,1080-inset,1920-inset)).resize((1080,1920))
     return image
 
 
@@ -183,15 +217,16 @@ def render(meta, folder, config, stock=None):
     paths, shots, assets = [], [], []
     stock_cursor = 0
     for scene in scenes:
-        if scene['kind']=='diagram':
-            path = folder/'mechanism.mp4'
+        if scene['kind'] in ('diagram','callback'):
+            path = folder/('callback.mp4' if scene['kind']=='callback' else 'mechanism.mp4')
             drawing = dict(meta)
+            drawing['_callback'] = scene['kind']=='callback'
             changes = [w['start'] for w in words if w['word'].casefold().strip('.,!?')=='update'
                        and scene['start']<=w['start']<scene['end']]
             if len(changes)==1:
                 drawing['_diagram_update_progress'] = (changes[0]-scene['start'])/(scene['end']-scene['start'])
             render_diagram(drawing,path,scene['end']-scene['start'])
-            record = {'path':str(path),'source_id':'authored:mechanism','license':'project-authored'}
+            record = {'path':str(path),'source_id':'authored:'+scene['kind'],'license':'project-authored'}
         else:
             record = stock[stock_cursor]; stock_cursor += 1
         path = Path(record['path'])

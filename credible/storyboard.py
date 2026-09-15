@@ -24,6 +24,9 @@ Use actual objects, paths or comparisons, not four generic text boxes. Draw the
 recognizable subject in scene one. Change the geometry/state meaningfully in
 each next scene. Label illustrative values with example=true. Never render
 photorealistic people or invented screenshots. Never invent measured data.
+The fourth state is the resolved mechanism, used under the spoken follow request.
+Keep it inside the same story. Never draw a subscribe/follow request or channel-name
+text: the narration captions already carry the CTA. Use meaningful object motion.
 '''
 
 

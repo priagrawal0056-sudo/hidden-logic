@@ -13,13 +13,16 @@ Singapore slots and the independent analytics collector remain in place.
 - Real footage plus one topic-specific mechanism demonstration. Its target is
   five seconds, merging whole sentences up to eight seconds where possible.
   A longer complete sentence is retained rather than cut mid-speech. The hook
-  and final callback/CTA remain separate stock scenes. Narration is not slowed.
+  stays a stock scene. A final spoken CTA uses a moving, topic-specific resolved
+  diagram state rather than unrelated outro footage. Narration is not slowed.
 - The barcode demonstration keeps its identifier fixed while illustrative
   stored/returned prices change. Other subjects retain their own geometry.
 - Downloaded footage receives sampled-frame checks for relevance, prominent
   retailer/staff exposure and near-identical shots. Failed review blocks that
   candidate; it does not award a passing score. Samples cannot establish consent.
 - Final encoded sound must be within 0.7 LU of -14 LUFS, with peak checks.
+  Music-only level smoothing reduces short dips in the source track; the bed is
+  continuous across picture cuts and the voice is excluded from that smoothing.
   Loudness range is measured, not used as a human-sounding voice score.
 - New scripts end with a complete payoff and brief spoken follow invitation.
   Comment questions remain drafts; this change does not post or pin comments.

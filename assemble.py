@@ -495,7 +495,10 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
     # base voice (+music) bus first
     if has_music:
         fc.append(f"[{vi_voice}:a]{voice_fx},apad=whole_dur={duration}[vx]")
-        fc.append(f"[{vi_voice+1}:a]loudnorm=I=-24:TP=-3:LRA=7,volume={music_volume:.4f},"
+        # Smooth the music's own short level holes, on a continuous bus. Never
+        # duck or crossfade it at picture cuts, or apply this to the voice.
+        fc.append(f"[{vi_voice+1}:a]dynaudnorm=f=50:g=5:p=0.95:m=5:r=0.2:b=1,"
+                  f"loudnorm=I=-24:TP=-3:LRA=7,volume={music_volume:.4f},"
                   f"afade=t=in:d=0.3,afade=t=out:st={fade_start:.2f}:d=0.6[m]")
         # normalize=0 so adding the music bed does NOT halve the voice (amix otherwise divides
         # by the input count); loudnorm downstream sets the final integrated loudness.

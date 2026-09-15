@@ -29,7 +29,7 @@ class SharedEditorTests(unittest.TestCase):
         diagram=next(s for s in plan if s['kind']=='diagram')
         self.assertGreaterEqual(diagram['end']-diagram['start'],5)
         self.assertEqual(plan[0]['kind'],'stock')
-        self.assertEqual(plan[-1]['kind'],'stock')
+        self.assertEqual(plan[-1]['kind'],'callback')
         self.assertAlmostEqual(plan[-1]['end'],words[-1]['end']+.8)
         ends=[w['end'] for w in words]
         for s in plan[:-1]:
@@ -86,5 +86,21 @@ class SharedEditorTests(unittest.TestCase):
             captions.build_ass(str(p/'timings.json'),str(p/'captions.ass'))
             records=editorial_media.caption_records(p/'captions.ass')
             self.assertEqual(' '.join(c['text'] for c in records),'PRODUCT BARCODE IDENTIFIES THE ITEM.')
+
+    def test_callback_is_a_moving_final_state_not_replayed_price_change(self):
+        meta={'diagram_type':'barcode_lookup','_callback':True}
+        opening=editorial_media.diagram_frame(meta,0)
+        closing=editorial_media.diagram_frame(meta,.7)
+        self.assertNotEqual(opening.tobytes(),closing.tobytes())
+        self.assertEqual(opening.size,(1080,1920))
+
+    def test_diagram_cannot_duplicate_spoken_follow_request(self):
+        from credible.quality import editorial_checks
+        from credible.authored_boards import board
+        ep={'beats':['The code identifies an item. Follow Hidden Logic.'],
+            'title':'Barcode lookup','storyboard':board('barcode'),'source_label':'GS1'}
+        ep['storyboard'][3]['objects'].append({'type':'text','text':'Follow Hidden Logic'})
+        with self.assertRaisesRegex(ValueError,'duplicate diagram label'):
+            editorial_checks(ep)
 
 if __name__=='__main__': unittest.main()

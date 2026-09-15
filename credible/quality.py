@@ -27,6 +27,10 @@ def editorial_checks(episode, history=()):
     starts = [tuple(tokens(s)[:3]) for s in sentences]
     if len(starts) != len(set(starts)):
         raise ValueError('Repetitive sentence openings')
+    for state in episode.get('storyboard') or []:
+        for obj in state.get('objects',[]):
+            if obj.get('type')=='text' and re.search(r'\b(subscribe|follow hidden logic)\b',obj.get('text',''),re.I):
+                raise ValueError('CTA belongs in narration captions, not a duplicate diagram label')
     validate_storyboard(episode.get('storyboard'))
     if not episode.get('source_label') or len(episode['source_label']) > 42:
         raise ValueError('Readable source credit required')
