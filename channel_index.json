@@ -6878,5 +6878,67 @@
     "quality_score": 47.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "s5PnX5lhuwU",
+    "title": "Why Prices Change but Barcodes Don\u2019t #facts #psychology #hiddenlogic",
+    "topic": "Why Prices Change but Barcodes Don\u2019t #facts #psychology #hiddenlogic",
+    "date": "2026-09-16",
+    "n": 0
+  },
+  {
+    "video_id": "41c8RHyZWjY",
+    "title": "give me please \ud83e\udd7a\ud83e\udd7a",
+    "topic": "give me please \ud83e\udd7a\ud83e\udd7a",
+    "date": "2026-09-16",
+    "n": 0
+  },
+  {
+    "video_id": "r38576g3Ph8",
+    "title": "Why You Freeze In The Cereal Aisle",
+    "topic": "Why freezing when there are too many options keeps happening no matter what",
+    "date": "2026-09-16",
+    "n": 563,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "mSeSNPg7l8c",
+    "title": "Why You Always Ask 'What?'",
+    "topic": "Why forgetting what someone just told you makes everyone act predictably",
+    "date": "2026-09-16",
+    "n": 564,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "IQhEb214c4c",
+    "title": "Why You Can't Look Away From Crashes",
+    "topic": "Why you can't look away from a crash replay",
+    "date": "2026-09-16",
+    "n": 565,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

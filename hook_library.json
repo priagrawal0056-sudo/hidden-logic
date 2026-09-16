@@ -2352,5 +2352,38 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Freeze In The Cereal Aisle",
+    "hook_text": "You grab a cart.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Tease",
+    "first_frame_description": "A hand reaches out and grabs the handle of a shiny metal shopping cart in a brightly lit supermarket.",
+    "visual_thesis": "The overwhelming number of choices in a common retail setting (cereal aisle) is a deliberate design to manipulate consumer behavior.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Ask 'What?'",
+    "hook_text": "You just heard them.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction -> Hidden Mechanism Tease",
+    "first_frame_description": "A close-up shot of a person's face, looking slightly confused or blank, with their mouth slightly open as if about to speak or having just spoken 'What?'. The background is a common indoor setting like a living room or office, implying a casual conversation.",
+    "visual_thesis": "The common act of asking 'What?' after hearing something is not a failure of listening, but a deliberate, hidden system in the brain to buy processing time, leading to a predictable conversational loop.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Look Away From Crashes",
+    "hook_text": "You\u2019re scrolling late when a car crash stops your thumb.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Psychological Conflict",
+    "first_frame_description": "A close-up of a thumb frozen over a phone screen showing a blurred car wreck in a dark room.",
+    "visual_thesis": "The brain isn't curious about death; it is running a mandatory survival simulation to learn how to avoid the threat it sees on screen.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

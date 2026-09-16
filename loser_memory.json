@@ -2736,5 +2736,38 @@
     "hook_type": "explainer",
     "cluster": null,
     "quality_score": 0
+  },
+  {
+    "title": "give me please \ud83e\udd7a\ud83e\udd7a",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Love Last-Minute Goals",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why You Always Cheer For Underdogs",
+    "views": 292,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 45.0
   }
 ]
