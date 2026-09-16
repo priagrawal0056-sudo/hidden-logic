@@ -1270,5 +1270,11 @@
     "topic": "Why elevator doors closing the moment you run keeps happening no matter what",
     "visual_thesis": "Demonstrating how elevator light sensors fail to detect approaching runners while exit-triggers accelerate door closures.",
     "script": "You sprint for the elevator, but the doors shut on purpose. It feels like bad timing, but building sensors are programmed to reject your run. Standard light curtains only scan the threshold, ignoring the hallway entirely. But here’s the sinister part: the moment someone steps out, the door timer instantly cuts in half. You aren't missing the elevator by accident. They're literally programmed to lock you out right as"
+  },
+  "doy4tXTZO04": {
+    "title": "Why You Love Last-Minute Goals",
+    "topic": "Why a last-minute goal feels better than an early one",
+    "visual_thesis": "The stark contrast in human emotional and physical reaction to a last-minute sports goal versus an early, easy goal, explained by internal brain chemistry of terror, stress, and relief.",
+    "script": "You explode for a last-minute goal, but it's not the win you love. An early goal? You barely react. Why? Your brain actually craves terror. The panic of losing spikes your stress. Then, relief floods you with dopamine. You're just escaping agony. That's why your brain tricks you into loving the brink of disaster."
   }
 }
