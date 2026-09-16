@@ -1242,6 +1242,15 @@ import random
 
 SERIES_FORMATS = ['Everyday technology', 'Queues and travel', 'Shopping and pricing']
 
+# Author the executable visual plan with the first script, and preserve it through
+# automatic editorial review. Braces are escaped for the legacy .format interface.
+from production_brief import RULES as _PRODUCTION_RULES
+from credible.storyboard import SCHEMA as _DRAWING_SCHEMA
+_PRODUCTION_INSTRUCTIONS = ('\n'+_PRODUCTION_RULES+_DRAWING_SCHEMA).replace('{','{{').replace('}','}}')
+WRITE_PROMPT += _PRODUCTION_INSTRUCTIONS
+REVIEW_PROMPT += _PRODUCTION_INSTRUCTIONS
+REVISE_PROMPT += _PRODUCTION_INSTRUCTIONS
+
 def _build_prompt(topic, length_rule, variant):
     series_format = random.choice(SERIES_FORMATS)
     return WRITE_PROMPT.format(topic=topic, length_rule=length_rule, series_format=series_format)
@@ -1419,6 +1428,8 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
         if review is None:
             raise RuntimeError(f"REVIEW FAILED twice; refusing to publish unverified content. ({review_err})")
         data["script"] = review.get("script", data["script"])
+        for field in ('beats','storyboard','broll_keywords'):
+            if field in review: data[field] = review[field]
         data['sound_cues'] = review.get('sound_cues', [])
         data['first_comment'] = review.get('first_comment', data.get('first_comment', ''))
         if review.get("title"):
@@ -1703,6 +1714,8 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
                 ), temperature=0.2)
                 
                 revised["script"] = review2.get("script", revised["script"])
+                for field in ('beats','storyboard','broll_keywords'):
+                    if field in review2: revised[field] = review2[field]
                 revised['sound_cues'] = review2.get('sound_cues', [])
                 revised['first_comment'] = review2.get('first_comment', revised.get('first_comment', ''))
                 if review2.get("title"):

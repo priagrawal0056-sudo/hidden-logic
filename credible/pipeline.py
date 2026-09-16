@@ -50,7 +50,8 @@ def prepare(episode, root, config):
                                 for name in ('media.py','storyboard.py','quality.py')])
     signature = digest([narration_signature,episode['storyboard'],episode['evidence'],episode['source_label'],
                         config['width'],config['height'],config['fps'],config['production_version'],renderer_signature,
-                        style, episode.get('broll_keywords'), episode.get('sound_cues')])
+                        style, episode.get('broll_keywords'), episode.get('sound_cues'),
+                        episode.get('diagram_sentence_index'),episode.get('diagram_sentence_count')])
     if previous and previous.get('quality', {}).get('passed') and previous.get('render_signature') == signature:
         try:
             previous['quality'] = rendered_checks(previous, folder, config)

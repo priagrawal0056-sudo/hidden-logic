@@ -67,6 +67,8 @@ def script_checks(episode):
     if episode.get('production_version',0) >= 3:
         editorial_checks(episode)
     if episode.get('production_version',0) >= 4:
+        from production_brief import validate
+        validate(episode)
         if not re.search(r'\b(?:follow|subscribe to) Hidden Logic\b',' '.join(script.split()[-15:]),re.I):
             raise ValueError('Short closing spoken CTA required after payoff')
         if not episode.get('broll_keywords') or len(set(episode['broll_keywords'])) < 3:

@@ -40,6 +40,8 @@ jobs:
           pip install -r requirements-credible.txt
       - name: Run focused tests
         run: python -m unittest discover -s tests -v
+      - name: Check release files
+        run: python release_check.py
       - uses: actions/cache/restore@v4
         with:
           path: outputs/credible

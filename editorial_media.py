@@ -13,27 +13,36 @@ from credible.core import file_hash, save
 ROOT = Path(__file__).resolve().parent
 STYLE_FILES = ('editorial_profile.json', 'editorial_media.py', 'assemble.py',
                'captions.py', 'tts.py', 'visuals.py', 'config_loader.py', 'footage_review.py',
-               'credible/approved.py', 'credible/approved_seeds.py')
+               'credible/approved.py', 'credible/approved_seeds.py','production_brief.py',
+               'assets/fonts/Arimo.ttf','Anton-Regular.ttf')
 
 
 def fingerprint():
     return [(name, file_hash(ROOT/name)) for name in STYLE_FILES]
 
 
-def plan_scenes(words, script, config, diagram_index=1):
+def plan_scenes(words, script, config, diagram_index=1, diagram_count=None):
     """Hold complete sentences together, never shorten or stretch spoken audio."""
     durations = assemble.sentence_segments(words, script)
+    if diagram_count is not None:
+        from production_brief import sentences
+        if len(durations)!=len(sentences(script)):
+            raise ValueError('Measured sentences are too short to preserve the authored visual plan')
     if len(durations) < 3:
         raise ValueError('Need a hook, explanation and complete ending')
     start = min(max(1, diagram_index), len(durations)-2)
     stop = start+1
     target, maximum = config.get('diagram_target_seconds', 5), config.get('diagram_max_seconds', 8)
-    if (durations[start] < target and start+1 < len(durations)-1
+    if diagram_count is not None:
+        if type(diagram_count) is not int or not 1<=diagram_count<=3 or start+diagram_count>len(durations)-2:
+            raise ValueError('Mechanism span must leave the payoff and final CTA intact')
+        stop=start+diagram_count
+    elif (durations[start] < target and start+1 < len(durations)-1
             and durations[start]+durations[start+1] > maximum):
         # Keep the long explanation intact instead of showing its diagram only
         # during the preceding two-second answer.
         start += 1; stop = start+1
-    while (sum(durations[start:stop]) < target and stop < len(durations)-1
+    while (diagram_count is None and sum(durations[start:stop]) < target and stop < len(durations)-1
            and sum(durations[start:stop+1]) <= maximum):
         stop += 1
     result, cursor = [], 0.0
@@ -43,7 +52,8 @@ def plan_scenes(words, script, config, diagram_index=1):
         if i == start:
             duration = sum(durations[start:stop])
         result.append({'start': cursor, 'end': cursor+duration,
-                       'kind': 'diagram' if i == start else 'stock'})
+                       'kind': 'diagram' if i == start else 'stock',
+                       'sentence_start':i,'sentence_count':stop-start if i==start else 1})
         cursor += duration
     last_words = [w['word'].lower().strip('.,!?') for w in words if w['start']>=result[-1]['start']]
     if last_words and last_words[0] in ('follow','subscribe'):
@@ -125,8 +135,10 @@ def diagram_frame(meta, progress):
     plan = meta.get('storyboard')
     validate_storyboard(plan)
     # Show the mechanism and its changed state, with a readable final hold.
-    state = plan[3] if meta.get('_callback') else plan[1] if progress < .38 else plan[2]
-    local = progress if meta.get('_callback') else progress/.38 if progress < .38 else min(1, (progress-.38)/.42)
+    transition = meta.get('_diagram_transition_progress',.38)
+    state = plan[3] if meta.get('_callback') else plan[1] if progress < transition else plan[2]
+    local = (progress if meta.get('_callback') else progress/transition if progress < transition
+             else min(1,(progress-transition)/max(.01,(1-transition)*.8)))
     canvas = Image.new('RGB', (540,960), '#121a24')
     draw_storyboard(ImageDraw.Draw(canvas), state, local)
     image.paste(canvas.crop((20,200,500,690)).resize((960,980)), (30,220))
@@ -190,7 +202,9 @@ def render(meta, folder, config, stock=None):
     import visuals
     folder = Path(folder)
     words = json.loads((folder/'timings.json').read_text(encoding='utf-8'))
-    scenes = plan_scenes(words, meta['script'], config, meta.get('diagram_sentence_index',1))
+    scenes = plan_scenes(words, meta['script'], config, meta.get('diagram_sentence_index',1),
+                         meta.get('diagram_sentence_count'))
+    sentence_durations = assemble.sentence_segments(words,meta['script'])
     needed = sum(s['kind']=='stock' for s in scenes)
     if stock is None:
         previous_cache = visuals.CACHE_FILE
@@ -221,6 +235,8 @@ def render(meta, folder, config, stock=None):
             path = folder/('callback.mp4' if scene['kind']=='callback' else 'mechanism.mp4')
             drawing = dict(meta)
             drawing['_callback'] = scene['kind']=='callback'
+            if scene['kind']=='diagram' and scene['sentence_count']>1:
+                drawing['_diagram_transition_progress'] = sentence_durations[scene['sentence_start']]/(scene['end']-scene['start'])
             changes = [w['start'] for w in words if w['word'].casefold().strip('.,!?')=='update'
                        and scene['start']<=w['start']<scene['end']]
             if len(changes)==1:

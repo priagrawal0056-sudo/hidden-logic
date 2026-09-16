@@ -589,15 +589,12 @@ def make_one(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None = No
     out = os.path.join(workdir, "short.mp4")
 
     import editorial_media
-    # The same measured edit is used by the evidence-led scheduler.
-    if not meta.get("storyboard"):
-        from credible.storyboard import SCHEMA, validate_storyboard
-        plan = scriptgen._call(cfg["gemini_api_key"],
-            "Create a supporting diagram for this finished script. Do not add claims. "
-            "Return a JSON object with storyboard. " + SCHEMA + "\\nScript: " + meta["script"],
-            temperature=0.2)
-        validate_storyboard(plan.get("storyboard"))
-        meta["storyboard"] = plan["storyboard"]
+    # Both entry points require a complete first-draft production brief. Never
+    # patch missing visual direction with an unrelated last-minute graphic.
+    from production_brief import media_metadata
+    from credible.storyboard import validate_storyboard
+    meta = media_metadata(meta)
+    validate_storyboard(meta.get('storyboard'))
     editorial_media.synthesize(meta, workdir, cfg)
     edit = editorial_media.render(meta, workdir, cfg)
     meta["sentence_scene_durations"] = [s["end"]-s["start"] for s in edit["scenes"]]

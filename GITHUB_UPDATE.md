@@ -10,9 +10,10 @@ Singapore slots and the independent analytics collector remain in place.
 - One complete Orus take, measured word timing, restrained music and payoff cues.
 - One phrase-caption layer, at most two lines, inside the Shorts safe area.
 - Unique source identities and file hashes; no repeated clips or looping to fill time.
-- Real footage plus one topic-specific mechanism demonstration. Its target is
-  five seconds, merging whole sentences up to eight seconds where possible.
-  A longer complete sentence is retained rather than cut mid-speech. The hook
+- Real footage plus one topic-specific mechanism demonstration. Gemini authors
+  the hook, answer, entire mechanism beat, payoff and separate CTA together.
+  The mechanism beat drives its own measured scene span, targeting 5-8 seconds;
+  no manually supplied scene index is required. The hook
   stays a stock scene. A final spoken CTA uses a moving, topic-specific resolved
   diagram state rather than unrelated outro footage. Narration is not slowed.
 - The barcode demonstration keeps its identifier fixed while illustrative
@@ -33,7 +34,7 @@ variables. Production version 4 invalidates older render caches and reserves.
 
 ## GitHub preparation
 
-The branch includes upstream state through `8773ab1`. Keep the existing
+The branch includes upstream state through `183cb2e`. Keep the existing
 `codex/credible-shorts` branch for review. `config.json` remains on the local
 machine but is removed from tracking. Generated previews, tokens and local
 configuration must remain excluded. This does not remove files from Git history.
@@ -42,6 +43,30 @@ The daily workflow installs the original editor dependencies, supplies Pexels
 and Pixabay credentials, caches version-4 media and exports captions/edit plans
 alongside the finished video. Preview runs do not restore YouTube credentials
 or commit production state. Production clip history is explicitly persisted.
+
+## One-command unpublished generation
+
+With the same service credentials configured, run:
+
+```text
+python -m credible.single --pillar shopping
+```
+
+This retrieves source material, asks Gemini for a complete production brief,
+checks claims and structure, generates one continuous Orus take, selects and
+checks footage, renders the mechanism and animated callback, and measures the
+final encoded output. It never authenticates to YouTube or uploads. Failure exits
+nonzero and writes a failed result instead of presenting an incomplete video as ready.
+
+The same brief rules are present in the original writer/reviewer and the daily
+evidence-led generator. Automatic validation and bounded repair remain; the aim
+is no routine human recutting, not a guarantee that every model response or
+stock-search result will be publishable. Invalid candidates are rejected.
+
+The live September 16 check reached Gemini but exhausted its free quota (HTTP
+429). Fresh end-to-end generation is therefore not signed off yet. Offline
+contract tests and a real render using the approved narration/assets are separate
+checks, not substitutes for that live test.
 
 Required GitHub secrets: `HL_GEMINI_API_KEY`, at least one of
 `HL_PEXELS_API_KEY` / `HL_PIXABAY_API_KEY`, and for publishing

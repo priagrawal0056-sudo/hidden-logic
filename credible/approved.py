@@ -12,7 +12,8 @@ def config_for(config):
 
 
 def metadata(episode):
-    return {**episode, 'script':' '.join(episode['beats']),
+    from production_brief import media_metadata
+    return {**media_metadata(episode),
             'visual_thesis':episode.get('claim',''),
             'diagram_type':'barcode_lookup' if episode.get('claim_id')=='barcode-mechanism-v1' else 'storyboard'}
 

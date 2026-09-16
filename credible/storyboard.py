@@ -8,9 +8,9 @@ import math
 from PIL import Image, ImageDraw
 from .core import digest
 
-COLORS = {'ink': '#edf3ef', 'muted': '#9caea8', 'accent': '#8ce0ba',
-          'warm': '#ffb787', 'red': '#e48282', 'panel': '#253b36',
-          'dark': '#142923', 'paper': '#e4e4d4'}
+COLORS = {'ink': '#ffffff', 'muted': '#b8c4d2', 'accent': '#f4c650',
+          'warm': '#ffb787', 'red': '#e48282', 'panel': '#243142',
+          'dark': '#121a24', 'paper': '#e4e4d4'}
 
 SCHEMA = '''storyboard: four objects matching the four beats. Each contains
 heading (<=28 characters), purpose (what the drawing explains), example (boolean),

@@ -36,7 +36,8 @@ def ffmpeg():
 
 @lru_cache(maxsize=32)
 def font(size):
-    candidates = [Path('assets/DejaVuSans.ttf'), Path('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'),
+    candidates = [Path(__file__).resolve().parent.parent/'assets/fonts/Arimo.ttf',
+                  Path('assets/DejaVuSans.ttf'), Path('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'),
                   Path('C:/Windows/Fonts/arial.ttf')]
     for path in candidates:
         if path.exists():
