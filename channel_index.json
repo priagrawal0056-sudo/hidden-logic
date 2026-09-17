@@ -6940,5 +6940,64 @@
     "quality_score": 47.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "yFhvs4y7r0k",
+    "title": "am i the only one that thought this was cool \ud83d\ude2d\ud83d\ude2d",
+    "topic": "am i the only one that thought this was cool \ud83d\ude2d\ud83d\ude2d",
+    "date": "2026-09-17",
+    "n": 0
+  },
+  {
+    "video_id": "FAFtsBezmFw",
+    "title": "the firecrest ginger bean you'll see!",
+    "topic": "the firecrest ginger bean you'll see!",
+    "date": "2026-09-17",
+    "n": 0
+  },
+  {
+    "video_id": "GDZsmxac6gg",
+    "title": "Why Your Checkout Line Is Slow",
+    "topic": "Why getting angrier the slower the line moves is definitely not an accident",
+    "date": "2026-09-17",
+    "n": 568,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 47.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "aC8Zq34kYww",
+    "title": "Why You Always Brake For Red Cars",
+    "topic": "Why drivers in red cars feel faster to you",
+    "date": "2026-09-17",
+    "n": 569,
+    "source": "pool",
+    "visual_score": 0.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "pwq15dcPeGI",
+    "title": "Why You Hate Slow Walkers",
+    "topic": "Why hating slow walkers is definitely not an accident",
+    "date": "2026-09-17",
+    "n": 570,
+    "source": "pool",
+    "visual_score": 10.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]
