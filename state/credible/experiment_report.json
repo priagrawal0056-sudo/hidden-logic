@@ -1,0 +1,52 @@
+{
+  "experiment_id": "everyday-topics-v2",
+  "arms": {
+    "demonstration_first": {
+      "eligible_videos": 0,
+      "median_apv": null,
+      "median_avd_seconds": null,
+      "median_engaged_views": null,
+      "shares_per_1000_engaged": null,
+      "net_subscribers_per_1000_engaged": null
+    },
+    "question_first": {
+      "eligible_videos": 0,
+      "median_apv": null,
+      "median_avd_seconds": null,
+      "median_engaged_views": null,
+      "shares_per_1000_engaged": null,
+      "net_subscribers_per_1000_engaged": null
+    }
+  },
+  "decision": "continue_balanced_testing",
+  "automatic_promotion": false,
+  "minimum_per_arm": 20,
+  "minimum_engaged_views_per_video": 100,
+  "note": "APV target is +10 percentage points against a comparable baseline, not a promise. Review pillar/slot balance, duration, reach and engagement before choosing.",
+  "previous_experiment": {
+    "experiment_id": "early-answer-v1",
+    "arms": {
+      "demonstration_first": {
+        "eligible_videos": 0,
+        "median_apv": null,
+        "median_avd_seconds": null,
+        "median_engaged_views": null,
+        "shares_per_1000_engaged": null,
+        "net_subscribers_per_1000_engaged": null
+      },
+      "question_first": {
+        "eligible_videos": 0,
+        "median_apv": null,
+        "median_avd_seconds": null,
+        "median_engaged_views": null,
+        "shares_per_1000_engaged": null,
+        "net_subscribers_per_1000_engaged": null
+      }
+    },
+    "decision": "continue_balanced_testing",
+    "automatic_promotion": false,
+    "minimum_per_arm": 20,
+    "minimum_engaged_views_per_video": 100,
+    "note": "APV target is +10 percentage points against a comparable baseline, not a promise. Review pillar/slot balance, duration, reach and engagement before choosing."
+  }
+}
