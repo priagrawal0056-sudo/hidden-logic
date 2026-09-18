@@ -115,6 +115,28 @@ async def _synth(text: str, mp3_path: str, voice: str):
     return n_bytes, words
 
 
+def _coalesce_measured_words(words):
+    """Keep a zero-width ASR token with its adjacent measured phrase, never guess a cut."""
+    result, pending = [], []
+    for word in words:
+        if pending:
+            if abs(word['start'] - pending[-1]['end']) > .001 or len(pending) > 3:
+                raise ValueError('Unresolved zero-width word timing')
+        if word['end'] == word['start']:
+            if re.search(r'[.!?]$', word['word']):
+                raise ValueError('Unresolved sentence-ending timing')
+            pending.append(word)
+            continue
+        if pending:
+            word = {**word, 'word': ' '.join(w['word'] for w in pending + [word]),
+                    'start': pending[0]['start'], 'timing_granularity': 'measured_phrase'}
+            pending = []
+        result.append(word)
+    if pending:
+        raise ValueError('Unresolved trailing word timing')
+    return result
+
+
 def _align_with_whisper(text: str, mp3_path: str):
     """If faster-whisper is installed, get TRUE word timestamps from the audio.
     This makes captions frame-accurate. Optional: pip install faster-whisper"""
@@ -122,27 +144,40 @@ def _align_with_whisper(text: str, mp3_path: str):
         from faster_whisper import WhisperModel
     except ImportError:
         return None
-    try:
-        model = WhisperModel(_TTS_CFG.get("alignment_model", "base.en"), device="cpu", compute_type="int8")
-        # Retry recognition of the SAME audio, not a new paid/quota TTS request.
-        # No script prompt: do not steer ASR into confirming words it did not hear.
-        from assemble import sentence_segments
-        for beam in (1, 5):
-            segments, _ = model.transcribe(mp3_path, word_timestamps=True, language="en",
-                                           vad_filter=True, condition_on_previous_text=False,
-                                           beam_size=beam, hallucination_silence_threshold=0.5)
-            words = [{"word": w.word.strip(), "start": round(w.start, 3),
-                      "end": round(w.end, 3)}
-                     for seg in segments for w in (seg.words or [])]
-            try:
-                sentence_segments(words, text)
-            except ValueError:
-                print(f"[tts] transcript/timing check failed (beam={beam}); no estimated timings used")
-                continue
-            print(f"[tts] measured alignment used ({len(words)} words; transcript checked)")
-            return words
-    except Exception as e:
-        print(f"[tts] measured alignment unavailable ({type(e).__name__})")
+    from assemble import sentence_segments
+    report = {'expected': text, 'attempts': [], 'passed': False}
+    primary = _TTS_CFG.get('alignment_model', 'base.en')
+    fallback = _TTS_CFG.get('alignment_fallback_model', 'small.en')
+    names = list(dict.fromkeys(n for n in (primary, fallback) if n))
+    for name in names:
+        try:
+            model = WhisperModel(name, device="cpu", compute_type="int8")
+            for beam in ((1, 5) if name == primary else (5,)):
+                segments, _ = model.transcribe(mp3_path, word_timestamps=True, language="en",
+                                               vad_filter=True, condition_on_previous_text=False,
+                                               beam_size=beam, hallucination_silence_threshold=0.5)
+                words = [{"word": w.word.strip(), "start": round(w.start, 3),
+                          "end": round(w.end, 3)}
+                         for seg in segments for w in (seg.words or [])]
+                attempt = {'model': name, 'beam': beam, 'words': words}
+                report['attempts'].append(attempt)
+                try:
+                    words = _coalesce_measured_words(words)
+                    sentence_segments(words, text)
+                except ValueError as exc:
+                    attempt['reason'] = str(exc)
+                    print(f"[tts] alignment rejected ({name}, beam={beam}): {exc}")
+                    continue
+                report['passed'] = True
+                with open(mp3_path + '.alignment.json', 'w', encoding='utf-8') as output:
+                    json.dump(report, output, indent=2)
+                print(f"[tts] measured alignment used ({len(words)} words; transcript checked)")
+                return words
+        except Exception as exc:
+            report['attempts'].append({'model': name, 'error_type': type(exc).__name__})
+            print(f"[tts] measured alignment unavailable ({name}: {type(exc).__name__})")
+    with open(mp3_path + '.alignment.json', 'w', encoding='utf-8') as output:
+        json.dump(report, output, indent=2)
     return None
 
 
@@ -472,7 +507,8 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
                 "voiceName": _TTS_CFG.get("gemini_voice", "Orus")}}},
         },
     }
-    for model in [_TTS_CFG.get("gemini_tts_model", "gemini-3.1-flash-tts-preview")]:
+    model = _TTS_CFG.get("gemini_tts_model", "gemini-3.1-flash-tts-preview")
+    for narration_attempt in range(2):
         try:
             r = requests.post(GEMINI_TTS_URL.format(model=model, key=api_key),
                               json=body, timeout=120)
@@ -496,6 +532,14 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
         _apply_speed(mp3_path, SPEECH_SPEED)
         words = _align_with_whisper(text, mp3_path)
         if not words:
+            import shutil
+            shutil.copyfile(mp3_path, mp3_path + f'.rejected-{narration_attempt+1}.mp3')
+            diagnostic = mp3_path + '.alignment.json'
+            if os.path.exists(diagnostic):
+                shutil.copyfile(diagnostic, diagnostic + f'.rejected-{narration_attempt+1}.json')
+            if narration_attempt == 0:
+                print('[tts] Unverified narration saved for review; retrying the same script once.')
+                continue
             raise RuntimeError("Gemini narration needs verified word timings; estimated cuts are disabled")
         with open(timings_path, "w", encoding="utf-8") as f:
             json.dump(words, f, indent=2)

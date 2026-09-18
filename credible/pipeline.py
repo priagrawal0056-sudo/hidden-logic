@@ -172,11 +172,12 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
         docs, source_errors = documents(root, catalog)
         errors.extend(source_errors)
         # Authored scripts need no writer calls; new Orus narration still needs TTS quota.
-        seed_reserve(root, config, docs, catalog, state, reserve, errors, config['reserve_target'])
         if mode == 'bootstrap':
+            seed_reserve(root, config, docs, catalog, state, reserve, errors, config['reserve_target'])
             save(root / 'run-report.json', {'reserve_ready': sum(r.get('status') == 'ready' for r in reserve), 'errors': errors})
             return reserve
         model = FreeModel(config)
+        model.diagnostics_dir = root / 'diagnostics'
         bank = load_bank()
         from .topic_review import reviewed_bank, review_topic, revision, review_queue
         baseline_reviews=read('state/credible/production.json',{}).get('topic_reviews',{})
@@ -239,6 +240,11 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                 if not model.key or model.exhausted:
                     break
         # Same-day reruns finish existing slots; they do not add another day's quota.
+        needed = sum(s['id'] not in state['slots'] for s in plan_slots)
+        ready = sum(r.get('status') == 'ready' for r in reserve)
+        if len(candidates) + ready < needed:
+            seed_reserve(root, config, docs, catalog, state, reserve, errors,
+                         min(config['reserve_target'], needed - len(candidates)))
         selected_categories = {row.get('category', row.get('pillar')) for row in state['slots'].values()
                                if row['id'] in {s['id'] for s in plan_slots}}
         for planned in plan_slots:

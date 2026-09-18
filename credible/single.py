@@ -15,6 +15,7 @@ def build(pillar, root, topic_id=None):
     config['clip_history_path']=str(root/'preview-state'/'used_clips.json')
     cfg=load_config()
     model=FreeModel(config)
+    model.diagnostics_dir=root/'diagnostics'
     # The same environment overlay as narration; no credentials copied into output.
     model.key=cfg.get('gemini_api_key','')
     if not model.key: raise RuntimeError('Gemini credential unavailable; set HL_GEMINI_API_KEY')

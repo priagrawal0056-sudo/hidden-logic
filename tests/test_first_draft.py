@@ -44,6 +44,20 @@ class FirstDraftTests(unittest.TestCase):
         self.assertEqual(scenes[2]['sentence_count'],2)
         self.assertAlmostEqual(scenes[-1]['end'],words[-1]['end']+.8)
 
+    def test_failed_draft_is_given_back_for_targeted_repair(self):
+        import copy
+        good=brief(); bad=copy.deepcopy(good); bad['storyboard'][0]['heading']='x'*40
+        model=Mock();model.production_version=4;model.remaining=6
+        model.call.side_effect=[bad,good,{'supported':True,'title_matches':True,'duplicate':False,
+            'visuals_match':True,'natural_script':True,'needs_corroboration':False}]
+        doc={'url':'https://example.org/source','publisher':'Test primary source',
+             'text':' '.join(PASSAGES['barcode']),'retrieved_at':'2026-09-16'}
+        generate_episode(model,{doc['url']:doc},[],'question_first')
+        repair=model.call.call_args_list[1].args[0]
+        self.assertIn('Storyboard heading overflow',repair)
+        self.assertIn('Failed draft:',repair)
+        self.assertIn('x'*40,repair)
+
     def test_stale_rewrite_does_not_reuse_wrong_visual_timing(self):
         data=brief();data['script']='A different script.'
         with self.assertRaisesRegex(ValueError,'differ'): validate(data)

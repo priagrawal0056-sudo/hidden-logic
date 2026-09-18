@@ -43,3 +43,5 @@ jobs:
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/short.mp4
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/episode.json
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/contact-sheet.jpg
+            outputs/topic-pilot-${{ matrix.category }}/diagnostics/*.json
+            outputs/topic-pilot-${{ matrix.category }}/episodes/*/voice.mp3*
