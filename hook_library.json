@@ -2352,5 +2352,71 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Freeze In The Cereal Aisle",
+    "hook_text": "You grab a cart.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration -> Hidden System Tease",
+    "first_frame_description": "A hand reaches out and grabs the handle of a shiny metal shopping cart in a brightly lit supermarket.",
+    "visual_thesis": "The overwhelming number of choices in a common retail setting (cereal aisle) is a deliberate design to manipulate consumer behavior.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Ask 'What?'",
+    "hook_text": "You just heard them.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction -> Hidden Mechanism Tease",
+    "first_frame_description": "A close-up shot of a person's face, looking slightly confused or blank, with their mouth slightly open as if about to speak or having just spoken 'What?'. The background is a common indoor setting like a living room or office, implying a casual conversation.",
+    "visual_thesis": "The common act of asking 'What?' after hearing something is not a failure of listening, but a deliberate, hidden system in the brain to buy processing time, leading to a predictable conversational loop.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Look Away From Crashes",
+    "hook_text": "You\u2019re scrolling late when a car crash stops your thumb.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Psychological Conflict",
+    "first_frame_description": "A close-up of a thumb frozen over a phone screen showing a blurred car wreck in a dark room.",
+    "visual_thesis": "The brain isn't curious about death; it is running a mandatory survival simulation to learn how to avoid the threat it sees on screen.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Your Checkout Line Is Slow",
+    "hook_text": "You're standing in line.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Action -> Frustration -> Hidden System Reveal",
+    "first_frame_description": "A close-up shot of a person's feet, then panning up to show them standing in a very long, slow-moving grocery store checkout line, with other frustrated customers visible.",
+    "visual_thesis": "Long, slow checkout lines are deliberately engineered to push customers to self-checkout, reducing labor costs.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Always Brake For Red Cars",
+    "hook_text": "You slam your brakes for the red car behind you.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction",
+    "first_frame_description": "A high-intensity POV shot looking into a car's rearview mirror as a bright red sports car looms large and aggressive.",
+    "visual_thesis": "The video will visually demonstrate how red light wavelengths reach the eye faster than other colors, creating a depth-perception error that makes red vehicles appear physically closer in a rearview mirror.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why You Hate Slow Walkers",
+    "hook_text": "You're stuck behind a slow walker.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Physical Moment -> Hidden Mechanism",
+    "first_frame_description": "A person walking at a normal pace on a sidewalk, then abruptly encountering a much slower person directly in front, forcing them to slow down and showing a subtle, internal look of frustration.",
+    "visual_thesis": "The visceral, quantifiable cost of being delayed by slow walkers, and the brain's inherent design to avoid this specific drain.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

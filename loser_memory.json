@@ -2736,5 +2736,82 @@
     "hook_type": "explainer",
     "cluster": null,
     "quality_score": 0
+  },
+  {
+    "title": "give me please \ud83e\udd7a\ud83e\udd7a",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Love Last-Minute Goals",
+    "views": 4,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why You Always Cheer For Underdogs",
+    "views": 292,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 45.0
+  },
+  {
+    "title": "the firecrest ginger bean you'll see!",
+    "views": 56,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "am i the only one that thought this was cool \ud83d\ude2d\ud83d\ude2d",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Can't Look Away From Crashes",
+    "views": 228,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 47.0
+  },
+  {
+    "title": "Why Elevators Always Shut In Your Face",
+    "views": 294,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "elevator",
+    "quality_score": 47.0
   }
 ]
