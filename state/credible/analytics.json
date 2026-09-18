@@ -1,0 +1,7095 @@
+{
+  "schema_version": 2,
+  "videos": {
+    "wpZfoBbrcew": {
+      "observations": [
+        {
+          "video_id": "wpZfoBbrcew",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 844.619,
+          "public_views": 7,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-14T07:12:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Airports Change Your Gate Last Minute",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 31,
+          "averageViewPercentage": 99.71,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-15",
+        "end_date": "2026-08-21",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "wN9pfdwAe08": {
+      "observations": [
+        {
+          "video_id": "wN9pfdwAe08",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 842.786,
+          "public_views": 7,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-14T09:02:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Hear Your Name In Loud Rooms",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 45,
+          "averageViewPercentage": 182.8,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-15",
+        "end_date": "2026-08-21",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "AoEL9NS-Piw": {
+      "observations": [
+        {
+          "video_id": "AoEL9NS-Piw",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 840.719,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-14T11:06:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Cars Ahead Look Slower Than They Are",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 0,
+          "averageViewDuration": 0,
+          "averageViewPercentage": 0,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-15",
+        "end_date": "2026-08-21",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "kIbLdeF0BMU": {
+      "observations": [
+        {
+          "video_id": "kIbLdeF0BMU",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 820.753,
+          "public_views": 0,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-15T07:04:00Z",
+      "pillar": "internet_behavior",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Can't Stop Online Arguments",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": null,
+          "averageViewDuration": null,
+          "averageViewPercentage": null,
+          "shares": null,
+          "subscribersGained": null,
+          "subscribersLost": null
+        },
+        "availability": {
+          "engagedViews": "No report row yet",
+          "averageViewDuration": "No report row yet",
+          "averageViewPercentage": "No report row yet",
+          "shares": "No report row yet",
+          "subscribersGained": "No report row yet",
+          "subscribersLost": "No report row yet"
+        },
+        "start_date": "2026-08-16",
+        "end_date": "2026-08-22",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "wXdsnxQlEQc": {
+      "observations": [
+        {
+          "video_id": "wXdsnxQlEQc",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 818.603,
+          "public_views": 3,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-15T09:13:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Lose to Red Teams",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 12,
+          "averageViewPercentage": 49.23,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-16",
+        "end_date": "2026-08-22",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "nMjLI37XXPE": {
+      "observations": [
+        {
+          "video_id": "nMjLI37XXPE",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 796.686,
+          "public_views": 7,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-16T07:08:00Z",
+      "pillar": "traffic",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Red Cars Always Look Like They're Speeding",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 5,
+          "averageViewDuration": 7,
+          "averageViewPercentage": 28.93,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-17",
+        "end_date": "2026-08-23",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "R2N9IxvS_3g": {
+      "observations": [
+        {
+          "video_id": "R2N9IxvS_3g",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 794.436,
+          "public_views": 3,
+          "likes": 1,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-16T09:23:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Can't Forget That One Embarrassing Thing",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 7,
+          "averageViewPercentage": 25,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-17",
+        "end_date": "2026-08-23",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "PTrz_KDv7Gw": {
+      "observations": [
+        {
+          "video_id": "PTrz_KDv7Gw",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 772.569,
+          "public_views": 8,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-17T07:15:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Swear The Ref Cheated",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 3,
+          "averageViewDuration": 15,
+          "averageViewPercentage": 48.8,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-18",
+        "end_date": "2026-08-24",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "VpbSRbA7Ye8": {
+      "observations": [
+        {
+          "video_id": "VpbSRbA7Ye8",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 770.686,
+          "public_views": 1,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-17T09:08:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Self-Checkout Always Thinks You're Stealing",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 24,
+          "averageViewPercentage": 83.7,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-18",
+        "end_date": "2026-08-24",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "-lqnQ0UI8s0": {
+      "observations": [
+        {
+          "video_id": "-lqnQ0UI8s0",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 768.603,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-17T11:13:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Malls Make You Walk Miles",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 12,
+          "averageViewPercentage": 46.15,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-18",
+        "end_date": "2026-08-24",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "jaPAiSSeIls": {
+      "observations": [
+        {
+          "video_id": "jaPAiSSeIls",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 767.653,
+          "public_views": 5,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-17T12:10:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Ticket Apps Pretend Seats Are Sold Out",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 2,
+          "averageViewDuration": 6,
+          "averageViewPercentage": 26.46,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-18",
+        "end_date": "2026-08-24",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "nkq0KuXswwg": {
+      "observations": [
+        {
+          "video_id": "nkq0KuXswwg",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 748.486,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-18T07:20:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your Phone Secretly Dims Itself",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 12,
+          "averageViewPercentage": 44.44,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-19",
+        "end_date": "2026-08-25",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "hsYtHQauZU4": {
+      "observations": [
+        {
+          "video_id": "hsYtHQauZU4",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 746.436,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-18T09:23:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Slam Your Brakes On The Highway",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 2,
+          "averageViewDuration": 9,
+          "averageViewPercentage": 38.96,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-19",
+        "end_date": "2026-08-25",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "s209gssEBLM": {
+      "observations": [
+        {
+          "video_id": "s209gssEBLM",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 724.753,
+          "public_views": 8,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-19T07:04:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why IKEA Forces You Through A Maze",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 2,
+          "averageViewDuration": 19,
+          "averageViewPercentage": 68.6,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-20",
+        "end_date": "2026-08-26",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "p7tHQ6U_j3k": {
+      "observations": [
+        {
+          "video_id": "p7tHQ6U_j3k",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 722.569,
+          "public_views": 5,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-19T09:15:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Lose To Teams In Red",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 3,
+          "averageViewDuration": 12,
+          "averageViewPercentage": 49.39,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-20",
+        "end_date": "2026-08-26",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "KDTqGrXqHDA": {
+      "observations": [
+        {
+          "video_id": "KDTqGrXqHDA",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 700.653,
+          "public_views": 4,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-20T07:10:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your Team Always Collapses After Scoring First",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": null,
+          "averageViewDuration": null,
+          "averageViewPercentage": null,
+          "shares": null,
+          "subscribersGained": null,
+          "subscribersLost": null
+        },
+        "availability": {
+          "engagedViews": "No report row yet",
+          "averageViewDuration": "No report row yet",
+          "averageViewPercentage": "No report row yet",
+          "shares": "No report row yet",
+          "subscribersGained": "No report row yet",
+          "subscribersLost": "No report row yet"
+        },
+        "start_date": "2026-08-21",
+        "end_date": "2026-08-27",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "wKzQ3W0PoFw": {
+      "observations": [
+        {
+          "video_id": "wKzQ3W0PoFw",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 676.636,
+          "public_views": 1,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-21T07:11:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Fall For Free Shipping",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": null,
+          "averageViewDuration": null,
+          "averageViewPercentage": null,
+          "shares": null,
+          "subscribersGained": null,
+          "subscribersLost": null
+        },
+        "availability": {
+          "engagedViews": "No report row yet",
+          "averageViewDuration": "No report row yet",
+          "averageViewPercentage": "No report row yet",
+          "shares": "No report row yet",
+          "subscribersGained": "No report row yet",
+          "subscribersLost": "No report row yet"
+        },
+        "start_date": "2026-08-22",
+        "end_date": "2026-08-28",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "gLiq7n-1CSk": {
+      "observations": [
+        {
+          "video_id": "gLiq7n-1CSk",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 674.736,
+          "public_views": 7,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-21T09:05:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your Lungs Lock On The High Dive",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 27,
+          "averageViewPercentage": 108,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-22",
+        "end_date": "2026-08-28",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "uinfYRSozkQ": {
+      "observations": [
+        {
+          "video_id": "uinfYRSozkQ",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 672.603,
+          "public_views": 19,
+          "likes": 1,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-21T11:13:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your Progress Bar Always Freezes At 99%",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 6,
+          "averageViewDuration": 15,
+          "averageViewPercentage": 47.43,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-22",
+        "end_date": "2026-08-28",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "kjLv2m3GVjk": {
+      "observations": [
+        {
+          "video_id": "kjLv2m3GVjk",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 652.553,
+          "public_views": 8,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-22T07:16:00Z",
+      "pillar": "traffic",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Red Cars Always Look Like They're Speeding",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 2,
+          "averageViewDuration": 3,
+          "averageViewPercentage": 12.31,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-23",
+        "end_date": "2026-08-29",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "7oVDqDkfV7k": {
+      "observations": [
+        {
+          "video_id": "7oVDqDkfV7k",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 650.419,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-22T09:24:00Z",
+      "pillar": "supermarket",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Grocery Stores Always Rearrange Shelves",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 22,
+          "averageViewPercentage": 70,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-23",
+        "end_date": "2026-08-29",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "P2vP7AHbi6E": {
+      "observations": [
+        {
+          "video_id": "P2vP7AHbi6E",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 648.536,
+          "public_views": 5,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-22T11:17:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Giant Menus Make You Spend More",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 27,
+          "averageViewPercentage": 100.37,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-23",
+        "end_date": "2026-08-29",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "4Y1Nh1EsmPM": {
+      "observations": [
+        {
+          "video_id": "4Y1Nh1EsmPM",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 628.403,
+          "public_views": 3,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-23T07:25:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Ads Make You Cry For Nothing",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 2,
+          "averageViewDuration": 6,
+          "averageViewPercentage": 20.16,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-24",
+        "end_date": "2026-08-30",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "tbY4-bwwS9g": {
+      "observations": [
+        {
+          "video_id": "tbY4-bwwS9g",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 626.653,
+          "public_views": 17,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-23T09:10:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your Phone Screen Dims In The Sun",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 5,
+          "averageViewDuration": 13,
+          "averageViewPercentage": 41.07,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-24",
+        "end_date": "2026-08-30",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "bz7xxSo1h8s": {
+      "observations": [
+        {
+          "video_id": "bz7xxSo1h8s",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 624.536,
+          "public_views": 9,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-23T11:17:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Photo Finishes Always Look Fake",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 3,
+          "averageViewDuration": 19,
+          "averageViewPercentage": 84.95,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-24",
+        "end_date": "2026-08-30",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "d6rAcoOR69g": {
+      "observations": [
+        {
+          "video_id": "d6rAcoOR69g",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 623.553,
+          "public_views": 7,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-23T12:16:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why People Always Interrupt You",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 3,
+          "averageViewDuration": 2,
+          "averageViewPercentage": 11.15,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-24",
+        "end_date": "2026-08-30",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "eLm7whgfXPY": {
+      "observations": [
+        {
+          "video_id": "eLm7whgfXPY",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 622.036,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-23T13:47:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Feel Behind On Trends",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": null,
+          "averageViewDuration": null,
+          "averageViewPercentage": null,
+          "shares": null,
+          "subscribersGained": null,
+          "subscribersLost": null
+        },
+        "availability": {
+          "engagedViews": "No report row yet",
+          "averageViewDuration": "No report row yet",
+          "averageViewPercentage": "No report row yet",
+          "shares": "No report row yet",
+          "subscribersGained": "No report row yet",
+          "subscribersLost": "No report row yet"
+        },
+        "start_date": "2026-08-24",
+        "end_date": "2026-08-30",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "d749iQLzZ-k": {
+      "observations": [
+        {
+          "video_id": "d749iQLzZ-k",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 604.469,
+          "public_views": 3,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-24T07:21:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Every Video Has This Game Underneath",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 2,
+          "averageViewDuration": 8,
+          "averageViewPercentage": 32.5,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-25",
+        "end_date": "2026-08-31",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "_NevRI8wlww": {
+      "observations": [
+        {
+          "video_id": "_NevRI8wlww",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 602.686,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-24T09:08:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Injury Time Always Feels Endless",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 0,
+          "averageViewDuration": 0,
+          "averageViewPercentage": 0,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-25",
+        "end_date": "2026-08-31",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "6IrCokIp--E": {
+      "observations": [
+        {
+          "video_id": "6IrCokIp--E",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 580.703,
+          "public_views": 0,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-25T07:07:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Unsubscribe Buttons Are Always Invisible",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": null,
+          "averageViewDuration": null,
+          "averageViewPercentage": null,
+          "shares": null,
+          "subscribersGained": null,
+          "subscribersLost": null
+        },
+        "availability": {
+          "engagedViews": "No report row yet",
+          "averageViewDuration": "No report row yet",
+          "averageViewPercentage": "No report row yet",
+          "shares": "No report row yet",
+          "subscribersGained": "No report row yet",
+          "subscribersLost": "No report row yet"
+        },
+        "start_date": "2026-08-26",
+        "end_date": "2026-09-01",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "AuLDP8zVrs4": {
+      "observations": [
+        {
+          "video_id": "AuLDP8zVrs4",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 578.719,
+          "public_views": 6,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-25T09:06:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Can Never Overtake The Leader On The Last Lap",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 0,
+          "averageViewDuration": 0,
+          "averageViewPercentage": 0,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-26",
+        "end_date": "2026-09-01",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "nxfI4fCA-eE": {
+      "observations": [
+        {
+          "video_id": "nxfI4fCA-eE",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 576.719,
+          "public_views": 6,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-25T11:06:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your TV Shows Ads When You Pause",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 26,
+          "averageViewPercentage": 97.41,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-26",
+        "end_date": "2026-09-01",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "QlbULZRU7sk": {
+      "observations": [
+        {
+          "video_id": "QlbULZRU7sk",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 556.403,
+          "public_views": 259,
+          "likes": 1,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-26T07:25:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why The Car In Front Always Feels Too Slow",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 56,
+          "averageViewDuration": 16,
+          "averageViewPercentage": 64.74,
+          "shares": 0,
+          "subscribersGained": 1,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-27",
+        "end_date": "2026-09-02",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.2679
+        ],
+        [
+          0.02,
+          1.2856999999999998
+        ],
+        [
+          0.03,
+          1.2679
+        ],
+        [
+          0.04,
+          1.2679
+        ],
+        [
+          0.05,
+          1.2321
+        ],
+        [
+          0.06,
+          1.2321
+        ],
+        [
+          0.07,
+          1.2321
+        ],
+        [
+          0.08,
+          1.2321
+        ],
+        [
+          0.09,
+          1.2143000000000002
+        ],
+        [
+          0.1,
+          1.2143000000000002
+        ],
+        [
+          0.11,
+          1.1964
+        ],
+        [
+          0.12,
+          1.1964
+        ],
+        [
+          0.13,
+          1.1964
+        ],
+        [
+          0.14,
+          1.2143000000000002
+        ],
+        [
+          0.15,
+          1.1964
+        ],
+        [
+          0.16,
+          1.1964
+        ],
+        [
+          0.17,
+          1.1429
+        ],
+        [
+          0.18,
+          1.1429
+        ],
+        [
+          0.19,
+          1.0893000000000002
+        ],
+        [
+          0.2,
+          1
+        ],
+        [
+          0.21,
+          0.9821
+        ],
+        [
+          0.22,
+          0.9821
+        ],
+        [
+          0.23,
+          0.9643
+        ],
+        [
+          0.24,
+          0.9643
+        ],
+        [
+          0.25,
+          0.9464
+        ],
+        [
+          0.26,
+          0.9464
+        ],
+        [
+          0.27,
+          0.9464
+        ],
+        [
+          0.28,
+          0.9286
+        ],
+        [
+          0.29,
+          0.9107
+        ],
+        [
+          0.3,
+          0.875
+        ],
+        [
+          0.31,
+          0.875
+        ],
+        [
+          0.32,
+          0.875
+        ],
+        [
+          0.33,
+          0.875
+        ],
+        [
+          0.34,
+          0.8393
+        ],
+        [
+          0.35,
+          0.8214
+        ],
+        [
+          0.36,
+          0.8214
+        ],
+        [
+          0.37,
+          0.8036
+        ],
+        [
+          0.38,
+          0.7679
+        ],
+        [
+          0.39,
+          0.7321
+        ],
+        [
+          0.4,
+          0.6786
+        ],
+        [
+          0.41,
+          0.6429
+        ],
+        [
+          0.42,
+          0.6071
+        ],
+        [
+          0.43,
+          0.6071
+        ],
+        [
+          0.44,
+          0.5893
+        ],
+        [
+          0.45,
+          0.5536
+        ],
+        [
+          0.46,
+          0.5536
+        ],
+        [
+          0.47,
+          0.5357
+        ],
+        [
+          0.48,
+          0.5357
+        ],
+        [
+          0.49,
+          0.5357
+        ],
+        [
+          0.5,
+          0.5357
+        ],
+        [
+          0.51,
+          0.5
+        ],
+        [
+          0.52,
+          0.48210000000000003
+        ],
+        [
+          0.53,
+          0.4643
+        ],
+        [
+          0.54,
+          0.4643
+        ],
+        [
+          0.55,
+          0.4643
+        ],
+        [
+          0.56,
+          0.4643
+        ],
+        [
+          0.57,
+          0.4643
+        ],
+        [
+          0.58,
+          0.4643
+        ],
+        [
+          0.59,
+          0.4643
+        ],
+        [
+          0.6,
+          0.4643
+        ],
+        [
+          0.61,
+          0.4643
+        ],
+        [
+          0.62,
+          0.4643
+        ],
+        [
+          0.63,
+          0.4464
+        ],
+        [
+          0.64,
+          0.4286
+        ],
+        [
+          0.65,
+          0.4286
+        ],
+        [
+          0.66,
+          0.4286
+        ],
+        [
+          0.67,
+          0.4286
+        ],
+        [
+          0.68,
+          0.4286
+        ],
+        [
+          0.69,
+          0.4286
+        ],
+        [
+          0.7,
+          0.4286
+        ],
+        [
+          0.71,
+          0.39289999999999997
+        ],
+        [
+          0.72,
+          0.375
+        ],
+        [
+          0.73,
+          0.375
+        ],
+        [
+          0.74,
+          0.375
+        ],
+        [
+          0.75,
+          0.35710000000000003
+        ],
+        [
+          0.76,
+          0.35710000000000003
+        ],
+        [
+          0.77,
+          0.35710000000000003
+        ],
+        [
+          0.78,
+          0.35710000000000003
+        ],
+        [
+          0.79,
+          0.35710000000000003
+        ],
+        [
+          0.8,
+          0.35710000000000003
+        ],
+        [
+          0.81,
+          0.35710000000000003
+        ],
+        [
+          0.82,
+          0.35710000000000003
+        ],
+        [
+          0.83,
+          0.35710000000000003
+        ],
+        [
+          0.84,
+          0.35710000000000003
+        ],
+        [
+          0.85,
+          0.3393
+        ],
+        [
+          0.86,
+          0.3393
+        ],
+        [
+          0.87,
+          0.3393
+        ],
+        [
+          0.88,
+          0.3393
+        ],
+        [
+          0.89,
+          0.3393
+        ],
+        [
+          0.9,
+          0.3393
+        ],
+        [
+          0.91,
+          0.3393
+        ],
+        [
+          0.92,
+          0.3393
+        ],
+        [
+          0.93,
+          0.3393
+        ],
+        [
+          0.94,
+          0.3393
+        ],
+        [
+          0.95,
+          0.3036
+        ],
+        [
+          0.96,
+          0.3036
+        ],
+        [
+          0.97,
+          0.3036
+        ],
+        [
+          0.98,
+          0.2857
+        ],
+        [
+          0.99,
+          0.3036
+        ],
+        [
+          1,
+          0.3036
+        ]
+      ],
+      "retention_availability": "available",
+      "scene_drops": [
+        {
+          "seconds": 0.2,
+          "watch_ratio_drop": 0.0893,
+          "scene": null
+        }
+      ],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "VXkoAsUcxn0": {
+      "observations": [
+        {
+          "video_id": "VXkoAsUcxn0",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 554.619,
+          "public_views": 563,
+          "likes": 4,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-26T09:12:00Z",
+      "pillar": "traffic",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Instantly Get Road Rage",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 126,
+          "averageViewDuration": 12,
+          "averageViewPercentage": 46.83,
+          "shares": 0,
+          "subscribersGained": 1,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-27",
+        "end_date": "2026-09-02",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.1905
+        ],
+        [
+          0.02,
+          1.1825
+        ],
+        [
+          0.03,
+          1.1825
+        ],
+        [
+          0.04,
+          1.1825
+        ],
+        [
+          0.05,
+          1.1745999999999999
+        ],
+        [
+          0.06,
+          1.1745999999999999
+        ],
+        [
+          0.07,
+          1.1667
+        ],
+        [
+          0.08,
+          1.1587
+        ],
+        [
+          0.09,
+          1.1587
+        ],
+        [
+          0.1,
+          1.1587
+        ],
+        [
+          0.11,
+          1.1508
+        ],
+        [
+          0.12,
+          1.1349
+        ],
+        [
+          0.13,
+          1.1349
+        ],
+        [
+          0.14,
+          1.1349
+        ],
+        [
+          0.15,
+          1.1349
+        ],
+        [
+          0.16,
+          1.119
+        ],
+        [
+          0.17,
+          1.0476
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          0.19,
+          0.9127
+        ],
+        [
+          0.2,
+          0.8571
+        ],
+        [
+          0.21,
+          0.7698
+        ],
+        [
+          0.22,
+          0.7619
+        ],
+        [
+          0.23,
+          0.7222
+        ],
+        [
+          0.24,
+          0.7222
+        ],
+        [
+          0.25,
+          0.6825
+        ],
+        [
+          0.26,
+          0.6667000000000001
+        ],
+        [
+          0.27,
+          0.6429
+        ],
+        [
+          0.28,
+          0.627
+        ],
+        [
+          0.29,
+          0.5952000000000001
+        ],
+        [
+          0.3,
+          0.5794
+        ],
+        [
+          0.31,
+          0.5476
+        ],
+        [
+          0.32,
+          0.5079
+        ],
+        [
+          0.33,
+          0.5
+        ],
+        [
+          0.34,
+          0.4841
+        ],
+        [
+          0.35,
+          0.4524
+        ],
+        [
+          0.36,
+          0.4286
+        ],
+        [
+          0.37,
+          0.4286
+        ],
+        [
+          0.38,
+          0.42060000000000003
+        ],
+        [
+          0.39,
+          0.4048
+        ],
+        [
+          0.4,
+          0.4048
+        ],
+        [
+          0.41,
+          0.4048
+        ],
+        [
+          0.42,
+          0.3968
+        ],
+        [
+          0.43,
+          0.3651
+        ],
+        [
+          0.44,
+          0.35710000000000003
+        ],
+        [
+          0.45,
+          0.3492
+        ],
+        [
+          0.46,
+          0.34130000000000005
+        ],
+        [
+          0.47,
+          0.32539999999999997
+        ],
+        [
+          0.48,
+          0.3095
+        ],
+        [
+          0.49,
+          0.3016
+        ],
+        [
+          0.5,
+          0.3016
+        ],
+        [
+          0.51,
+          0.3016
+        ],
+        [
+          0.52,
+          0.2937
+        ],
+        [
+          0.53,
+          0.2857
+        ],
+        [
+          0.54,
+          0.2698
+        ],
+        [
+          0.55,
+          0.2619
+        ],
+        [
+          0.56,
+          0.2619
+        ],
+        [
+          0.57,
+          0.2619
+        ],
+        [
+          0.58,
+          0.254
+        ],
+        [
+          0.59,
+          0.254
+        ],
+        [
+          0.6,
+          0.24600000000000002
+        ],
+        [
+          0.61,
+          0.24600000000000002
+        ],
+        [
+          0.62,
+          0.24600000000000002
+        ],
+        [
+          0.63,
+          0.23809999999999998
+        ],
+        [
+          0.64,
+          0.23809999999999998
+        ],
+        [
+          0.65,
+          0.23809999999999998
+        ],
+        [
+          0.66,
+          0.23809999999999998
+        ],
+        [
+          0.67,
+          0.23809999999999998
+        ],
+        [
+          0.68,
+          0.23809999999999998
+        ],
+        [
+          0.69,
+          0.23809999999999998
+        ],
+        [
+          0.7,
+          0.2302
+        ],
+        [
+          0.71,
+          0.2302
+        ],
+        [
+          0.72,
+          0.2302
+        ],
+        [
+          0.73,
+          0.2302
+        ],
+        [
+          0.74,
+          0.2302
+        ],
+        [
+          0.75,
+          0.22219999999999998
+        ],
+        [
+          0.76,
+          0.22219999999999998
+        ],
+        [
+          0.77,
+          0.20629999999999998
+        ],
+        [
+          0.78,
+          0.20629999999999998
+        ],
+        [
+          0.79,
+          0.20629999999999998
+        ],
+        [
+          0.8,
+          0.20629999999999998
+        ],
+        [
+          0.81,
+          0.1905
+        ],
+        [
+          0.82,
+          0.1905
+        ],
+        [
+          0.83,
+          0.1905
+        ],
+        [
+          0.84,
+          0.1905
+        ],
+        [
+          0.85,
+          0.1905
+        ],
+        [
+          0.86,
+          0.1905
+        ],
+        [
+          0.87,
+          0.1905
+        ],
+        [
+          0.88,
+          0.1905
+        ],
+        [
+          0.89,
+          0.1905
+        ],
+        [
+          0.9,
+          0.1825
+        ],
+        [
+          0.91,
+          0.1825
+        ],
+        [
+          0.92,
+          0.1825
+        ],
+        [
+          0.93,
+          0.1825
+        ],
+        [
+          0.94,
+          0.1825
+        ],
+        [
+          0.95,
+          0.1825
+        ],
+        [
+          0.96,
+          0.1825
+        ],
+        [
+          0.97,
+          0.1825
+        ],
+        [
+          0.98,
+          0.1825
+        ],
+        [
+          0.99,
+          0.1825
+        ],
+        [
+          1,
+          0.1825
+        ]
+      ],
+      "retention_availability": "available",
+      "scene_drops": [
+        {
+          "seconds": 0.19,
+          "watch_ratio_drop": 0.0873,
+          "scene": null
+        },
+        {
+          "seconds": 0.21,
+          "watch_ratio_drop": 0.0873,
+          "scene": null
+        }
+      ],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "dDha5aTWDKY": {
+      "observations": [
+        {
+          "video_id": "dDha5aTWDKY",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 532.686,
+          "public_views": 978,
+          "likes": 6,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-27T07:08:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Slow Cars Suddenly Look Like They Stopped",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 387,
+          "averageViewDuration": 15,
+          "averageViewPercentage": 58.76,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-28",
+        "end_date": "2026-09-03",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.2429000000000001
+        ],
+        [
+          0.02,
+          1.2351
+        ],
+        [
+          0.03,
+          1.2196
+        ],
+        [
+          0.04,
+          1.2119
+        ],
+        [
+          0.05,
+          1.2067
+        ],
+        [
+          0.06,
+          1.1938
+        ],
+        [
+          0.07,
+          1.1938
+        ],
+        [
+          0.08,
+          1.1886
+        ],
+        [
+          0.09,
+          1.1783
+        ],
+        [
+          0.1,
+          1.1757
+        ],
+        [
+          0.11,
+          1.1731
+        ],
+        [
+          0.12,
+          1.1731
+        ],
+        [
+          0.13,
+          1.1731
+        ],
+        [
+          0.14,
+          1.168
+        ],
+        [
+          0.15,
+          1.1654
+        ],
+        [
+          0.16,
+          1.137
+        ],
+        [
+          0.17,
+          1.0879
+        ],
+        [
+          0.18,
+          1.0724
+        ],
+        [
+          0.19,
+          1.0258
+        ],
+        [
+          0.2,
+          0.9483
+        ],
+        [
+          0.21,
+          0.8708
+        ],
+        [
+          0.22,
+          0.8475
+        ],
+        [
+          0.23,
+          0.8243
+        ],
+        [
+          0.24,
+          0.8009999999999999
+        ],
+        [
+          0.25,
+          0.7984
+        ],
+        [
+          0.26,
+          0.7855
+        ],
+        [
+          0.27,
+          0.7752
+        ],
+        [
+          0.28,
+          0.7494
+        ],
+        [
+          0.29,
+          0.7209
+        ],
+        [
+          0.3,
+          0.7054
+        ],
+        [
+          0.31,
+          0.6848000000000001
+        ],
+        [
+          0.32,
+          0.6718000000000001
+        ],
+        [
+          0.33,
+          0.6537000000000001
+        ],
+        [
+          0.34,
+          0.6486
+        ],
+        [
+          0.35,
+          0.6279
+        ],
+        [
+          0.36,
+          0.6175999999999999
+        ],
+        [
+          0.37,
+          0.5995
+        ],
+        [
+          0.38,
+          0.5891
+        ],
+        [
+          0.39,
+          0.5736
+        ],
+        [
+          0.4,
+          0.5685
+        ],
+        [
+          0.41,
+          0.5556
+        ],
+        [
+          0.42,
+          0.5297
+        ],
+        [
+          0.43,
+          0.5194
+        ],
+        [
+          0.44,
+          0.5013000000000001
+        ],
+        [
+          0.45,
+          0.4961
+        ],
+        [
+          0.46,
+          0.4832
+        ],
+        [
+          0.47,
+          0.478
+        ],
+        [
+          0.48,
+          0.46509999999999996
+        ],
+        [
+          0.49,
+          0.4625
+        ],
+        [
+          0.5,
+          0.4548
+        ],
+        [
+          0.51,
+          0.447
+        ],
+        [
+          0.52,
+          0.44439999999999996
+        ],
+        [
+          0.53,
+          0.44189999999999996
+        ],
+        [
+          0.54,
+          0.43670000000000003
+        ],
+        [
+          0.55,
+          0.4341
+        ],
+        [
+          0.56,
+          0.4289
+        ],
+        [
+          0.57,
+          0.4264
+        ],
+        [
+          0.58,
+          0.4264
+        ],
+        [
+          0.59,
+          0.4238
+        ],
+        [
+          0.6,
+          0.42119999999999996
+        ],
+        [
+          0.61,
+          0.41859999999999997
+        ],
+        [
+          0.62,
+          0.41340000000000005
+        ],
+        [
+          0.63,
+          0.4083
+        ],
+        [
+          0.64,
+          0.4057
+        ],
+        [
+          0.65,
+          0.4031
+        ],
+        [
+          0.66,
+          0.4031
+        ],
+        [
+          0.67,
+          0.4031
+        ],
+        [
+          0.68,
+          0.4031
+        ],
+        [
+          0.69,
+          0.3953
+        ],
+        [
+          0.7,
+          0.39020000000000005
+        ],
+        [
+          0.71,
+          0.3824
+        ],
+        [
+          0.72,
+          0.37979999999999997
+        ],
+        [
+          0.73,
+          0.36950000000000005
+        ],
+        [
+          0.74,
+          0.3618
+        ],
+        [
+          0.75,
+          0.3618
+        ],
+        [
+          0.76,
+          0.3566
+        ],
+        [
+          0.77,
+          0.3514
+        ],
+        [
+          0.78,
+          0.3488
+        ],
+        [
+          0.79,
+          0.3411
+        ],
+        [
+          0.8,
+          0.3256
+        ],
+        [
+          0.81,
+          0.3178
+        ],
+        [
+          0.82,
+          0.3178
+        ],
+        [
+          0.83,
+          0.3075
+        ],
+        [
+          0.84,
+          0.3023
+        ],
+        [
+          0.85,
+          0.3023
+        ],
+        [
+          0.86,
+          0.29719999999999996
+        ],
+        [
+          0.87,
+          0.29719999999999996
+        ],
+        [
+          0.88,
+          0.29460000000000003
+        ],
+        [
+          0.89,
+          0.29460000000000003
+        ],
+        [
+          0.9,
+          0.29460000000000003
+        ],
+        [
+          0.91,
+          0.292
+        ],
+        [
+          0.92,
+          0.292
+        ],
+        [
+          0.93,
+          0.292
+        ],
+        [
+          0.94,
+          0.292
+        ],
+        [
+          0.95,
+          0.2894
+        ],
+        [
+          0.96,
+          0.2868
+        ],
+        [
+          0.97,
+          0.27649999999999997
+        ],
+        [
+          0.98,
+          0.27649999999999997
+        ],
+        [
+          0.99,
+          0.27649999999999997
+        ],
+        [
+          1,
+          0.27649999999999997
+        ]
+      ],
+      "retention_availability": "available",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "F_E4oatj_3w": {
+      "observations": [
+        {
+          "video_id": "F_E4oatj_3w",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 530.719,
+          "public_views": 7,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-27T09:06:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why That Song Won't Leave Your Head",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 17,
+          "averageViewPercentage": 65.68,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-28",
+        "end_date": "2026-09-03",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "e08EnOFGlpI": {
+      "observations": [
+        {
+          "video_id": "e08EnOFGlpI",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 508.753,
+          "public_views": 1073,
+          "likes": 10,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-28T07:04:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Goalkeepers Always Dive The Wrong Way",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 4,
+          "averageViewDuration": 16,
+          "averageViewPercentage": 60.94,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-29",
+        "end_date": "2026-09-04",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "QGyQRa_iV5Q": {
+      "observations": [
+        {
+          "video_id": "QGyQRa_iV5Q",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 506.653,
+          "public_views": 989,
+          "likes": 14,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-28T09:10:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Wake Up Before Your Alarm",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 2,
+          "averageViewDuration": 14,
+          "averageViewPercentage": 57.49999999999999,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-29",
+        "end_date": "2026-09-04",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "zIIjY2Lquhc": {
+      "observations": [
+        {
+          "video_id": "zIIjY2Lquhc",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 484.436,
+          "public_views": 294,
+          "likes": 2,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-29T07:23:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Elevators Always Shut In Your Face",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 8,
+          "averageViewPercentage": 28.77,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-30",
+        "end_date": "2026-09-05",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "p8YC6SsaqFs": {
+      "observations": [
+        {
+          "video_id": "p8YC6SsaqFs",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 482.686,
+          "public_views": 264,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-29T09:08:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Forget Where You Put Your Keys",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": null,
+          "averageViewDuration": null,
+          "averageViewPercentage": null,
+          "shares": null,
+          "subscribersGained": null,
+          "subscribersLost": null
+        },
+        "availability": {
+          "engagedViews": "No report row yet",
+          "averageViewDuration": "No report row yet",
+          "averageViewPercentage": "No report row yet",
+          "shares": "No report row yet",
+          "subscribersGained": "No report row yet",
+          "subscribersLost": "No report row yet"
+        },
+        "start_date": "2026-08-30",
+        "end_date": "2026-09-05",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "FqvYBKEqQOw": {
+      "observations": [
+        {
+          "video_id": "FqvYBKEqQOw",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 480.603,
+          "public_views": 1003,
+          "likes": 6,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-29T11:13:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why The Car In Front Feels So Slow",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 39,
+          "averageViewDuration": 14,
+          "averageViewPercentage": 53.14,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-30",
+        "end_date": "2026-09-05",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.2051
+        ],
+        [
+          0.02,
+          1.2051
+        ],
+        [
+          0.03,
+          1.1538
+        ],
+        [
+          0.04,
+          1.1281999999999999
+        ],
+        [
+          0.05,
+          1.1281999999999999
+        ],
+        [
+          0.06,
+          1.1281999999999999
+        ],
+        [
+          0.07,
+          1.1281999999999999
+        ],
+        [
+          0.08,
+          1.1281999999999999
+        ],
+        [
+          0.09,
+          1.1026
+        ],
+        [
+          0.1,
+          1.1026
+        ],
+        [
+          0.11,
+          1.1026
+        ],
+        [
+          0.12,
+          1.0769
+        ],
+        [
+          0.13,
+          1.0769
+        ],
+        [
+          0.14,
+          1.0769
+        ],
+        [
+          0.15,
+          1.0769
+        ],
+        [
+          0.16,
+          1.0513
+        ],
+        [
+          0.17,
+          1.0256
+        ],
+        [
+          0.18,
+          0.9487000000000001
+        ],
+        [
+          0.19,
+          0.8718
+        ],
+        [
+          0.2,
+          0.8462000000000001
+        ],
+        [
+          0.21,
+          0.8205
+        ],
+        [
+          0.22,
+          0.7436
+        ],
+        [
+          0.23,
+          0.7179000000000001
+        ],
+        [
+          0.24,
+          0.6667000000000001
+        ],
+        [
+          0.25,
+          0.5897
+        ],
+        [
+          0.26,
+          0.5640999999999999
+        ],
+        [
+          0.27,
+          0.5640999999999999
+        ],
+        [
+          0.28,
+          0.5640999999999999
+        ],
+        [
+          0.29,
+          0.5640999999999999
+        ],
+        [
+          0.3,
+          0.5640999999999999
+        ],
+        [
+          0.31,
+          0.5640999999999999
+        ],
+        [
+          0.32,
+          0.5385
+        ],
+        [
+          0.33,
+          0.5385
+        ],
+        [
+          0.34,
+          0.5128
+        ],
+        [
+          0.35,
+          0.5128
+        ],
+        [
+          0.36,
+          0.5128
+        ],
+        [
+          0.37,
+          0.5128
+        ],
+        [
+          0.38,
+          0.48719999999999997
+        ],
+        [
+          0.39,
+          0.46149999999999997
+        ],
+        [
+          0.4,
+          0.46149999999999997
+        ],
+        [
+          0.41,
+          0.46149999999999997
+        ],
+        [
+          0.42,
+          0.46149999999999997
+        ],
+        [
+          0.43,
+          0.46149999999999997
+        ],
+        [
+          0.44,
+          0.46149999999999997
+        ],
+        [
+          0.45,
+          0.46149999999999997
+        ],
+        [
+          0.46,
+          0.46149999999999997
+        ],
+        [
+          0.47,
+          0.46149999999999997
+        ],
+        [
+          0.48,
+          0.4359
+        ],
+        [
+          0.49,
+          0.4359
+        ],
+        [
+          0.5,
+          0.4359
+        ],
+        [
+          0.51,
+          0.4359
+        ],
+        [
+          0.52,
+          0.4359
+        ],
+        [
+          0.53,
+          0.4359
+        ],
+        [
+          0.54,
+          0.4359
+        ],
+        [
+          0.55,
+          0.4359
+        ],
+        [
+          0.56,
+          0.4359
+        ],
+        [
+          0.57,
+          0.4103
+        ],
+        [
+          0.58,
+          0.4103
+        ],
+        [
+          0.59,
+          0.4103
+        ],
+        [
+          0.6,
+          0.4103
+        ],
+        [
+          0.61,
+          0.4103
+        ],
+        [
+          0.62,
+          0.4103
+        ],
+        [
+          0.63,
+          0.4103
+        ],
+        [
+          0.64,
+          0.3846
+        ],
+        [
+          0.65,
+          0.3846
+        ],
+        [
+          0.66,
+          0.3846
+        ],
+        [
+          0.67,
+          0.3846
+        ],
+        [
+          0.68,
+          0.3846
+        ],
+        [
+          0.69,
+          0.3846
+        ],
+        [
+          0.7,
+          0.3846
+        ],
+        [
+          0.71,
+          0.3333
+        ],
+        [
+          0.72,
+          0.3333
+        ],
+        [
+          0.73,
+          0.3333
+        ],
+        [
+          0.74,
+          0.3333
+        ],
+        [
+          0.75,
+          0.3077
+        ],
+        [
+          0.76,
+          0.2821
+        ],
+        [
+          0.77,
+          0.2821
+        ],
+        [
+          0.78,
+          0.2821
+        ],
+        [
+          0.79,
+          0.2821
+        ],
+        [
+          0.8,
+          0.2821
+        ],
+        [
+          0.81,
+          0.2564
+        ],
+        [
+          0.82,
+          0.2564
+        ],
+        [
+          0.83,
+          0.2564
+        ],
+        [
+          0.84,
+          0.2564
+        ],
+        [
+          0.85,
+          0.2564
+        ],
+        [
+          0.86,
+          0.2564
+        ],
+        [
+          0.87,
+          0.2564
+        ],
+        [
+          0.88,
+          0.2564
+        ],
+        [
+          0.89,
+          0.2564
+        ],
+        [
+          0.9,
+          0.2564
+        ],
+        [
+          0.91,
+          0.2564
+        ],
+        [
+          0.92,
+          0.2564
+        ],
+        [
+          0.93,
+          0.2564
+        ],
+        [
+          0.94,
+          0.2564
+        ],
+        [
+          0.95,
+          0.2564
+        ],
+        [
+          0.96,
+          0.2564
+        ],
+        [
+          0.97,
+          0.2564
+        ],
+        [
+          0.98,
+          0.23079999999999998
+        ],
+        [
+          0.99,
+          0.23079999999999998
+        ],
+        [
+          1,
+          0.23079999999999998
+        ]
+      ],
+      "retention_availability": "available",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "NNknoMKoCw0": {
+      "observations": [
+        {
+          "video_id": "NNknoMKoCw0",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 460.703,
+          "public_views": 882,
+          "likes": 4,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-30T07:07:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Copy People Sitting Across From You",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 44,
+          "averageViewDuration": 7,
+          "averageViewPercentage": 34.77,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-31",
+        "end_date": "2026-09-06",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.0465
+        ],
+        [
+          0.02,
+          1.0698
+        ],
+        [
+          0.03,
+          1.0698
+        ],
+        [
+          0.04,
+          1.0698
+        ],
+        [
+          0.05,
+          1.0698
+        ],
+        [
+          0.06,
+          1.0698
+        ],
+        [
+          0.07,
+          1.0698
+        ],
+        [
+          0.08,
+          1.0465
+        ],
+        [
+          0.09,
+          1.0465
+        ],
+        [
+          0.1,
+          1.0465
+        ],
+        [
+          0.11,
+          1
+        ],
+        [
+          0.12,
+          0.9767
+        ],
+        [
+          0.13,
+          0.9767
+        ],
+        [
+          0.14,
+          0.9767
+        ],
+        [
+          0.15,
+          0.9534999999999999
+        ],
+        [
+          0.16,
+          0.9534999999999999
+        ],
+        [
+          0.17,
+          0.9534999999999999
+        ],
+        [
+          0.18,
+          0.9767
+        ],
+        [
+          0.19,
+          0.9534999999999999
+        ],
+        [
+          0.2,
+          0.9301999999999999
+        ],
+        [
+          0.21,
+          0.8837
+        ],
+        [
+          0.22,
+          0.8371999999999999
+        ],
+        [
+          0.23,
+          0.8140000000000001
+        ],
+        [
+          0.24,
+          0.6977
+        ],
+        [
+          0.25,
+          0.6512
+        ],
+        [
+          0.26,
+          0.5814
+        ],
+        [
+          0.27,
+          0.5115999999999999
+        ],
+        [
+          0.28,
+          0.5115999999999999
+        ],
+        [
+          0.29,
+          0.5115999999999999
+        ],
+        [
+          0.3,
+          0.44189999999999996
+        ],
+        [
+          0.31,
+          0.41859999999999997
+        ],
+        [
+          0.32,
+          0.3953
+        ],
+        [
+          0.33,
+          0.3488
+        ],
+        [
+          0.34,
+          0.3023
+        ],
+        [
+          0.35,
+          0.3023
+        ],
+        [
+          0.36,
+          0.3023
+        ],
+        [
+          0.37,
+          0.25579999999999997
+        ],
+        [
+          0.38,
+          0.25579999999999997
+        ],
+        [
+          0.39,
+          0.25579999999999997
+        ],
+        [
+          0.4,
+          0.25579999999999997
+        ],
+        [
+          0.41,
+          0.23260000000000003
+        ],
+        [
+          0.42,
+          0.23260000000000003
+        ],
+        [
+          0.43,
+          0.23260000000000003
+        ],
+        [
+          0.44,
+          0.23260000000000003
+        ],
+        [
+          0.45,
+          0.23260000000000003
+        ],
+        [
+          0.46,
+          0.23260000000000003
+        ],
+        [
+          0.47,
+          0.23260000000000003
+        ],
+        [
+          0.48,
+          0.20929999999999999
+        ],
+        [
+          0.49,
+          0.20929999999999999
+        ],
+        [
+          0.5,
+          0.18600000000000003
+        ],
+        [
+          0.51,
+          0.18600000000000003
+        ],
+        [
+          0.52,
+          0.18600000000000003
+        ],
+        [
+          0.53,
+          0.18600000000000003
+        ],
+        [
+          0.54,
+          0.18600000000000003
+        ],
+        [
+          0.55,
+          0.18600000000000003
+        ],
+        [
+          0.56,
+          0.18600000000000003
+        ],
+        [
+          0.57,
+          0.18600000000000003
+        ],
+        [
+          0.58,
+          0.18600000000000003
+        ],
+        [
+          0.59,
+          0.18600000000000003
+        ],
+        [
+          0.6,
+          0.18600000000000003
+        ],
+        [
+          0.61,
+          0.18600000000000003
+        ],
+        [
+          0.62,
+          0.1628
+        ],
+        [
+          0.63,
+          0.1628
+        ],
+        [
+          0.64,
+          0.1628
+        ],
+        [
+          0.65,
+          0.13949999999999999
+        ],
+        [
+          0.66,
+          0.11630000000000001
+        ],
+        [
+          0.67,
+          0.0698
+        ],
+        [
+          0.68,
+          0.0698
+        ],
+        [
+          0.69,
+          0.0698
+        ],
+        [
+          0.7,
+          0.0698
+        ],
+        [
+          0.71,
+          0.0698
+        ],
+        [
+          0.72,
+          0.0698
+        ],
+        [
+          0.73,
+          0.0698
+        ],
+        [
+          0.74,
+          0.0698
+        ],
+        [
+          0.75,
+          0.0698
+        ],
+        [
+          0.76,
+          0.0698
+        ],
+        [
+          0.77,
+          0.0698
+        ],
+        [
+          0.78,
+          0.0698
+        ],
+        [
+          0.79,
+          0.04650000000000001
+        ],
+        [
+          0.8,
+          0.04650000000000001
+        ],
+        [
+          0.81,
+          0.0233
+        ],
+        [
+          0.82,
+          0.0233
+        ],
+        [
+          0.83,
+          0.0233
+        ],
+        [
+          0.84,
+          0.0233
+        ],
+        [
+          0.85,
+          0.0233
+        ],
+        [
+          0.86,
+          0.0233
+        ],
+        [
+          0.87,
+          0.0233
+        ],
+        [
+          0.88,
+          0.0233
+        ],
+        [
+          0.89,
+          0.0233
+        ],
+        [
+          0.9,
+          0.0233
+        ],
+        [
+          0.91,
+          0.0233
+        ],
+        [
+          0.92,
+          0.0233
+        ],
+        [
+          0.93,
+          0.0233
+        ],
+        [
+          0.94,
+          0.0233
+        ],
+        [
+          0.95,
+          0.0233
+        ],
+        [
+          0.96,
+          0.0233
+        ],
+        [
+          0.97,
+          0.0233
+        ],
+        [
+          0.98,
+          0.0233
+        ],
+        [
+          0.99,
+          0.0233
+        ],
+        [
+          1,
+          0.0233
+        ]
+      ],
+      "retention_availability": "available",
+      "scene_drops": [
+        {
+          "seconds": 0.24,
+          "watch_ratio_drop": 0.1163,
+          "scene": null
+        }
+      ],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "j0-UWGFvcD4": {
+      "observations": [
+        {
+          "video_id": "j0-UWGFvcD4",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 458.769,
+          "public_views": 190,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-30T09:03:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Library Whispers Are So Annoying",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 12,
+          "averageViewPercentage": 40,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-31",
+        "end_date": "2026-09-06",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "qjIQp4d88-Y": {
+      "observations": [
+        {
+          "video_id": "qjIQp4d88-Y",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 456.819,
+          "public_views": 790,
+          "likes": 3,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-30T11:00:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Olympic Photo Finishes Look So Fake",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 257,
+          "averageViewDuration": 14,
+          "averageViewPercentage": 49.83,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-08-31",
+        "end_date": "2026-09-06",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.1984000000000001
+        ],
+        [
+          0.02,
+          1.1868
+        ],
+        [
+          0.03,
+          1.1673
+        ],
+        [
+          0.04,
+          1.1479000000000001
+        ],
+        [
+          0.05,
+          1.1284
+        ],
+        [
+          0.06,
+          1.1128
+        ],
+        [
+          0.07,
+          1.1051
+        ],
+        [
+          0.08,
+          1.1012
+        ],
+        [
+          0.09,
+          1.0973
+        ],
+        [
+          0.1,
+          1.0934
+        ],
+        [
+          0.11,
+          1.0778
+        ],
+        [
+          0.12,
+          1.0739
+        ],
+        [
+          0.13,
+          1.07
+        ],
+        [
+          0.14,
+          1.0661
+        ],
+        [
+          0.15,
+          1.0389
+        ],
+        [
+          0.16,
+          1.0195
+        ],
+        [
+          0.17,
+          0.9922
+        ],
+        [
+          0.18,
+          0.9339
+        ],
+        [
+          0.19,
+          0.9027
+        ],
+        [
+          0.2,
+          0.8676999999999999
+        ],
+        [
+          0.21,
+          0.8443999999999999
+        ],
+        [
+          0.22,
+          0.8170999999999999
+        ],
+        [
+          0.23,
+          0.8054000000000001
+        ],
+        [
+          0.24,
+          0.7781999999999999
+        ],
+        [
+          0.25,
+          0.7121
+        ],
+        [
+          0.26,
+          0.6459
+        ],
+        [
+          0.27,
+          0.6187
+        ],
+        [
+          0.28,
+          0.5914
+        ],
+        [
+          0.29,
+          0.5837
+        ],
+        [
+          0.3,
+          0.5720000000000001
+        ],
+        [
+          0.31,
+          0.5486
+        ],
+        [
+          0.32,
+          0.5447
+        ],
+        [
+          0.33,
+          0.5136
+        ],
+        [
+          0.34,
+          0.5058
+        ],
+        [
+          0.35,
+          0.49420000000000003
+        ],
+        [
+          0.36,
+          0.4903
+        ],
+        [
+          0.37,
+          0.4825
+        ],
+        [
+          0.38,
+          0.46299999999999997
+        ],
+        [
+          0.39,
+          0.4436
+        ],
+        [
+          0.4,
+          0.43579999999999997
+        ],
+        [
+          0.41,
+          0.43189999999999995
+        ],
+        [
+          0.42,
+          0.428
+        ],
+        [
+          0.43,
+          0.428
+        ],
+        [
+          0.44,
+          0.4202
+        ],
+        [
+          0.45,
+          0.4086
+        ],
+        [
+          0.46,
+          0.4008
+        ],
+        [
+          0.47,
+          0.3969
+        ],
+        [
+          0.48,
+          0.38520000000000004
+        ],
+        [
+          0.49,
+          0.38130000000000003
+        ],
+        [
+          0.5,
+          0.3774
+        ],
+        [
+          0.51,
+          0.3774
+        ],
+        [
+          0.52,
+          0.3735
+        ],
+        [
+          0.53,
+          0.3619
+        ],
+        [
+          0.54,
+          0.358
+        ],
+        [
+          0.55,
+          0.35409999999999997
+        ],
+        [
+          0.56,
+          0.35409999999999997
+        ],
+        [
+          0.57,
+          0.3502
+        ],
+        [
+          0.58,
+          0.3502
+        ],
+        [
+          0.59,
+          0.34240000000000004
+        ],
+        [
+          0.6,
+          0.3385
+        ],
+        [
+          0.61,
+          0.3385
+        ],
+        [
+          0.62,
+          0.3346
+        ],
+        [
+          0.63,
+          0.3346
+        ],
+        [
+          0.64,
+          0.32299999999999995
+        ],
+        [
+          0.65,
+          0.3191
+        ],
+        [
+          0.66,
+          0.3152
+        ],
+        [
+          0.67,
+          0.3074
+        ],
+        [
+          0.68,
+          0.3035
+        ],
+        [
+          0.69,
+          0.2918
+        ],
+        [
+          0.7,
+          0.2879
+        ],
+        [
+          0.71,
+          0.2802
+        ],
+        [
+          0.72,
+          0.2763
+        ],
+        [
+          0.73,
+          0.2763
+        ],
+        [
+          0.74,
+          0.2763
+        ],
+        [
+          0.75,
+          0.2763
+        ],
+        [
+          0.76,
+          0.2763
+        ],
+        [
+          0.77,
+          0.2763
+        ],
+        [
+          0.78,
+          0.2763
+        ],
+        [
+          0.79,
+          0.2763
+        ],
+        [
+          0.8,
+          0.2724
+        ],
+        [
+          0.81,
+          0.2685
+        ],
+        [
+          0.82,
+          0.2685
+        ],
+        [
+          0.83,
+          0.2646
+        ],
+        [
+          0.84,
+          0.2646
+        ],
+        [
+          0.85,
+          0.2607
+        ],
+        [
+          0.86,
+          0.2568
+        ],
+        [
+          0.87,
+          0.2568
+        ],
+        [
+          0.88,
+          0.2568
+        ],
+        [
+          0.89,
+          0.2529
+        ],
+        [
+          0.9,
+          0.2451
+        ],
+        [
+          0.91,
+          0.23739999999999997
+        ],
+        [
+          0.92,
+          0.2296
+        ],
+        [
+          0.93,
+          0.21789999999999998
+        ],
+        [
+          0.94,
+          0.2101
+        ],
+        [
+          0.95,
+          0.2101
+        ],
+        [
+          0.96,
+          0.20620000000000002
+        ],
+        [
+          0.97,
+          0.2023
+        ],
+        [
+          0.98,
+          0.1946
+        ],
+        [
+          0.99,
+          0.1946
+        ],
+        [
+          1,
+          0.1946
+        ]
+      ],
+      "retention_availability": "available",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "mMN8iq2DpVA": {
+      "observations": [
+        {
+          "video_id": "mMN8iq2DpVA",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 436.419,
+          "public_views": 921,
+          "likes": 11,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-31T07:24:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Walk Miles To The Escalator",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 0,
+          "averageViewDuration": 0,
+          "averageViewPercentage": 0,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-07",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "Kt0En4-Ppsc": {
+      "observations": [
+        {
+          "video_id": "Kt0En4-Ppsc",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 434.469,
+          "public_views": 878,
+          "likes": 6,
+          "comments": 1
+        }
+      ],
+      "publish_at": "2026-08-31T09:21:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Traffic Jams Appear Out Of Nowhere",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 199,
+          "averageViewDuration": 12,
+          "averageViewPercentage": 36.59,
+          "shares": 0,
+          "subscribersGained": 1,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-07",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.0905
+        ],
+        [
+          0.02,
+          1.0905
+        ],
+        [
+          0.03,
+          1.0754000000000001
+        ],
+        [
+          0.04,
+          1.0653
+        ],
+        [
+          0.05,
+          1.0653
+        ],
+        [
+          0.06,
+          1.0553
+        ],
+        [
+          0.07,
+          1.0503
+        ],
+        [
+          0.08,
+          1.0503
+        ],
+        [
+          0.09,
+          1.0503
+        ],
+        [
+          0.1,
+          1.0402
+        ],
+        [
+          0.11,
+          1.0302
+        ],
+        [
+          0.12,
+          1.0251000000000001
+        ],
+        [
+          0.13,
+          1.0201
+        ],
+        [
+          0.14,
+          0.9548000000000001
+        ],
+        [
+          0.15,
+          0.8744
+        ],
+        [
+          0.16,
+          0.7789
+        ],
+        [
+          0.17,
+          0.7034999999999999
+        ],
+        [
+          0.18,
+          0.6431999999999999
+        ],
+        [
+          0.19,
+          0.603
+        ],
+        [
+          0.2,
+          0.5578
+        ],
+        [
+          0.21,
+          0.4975
+        ],
+        [
+          0.22,
+          0.4874
+        ],
+        [
+          0.23,
+          0.4623
+        ],
+        [
+          0.24,
+          0.4573
+        ],
+        [
+          0.25,
+          0.4372
+        ],
+        [
+          0.26,
+          0.4121
+        ],
+        [
+          0.27,
+          0.402
+        ],
+        [
+          0.28,
+          0.392
+        ],
+        [
+          0.29,
+          0.3618
+        ],
+        [
+          0.3,
+          0.3568
+        ],
+        [
+          0.31,
+          0.3518
+        ],
+        [
+          0.32,
+          0.3367
+        ],
+        [
+          0.33,
+          0.3317
+        ],
+        [
+          0.34,
+          0.3317
+        ],
+        [
+          0.35,
+          0.32659999999999995
+        ],
+        [
+          0.36,
+          0.3166
+        ],
+        [
+          0.37,
+          0.3116
+        ],
+        [
+          0.38,
+          0.3116
+        ],
+        [
+          0.39,
+          0.3015
+        ],
+        [
+          0.4,
+          0.2965
+        ],
+        [
+          0.41,
+          0.2965
+        ],
+        [
+          0.42,
+          0.2965
+        ],
+        [
+          0.43,
+          0.2864
+        ],
+        [
+          0.44,
+          0.2864
+        ],
+        [
+          0.45,
+          0.2814
+        ],
+        [
+          0.46,
+          0.2663
+        ],
+        [
+          0.47,
+          0.2613
+        ],
+        [
+          0.48,
+          0.2462
+        ],
+        [
+          0.49,
+          0.2412
+        ],
+        [
+          0.5,
+          0.23620000000000002
+        ],
+        [
+          0.51,
+          0.23620000000000002
+        ],
+        [
+          0.52,
+          0.23620000000000002
+        ],
+        [
+          0.53,
+          0.23620000000000002
+        ],
+        [
+          0.54,
+          0.23620000000000002
+        ],
+        [
+          0.55,
+          0.2261
+        ],
+        [
+          0.56,
+          0.2261
+        ],
+        [
+          0.57,
+          0.2261
+        ],
+        [
+          0.58,
+          0.2261
+        ],
+        [
+          0.59,
+          0.23620000000000002
+        ],
+        [
+          0.6,
+          0.23620000000000002
+        ],
+        [
+          0.61,
+          0.23120000000000002
+        ],
+        [
+          0.62,
+          0.2261
+        ],
+        [
+          0.63,
+          0.2211
+        ],
+        [
+          0.64,
+          0.2161
+        ],
+        [
+          0.65,
+          0.2211
+        ],
+        [
+          0.66,
+          0.2211
+        ],
+        [
+          0.67,
+          0.2211
+        ],
+        [
+          0.68,
+          0.20600000000000002
+        ],
+        [
+          0.69,
+          0.191
+        ],
+        [
+          0.7,
+          0.1859
+        ],
+        [
+          0.71,
+          0.1809
+        ],
+        [
+          0.72,
+          0.1709
+        ],
+        [
+          0.73,
+          0.16579999999999998
+        ],
+        [
+          0.74,
+          0.16579999999999998
+        ],
+        [
+          0.75,
+          0.1558
+        ],
+        [
+          0.76,
+          0.1558
+        ],
+        [
+          0.77,
+          0.1558
+        ],
+        [
+          0.78,
+          0.1558
+        ],
+        [
+          0.79,
+          0.1558
+        ],
+        [
+          0.8,
+          0.1558
+        ],
+        [
+          0.81,
+          0.1508
+        ],
+        [
+          0.82,
+          0.1508
+        ],
+        [
+          0.83,
+          0.1457
+        ],
+        [
+          0.84,
+          0.1407
+        ],
+        [
+          0.85,
+          0.13570000000000002
+        ],
+        [
+          0.86,
+          0.1407
+        ],
+        [
+          0.87,
+          0.1407
+        ],
+        [
+          0.88,
+          0.13570000000000002
+        ],
+        [
+          0.89,
+          0.13570000000000002
+        ],
+        [
+          0.9,
+          0.1307
+        ],
+        [
+          0.91,
+          0.12560000000000002
+        ],
+        [
+          0.92,
+          0.11560000000000001
+        ],
+        [
+          0.93,
+          0.11560000000000001
+        ],
+        [
+          0.94,
+          0.1106
+        ],
+        [
+          0.95,
+          0.1106
+        ],
+        [
+          0.96,
+          0.1106
+        ],
+        [
+          0.97,
+          0.1106
+        ],
+        [
+          0.98,
+          0.1005
+        ],
+        [
+          0.99,
+          0.1005
+        ],
+        [
+          1,
+          0.1005
+        ]
+      ],
+      "retention_availability": "available",
+      "scene_drops": [
+        {
+          "seconds": 0.15,
+          "watch_ratio_drop": 0.0804,
+          "scene": null
+        },
+        {
+          "seconds": 0.16,
+          "watch_ratio_drop": 0.0955,
+          "scene": null
+        }
+      ],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "n6Uy2nMqXjI": {
+      "observations": [
+        {
+          "video_id": "n6Uy2nMqXjI",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 432.536,
+          "public_views": 891,
+          "likes": 4,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-08-31T11:17:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Late Goals Make You Scream Louder",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 0,
+          "averageViewDuration": 0,
+          "averageViewPercentage": 0,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-07",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "GoKXbdtQBYo": {
+      "observations": [
+        {
+          "video_id": "GoKXbdtQBYo",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 412.653,
+          "public_views": 1146,
+          "likes": 10,
+          "comments": 1
+        }
+      ],
+      "publish_at": "2026-09-01T07:10:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your Phone Stays On 1% For So Long",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 17,
+          "averageViewDuration": 15,
+          "averageViewPercentage": 61.72,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-02",
+        "end_date": "2026-09-08",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.2353
+        ],
+        [
+          0.02,
+          1.2353
+        ],
+        [
+          0.03,
+          1.1765
+        ],
+        [
+          0.04,
+          1.1176000000000001
+        ],
+        [
+          0.05,
+          1.1176000000000001
+        ],
+        [
+          0.06,
+          1.1176000000000001
+        ],
+        [
+          0.07,
+          1.1176000000000001
+        ],
+        [
+          0.08,
+          1.0588
+        ],
+        [
+          0.09,
+          1.0588
+        ],
+        [
+          0.1,
+          1.0588
+        ],
+        [
+          0.11,
+          1.0588
+        ],
+        [
+          0.12,
+          1
+        ],
+        [
+          0.13,
+          1
+        ],
+        [
+          0.14,
+          1
+        ],
+        [
+          0.15,
+          1
+        ],
+        [
+          0.16,
+          1
+        ],
+        [
+          0.17,
+          1
+        ],
+        [
+          0.18,
+          1
+        ],
+        [
+          0.19,
+          1
+        ],
+        [
+          0.2,
+          1
+        ],
+        [
+          0.21,
+          1
+        ],
+        [
+          0.22,
+          1
+        ],
+        [
+          0.23,
+          0.9412
+        ],
+        [
+          0.24,
+          0.9412
+        ],
+        [
+          0.25,
+          0.8234999999999999
+        ],
+        [
+          0.26,
+          0.8234999999999999
+        ],
+        [
+          0.27,
+          0.8234999999999999
+        ],
+        [
+          0.28,
+          0.8234999999999999
+        ],
+        [
+          0.29,
+          0.8234999999999999
+        ],
+        [
+          0.3,
+          0.8234999999999999
+        ],
+        [
+          0.31,
+          0.8234999999999999
+        ],
+        [
+          0.32,
+          0.8234999999999999
+        ],
+        [
+          0.33,
+          0.8234999999999999
+        ],
+        [
+          0.34,
+          0.8234999999999999
+        ],
+        [
+          0.35,
+          0.7059000000000001
+        ],
+        [
+          0.36,
+          0.7059000000000001
+        ],
+        [
+          0.37,
+          0.7059000000000001
+        ],
+        [
+          0.38,
+          0.7059000000000001
+        ],
+        [
+          0.39,
+          0.7059000000000001
+        ],
+        [
+          0.4,
+          0.7059000000000001
+        ],
+        [
+          0.41,
+          0.7059000000000001
+        ],
+        [
+          0.42,
+          0.6470999999999999
+        ],
+        [
+          0.43,
+          0.6470999999999999
+        ],
+        [
+          0.44,
+          0.6470999999999999
+        ],
+        [
+          0.45,
+          0.6470999999999999
+        ],
+        [
+          0.46,
+          0.5882000000000001
+        ],
+        [
+          0.47,
+          0.5882000000000001
+        ],
+        [
+          0.48,
+          0.5882000000000001
+        ],
+        [
+          0.49,
+          0.5882000000000001
+        ],
+        [
+          0.5,
+          0.5882000000000001
+        ],
+        [
+          0.51,
+          0.5882000000000001
+        ],
+        [
+          0.52,
+          0.5294
+        ],
+        [
+          0.53,
+          0.5294
+        ],
+        [
+          0.54,
+          0.4706
+        ],
+        [
+          0.55,
+          0.4118
+        ],
+        [
+          0.56,
+          0.4118
+        ],
+        [
+          0.57,
+          0.4118
+        ],
+        [
+          0.58,
+          0.4118
+        ],
+        [
+          0.59,
+          0.4118
+        ],
+        [
+          0.6,
+          0.4118
+        ],
+        [
+          0.61,
+          0.4118
+        ],
+        [
+          0.62,
+          0.4118
+        ],
+        [
+          0.63,
+          0.4118
+        ],
+        [
+          0.64,
+          0.4118
+        ],
+        [
+          0.65,
+          0.4118
+        ],
+        [
+          0.66,
+          0.4118
+        ],
+        [
+          0.67,
+          0.4118
+        ],
+        [
+          0.68,
+          0.4118
+        ],
+        [
+          0.69,
+          0.4118
+        ],
+        [
+          0.7,
+          0.4118
+        ],
+        [
+          0.71,
+          0.4118
+        ],
+        [
+          0.72,
+          0.4118
+        ],
+        [
+          0.73,
+          0.4118
+        ],
+        [
+          0.74,
+          0.4118
+        ],
+        [
+          0.75,
+          0.4118
+        ],
+        [
+          0.76,
+          0.4118
+        ],
+        [
+          0.77,
+          0.4118
+        ],
+        [
+          0.78,
+          0.3529
+        ],
+        [
+          0.79,
+          0.3529
+        ],
+        [
+          0.8,
+          0.3529
+        ],
+        [
+          0.81,
+          0.29410000000000003
+        ],
+        [
+          0.82,
+          0.29410000000000003
+        ],
+        [
+          0.83,
+          0.29410000000000003
+        ],
+        [
+          0.84,
+          0.29410000000000003
+        ],
+        [
+          0.85,
+          0.29410000000000003
+        ],
+        [
+          0.86,
+          0.29410000000000003
+        ],
+        [
+          0.87,
+          0.29410000000000003
+        ],
+        [
+          0.88,
+          0.29410000000000003
+        ],
+        [
+          0.89,
+          0.29410000000000003
+        ],
+        [
+          0.9,
+          0.29410000000000003
+        ],
+        [
+          0.91,
+          0.29410000000000003
+        ],
+        [
+          0.92,
+          0.29410000000000003
+        ],
+        [
+          0.93,
+          0.29410000000000003
+        ],
+        [
+          0.94,
+          0.29410000000000003
+        ],
+        [
+          0.95,
+          0.29410000000000003
+        ],
+        [
+          0.96,
+          0.29410000000000003
+        ],
+        [
+          0.97,
+          0.29410000000000003
+        ],
+        [
+          0.98,
+          0.29410000000000003
+        ],
+        [
+          0.99,
+          0.29410000000000003
+        ],
+        [
+          1,
+          0.29410000000000003
+        ]
+      ],
+      "retention_availability": "available",
+      "scene_drops": [
+        {
+          "seconds": 0.25,
+          "watch_ratio_drop": 0.1177,
+          "scene": null
+        },
+        {
+          "seconds": 0.35,
+          "watch_ratio_drop": 0.1176,
+          "scene": null
+        }
+      ],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "3Vs5fYkQA7A": {
+      "observations": [
+        {
+          "video_id": "3Vs5fYkQA7A",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 410.669,
+          "public_views": 1048,
+          "likes": 10,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-01T09:09:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Argue Over Photo Finishes",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 8,
+          "averageViewPercentage": 27.1,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-02",
+        "end_date": "2026-09-08",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "6U7Bfxd7thI": {
+      "observations": [
+        {
+          "video_id": "6U7Bfxd7thI",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 364.786,
+          "public_views": 56,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-03T07:02:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Stores Hide The Milk At The Back",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 5,
+          "averageViewPercentage": 18.67,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-04",
+        "end_date": "2026-09-10",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "d4A6JQ-0-lo": {
+      "observations": [
+        {
+          "video_id": "d4A6JQ-0-lo",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 362.769,
+          "public_views": 6,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-03T09:03:00Z",
+      "pillar": "traffic",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Cars Ahead of You Suddenly Look Stopped",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 8,
+          "averageViewPercentage": 29.29,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-04",
+        "end_date": "2026-09-10",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "7zpfkYuYF4M": {
+      "observations": [
+        {
+          "video_id": "7zpfkYuYF4M",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 360.786,
+          "public_views": 978,
+          "likes": 8,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-03T11:02:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Stores Put The Most Expensive Item First",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 0,
+          "averageViewDuration": 0,
+          "averageViewPercentage": 0,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-04",
+        "end_date": "2026-09-10",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "Lhgt3Dx8EPs": {
+      "observations": [
+        {
+          "video_id": "Lhgt3Dx8EPs",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 359.653,
+          "public_views": 5,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-03T12:10:00Z",
+      "pillar": "mall",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why The Dark Makes Your Room Feel Tiny",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 2,
+          "averageViewDuration": 5,
+          "averageViewPercentage": 20.71,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-04",
+        "end_date": "2026-09-10",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "rPt8PhWddtA": {
+      "observations": [
+        {
+          "video_id": "rPt8PhWddtA",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 340.686,
+          "public_views": 9,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-04T07:08:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your 'Quick' Email Drains You",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": null,
+          "averageViewDuration": null,
+          "averageViewPercentage": null,
+          "shares": null,
+          "subscribersGained": null,
+          "subscribersLost": null
+        },
+        "availability": {
+          "engagedViews": "No report row yet",
+          "averageViewDuration": "No report row yet",
+          "averageViewPercentage": "No report row yet",
+          "shares": "No report row yet",
+          "subscribersGained": "No report row yet",
+          "subscribersLost": "No report row yet"
+        },
+        "start_date": "2026-09-05",
+        "end_date": "2026-09-11",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "XV9sJGDtLf4": {
+      "observations": [
+        {
+          "video_id": "XV9sJGDtLf4",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 338.653,
+          "public_views": 12,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-04T09:10:00Z",
+      "pillar": "traffic",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Tailgate Large SUVs",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 16,
+          "averageViewPercentage": 66.32,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-05",
+        "end_date": "2026-09-11",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "abyL33SLKhc": {
+      "observations": [
+        {
+          "video_id": "abyL33SLKhc",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 316.553,
+          "public_views": 1125,
+          "likes": 6,
+          "comments": 1
+        }
+      ],
+      "publish_at": "2026-09-05T07:16:00Z",
+      "pillar": "traffic",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Red Cars Always Make You Slam Your Brakes",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 20,
+          "averageViewDuration": 16,
+          "averageViewPercentage": 63.97999999999999,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-06",
+        "end_date": "2026-09-12",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.2
+        ],
+        [
+          0.02,
+          1.15
+        ],
+        [
+          0.03,
+          1.15
+        ],
+        [
+          0.04,
+          1.1
+        ],
+        [
+          0.05,
+          1.1
+        ],
+        [
+          0.06,
+          1.1
+        ],
+        [
+          0.07,
+          1.1
+        ],
+        [
+          0.08,
+          1.1
+        ],
+        [
+          0.09,
+          1.1
+        ],
+        [
+          0.1,
+          1.1
+        ],
+        [
+          0.11,
+          1.1
+        ],
+        [
+          0.12,
+          1.1
+        ],
+        [
+          0.13,
+          1.1
+        ],
+        [
+          0.14,
+          1.1
+        ],
+        [
+          0.15,
+          1.1
+        ],
+        [
+          0.16,
+          1.1
+        ],
+        [
+          0.17,
+          1.1
+        ],
+        [
+          0.18,
+          1.1
+        ],
+        [
+          0.19,
+          1.1
+        ],
+        [
+          0.2,
+          1.1
+        ],
+        [
+          0.21,
+          1.1
+        ],
+        [
+          0.22,
+          1.1
+        ],
+        [
+          0.23,
+          1.1
+        ],
+        [
+          0.24,
+          1.1
+        ],
+        [
+          0.25,
+          1.1
+        ],
+        [
+          0.26,
+          1.05
+        ],
+        [
+          0.27,
+          1.05
+        ],
+        [
+          0.28,
+          1.05
+        ],
+        [
+          0.29,
+          1
+        ],
+        [
+          0.3,
+          0.95
+        ],
+        [
+          0.31,
+          0.9
+        ],
+        [
+          0.32,
+          0.9
+        ],
+        [
+          0.33,
+          0.9
+        ],
+        [
+          0.34,
+          0.85
+        ],
+        [
+          0.35,
+          0.8
+        ],
+        [
+          0.36,
+          0.75
+        ],
+        [
+          0.37,
+          0.7
+        ],
+        [
+          0.38,
+          0.65
+        ],
+        [
+          0.39,
+          0.65
+        ],
+        [
+          0.4,
+          0.65
+        ],
+        [
+          0.41,
+          0.65
+        ],
+        [
+          0.42,
+          0.65
+        ],
+        [
+          0.43,
+          0.65
+        ],
+        [
+          0.44,
+          0.6
+        ],
+        [
+          0.45,
+          0.6
+        ],
+        [
+          0.46,
+          0.6
+        ],
+        [
+          0.47,
+          0.55
+        ],
+        [
+          0.48,
+          0.55
+        ],
+        [
+          0.49,
+          0.5
+        ],
+        [
+          0.5,
+          0.45
+        ],
+        [
+          0.51,
+          0.45
+        ],
+        [
+          0.52,
+          0.45
+        ],
+        [
+          0.53,
+          0.45
+        ],
+        [
+          0.54,
+          0.45
+        ],
+        [
+          0.55,
+          0.45
+        ],
+        [
+          0.56,
+          0.45
+        ],
+        [
+          0.57,
+          0.45
+        ],
+        [
+          0.58,
+          0.45
+        ],
+        [
+          0.59,
+          0.45
+        ],
+        [
+          0.6,
+          0.45
+        ],
+        [
+          0.61,
+          0.45
+        ],
+        [
+          0.62,
+          0.45
+        ],
+        [
+          0.63,
+          0.45
+        ],
+        [
+          0.64,
+          0.45
+        ],
+        [
+          0.65,
+          0.45
+        ],
+        [
+          0.66,
+          0.45
+        ],
+        [
+          0.67,
+          0.45
+        ],
+        [
+          0.68,
+          0.4
+        ],
+        [
+          0.69,
+          0.4
+        ],
+        [
+          0.7,
+          0.4
+        ],
+        [
+          0.71,
+          0.4
+        ],
+        [
+          0.72,
+          0.4
+        ],
+        [
+          0.73,
+          0.4
+        ],
+        [
+          0.74,
+          0.4
+        ],
+        [
+          0.75,
+          0.4
+        ],
+        [
+          0.76,
+          0.4
+        ],
+        [
+          0.77,
+          0.4
+        ],
+        [
+          0.78,
+          0.4
+        ],
+        [
+          0.79,
+          0.4
+        ],
+        [
+          0.8,
+          0.35
+        ],
+        [
+          0.81,
+          0.35
+        ],
+        [
+          0.82,
+          0.35
+        ],
+        [
+          0.83,
+          0.35
+        ],
+        [
+          0.84,
+          0.35
+        ],
+        [
+          0.85,
+          0.35
+        ],
+        [
+          0.86,
+          0.35
+        ],
+        [
+          0.87,
+          0.35
+        ],
+        [
+          0.88,
+          0.35
+        ],
+        [
+          0.89,
+          0.35
+        ],
+        [
+          0.9,
+          0.35
+        ],
+        [
+          0.91,
+          0.3
+        ],
+        [
+          0.92,
+          0.3
+        ],
+        [
+          0.93,
+          0.3
+        ],
+        [
+          0.94,
+          0.25
+        ],
+        [
+          0.95,
+          0.2
+        ],
+        [
+          0.96,
+          0.2
+        ],
+        [
+          0.97,
+          0.2
+        ],
+        [
+          0.98,
+          0.2
+        ],
+        [
+          0.99,
+          0.2
+        ],
+        [
+          1,
+          0.2
+        ]
+      ],
+      "retention_availability": "available",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "2MfuOY5EDPc": {
+      "observations": [
+        {
+          "video_id": "2MfuOY5EDPc",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 314.653,
+          "public_views": 1029,
+          "likes": 18,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-05T09:10:00Z",
+      "pillar": "restaurant",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Spend More on Giant Menus",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 13,
+          "averageViewDuration": 14,
+          "averageViewPercentage": 44.23,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-06",
+        "end_date": "2026-09-12",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [
+        [
+          0.01,
+          1.1538
+        ],
+        [
+          0.02,
+          1.1538
+        ],
+        [
+          0.03,
+          1.1538
+        ],
+        [
+          0.04,
+          1.1538
+        ],
+        [
+          0.05,
+          1.1538
+        ],
+        [
+          0.06,
+          1.1538
+        ],
+        [
+          0.07,
+          1.1538
+        ],
+        [
+          0.08,
+          1.1538
+        ],
+        [
+          0.09,
+          1.1538
+        ],
+        [
+          0.1,
+          1.0769
+        ],
+        [
+          0.11,
+          1.0769
+        ],
+        [
+          0.12,
+          1.0769
+        ],
+        [
+          0.13,
+          1.0769
+        ],
+        [
+          0.14,
+          1.0769
+        ],
+        [
+          0.15,
+          0.8462000000000001
+        ],
+        [
+          0.16,
+          0.8462000000000001
+        ],
+        [
+          0.17,
+          0.7692
+        ],
+        [
+          0.18,
+          0.6923
+        ],
+        [
+          0.19,
+          0.6154
+        ],
+        [
+          0.2,
+          0.5385
+        ],
+        [
+          0.21,
+          0.5385
+        ],
+        [
+          0.22,
+          0.5385
+        ],
+        [
+          0.23,
+          0.5385
+        ],
+        [
+          0.24,
+          0.46149999999999997
+        ],
+        [
+          0.25,
+          0.46149999999999997
+        ],
+        [
+          0.26,
+          0.46149999999999997
+        ],
+        [
+          0.27,
+          0.46149999999999997
+        ],
+        [
+          0.28,
+          0.46149999999999997
+        ],
+        [
+          0.29,
+          0.3846
+        ],
+        [
+          0.3,
+          0.3846
+        ],
+        [
+          0.31,
+          0.3846
+        ],
+        [
+          0.32,
+          0.3846
+        ],
+        [
+          0.33,
+          0.3846
+        ],
+        [
+          0.34,
+          0.3846
+        ],
+        [
+          0.35,
+          0.3846
+        ],
+        [
+          0.36,
+          0.3846
+        ],
+        [
+          0.37,
+          0.3846
+        ],
+        [
+          0.38,
+          0.3846
+        ],
+        [
+          0.39,
+          0.3846
+        ],
+        [
+          0.4,
+          0.3846
+        ],
+        [
+          0.41,
+          0.3846
+        ],
+        [
+          0.42,
+          0.3846
+        ],
+        [
+          0.43,
+          0.3846
+        ],
+        [
+          0.44,
+          0.3846
+        ],
+        [
+          0.45,
+          0.3846
+        ],
+        [
+          0.46,
+          0.3846
+        ],
+        [
+          0.47,
+          0.3846
+        ],
+        [
+          0.48,
+          0.3846
+        ],
+        [
+          0.49,
+          0.3846
+        ],
+        [
+          0.5,
+          0.3846
+        ],
+        [
+          0.51,
+          0.3846
+        ],
+        [
+          0.52,
+          0.3846
+        ],
+        [
+          0.53,
+          0.3846
+        ],
+        [
+          0.54,
+          0.3846
+        ],
+        [
+          0.55,
+          0.3846
+        ],
+        [
+          0.56,
+          0.3846
+        ],
+        [
+          0.57,
+          0.3077
+        ],
+        [
+          0.58,
+          0.3077
+        ],
+        [
+          0.59,
+          0.3077
+        ],
+        [
+          0.6,
+          0.3077
+        ],
+        [
+          0.61,
+          0.3077
+        ],
+        [
+          0.62,
+          0.23079999999999998
+        ],
+        [
+          0.63,
+          0.23079999999999998
+        ],
+        [
+          0.64,
+          0.23079999999999998
+        ],
+        [
+          0.65,
+          0.23079999999999998
+        ],
+        [
+          0.66,
+          0.23079999999999998
+        ],
+        [
+          0.67,
+          0.23079999999999998
+        ],
+        [
+          0.68,
+          0.23079999999999998
+        ],
+        [
+          0.69,
+          0.23079999999999998
+        ],
+        [
+          0.7,
+          0.23079999999999998
+        ],
+        [
+          0.71,
+          0.23079999999999998
+        ],
+        [
+          0.72,
+          0.23079999999999998
+        ],
+        [
+          0.73,
+          0.23079999999999998
+        ],
+        [
+          0.74,
+          0.23079999999999998
+        ],
+        [
+          0.75,
+          0.23079999999999998
+        ],
+        [
+          0.76,
+          0.23079999999999998
+        ],
+        [
+          0.77,
+          0.23079999999999998
+        ],
+        [
+          0.78,
+          0.23079999999999998
+        ],
+        [
+          0.79,
+          0.23079999999999998
+        ],
+        [
+          0.8,
+          0.23079999999999998
+        ],
+        [
+          0.81,
+          0.23079999999999998
+        ],
+        [
+          0.82,
+          0.23079999999999998
+        ],
+        [
+          0.83,
+          0.23079999999999998
+        ],
+        [
+          0.84,
+          0.23079999999999998
+        ],
+        [
+          0.85,
+          0.23079999999999998
+        ],
+        [
+          0.86,
+          0.23079999999999998
+        ],
+        [
+          0.87,
+          0.23079999999999998
+        ],
+        [
+          0.88,
+          0.23079999999999998
+        ],
+        [
+          0.89,
+          0.23079999999999998
+        ],
+        [
+          0.9,
+          0.23079999999999998
+        ],
+        [
+          0.91,
+          0.23079999999999998
+        ],
+        [
+          0.92,
+          0.23079999999999998
+        ],
+        [
+          0.93,
+          0.23079999999999998
+        ],
+        [
+          0.94,
+          0.23079999999999998
+        ],
+        [
+          0.95,
+          0.23079999999999998
+        ],
+        [
+          0.96,
+          0.23079999999999998
+        ],
+        [
+          0.97,
+          0.23079999999999998
+        ],
+        [
+          0.98,
+          0.23079999999999998
+        ],
+        [
+          0.99,
+          0.23079999999999998
+        ],
+        [
+          1,
+          0.23079999999999998
+        ]
+      ],
+      "retention_availability": "available",
+      "scene_drops": [
+        {
+          "seconds": 0.15,
+          "watch_ratio_drop": 0.2307,
+          "scene": null
+        }
+      ],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "Aw7I8eva9SM": {
+      "observations": [
+        {
+          "video_id": "Aw7I8eva9SM",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 292.403,
+          "public_views": 922,
+          "likes": 8,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-06T07:25:00Z",
+      "pillar": "traffic",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Red Cars Always Look Like They're Tailgating",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 8,
+          "averageViewDuration": 12,
+          "averageViewPercentage": 41.85,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-07",
+        "end_date": "2026-09-13",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "q7b2ZX_aWC8": {
+      "observations": [
+        {
+          "video_id": "q7b2ZX_aWC8",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 290.819,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-06T09:00:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Old Smells Bring Back Everything",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 0,
+          "averageViewDuration": 0,
+          "averageViewPercentage": 0,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-07",
+        "end_date": "2026-09-13",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "m9rmKS67-64": {
+      "observations": [
+        {
+          "video_id": "m9rmKS67-64",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 288.669,
+          "public_views": 1016,
+          "likes": 12,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-06T11:09:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Walk Like Strangers",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 1,
+          "averageViewDuration": 4,
+          "averageViewPercentage": 19.17,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-07",
+        "end_date": "2026-09-13",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "435flCjJtO0": {
+      "observations": [
+        {
+          "video_id": "435flCjJtO0",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 287.769,
+          "public_views": 1002,
+          "likes": 10,
+          "comments": 1
+        }
+      ],
+      "publish_at": "2026-09-06T12:03:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Spend $200 When Buying One Thing",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 6,
+          "averageViewDuration": 14,
+          "averageViewPercentage": 45.21,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-07",
+        "end_date": "2026-09-13",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "i1y7I07aelE": {
+      "observations": [
+        {
+          "video_id": "i1y7I07aelE",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 268.453,
+          "public_views": 292,
+          "likes": 5,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-07T07:22:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Cheer For Underdogs",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 8,
+          "averageViewDuration": 13,
+          "averageViewPercentage": 55.03,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-08",
+        "end_date": "2026-09-14",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "kY7Y9R3GY08": {
+      "observations": [
+        {
+          "video_id": "kY7Y9R3GY08",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 244.703,
+          "public_views": 937,
+          "likes": 8,
+          "comments": 1
+        }
+      ],
+      "publish_at": "2026-09-08T07:07:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Last-Minute Goals Feel 10x Better",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 3,
+          "averageViewDuration": 19,
+          "averageViewPercentage": 65.92,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-09",
+        "end_date": "2026-09-15",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "khqHj9f4GZc": {
+      "observations": [
+        {
+          "video_id": "khqHj9f4GZc",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 242.503,
+          "public_views": 67,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-08T09:19:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Grocery Carts Are Suddenly Huge",
+      "seven_day": {
+        "metrics": {
+          "engagedViews": 4,
+          "averageViewDuration": 15,
+          "averageViewPercentage": 56.07,
+          "shares": 0,
+          "subscribersGained": 0,
+          "subscribersLost": 0
+        },
+        "availability": {},
+        "start_date": "2026-09-09",
+        "end_date": "2026-09-15",
+        "window": "seven_complete_pacific_days_after_publish_day",
+        "fetched_at": "2026-09-18T11:49:09.785399+00:00"
+      },
+      "retention_curve": [],
+      "retention_availability": "unavailable",
+      "scene_drops": [],
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "Xhkf_xi_KmQ": {
+      "observations": [
+        {
+          "video_id": "Xhkf_xi_KmQ",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 220.436,
+          "public_views": 996,
+          "likes": 8,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-09T07:23:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Stay In Long Lines",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "Z1v8E_wmESY": {
+      "observations": [
+        {
+          "video_id": "Z1v8E_wmESY",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 218.753,
+          "public_views": 920,
+          "likes": 9,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-09T09:04:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Referees Always Favor Home Teams",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "7JwuHPs2sKw": {
+      "observations": [
+        {
+          "video_id": "7JwuHPs2sKw",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 216.419,
+          "public_views": 874,
+          "likes": 7,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-09T11:24:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Turn Into A Monster Driving",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "Xm5GqeSJ2e8": {
+      "observations": [
+        {
+          "video_id": "Xm5GqeSJ2e8",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 196.619,
+          "public_views": 919,
+          "likes": 3,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-10T07:12:00Z",
+      "pillar": "traffic",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Cars In Front Always Feel Slower",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "2T3isBD1nEk": {
+      "observations": [
+        {
+          "video_id": "2T3isBD1nEk",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 194.536,
+          "public_views": 1133,
+          "likes": 6,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-10T09:17:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Airports Already Knew Your Gate Would Change",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "SZtm9suPQuI": {
+      "observations": [
+        {
+          "video_id": "SZtm9suPQuI",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 192.419,
+          "public_views": 418,
+          "likes": 7,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-10T11:24:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your Download Always Stops At 99 Percent",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "n_lvlHV-fS8": {
+      "observations": [
+        {
+          "video_id": "n_lvlHV-fS8",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 191.653,
+          "public_views": 929,
+          "likes": 1,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-10T12:10:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Forget Why You Walked Into A Room",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "XKKPWj4gkxs": {
+      "observations": [
+        {
+          "video_id": "XKKPWj4gkxs",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 172.503,
+          "public_views": 645,
+          "likes": 2,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-11T07:19:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Buy The Second Cheapest Wine",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "GCpBzzMHv7A": {
+      "observations": [
+        {
+          "video_id": "GCpBzzMHv7A",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 170.669,
+          "public_views": 1089,
+          "likes": 2,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-11T09:09:00Z",
+      "pillar": "traffic",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Red Cars Always Look Faster",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "y1_4ariTzps": {
+      "observations": [
+        {
+          "video_id": "y1_4ariTzps",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 168.619,
+          "public_views": 15,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-11T11:12:00Z",
+      "pillar": "gas_station",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Gas Pumps Are Painfully Slow",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "kt4Ip7xSeAg": {
+      "observations": [
+        {
+          "video_id": "kt4Ip7xSeAg",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 148.536,
+          "public_views": 2236,
+          "likes": 22,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-12T07:17:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Goalkeepers Always Dive The Wrong Way",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "QVjLLixBIeA": {
+      "observations": [
+        {
+          "video_id": "QVjLLixBIeA",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 146.619,
+          "public_views": 263,
+          "likes": 2,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-12T09:12:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your TV Always Starts The Trailer",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "Ekj_WOgilAY": {
+      "observations": [
+        {
+          "video_id": "Ekj_WOgilAY",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 144.703,
+          "public_views": 1101,
+          "likes": 9,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-12T11:07:00Z",
+      "pillar": "social_behavior",
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Pick The Slowest Line",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "c2wfoCz6RPU": {
+      "observations": [
+        {
+          "video_id": "c2wfoCz6RPU",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 124.669,
+          "public_views": 908,
+          "likes": 3,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-13T07:09:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Red Cars Always Look Like They're Speeding",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "h4iWpDI6TuY": {
+      "observations": [
+        {
+          "video_id": "h4iWpDI6TuY",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 122.586,
+          "public_views": 470,
+          "likes": 2,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-13T09:14:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Copy How People Sit",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "4R6mFlVVlqg": {
+      "observations": [
+        {
+          "video_id": "4R6mFlVVlqg",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 120.636,
+          "public_views": 1149,
+          "likes": 23,
+          "comments": 1
+        }
+      ],
+      "publish_at": "2026-09-13T11:11:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Elevator Doors Always Close On You",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "doy4tXTZO04": {
+      "observations": [
+        {
+          "video_id": "doy4tXTZO04",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 52.453,
+          "public_views": 11,
+          "likes": 0,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-16T07:22:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Love Last-Minute Goals",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "r38576g3Ph8": {
+      "observations": [
+        {
+          "video_id": "r38576g3Ph8",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 28.536,
+          "public_views": 705,
+          "likes": 4,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-17T07:17:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Freeze In The Cereal Aisle",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "mSeSNPg7l8c": {
+      "observations": [
+        {
+          "video_id": "mSeSNPg7l8c",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 26.736,
+          "public_views": 992,
+          "likes": 8,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-17T09:05:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Ask 'What?'",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "IQhEb214c4c": {
+      "observations": [
+        {
+          "video_id": "IQhEb214c4c",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 24.486,
+          "public_views": 422,
+          "likes": 2,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-17T11:20:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Can't Look Away From Crashes",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "GDZsmxac6gg": {
+      "observations": [
+        {
+          "video_id": "GDZsmxac6gg",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 4.536,
+          "public_views": 196,
+          "likes": 1,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-18T07:17:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why Your Checkout Line Is Slow",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "aC8Zq34kYww": {
+      "observations": [
+        {
+          "video_id": "aC8Zq34kYww",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 2.536,
+          "public_views": 508,
+          "likes": 10,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-18T09:17:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Always Brake For Red Cars",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    },
+    "pwq15dcPeGI": {
+      "observations": [
+        {
+          "video_id": "pwq15dcPeGI",
+          "observed_at": "2026-09-18T11:49:09.785399+00:00",
+          "age_hours": 0.619,
+          "public_views": 192,
+          "likes": 2,
+          "comments": 0
+        }
+      ],
+      "publish_at": "2026-09-18T11:12:00Z",
+      "pillar": null,
+      "experiment": {
+        "id": "legacy-baseline",
+        "arm": "baseline"
+      },
+      "title": "Why You Hate Slow Walkers",
+      "stayed_to_watch": null,
+      "experiment_eligible": false
+    }
+  },
+  "last_polled_at": "2026-09-18T11:49:09.785399+00:00"
+}
