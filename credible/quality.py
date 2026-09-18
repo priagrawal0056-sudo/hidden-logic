@@ -42,7 +42,9 @@ def editorial_checks(episode, history=()):
     return True
 
 def script_checks(episode):
-    if episode.get('pillar') not in PILLARS or episode.get('format') not in FORMATS:
+    from .topics import CATEGORY_COUNTS
+    valid_category = episode.get('category') in CATEGORY_COUNTS if 'category' in episode else episode.get('pillar') in PILLARS
+    if not valid_category or episode.get('format') not in FORMATS:
         raise ValueError('Invalid editorial category')
     beats, labels = episode.get('beats', []), episode.get('labels', [])
     if len(beats) != 4 or len(labels) != 4 or any(not isinstance(b, str) or not b.strip() for b in beats):

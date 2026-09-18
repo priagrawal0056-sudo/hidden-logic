@@ -1,0 +1,80 @@
+Why pavement has deliberate cuts across it|Contraction joints encourage concrete shrinkage cracks to form at planned locations.|Compare random cracking with a weakened joint line.|cement.org
+Why bridges have gaps you can hear when driving over|Expansion joints accommodate thermal and structural movement between bridge sections.|Expand a bridge deck toward a joint.|fhwa.dot.gov
+Why brick walls have tiny open gaps near the bottom|Weep openings let water drain from a cavity behind the outer masonry.|Follow rainwater down a cavity to a weep.|gobrick.com
+Why walls sometimes have vertical soft joints|Movement joints allow adjacent sections to expand or contract with less cracking.|Compare two expanding masonry panels.|gobrick.com
+Why window frames have tiny drainage holes|Drainage channels route water out of the frame instead of trapping it indoors.|Trace water through a sill channel.|andersenwindows.com
+Why double glazing has a metal strip around the edge|A spacer maintains the pane separation and can contain moisture-absorbing material.|Show an insulated glass edge cross-section.|pilkington.com
+Why new windows can mist on the outside|Well-insulated outer panes can cool below the outdoor dew point while limiting indoor heat loss.|Compare temperatures across double glazing.|pilkington.com
+Why some windows look slightly purple from one angle|Thin optical coatings alter the wavelengths reflected and transmitted.|Rotate a coated pane under a light beam.|pilkington.com
+Why broken safety glass can remain in one sheet|A laminated interlayer holds fractured pieces together.|Compare laminated glass with a separated fracture.|pilkington.com
+Why toughened glass breaks into many small pieces|The tempering process leaves a stress pattern that changes how cracks propagate.|Release a crack through labelled stress layers.|pilkington.com
+Why you can see dark patterns in car glass through sunglasses|Polarized light reveals stress-related optical differences in some tempered glass.|Rotate a polarizer over a stressed pane.|pilkington.com
+Why some glass seems to clean itself after rain|Certain coatings use sunlight and water spreading to help remove surface dirt.|Show dirt breakdown followed by a water sheet.|pilkington.com
+Why revolving doors help keep a lobby comfortable|Their compartments reduce direct exchange between outside and inside air.|Trace air exchange through two door designs.|boonedam.com
+Why shops use a blast of air over the entrance|An air curtain limits exchange across an open doorway when correctly installed.|Draw the downward jet and side airflows.|berner.com
+Why fire doors close by themselves|A closer returns the door to its fire-separating position after use.|Show smoke stopped by a closed rated door.|nfpa.org
+Why some fire doors stay open until an alarm|An alarm-controlled hold-open device releases the door so it can close.|Animate power release and door closure.|assaabloy.com
+Why a door closer speeds up near the latch|Separate sweep and latch adjustments control different parts of the closing motion.|Plot door angle against closing speed.|allegion.com
+Why a push-bar exit opens with a full hand|Panic hardware enables release by pressure along the bar instead of a precise grip.|Show the bar retracting latch points.|allegion.com
+Why some door handles return to horizontal by themselves|A spring mechanism restores the lever after operation.|Cut away the handle spindle and return spring.|hoppe.com
+Why door handles are often levers in public buildings|Levers can meet accessibility requirements without tight grasping or twisting.|Compare required hand actions for knob and lever.|access-board.gov
+Why a threshold is sloped instead of square|A bevel reduces abrupt level changes for wheels and feet within applicable access limits.|Roll a small wheel over two thresholds.|access-board.gov
+Why accessible doors need empty space beside the handle|Maneuvering clearance allows approach, opening and passage without trapping the user.|Animate a wheelchair opening a door in plan view.|access-board.gov
+Why ramps have flat sections between slopes|Landings provide maneuvering space and breaks between runs under accessibility standards.|Track a wheelchair turning at a landing.|access-board.gov
+Why ramp handrails extend past the slope|Extensions allow support before entering and after leaving the sloping run.|Track hand contact across the ramp ends.|access-board.gov
+Why stairs sometimes have a contrasting strip on each step|Contrasting nosings help make step edges visible.|Compare edges under low visual contrast.|access-board.gov
+Why some stair handrails turn back into the wall|Returned ends reduce catching and projecting hazards.|Compare an open rail end with a returned end.|access-board.gov
+Why warning paving has bumps instead of painted lines|Detectable surfaces communicate a boundary through touch as well as vision.|Show a cane encountering a domed warning surface.|access-board.gov
+Why tactile paving uses both ridges and dots|Different patterns can convey guidance or warnings under local standards.|Compare a guide path with a hazard boundary.|gov.uk
+Why some crossing buttons have a hidden moving cone|A tactile rotating signal can indicate the pedestrian phase to deafblind users.|Show a cone rotating only during the crossing phase.|gov.uk
+Why an elevator gives different chimes for up and down|Distinct audible signals communicate travel direction without relying solely on sight.|Pair two chime patterns with direction arrows.|access-board.gov
+Why elevator buttons have raised markings beside them|Tactile markings and Braille allow controls to be identified by touch.|Trace a fingertip from label to button.|access-board.gov
+Why destination elevators ask for your floor in the lobby|Destination dispatch groups passengers before boarding to reduce intermediate stops.|Compare mixed destinations with grouped cars.|kone.com
+Why an empty elevator can move by itself|Dispatch logic can reposition available cars to serve expected demand.|Show idle cars moving to demand zones.|otis.com
+Why escalator steps flatten before you step off|Step wheels follow tracks that bring the treads into one level at the landing.|Animate wheel paths under an escalator.|kone.com
+Why escalators have comb-like teeth at the ends|A comb plate meshes with step grooves at the transition to the landing.|Magnify the step-to-landing interface.|schindler.com
+Why escalators have brushes along the sides|Skirt brushes discourage contact near the step-side gap.|Show shoe clearance beside the moving step.|schindler.com
+Why moving walkways need a long flat exit|The landing transition lets passengers step from moving tread to fixed floor.|Track a foot across the comb plate.|otis.com
+Why automatic doors sometimes ignore you when you stand still|Motion-based detection responds to changes, while presence sensors use other detection methods.|Compare motion detection with a presence zone.|beasensors.com
+Why a glass door can open before you reach it|An approach sensor detects a person within a monitored zone.|Draw the detection footprint ahead of the door.|dormakaba.com
+Why supermarket security gates beep for unpaid tags|Detection systems respond to active tags that have not been deactivated or removed.|Trace a tag through detection antennas.|sensormatic.com
+Why library security tags can be switched on again|Reusable electromagnetic security markers can be activated and desensitized during circulation.|Compare active and inactive magnetic strips.|bibliotheca.com
+Why security bollards can stop cars despite their narrow shape|Their foundations and energy-management design are critical to impact resistance.|Show force transferring into an anchored foundation.|bsi.com
+Why parking barriers have flexible breakaway arms|Some arms release or flex during impact to reduce damage to the barrier mechanism.|Animate an arm releasing at its coupling.|faac.co.uk
+Why some street drains use slots parallel to the kerb|Inlet geometry balances water capture, wheel interaction and maintenance requirements.|Compare runoff crossing differently oriented slots.|fhwa.dot.gov
+Why manhole covers have patterned tops|Surface texture improves traction on a walking or driving surface.|Compare contact on smooth and patterned metal.|ejco.com
+Why drain covers often sit in a separate frame|The frame transfers loads into the surrounding structure and provides a seating surface.|Show load paths through cover and frame.|ejco.com
+Why streetlights look white while older ones look orange|Different lamp technologies produce different emission spectra.|Compare sodium emission with a white LED spectrum.|energy.gov
+Why some streetlights brighten only as people approach|Controls combine scheduling and sensing to adjust output when needed.|Animate a pedestrian moving through dimmed zones.|signify.com
+Why road signs shine back at your headlights|Retroreflective materials redirect much of the incident light toward its source.|Trace rays through a reflective element.|3m.com
+Why emergency exit signs remain visible after power fails|Emergency systems use backup power or qualifying photoluminescent material depending on installation.|Compare battery-backed and light-storing signs.|nfpa.org
+Why photoluminescent stair strips glow after lights go out|Stored excitation energy is released gradually as visible light.|Show charging and afterglow on a stair edge.|jessupmfg.com
+Why office ceilings are covered with tiny holes|Perforated or porous acoustic materials dissipate sound energy rather than reflecting it all.|Trace sound into an absorptive ceiling.|armstrongceilings.com
+Why an empty room sounds more echoey|Removing sound-absorbing furnishings increases reflected sound persistence.|Compare reflection paths in furnished and bare rooms.|rockfon.com
+Why double doors can make a room quieter|Separated doors and a sealed intervening space reduce sound transmission paths.|Trace sound through two sealed barriers.|assaabloy.com
+Why acoustic doors need seals underneath too|Small air gaps can undermine the sound isolation of a heavier door.|Show sound bypassing a door through its bottom gap.|lorientuk.com
+Why roofs often have vents along the ridge|Ridge and lower intake vents can support airflow through an attic space.|Trace intake-to-ridge airflow.|owenscorning.com
+Why roof tiles overlap instead of meeting edge to edge|Overlaps shed water over successive tiles rather than directing it into open seams.|Follow rain across an overlapping roof section.|marley.co.uk
+Why roofing felt goes under tiles that already stop rain|An underlay provides a secondary weather barrier for water passing the outer covering.|Trace wind-driven rain onto the underlay.|marley.co.uk
+Why flat roofs are not completely flat|A small designed fall directs water toward drains.|Animate water moving along a shallow roof slope.|nhbc.co.uk
+Why gutters have a slight slope you barely notice|The gradient directs runoff toward outlets instead of leaving standing water.|Show a level line above a sloped gutter.|marley.co.uk
+Why downpipes sometimes end above a visible drain|An open discharge can provide a visible flow path and separation where the drainage design permits it.|Trace water across a labelled drainage arrangement.|marley.co.uk
+Why green roofs have several hidden layers|Drainage, filtration and root barriers serve different functions beneath the plants.|Peel back each layer of a green roof.|epa.gov
+Why building insulation is mostly trapped air|Restricting air movement within a low-conductivity material reduces heat transfer.|Compare free circulation with tiny trapped pockets.|energy.gov
+Why foil insulation needs an air gap to work as a radiant barrier|Its reflective surface reduces radiant exchange across a space rather than replacing all insulation.|Compare radiation across an air gap.|energy.gov
+Why wall sockets can let cold air into a room|Air leakage can travel through wall cavities and unsealed penetrations.|Trace outdoor air through a leaky wall penetration.|energy.gov
+Why the room feels colder beside a cold window|Radiant heat exchange and cooled air near the pane can affect comfort.|Show heat radiating from a person toward glass.|energy.gov
+Why fire-alarm strobes flash together|Compatible notification devices use synchronization signals to coordinate their flashes.|Compare independent flashing with a synchronized sequence.|gentex.com
+Why hotel keycards stop working after checkout|Access permissions can be time-limited or superseded by newly issued credentials.|Show a lock comparing a credential with permitted time.|assaabloy.com
+Why some hotel rooms use a card slot for electricity|A presence-control system enables selected room circuits when a card or credential is detected.|Trace control power separately from lighting power.|legrand.com
+Why touchless taps stop even while water is still needed|A timed safety shutoff can override continuous sensor detection.|Show presence sensing and maximum-run timer.|sloan.com
+Why public hand dryers make such different sounds|Air speed, nozzle geometry and motor design shape the noise spectrum.|Compare broad airflow with narrow high-speed jets.|dyson.com
+Why a sprinkler head has a small coloured glass bulb|Heat expands liquid in the bulb until it breaks and releases the mechanism.|Show a labelled bulb releasing a valve.|nfpa.org
+Why one hot sprinkler does not usually trigger every sprinkler|Typical sprinkler heads activate individually from local heat; the alarm system is separate.|Heat one head in a multi-head pipe diagram.|nfpa.org
+Why fire extinguishers have a pressure gauge but not all types do|Stored-pressure units can indicate pressure directly, while some other designs use different checks.|Compare labelled extinguisher operating designs.|kidde.com
+Why an exit stairwell door can feel unusually hard to open|Stair pressurization can create a pressure difference across the door.|Draw pressure arrows on both door faces.|nfpa.org
+Why shopping-centre maps sometimes rotate your viewpoint|Heads-up orientation aligns the map with the direction the viewer faces.|Rotate a floor plan to match a person's view.|seewayfinding.com
+Why a corridor sign is easier to read from farther away than expected|Letter size, contrast and viewing distance determine legibility targets.|Scale a sign against viewing distance.|access-board.gov
+Why drinking fountains come in pairs at different heights|Different heights provide access for wheelchair users and people who have difficulty bending.|Compare two user approach positions.|access-board.gov
+Why some wall-mounted objects have a panel below them|A lower detectable barrier can prevent a cane user walking into a higher projection.|Trace cane contact before body contact.|access-board.gov
+Why playground rubber feels softer than ordinary paving|Impact-attenuating surfaces deform to reduce the peak impact of a fall.|Compare deceleration over two stopping distances.|cpsc.gov

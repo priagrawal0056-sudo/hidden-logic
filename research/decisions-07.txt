@@ -1,0 +1,6 @@
+shopping-003|different Payment Token (affiliated with the same underlying PAN)|Tokenized mobile and wearable payment credentials; displayed receipt fields depend on merchant implementation.
+shopping-006|A terminal that can process payments offline and sync them later|Supported terminal configurations; acceptance limits and later authorization risk vary by provider.
+shopping-009|This customer reference number is different from other frequently used codes such as order numbers, invoice numbers and descriptions.|Payment reference, invoice and order identifiers; displayed fields vary by merchant.|Order numbers identify purchases while payment references identify transactions, so one receipt can link several separate records.
+shopping-012|allocate unique GTINs to all managed packaging levels and sizes.|GS1-managed trade-item packaging levels; not every unmarked shipping box.
+shopping-022|This tactile solution allows consumers to correctly orient the card and know which payment card they are using.|Mastercard Touch Card example; notch types are not universal across all cards.
+shopping-040|individual transactions are aggregated into one daily charge|Transport for London contactless account-based payment example; not all transit payment systems.

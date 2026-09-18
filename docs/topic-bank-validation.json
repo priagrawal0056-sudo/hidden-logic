@@ -1,0 +1,29 @@
+{
+  "at": "2026-09-18T02:37:15.020029+00:00",
+  "topics": 500,
+  "categories": {
+    "home": 80,
+    "buildings": 80,
+    "technology": 70,
+    "food": 65,
+    "packaging": 65,
+    "transport": 65,
+    "shopping": 40,
+    "clothing": 35
+  },
+  "source_reviewed": 200,
+  "pending": 300,
+  "editorial_holds": 2,
+  "complete_supported_bank": false,
+  "history_records_checked": 560,
+  "cooldown_conflicts": [],
+  "semantic_history_review": "Required again by independent script review; lexical checks alone are not proof of distinct claims.",
+  "eligible_shortlist": [
+    "shopping-018",
+    "buildings-001",
+    "clothing-001",
+    "food-015",
+    "home-003",
+    "packaging-001"
+  ]
+}

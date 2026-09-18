@@ -78,7 +78,7 @@ def duplicate(candidate, history, at=None):
                 age = 0  # Unknown history cannot silently permit duplicates.
         else:
             age = 0
-        if old.get('status') in ('ready', 'needs_rebuild'):
+        if old.get('status') in ('reserved', 'prepared', 'ready', 'needs_rebuild', 'allocated', 'uploading', 'uploaded', 'uncertain', 'upload_uncertain', 'scheduling'):
             age = 0
         if age >= 90:
             continue
@@ -86,8 +86,20 @@ def duplicate(candidate, history, at=None):
             return 'same claim within 90 days'
         a = claim_key(candidate.get('claim', '') or candidate.get('title', ''))
         b = claim_key(old.get('claim', '') or old.get('title', ''))
-        if a and b and len(a & b) / min(len(a), len(b)) >= .8:
+        # Canonical IDs disambiguate different mechanisms involving the same object.
+        # Unknown legacy titles still need conservative phrase matching and review;
+        # one shared word or a tiny subset is not evidence of duplicate meaning.
+        identified = candidate.get('claim_id') and old.get('claim_id')
+        if not identified and a and b and (a == b or
+                (len(a & b) >= 3 and len(a & b) / len(a | b) >= .75)):
             return 'similar underlying claim'
+        # History frequently contains only a title. Compare like with like rather
+        # than a new paragraph-length mechanism against an old five-word title.
+        if not identified and not old.get('claim'):
+            title_a, title_b = claim_key(candidate.get('title', '')), claim_key(old.get('title', ''))
+            if title_a and title_b and (title_a == title_b or
+                    (len(title_a & title_b) >= 3 and len(title_a & title_b) / len(title_a | title_b) >= .75)):
+                return 'similar legacy title; semantic review required'
         if age < 14 and candidate.get('subject') and candidate['subject'] == old.get('subject'):
             return 'subject within 14 days'
     return None
@@ -109,16 +121,18 @@ def slots(config, at=None, days=2):
     return result[:config['videos_per_day']]
 
 
-def assignment(pillar, slot_index, history):
+def assignment(pillar, slot_index, history, category=None):
     counts = {v: 0 for v in ('demonstration_first', 'question_first')}
     for row in history:
         ex = row.get('experiment', {})
-        if row.get('pillar') == pillar and ex.get('slot_index') == slot_index:
+        group = row.get('category') if category else row.get('pillar')
+        version = 'everyday-topics-v2' if category else 'early-answer-v1'
+        if group == (category or pillar) and ex.get('slot_index') == slot_index and ex.get('id') == version:
             arm = ex.get('arm')
             if arm in counts:
                 counts[arm] += 1
     arm = min(counts, key=lambda a: (counts[a], a))
-    return {'id': 'early-answer-v1', 'arm': arm, 'slot_index': slot_index,
+    return {'id': 'everyday-topics-v2' if category else 'early-answer-v1', 'arm': arm, 'slot_index': slot_index,
             'assigned_at': now().isoformat(), 'promote_automatically': False}
 
 

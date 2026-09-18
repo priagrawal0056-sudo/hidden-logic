@@ -1,0 +1,65 @@
+Why a car indicator clicks even without an old relay|Some modern vehicles generate feedback electronically rather than through a mechanical flasher.|Compare relay switching with an electronic sound signal.|hella.com
+Why indicator flashing speeds up after a bulb fails|Some systems detect a changed electrical load and signal a lamp fault through faster flashing.|Remove a bulb from a monitored circuit.|hella.com
+Why reversing lights can look different on each side|Regional lamp arrangements may assign separate positions to reverse and rear fog functions.|Label a region-specific rear lamp cluster.|hella.com
+Why a rear fog light is much brighter than a tail light|Its purpose is visibility in poor conditions, requiring a different light distribution and output.|Compare labelled tail and fog beams.|hella.com
+Why a car mirror has a dotted vertical line|Some mirrors divide standard and aspheric zones to widen the field of view.|Trace rays through the two mirror zones.|magna.com
+Why the passenger mirror makes cars look smaller|A convex surface widens the view while reducing apparent image size.|Compare a flat and convex mirror's ray paths.|nhtsa.gov
+Why an automatic rear-view mirror darkens|An electrochromic layer changes transmission in response to detected glare.|Show sensor input changing the mirror layer.|gentex.com
+Why a windscreen has a black dotted border|The ceramic frit masks and protects bonding areas; dotted transitions soften the visible border.|Show the adhesive behind the frit band.|agc-automotive.com
+Why rear windows use visible wires to clear mist|Resistive tracks warm the glass and help remove condensation.|Trace current and heat through the rear screen.|pilkington.com
+Why windscreen wipers flip direction at each stroke|The flexible wiping edge changes its contact orientation as motion reverses.|Magnify the rubber edge at stroke reversal.|boschaftermarket.com
+Why some tyres have tiny rubber hairs|Vent features in tyre moulds can leave small rubber projections.|Show rubber entering a mould vent.|michelin.com
+Why new tyres have coloured stripes on the tread|Manufacturing and logistics markings can identify tyre stock during production and handling.|Track a marked tread through factory sorting.|continental-tires.com
+Why tyre grooves are not all the same direction|Pattern geometry balances water evacuation, traction, wear and noise for the intended tyre.|Trace water through a specified tread pattern.|michelin.com
+Why tyre tread blocks have tiny slits|Sipes create additional edges and influence block flexibility, especially for winter grip.|Flex a siped tread block against a surface.|continental-tires.com
+Why worn tyres reveal small bridges across the grooves|Tread-wear indicators are moulded at a specified height within the grooves.|Lower tread around a wear indicator.|michelin.com
+Why tyre pressure rises after driving|Warming the contained gas increases its pressure as the tyre operates.|Compare cold and warm tyre pressure diagrams.|michelin.com
+Why a slow tyre leak can become a dashboard warning later|Monitoring systems detect pressure or wheel-behaviour changes only under their operating conditions.|Compare direct sensing and indirect wheel-speed sensing.|continental.com
+Why car wheels have small metal weights attached|Balance weights compensate for uneven mass distribution around the wheel assembly.|Add a counterweight opposite an imbalance.|hunter.com
+Why wheels have ventilation openings near the brakes|Wheel geometry permits airflow and accommodates mass, strength and brake-clearance needs.|Show airflow through an example wheel to the brake.|brembo.com
+Why brake discs have holes or curved internal channels|Selected disc designs use passages or surface features for thermal and friction management.|Trace cooling air through a ventilated disc.|brembo.com
+Why a brake pedal can pulse during hard braking|ABS modulates braking pressure when wheel slip approaches lockup.|Plot wheel slip and pressure pulses.|bosch-mobility.com
+Why an electric car slows when you lift your foot|Regenerative braking can use the motor as a generator under enabled driving settings.|Reverse energy flow from wheels to battery.|tesla.com
+Why regenerative braking can weaken with a full battery|The battery may have limited capacity to accept additional charging power.|Show the energy-acceptance limit near full charge.|tesla.com
+Why an electric car makes an artificial low-speed sound|Pedestrian warning systems provide audible presence when propulsion noise is low.|Compare low-speed vehicle sound with warning active.|nhtsa.gov
+Why cruise control behaves differently downhill|Some systems only reduce drive power while others can apply braking.|Compare two downhill speed-control strategies.|ford.com
+Why a seatbelt locks if you pull it suddenly|An emergency-locking retractor responds to rapid webbing movement or vehicle deceleration.|Show a pawl engaging the reel.|autoliv.com
+Why a seatbelt can retract slowly near the end|Retraction depends on spring force and friction along the belt path.|Compare spring torque with belt-path friction.|autoliv.com
+Why fuel doors are on different sides of cars|Vehicle packaging and manufacturer design choices determine filler placement.|Compare two platform layouts without inventing one universal reason.|ford.com
+Why a fuel pump stops before fuel spills out|A sensing passage and pressure change trigger the nozzle's automatic shutoff.|Trace air through the nozzle sensing port.|opwglobal.com
+Why a car horn sounds like more than one note|Some horn assemblies combine tones to create their intended acoustic character.|Overlay two horn frequencies.|hella.com
+Why road markings look much brighter at night when dry|Retroreflective beads return headlight illumination, and surface water changes their optical path.|Compare dry and submerged glass beads.|3m.com
+Why rumble strips have regular gaps in some places|Design gaps can accommodate cyclists, drainage or intersections depending on the installation.|Show a bicycle crossing a designed gap.|fhwa.dot.gov
+Why traffic lights sometimes stay red when the road looks empty|Signal timing may include minimum intervals, coordination or detection constraints.|Show the active timing stages in a junction.|fhwa.dot.gov
+Why a bicycle sometimes fails to trigger a junction detector|Inductive detector response depends on loop design, sensitivity and vehicle position.|Compare bicycle positions over a loop.|fhwa.dot.gov
+Why traffic lights include an all-red pause|Clearance intervals provide time between conflicting movements.|Track the final vehicle before the next phase.|fhwa.dot.gov
+Why pedestrian countdowns can begin before the signal turns red|The countdown can indicate a clearance interval rather than the entire permission-to-start period.|Label walk and clearance phases for one jurisdiction.|fhwa.dot.gov
+Why some junctions let pedestrians move before cars|A leading pedestrian interval establishes pedestrians in the crossing before turning traffic starts.|Animate staggered release at a crossing.|fhwa.dot.gov
+Why crossing islands are staggered instead of straight|A staggered layout can orient pedestrians toward approaching traffic and separate crossing stages.|Trace a pedestrian's sightline on a refuge island.|gov.uk
+Why bus lanes sometimes end before a junction|Lane transitions depend on turning movements, signal design and local priorities.|Show one documented junction's bus and turn paths.|tfl.gov.uk
+Why buses lower themselves at a stop|Kneeling suspension reduces the step or ramp height for boarding.|Lower an air-suspended bus beside a kerb.|volvobuses.com
+Why bus doors may refuse to open while moving|Interlocks restrict door operation according to vehicle speed and system state.|Show speed input blocking a door command.|volvobuses.com
+Why long buses bend behind the driver|An articulated joint lets a long passenger vehicle negotiate turns.|Compare the swept paths of rigid and articulated buses.|mercedes-benz-bus.com
+Why trains have tapered wheel treads|Wheel-rail geometry can help guide a wheelset through curves within design limits.|Show different rolling radii as a wheelset shifts.|networkrail.co.uk
+Why train wheels can squeal on a tight curve|Wheel-rail contact and lateral slip can excite vibration on curves.|Animate lateral slip and wheel vibration.|networkrail.co.uk
+Why railway tracks sit on jagged stones|Ballast supports sleepers, distributes load and provides drainage while resisting movement.|Trace loads and water through a ballast bed.|networkrail.co.uk
+Why some rail sections have small insulated joints|Insulated joints separate electrical sections used by particular signalling systems.|Split a track circuit at an insulated joint.|networkrail.co.uk
+Why a platform can have two different stopping marks|Different train lengths or door arrangements require different stopping positions.|Align two train formations with platform doors.|networkrail.co.uk
+Why platform doors do not open until the train is aligned|Interlocks coordinate the platform barrier with the train's position and door state.|Show alignment enabling paired door opening.|smrt.com.sg
+Why train announcements sometimes precede the visible train|Signalling or location systems can report an approaching train before it reaches the platform.|Trace location data to a passenger display.|tfl.gov.uk
+Why metro trains can stop so precisely|Automatic train operation uses position and speed feedback to control braking toward a stopping point.|Plot a controlled approach to a platform marker.|alstom.com
+Why aeroplane wing tips bend upward|Wingtip devices can reduce induced drag by modifying the wingtip flow.|Compare airflow behind wings with and without winglets.|nasa.gov
+Why aircraft wings flex during flight|Elastic structural design allows load-dependent deflection within certified limits.|Bend a wing under distributed lift.|airbus.com
+Why aircraft tyres smoke briefly on landing|A stationary wheel accelerates rapidly on contact with the runway, producing frictional heating.|Show wheel spin-up at touchdown.|michelin.com
+Why aeroplane windows have several panes|Multiple panes divide pressure-bearing and protective functions in the window assembly.|Label the separate panes of a passenger window.|airbus.com
+Why some jet engines have a sawtooth edge|Chevron nozzle edges change the mixing of hot core air and cooler fan air to reduce jet noise.|Animate hot and cool flow meeting behind smooth and chevron edges; label the flow as an illustration, with no invented noise measurements.|nasa.gov
+Why overhead air nozzles feel stronger when partly closed|Changing outlet area and direction alters the local jet felt by the passenger.|Compare nozzle opening and air-jet shape.|collinsaerospace.com
+Why your ears react during descent rather than just at takeoff|Cabin pressure changes require pressure equalization across the eardrum.|Compare cabin and middle-ear pressure.|faa.gov
+Why an aircraft seems to speed up just before landing|Changes in perspective, sound and control settings can differ from actual airspeed.|Compare sightline motion with labelled speed data.|faa.gov
+Why luggage belts have overlapping metal or rubber plates|Overlapping segments let the conveyor follow curved paths while supporting bags.|Move linked plates around a carousel bend.|vanderlande.com
+Why a bag sometimes takes a longer route inside an airport|Sorting and screening systems route bags according to destination and processing requirements.|Trace one bag through a documented sorting flow.|vanderlande.com
+Why airport jet bridges have accordion-like sections|Flexible joints accommodate changes in bridge position and aircraft alignment.|Extend and rotate a bridge joint.|tkairport.com
+Why ship propellers can make clouds of bubbles underwater|Low pressure around a propeller can produce cavitation bubbles under some conditions.|Show pressure dropping on a blade surface.|wartsila.com
+Why ferry ramps change angle with the tide|The ramp bridges a changing vertical difference between vessel and shore.|Raise water level beneath a hinged ramp.|damen.com
+Why bicycles click when coasting but not always when pedalling|A freewheel or freehub ratchet permits wheel rotation without driving the pedals.|Show pawls slipping while the wheel overruns.|shimano.com
+Why bicycle gears shift more easily while pedalling gently|The moving chain must travel between sprockets while excessive load can resist the shift.|Trace chain movement across adjacent sprockets.|shimano.com

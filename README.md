@@ -1,6 +1,7 @@
 # Hidden Logic — Automated Shorts Pipeline
 
 **Current production update:** [Approved editor and GitHub rollout](GITHUB_UPDATE.md).
+**Topic selector update:** [Research status, shared bank and verification](docs/TOPIC_SELECTOR_UPDATE.md).
 The version-4 scheduler now reuses the original narration and editing modules,
 with distinct footage, a longer mechanism demonstration, one caption layer and
 a complete callback/CTA. Publishing remains disabled for finished-pilot review.

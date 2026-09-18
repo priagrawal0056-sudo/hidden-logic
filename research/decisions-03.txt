@@ -1,0 +1,13 @@
+food-003|Glutenin gives the dough elasticity|Wheat dough with a developed gluten network; distinguish elasticity from extensibility.
+food-004|giving it a pre-designated spot|Scored risen bread before baking; do not imply all breads require scoring.
+food-007|Many biscuits and savoury snacks including nuts suffer in quality as a result of moisture gain|Moisture uptake in dry crisp biscuits; obtain separate support before making a bread-retrogradation comparison.
+food-009|Each "leaf" in this puff pastry consists of a layer of flour separated by a layer of butter|Laminated puff pastry; steam comes from water in the dough and butter, not fat evaporating.
+food-010|the pancake rises and the structure of tiny bubbles sets|Leavened pancake batter on a griddle; do not generalize to every flatbread.
+food-011|if you pull the cake out before it's really truly set|An underbaked cake is one possible cause of collapse; do not diagnose every sunken cake this way.
+food-015|Crystallization is the natural process by which the glucose in honey precipitates out of the liquid honey|Honey crystallization; avoid the source's absolute statement that honey never goes bad.
+food-016|a single seed crystal of sugar clinging to the side of the pan|Sugar syrup recrystallization; apply to a smooth sugar syrup, not every caramel formulation.
+food-018|Heat will make cocoa butter migrate to the surface of the chocolate shell|Fat bloom in chocolate; distinguish it from mould and sugar bloom without giving food-safety assurances.
+food-019|a stable crystalline structure called the beta crystal form|Tempering chocolate containing cocoa butter; omit an overly broad claim about all confectionery coatings.
+food-023|it could cause the ice cubes to slowly melt and clump together|Ice clumping caused by partial melting and refreezing in a freezer; other causes require separate support.
+food-026|thin films that encase air bubbles and create foam|Egg-white foams formed by beating; do not claim all proteins behave identically.
+food-032|The combination of UHT treatment and sterile aseptic packaging makes this milk shelf-stable|Unopened commercially UHT-treated milk in intact aseptic packaging; follow storage instructions after opening.

@@ -1,7 +1,7 @@
 """Authored fallback episodes. Source passages are verified at preparation time.
 
 These are finite reserves, not permission to endlessly recycle nine topics.
-New topics come from the source-grounded generator and its discovery catalog.
+New topics come from the reviewed everyday-topic bank and source-grounded writer.
 """
 from .core import digest, now
 

@@ -105,7 +105,7 @@ def poll(state_dir='state/credible', at=None, services=None):
         if not vid or parse(slot['publish_at']) >= at:
             continue
         record = data['videos'].setdefault(vid, {'observations': []})
-        record.update({k: slot[k] for k in ('publish_at', 'pillar', 'experiment', 'title') if k in slot})
+        record.update({k: slot[k] for k in ('publish_at', 'pillar', 'category', 'topic_id', 'experiment', 'title') if k in slot})
         try:
             response = yt.videos().list(part='statistics', id=vid).execute()
             stats = response.get('items', [{}])[0].get('statistics', {})
@@ -141,21 +141,23 @@ def poll(state_dir='state/credible', at=None, services=None):
             except Exception as exc:
                 record['retention_availability'] = type(exc).__name__
         record['stayed_to_watch'] = record.get('stayed_to_watch')  # Studio-only optional import
-        record['experiment_eligible'] = bool(ready and record.get('experiment',{}).get('id') == 'early-answer-v1'
+        record['experiment_eligible'] = bool(ready and record.get('experiment',{}).get('id') in ('early-answer-v1','everyday-topics-v2')
                                              and record.get('seven_day', {}).get('metrics', {}).get('engagedViews'))
     data['last_polled_at'] = at.isoformat()
     save(root / 'analytics.json', data)
-    report = experiment_report(data)
+    report = experiment_report(data, 'everyday-topics-v2')
+    report['previous_experiment'] = experiment_report(data, 'early-answer-v1')
     save(root / 'experiment_report.json', report)
     return report
 
 
-def experiment_report(data):
+def experiment_report(data, experiment_id='early-answer-v1'):
     groups = {arm: [] for arm in ('demonstration_first', 'question_first')}
     for record in data.get('videos', {}).values():
         arm = record.get('experiment', {}).get('arm')
         metrics = record.get('seven_day', {}).get('metrics', {})
         if (arm in groups and record.get('experiment_eligible')
+                and record.get('experiment', {}).get('id') == experiment_id
                 and all(metrics.get(k) is not None for k in METRICS)
                 and metrics['engagedViews'] >= 100):
             groups[arm].append(record)
@@ -168,7 +170,7 @@ def experiment_report(data):
             'shares_per_1000_engaged': statistics.median(r['shares'] / r['engagedViews'] * 1000 for r in rows) if rows else None,
             'net_subscribers_per_1000_engaged': statistics.median((r['subscribersGained'] - r['subscribersLost']) / r['engagedViews'] * 1000 for r in rows) if rows else None}
     ready = all(len(rows) >= 20 for rows in groups.values())
-    return {'arms': summary, 'decision': 'review_guardrails' if ready else 'continue_balanced_testing',
+    return {'experiment_id': experiment_id, 'arms': summary, 'decision': 'review_guardrails' if ready else 'continue_balanced_testing',
         'automatic_promotion': False, 'minimum_per_arm': 20, 'minimum_engaged_views_per_video': 100,
         'note': 'APV target is +10 percentage points against a comparable baseline, not a promise. '
                 'Review pillar/slot balance, duration, reach and engagement before choosing.'}

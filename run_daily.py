@@ -1466,6 +1466,21 @@ def main():
                              "of the normal daily quota - the full-autopilot mode, no human input")
     args = parser.parse_args()
 
+    # Explicit legacy entry points must not bypass the production rollout gate.
+    if not args.dry_run and (args.topic or args.upload_only or args.compile_now):
+        from credible.pipeline import settings
+        if not settings()['rollout_enabled']:
+            parser.error('Publishing is disabled pending pilot review; use credible.single for an unpublished preview')
+
+    # Daily generation shares the evidence-backed selector and upload ledger.
+    # Explicit maintenance commands below retain their existing behavior.
+    if not (args.topic or args.upload_only or args.compile_now):
+        from credible.pipeline import run
+        if args.count not in (None, 3):
+            parser.error('Daily production uses three slots; use credible.single for one unpublished preview')
+        run('preview' if args.dry_run else 'publish')
+        return
+
     # startup integrity check: catches mismatched file swaps with a clear message
     import inspect
     problems = []

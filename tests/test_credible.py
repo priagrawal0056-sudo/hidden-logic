@@ -103,14 +103,22 @@ class UploadTests(unittest.TestCase):
 
     def test_quota_error_keeps_uncertain_slot(self):
         backend = Mock(); backend.find.return_value=None; backend.upload_private.side_effect=RuntimeError('quota')
-        row = {'id':'a','status':'prepared'}
+        row = {'id':'a','status':'prepared','publish_at':'2099-01-01T00:00:00+00:00'}
         with self.assertRaises(RuntimeError): deliver(row,{},Path('.'),backend,lambda:None)
         self.assertEqual(row['status'],'upload_uncertain')
 
     def test_failed_checkpoint_prevents_upload(self):
         backend = Mock(); backend.find.return_value=None
         def fail(): raise OSError('state push failed')
-        with self.assertRaises(OSError): deliver({'id':'a','status':'prepared'}, {},Path('.'),backend,fail)
+        with self.assertRaises(OSError): deliver({'id':'a','status':'prepared','publish_at':'2099-01-01T00:00:00+00:00'}, {},Path('.'),backend,fail)
         backend.upload_private.assert_not_called()
+
+    def test_expired_slot_never_looks_up_or_inserts_a_video(self):
+        backend = Mock()
+        row = {'id':'a','status':'prepared','publish_at':'2000-01-01T00:00:00+00:00'}
+        with self.assertRaisesRegex(ValueError, 'Missed slot'):
+            deliver(row,{},Path('.'),backend,lambda:None)
+        self.assertEqual(backend.mock_calls, [])
+        self.assertEqual(row['status'], 'prepared')
 
 if __name__ == '__main__': unittest.main()

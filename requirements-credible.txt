@@ -1,4 +1,5 @@
 requests>=2.32,<3
+pypdf>=5,<7
 edge-tts>=7.2,<8
 Pillow>=10,<13
 imageio-ffmpeg>=0.6,<1

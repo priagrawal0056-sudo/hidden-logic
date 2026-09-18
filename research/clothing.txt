@@ -1,0 +1,35 @@
+Why a zip stays up until you lift its pull tab|A locking slider can engage the elements until pull-tab movement releases it.|Cut away a pin-lock slider being lifted.|ykk.com
+Why a zip can close two rows of teeth in one motion|The slider guides opposing elements into an interlocking path.|Show teeth entering the slider's Y-shaped channel.|ykk.com
+Why a jacket zip needs its bottom pin fully inserted|The separable pin and box align the two chains before the slider joins them.|Compare aligned and misaligned starting positions.|ykk.com
+Why some jacket zips open from the bottom too|Two-way sliders allow separate opening positions along a closed chain.|Move upper and lower sliders independently.|ykk.com
+Why a waterproof-looking zip is not necessarily watertight|Coatings and construction provide different levels of water resistance.|Compare surface coating with a sealed closure design.|ykk.com
+Why backpack buckles release when you squeeze their sides|Flexible latch arms disengage from the socket under inward pressure.|Cut away two latch arms being squeezed.|duraflexgroup.com
+Why a strap stays tight after threading through a small buckle|The routing creates friction that resists movement under load.|Trace the strap path around a ladder-lock buckle.|duraflexgroup.com
+Why hook-and-loop fasteners collect fluff|Hooks can engage stray fibres as well as the intended loops.|Magnify hooks holding loops and loose fibres.|velcro.com
+Why jeans have metal rivets at pocket corners|Rivets reinforce points that experience concentrated stress.|Show load spreading from a pocket corner.|levi.com
+Why denim shows white on the inside|Traditional denim uses differently coloured warp and weft yarns in a twill weave.|Magnify coloured warp over pale weft.|cottonworks.com
+Why denim fades most at folds and seams|Wear removes dye preferentially from exposed surfaces of the yarn.|Compare abrasion at raised and protected areas.|cottonworks.com
+Why some fabrics stretch more diagonally|Bias loading allows the yarn network to change angle more easily than along its yarn directions.|Pull a woven grid on-axis and diagonally.|cottonworks.com
+Why knitted shirts curl at the cut edge|Loop geometry and yarn stresses can make some knit structures curl.|Release a cut edge in a knitted loop diagram.|cottonworks.com
+Why a cotton shirt can shrink after its first wash|Wet processing and drying can relax tensions introduced during manufacture.|Compare stretched and relaxed yarn geometry.|cottonworks.com
+Why wool can felt into a smaller dense fabric|Fibre surface scales and agitation can promote directional interlocking.|Show fibres migrating and interlocking.|woolmark.com
+Why fabric pills appear where a bag rubs|Abrasion raises fibres that can entangle into surface pills.|Form a pill from rubbing-exposed fibres.|woolmark.com
+Why fleece can hold warmth without weighing much|Its raised structure traps relatively still air around the body.|Show air pockets between raised fibres.|polartec.com
+Why a wet down jacket loses much of its loft|Moisture can clump down clusters and reduce trapped-air volume.|Compare dry clusters with wet collapsed clusters.|alliedfeather.com
+Why water beads on a rain jacket before it soaks in|A durable water-repellent surface treatment changes wetting behaviour.|Compare droplets on treated and worn outer fabric.|gore-tex.com
+Why a rain jacket can feel clammy without leaking|Moisture production can exceed vapour transport, especially under unfavourable conditions.|Compare internal moisture input and outward transport.|gore-tex.com
+Why waterproof jackets have tape over inside seams|Needle holes and seam construction need sealing to limit water entry.|Show tape covering a stitched seam cross-section.|gore-tex.com
+Why sports shirts move sweat away from one spot|Fibre and fabric design can promote liquid spreading and capillary transport.|Trace liquid through a wicking fabric.|polartec.com
+Why a loose thread can unzip part of a knitted jumper|A damaged loop can release connected loops along a knitted structure.|Animate a ladder running through knit loops.|woolmark.com
+Why clothes care labels use dots inside the iron symbol|The dots encode permitted ironing-temperature categories under the relevant system.|Translate dot counts into labelled care categories.|ginetex.net
+Why some washing symbols have a line underneath|Bars indicate modified mechanical action in the care-symbol system.|Compare wash-action levels represented by bars.|ginetex.net
+Why shoe soles have flex grooves across the forefoot|Grooves influence bending where the foot flexes during movement.|Bend a sole at its forefoot grooves.|nike.com
+Why running-shoe foam feels different from rubber underneath|Midsole and outsole materials have different cushioning and wear roles.|Compare deformation in two sole layers.|asics.com
+Why shoes have an extra lace hole near the ankle|Alternative lacing can change heel retention for suitable shoe designs.|Show a heel-lock lacing path.|asics.com
+Why shoelaces come loose while you walk|Repeated impacts and swinging ends can destabilize a knot.|Animate impact followed by end movement.|berkeley.edu
+Why wet shoes can squeak on a smooth floor|Contact friction and stick-slip behaviour can excite vibrations.|Show alternating stick and slip at the sole.|continental.com
+Why a suitcase handle locks at several heights|Spring-loaded pins engage holes at selected telescoping positions.|Cut away a pin entering a handle hole.|samsonite.com
+Why a retractable umbrella stays open without continuous pressure|A latch holds the runner after it reaches the open position.|Show a runner engaging its latch.|knirps.com
+Why an umbrella can invert in a gust|Wind loads can exceed the supporting rib geometry's resistance in that direction.|Compare rib loading from above and below.|knirps.com
+Why sunglasses make reflections disappear at certain angles|Polarizing filters attenuate a selected orientation of reflected light.|Rotate a polarizer over a reflected scene.|zeiss.com
+Why photochromic glasses may darken less inside a car|Many lenses respond to UV that some vehicle glass filters, depending on lens design.|Compare activating light outside and behind glass.|transitions.com

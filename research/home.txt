@@ -1,0 +1,80 @@
+Why your kettle gets quieter just before it boils|Collapsing steam bubbles make noise below boiling; fewer collapse when surrounding water gets hot.|Compare bubble collapse below and at boiling.|physics.org
+Why a fridge warms the kitchen while cooling your milk|The condenser releases the heat removed from inside plus energy used by the compressor.|Trace heat from milk to rear coils.|energy.gov
+Why a freezer door is harder to reopen immediately|Cooling recently admitted air reduces pressure inside a well-sealed freezer.|Show warm air shrinking behind the gasket.|liebherr.com
+Why your dishwasher leaves plastic wetter than glass|Plastic stores less heat, leaving less energy to evaporate water during drying.|Compare cooling and droplets on two plates.|bosch-home.com
+Why a washing machine reverses direction|Alternating drum rotation helps separate and redistribute laundry instead of leaving it tangled.|Animate towels tumbling in alternating directions.|electrolux.com
+Why washing machines pause before a fast spin|An imbalance check redistributes laundry before allowing higher drum speeds.|Move an uneven load around a drum.|samsung.com
+Why a front-loader can wash with so little visible water|The rotating drum repeatedly lifts clothes through a shallow pool rather than submerging everything.|Show fabric passing through the bottom pool.|energystar.gov
+Why the last minute on a washer takes longer|Sensor-controlled phases can extend the estimate to handle imbalance or excess foam.|Show an estimated timer waiting for balance.|lg.com
+Why your tumble dryer keeps turning after it finishes|Intermittent post-cycle tumbling reduces creasing while clothes wait to be removed.|Compare a resting fold with loosened laundry.|bosch-home.com
+Why heat-pump dryers take longer but use less power|They recycle heat at lower drying temperatures instead of continually exhausting hot air.|Draw two airflow loops side by side.|energystar.gov
+Why a lint filter fills even with clean clothes|Mechanical movement releases loose textile fibres, which airflow carries to the filter.|Track a loose fibre from fabric to mesh.|whirlpool.com
+Why a vacuum changes pitch when its hose is blocked|A blockage changes airflow and the operating load on the motor and fan.|Compare open and obstructed airflow paths.|dyson.com
+Why a bagless vacuum spins dust in circles|Cyclonic airflow separates particles from air by making the air turn sharply.|Trace particles leaving a curved airflow path.|dyson.com
+Why your robot vacuum can miss a black rug|Some infrared cliff sensors interpret weak reflected light as a drop.|Compare a dark rug with an actual edge.|irobot.com
+Why induction hobs ignore some metal pans|Heating depends on coupling the magnetic field into compatible cookware, not simply on metal being present.|Compare field coupling under two pan bases.|bosch-home.com
+Why an induction hob clicks at low power|Some controls regulate average heating by cycling power rather than running continuously.|Show short power pulses beneath a pan.|samsung.com
+Why microwaves leave cold spots in the middle|The electromagnetic field and food geometry produce uneven energy absorption.|Move a plate through a field heat map.|fda.gov
+Why the microwave door has a metal mesh|Its small openings impede microwave transmission while allowing visible light through.|Compare the two wavelengths at the screen.|fda.gov
+Why a microwave fan keeps running after heating|Cooling fans can continue to remove heat from internal components after cooking ends.|Trace cooling air around electronics.|geappliances.com
+Why the oven light turns off before the oven cools|A thermostat cycles heating around the target rather than holding the element permanently on.|Plot temperature and heating pulses.|whirlpool.com
+Why an oven door has several layers of glass|Air spaces and multiple panes reduce heat transfer to the outer surface.|Draw a cutaway with heat-flow arrows.|bosch-home.com
+Why toaster slots sometimes heat unevenly|Element layout and bread position affect radiant heat reaching each face.|Compare radiation paths to two slices.|breville.com
+Why a toaster browns frozen bread without raising the lever twice|A defrost programme adds time for thawing before normal browning.|Show thawing and browning as separate stages.|dualit.com
+Why a rice cooker switches modes without a timer|While water remains, boiling limits pot temperature; a later temperature rise signals the switch.|Graph pot temperature across water depletion.|zojirushi.com
+Why the pressure cooker lid resists opening|A pressure interlock prevents opening while internal pressure remains elevated.|Animate the locking pin rising.|instantpot.com
+Why steam appears beyond the kettle spout|Visible mist forms when invisible water vapour cools into tiny droplets.|Show clear vapour becoming a white cloud.|usgs.gov
+Why a tap stream looks white but clears in a glass|Entrained air bubbles scatter light and then escape from the water.|Follow bubbles rising through a filled glass.|dwi.gov.uk
+Why your shower temperature changes when another tap opens|Changing supply flows can alter the hot-cold mix in valves without pressure compensation.|Compare supply pressures at a mixing valve.|kohler.com
+Why a shower head keeps dripping after you turn it off|Water trapped in the head and hose can drain after the supply valve has closed.|Trace retained water through downward nozzles.|hansgrohe.com
+Why a sink pipe bends into a U|Retained water forms a barrier between indoor air and the drain system.|Show a water seal blocking gas arrows.|epa.gov
+Why an unused floor drain can start smelling|Evaporation can remove the trap's water seal after long disuse.|Lower the water level in a trap cutaway.|epa.gov
+Why a sink can gurgle while another fixture drains|Drainage airflow and venting affect pressure around water-filled traps.|Show air moving through a shared drain.|oatey.com
+Why a toilet refills even after the bowl looks full|The refill flow restores both the tank supply and the bowl's water seal.|Split water between tank and overflow tube.|fluidmaster.com
+Why a tap aerator needs that tiny screen|The outlet combines flow shaping and aeration, producing a coherent stream at reduced flow.|Show water crossing the aerator layers.|neoperl.com
+Why soap scum builds up faster in some bathrooms|Calcium and magnesium in hard water form poorly soluble compounds with soap.|Compare soap in hard and soft water.|usgs.gov
+Why boiled water leaves a white kettle crust|Heating hard water promotes mineral deposits on hot surfaces.|Show dissolved minerals accumulating on an element.|usgs.gov
+Why water climbs into a paper towel|Adhesion and surface tension draw water through narrow spaces between fibres.|Magnify a wetting front moving between fibres.|usgs.gov
+Why water makes a ring around a drying spill|Evaporation and outward flow can transport suspended particles to a pinned edge.|Trace particles travelling to a puddle rim.|uchicago.edu
+Why a suction hook eventually falls off|Air entering at the seal reduces the pressure difference holding the cup against the wall.|Show a tiny leak equalising pressure.|3m.com
+Why a damp cloth can grip a jar lid better|Surface conditions change friction between the grip material and the lid.|Compare sliding forces at the contact patch.|physics.org
+Why double-sided tape feels weaker on a dusty wall|Dust prevents the adhesive from making intimate contact with the underlying surface.|Magnify adhesive contacting loose dust.|3m.com
+Why removable picture strips need a downward pull|Stretch-release adhesive reduces bonding as the strip elongates along the wall.|Animate the adhesive stretching parallel to paint.|command.com
+Why a drawer slows down without you holding it|A soft-close mechanism couples a spring pull to a damper near the end of travel.|Show a drawer engaging a damping piston.|blum.com
+Why a cupboard hinge has several adjustment screws|Different screws adjust depth, sideways position and alignment without relocating the door.|Show one screw changing one axis.|blum.com
+Why flat-pack furniture uses those rotating round locks|A cam pulls a mating bolt into tension when turned, clamping the panels together.|Cut away a cam lock turning around its bolt.|hafele.com
+Why wood drawers stick during humid weather|Wood exchanges moisture with the air and changes dimensions across its grain.|Compare dry and humid drawer clearances.|woodworks.org
+Why a wooden tabletop has slots under its screws|Slotted fixings can accommodate seasonal movement while holding the top down.|Show screws sliding within a mounting slot.|woodmagazine.com
+Why laminate floors need a gap beside the wall|Floating floors need clearance to expand without buckling against fixed boundaries.|Expand a floor toward its perimeter gap.|pergo.com
+Why glass tables sometimes have green edges|Iron impurities absorb light selectively, and the longer edge path makes the colour more visible.|Compare short and long paths through glass.|pilkington.com
+Why bathroom mirrors fog but a heated patch stays clear|A warmer surface is less likely to cool moist air below its dew point.|Move the dew-point boundary around a heated patch.|pilkington.com
+Why a cold glass gets wet without leaking|Moisture from surrounding air condenses on the chilled outer surface.|Track airborne water to the outside of glass.|usgs.gov
+Why a ceiling fan has a reverse switch|Changing airflow direction changes how room air is mixed for seasonal comfort.|Compare downward airflow with upward circulation.|energy.gov
+Why a fan cools you but does not refrigerate the room|Air movement increases heat loss from skin without removing heat from the room.|Trace skin heat into moving air.|energy.gov
+Why a dehumidifier blows warm air|After cooling air to condense moisture, it passes that air over a warm condenser.|Show cooling, drainage and reheating stages.|energystar.gov
+Why an air conditioner makes water outside|The cold indoor coil condenses humidity and sends it through a drain.|Trace droplets from coil to drain hose.|energy.gov
+Why a heat pump can warm a house in cold weather|Refrigerant can absorb heat from outdoor air even when that air feels cold.|Show low-temperature heat entering a refrigerant loop.|energy.gov
+Why a radiator is hot at one end first|Incoming hot water transfers heat progressively as it flows through the radiator.|Animate a warm-water front through channels.|danfoss.com
+Why a thermostat near the cooker gives odd results|Its local temperature measurement may not represent the occupied room.|Compare sensor temperature with room temperature.|honeywellhome.com
+Why an LED bulb can glow faintly after switch-off|Small leakage currents can charge or power some LED drivers even with nominal switching off.|Draw a tiny current feeding a driver capacitor.|philips-hue.com
+Why a dimmable bulb can flicker on an old dimmer|The lamp driver and dimmer may have incompatible operating ranges or waveforms.|Compare chopped power with driver operation.|lutron.com
+Why a fluorescent tube takes time to reach full brightness|Lamp temperature influences mercury vapour pressure and light output.|Plot output rising as the lamp warms.|signify.com
+Why an LED bulb has fins despite being efficient|LEDs still produce heat that must be conducted away from sensitive components.|Follow heat from LED board to heatsink.|cree-led.com
+Why rechargeable batteries say 1.2 V instead of 1.5 V|Different electrochemical systems have different nominal cell voltages and discharge curves.|Overlay alkaline and NiMH voltage curves.|panasonic.com
+Why a battery charger gets warm before the battery is full|Power conversion and battery charging both dissipate some energy as heat.|Split incoming power into stored energy and heat.|energizer.com
+Why smoke alarms chirp differently from an alarm|Periodic fault or low-battery chirps communicate a different condition from the alarm pattern.|Compare labelled sound-pattern timelines.|kidde.com
+Why a photoelectric smoke alarm can react to steam|Droplets can scatter light inside an optical sensing chamber, resembling smoke particles.|Show droplets crossing an optical detector.|kidde.com
+Why an extension reel has a lower rating while wound|Coiled cable sheds resistive heat less effectively than fully unwound cable.|Compare heat escaping from a coil and straight cable.|brennenstuhl.com
+Why a plug feels secure without screws holding it in|Spring contacts apply pressure to the pins while conducting current.|Show spring contacts flexing around a pin.|legrand.com
+Why some plugs have a longer earth pin|In applicable plug designs the earth connects first and can operate socket shutters.|Animate connection order in a labelled regional plug.|electricalsafetyfirst.org.uk
+Why a retractable tape measure has a loose end hook|Hook movement compensates for its thickness in inside versus outside measurements.|Compare pushing and pulling the same hook.|stanleytools.com
+Why a tape measure blade curves across its width|The curved cross-section improves resistance to bending while extended.|Compare a flat strip with a curved strip.|stanleytools.com
+Why a spirit level bubble moves uphill|Buoyancy moves the bubble toward the highest part of a curved vial.|Tilt a vial and trace its bubble.|stabila.com
+Why a ratchet turns freely in only one direction|A pawl engages teeth on the drive stroke and slips over them on return.|Magnify a pawl crossing ratchet teeth.|tekton.com
+Why a screw goes into wood more easily after a pilot hole|The pilot hole reduces displaced material and the torque required to drive the screw.|Compare wood displacement with and without a hole.|spax.com
+Why a wall anchor expands when you tighten the screw|The screw forces the anchor against the surrounding hole to create retention.|Show expansion inside a wall cross-section.|fischer.de
+Why scissors cut badly when their blades separate|Effective cutting requires opposing edges to remain close enough to shear rather than fold material.|Compare paper between touching and gapped blades.|fiskars.com
+Why a retractable ballpoint clicks twice but stays out once|A cam mechanism alternates between latched extended and released retracted positions.|Animate the rotating cam over two presses.|uni-ball.com
+Why a mechanical pencil feeds only a tiny length per click|A chuck releases and regrips the lead during a limited feed stroke.|Cut away the clutch through one click.|pentel.com
+Why a whiteboard marker can erase another dry mark|Fresh solvent can soften compatible dried marker residue before wiping.|Show fresh solvent loosening a dry line.|edding.com
+Why pencil erasers leave little crumbs|Rubbing removes graphite while the eraser sheds material that carries particles away.|Magnify graphite embedded in eraser crumbs.|staedtler.com

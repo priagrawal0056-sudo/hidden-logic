@@ -1,0 +1,40 @@
+{
+  "checked_on": "2026-09-18",
+  "base_commit": "0ec42f4",
+  "regression_tests": {
+    "run": 133,
+    "passed": 133,
+    "failed": 0
+  },
+  "python_files_parsed": 79,
+  "release_scan_problems": [],
+  "git_diff_whitespace_errors": 0,
+  "bank_rows": 500,
+  "csv_rows": 500,
+  "reviewed_source_passages_rechecked": 200,
+  "pending_source_review": 300,
+  "editorial_holds": 2,
+  "eligible_distinct_subjects": 114,
+  "clean_checkout_bank_rebuild_identical": true,
+  "approved_voice_editor_caption_music_files_unchanged": true,
+  "legacy_bank_unchanged": true,
+  "publishing_enabled": false,
+  "pushed": false,
+  "live_new_category_pilots": "Not run locally; credentials are stored in GitHub Secrets. Prepared unpublished workflow for home, food and clothing.",
+  "complete_supported_500_topic_acceptance": false,
+  "limitations": [
+    "Mock-service tests verify control flow and recovery, not live service availability or finished artistic quality.",
+    "Literal passage checks supplement source review; they do not independently prove semantic support.",
+    "Unique IDs do not prove all 500 proposed mechanisms are semantically distinct.",
+    "External service failures and genuinely uncertain uploads can still require attention."
+  ],
+  "github_access": "Owner push permission verified using the existing Git credential helper; branch push tested with dry-run only.",
+  "fixed_review_findings": [
+    "Expired slots are blocked before insertion and no longer stop delivery to current slots; old reservations remain visible for recovery.",
+    "Cached topic reviews are invalidated by every authored input change and cannot override current holds.",
+    "Subject spacing classifies kettle, fridge, microwave and other objects before incidental title words.",
+    "Candidate slot assignment rotates categories across available publication times, with opening formats balanced separately."
+  ],
+  "approved_scope": "200 source-reviewed briefs, 198 eligible; remaining 300 deferred by owner",
+  "pending_topic_auto_review_enabled": false
+}

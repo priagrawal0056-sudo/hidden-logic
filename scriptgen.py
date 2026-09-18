@@ -1337,6 +1337,14 @@ def get_rolling_quality_threshold(default_threshold=46.0) -> float:
 def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
              rater_benchmark: str = "", variant: str = "A", strict_topic_lock: bool = False,
              publish_at: str | None = None) -> dict:
+    from credible.legacy_topics import generate as sourced_generate
+    return sourced_generate(api_key, topic)
+
+
+def _legacy_generate_archived(api_key: str, topic: str | None = None, extra_guidance: str = "",
+             rater_benchmark: str = "", variant: str = "A", strict_topic_lock: bool = False,
+             publish_at: str | None = None) -> dict:
+    """Historical prompt implementation; production uses the shared sourced writer."""
     rolling_threshold = get_rolling_quality_threshold(default_threshold=46.0)
     print(f"[scriptgen] Dynamic quality threshold (max of rolling 80th and top 25th percentile): {rolling_threshold:.1f}")
     

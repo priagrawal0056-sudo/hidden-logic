@@ -1,0 +1,45 @@
+name: Unpublished topic-bank pilots
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        category: [home, food, clothing]
+    env:
+      PYTHONUNBUFFERED: '1'
+      HL_GEMINI_API_KEY: ${{ secrets.HL_GEMINI_API_KEY }}
+      HL_PEXELS_API_KEY: ${{ secrets.HL_PEXELS_API_KEY }}
+      HL_PIXABAY_API_KEY: ${{ secrets.HL_PIXABAY_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements-credible.txt
+      - name: Install production dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          pip install -r requirements-credible.txt
+      - name: Run regression suite
+        run: python -m unittest discover -s tests -q
+      - name: Generate one unpublished episode
+        run: python -m credible.single --category "${{ matrix.category }}" --output "outputs/topic-pilot-${{ matrix.category }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: topic-pilot-${{ matrix.category }}
+          retention-days: 7
+          path: |
+            outputs/topic-pilot-${{ matrix.category }}/result.json
+            outputs/topic-pilot-${{ matrix.category }}/episodes/*/short.mp4
+            outputs/topic-pilot-${{ matrix.category }}/episodes/*/episode.json
+            outputs/topic-pilot-${{ matrix.category }}/episodes/*/contact-sheet.jpg

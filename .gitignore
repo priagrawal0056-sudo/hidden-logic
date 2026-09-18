@@ -37,6 +37,12 @@ __pycache__/
 .ruff_cache/
 .runtime/
 outputs/
+research/cache/
+research/search-results-*.json
+research/retrievals.json
+research/review-packets.json
+research/web-source-*.json
+.research_lib/
 state/credible/*.lock
 state/credible/*.tmp
 config.local.json

@@ -34,7 +34,7 @@ class YouTube:
                        '\n\nSources:\n' + sources + '\n\nHidden Logic: everyday things, explained clearly.\n#shorts')
         request = self.api.videos().insert(part='snippet,status', body={
             'snippet': {'title': episode['title'], 'description': description,
-                'tags': ['Hidden Logic', episode['pillar'], marker], 'categoryId': '27',
+                'tags': ['Hidden Logic', episode.get('category') or episode.get('pillar', 'everyday'), marker], 'categoryId': '27',
                 'defaultLanguage': 'en'},
             'status': {'privacyStatus': 'private', 'selfDeclaredMadeForKids': False}},
             media_body=MediaFileUpload(str(path), chunksize=8*1024*1024, resumable=True))
@@ -55,6 +55,9 @@ def deliver(slot, episode, folder, backend, persist):
     marker = 'hl-slot-' + slot['id']
     if slot.get('status') == 'scheduled':
         return slot
+    # Check before lookup or insert, not only after spending upload quota.
+    if parse(slot['publish_at']) <= now():
+        raise ValueError('Missed slot; preserve existing upload reservation for recovery')
     if not slot.get('video_id'):
         found = backend.find(marker)
         if found:

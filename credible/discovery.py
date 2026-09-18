@@ -38,9 +38,9 @@ def discover(catalog, cache, state_path, limit=6):
                     continue
                 candidate = {**parent, 'id': parent['id']+'-'+str(len(known)), 'url': clean,
                              'discovered_from': parent['url']}
-                known.add(clean)
                 try:
                     retrieve(candidate, cache)
+                    known.add(clean)
                     sources.append(candidate)
                 except Exception:
                     pass

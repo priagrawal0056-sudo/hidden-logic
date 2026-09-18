@@ -1,0 +1,9 @@
+home-038|The resulting outward ﬂow can carry virtually all the dispersed material to the edge.|Drying drops containing dispersed particles with a pinned contact line; not every liquid spill.
+home-046|when wood absorbs water, it swells; and when wood dries, it shrinks.|Solid wood moisture response; construction, grain direction and finish affect whether a drawer binds.
+home-047|slots allow the screws securing the solid-wood top to move within the plywood.|Solid-wood top attached to a plywood carcase as in the source; not all screw slots serve this function.
+home-048|Floors expand and shrink due to humidity and need space to move.|Floating laminate-floor installation example; required clearances follow the specific product instructions.
+home-049|as the depth of a lite increases, the greener the edge becomes|Standard clear float glass compared with low-iron glass; not all green-edged materials share this cause.
+home-051|the ice in our cold drink cooled the air and con­ densed the vapor on the outside of the glass.|Condensation on a chilled surface; distinguish this from actual leaking containers.
+home-061|there is a relationship between lamp operating temperature and output.|Low-pressure mercury lamp operation; warm-up behaviour depends on lamp and ballast design.
+home-062|Choose a material that has good thermal conductivity to spread heat away from the LEDs.|LED thermal-management design; efficiency does not mean zero waste heat.
+home-070|not have to worry about compensating for hook thickness|Stanley Tru-Zero sliding end-hook design; a different hook design may have different tolerances.

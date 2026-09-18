@@ -1,0 +1,40 @@
+Why a pending card payment can differ from the final bill|An authorization reserves an amount before the merchant submits the final transaction.|Show authorization and settlement as separate stages.|visa.com
+Why a refunded payment takes longer than a purchase notification|Refund processing follows a separate chain from the instant authorization response.|Trace refund instructions through merchant and issuer.|stripe.com
+Why tapping a phone can show different card digits on a receipt|Tokenized payments can use a device-specific payment credential instead of the underlying card number.|Compare card number and device token.|emvco.com
+Why a card terminal occasionally asks for your PIN after taps|Issuer and terminal risk controls can require cardholder verification under applicable rules.|Show a verification decision without universal tap limits.|mastercard.com
+Why removing a card too soon can cancel payment|Chip communication must finish before the terminal can complete the required transaction steps.|Show the interrupted exchange between card and terminal.|emvco.com
+Why a payment terminal can work during a brief connection outage|Some configurations support limited offline processing subject to payment rules and risk controls.|Compare online authorization with a qualified offline flow.|squareup.com
+Why a contactless card can be read but still declined|Successful radio communication is separate from authorization and verification.|Separate communication success from issuer decision.|visa.com
+Why your bank app shows a different shop name from the sign outside|A transaction's statement descriptor can differ from the consumer-facing shop name.|Trace a shop name and configured statement descriptor through a payment.|stripe.com
+Why a receipt has several different transaction numbers|Different systems assign identifiers for order, terminal, authorization and reconciliation.|Trace one purchase across labelled identifiers.|stripe.com
+Why a supermarket barcode can include the item's weight|Variable-measure retail labels may encode weight or price under regional conventions.|Decode one scoped variable-measure label.|gs1.org
+Why the same product can have different barcodes in different sizes|Trade-item identifiers distinguish commercial variants such as pack size.|Compare two sizes with separate identifiers.|gs1.org
+Why a box of products has a different barcode from one item|Packaging levels can have distinct identifiers for logistics and trade.|Map item, case and pallet identifiers.|gs1.org
+Why a barcode has a final check digit|The digit helps detect certain data-entry or reading errors through a prescribed calculation.|Change one digit and show a failed check.|gs1.org
+Why a checkout can scan a barcode upside down|Readers decode supported patterns after determining orientation.|Rotate a symbol while keeping its encoded data unchanged.|zebra.com
+Why a shiny wrapper is harder to scan at some angles|Reflections and contrast can obscure the symbol from the reader.|Move glare across a barcode.|zebra.com
+Why a cash total can round off while the card total does not|Cash rounding can accommodate the available coins while electronic payments can still settle to the exact cent.|Split a labelled Canadian example into a cash total and an exact electronic total; apply rounding to the final cash total, not every item.|canada.ca
+Why loose produce needs a short number at checkout|PLU codes identify produce categories for retail handling and pricing.|Map a produce code to an item record.|ifpsglobal.com
+Why a shop weighing scale has a tiny level indicator|Tilting some portable weighing scales changes their accuracy, so a level indicator helps establish the intended operating position.|Animate a scale platform tilting beside its level indicator; label the reading as an illustrative example.|nist.gov
+Why the larger pack is not necessarily cheaper per gram|Retail prices and promotions can vary independently of package size.|Calculate unit prices for labelled illustrative packs.|gov.uk
+Why a sale label can show a previous price as well as today's|Reference-price display requirements and conventions depend on jurisdiction.|Compare a labelled regional before-and-after price display.|europa.eu
+Why digital shelf labels do not need a power cable|Low-power displays and intermittent wireless updates allow battery operation.|Show sleep periods between price updates.|ses-imagotag.com
+Why some payment cards have a notch on one edge|Tactile notches can help distinguish card types without reading the printed face.|Compare the documented notch shapes on example cards.|mastercard.com
+Why supermarket scales have a customer-facing display|Legal-for-trade requirements can make weight and price information visible to the customer.|Trace weight into the displayed price calculation.|nist.gov
+Why the deli scale subtracts the container weight|A tare operation separates packaging mass from the charged product mass.|Compare gross, tare and net weight.|nist.gov
+Why a shopping basket security tag disappears at checkout|The tag may be deactivated rather than physically removed.|Show the active state changing at a deactivation pad.|sensormatic.com
+Why a clothing security tag needs a special remover|A mechanical locking mechanism retains the pin until released by the matching tool.|Show a generic locked pin without bypass instructions.|sensormatic.com
+Why supermarket trolley wheels sometimes lock at the car park edge|A boundary-control system signals a locking wheel at a designated perimeter.|Trace a trolley crossing a marked control boundary.|gatekeepersystems.com
+Why some shops use a coin slot on trolley handles|A returnable deposit mechanism links trolley release to another trolley's connector.|Show the coin returned when the chain reconnects.|wanzl.com
+Why vending machines drop a spiral instead of pushing the snack|A rotating helix advances the selected item toward the edge.|Rotate one coil and track a snack.|evoca.com
+Why a vending machine can detect whether anything fell|Delivery sensors can check the product path before confirming a vend.|Show an item crossing a delivery sensor.|cranepi.com
+Why a bottle-return machine rejects a crushed bottle|Recognition can depend on readable identifiers and shape features under the scheme's rules.|Compare a recognized container with obscured features.|tomra.com
+Why parcel lockers send a new code for each delivery|Time-limited or delivery-specific credentials link access to an assigned compartment.|Map a delivery token to one locker.|quadient.com
+Why click-and-collect can say ready after payment has cleared|Payment confirmation and physical picking are different stages.|Trace an order from payment to shelf picking.|shopify.com
+Why an online basket does not always reserve the last item|Inventory reservation timing depends on the store platform and checkout configuration.|Show two baskets competing before stock reservation.|shopify.com
+Why a delivery date changes after you enter your address|Fulfilment location, service availability and transit estimates depend on destination.|Compare two address-specific delivery paths.|ups.com
+Why a parcel can be scanned without changing cities|Tracking events include processing stages within the same facility.|Move a parcel between sorting stages at one hub.|dhl.com
+Why tracking can say label created before the courier has the parcel|Electronic shipment data can arrive before physical handover.|Separate label transmission from collection.|ups.com
+Why stores scan returns even when they refund by receipt|Returns processing can update stock, eligibility and transaction records separately.|Trace one return across payment and inventory systems.|shopify.com
+Why self-service kiosks ask you to confirm an order you just selected|A confirmation stage separates editing from committing the transaction.|Show editable choices becoming a submitted order.|ncrvoyix.com
+Why contactless travel fares can appear later as one charge|Some transit systems aggregate taps before calculating and charging the fare.|Group a day's taps into a scoped fare calculation.|tfl.gov.uk

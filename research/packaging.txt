@@ -1,0 +1,65 @@
+Why a coffee bag has a tiny round valve|A one-way valve releases gas from coffee while limiting outside air entry.|Cut away a valve opening under internal pressure.|goglio.it
+Why a crisp packet contains so much gas|A protective atmosphere can limit oxidation and cushion the contents.|Show chips inside a gas-filled package.|airproducts.com
+Why drink cartons have layers you cannot see|Different layers provide structure, sealing and barriers to light or gases.|Peel apart a carton cross-section.|tetrapak.com
+Why a juice carton can fold flat along specific lines|Creases guide controlled folding in laminated paperboard.|Animate a blank folding along scored hinges.|tetrapak.com
+Why carton caps sometimes stay attached after opening|Tethered closures keep the cap connected through a designed hinge or strap.|Show a closure rotating around its tether.|tetrapak.com
+Why a bottle cap leaves a ring on the neck|Frangible bridges break while the retention ring stays below a neck feature.|Cut away the ring during first opening.|bericap.com
+Why a bottle cap clicks before it finally comes off|Thread and tamper-band features can release in stages depending on closure design.|Show the threads and bridges during unscrewing.|bericap.com
+Why a sauce bottle can dispense through a slit without dripping|An elastomer valve opens under pressure and closes when the pressure is removed.|Animate a slit valve flexing open.|aptar.com
+Why some pump bottles refuse to work on the first press|The pump must prime by moving air out and liquid into its chamber.|Trace the first few pump strokes.|aptar.com
+Why a lotion pump delivers a similar amount each time|A metering chamber displaces a limited volume per completed stroke.|Fill and empty a labelled pump chamber.|aptar.com
+Why an airless cream bottle has a moving base|A piston follows the product upward without requiring air to replace it inside the product chamber.|Raise the piston as the pump dispenses.|aptar.com
+Why a spray bottle stops working when tilted too far|The dip-tube inlet can move above the liquid unless the design accommodates other orientations.|Tilt the liquid surface away from the tube.|silgan-dispensing.com
+Why a trigger spray has two one-way valves|Separate valves coordinate intake and discharge during the pump cycle.|Colour the intake and discharge strokes.|silgan-dispensing.com
+Why aerosol cans keep spraying after a quick shake|A propellant maintains pressure that drives product through the valve.|Show liquid and propellant phases inside a can.|crowncork.com
+Why a spray nozzle makes a mist instead of a stream|Nozzle geometry breaks moving liquid into small droplets.|Compare a straight jet with an atomizing outlet.|spray.com
+Why fizzy-drink bottles have feet on the bottom|A petaloid base helps a lightweight plastic bottle stand while containing pressure.|Show pressure loads through a lobed base.|sidel.com
+Why hot-filled plastic bottles have indented panels|Vacuum panels accommodate volume and pressure changes as hot contents cool.|Show panels flexing during cooling.|amcor.com
+Why some water bottles crumple when opened|Lightweight bottle structure and pressure differences can make the walls deform.|Compare wall deformation as pressure equalizes.|sidel.com
+Why glass bottles have seams down the sides|Mould joints can leave marks where manufacturing mould sections meet.|Open a bottle mould around its seam.|o-i.com
+Why bottle bottoms have tiny raised symbols|Mould identification marks support manufacturing traceability.|Trace a mould identifier back to a production cavity.|o-i.com
+Why brown bottles protect some drinks better than clear ones|Coloured glass filters parts of the light spectrum that can affect sensitive contents.|Compare transmitted light through clear and amber glass.|o-i.com
+Why a glass jar lid has a button that pops|Pressure differences deflect a vacuum-indicator panel in the closure.|Show the panel rising as the vacuum is released.|silganclosures.com
+Why a jar lid can loosen after warming it|Thermal expansion and changes at the seal can affect opening resistance.|Compare expansion of metal lid and glass neck.|ballmasonjars.com
+Why food cans have raised rings around their sides|Beads can increase wall stiffness against deformation.|Compare buckling in smooth and beaded cylinders.|crowncork.com
+Why a drinks can has a domed bottom|The formed base manages internal pressure with a lightweight structure.|Show pressure on a domed can base.|ball.com
+Why a can top has a scored outline under the tab|A controlled weak line defines where the opening panel tears.|Trace force from tab to scored panel.|crowncork.com
+Why the pull tab stays attached after opening|A stay-on-tab design retains the tab and opening panel at the can end.|Animate the rivet and hinged panel.|crowncork.com
+Why metal food cans have an inner coating|The coating separates the food from the metal and limits unwanted interactions.|Show a barrier between food and can wall.|crowncork.com
+Why a can lid is folded several times at its edge|A double seam mechanically interlocks body and end with sealing compound.|Unroll the seam layers in cross-section.|crowncork.com
+Why aluminium foil has a shiny side and a dull side|Two sheets rolled together acquire different finishes on contact and roller-facing surfaces.|Show paired foil layers passing through rollers.|reynoldsbrands.com
+Why cling film sticks better to some bowls|Material properties, contact and surface conditions affect how the film clings.|Compare smooth dry contact with a rough rim.|glad.com
+Why baking paper releases food when ordinary paper does not|A heat-suitable release coating limits sticking.|Compare dough contacting coated and uncoated paper.|reynoldsbrands.com
+Why parchment curls as soon as you cut it|The sheet retains curvature from storage on a roll.|Unroll fibres and show retained curvature.|reynoldsbrands.com
+Why corrugated cardboard is strong despite being mostly air|Fluted material separates liner sheets and increases structural stiffness efficiently.|Load a corrugated board cross-section.|fefco.org
+Why cardboard boxes fold at lines without tearing apart|Creasing locally changes the board so it bends at intended locations.|Magnify a crease under a folding panel.|holmen.com
+Why a cardboard box gets much weaker when wet|Moisture changes fibre bonding and mechanical strength.|Compare loaded dry and wet fibre networks.|fefco.org
+Why paper bags have a folded block at the bottom|The folded base creates a volume-supporting bottom from a flat paper tube.|Unfold the base into its original panels.|mondigroup.com
+Why padded envelopes have different layers inside|Cushioning structures deform to distribute impacts around the contents.|Compare a direct impact with a cushioned one.|sealedair.com
+Why bubble wrap holds air in separate pockets|Sealed cells localize cushioning and limit total loss when one pocket fails.|Burst one cell beside intact neighbours.|sealedair.com
+Why packing foam springs back after being squeezed|A cellular polymer structure deforms and then recovers within its operating range.|Compress and release a foam cell network.|basf.com
+Why moulded pulp trays fit products so closely|Wet fibres are formed and dried against shaped tooling.|Show pulp forming against a perforated mould.|huhtamaki.com
+Why egg cartons use individual cups|Compartment geometry supports and separates fragile eggs during handling.|Trace loads around two protected eggs.|huhtamaki.com
+Why vacuum packs hug some foods but not others|Air removal lets external pressure press flexible film around the product.|Remove gas and collapse a pouch around its contents.|sealedair.com
+Why meat packaging can contain a small absorbent pad|An absorbent layer captures released liquid within the pack.|Show liquid entering an absorbent core.|novipax.com
+Why some food trays have a thin film that peels cleanly|A controlled peel seal is designed to separate at a particular interface.|Trace the peel front through the seal.|amcor.com
+Why resealable pouches need a separate first-opening strip|An initial tamper-evident seal and a reusable closure perform different functions.|Open the strip then operate the reusable zipper.|mondigroup.com
+Why tear notches work only when pulled in the right direction|A notch concentrates stress to start a tear along the film structure.|Compare stress at a notch and an intact edge.|amcor.com
+Why some snack wrappers tear straight and others stretch|Film orientation, layers and tear features influence crack propagation.|Trace tears through two different film structures.|toray.com
+Why a snack wrapper looks metallic but feels like plastic|A very thin metal layer can provide barrier properties on a polymer film.|Peel a metallized film into labelled layers.|toray.com
+Why medicine blister packs make each tablet its own compartment|Individual sealed cavities limit exposure until a dose is removed.|Open one cavity while neighbouring seals remain intact.|amcor.com
+Why silica-gel packets can keep a box dry|Porous silica adsorbs water vapour from enclosed air.|Move water molecules into a pore network.|clariant.com
+Why some packages use oxygen absorbers rather than desiccants|Oxygen scavengers remove oxygen through a chemical reaction rather than simply collecting moisture.|Compare oxygen and water removal paths.|mitsubishigaschemical.com
+Why a plastic recycling triangle does not guarantee local recycling|A resin identification code describes material type rather than local collection acceptance.|Separate resin identity from collection rules.|astm.org
+Why compostable packaging does not always belong in a garden compost pile|Some certified materials require industrial composting conditions.|Compare controlled industrial conditions with a garden pile.|tuv-at.be
+Why paper cups need a lining even though they look like paper|A barrier layer limits liquid penetration through the fibre structure.|Show water stopped by an inner liner.|huhtamaki.com
+Why a takeaway lid has a second tiny hole|A vent admits air as liquid leaves, reducing pressure disruption.|Trace separate air and liquid paths.|dartcontainer.com
+Why drink lids have small raised buttons|On some lids the buttons identify drink variations for handling.|Show a marked option beside the drinking opening.|dartcontainer.com
+Why takeaway containers have steam vents|Venting allows moisture and pressure to escape rather than collecting entirely inside.|Compare condensation in vented and closed packs.|huhtamaki.com
+Why a bottle label can shrink tightly around awkward curves|Heat-shrink film contracts around the container after placement.|Heat a loose sleeve around a shaped bottle.|ccllabel.com
+Why peel-off labels leave different amounts of glue|Adhesive formulation, substrate and removal conditions determine where separation occurs.|Compare adhesive and cohesive failure paths.|averydennison.com
+Why security labels reveal a hidden pattern when removed|Layer separation transfers or reveals a tamper-evident pattern.|Peel a label to expose its internal pattern.|averydennison.com
+Why some shipping labels turn black when heated|Direct thermal coatings change colour under localized heat.|Move a printhead across a thermal label.|zebra.com
+Why a glossy package has tiny coloured squares at the edge|Print control marks help monitor colour and registration during production.|Align colour separations against control patches.|heidelberg.com
+Why sealed packets have ribbed crimped edges|Heat-sealing jaws bond compatible layers while producing the jaw's surface pattern.|Close sealing jaws on a film cross-section.|syntegon.com
+Why bags of frozen food have tiny holes on some designs|Selected venting designs allow trapped air to escape during packing and handling.|Show air leaving a specifically vented frozen-food bag.|mondigroup.com
