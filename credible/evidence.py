@@ -1,5 +1,6 @@
 """Source retrieval and bounded free-tier generation. No model-written URLs are fetched."""
 from __future__ import annotations
+import service_limits
 
 import html
 import json
@@ -143,6 +144,7 @@ class FreeModel:
         self.exhausted = False
 
     def call(self, prompt):
+        service_limits.check()
         import requests
         if not self.key or self.exhausted or self.remaining <= 0:
             raise RuntimeError('Free model unavailable; use verified reserve')
@@ -152,6 +154,7 @@ class FreeModel:
             headers={'x-goog-api-key': self.key}, timeout=75,
             json={'contents': [{'parts': [{'text': prompt}]}],
                   'generationConfig': {'temperature': .2, 'responseMimeType': 'application/json'}})
+        service_limits.observe(response.status_code)
         if response.status_code in (401,403,429):
             self.exhausted = True
         if not response.ok:
@@ -253,8 +256,12 @@ def generate_episode(model, documents, history, arm, topic=None):
     for attempt in range(2):
         data = model.call(prompt + feedback)
         try:
-            if topic is not None and any(data.get(k) != topic[k] for k in ('topic_id','claim_id','subject','category')):
-                raise ValueError('Writer changed selected topic identity')
+            if topic is not None:
+                for key in ('topic_id','claim_id','subject','category'):
+                    if key in data and data[key] != topic[key]:
+                        raise ValueError('Writer changed selected topic identity: ' + key)
+                    # These are bank-owned metadata, not generated factual claims.
+                    data[key] = topic[key]
             if topic is not None:
                 from .topics import LEGACY_PILLARS
                 data['pillar'] = LEGACY_PILLARS[topic['category']]

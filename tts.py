@@ -9,6 +9,7 @@ Robustness:
     edge-tts versions/voices), word timings are ESTIMATED from the real audio
     duration, weighted by word length, so captions still sync well
 """
+import service_limits
 import asyncio
 import json
 import os
@@ -509,9 +510,11 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
     }
     model = _TTS_CFG.get("gemini_tts_model", "gemini-3.1-flash-tts-preview")
     for narration_attempt in range(2):
+        service_limits.check()
         try:
             r = requests.post(GEMINI_TTS_URL.format(model=model, key=api_key),
                               json=body, timeout=120)
+            service_limits.observe(r.status_code)
             if r.status_code in (401, 403, 429):
                 print(f"[tts] Gemini narration unavailable (HTTP {r.status_code}); stopping without changing voices.")
                 return None
@@ -520,6 +523,8 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
             r.raise_for_status()
             part = r.json()["candidates"][0]["content"]["parts"][0]
             pcm = base64.b64decode(part["inlineData"]["data"])
+        except service_limits.ServiceUnavailable:
+            raise
         except Exception:
             continue
         raw = mp3_path + ".pcm"

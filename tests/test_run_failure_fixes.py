@@ -49,3 +49,46 @@ class RunFailureTests(unittest.TestCase):
         for bad in ([{'word':'end.','start':1,'end':1}],
                     [{'word':'DNS','start':1,'end':1},{'word':'finds','start':2,'end':2.6}]):
             with self.assertRaises(ValueError):tts._coalesce_measured_words(bad)
+
+    def test_axis_aligned_arrows_keep_safe_endpoint_checks(self):
+        from credible.authored_boards import board
+        from credible.storyboard import validate_storyboard
+        for box in ([100,300,100,0],[200,300,-100,0],[100,300,0,100]):
+            plan=board('barcode')
+            plan[0]['objects'].append({'type':'arrow','box':box,'color':'accent'})
+            self.assertTrue(validate_storyboard(plan))
+        for box in ([100,300,-100,0],[100,300,0,0],[100,300,0,-200]):
+            plan=board('barcode')
+            plan[0]['objects'].append({'type':'arrow','box':box,'color':'accent'})
+            with self.assertRaises(ValueError):validate_storyboard(plan)
+
+    def test_quota_failure_stops_other_gemini_consumers_in_same_run(self):
+        import service_limits
+        import footage_review
+        from credible.evidence import FreeModel
+        response=Mock(status_code=429)
+        with service_limits.session(), patch('requests.post',return_value=response) as post:
+            with self.assertRaises(service_limits.ServiceUnavailable):
+                tts._try_gemini_tts('Hello.','unused.mp3','unused.json','key')
+            model=FreeModel({'model':'gemini-2.5-flash','max_model_calls':5})
+            with self.assertRaises(service_limits.ServiceUnavailable):model.call('draft')
+            with self.assertRaises(service_limits.ServiceUnavailable):
+                footage_review.assess('unused.mp4',2,'Hello.',[],'key')
+            self.assertEqual(post.call_count,1)
+        self.assertFalse(service_limits.blocked())
+        with service_limits.session():self.assertFalse(service_limits.blocked())
+
+    def test_reserve_failures_have_a_per_run_attempt_limit(self):
+        import service_limits
+        from credible.pipeline import seed_reserve, RECIPES
+        from pathlib import Path
+        catalog=[{'id':r[0],'url':'https://example.org/'+r[0]} for r in RECIPES]
+        docs={s['url']:{} for s in catalog};errors=[]
+        with service_limits.session(), patch('credible.pipeline.build_recipe',return_value={'id':'test'}), \
+             patch('credible.pipeline.history',return_value=[]), patch('credible.pipeline.duplicate',return_value=None), \
+             patch('credible.pipeline.verify_support'), patch('credible.pipeline.prepare',side_effect=RuntimeError('unavailable')) as prepare:
+            # Evidence validation receives a real key even in this isolated fixture.
+            with patch('credible.pipeline.build_recipe',return_value={'id':'test','evidence':[]}):
+                seed_reserve(Path('.'),{'production_version':4,'reserve_build_attempts_per_run':2},docs,catalog,{},[],errors,9)
+            self.assertEqual(prepare.call_count,2)
+            self.assertEqual(len(errors),2)

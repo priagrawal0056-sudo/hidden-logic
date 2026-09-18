@@ -1,4 +1,5 @@
 """One command from sourced Gemini draft to an unpublished measured Short."""
+import service_limits
 import argparse
 from pathlib import Path
 from config_loader import load_config
@@ -9,6 +10,7 @@ from .topics import CATEGORY_COUNTS, load_bank, shortlist, sources_for
 from .quality import script_checks
 
 
+@service_limits.session()
 def build(pillar, root, topic_id=None):
     root=Path(root)
     config=settings()

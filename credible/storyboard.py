@@ -21,7 +21,7 @@ put each short label in its OWN empty box, no text overlap. A single line
 needs height >= size+6; two lines need >=2*(size+6). Labels cannot move.
 Give labels generous width and short text. Motion endpoints must ALSO stay
 inside the safe area, including the full width and height of each object. Line/arrow box is
-start x,y plus positive delta w,h to end. Optional move [dx,dy], reveal 0..0.7,
+start x,y plus signed delta w,h to end; horizontal and vertical lines are allowed. Optional move [dx,dy], reveal 0..0.7,
 until 0.3..1 control movement/visibility relative to that narration beat.
 Use actual objects, paths or comparisons, not four generic text boxes. Draw the
 recognizable subject in scene one. Change the geometry/state meaningfully in
@@ -59,7 +59,8 @@ def validate_storyboard(plan):
             if not all(isinstance(v, (int, float)) and math.isfinite(v) for v in box + move):
                 raise ValueError('Invalid drawing coordinates')
             x, y, w, h = box
-            if w <= 0 or h <= 0:
+            is_path = kind in ('line','arrow')
+            if (not is_path and (w <= 0 or h <= 0)) or (is_path and w == 0 and h == 0 and obj.get('end', [x,y]) == [x,y]):
                 raise ValueError('Empty drawing')
             if kind in ('line','arrow'):
                 end = obj.get('end')
@@ -68,7 +69,9 @@ def validate_storyboard(plan):
                     not 38 <= end[0] <= 460 or not 210 <= end[1] <= 680):
                     raise ValueError('Invalid path endpoint')
             for dx, dy in ([0, 0], move):
-                if x+dx < 38 or y+dy < 210 or x+w+dx > 460 or y+h+dy > 680:
+                ex, ey = obj.get('end', [x+w, y+h]) if is_path else (x+w, y+h)
+                if not (38 <= min(x,ex)+dx <= max(x,ex)+dx <= 460 and
+                        210 <= min(y,ey)+dy <= max(y,ey)+dy <= 680):
                     raise ValueError('Drawing outside safe area')
             path = obj.get('motion_path', [])
             if path:

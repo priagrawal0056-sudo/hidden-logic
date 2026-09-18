@@ -7,6 +7,7 @@ Generates a Short script via the free Gemini API, with:
     b-roll keywords (for relevant backgrounds) and emphasis words (for captions)
 Free key: https://aistudio.google.com/apikey
 """
+import service_limits
 import json
 import os
 import random
@@ -993,6 +994,7 @@ class _GeminiQuotaExhausted(RuntimeError):
 
 
 def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bool = False) -> dict:
+    service_limits.check()
     import time
     body = {
         "contents": [{"parts": [{"text": prompt}]}],
@@ -1013,8 +1015,10 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
         # down; everything below keeps the fast 2-attempt behavior.
         _max_tries = 3 if _model_idx < 2 else 2
         for attempt in range(_max_tries):
+            service_limits.check()
             try:
                 r = requests.post(GEMINI_URL.format(model=model, key=api_key), json=body, timeout=90)
+                service_limits.observe(r.status_code)
                 if r.status_code == 404:
                     _dead_models.add(model)
                     break  # model retired, try next model
@@ -1139,6 +1143,8 @@ def _call(api_key: str, prompt: str, temperature: float, allow_search: bool = Fa
 
     try:
         return _call_gemini(api_key, prompt, temperature, allow_search=allow_search)
+    except service_limits.ServiceUnavailable:
+        raise
     except _GeminiQuotaExhausted as e:
         # PER-MINUTE throttle: Gemini is supposed to be back in ~60s, so the FIRST time we hit
         # it we wait one minute and retry on fast Gemini (cheaper than the slow CLI). But if

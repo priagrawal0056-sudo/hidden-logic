@@ -1,4 +1,5 @@
 from __future__ import annotations
+import service_limits
 
 import argparse
 import copy
@@ -115,7 +116,10 @@ def history(state, reserve):
 
 def seed_reserve(root, config, docs, catalog, state, reserve, errors, limit=9):
     sources = {s['id']: s for s in catalog}
+    attempts = 0
     for recipe in RECIPES:
+        if service_limits.blocked() or attempts >= config.get('reserve_build_attempts_per_run', 3):
+            break
         if len([r for r in reserve if r.get('status') == 'ready']) >= limit:
             break
         source = sources[recipe[0]]
@@ -126,6 +130,7 @@ def seed_reserve(root, config, docs, catalog, state, reserve, errors, limit=9):
             if duplicate(episode, history(state, reserve)):
                 continue
             verify_support(episode['evidence'], docs)
+            attempts += 1
             episode = prepare(episode, root, config)
             reserve.append(episode)
             save(root / 'reserve.json', reserve)
@@ -135,6 +140,7 @@ def seed_reserve(root, config, docs, catalog, state, reserve, errors, limit=9):
             print('Reserve unavailable:', recipe[0], type(exc).__name__, flush=True)
 
 
+@service_limits.session()
 def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/credible')):
     config = settings()
     if mode == 'publish':
@@ -237,7 +243,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                 release_topic(topic_ledger, topic['topic_id'], type(exc).__name__)
                 save(state_dir/'production.json', state)
                 errors.append({'brief': i, 'error': str(exc)[:160]})
-                if not model.key or model.exhausted:
+                if not model.key or model.exhausted or service_limits.blocked():
                     break
         # Same-day reruns finish existing slots; they do not add another day's quota.
         needed = sum(s['id'] not in state['slots'] for s in plan_slots)

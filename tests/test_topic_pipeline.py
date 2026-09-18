@@ -42,6 +42,15 @@ class GroundedTopicPipelineTests(unittest.TestCase):
         self.assertIn('SELECTED TOPIC BRIEF',model.call.call_args_list[0].args[0])
         self.assertIn('selected_topic',model.call.call_args_list[1].args[0])
 
+    def test_missing_bank_metadata_is_attached_before_semantic_review(self):
+        data,chosen,doc,verdict=self.setup_case()
+        del data['topic_id']; del data['category']
+        model=Mock();model.production_version=4;model.remaining=6;model.call.side_effect=[data,verdict]
+        ep=generate_episode(model,{doc['url']:doc},[],'question_first',topic=chosen)
+        self.assertEqual(ep['topic_id'],chosen['topic_id'])
+        self.assertEqual(ep['category'],chosen['category'])
+        self.assertEqual(model.call.call_count,2)
+
     def test_copied_id_does_not_bypass_semantic_topic_review(self):
         data,chosen,doc,verdict=self.setup_case();verdict['topic_matches']=False
         model=Mock();model.production_version=4;model.remaining=6;model.call.side_effect=[data,verdict]
