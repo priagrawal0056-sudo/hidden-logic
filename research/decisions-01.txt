@@ -1,0 +1,14 @@
+buildings-001|joints placed in concrete pavements to control ran- dom cracks|Contraction joints in concrete pavement; not expansion joints or arbitrary pavement markings.
+buildings-003|A nominal 1-inch air space is required to drain the water|Drained brick veneer construction described by the Brick Industry Association; omit dimensions from the script.
+buildings-004|Place expansion joints at the offset to allow the parallel walls to expand|Brickwork movement joints; distinguish expansion from concrete contraction joints.
+buildings-005|The system is designed to drain water out through the weep holes|Andersen window and door products with designed drainage systems.
+buildings-007|the outer pane is colder due to heat being retained inside the home|Exterior condensation under suitable weather conditions on high-performance glazing; not mist between panes.
+buildings-009|the PVB interlayer will help hold the fragments in place|Laminated safety glass; do not generalize to all safety glass.
+buildings-010|compressive stress develops in the surface, balanced by tension in the centre|Thermally toughened glass; explain stress release without suggesting deliberate breakage.
+buildings-011|they simply show areas of relatively more, or less, tempering stress|Quench patterns visible with polarized light in heat-treated glass.
+buildings-012|it attracts water and causes it to "sheet" on the surface of the glass|Pilkington Activ coating; cleaning depends on light, rain and type of dirt, not zero maintenance.
+buildings-013|Revolving doors create enclosed compartments|Revolving-door compartment design; say reduces exchange, not an airtight seal.
+buildings-014|Air curtains effectively create a barrier between indoor and outdoor temperature conditions|Properly selected and installed air curtains; performance depends on wind and installation.
+buildings-015|the self-closing feature returns the door to the closed position|Self-closing fire doors; do not present an NFPA proposal as a newly binding rule.
+buildings-016|should a fire alarm sound, the device will automatically release|ASSA ABLOY acoustic hold-open releases; distinguish these from all fire-door systems.
+buildings-017|The latch speed valve controls the latch speed of the door|Adjustable hydraulic closers; speed can increase or decrease near the latch depending on settings.

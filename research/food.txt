@@ -1,0 +1,65 @@
+Why reheated bread goes hard again so quickly|Starch retrogradation changes bread texture and reheating only temporarily reverses part of it.|Compare starch structure before and after reheating.|kingarthurbaking.com
+Why bread turns brown but its centre stays pale|Surface drying permits higher temperatures and browning reactions than the moist interior.|Show crust and crumb temperature zones.|kingarthurbaking.com
+Why bread dough springs back when you stretch it|A developed gluten network gives dough elasticity.|Stretch and release a labelled gluten network.|kingarthurbaking.com
+Why bakers slash bread before it enters the oven|Cuts create controlled expansion points during oven spring.|Compare expansion through a score and a random tear.|kingarthurbaking.com
+Why steaming an oven changes a loaf's crust|Early steam delays surface setting and affects crust formation.|Compare expanding loaves with dry and moist surfaces.|kingarthurbaking.com
+Why bread has different-sized holes inside|Gas production and the dough's gas-holding structure shape the crumb.|Inflate bubbles in differently developed dough networks.|kingarthurbaking.com
+Why stale biscuits soften while bread firms up|Moisture exchange affects dry crisp foods differently from starch-rich soft bread.|Track moisture entering a biscuit and starch changing in bread.|csiro.au
+Why crackers have neat rows of holes|Docking gives gas escape paths and limits large blisters during baking.|Compare docked and undocked dough sheets.|bakerperkins.com
+Why puff pastry has so many thin layers|Separated dough and fat layers allow steam-driven lifting during baking.|Expand a laminated dough cross-section.|kingarthurbaking.com
+Why pancake bubbles remain as tiny holes|Gas bubbles rise and set as the batter structure cooks.|Follow one bubble through setting batter.|kingarthurbaking.com
+Why cake sinks after looking tall in the oven|An insufficiently set structure can collapse when expanding gas cools or escapes.|Compare supported and unset bubble walls.|kingarthurbaking.com
+Why mixing muffin batter too much makes it tougher|More mixing can develop additional gluten structure in wheat batter.|Compare lightly mixed and strongly developed networks.|kingarthurbaking.com
+Why melted butter changes cookie spread|Fat state influences dough structure and how it flows before setting.|Compare two dough discs heating side by side.|kingarthurbaking.com
+Why brown sugar turns into a hard block|Loss of moisture can let the sugar crystals bind together.|Show moist coatings drying between crystals.|dominosugar.com
+Why honey becomes grainy without being spoiled|Glucose can crystallize out of honey depending on composition and conditions.|Grow crystals within a honey jar.|honey.com
+Why a small sugar crystal can spoil smooth caramel|Seed crystals can trigger further crystallization in a supersaturated sugar solution.|Show crystallization spreading from one seed.|exploratorium.edu
+Why some sweets stretch while others snap|Water content and sugar structure affect whether a confection is glassy, chewy or crystalline.|Compare three sugar structures under pulling.|exploratorium.edu
+Why chocolate sometimes develops a pale dusty surface|Fat or sugar bloom alters the surface without necessarily indicating mould.|Compare fat bloom and sugar bloom cross-sections.|callebaut.com
+Why tempered chocolate snaps more cleanly|Controlled cocoa-butter crystallization affects firmness and appearance.|Compare organized crystals with an unstable mix.|callebaut.com
+Why chocolate can thicken suddenly after a little water|A small amount of water can bind dispersed sugar particles into clumps.|Show particles aggregating around limited water.|callebaut.com
+Why ice cream becomes icy after melting and refreezing|Melting and refreezing allow larger ice crystals to form.|Compare fine crystals with enlarged refrozen crystals.|icecream.org
+Why soft-serve looks bigger than its liquid mix|Incorporated air increases volume and changes texture.|Show air cells within a frozen mix.|tetrapak.com
+Why ice cubes stick together in the freezer|Surface melting, moisture deposition and refreezing can form ice bridges.|Grow a bridge between two touching cubes.|whirlpool.com
+Why boiled eggs can have a green ring around the yolk|Sulfur and iron compounds react at the yolk boundary under certain cooking conditions.|Show the reaction at the white-yolk interface.|ask.usda.gov
+Why an egg white changes from clear to opaque|Heating changes protein structure and forms a light-scattering network.|Compare dispersed proteins with an aggregated network.|exploratorium.edu
+Why egg whites expand when you whisk them|Proteins help stabilize air bubbles introduced by beating.|Wrap proteins around newly added bubbles.|exploratorium.edu
+Why a little yolk can stop egg whites whipping well|Fat can interfere with the protein films stabilizing the foam.|Show fat disrupting a bubble film.|exploratorium.edu
+Why mayonnaise holds oil and water together|Emulsifying components and fine droplets stabilize a dispersed oil phase.|Magnify coated droplets in mayonnaise.|exploratorium.edu
+Why custard thickens before it becomes scrambled eggs|Heating creates a protein network; excessive aggregation changes the texture further.|Show gradual network formation and clumping.|exploratorium.edu
+Why warm milk forms a skin|Surface evaporation and protein-fat concentration create a film.|Build a concentrated film at the milk surface.|dairy.com.au
+Why milk can foam differently after changing brands|Protein, fat and processing affect foam formation and stability.|Compare bubble films with different milk compositions.|dairy.com.au
+Why UHT milk can sit on a shelf unopened|Heat treatment and aseptic packaging jointly prevent recontamination before opening.|Trace sterilized product into sterile packaging.|tetrapak.com
+Why cheese stretches when some other cheese just melts|Protein structure, moisture and acidity affect how the heated cheese flows.|Pull two differently structured protein networks.|dairy.com.au
+Why grated cheese sometimes refuses to melt smoothly|Added anti-caking ingredients and cheese composition can change melting behaviour.|Compare freshly grated cheese with coated shreds.|dairy.com.au
+Why yoghurt releases clear liquid on top|The protein gel can expel whey through syneresis.|Show liquid leaving a contracting gel.|dairy.com.au
+Why coffee grounds swell and bubble when first wetted|Hot water releases trapped gas from roasted coffee.|Trace gas escaping from a wetted coffee particle.|sca.coffee
+Why espresso has a foam layer that fades|Gas released during brewing forms bubbles stabilized by coffee components.|Show bubbles emerging as pressure falls.|illy.com
+Why tea makes a film on some cups|Tea compounds interact with hard-water constituents at the surface.|Compare the surface in soft and hard water.|ethz.ch
+Why cold water extracts tea more slowly|Temperature affects diffusion and the rates at which compounds enter the water.|Compare concentration fronts at two temperatures.|rsc.org
+Why sparkling drinks foam more in a scratched glass|Surface imperfections can provide nucleation sites for gas bubbles.|Zoom into bubbles growing at a scratch.|acs.org
+Why shaking a fizzy bottle matters when you open it|Shaking disperses gas bubbles that expand and drive foaming when pressure drops.|Compare bubble distribution before opening.|acs.org
+Why beer foam clings to the side of a glass|Foam-active compounds and surface wetting influence the residue left as foam recedes.|Track a receding foam line along glass.|carlsberg.com
+Why cut apples brown only where you exposed the flesh|Cutting brings enzymes and substrates into contact with oxygen.|Show reactions confined to exposed tissue.|ucdavis.edu
+Why sliced onions release an eye-irritating gas|Cell damage brings compounds and enzymes together that generate volatile irritants.|Compare intact and cut onion cells.|acs.org
+Why garlic smells stronger after crushing|Crushing mixes previously separated cellular components that form aroma compounds.|Break compartments inside a garlic cell.|acs.org
+Why cooked cabbage can smell stronger after longer cooking|Heat changes sulfur-containing compounds and their release.|Trace volatile compounds leaving heated cabbage.|extension.umn.edu
+Why carrots soften when cooked but potatoes change differently|Cell-wall changes and starch behaviour contribute differently to vegetable texture.|Compare cell walls and starch granules.|exploratorium.edu
+Why pasta water turns cloudy|Surface starch is released into the cooking water.|Show starch moving from pasta to water.|barilla.com
+Why a sauce thickens when you add starchy pasta water|Dispersed starch and mixing can help give the liquid phase body and stabilize the sauce.|Magnify starch within a mixed sauce.|barilla.com
+Why rice becomes sticky while it cooks|Starch composition and released surface starch influence grain adhesion.|Compare contacting grains with different starch layers.|irri.org
+Why popcorn leaves a few kernels unpopped|Popping depends on suitable internal moisture and an intact pressure-containing hull.|Compare pressure build-up in three kernels.|popcorn.org
+Why toasted nuts smell different from raw nuts|Heating drives aroma-producing reactions beyond simple water removal.|Show precursors changing into volatile aromas.|almonds.com
+Why roasted potatoes brown better after their surface dries|Surface water limits temperature until enough has evaporated for stronger browning.|Compare wet and dry potato surfaces heating.|potatoesusa.com
+Why frozen vegetables release water when thawed|Ice formation can damage cellular structures and alter water retention.|Show crystals disrupting vegetable cells.|extension.umn.edu
+Why lettuce goes limp before it looks spoiled|Water loss lowers cell turgor and reduces crispness.|Compare swollen and water-depleted cells.|ucdavis.edu
+Why mushrooms shrink so much in the pan|Water loss reduces volume as the tissues cook.|Trace water leaving a mushroom cross-section.|mushroomcouncil.com
+Why meat can look brown inside its packaging|Myoglobin colour depends on its chemical state and oxygen exposure.|Compare three labelled pigment states.|fsis.usda.gov
+Why meat releases liquid while resting|Heat and structural changes alter water retention and redistribute liquid.|Show moisture paths in a cooked cross-section.|exploratorium.edu
+Why ground meat browns differently when the pan is crowded|Extra released water and limited heat input can favour steaming over surface browning.|Compare pan temperature with two load sizes.|beefitswhatsfordinner.com
+Why oil spits when wet food enters the pan|Water rapidly vaporizes beneath or among hot oil and displaces it.|Show a water droplet expanding into vapour.|acs.org
+Why a pan of oil shimmers before it smokes|Temperature-driven flow and refractive-index changes distort reflected light.|Trace rays through moving warm oil.|physics.org
+Why salt makes sliced cucumbers release water|A concentration difference drives water movement out of the tissue.|Compare water movement across cucumber cells.|exploratorium.edu
+Why dried fruit grows larger after soaking|Water enters the dehydrated tissue and rehydrates its structure.|Expand a raisin cross-section as water enters.|exploratorium.edu
+Why jam can set without becoming solid sugar|Pectin can form a water-holding network under suitable formulation conditions.|Build a pectin network around liquid.|extension.umn.edu
+Why tomato sauce sticks to some plastic containers|Oil-soluble pigments can associate with compatible plastic surfaces.|Compare pigment movement into plastic and glass surfaces.|acs.org

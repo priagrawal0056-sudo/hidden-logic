@@ -21,6 +21,7 @@ If both are set, the environment variable wins.
 """
 import json
 import os
+from pathlib import Path
 
 CONFIG_FILE = "config.json"
 
@@ -39,10 +40,16 @@ _SECRET_KEYS = set(_SECRET_ENV_MAP.values())
 
 def load_config(path: str = CONFIG_FILE) -> dict:
     """Load config.json (if present) and overlay secrets from environment variables."""
-    cfg = {}
+    root = Path(__file__).resolve().parent
+    defaults = root / 'config.cloud.json'
+    cfg = json.loads(defaults.read_text(encoding='utf-8')) if defaults.exists() else {}
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
-            cfg = json.load(f)
+            cfg.update(json.load(f))
+    # The reviewed presentation is shared by local and scheduled production.
+    profile = root / 'editorial_profile.json'
+    if profile.exists():
+        cfg.update(json.loads(profile.read_text(encoding='utf-8')))
     for env_name, cfg_key in _SECRET_ENV_MAP.items():
         val = os.environ.get(env_name)
         if val:
@@ -54,9 +61,10 @@ def redacted(cfg: dict) -> dict:
     """Return a copy safe for logging: secret values masked."""
     out = {}
     for k, v in cfg.items():
-        if k in _SECRET_KEYS and v:
-            s = str(v)
-            out[k] = (s[:4] + "..." + s[-2:]) if len(s) > 6 else "***"
+        if (k in _SECRET_KEYS or any(s in k.lower() for s in ('token','secret','api_key','webhook'))) and v:
+            out[k] = '***'
+        elif isinstance(v, dict):
+            out[k] = redacted(v)
         else:
             out[k] = v
     return out

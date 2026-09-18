@@ -1,118 +1,91 @@
 name: Hidden Logic Daily Autopilot
-
-# ───────────────────────────────────────────────────────────────────────────
-# Runs the whole pipeline on GitHub's servers, on a schedule, with no laptop.
-# After each run it COMMITS the updated state files (idea_bank, ab_log, etc.)
-# back to the repo, so the pipeline remembers what it made across runs.
-# ───────────────────────────────────────────────────────────────────────────
-
 on:
   schedule:
-    # cron is in UTC. Pick a time when you want the run to START.
-    # Example: 09:30 UTC. Find your local time -> convert to UTC.
-    # (e.g. if you want 3:00pm Singapore time = 07:00 UTC, use '0 7 * * *')
-    - cron: '0 16 * * *'
-  # also lets you trigger a run by hand from the Actions tab (great for testing)
+    - cron: '17 22 * * *'
   workflow_dispatch:
-
-# Allow the workflow to push the updated state files back to the repo.
+    inputs:
+      mode:
+        description: 'Preview, reserve bootstrap, or production publishing'
+        default: 'preview'
+        type: choice
+        options: [preview, bootstrap, publish]
 permissions:
   contents: write
-
-# Never run two pipeline jobs at once (they'd fight over the state files).
 concurrency:
-  group: daily-autopilot
+  group: hidden-logic-state
   cancel-in-progress: false
-
 jobs:
-  run-pipeline:
+  produce:
     runs-on: ubuntu-latest
-    timeout-minutes: 120   # generous; a 5-video run fits well inside this
-
+    timeout-minutes: 120
+    env:
+      PYTHONUNBUFFERED: '1'
+      HL_GEMINI_API_KEY: ${{ secrets.HL_GEMINI_API_KEY }}
+      HL_PEXELS_API_KEY: ${{ secrets.HL_PEXELS_API_KEY }}
+      HL_PIXABAY_API_KEY: ${{ secrets.HL_PIXABAY_API_KEY }}
     steps:
-      - name: Check out the repo (your code + current state files)
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          # we need write access to push state back
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Install ffmpeg (GitHub runners have it, but pin it to be safe)
+          cache: pip
+          cache-dependency-path: requirements-credible.txt
+      - name: Install free render tools
         run: |
-          # Remove third-party apt repos (Microsoft/azure-cli) that intermittently break the
-          # runner's `apt-get update` with signature errors. We don't need them - only ffmpeg.
-          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/azure-cli.list || true
-          # Don't let a partial repo failure abort the whole job.
+          sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/azure-cli.list
           sudo apt-get update || true
-          sudo apt-get install -y ffmpeg fonts-liberation
-          ffmpeg -version | head -1
-
-      - name: Install Python dependencies
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          pip install -r requirements-credible.txt
+      - name: Run focused tests
+        run: python -m unittest discover -s tests -v
+      - name: Check release files
+        run: python release_check.py
+      - uses: actions/cache/restore@v4
+        with:
+          path: outputs/credible
+          key: credible-reserve-v4-${{ github.run_id }}
+          restore-keys: credible-reserve-v4-
+      - name: Restore authoritative reserve manifest
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Restore the YouTube OAuth token from secret
-        # yt_token.pickle is binary, so we store it base64-encoded as a secret
-        # and decode it back to a file here. (Setup guide explains how to make it.)
-        run: |
-          echo "${{ secrets.YT_TOKEN_B64 }}" | base64 -d > yt_token.pickle
-          echo "token restored ($(wc -c < yt_token.pickle) bytes)"
-
-      - name: Restore client_secret.json from secret
-        run: |
-          echo '${{ secrets.CLIENT_SECRET_JSON }}' > client_secret.json
-
-      - name: Run the autopilot
+          mkdir -p outputs/credible
+          if [ -f state/credible/reserve.json ]; then cp state/credible/reserve.json outputs/credible/reserve.json; fi
+      - name: Restore YouTube credentials
+        if: inputs.mode == 'publish' || github.event_name == 'schedule'
         env:
-          # Secrets are injected as the HL_* env vars your config_loader already reads.
-          HL_GEMINI_API_KEY:        ${{ secrets.HL_GEMINI_API_KEY }}
-          HL_PEXELS_API_KEY:        ${{ secrets.HL_PEXELS_API_KEY }}
-          HL_PIXABAY_API_KEY:       ${{ secrets.HL_PIXABAY_API_KEY }}
-          HL_FOOTBALLDATA_API_KEY:  ${{ secrets.HL_FOOTBALLDATA_API_KEY }}
-          HL_ALERT_WEBHOOK_URL:     ${{ secrets.HL_ALERT_WEBHOOK_URL }}
-          PYTHONUNBUFFERED: '1'
+          TOKEN_B64: ${{ secrets.YT_TOKEN_B64 }}
+          CLIENT_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
         run: |
-          python -u autopilot.py
-
-      - name: Commit updated state files back to the repo
-        # This is the CRITICAL step: without it, the pipeline forgets everything
-        # each run (re-makes the same topics, loses its learning). We commit only
-        # the state JSONs that the run updates - never secrets or rendered videos.
-        if: always()   # commit state even if the run partially failed, so progress isn't lost
-        run: |
-          git config user.name  "hidden-logic-bot"
-          git config user.email "bot@users.noreply.github.com"
-          # Stage every state file the run may have touched. We use a broad approach:
-          # add all tracked .json / .jsonl files plus the known state files, so nothing
-          # the pipeline updates slips through a hardcoded list. Secrets and media are
-          # already excluded by .gitignore, so this is safe.
-          git add -f -- '*.json' '*.jsonl' 2>/dev/null || true
-          # also re-add anything already tracked that changed (belt and suspenders)
-          git add -u 2>/dev/null || true
-          # Never commit secrets even if somehow present:
-          git reset -q -- config.local.json client_secret.json yt_token.pickle '*.pickle' 2>/dev/null || true
-          if git diff --cached --quiet; then
-            echo "No state changes to commit (run produced no on-disk state delta)."
-          else
-            echo "State files changed this run:"
-            git diff --cached --name-only
-            git commit -m "autopilot state update $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-            # The repo may have moved (you pushed code, or a prior run committed).
-            # Rebase our state commit on top before pushing so we never lose state to
-            # a rejected push. Retry a couple of times in case of a race.
-            for i in 1 2 3; do
-              git pull --rebase --autostash origin main && git push && { echo "State pushed."; break; }
-              echo "push attempt $i failed, retrying..."
-              sleep 5
-            done
-          fi
-
-      - name: Clean up secrets from the runner (belt and suspenders)
+          python -c 'import os,base64,pathlib; pathlib.Path("yt_token.pickle").write_bytes(base64.b64decode(os.environ["TOKEN_B64"])); pathlib.Path("client_secret.json").write_text(os.environ["CLIENT_JSON"],encoding="utf-8")'
+      - name: Produce Shorts
+        env:
+          REQUESTED_MODE: ${{ inputs.mode || 'publish' }}
+        run: python -m credible.pipeline --mode "$REQUESTED_MODE"
+      - name: Persist explicit state files
+        if: always() && (inputs.mode == 'publish' || github.event_name == 'schedule')
+        run: python -m credible.state_io
+      - uses: actions/cache/save@v4
         if: always()
-        run: |
-          rm -f yt_token.pickle client_secret.json
+        with:
+          path: outputs/credible
+          key: credible-reserve-v4-${{ github.run_id }}
+      - name: Save review artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shorts-review-${{ github.run_id }}
+          retention-days: 7
+          path: |
+            outputs/credible/run-report.json
+            outputs/credible/episodes/*/contact-sheet.jpg
+            outputs/credible/episodes/*/episode.json
+            outputs/credible/episodes/*/short.mp4
+            outputs/credible/episodes/*/captions.ass
+            outputs/credible/episodes/*/edit-plan.json
+            outputs/credible/episodes/*/*.audio-quality.json
+            outputs/credible/evidence/
+            outputs/preview/
+      - name: Remove credentials
+        if: always()
+        run: rm -f yt_token.pickle client_secret.json

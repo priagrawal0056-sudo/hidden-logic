@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "videos_per_day": 3,
+  "timezone": "Asia/Singapore",
+  "publish_slots": [
+    "15:00",
+    "19:00",
+    "21:30"
+  ],
+  "upload_lead_minutes": 120,
+  "reserve_target": 9,
+  "briefs_per_day": 6,
+  "max_model_calls": 18,
+  "model": "gemini-2.5-flash",
+  "voice": "Orus",
+  "voice_rate": "+0%",
+  "production_version": 4,
+  "duration_min": 20,
+  "duration_max": 28,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "music_volume": 0.035,
+  "free_only": true,
+  "auto_replies": false,
+  "auto_revive": false,
+  "rollout_enabled": false,
+  "topic_reviews_per_run": 0
+}

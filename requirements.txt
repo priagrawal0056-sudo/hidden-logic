@@ -8,3 +8,6 @@ google-auth-oauthlib
 # "captions off-timing" problem). Installing it is what makes captions actually match the audio.
 faster-whisper
 pytrends
+Pillow>=10,<13
+imageio-ffmpeg>=0.6,<1
+tzdata

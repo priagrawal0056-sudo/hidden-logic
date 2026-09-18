@@ -1,0 +1,2027 @@
+# Hidden Logic: 500 everyday mysteries
+
+Research status is explicit. Only source-reviewed briefs can enter generation. Working explanations in pending rows are hypotheses to verify, not publishable facts.
+
+## Home and household objects
+
+- **home-001 — Why your kettle gets quieter just before it boils** (pending_review)
+  - Explanation to establish: Collapsing steam bubbles make noise below boiling; fewer collapse when surrounding water gets hot.
+  - Show: Compare bubble collapse below and at boiling.
+  - Source: [physics.org](https://physics.org/)
+- **home-002 — Why a fridge warms the kitchen while cooling your milk** (pending_review)
+  - Explanation to establish: The condenser releases the heat removed from inside plus energy used by the compressor.
+  - Show: Trace heat from milk to rear coils.
+  - Source: [energy.gov](https://www1.eere.energy.gov/buildings/appliance_standards/pdfs/refrig_finalrule_tsd.pdf)
+- **home-003 — Why a freezer door is harder to reopen immediately** (reviewed)
+  - Explanation to establish: Cooling recently admitted air reduces pressure inside a well-sealed freezer.
+  - Show: Show warm air shrinking behind the gasket.
+  - Source: [liebherr.com](https://home.liebherr.com/media/hau/brochures/commercial-use/en-le/pdf/liebherr-download-en-le-commercial-appliances-bakeries-2016_2017.pdf)
+- **home-004 — Why your dishwasher leaves plastic wetter than glass** (reviewed)
+  - Explanation to establish: Plastic stores less heat, leaving less energy to evaporate water during drying.
+  - Show: Compare cooling and droplets on two plates.
+  - Source: [bosch-home.com](https://www.bosch-home.com/za/customer-service/get-support/dishwasher-not-drying)
+- **home-005 — Why a washing machine reverses direction** (pending_review)
+  - Explanation to establish: Alternating drum rotation helps separate and redistribute laundry instead of leaving it tangled.
+  - Show: Animate towels tumbling in alternating directions.
+  - Source: [electrolux.com](https://tds.electrolux.com/others/599/376/782EN.PDF)
+- **home-006 — Why washing machines pause before a fast spin** (reviewed)
+  - Explanation to establish: An imbalance check redistributes laundry before allowing higher drum speeds.
+  - Show: Move an uneven load around a drum.
+  - Source: [samsung.com](https://www.samsung.com/ie/support/home-appliances/what-to-do-if-your-washing-machine-does-not-spin-as-expected/)
+- **home-007 — Why a front-loader can wash with so little visible water** (pending_review)
+  - Explanation to establish: The rotating drum repeatedly lifts clothes through a shallow pool rather than submerging everything.
+  - Show: Show fabric passing through the bottom pool.
+  - Source: [energystar.gov](https://www.energystar.gov/sites/default/files/2024-10/Laundry%20Partner%20Toolkit%202024.pdf)
+- **home-008 — Why the last minute on a washer takes longer** (pending_review)
+  - Explanation to establish: Sensor-controlled phases can extend the estimate to handle imbalance or excess foam.
+  - Show: Show an estimated timer waiting for balance.
+  - Source: [lg.com](https://www.lg.com/us/support/help-library/lg-washer-cycle-time-does-not-change--1337701006321)
+- **home-009 — Why your tumble dryer keeps turning after it finishes** (reviewed)
+  - Explanation to establish: Intermittent post-cycle tumbling reduces creasing while clothes wait to be removed.
+  - Show: Compare a resting fold with loosened laundry.
+  - Source: [bosch-home.com](https://www.bosch-home.com/us/owner-support/dryers/tips-and-tricks)
+- **home-010 — Why a dryer can work without blowing hot air outside** (reviewed)
+  - Explanation to establish: Heat-pump dryers recycle warm air in a closed loop instead of exhausting that air outdoors.
+  - Show: Draw two airflow loops side by side.
+  - Source: [energystar.gov](https://www.energystar.gov/sites/default/files/2024-10/ES_Laundry_Factsheet_10-23-2024.pdf)
+- **home-011 — Why a lint filter fills even with clean clothes** (pending_review)
+  - Explanation to establish: Mechanical movement releases loose textile fibres, which airflow carries to the filter.
+  - Show: Track a loose fibre from fabric to mesh.
+  - Source: [whirlpool.com](https://www.whirlpool.com/blog/washers-and-dryers/how-to-keep-clothes-from-pilling.html)
+- **home-012 — Why a vacuum changes pitch when its hose is blocked** (pending_review)
+  - Explanation to establish: A blockage changes airflow and the operating load on the motor and fan.
+  - Show: Compare open and obstructed airflow paths.
+  - Source: [dyson.com](https://media.dyson.com/downloads/UK/floorcare/Manuals/dc01_abs_manual_uk.pdf)
+- **home-013 — Why a bagless vacuum spins dust in circles** (pending_review)
+  - Explanation to establish: Cyclonic airflow separates particles from air by making the air turn sharply.
+  - Show: Trace particles leaving a curved airflow path.
+  - Source: [dyson.com](https://www.dyson.com/discover/innovation/behind-the-invention/dyson-relentless-engineerin)
+- **home-014 — Why your robot vacuum can miss a black rug** (reviewed)
+  - Explanation to establish: Some cliff-sensor systems can interpret a dark floor as a drop-off and cause the robot to back away instead of cleaning it.
+  - Show: Show a labelled illustrative sensor decision: dark surface is classified as a drop, then the robot reverses; do not depict bypassing sensors.
+  - Source: [irobot.com](https://homesupport.irobot.com/articles/en_US/Knowledge/8960)
+- **home-015 — Why induction hobs ignore some metal pans** (reviewed)
+  - Explanation to establish: Heating depends on coupling the magnetic field into compatible cookware, not simply on metal being present.
+  - Show: Compare field coupling under two pan bases.
+  - Source: [bosch-home.com](https://www.bosch-home.com/us/owner-support/get-support/what-is-induction-cookware)
+- **home-016 — Why an induction hob clicks at low power** (pending_review)
+  - Explanation to establish: Some controls regulate average heating by cycling power rather than running continuously.
+  - Show: Show short power pulses beneath a pan.
+  - Source: [samsung.com](https://image-us.samsung.com/SamsungUS/dacor/products/cooking/ranges/hipr30s/download/HIPR36S-User-Manual.pdf)
+- **home-017 — Why microwaves leave cold spots in the middle** (pending_review)
+  - Explanation to establish: The electromagnetic field and food geometry produce uneven energy absorption.
+  - Show: Move a plate through a field heat map.
+  - Source: [fda.gov](https://www.fda.gov/radiation-emitting-products/resources-you-radiation-emitting-products/microwave-ovens)
+- **home-018 — Why the microwave door has a metal mesh** (pending_review)
+  - Explanation to establish: Its small openings impede microwave transmission while allowing visible light through.
+  - Show: Compare the two wavelengths at the screen.
+  - Source: [fda.gov](https://www.fda.gov/downloads/Radiation-EmittingProducts/RadiationEmittingProductsandProcedures/HomeBusinessandEntertainment/UCM119038.pdf)
+- **home-019 — Why your kettle knows when to switch itself off** (reviewed)
+  - Explanation to establish: In a steam-operated kettle, steam travels down a channel to the control, which disconnects the heater when boiling is detected.
+  - Show: Draw a kettle cutaway with a steam path to a separate switch, then open the heater circuit when steam reaches it.
+  - Source: [strix.com](https://strix.com/docs/2022/ketl-aim-admission-document-08-08-17_e81e9e5e49.pdf)
+- **home-020 — Why your oven's heating element goes dark before cooking ends** (reviewed)
+  - Explanation to establish: An oven cycles its heating elements on and off during cooking to regulate temperature.
+  - Show: Plot temperature and heating pulses.
+  - Source: [whirlpool.com](https://producthelp.whirlpool.com/Cooking/Wall_Ovens_and_Ranges/Ranges/Oven_Concerns/Oven_Not_Working/Electric_Oven/Oven_Elements_Turning_On%2F%2FOff_-_Electric_Range)
+- **home-021 — Why an oven door has several layers of glass** (pending_review)
+  - Explanation to establish: Air spaces and multiple panes reduce heat transfer to the outer surface.
+  - Show: Draw a cutaway with heat-flow arrows.
+  - Source: [bosch-home.com](https://media3.bosch-home.com/Documents/9000175024_B.pdf)
+- **home-022 — Why toaster slots sometimes heat unevenly** (pending_review)
+  - Explanation to establish: Element layout and bread position affect radiant heat reaching each face.
+  - Show: Compare radiation paths to two slices.
+  - Source: [breville.com](https://assets.breville.com/Instruction-Booklets/USCM/BOV670_USCM_IB_I21_FA_WEB.pdf)
+- **home-023 — Why a toaster browns frozen bread without raising the lever twice** (pending_review)
+  - Explanation to establish: A defrost programme adds time for thawing before normal browning.
+  - Show: Show thawing and browning as separate stages.
+  - Source: [dualit.com](https://www.dualit.com/products/long-lite-toaster)
+- **home-024 — Why a rice cooker switches modes without a timer** (pending_review)
+  - Explanation to establish: While water remains, boiling limits pot temperature; a later temperature rise signals the switch.
+  - Show: Graph pot temperature across water depletion.
+  - Source: [zojirushi.com](https://www.zojirushi.com/blog/back-to-basics-conventional-rice-cookers/)
+- **home-025 — Why the pressure cooker lid resists opening** (reviewed)
+  - Explanation to establish: A pressure interlock prevents opening while internal pressure remains elevated.
+  - Show: Animate the locking pin rising.
+  - Source: [instantpot.com](https://instantpot.com/pages/frequently-asked-questions)
+- **home-026 — Why steam appears beyond the kettle spout** (pending_review)
+  - Explanation to establish: Visible mist forms when invisible water vapour cools into tiny droplets.
+  - Show: Show clear vapour becoming a white cloud.
+  - Source: [usgs.gov](https://www.usgs.gov/news/volcano-watch-atmospheric-nuclear-explosions-and-source-steaming-flats-water)
+- **home-027 — Why a tap stream looks white but clears in a glass** (pending_review)
+  - Explanation to establish: Entrained air bubbles scatter light and then escape from the water.
+  - Show: Follow bubbles rising through a filled glass.
+  - Source: [dwi.gov.uk](https://www.dwi.gov.uk/consumers/learn-more-about-your-water/discoloured-water/)
+- **home-028 — Why your shower temperature changes when another tap opens** (pending_review)
+  - Explanation to establish: Changing supply flows can alter the hot-cold mix in valves without pressure compensation.
+  - Show: Compare supply pressures at a mixing valve.
+  - Source: [kohler.com](https://resources.kohler.com/plumbing/mira/pdf/1493953-w2-a-mira-sport-multi-fit-installation-and-user-guide.pdf)
+- **home-029 — Why a shower head keeps dripping after you turn it off** (reviewed)
+  - Explanation to establish: Water trapped in the head and hose can drain after the supply valve has closed.
+  - Show: Trace retained water through downward nozzles.
+  - Source: [hansgrohe.com](https://assets.hansgrohe.com/mam/celum/celum_assets/16__hruh0972_pdf.pdf)
+- **home-030 — Why a sink pipe bends into a U** (pending_review)
+  - Explanation to establish: Retained water forms a barrier between indoor air and the drain system.
+  - Show: Show a water seal blocking gas arrows.
+  - Source: [epa.gov](https://www.epa.gov/system/files/documents/2025-10/route-1-washington-st-wrentham-ma-2018.pdf)
+- **home-031 — Why an unused floor drain can start smelling** (reviewed)
+  - Explanation to establish: Evaporation can remove the trap's water seal after long disuse.
+  - Show: Lower the water level in a trap cutaway.
+  - Source: [epa.gov](https://www.epa.gov/iaq-schools/controlling-pollutants-and-sources-indoor-air-quality-design-tools-schools)
+- **home-032 — Why a sink can gurgle while another fixture drains** (reviewed)
+  - Explanation to establish: Drainage airflow and venting affect pressure around water-filled traps.
+  - Show: Show air moving through a shared drain.
+  - Source: [oatey.com](https://www.oatey.com/resources/project-guides/aav-installation)
+- **home-033 — Why a toilet refills even after the bowl looks full** (pending_review)
+  - Explanation to establish: The refill flow restores both the tank supply and the bowl's water seal.
+  - Show: Split water between tank and overflow tube.
+  - Source: [fluidmaster.com](https://www.fluidmaster.com/wp-content/uploads/2016/12/404LGR_installation_instructions_english.pdf)
+- **home-034 — Why some taps make a foamy-looking stream** (reviewed)
+  - Explanation to establish: An aerating outlet mixes air into the water and shapes the flow, so the stream can feel fuller without being a solid column of water.
+  - Show: Cut away an illustrative faucet outlet and trace incoming air joining water before the shaped stream leaves.
+  - Source: [neoperl.com](https://www.neoperl.com/ca/en/aftermarket/products/faucet-aerators)
+- **home-035 — Why soap scum builds up faster in some bathrooms** (pending_review)
+  - Explanation to establish: Calcium and magnesium in hard water form poorly soluble compounds with soap.
+  - Show: Compare soap in hard and soft water.
+  - Source: [usgs.gov](https://www.usgs.gov/water-science-school/science/hardness-water)
+- **home-036 — Why boiled water leaves a white kettle crust** (pending_review)
+  - Explanation to establish: Heating hard water promotes mineral deposits on hot surfaces.
+  - Show: Show dissolved minerals accumulating on an element.
+  - Source: [usgs.gov](https://www.usgs.gov/water-science-school/science/hardness-water)
+- **home-037 — Why water climbs into a paper towel** (pending_review)
+  - Explanation to establish: Adhesion and surface tension draw water through narrow spaces between fibres.
+  - Show: Magnify a wetting front moving between fibres.
+  - Source: [usgs.gov](https://www.usgs.gov/water-science-school/science/capillary-action-and-water)
+- **home-038 — Why water makes a ring around a drying spill** (reviewed)
+  - Explanation to establish: Evaporation and outward flow can transport suspended particles to a pinned edge.
+  - Show: Trace particles travelling to a puddle rim.
+  - Source: [uchicago.edu](https://jfi.uchicago.edu/~tten/Science%20topics/Coffee.drops/Nagel.7.4.pdf)
+- **home-039 — Why a suction hook eventually falls off** (pending_review)
+  - Explanation to establish: Air entering at the seal reduces the pressure difference holding the cup against the wall.
+  - Show: Show a tiny leak equalising pressure.
+  - Source: [3m.com](https://multimedia.3m.com/mws/media/1317099O/festool-automotive-systems-user-instructions-clt-48-e-le-ec-ctm-48-e-le-ec-ctm-48-e-le-ec-ind.pdf)
+- **home-040 — Why a damp cloth can grip a jar lid better** (pending_review)
+  - Explanation to establish: Surface conditions change friction between the grip material and the lid.
+  - Show: Compare sliding forces at the contact patch.
+  - Source: [physics.org](https://physics.org/)
+- **home-041 — Why double-sided tape feels weaker on a dusty wall** (pending_review)
+  - Explanation to establish: Dust prevents the adhesive from making intimate contact with the underlying surface.
+  - Show: Magnify adhesive contacting loose dust.
+  - Source: [3m.com](https://www.3m.com/3M/en_US/bonding-and-assembly-us/resources/science-of-adhesion/surface-science-basics/)
+- **home-042 — Why removable picture strips need a downward pull** (pending_review)
+  - Explanation to establish: Stretch-release adhesive reduces bonding as the strip elongates along the wall.
+  - Show: Animate the adhesive stretching parallel to paint.
+  - Source: [command.com](https://www.command.com/3M/en_US/command/how-to-use/picture-hanging-strips/)
+- **home-043 — Why a drawer slows down without you holding it** (pending_review)
+  - Explanation to establish: A soft-close mechanism couples a spring pull to a damper near the end of travel.
+  - Show: Show a drawer engaging a damping piston.
+  - Source: [blum.com](https://www.blum.com/us/en/products/motion-technologies/servo-drive/servo-drive-pullouts/programme/)
+- **home-044 — Why a cupboard hinge has several adjustment screws** (reviewed)
+  - Explanation to establish: Different screws adjust depth, sideways position and alignment without relocating the door.
+  - Show: Show one screw changing one axis.
+  - Source: [blum.com](https://www.blum.com/us/en/company/press/press-releases-detail_62016.html)
+- **home-045 — Why flat-pack furniture uses those rotating round locks** (pending_review)
+  - Explanation to establish: A cam pulls a mating bolt into tension when turned, clamping the panels together.
+  - Show: Cut away a cam lock turning around its bolt.
+  - Source: [hafele.com](https://www.hafele.com/us/en/product/combination-cam-lock-dualaxess/P-00871561/)
+- **home-046 — Why wood drawers stick during humid weather** (reviewed)
+  - Explanation to establish: Wood exchanges moisture with the air and changes dimensions across its grain.
+  - Show: Compare dry and humid drawer clearances.
+  - Source: [woodworks.org](https://www.woodworks.org/resources/control-layer-continuity-for-mass-timber-building-enclosure-design/)
+- **home-047 — Why a wooden tabletop has slots under its screws** (reviewed)
+  - Explanation to establish: Slotted fixings can accommodate seasonal movement while holding the top down.
+  - Show: Show screws sliding within a mounting slot.
+  - Source: [woodmagazine.com](https://www.woodmagazine.com/woodworking-how-to/wood-preparation/dealing-with-wood-movement)
+- **home-048 — Why laminate floors need a gap beside the wall** (reviewed)
+  - Explanation to establish: Floating floors need clearance to expand without buckling against fixed boundaries.
+  - Show: Expand a floor toward its perimeter gap.
+  - Source: [pergo.com](https://int.pergo.com/en/frequently-asked-questions-helpcenter/laminate/installation/how-much-flooring-is-required-for-my-space)
+- **home-049 — Why glass tables sometimes have green edges** (reviewed)
+  - Explanation to establish: Iron impurities absorb light selectively, and the longer edge path makes the colour more visible.
+  - Show: Compare short and long paths through glass.
+  - Source: [pilkington.com](https://assetmanager-ws.pilkington.com/fileserver.aspx?cd=cd&cmd=get_file&ref=Usa108b)
+- **home-050 — Why bathroom mirrors fog but a heated patch stays clear** (pending_review)
+  - Explanation to establish: A warmer surface is less likely to cool moist air below its dew point.
+  - Show: Move the dew-point boundary around a heated patch.
+  - Source: [pilkington.com](https://www.pilkington.com/en/pl/o-firmie-unpublished/types-of-glass/powered-by-nsg-tec/applications/heatcomfort/radiant-panels)
+- **home-051 — Why a cold glass gets wet without leaking** (reviewed)
+  - Explanation to establish: Moisture from surrounding air condenses on the chilled outer surface.
+  - Show: Track airborne water to the outside of glass.
+  - Source: [usgs.gov](https://pubs.usgs.gov/gip/7000045/report.pdf)
+- **home-052 — Why a ceiling fan has a reverse switch** (pending_review)
+  - Explanation to establish: Changing airflow direction changes how room air is mixed for seasonal comfort.
+  - Show: Compare downward airflow with upward circulation.
+  - Source: [energy.gov](https://www.energy.gov/sites/default/files/2014/09/f18/ceiling_fans_nopr_0.pdf)
+- **home-053 — Why a fan cools you but does not refrigerate the room** (reviewed)
+  - Explanation to establish: A fan moves air across you and increases heat transfer and evaporation at the skin; it does not remove heat from the room like an air conditioner.
+  - Show: Trace heat and evaporating moisture away from a schematic skin surface; show that heat stays in the room rather than being carried outdoors.
+  - Source: [energy.gov](https://www.energy.gov/sites/prod/files/2013/11/f5/nationalbestpracticesmanual31545.pdf)
+- **home-054 — Why a dehumidifier blows warm air** (reviewed)
+  - Explanation to establish: After cooling air to condense moisture, it passes that air over a warm condenser.
+  - Show: Show cooling, drainage and reheating stages.
+  - Source: [geappliances.com](https://www.geappliances.com/content/older-pdfs/49-7222.PDF)
+- **home-055 — Why an air conditioner makes water outside** (reviewed)
+  - Explanation to establish: The cold indoor coil condenses humidity and sends it through a drain.
+  - Show: Trace droplets from coil to drain hose.
+  - Source: [energy.gov](https://www.energy.gov/cmei/femp/condensate-capture-potential-map)
+- **home-056 — Why a heat pump can warm a house in cold weather** (reviewed)
+  - Explanation to establish: An air-source heat pump uses electricity to move thermal energy from cooler outdoor air into a warmer home; cold-feeling air still contains usable heat.
+  - Show: Animate an outdoor heat exchanger, compressor and indoor exchanger transferring heat across the temperature difference; no fixed efficiency promise.
+  - Source: [energy.gov](https://www.energy.gov/articles/pump-your-savings-heat-pumps)
+- **home-057 — Why a radiator can be warmer at the top than at the bottom** (reviewed)
+  - Explanation to establish: In this radiator arrangement, hot water enters at the top, releases heat into the room and returns cooler through the system.
+  - Show: Use a cutaway of a top-inlet water radiator, moving hot water through it and returning cooler water; label this arrangement as an example.
+  - Source: [danfoss.com](https://www.danfoss.com/en-us/products/dhs/radiator-and-room-thermostats/radiator-thermostats/radiator-thermostats/)
+- **home-058 — Why a thermostat near the cooker gives odd results** (pending_review)
+  - Explanation to establish: Its local temperature measurement may not represent the occupied room.
+  - Show: Compare sensor temperature with room temperature.
+  - Source: [honeywellhome.com](https://www.honeywellhome.com/blogs/support/7-day-programmable-thermostats-1)
+- **home-059 — Why an LED bulb can glow faintly after switch-off** (pending_review)
+  - Explanation to establish: Small leakage currents can charge or power some LED drivers even with nominal switching off.
+  - Show: Draw a tiny current feeding a driver capacitor.
+  - Source: [philips-hue.com](https://www.philips-hue.com/en-us/explore-hue/faq/bulbs/why-is-my-led-bulb-flickering)
+- **home-060 — Why a dimmable bulb can flicker on an old dimmer** (pending_review)
+  - Explanation to establish: The lamp driver and dimmer may have incompatible operating ranges or waveforms.
+  - Show: Compare chopped power with driver operation.
+  - Source: [lutron.com](https://support.lutron.com/us/en/product/maestro/article/troubleshooting/Selecting-a-Maestro-LED-Dual-Dimmer)
+- **home-061 — Why a fluorescent tube takes time to reach full brightness** (reviewed)
+  - Explanation to establish: Lamp temperature influences mercury vapour pressure and light output.
+  - Show: Plot output rising as the lamp warms.
+  - Source: [signify.com](https://www.assets.signify.com/is/content/PhilipsLighting/Assets/philips-lighting/global/20200504-philips-uv-purification-application-information.pdf)
+- **home-062 — Why an LED bulb has fins despite being efficient** (reviewed)
+  - Explanation to establish: LEDs still produce heat that must be conducted away from sensitive components.
+  - Show: Follow heat from LED board to heatsink.
+  - Source: [cree-led.com](https://downloads.cree-led.com/files/da/x/XLamp-Thermal-Management.pdf)
+- **home-063 — Why rechargeable batteries say 1.2 V instead of 1.5 V** (pending_review)
+  - Explanation to establish: Different electrochemical systems have different nominal cell voltages and discharge curves.
+  - Show: Overlay alkaline and NiMH voltage curves.
+  - Source: [panasonic.com](https://www.panasonic.com/global/energy/products/battery/dry_batteries_faq.html)
+- **home-064 — Why a battery charger gets warm before the battery is full** (pending_review)
+  - Explanation to establish: Power conversion and battery charging both dissipate some energy as heat.
+  - Show: Split incoming power into stored energy and heat.
+  - Source: [energizer.com](https://data.energizer.com/pdfs/rechargeable_faq.pdf)
+- **home-065 — Why smoke alarms chirp differently from an alarm** (pending_review)
+  - Explanation to establish: Periodic fault or low-battery chirps communicate a different condition from the alarm pattern.
+  - Show: Compare labelled sound-pattern timelines.
+  - Source: [kidde.com](https://www.kidde.com/support/smoke-alarms/consistent-chirping-causes)
+- **home-066 — Why a photoelectric smoke alarm can react to steam** (pending_review)
+  - Explanation to establish: Droplets can scatter light inside an optical sensing chamber, resembling smoke particles.
+  - Show: Show droplets crossing an optical detector.
+  - Source: [kidde.com](https://www.kidde.com/support/smoke-alarms/alarm-sound-causes)
+- **home-067 — Why an extension reel has a lower rating while wound** (pending_review)
+  - Explanation to establish: Coiled cable sheds resistive heat less effectively than fully unwound cable.
+  - Show: Compare heat escaping from a coil and straight cable.
+  - Source: [brennenstuhl.com](https://service.brennenstuhl.com/hc/en-us/articles/18137868468893-Why-are-the-conductor-resistance-limits-exceeded-during-the-DGUV-test-of-our-brennenstuhl-cable-reel-or-our-extension-cable)
+- **home-068 — Why a plug feels secure without screws holding it in** (pending_review)
+  - Explanation to establish: Spring contacts apply pressure to the pins while conducting current.
+  - Show: Show spring contacts flexing around a pin.
+  - Source: [legrand.com](https://assets.legrand.com/general/mediagrp/np-ft-gt/f00277en-00.pdf)
+- **home-069 — Why some plugs have a longer earth pin** (pending_review)
+  - Explanation to establish: In applicable plug designs the earth connects first and can operate socket shutters.
+  - Show: Animate connection order in a labelled regional plug.
+  - Source: [electricalsafetyfirst.org.uk](https://www.electricalsafetyfirst.org.uk/media/uauhdlcz/plug-checker-2023-instructions-v2-1.pdf)
+- **home-070 — Why a retractable tape measure has a loose end hook** (reviewed)
+  - Explanation to establish: Hook movement compensates for its thickness in inside versus outside measurements.
+  - Show: Compare pushing and pulling the same hook.
+  - Source: [stanleytools.com](https://support.stanleytools.com/hc/en-us/articles/360012677558-Why-does-the-hook-on-my-tape-measure-move)
+- **home-071 — Why a tape measure blade curves across its width** (pending_review)
+  - Explanation to establish: The curved cross-section improves resistance to bending while extended.
+  - Show: Compare a flat strip with a curved strip.
+  - Source: [stanleytools.com](https://www.stanleytools.com/product/stht39516/stanley-tylon-16-ft-tape-measure)
+- **home-072 — Why a spirit level bubble moves uphill** (pending_review)
+  - Explanation to establish: Buoyancy moves the bubble toward the highest part of a curved vial.
+  - Show: Tilt a vial and trace its bubble.
+  - Source: [stabila.com](https://www.stabila.com/files/default/pdf/en/ols26_manual_en.pdf)
+- **home-073 — Why a ratchet turns freely in only one direction** (pending_review)
+  - Explanation to establish: A pawl engages teeth on the drive stroke and slips over them on return.
+  - Show: Magnify a pawl crossing ratchet teeth.
+  - Source: [tekton.com](https://www.tekton.com/3-4-inch-drive-x-22-inch-ratchet-srh01322)
+- **home-074 — Why a screw goes into wood more easily after a pilot hole** (pending_review)
+  - Explanation to establish: The pilot hole reduces displaced material and the torque required to drive the screw.
+  - Show: Compare wood displacement with and without a hole.
+  - Source: [spax.com](https://www.spax.com/pc-en/services-for-professionals/technical-lexicon.html)
+- **home-075 — Why a wall anchor expands when you tighten the screw** (pending_review)
+  - Explanation to establish: The screw forces the anchor against the surrounding hole to create retention.
+  - Show: Show expansion inside a wall cross-section.
+  - Source: [fischer.de](https://www.fischer.de/de-de/service/ratgeber/montagelexikon/spreizdruck)
+- **home-076 — Why scissors cut badly when their blades separate** (pending_review)
+  - Explanation to establish: Effective cutting requires opposing edges to remain close enough to shear rather than fold material.
+  - Show: Compare paper between touching and gapped blades.
+  - Source: [fiskars.com](https://www.fiskars.com/-/media/fiskars/images/legacy/support/catalogues/2019-scissors-catalogue.ashx)
+- **home-077 — Why a retractable ballpoint clicks twice but stays out once** (pending_review)
+  - Explanation to establish: A cam mechanism alternates between latched extended and released retracted positions.
+  - Show: Animate the rotating cam over two presses.
+  - Source: [uni-ball.com](https://uni-ball.com/)
+- **home-078 — Why a mechanical pencil feeds only a tiny length per click** (pending_review)
+  - Explanation to establish: A chuck releases and regrips the lead during a limited feed stroke.
+  - Show: Cut away the clutch through one click.
+  - Source: [pentel.com](https://www.pentel.com/products/orenz-1-click-mechanical-pencil)
+- **home-079 — Why a whiteboard marker can erase another dry mark** (pending_review)
+  - Explanation to establish: Fresh solvent can soften compatible dried marker residue before wiping.
+  - Show: Show fresh solvent loosening a dry line.
+  - Source: [edding.com](https://www.edding.com/products/edding-620-whiteboard-marker/)
+- **home-080 — Why pencil erasers leave little crumbs** (pending_review)
+  - Explanation to establish: Rubbing removes graphite while the eraser sheds material that carries particles away.
+  - Show: Magnify graphite embedded in eraser crumbs.
+  - Source: [staedtler.com](https://www.staedtler.com/us/en/products/pencils-and-accessories/erasers/)
+
+## Buildings and public spaces
+
+- **buildings-001 — Why pavement has deliberate cuts across it** (reviewed)
+  - Explanation to establish: Contraction joints encourage concrete shrinkage cracks to form at planned locations.
+  - Show: Compare random cracking with a weakened joint line.
+  - Source: [cement.org](https://www.cement.org/wp-content/uploads/2024/08/guide_to_fdr_with_cement_jan_2019.pdf)
+- **buildings-002 — Why bridges have gaps you can hear when driving over** (pending_review)
+  - Explanation to establish: Expansion joints accommodate thermal and structural movement between bridge sections.
+  - Show: Expand a bridge deck toward a joint.
+  - Source: [fhwa.dot.gov](https://www.fhwa.dot.gov/ENVIRONMENT/noise/noise_barriers/design_construction/design/design08.cfm)
+- **buildings-003 — Why brick walls have tiny open gaps near the bottom** (reviewed)
+  - Explanation to establish: Weep openings let water drain from a cavity behind the outer masonry.
+  - Show: Follow rainwater down a cavity to a weep.
+  - Source: [gobrick.com](https://www.gobrick.com/media/file/builder_notes_1-brick-veneer-construction.pdf)
+- **buildings-004 — Why walls sometimes have vertical soft joints** (reviewed)
+  - Explanation to establish: Movement joints allow adjacent sections to expand or contract with less cracking.
+  - Show: Compare two expanding masonry panels.
+  - Source: [gobrick.com](https://www.gobrick.com/media/file/18a-tn18a.pdf)
+- **buildings-005 — Why window frames have tiny drainage holes** (reviewed)
+  - Explanation to establish: Drainage channels route water out of the frame instead of trapping it indoors.
+  - Show: Trace water through a sill channel.
+  - Source: [andersenwindows.com](https://www.andersenwindows.com/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/files/technical-docs/care-and-maintenance/9184628.pdf)
+- **buildings-006 — Why double glazing has a metal strip around the edge** (reviewed)
+  - Explanation to establish: A spacer maintains the pane separation and can contain moisture-absorbing material.
+  - Show: Show an insulated glass edge cross-section.
+  - Source: [pilkington.com](https://www.pilkington.com/en/gbl/knowledge-hub-selection/architectural-and-technical-glass-knowledge-hub/glassary)
+- **buildings-007 — Why new windows can mist on the outside** (reviewed)
+  - Explanation to establish: Well-insulated outer panes can cool below the outdoor dew point while limiting indoor heat loss.
+  - Show: Compare temperatures across double glazing.
+  - Source: [pilkington.com](https://www.pilkington.com/en/gbl/news/articles/why-does-springtime-bring-condensation-to-windows)
+- **buildings-008 — Why some windows look slightly purple from one angle** (reviewed)
+  - Explanation to establish: Thin optical coatings alter the wavelengths reflected and transmitted.
+  - Show: Rotate a coated pane under a light beam.
+  - Source: [pilkington.com](https://www.pilkington.com/-/media/pilkington/site-content/usa/window-manufacturers/technical-bulletins/ats184optiviewdesigndetails20130104nsgformat.pdf)
+- **buildings-009 — Why broken safety glass can remain in one sheet** (reviewed)
+  - Explanation to establish: A laminated interlayer holds fractured pieces together.
+  - Show: Compare laminated glass with a separated fracture.
+  - Source: [pilkington.com](https://www.pilkington.com/en/gbl/news/articles/specifying-for-protection-safety-and-security-glass)
+- **buildings-010 — Why toughened glass breaks into many small pieces** (reviewed)
+  - Explanation to establish: The tempering process leaves a stress pattern that changes how cracks propagate.
+  - Show: Release a crack through labelled stress layers.
+  - Source: [pilkington.com](https://www.pilkington.com/en/gbl/knowledge-hub-selection/architectural-and-technical-glass-knowledge-hub/glassary)
+- **buildings-011 — Why you can see dark patterns in car glass through sunglasses** (reviewed)
+  - Explanation to establish: Polarized light reveals stress-related optical differences in some tempered glass.
+  - Show: Rotate a polarizer over a stressed pane.
+  - Source: [pilkington.com](https://www.pilkington.com/-/media/pilkington/site-content/usa/window-manufacturers/technical-bulletins/ats157quenchmarksinheattreatedglass20130114.pdf)
+- **buildings-012 — Why some glass seems to clean itself after rain** (reviewed)
+  - Explanation to establish: Certain coatings use sunlight and water spreading to help remove surface dirt.
+  - Show: Show dirt breakdown followed by a water sheet.
+  - Source: [pilkington.com](https://my.pilkington.com/en/knowledge-base/glass-technology/glass-in-buildings/glass-that-cleans-itself)
+- **buildings-013 — Why revolving doors help keep a lobby comfortable** (reviewed)
+  - Explanation to establish: Their compartments reduce direct exchange between outside and inside air.
+  - Show: Trace air exchange through two door designs.
+  - Source: [boonedam.com](https://blog.boonedam.com/en-us/revolving-doors-efficiency-convenience-and-security)
+- **buildings-014 — Why shops use a blast of air over the entrance** (reviewed)
+  - Explanation to establish: An air curtain limits exchange across an open doorway when correctly installed.
+  - Show: Draw the downward jet and side airflows.
+  - Source: [berner.com](https://berner.com/wp-content/uploads/2020/05/Berner-Air-Curtains-Energy-Savings-Occupant-Comfort-FCSI-Course.pdf)
+- **buildings-015 — Why some fire doors have a thin strip tucked into the frame** (reviewed)
+  - Explanation to establish: An intumescent strip contains material that expands in fire heat to close the working gap around a compatible door.
+  - Show: Animate a labelled cross-section in which the intumescent core expands into the gap; illustrative scale, no performance duration.
+  - Source: [lorientuk.com](https://www.lorientuk.com/files/Lorient-steel-door-sealing-solutions-brochure-compressed.pdf)
+- **buildings-016 — Why some fire doors stay open until an alarm** (reviewed)
+  - Explanation to establish: An alarm-controlled hold-open device releases the door so it can close.
+  - Show: Animate power release and door closure.
+  - Source: [assaabloy.com](https://www.assaabloy.com/uk/en/solutions/products/door-controls/acoustic-release)
+- **buildings-017 — Why a door closer speeds up near the latch** (reviewed)
+  - Explanation to establish: Separate sweep and latch adjustments control different parts of the closing motion.
+  - Show: Plot door angle against closing speed.
+  - Source: [allegion.com](https://us.allegion.com/content/dam/allegion-us-2/web-files/allegion/information-documents/Energy_Cost_Savings_Using_an_Effective_Door_Closer_111500.pdf)
+- **buildings-018 — Why a push-bar exit opens with a full hand** (pending_review)
+  - Explanation to establish: Panic hardware enables release by pressure along the bar instead of a precise grip.
+  - Show: Show the bar retracting latch points.
+  - Source: [allegion.com](https://us.allegion.com/en/resources/education/leading-the-industry/101-articles/door-hardware-101.html)
+- **buildings-019 — Why some door handles return to horizontal by themselves** (pending_review)
+  - Explanation to establish: A spring mechanism restores the lever after operation.
+  - Show: Cut away the handle spindle and return spring.
+  - Source: [hoppe.com](https://www.hoppe.com/in-en/solutions/simple-installation/hoppe-express-fix/)
+- **buildings-020 — Why door handles are often levers in public buildings** (reviewed)
+  - Explanation to establish: A lever can release a door latch without the tight grip and wrist twist of a round knob, accommodating more ways of operating the door.
+  - Show: Animate the latch retracting while highlighting rotation versus downward pressure.
+  - Source: [access-board.gov](https://www.access-board.gov/ada/guides/chapter-4-entrances-doors-and-gates/)
+- **buildings-021 — Why a threshold is sloped instead of square** (pending_review)
+  - Explanation to establish: A bevel reduces abrupt level changes for wheels and feet within applicable access limits.
+  - Show: Roll a small wheel over two thresholds.
+  - Source: [access-board.gov](https://www.access-board.gov/ada/)
+- **buildings-022 — Why accessible doors need empty space beside the handle** (reviewed)
+  - Explanation to establish: Maneuvering clearance allows approach, opening and passage without trapping the user.
+  - Show: Animate a wheelchair opening a door in plan view.
+  - Source: [access-board.gov](https://www.access-board.gov/ada/guides/chapter-4-entrances-doors-and-gates/)
+- **buildings-023 — Why ramps have flat sections between slopes** (reviewed)
+  - Explanation to establish: Level landings interrupt a ramp run with space to pause and maneuver, including changing direction without turning on the slope.
+  - Show: Move a schematic wheelchair onto a level landing, turn there, then begin the next sloping run.
+  - Source: [access-board.gov](https://www.access-board.gov/ada/guides/chapter-4-ramps-and-curb-ramps/)
+- **buildings-024 — Why ramp handrails extend past the slope** (pending_review)
+  - Explanation to establish: Extensions allow support before entering and after leaving the sloping run.
+  - Show: Track hand contact across the ramp ends.
+  - Source: [access-board.gov](https://www.access-board.gov/aba/guides/chapter-4-ramps-and-curb-ramps/)
+- **buildings-025 — Why stairs sometimes have a contrasting strip on each step** (reviewed)
+  - Explanation to establish: Contrasting nosings help make step edges visible.
+  - Show: Compare the same stair silhouette with and without a contrasting nosing; use no simulated clinical vision claims.
+  - Source: [access-board.gov](https://www.access-board.gov/prowag/supplemental.html)
+- **buildings-026 — Why some stair handrails turn back into the wall** (pending_review)
+  - Explanation to establish: Returned ends reduce catching and projecting hazards.
+  - Show: Compare an open rail end with a returned end.
+  - Source: [access-board.gov](https://www.access-board.gov/ada/guides/chapter-5-stairways/)
+- **buildings-027 — Why warning paving has bumps instead of painted lines** (pending_review)
+  - Explanation to establish: Detectable surfaces communicate a boundary through touch as well as vision.
+  - Show: Show a cane encountering a domed warning surface.
+  - Source: [access-board.gov](https://www.access-board.gov/ada/)
+- **buildings-028 — Why tactile paving uses both ridges and dots** (reviewed)
+  - Explanation to establish: In this UK system, parallel raised bars guide the direction of travel while other tactile patterns mark hazards; the pattern and location carry information.
+  - Show: Draw travel along parallel bars, then stop at a separately labelled warning pattern; state this is a UK example.
+  - Source: [gov.uk](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1046126/guidance-on-the-use-of-tactile-paving-surfaces.pdf)
+- **buildings-029 — Why some crossing buttons have a hidden moving cone** (reviewed)
+  - Explanation to establish: At equipped crossings a small tactile cone rotates to communicate that the pedestrian signal is showing green.
+  - Show: Show a cone rotating only during the crossing phase.
+  - Source: [gov.uk](https://www.cheshireeast.gov.uk/highways_and_roads/road-safety/pedestrian-crossings.aspx)
+- **buildings-030 — Why an elevator gives different chimes for up and down** (reviewed)
+  - Explanation to establish: Distinct audible signals communicate travel direction without relying solely on sight.
+  - Show: Pair two chime patterns with direction arrows.
+  - Source: [access-board.gov](https://www.access-board.gov/aba/)
+- **buildings-031 — Why elevator buttons have raised markings beside them** (pending_review)
+  - Explanation to establish: Tactile markings and Braille allow controls to be identified by touch.
+  - Show: Trace a fingertip from label to button.
+  - Source: [access-board.gov](https://www.access-board.gov/ada/)
+- **buildings-032 — Why destination elevators ask for your floor in the lobby** (reviewed)
+  - Explanation to establish: Destination dispatch groups passengers before boarding to reduce intermediate stops.
+  - Show: Compare mixed destinations with grouped cars.
+  - Source: [kone.com](https://www.kone.com/global/en/newsroom/references/karlatornet.html)
+- **buildings-033 — Why an empty elevator can move by itself** (reviewed)
+  - Explanation to establish: Dispatch logic can reposition available cars to serve expected demand.
+  - Show: Show idle cars moving to demand zones.
+  - Source: [otis.com](https://www.otis.com/documents/d/otis-2/compass-infinity-traffic-learning-predictive-parking-factsheet)
+- **buildings-034 — Why escalator steps flatten before you step off** (pending_review)
+  - Explanation to establish: Step wheels follow tracks that bring the treads into one level at the landing.
+  - Show: Animate wheel paths under an escalator.
+  - Source: [kone.com](https://distributors.kone.com/en/Images/planning-guide-kone-escalators-and-autowalks_tcm90-19920.pdf)
+- **buildings-035 — Why escalators have comb-like teeth at the ends** (reviewed)
+  - Explanation to establish: A comb plate meshes with step grooves at the transition to the landing.
+  - Show: Magnify the step-to-landing interface.
+  - Source: [schindler.com](https://www.schindler.com/content/dam/website/us/docs/safety/schindler-owners-guide.pdf/_jcr_content/renditions/original./schindler-owners-guide.pdf)
+- **buildings-036 — Why escalators have brushes along the sides** (reviewed)
+  - Explanation to establish: Skirt brushes discourage contact near the step-side gap.
+  - Show: Show shoe clearance beside the moving step.
+  - Source: [schindler.com](https://www.schindler.com/content/dam/website/us/docs/modernization/escalator-safety-kit.pdf/_jcr_content/renditions/original./escalator-safety-kit.pdf)
+- **buildings-037 — Why moving walkways need a long flat exit** (pending_review)
+  - Explanation to establish: The landing transition lets passengers step from moving tread to fixed floor.
+  - Show: Track a foot across the comb plate.
+  - Source: [otis.com](https://www.otis.com/en/us/tools-resources/escalator-moving-walk-safety)
+- **buildings-038 — Why automatic doors sometimes ignore you when you stand still** (pending_review)
+  - Explanation to establish: Motion-based detection responds to changes, while presence sensors use other detection methods.
+  - Show: Compare motion detection with a presence zone.
+  - Source: [beasensors.com](https://asia.beasensors.com/en/blog/beyond-simple-motion-detection-next-generation-smart-intention-aware-sensors/)
+- **buildings-039 — Why a glass door can open before you reach it** (pending_review)
+  - Explanation to establish: An approach sensor detects a person within a monitored zone.
+  - Show: Draw the detection footprint ahead of the door.
+  - Source: [dormakaba.com](https://my.dormakaba.com/medias/DL0741-050-ESA500-OWN.pdf?context=bWFzdGVyfGltYWdlc3wxNTQ3Nzh8YXBwbGljYXRpb24vcGRmfGltYWdlcy9oZTMvaGI0Lzg5ODg1NzA2ODEzNzQucGRmfGZkYWFlYThjZTUwNWFhNzU5YWYyYTg4YmRkYjg1NGUyZmYyZDdiMjg4YmYzMjkxMWEwNmI0NDU2NzU0NWZjYWQ)
+- **buildings-040 — Why supermarket security gates beep for unpaid tags** (pending_review)
+  - Explanation to establish: Detection systems respond to active tags that have not been deactivated or removed.
+  - Show: Trace a tag through detection antennas.
+  - Source: [sensormatic.com](https://www.sensormatic.com/-/media/project/jci-global/retail/sensormatic/page-specific-images/resources/product-catalog/files/2020_catalog_sensormatic-_en_web.pdf)
+- **buildings-041 — Why library security tags can be switched on again** (reviewed)
+  - Explanation to establish: An RFID library tag can store a security bit that changes at checkout and check-in, allowing the same tag to be reused.
+  - Show: Compare active and inactive magnetic strips.
+  - Source: [bibliotheca.com](https://www.bibliotheca.com/rfid-in-libraries-after-conversion/)
+- **buildings-042 — Why security bollards can stop cars despite their narrow shape** (pending_review)
+  - Explanation to establish: Their foundations and energy-management design are critical to impact resistance.
+  - Show: Show force transferring into an anchored foundation.
+  - Source: [bsi.com](https://bsi.com/2026-payroll-tax-rates-updated-social-security-wage-bases-and-fica-rates/)
+- **buildings-043 — Why parking barriers have flexible breakaway arms** (pending_review)
+  - Explanation to establish: Some arms release or flex during impact to reduce damage to the barrier mechanism.
+  - Show: Animate an arm releasing at its coupling.
+  - Source: [faac.co.uk](https://www.faac.co.uk/productfiles/84_Manual_radD9129.pdf)
+- **buildings-044 — Why some street drains use slots parallel to the kerb** (pending_review)
+  - Explanation to establish: Inlet geometry balances water capture, wheel interaction and maintenance requirements.
+  - Show: Compare runoff crossing differently oriented slots.
+  - Source: [fhwa.dot.gov](https://www.fhwa.dot.gov/engineering/hydraulics/pubs/10009/10009.pdf)
+- **buildings-045 — Why manhole covers have patterned tops** (pending_review)
+  - Explanation to establish: Surface texture improves traction on a walking or driving surface.
+  - Show: Compare contact on smooth and patterned metal.
+  - Source: [ejco.com](https://www.ejco.com/content-files/emea/static-industry-ressource/BS-7903-2020.pdf)
+- **buildings-046 — Why drain covers often sit in a separate frame** (pending_review)
+  - Explanation to establish: The frame transfers loads into the surrounding structure and provides a seating surface.
+  - Show: Show load paths through cover and frame.
+  - Source: [ejco.com](https://www.ejco.com/content-files/emea/static-industry-ressource/BS-7903-2020.pdf)
+- **buildings-047 — Why streetlights look white while older ones look orange** (pending_review)
+  - Explanation to establish: Different lamp technologies produce different emission spectra.
+  - Show: Compare sodium emission with a white LED spectrum.
+  - Source: [energy.gov](https://www.energy.gov/sites/prod/files/maprod/documents/Energy_Savings_Light_Emitting_Diodes_Niche_Lighting_Apps.pdf)
+- **buildings-048 — Why some streetlights brighten only as people approach** (pending_review)
+  - Explanation to establish: Controls combine scheduling and sensing to adjust output when needed.
+  - Show: Animate a pedestrian moving through dimmed zones.
+  - Source: [signify.com](https://www.assets.signify.com/is/content/PhilipsConsumer/PDFDownloads/United%20States/spacewise/ODLI20150807_001-UPD-en_US-PLt-1482BR_SpaceWise_DesignGuide_Digital.pdf)
+- **buildings-049 — Why road signs shine back at your headlights** (reviewed)
+  - Explanation to establish: Retroreflective materials redirect much of the incident light toward its source.
+  - Show: Trace rays through a reflective element.
+  - Source: [3m.com](https://multimedia.3m.com/mws/media/2607035O/maximizing-brightness-of-retroreflective-traffic-signs-to-help-serve-the-driving-population.pdf?fn=3m-cbt-ts-maximizing-brightness-type-xi-white-paper-ada-en-us.pdf)
+- **buildings-050 — Why emergency exit signs remain visible after power fails** (pending_review)
+  - Explanation to establish: Emergency systems use backup power or qualifying photoluminescent material depending on installation.
+  - Show: Compare battery-backed and light-storing signs.
+  - Source: [nfpa.org](https://content.nfpa.org/-/media/Project/Storefront/Catalog/Files/Research/Research-Foundation/Reports/RFDynamicExitSignage.pdf?rev=672e36d2bfc4449985711dcfe0575390)
+- **buildings-051 — Why photoluminescent stair strips glow after lights go out** (pending_review)
+  - Explanation to establish: Stored excitation energy is released gradually as visible light.
+  - Show: Show charging and afterglow on a stair edge.
+  - Source: [jessupmfg.com](https://www.jessupmfg.com/blog/photoluminescent-exit-tape-the-ultimate-glow-safety-guide.html)
+- **buildings-052 — Why office ceilings are covered with tiny holes** (pending_review)
+  - Explanation to establish: Perforated or porous acoustic materials dissipate sound energy rather than reflecting it all.
+  - Show: Trace sound into an absorptive ceiling.
+  - Source: [armstrongceilings.com](https://www.armstrongceilings.com/content/dam/armstrongceilings/commercial/north-america/brochures/office-acoustics-attaining-speech-privacy-in-open-and-closed-plan-environments.pdf)
+- **buildings-053 — Why an empty room sounds more echoey** (pending_review)
+  - Explanation to establish: Removing sound-absorbing furnishings increases reflected sound persistence.
+  - Show: Compare reflection paths in furnished and bare rooms.
+  - Source: [rockfon.com](https://www.rockfon.com/en-us/our-story/articles-and-insights/2021/2021-01-29-improving-with-well/)
+- **buildings-054 — Why double doors can make a room quieter** (pending_review)
+  - Explanation to establish: Separated doors and a sealed intervening space reduce sound transmission paths.
+  - Show: Trace sound through two sealed barriers.
+  - Source: [assaabloy.com](https://www.assaabloy.com/content/assa-abloy/com/it/en/solutions/topics/door-closers/close-motion-technology)
+- **buildings-055 — Why acoustic doors need seals underneath too** (reviewed)
+  - Explanation to establish: Small air gaps can undermine the sound isolation of a heavier door.
+  - Show: Show sound bypassing a door through its bottom gap.
+  - Source: [lorientuk.com](https://www.lorientuk.com/files/resources/Brochures/Lorient-Guide-to-sealing-systems-2024_2024-10-02-095920_bgbl.pdf)
+- **buildings-056 — Why roofs often have vents along the ridge** (pending_review)
+  - Explanation to establish: Ridge and lower intake vents can support airflow through an attic space.
+  - Show: Trace intake-to-ridge airflow.
+  - Source: [owenscorning.com](https://www2.owenscorning.com/reinsulation/docs/10009802-A-TOTH-Contractor-Training-Manual.pdf)
+- **buildings-057 — Why roof tiles overlap instead of meeting edge to edge** (pending_review)
+  - Explanation to establish: Overlaps shed water over successive tiles rather than directing it into open seams.
+  - Show: Follow rain across an overlapping roof section.
+  - Source: [marley.co.uk](https://www.marley.co.uk/britishstandards/bs5534)
+- **buildings-058 — Why roofing felt goes under tiles that already stop rain** (reviewed)
+  - Explanation to establish: An underlay provides a secondary weather barrier for water passing the outer covering.
+  - Show: Trace wind-driven rain onto the underlay.
+  - Source: [marley.co.uk](https://www.marley.co.uk/-/media/files/fixing-instructions/universal-underlays-fixing-guide.ashx?hash=7120E4702664B3C90A2D75C6156E7040&rev=71b3af7a3bd54b09bc13cd468d35508c)
+- **buildings-059 — Why flat roofs are not completely flat** (pending_review)
+  - Explanation to establish: A small designed fall directs water toward drains.
+  - Show: Animate water moving along a shallow roof slope.
+  - Source: [nhbc.co.uk](https://www.nhbc.co.uk/binaries/content/assets/nhbc/tech-zone/nhbc-standards/nhbc-standards-2023---conversions-and-renovations.pdf)
+- **buildings-060 — Why gutters have a slight slope you barely notice** (pending_review)
+  - Explanation to establish: The gradient directs runoff toward outlets instead of leaving standing water.
+  - Show: Show a level line above a sloped gutter.
+  - Source: [marley.co.uk](https://cm.marley.co.uk/blog/what-are-lead-valleys-and-their-alternatives)
+- **buildings-061 — Why downpipes sometimes end above a visible drain** (pending_review)
+  - Explanation to establish: An open discharge can provide a visible flow path and separation where the drainage design permits it.
+  - Show: Trace water across a labelled drainage arrangement.
+  - Source: [marley.co.uk](https://www.marley.co.uk/accessories/modern-universal-contour-tile-vent)
+- **buildings-062 — Why a roof garden needs a barrier below the soil** (reviewed)
+  - Explanation to establish: A roof garden can include a root barrier to keep growing roots from penetrating the waterproofing membrane underneath.
+  - Show: Peel back a schematic roof garden to show roots above a root barrier and waterproof membrane; do not imply every system has a separate barrier.
+  - Source: [epa.gov](https://www.epa.gov/sites/default/files/2014-08/documents/greenroofscompendium_ch3.pdf)
+- **buildings-063 — Why building insulation is mostly trapped air** (pending_review)
+  - Explanation to establish: Restricting air movement within a low-conductivity material reduces heat transfer.
+  - Show: Compare free circulation with tiny trapped pockets.
+  - Source: [energy.gov](https://bsesc.energy.gov/problem-sets/how-insulation-works)
+- **buildings-064 — Why foil insulation needs an air gap to work as a radiant barrier** (reviewed)
+  - Explanation to establish: Its reflective surface reduces radiant exchange across a space rather than replacing all insulation.
+  - Show: Compare radiation across an air gap.
+  - Source: [energy.gov](https://bsesc.energy.gov/energy-basics/types-insulation)
+- **buildings-065 — Why wall sockets can let cold air into a room** (pending_review)
+  - Explanation to establish: Air leakage can travel through wall cavities and unsealed penetrations.
+  - Show: Trace outdoor air through a leaky wall penetration.
+  - Source: [energy.gov](https://bsesc.energy.gov/energy-basics/electrial-wiring-and-air-sealing)
+- **buildings-066 — Why the room feels colder beside a cold window** (reviewed)
+  - Explanation to establish: A cold window surface changes radiant heat exchange with your body, so comfortable room-air temperature alone does not guarantee comfort beside it.
+  - Show: Show heat radiating from a person toward glass.
+  - Source: [energy.gov](https://www1.eere.energy.gov/buildings/publications/pdfs/building_america/measure_guide_windows.pdf)
+- **buildings-067 — Why fire-alarm strobes flash together** (pending_review)
+  - Explanation to establish: Compatible notification devices use synchronization signals to coordinate their flashes.
+  - Show: Compare independent flashing with a synchronized sequence.
+  - Source: [gentex.com](https://fireprotection.gentex.com/products/gtsm-series)
+- **buildings-068 — Why hotel keycards stop working after checkout** (pending_review)
+  - Explanation to establish: Access permissions can be time-limited or superseded by newly issued credentials.
+  - Show: Show a lock comparing a credential with permitted time.
+  - Source: [assaabloy.com](https://www.assaabloy.com/cz/cs/product-assets/pristupove-systemy/tesa-hotel/tesa-hotel/assets/documents/MANUAL_TESA_SOFTWARE_TESA_HOTEL_USER_MANUAL.pdf)
+- **buildings-069 — Why some hotel rooms use a card slot for electricity** (pending_review)
+  - Explanation to establish: A presence-control system enables selected room circuits when a card or credential is detected.
+  - Show: Trace control power separately from lighting power.
+  - Source: [legrand.com](https://www.legrand.com/ecatalogue/en/catalog/products/mosaic-push-button-for-hotel-for-selecting-room-status-2-modules-white-077048)
+- **buildings-070 — Why touchless taps stop even while water is still needed** (pending_review)
+  - Explanation to establish: A timed safety shutoff can override continuous sensor detection.
+  - Show: Show presence sensing and maximum-run timer.
+  - Source: [sloan.com](https://www.sloan.com/sites/default/files/2015-12/0816302.pdf)
+- **buildings-071 — Why public hand dryers make such different sounds** (reviewed)
+  - Explanation to establish: The airflow path through a hand-dryer motor affects turbulence noise; motor mounting and foam silencers can further reduce noise.
+  - Show: Compare broad airflow with narrow high-speed jets.
+  - Source: [dyson.com](https://www.dyson.com/discover/innovation/new-machines/dyson-launches-the-airblade-9kj-hand-dryer)
+- **buildings-072 — Why a sprinkler head has a small coloured glass bulb** (pending_review)
+  - Explanation to establish: Heat expands liquid in the bulb until it breaks and releases the mechanism.
+  - Show: Show a labelled bulb releasing a valve.
+  - Source: [nfpa.org](https://www.nfpa.org/api/files?path=%2Ffiles%2FAboutTheCodes%2F13%2F13_A2021_AUT_SSI_PIResponses.pdf)
+- **buildings-073 — Why one hot sprinkler does not usually trigger every sprinkler** (reviewed)
+  - Explanation to establish: Typical home sprinkler heads respond independently to heat at their location, rather than all opening when a smoke alarm sounds.
+  - Show: Heat one head in a multi-head pipe diagram.
+  - Source: [nfpa.org](https://content.nfpa.org/-/media/project/storefront/catalog/files/fire-sprinkler-initiative/sprinkler-myths-and-facts.pdf?rev=9ffa003adce542e0965df177266424ce)
+- **buildings-074 — Why fire extinguishers have a pressure gauge but not all types do** (pending_review)
+  - Explanation to establish: Stored-pressure units can indicate pressure directly, while some other designs use different checks.
+  - Show: Compare labelled extinguisher operating designs.
+  - Source: [kidde.com](https://www.kidde.com/products/fire-extinguishers/multipurpose-fire-extinguisher-multipurpose-10-mp)
+- **buildings-075 — Why an exit stairwell door can feel unusually hard to open** (pending_review)
+  - Explanation to establish: Stair pressurization can create a pressure difference across the door.
+  - Show: Draw pressure arrows on both door faces.
+  - Source: [nfpa.org](https://www.nfpa.org/api/files?path=%2Ffiles%2FAboutTheCodes%2F92A%2F92A-A2008-ROP.pdf)
+- **buildings-076 — Why shopping-centre maps sometimes rotate your viewpoint** (pending_review)
+  - Explanation to establish: Heads-up orientation aligns the map with the direction the viewer faces.
+  - Show: Rotate a floor plan to match a person's view.
+  - Source: [seewayfinding.com](https://seewayfinding.com/)
+- **buildings-077 — Why a corridor sign is easier to read from farther away than expected** (pending_review)
+  - Explanation to establish: Letter size, contrast and viewing distance determine legibility targets.
+  - Show: Scale a sign against viewing distance.
+  - Source: [access-board.gov](https://www.access-board.gov/adaag-1991-2002.html)
+- **buildings-078 — Why the lower drinking fountain is not just for children** (reviewed)
+  - Explanation to establish: The low unit provides wheelchair access while the taller unit serves standing people, including those who have difficulty bending.
+  - Show: Compare wheelchair approach space with the height of the standing fountain, using simple silhouettes.
+  - Source: [access-board.gov](https://www.access-board.gov/ada/guides/chapter-6-drinking-fountains/)
+- **buildings-079 — Why some wall-mounted objects have a panel below them** (reviewed)
+  - Explanation to establish: A lower detectable barrier can prevent a cane user walking into a higher projection.
+  - Show: Trace cane contact before body contact.
+  - Source: [access-board.gov](https://www.access-board.gov/files/aba/guides/protruding-objects-ABA.pdf)
+- **buildings-080 — Why playground rubber feels softer than ordinary paving** (pending_review)
+  - Explanation to establish: Impact-attenuating surfaces deform to reduce the peak impact of a fall.
+  - Show: Compare deceleration over two stopping distances.
+  - Source: [cpsc.gov](https://www.cpsc.gov/Regulations-Laws--Standards/Voluntary-Standards/Playground-Surfacing)
+
+## Everyday technology
+
+- **technology-001 — Why phone videos show bands across an LED sign** (pending_review)
+  - Explanation to establish: Camera exposure timing can interact with a display's refresh or brightness modulation.
+  - Show: Slide a rolling shutter across a pulsing sign.
+  - Source: [sony.com](https://www.sony.com/electronics/support/memory-camcorders-hdr-cx-series/hdr-cx360v/articles/00008839)
+- **technology-002 — Why a spinning wheel can look as if it turns backward on video** (pending_review)
+  - Explanation to establish: Discrete frames can sample repeating spokes at misleading positions.
+  - Show: Advance spokes between labelled frame snapshots.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cycling/gears1.html)
+- **technology-003 — Why your phone camera switches lenses when you get close** (reviewed)
+  - Explanation to establish: Some phones use a different camera for macro focusing at short distances.
+  - Show: Show the active camera changing near a subject.
+  - Source: [support.apple.com](https://support.apple.com/en-sg/guide/iphone/iphfaacf2eb0/27/ios/27)
+- **technology-004 — Why portrait mode can keep your cup sharp along with your face** (reviewed)
+  - Explanation to establish: Portrait processing can combine a learned foreground mask with estimated depth, so objects classified with the person may stay sharp.
+  - Show: Overlay a labelled illustrative foreground mask on a person holding a cup, then blur the background while the mask remains sharp.
+  - Source: [research.google](https://research.google/blog/portrait-mode-on-the-pixel-2-and-pixel-2-xl-smartphones/)
+- **technology-005 — Why night-mode photos take several seconds** (reviewed)
+  - Explanation to establish: Multi-frame capture combines information across exposures to improve low-light results.
+  - Show: Stack short exposures into one final image.
+  - Source: [research.google](https://research.google/blog/night-sight-seeing-in-the-dark-on-pixel-phones/)
+- **technology-006 — Why bright lights turn into stars in some photos** (reviewed)
+  - Explanation to establish: Diffraction around the aperture shape can create rays around bright points.
+  - Show: Show aperture edges and a diffraction pattern.
+  - Source: [nikonusa.com](https://www.nikonusa.com/learn-and-explore/c/tips-and-techniques/bright-idea-adding-star-power)
+- **technology-007 — Why phone photos can look sharper after you stop moving** (pending_review)
+  - Explanation to establish: Stabilization and multi-frame processing depend on motion and available image data.
+  - Show: Compare aligned and misaligned image stacks.
+  - Source: [research.google](https://research.google/blog/fused-video-stabilization-on-the-pixel-2-and-pixel-2-xl/?hl=nl)
+- **technology-008 — Why your selfie preview and saved photo can face different ways** (reviewed)
+  - Explanation to establish: Preview mirroring and saved-image settings can use different orientations.
+  - Show: Flip a labelled letter between preview and photo.
+  - Source: [support.apple.com](https://support.apple.com/en-asia/guide/iphone/iph1b88429a6/ios)
+- **technology-009 — Why indoor white walls look orange in a camera** (reviewed)
+  - Explanation to establish: White balance must compensate for the spectrum of the light source.
+  - Show: Compare raw colour cast with corrected neutral grey.
+  - Source: [canon-europe.com](https://files.canon-europe.com/files/soft24318/manual/EOS1Ds_CUG_EN.pdf)
+- **technology-010 — Why autofocus hunts through a fence** (pending_review)
+  - Explanation to establish: The camera must choose a focus target among competing distance and contrast cues.
+  - Show: Move the focus plane between fence and subject.
+  - Source: [sony.com](https://us.community.sony.com/s/question/0D50B00004IKpeNSAT/best-settings-to-shoot-through-fencemesh?language=en_US)
+- **technology-011 — Why a television picture disappears behind some sunglasses** (pending_review)
+  - Explanation to establish: Polarized lenses can block polarized light emerging from a display.
+  - Show: Rotate sunglasses in front of a screen.
+  - Source: [sony.com](https://www.sony.com/electronics/support/television-projector-accessories-3d-glasses/tdg-br200/articles/00011139)
+- **technology-012 — Why an OLED screen can use less power with a dark image** (reviewed)
+  - Explanation to establish: Its pixels emit their own light, so darker pixels can require less emission power.
+  - Show: Show individual self-emitting pixels switching off in a black region; contrast with a labelled backlight schematic.
+  - Source: [samsungdisplay.com](https://global.samsungdisplay.com/27598)
+- **technology-013 — Why an LCD can look grey even when the picture is black** (reviewed)
+  - Explanation to establish: A backlight and imperfect light blocking can leave residual illumination.
+  - Show: Show backlight leakage through closed pixels.
+  - Source: [eizo.com](https://www.eizo.com/library/basics/oled/)
+- **technology-014 — Why one video looks brighter than the buttons around it** (reviewed)
+  - Explanation to establish: An HDR-capable display can render video highlights above standard interface white using available brightness headroom.
+  - Show: Show a phone interface and video region on a labelled illustrative brightness scale; do not pretend the SDR Short reproduces actual HDR highlights.
+  - Source: [developer.apple.com](https://developer.apple.com/videos/play/wwdc2022/10113/)
+- **technology-015 — Why a phone screen reacts to your finger but not a pencil** (pending_review)
+  - Explanation to establish: Capacitive touch sensing detects electrical changes that an ordinary dry pencil may not produce.
+  - Show: Compare capacitance changes under two contact objects.
+  - Source: [microchip.com](https://developerhelp.microchip.com/xwiki/bin/view/applications/touch/calculating-snr-guidelines/)
+- **technology-016 — Why water drops can make a touchscreen misbehave** (reviewed)
+  - Explanation to establish: Conductive droplets can disturb capacitive measurements and resemble touches.
+  - Show: Show a droplet bridging sensing regions.
+  - Source: [infineon.com](https://www.infineon.com/assets/row/public/documents/30/59/infineon-industrial-capacitive-touchscreen-design-made-simpler-whitepaper-en.pdf)
+- **technology-017 — Why some gloves work on touchscreens** (pending_review)
+  - Explanation to establish: Conductive fibres can couple a finger's electrical influence to the screen.
+  - Show: Trace coupling through a conductive fingertip.
+  - Source: [3m.com](https://www.3m.com/3M/en_US/consumer-electronics-us/applications/emi-management/)
+- **technology-018 — Why your phone charges quickly at first and slowly near full** (reviewed)
+  - Explanation to establish: Charging controls reduce current near full charge to reduce heat and protect the battery.
+  - Show: Plot current through constant-current and voltage stages.
+  - Source: [support.apple.com](https://support.apple.com/en-ie/105105)
+- **technology-019 — Why a phone sometimes waits at 80 percent overnight** (reviewed)
+  - Explanation to establish: Optimized charging can delay completion based on charging habits and settings.
+  - Show: Show a planned hold before wake-up time.
+  - Source: [support.apple.com](https://support.apple.com/guide/iphone/optimize-battery-charging-iph9202bbd07/27/ios/27)
+- **technology-020 — Why cold weather can make a phone shut down early** (reviewed)
+  - Explanation to establish: Low temperature can reduce available battery power and increase voltage drop under load.
+  - Show: Compare loaded battery voltage in warm and cold conditions.
+  - Source: [support.apple.com](https://support.apple.com/en-nz/101575)
+- **technology-021 — Why wireless charging is fussy about where the phone sits** (reviewed)
+  - Explanation to establish: Coil alignment affects magnetic coupling and power transfer efficiency.
+  - Show: Slide receiving and transmitting coils out of alignment.
+  - Source: [wirelesspowerconsortium.com](https://www.wirelesspowerconsortium.com/blog-pages/how-do-magnetic-chargers-work/)
+- **technology-022 — Why two USB-C cables charge at different speeds** (reviewed)
+  - Explanation to establish: Cable capabilities and electronic identification can limit negotiated power.
+  - Show: Compare two labelled cable power negotiations.
+  - Source: [usb.org](https://www.usb.org/sites/default/files/USB%20Type%20C%20Functional%20Test%20Specification%202021%2005%2020.pdf)
+- **technology-023 — Why a USB-C port does not guarantee video output** (pending_review)
+  - Explanation to establish: Connector shape does not establish support for optional data or display modes.
+  - Show: Separate connector shape from capability icons.
+  - Source: [usb.org](https://www.usb.org/document-library/usb-type-cr-locking-connector-specification)
+- **technology-024 — Why a USB plug can work for charging but not file transfer** (pending_review)
+  - Explanation to establish: Some cables omit data conductors or do not support the required data connection.
+  - Show: Compare power-only and data cable wiring.
+  - Source: [usb.org](https://www.usb.org/usb-charger-pd)
+- **technology-025 — Why wireless headphones can play a sound after you tap** (reviewed)
+  - Explanation to establish: Bluetooth Classic Audio uses buffering during wireless transport, which can delay audio relative to an immediate action.
+  - Show: Draw the audio path beside a compensated video timeline.
+  - Source: [bluetooth.com](https://www.bluetooth.com/blog/improving-latency-and-broadening-audio-horizons-with-le-audio/)
+- **technology-026 — Why a Bluetooth mouse can run for months on a small battery** (pending_review)
+  - Explanation to establish: Low-duty-cycle communication allows the device to sleep between short transmissions.
+  - Show: Show brief radio bursts separated by sleep.
+  - Source: [bluetooth.com](https://www.bluetooth.com/blog/how-bluetooth-revolutionized-data-transfer/)
+- **technology-027 — Why wireless earbuds pause when you take one out** (pending_review)
+  - Explanation to establish: Wear-detection sensors infer whether the earbud is being worn.
+  - Show: Compare sensor signals in and out of an ear.
+  - Source: [support.apple.com](https://support.apple.com/guide/airpods/change-settings-for-airpods-or-airpods-pro-dev57e5b7e58/27/web/27)
+- **technology-028 — Why noise cancellation works better on a steady engine than a sudden voice** (pending_review)
+  - Explanation to establish: Predictability, frequency and processing delay affect active cancellation performance.
+  - Show: Compare steady and rapidly changing waveforms.
+  - Source: [bose.com](https://www.bose.com/stories/what-is-active-noise-cancellation)
+- **technology-029 — Why headphones sound different when their seal breaks** (pending_review)
+  - Explanation to establish: An acoustic leak changes low-frequency pressure and the earphone's response.
+  - Show: Open a small gap in an ear-pad seal.
+  - Source: [shure.com](https://content-files.shure.com/KnowledgeBaseFiles/troubleshooting-rfi-jim-brown-ham.pdf)
+- **technology-030 — Why a phone speaker sounds fuller on a table** (pending_review)
+  - Explanation to establish: Nearby surfaces can alter sound radiation and reflections.
+  - Show: Compare free-space and tabletop sound paths.
+  - Source: [jbl.com](https://www.jbl.com/blog/aiming-for-accuracy.html)
+- **technology-031 — Why Wi-Fi can show full bars with no internet** (pending_review)
+  - Explanation to establish: Signal strength measures the local radio connection, not the upstream internet service.
+  - Show: Separate device-router and router-internet links.
+  - Source: [support.google.com](https://support.google.com/googleplay/answer/2651367?hl=en)
+- **technology-032 — Why 5 GHz Wi-Fi can be worse through walls** (pending_review)
+  - Explanation to establish: Propagation loss and obstruction effects differ with frequency and environment.
+  - Show: Compare attenuated signals crossing the same wall.
+  - Source: [cisco.com](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/technical-reference/c9800-best-practices.html)
+- **technology-033 — Why a microwave can disturb nearby Wi-Fi** (reviewed)
+  - Explanation to establish: A microwave oven can produce interference in radio spectrum also used by a nearby Wi-Fi network, disrupting reception while the oven runs.
+  - Show: Use a labelled illustrative spectrum to show an interfering signal overlapping a Wi-Fi channel; avoid measured signal claims.
+  - Source: [cisco.com](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3650/software/release/16-3/configuration_guide/b_163_consolidated_3650_cg/b_163_consolidated_3650_cg_chapter_0100.pdf)
+- **technology-034 — Why a mesh network can slow down at the far node** (pending_review)
+  - Explanation to establish: Wireless backhaul and repeated transmissions consume shared airtime.
+  - Show: Trace a packet across multiple wireless hops.
+  - Source: [support.google.com](https://support.google.com/googlehome/answer/7182746?hl=en-AU)
+- **technology-035 — Why a video buffers even after a speed test looks good** (reviewed)
+  - Explanation to establish: A speed test and a video service can use different network paths and servers, so a good test does not guarantee smooth video.
+  - Show: Compare steady delivery with bursts and gaps.
+  - Source: [cloudflare.com](https://blog.cloudflare.com/how-does-cloudflares-speed-test-really-work/)
+- **technology-036 — Why sending a photo can make the file much smaller** (pending_review)
+  - Explanation to establish: An app may resize or recompress the image before transmission.
+  - Show: Compare pixel counts and compression stages.
+  - Source: [support.google.com](https://support.google.com/photos/thread/453379377/need-to-make-pic-more-compressed-not-cropped?hl=en)
+- **technology-037 — Why a screenshot can look different on another screen** (pending_review)
+  - Explanation to establish: Colour profiles, display capabilities and viewing settings change colour reproduction.
+  - Show: Show one image through two display profiles.
+  - Source: [eizo.com](https://www.eizo.com/library/management/web-color-management/)
+- **technology-038 — Why deleted files can remain in the recycle bin** (pending_review)
+  - Explanation to establish: Deletion can first move a file into a recoverable state instead of erasing its contents.
+  - Show: Trace a file through live, trashed and removed states.
+  - Source: [support.microsoft.com](https://support.microsoft.com/en-us/office/collab-files/delete-a-file)
+- **technology-039 — Why a computer reports less storage than the box advertises** (reviewed)
+  - Explanation to establish: Different unit conventions can describe the same byte count with different-looking capacities; this does not mean bytes vanished.
+  - Show: Keep one byte counter unchanged while switching its displayed unit convention; label any example values as illustrative.
+  - Source: [seagate.com](https://www.seagate.com/support/kb/storage-capacity-measurement-standards-194563en/)
+- **technology-040 — Why copying thousands of tiny files is slower than one big file** (reviewed)
+  - Explanation to establish: Each small file repeats file-creation and protocol work before its data can transfer, so equal total bytes need not take equal copying time.
+  - Show: Compare one create-transfer-close sequence with repeated short sequences containing the same total data.
+  - Source: [learn.microsoft.com](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/slow-smb-file-transfer)
+- **technology-041 — Why an app update needs more free space than its download** (pending_review)
+  - Explanation to establish: Installation can require unpacked files and temporary working space in addition to the download.
+  - Show: Show download, expansion and replacement stages.
+  - Source: [support.apple.com](https://support.apple.com/en-us/108905)
+- **technology-042 — Why a progress bar can jump backward** (pending_review)
+  - Explanation to establish: Estimates may change as the system discovers more work or enters a different phase.
+  - Show: Add newly discovered tasks to a progress total.
+  - Source: [learn.microsoft.com](https://learn.microsoft.com/en-us/windows/win32/uxguide/progress-bars)
+- **technology-043 — Why restarting fixes some devices without changing any settings** (pending_review)
+  - Explanation to establish: Restarting clears transient process state and reinitializes hardware and services.
+  - Show: Compare a stuck running state with a fresh startup.
+  - Source: [support.microsoft.com](https://support.microsoft.com/en-us/windows/experience/performance-optimization/troubleshooting-windows-unexpected-restarts-and-stop-code-errors)
+- **technology-044 — Why a laptop fan speeds up during a video call** (pending_review)
+  - Explanation to establish: Camera processing, encoding and other workloads increase heat that cooling must remove.
+  - Show: Trace video tasks to processor heat and airflow.
+  - Source: [support.apple.com](https://support.apple.com/en-au/101576)
+- **technology-045 — Why a laptop can wake when you open its lid** (pending_review)
+  - Explanation to establish: A lid-position sensor signals a power-state transition to the system.
+  - Show: Move a magnet past a lid sensor.
+  - Source: [dell.com](https://www.dell.com/support/kbdoc/en-us/000124946/how-to-enable-or-disable-the-power-on-lid-open-feature-on-your-newer-notebook?msockid=21d3754ae72966cb244b6325e6ec6716)
+- **technology-046 — Why your inkjet can clean itself before the first page** (reviewed)
+  - Explanation to establish: Some inkjet maintenance cycles clear or protect nozzles so droplets eject reliably.
+  - Show: Magnify a schematic nozzle row, mark a blocked outlet, then show the clean-and-check stage before the page.
+  - Source: [epson.com](https://files.support.epson.com/docid/cpd6/cpd63622/source/printers/source/ink_functions/tasks/amc400_550/auto_cleaning_lcd_amc400_550.html)
+- **technology-047 — Why printers mix colour ink into some black areas** (pending_review)
+  - Explanation to establish: Print modes can use composite black for particular media or tonal effects.
+  - Show: Compare pigment black with a composite colour mix.
+  - Source: [canon-europe.com](https://files.canon-europe.com/files/soft03-48706/Manual/imagePRESS_C1plus_Direct_Printing_Guide_EN.pdf)
+- **technology-048 — Why laser printers deliver warm paper** (reviewed)
+  - Explanation to establish: A fuser uses heat and pressure to bond toner to the sheet.
+  - Show: Trace a page through toner transfer and fusing.
+  - Source: [hp.com](https://h10032.www1.hp.com/ctg/Manual/c05193073.pdf)
+- **technology-049 — Why a scanner light moves across the page** (reviewed)
+  - Explanation to establish: A scanning assembly samples successive lines to construct the full image.
+  - Show: Build an image one scanned line at a time.
+  - Source: [epson.com](https://files.support.epson.com/pdf/es800c/es800cu1.pdf)
+- **technology-050 — Why optical mice struggle on some glass desks** (reviewed)
+  - Explanation to establish: The sensor needs usable surface features or optical returns to estimate movement.
+  - Show: Compare tracked texture with transparent glass.
+  - Source: [logitech.com](https://www.logitech.com/assets/52537/logitech-business-product-catalog.pdf)
+- **technology-051 — Why a mechanical keyboard can register before the key bottoms out** (reviewed)
+  - Explanation to establish: The switch's actuation point occurs before the end of its travel.
+  - Show: Show contact closure partway through a keystroke.
+  - Source: [cherry.de](https://www.cherry.de/en-gb/company/cherry-technologies/mechanical-technology)
+- **technology-052 — Why a quiet mouse can still feel clicky** (reviewed)
+  - Explanation to establish: A rubber actuator damps switch vibration and sound, while a cap over it helps preserve tactile feedback, so a quiet mouse can still feel clicky.
+  - Show: Animate the rubber actuator damping vibration beneath the cap while the button still travels through its click.
+  - Source: [logitech.com](https://www.logitech.com/assets/64874/silent-mice-white-paper.pdf)
+- **technology-053 — Why an e-reader can keep an image with its power off** (reviewed)
+  - Explanation to establish: Bistable electronic ink can retain a pigment arrangement without continuous drive.
+  - Show: Move pigment particles then remove the field.
+  - Source: [eink.com](https://esg.eink.com/en/report/0322082417uc111886/2016-ESG-Report)
+- **technology-054 — Why e-readers flash black when changing pages** (reviewed)
+  - Explanation to establish: A full refresh drives the ink particles through a reset rather than merely drawing the next page over the previous state.
+  - Show: Compare partial update residue with a full reset.
+  - Source: [eink.com](https://blog.eink.com/history-of-e-ink)
+- **technology-055 — Why a stylus can work without a battery** (reviewed)
+  - Explanation to establish: Some pen systems receive energy from the tablet's electromagnetic field.
+  - Show: Trace power and position signals between pen and tablet.
+  - Source: [wacom.com](https://community.wacom.com/en-us/wacom-movink-13-oled-display/)
+- **technology-056 — Why a contactless card works without being charged** (pending_review)
+  - Explanation to establish: The reader's field supplies energy to the passive card electronics.
+  - Show: Show induction powering a card chip.
+  - Source: [nxp.com](https://www.nxp.com/company/about-nxp/smarter-world-blog/BL-NFC-CONSUMERS-CRITICAL-LINK)
+- **technology-057 — Why QR codes have three large corner squares** (reviewed)
+  - Explanation to establish: Finder patterns help locate and orient the code before decoding.
+  - Show: Rotate a code while its corners remain identifiable.
+  - Source: [qrcode.com](https://www.qrcode.com/en/about/featurePage/featurePage5.html)
+- **technology-058 — Why a QR code can survive a small missing patch** (reviewed)
+  - Explanation to establish: Error-correcting information can recover some damaged data within the code's limits.
+  - Show: Remove cells and reconstruct a labelled data block.
+  - Source: [qrcode.com](https://www.qrcode.com/en/about/)
+- **technology-059 — Why a barcode needs blank space beside the stripes** (pending_review)
+  - Explanation to establish: Quiet zones help readers distinguish the symbol from surrounding graphics.
+  - Show: Compare scanning with and without clear margins.
+  - Source: [gs1.org](https://www.gs1.org/standards/barcodes/10-steps-to-barcode-your-product/english)
+- **technology-060 — Why a remote works when you point it at a wall** (pending_review)
+  - Explanation to establish: Infrared light can reflect from surfaces and still reach the receiver.
+  - Show: Trace a reflected infrared path.
+  - Source: [sony.com](https://www.sony.com/electronics/support/sound-bars-home-theater-systems-sound-bars-surround-speakers/ht-ct260h/articles/00223964?category=sound-bars-home-theater-systems-sound-bars-surround-speakers&model=HT-CT260H)
+- **technology-061 — Why a phone camera can show a remote's flashing light** (pending_review)
+  - Explanation to establish: Some image sensors detect near-infrared that human vision does not, depending on filtering.
+  - Show: Compare visible and near-infrared sensitivity.
+  - Source: [sony.com](https://www.sony.com/electronics/support/televisions-projectors-lcd-tvs-android-/kd-55x85k/articles/00223964?category=televisions-projectors-lcd-tvs-android-&model=KD-55X85K)
+- **technology-062 — Why a smartwatch light flashes green against your skin** (reviewed)
+  - Explanation to establish: Optical sensors estimate pulse from changes in reflected light associated with blood volume.
+  - Show: Animate green light entering a labelled schematic wrist and vary returned light with blood volume; no diagnostic values.
+  - Source: [support.apple.com](https://support.apple.com/en-au/120277)
+- **technology-063 — Why step counters can count some non-walking movements** (reviewed)
+  - Explanation to establish: Motion classifiers infer steps from sensor patterns rather than observing feet directly.
+  - Show: Compare acceleration patterns and a classification threshold.
+  - Source: [support.google.com](https://support.google.com/googlehealth/answer/14236920?hl=en)
+- **technology-064 — Why GPS directions can hesitate when you leave a tunnel** (pending_review)
+  - Explanation to establish: The receiver must reacquire usable satellite signals and update its position estimate.
+  - Show: Show satellite visibility returning at a tunnel exit.
+  - Source: [gps.gov](https://www.gps.gov/gps-accuracy-0)
+- **technology-065 — Why airplane mode can still allow Wi-Fi** (reviewed)
+  - Explanation to establish: Cellular, Wi-Fi and Bluetooth radios can be controlled separately under device settings.
+  - Show: Switch radio blocks independently.
+  - Source: [support.apple.com](https://support.apple.com/en-gb/108785)
+- **technology-066 — Why phones ask for a passcode after restarting** (pending_review)
+  - Explanation to establish: Some encrypted data and biometric functions require the initial passcode unlock.
+  - Show: Show startup encryption keys remaining locked.
+  - Source: [support.apple.com](https://support.apple.com/en-ca/guide/security/sec067eb0c9e/web)
+- **technology-067 — Why passkeys work without sending your secret to a website** (pending_review)
+  - Explanation to establish: Public-key authentication proves possession of a private key through a signed challenge.
+  - Show: Trace challenge and signature while the key stays local.
+  - Source: [fidoalliance.org](https://fidoalliance.org/specifications/)
+- **technology-068 — Why a download can resume where it stopped** (reviewed)
+  - Explanation to establish: Servers and clients can use byte-range requests to retrieve the missing portion.
+  - Show: Request only the unreceived range of a file.
+  - Source: [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/If-Range)
+- **technology-069 — Why a web page loads faster the second time** (reviewed)
+  - Explanation to establish: Caches can reuse valid stored resources instead of downloading every resource again.
+  - Show: Compare first load with validated cached assets.
+  - Source: [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching)
+- **technology-070 — Why an online meeting can show video after audio drops** (pending_review)
+  - Explanation to establish: Audio and video streams have separate processing and network behaviours.
+  - Show: Split media into independently buffered streams.
+  - Source: [webrtc.org](https://issues.webrtc.org/42230250)
+
+## Food and drink
+
+- **food-001 — Why reheated bread goes hard again so quickly** (pending_review)
+  - Explanation to establish: Starch retrogradation changes bread texture and reheating only temporarily reverses part of it.
+  - Show: Compare starch structure before and after reheating.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/blog/2024/10/14/boiling-water-flatbread)
+- **food-002 — Why bread turns brown but its centre stays pale** (pending_review)
+  - Explanation to establish: Surface drying permits higher temperatures and browning reactions than the moist interior.
+  - Show: Show crust and crumb temperature zones.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/pro/reference/water)
+- **food-003 — Why bread dough springs back when you stretch it** (reviewed)
+  - Explanation to establish: A developed gluten network gives dough elasticity.
+  - Show: Stretch and release a labelled gluten network.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/blog/2021/08/18/a-beginners-guide-to-gluten)
+- **food-004 — Why bakers slash bread before it enters the oven** (reviewed)
+  - Explanation to establish: Cuts create controlled expansion points during oven spring.
+  - Show: Compare expansion through a score and a random tear.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/learn/guides/sourdough/bake)
+- **food-005 — Why steaming an oven changes a loaf's crust** (reviewed)
+  - Explanation to establish: Early steam delays surface setting and affects crust formation.
+  - Show: Compare expanding loaves with dry and moist surfaces.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/pro/reference/water)
+- **food-006 — Why bread has different-sized holes inside** (reviewed)
+  - Explanation to establish: Fermentation supplies gas while the dough network holds and stretches around bubbles; their expansion helps determine the holes left in bread.
+  - Show: Inflate gas bubbles inside an elastic dough network and freeze the resulting structure into a cut loaf; schematic, not recipe prediction.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/blog/2022/09/22/bread-flour-vs-all-purpose-flour)
+- **food-007 — Why biscuits go soft when left out** (reviewed)
+  - Explanation to establish: Dry crisp biscuits can lose quality as they absorb moisture from their surroundings.
+  - Show: Track moisture entering a biscuit and starch changing in bread.
+  - Source: [csiro.au](https://www.csiro.au/en/research/production/food/shelf-life)
+- **food-008 — Why crackers have neat rows of holes** (pending_review)
+  - Explanation to establish: Docking gives gas escape paths and limits large blisters during baking.
+  - Show: Compare docked and undocked dough sheets.
+  - Source: [bakerperkins.com](https://www.bakerperkins.com/biscuit-cookie-cracker/fr/customer-services/the-truclean-standard/the-truclean-standard/)
+- **food-009 — Why puff pastry has so many thin layers** (reviewed)
+  - Explanation to establish: Separated dough and fat layers allow steam-driven lifting during baking.
+  - Show: Expand a laminated dough cross-section.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/recipes/classic-puff-pastry-pate-feuilletee-recipe)
+- **food-010 — Why pancake bubbles remain as tiny holes** (reviewed)
+  - Explanation to establish: Gas bubbles rise and set as the batter structure cooks.
+  - Show: Follow one bubble through setting batter.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/blog/2021/10/26/best-pancake-tips)
+- **food-011 — Why cake sinks after looking tall in the oven** (reviewed)
+  - Explanation to establish: An insufficiently set structure can collapse when expanding gas cools or escapes.
+  - Show: Compare supported and unset bubble walls.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/blog/2025/05/22/why-did-my-cake-fall-flat)
+- **food-012 — Why more mixing can make a cake less tender** (reviewed)
+  - Explanation to establish: Further mixing develops gluten bonds that can make a wheat cake less tender; bread often benefits from that same structure.
+  - Show: Compare gently mixed and repeatedly mixed wheat batter; animate a stronger protein network, labelled as a simplified illustration.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/blog/2021/08/18/a-beginners-guide-to-gluten?page=1)
+- **food-013 — Why the same cookie dough can spread into puddles** (reviewed)
+  - Explanation to establish: Butter that is too warm for the recipe can flow before the cookie structure sets, increasing spread.
+  - Show: Compare two dough discs heating side by side.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/blog/2023/12/19/why-are-my-cookies-spreading)
+- **food-014 — Why brown sugar turns into a hard block** (pending_review)
+  - Explanation to establish: Loss of moisture can let the sugar crystals bind together.
+  - Show: Show moist coatings drying between crystals.
+  - Source: [dominosugar.com](https://www.dominosugar.com/faq)
+- **food-015 — Why honey becomes grainy without being spoiled** (reviewed)
+  - Explanation to establish: Glucose can crystallize out of honey depending on composition and conditions.
+  - Show: Grow crystals within a honey jar.
+  - Source: [honey.com](https://honey.com/images/files/NHB-Test-Myths.pdf)
+- **food-016 — Why one sugar crystal can turn smooth syrup grainy** (reviewed)
+  - Explanation to establish: Seed crystals can trigger recrystallization in a supersaturated sugar syrup.
+  - Show: Show crystallization spreading from one seed.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cooking/candy/fudge-pop.html)
+- **food-017 — Why some sweets stretch while others snap** (pending_review)
+  - Explanation to establish: Water content and sugar structure affect whether a confection is glassy, chewy or crystalline.
+  - Show: Compare three sugar structures under pulling.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cooking/candy/sugar.html)
+- **food-018 — Why chocolate sometimes develops a pale dusty surface** (reviewed)
+  - Explanation to establish: Fat or sugar bloom alters the surface without necessarily indicating mould.
+  - Show: Compare fat bloom and sugar bloom cross-sections.
+  - Source: [callebaut.com](https://www.callebaut.com/en-AU/callebaut-chocolate-academy/troubleshooting/chocolate-bloom)
+- **food-019 — Why tempered chocolate snaps more cleanly** (reviewed)
+  - Explanation to establish: Controlled cocoa-butter crystallization affects firmness and appearance.
+  - Show: Compare organized crystals with an unstable mix.
+  - Source: [callebaut.com](https://www.callebaut.com/en-CA/callebaut-chocolate-academy/tutorials/tempering/cocoa-butter)
+- **food-020 — Why chocolate can thicken suddenly after a little water** (reviewed)
+  - Explanation to establish: A little water can dissolve some sugar into a syrup that gathers cocoa particles into clumps, making melted chocolate seize.
+  - Show: Animate a water droplet forming syrup around sugar and gathering cocoa particles; label the particle view as schematic.
+  - Source: [kingarthurbaking.com](https://www.kingarthurbaking.com/blog/2019/02/04/how-to-melt-chocolate)
+- **food-021 — Why ice cream becomes icy after melting and refreezing** (pending_review)
+  - Explanation to establish: Melting and refreezing allow larger ice crystals to form.
+  - Show: Compare fine crystals with enlarged refrozen crystals.
+  - Source: [icecream.org](https://icecream.org/)
+- **food-022 — Why soft-serve looks bigger than its liquid mix** (pending_review)
+  - Explanation to establish: Incorporated air increases volume and changes texture.
+  - Show: Show air cells within a frozen mix.
+  - Source: [tetrapak.com](https://www.tetrapak.com/content/dam/tetrapak/publicweb/gb/en/processing/documents/br20559_mixing.pdf)
+- **food-023 — Why ice cubes stick together in a warm freezer** (reviewed)
+  - Explanation to establish: Partial melting and refreezing can join stored ice cubes together.
+  - Show: Grow a bridge between two touching cubes.
+  - Source: [whirlpool.com](https://producthelp.whirlpool.com/Refrigeration/Freezers/Upright_Freezer/Operation/Ice_Concerns/Ice_Quality/Ice_Clumping_in_Ice_Bin_-_Upright_Freezer)
+- **food-024 — Why boiled eggs can have a green ring around the yolk** (pending_review)
+  - Explanation to establish: Sulfur and iron compounds react at the yolk boundary under certain cooking conditions.
+  - Show: Show the reaction at the white-yolk interface.
+  - Source: [ask.usda.gov](https://ask.usda.gov/s/article/La-coccion-destruye-a-la-Listeria)
+- **food-025 — Why an egg white changes from clear to opaque** (pending_review)
+  - Explanation to establish: Heating changes protein structure and forms a light-scattering network.
+  - Show: Compare dispersed proteins with an aggregated network.
+  - Source: [exploratorium.edu](https://dev-annex.exploratorium.edu/cooking/eggs/explore-text.html)
+- **food-026 — Why egg whites expand when you whisk them** (reviewed)
+  - Explanation to establish: Proteins help stabilize air bubbles introduced by beating.
+  - Show: Wrap proteins around newly added bubbles.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cooking/icooks/3-17-03.html)
+- **food-027 — Why a little yolk can stop egg whites whipping well** (pending_review)
+  - Explanation to establish: Fat can interfere with the protein films stabilizing the foam.
+  - Show: Show fat disrupting a bubble film.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cooking/eggs/deviled-pop.html)
+- **food-028 — Why mayonnaise holds oil and water together** (reviewed)
+  - Explanation to establish: Egg-yolk emulsifiers help keep fine oil droplets dispersed in water instead of merging back into a separate oil layer.
+  - Show: Magnify oil droplets in water and add a labelled emulsifier boundary that prevents droplets merging.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cooking/icooks/article_5-03.html)
+- **food-029 — Why an overbaked custard gets little holes** (reviewed)
+  - Explanation to establish: Prolonged high heat can tighten coagulated egg proteins and squeeze out liquid, making a custard rubbery and full of holes.
+  - Show: Show an illustrative egg-protein network tightening and squeezing liquid into gaps; match it to a close-up of overbaked custard.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cooking/eggs/gentle.html)
+- **food-030 — Why warm milk forms a skin** (pending_review)
+  - Explanation to establish: Surface evaporation and protein-fat concentration create a film.
+  - Show: Build a concentrated film at the milk surface.
+  - Source: [dairy.com.au](https://www.dairy.com.au/you-ask-we-answer/why-does-my-milk-not-froth-properly)
+- **food-031 — Why changing milk changes your coffee foam** (reviewed)
+  - Explanation to establish: Milk composition affects foam: whole milk tends toward denser foam, while lower-fat milk can make a larger, lighter foam.
+  - Show: Compare bubble films with different milk compositions.
+  - Source: [dairy.com.au](https://www.dairy.com.au/you-ask-we-answer/why-does-my-milk-not-froth-properly)
+- **food-032 — Why UHT milk can sit on a shelf unopened** (reviewed)
+  - Explanation to establish: Heat treatment and aseptic packaging jointly prevent recontamination before opening.
+  - Show: Trace sterilized product into sterile packaging.
+  - Source: [tetrapak.com](https://www.tetrapak.com/content/dam/tetrapak/publicweb/us/en/packaging/Infographic-Getting-shelf%20stable-milk-to%20you.pdf)
+- **food-033 — Why cheese stretches when some other cheese just melts** (pending_review)
+  - Explanation to establish: Protein structure, moisture and acidity affect how the heated cheese flows.
+  - Show: Pull two differently structured protein networks.
+  - Source: [dairy.com.au](https://www.dairy.com.au/products-and-recipes/dairy-products/cheese/stretched-curd-cheese)
+- **food-034 — Why grated cheese sometimes refuses to melt smoothly** (pending_review)
+  - Explanation to establish: Added anti-caking ingredients and cheese composition can change melting behaviour.
+  - Show: Compare freshly grated cheese with coated shreds.
+  - Source: [dairy.com.au](https://www.dairy.com.au/you-ask-we-answer/why-is-my-milk-curdling-when-heated)
+- **food-035 — Why yoghurt releases clear liquid on top** (pending_review)
+  - Explanation to establish: The protein gel can expel whey through syneresis.
+  - Show: Show liquid leaving a contracting gel.
+  - Source: [dairy.com.au](https://www.dairy.com.au/you-ask-we-answer/is-greek-yoghurt-better-for-you)
+- **food-036 — Why coffee grounds swell and bubble when first wetted** (pending_review)
+  - Explanation to establish: Hot water releases trapped gas from roasted coffee.
+  - Show: Trace gas escaping from a wetted coffee particle.
+  - Source: [sca.coffee](https://sca.coffee/sca-news/podcast/81/the-science-of-coffee-freshness-samo-smrke-expo-lectures-2019-6lrbe)
+- **food-037 — Why espresso gets foam without adding milk** (reviewed)
+  - Explanation to establish: The drop in pressure after extraction lets dissolved gas form bubbles, which coffee components help stabilize.
+  - Show: Show gas dissolved under pressure becoming bubbles at the outlet, followed by a labelled simplified stabilizing film.
+  - Source: [illy.com](https://blog.illy.com/en-gb/hospitality/achieve-perfect-coffee-crema?hs_amp=true)
+- **food-038 — Why tea can form a thin film that cracks when stirred** (reviewed)
+  - Explanation to establish: Black tea compounds and minerals from water form a surface film whose properties change with water hardness.
+  - Show: Compare the surface in soft and hard water.
+  - Source: [ethz.ch](https://www.research-collection.ethz.ch/server/api/core/bitstreams/0d4340ca-9d67-43e5-8ac4-4f1f30162a1d/content)
+- **food-039 — Why cold water extracts tea more slowly** (pending_review)
+  - Explanation to establish: Temperature affects diffusion and the rates at which compounds enter the water.
+  - Show: Compare concentration fronts at two temperatures.
+  - Source: [rsc.org](https://pubs.rsc.org/en/content/articlepdf/1982/f1/f19827800295)
+- **food-040 — Why sparkling drinks foam more in a scratched glass** (pending_review)
+  - Explanation to establish: Surface imperfections can provide nucleation sites for gas bubbles.
+  - Show: Zoom into bubbles growing at a scratch.
+  - Source: [acs.org](https://www.acs.org/education/activities/unleashing-carbon-dioxide.html)
+- **food-041 — Why shaking a fizzy bottle matters when you open it** (pending_review)
+  - Explanation to establish: Shaking disperses gas bubbles that expand and drive foaming when pressure drops.
+  - Show: Compare bubble distribution before opening.
+  - Source: [acs.org](https://www.acs.org/education/whatischemistry/adventures-in-chemistry/secret-science-stuff/soda-pop.html)
+- **food-042 — Why beer foam clings to the side of a glass** (pending_review)
+  - Explanation to establish: Foam-active compounds and surface wetting influence the residue left as foam recedes.
+  - Show: Track a receding foam line along glass.
+  - Source: [carlsberg.com](https://brandstore.carlsberg.com/en/carlsberg-tumbler-glass)
+- **food-043 — Why cut apples brown only where you exposed the flesh** (pending_review)
+  - Explanation to establish: Cutting brings enzymes and substrates into contact with oxygen.
+  - Show: Show reactions confined to exposed tissue.
+  - Source: [ucdavis.edu](https://postharvest.ucdavis.edu/disorders/apple-sunburn)
+- **food-044 — Why sliced onions release an eye-irritating gas** (reviewed)
+  - Explanation to establish: Cell damage brings compounds and enzymes together that generate volatile irritants.
+  - Show: Compare intact and cut onion cells.
+  - Source: [acs.org](https://www.acs.org/content/dam/acsorg/pressroom/reactions/infographics/chemistry-life-hacks.pdf)
+- **food-045 — Why garlic smells stronger after crushing** (pending_review)
+  - Explanation to establish: Crushing mixes previously separated cellular components that form aroma compounds.
+  - Show: Break compartments inside a garlic cell.
+  - Source: [acs.org](https://pubs.acs.org/jafcau/article/73/44/27933/3667712/Black-Garlic-Evolution-of-the-Chemical-Composition)
+- **food-046 — Why cooked cabbage can smell stronger after longer cooking** (pending_review)
+  - Explanation to establish: Heat changes sulfur-containing compounds and their release.
+  - Show: Trace volatile compounds leaving heated cabbage.
+  - Source: [extension.umn.edu](https://apps.extension.umn.edu/agriculture/nutrient-management/docs/MVTL-sulfur-2011.pdf)
+- **food-047 — Why carrots soften when cooked but potatoes change differently** (pending_review)
+  - Explanation to establish: Cell-wall changes and starch behaviour contribute differently to vegetable texture.
+  - Show: Compare cell walls and starch granules.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cooking/icooks/12-08-03.html)
+- **food-048 — Why pasta water turns cloudy** (pending_review)
+  - Explanation to establish: Surface starch is released into the cooking water.
+  - Show: Show starch moving from pasta to water.
+  - Source: [barilla.com](https://www.barilla.com/en-ca/recipe/all/barilla-cellentani-pasta-alla-gricia)
+- **food-049 — Why a sauce thickens when you add starchy pasta water** (pending_review)
+  - Explanation to establish: Dispersed starch and mixing can help give the liquid phase body and stabilize the sauce.
+  - Show: Magnify starch within a mixed sauce.
+  - Source: [barilla.com](https://www.barilla.com/en-us/help-with/pasta-kitchen-tips/pasta-water-tips-tricks)
+- **food-050 — Why one kind of rice stays loose while another clumps** (reviewed)
+  - Explanation to establish: The starch composition of rice, including amylose content, influences how firm and sticky the cooked grains become.
+  - Show: Compare contacting grains with different starch layers.
+  - Source: [irri.org](https://isl.irri.org/services/rice-plant-grain-and-soil-physico-chemical-analyses/aac)
+- **food-051 — Why popcorn leaves a few kernels unpopped** (pending_review)
+  - Explanation to establish: Popping depends on suitable internal moisture and an intact pressure-containing hull.
+  - Show: Compare pressure build-up in three kernels.
+  - Source: [popcorn.org](https://www.popcorn.org/Recipes/Preparing-Perfect-Popcorn)
+- **food-052 — Why roasted almonds smell different from raw ones** (reviewed)
+  - Explanation to establish: Roasting almonds creates new aroma compounds through reactions involving sugars and proteins, rather than only removing water.
+  - Show: Show precursors changing into volatile aromas.
+  - Source: [almonds.com](https://www.almonds.com/sites/default/files/2021-01/FoodPairing.com%20White%20Paper_The%20Science%20Behind%20Great%20Almond%20Pairings.pdf)
+- **food-053 — Why roasted potatoes brown better after their surface dries** (pending_review)
+  - Explanation to establish: Surface water limits temperature until enough has evaporated for stronger browning.
+  - Show: Compare wet and dry potato surfaces heating.
+  - Source: [potatoesusa.com](https://potatoesusa.com/wp-content/uploads/2020/02/POTIN190510_AppGuide_Composition_F_Web.pdf)
+- **food-054 — Why frozen vegetables release water when thawed** (pending_review)
+  - Explanation to establish: Ice formation can damage cellular structures and alter water retention.
+  - Show: Show crystals disrupting vegetable cells.
+  - Source: [extension.umn.edu](https://extension.umn.edu/food/preparing/cooking-at-home/food-preservation/freezing)
+- **food-055 — Why lettuce goes limp before it looks spoiled** (pending_review)
+  - Explanation to establish: Water loss lowers cell turgor and reduces crispness.
+  - Show: Compare swollen and water-depleted cells.
+  - Source: [ucdavis.edu](https://postharvest.ucdavis.edu/produce-facts-sheets/lettuce-romaine)
+- **food-056 — Why mushrooms shrink so much in the pan** (pending_review)
+  - Explanation to establish: Water loss reduces volume as the tissues cook.
+  - Show: Trace water leaving a mushroom cross-section.
+  - Source: [mushroomcouncil.com](https://www.mushroomcouncil.com/articles/kitchen-tip-how-to-saute-mushrooms/)
+- **food-057 — Why meat can look brown inside its packaging** (pending_review)
+  - Explanation to establish: Myoglobin colour depends on its chemical state and oxygen exposure.
+  - Show: Compare three labelled pigment states.
+  - Source: [fsis.usda.gov](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/color-meat-and-poultry)
+- **food-058 — Why meat releases liquid while resting** (pending_review)
+  - Explanation to establish: Heat and structural changes alter water retention and redistribute liquid.
+  - Show: Show moisture paths in a cooked cross-section.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cooking/meat/INT-what-is-meat.html)
+- **food-059 — Why ground meat browns differently when the pan is crowded** (pending_review)
+  - Explanation to establish: Extra released water and limited heat input can favour steaming over surface browning.
+  - Show: Compare pan temperature with two load sizes.
+  - Source: [beefitswhatsfordinner.com](https://www.beefitswhatsfordinner.com/recipes/recipe/225/beef-vegetable-fried-rice)
+- **food-060 — Why oil spits when wet food enters the pan** (pending_review)
+  - Explanation to establish: Water rapidly vaporizes beneath or among hot oil and displaces it.
+  - Show: Show a water droplet expanding into vapour.
+  - Source: [acs.org](https://pubs.acs.org/doi/10.1021/ed086p1281)
+- **food-061 — Why a pan of oil shimmers before it smokes** (pending_review)
+  - Explanation to establish: Temperature-driven flow and refractive-index changes distort reflected light.
+  - Show: Trace rays through moving warm oil.
+  - Source: [physics.org](https://physics.org/)
+- **food-062 — Why salt makes sliced cucumbers release water** (reviewed)
+  - Explanation to establish: A concentration difference drives water movement out of the tissue.
+  - Show: Compare water movement across cucumber cells.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cooking/pickles/salt.html)
+- **food-063 — Why dried fruit grows larger after soaking** (pending_review)
+  - Explanation to establish: Water enters the dehydrated tissue and rehydrates its structure.
+  - Show: Expand a raisin cross-section as water enters.
+  - Source: [exploratorium.edu](https://annex.exploratorium.edu/cooking/candy/rock-pop.html)
+- **food-064 — Why jam can set without becoming solid sugar** (pending_review)
+  - Explanation to establish: Pectin can form a water-holding network under suitable formulation conditions.
+  - Show: Build a pectin network around liquid.
+  - Source: [extension.umn.edu](https://es.extension.umn.edu/food/preparing/cooking-at-home/food-preservation/fruit-spreads)
+- **food-065 — Why tomato sauce sticks to some plastic containers** (pending_review)
+  - Explanation to establish: Oil-soluble pigments can associate with compatible plastic surfaces.
+  - Show: Compare pigment movement into plastic and glass surfaces.
+  - Source: [acs.org](https://pubs.acs.org/doi/10.1021/jf0257143)
+
+## Packaging and materials
+
+- **packaging-001 — Why a coffee bag has a tiny round valve** (reviewed)
+  - Explanation to establish: A one-way valve releases gas from coffee while limiting outside air entry.
+  - Show: Cut away a valve opening under internal pressure.
+  - Source: [goglio.it](https://www.goglio.it/go-cont/uploads/2026/02/2024_SUSTAINABILITY-REPORT_eng.pdf)
+- **packaging-002 — Why a crisp packet contains so much gas** (pending_review)
+  - Explanation to establish: A protective atmosphere can limit oxidation and cushion the contents.
+  - Show: Show chips inside a gas-filled package.
+  - Source: [airproducts.com](https://www.airproducts.com/-/media/files/en/influence-and-control-of-gases-and-blends-during-sintering-of-carbon-steel-parts.pdf)
+- **packaging-003 — Why drink cartons have layers you cannot see** (reviewed)
+  - Explanation to establish: Different layers provide structure, sealing and barriers to light or gases.
+  - Show: Peel apart a carton cross-section.
+  - Source: [tetrapak.com](https://www.tetrapak.com/sustainability/carton-equity/food-protection)
+- **packaging-004 — Why a juice carton can fold flat along specific lines** (reviewed)
+  - Explanation to establish: Pre-made creases guide folding in layered paperboard packaging, so the folding lines can exist before the carton is filled.
+  - Show: Unfold a simple carton into a flat net, highlight pre-made creases, then refold along them.
+  - Source: [dtu.dk](https://3dim-industry-portal.dtu.dk/cases-menu/imaging-analysis-during-dynamic-processes/folding-of-packaging-materials)
+- **packaging-005 — Why carton caps sometimes stay attached after opening** (reviewed)
+  - Explanation to establish: Tethered closures keep the cap connected through a designed hinge or strap.
+  - Show: Show a closure rotating around its tether.
+  - Source: [tetrapak.com](https://www.tetrapak.com/en-gb/solutions/packaging/openings-and-closures/tethered-caps)
+- **packaging-006 — Why a bottle cap leaves a ring on the neck** (pending_review)
+  - Explanation to establish: Frangible bridges break while the retention ring stays below a neck feature.
+  - Show: Cut away the ring during first opening.
+  - Source: [bericap.com](https://bericap.com/food/landingpage-edible-oil/)
+- **packaging-007 — Why a bottle cap clicks before it finally comes off** (pending_review)
+  - Explanation to establish: Thread and tamper-band features can release in stages depending on closure design.
+  - Show: Show the threads and bridges during unscrewing.
+  - Source: [bericap.com](https://bericap.com/product/safeguard-29-20-mag-gl/)
+- **packaging-008 — Why a sauce bottle can dispense through a slit without dripping** (pending_review)
+  - Explanation to establish: An elastomer valve opens under pressure and closes when the pressure is removed.
+  - Show: Animate a slit valve flexing open.
+  - Source: [aptar.com](https://www.aptar.com/en-us/closures/flow-control/)
+- **packaging-009 — Why some pump bottles refuse to work on the first press** (reviewed)
+  - Explanation to establish: The pump must prime by moving air out and liquid into its chamber.
+  - Show: Trace the first few pump strokes.
+  - Source: [aptar.com](https://aptar.com/wp-content/uploads/2022/04/Overview-of-Intranasal-drug-administration-using-multi-dose-nasal-spray-pumps.pdf)
+- **packaging-010 — Why a lotion pump delivers a similar amount each time** (pending_review)
+  - Explanation to establish: A metering chamber displaces a limited volume per completed stroke.
+  - Show: Fill and empty a labelled pump chamber.
+  - Source: [aptar.com](https://www.aptar.com/en-us/pharmaceutical/technologies/airless?cp-prod-production_crawler_com_products%5BhierarchicalMenu%5D%5Bfeatures_technologies.lvl0%5D%5B0%5D=Resin+Conversion&cp-prod-production_crawler_com_products%5Bpage%5D=1)
+- **packaging-011 — Why an airless cream bottle has a moving base** (reviewed)
+  - Explanation to establish: A piston follows the product upward without requiring air to replace it inside the product chamber.
+  - Show: Raise the piston as the pump dispenses.
+  - Source: [aptar.com](https://aptar.com/en-us/beauty/airless-packaging)
+- **packaging-012 — Why a spray bottle stops working when tilted too far** (pending_review)
+  - Explanation to establish: The dip-tube inlet can move above the liquid unless the design accommodates other orientations.
+  - Show: Tilt the liquid surface away from the tube.
+  - Source: [silgan-dispensing.com](https://silgan-dispensing.com/)
+- **packaging-013 — Why a trigger spray has two one-way valves** (pending_review)
+  - Explanation to establish: Separate valves coordinate intake and discharge during the pump cycle.
+  - Show: Colour the intake and discharge strokes.
+  - Source: [silgan-dispensing.com](https://silgan-dispensing.com/)
+- **packaging-014 — Why aerosol cans keep spraying after a quick shake** (pending_review)
+  - Explanation to establish: A propellant maintains pressure that drives product through the valve.
+  - Show: Show liquid and propellant phases inside a can.
+  - Source: [crowncork.com](https://www.crowncork.com/news/build-stronger-brands-innovative-line-premium-closures-crown)
+- **packaging-015 — Why a spray nozzle makes a mist instead of a stream** (reviewed)
+  - Explanation to establish: Nozzle geometry breaks moving liquid into small droplets.
+  - Show: Compare a straight jet with an atomizing outlet.
+  - Source: [spray.com](https://www.spray.com/sl-si/-/media/dam/industrial/usa/sales-material/product-market-bulletin/b769_spray_analysis_connecting_the_drops.pdf)
+- **packaging-016 — Why fizzy-drink bottles have feet on the bottom** (pending_review)
+  - Explanation to establish: A petaloid base helps a lightweight plastic bottle stand while containing pressure.
+  - Show: Show pressure loads through a lobed base.
+  - Source: [sidel.com](https://www.sidel.com/en/about/media/press-releases/starlite-csd/)
+- **packaging-017 — Why hot-filled plastic bottles have indented panels** (reviewed)
+  - Explanation to establish: Vacuum panels accommodate volume and pressure changes as hot contents cool.
+  - Show: Show panels flexing during cooling.
+  - Source: [amcor.com](https://www.amcor.com/media/news/b/welchs-commercializes-the-first-custom-application-of-amcors-powerflex-pet-bottle)
+- **packaging-018 — Why some water bottles crumple when opened** (pending_review)
+  - Explanation to establish: Lightweight bottle structure and pressure differences can make the walls deform.
+  - Show: Compare wall deformation as pressure equalizes.
+  - Source: [sidel.com](https://www.sidel.com/en/about/media/press-releases/aya/)
+- **packaging-019 — Why glass bottles have seams down the sides** (pending_review)
+  - Explanation to establish: Mould joints can leave marks where manufacturing mould sections meet.
+  - Show: Open a bottle mould around its seam.
+  - Source: [o-i.com](https://www.o-i.com/wp-content/uploads/2019/04/O-I_ReadGlass.pdf)
+- **packaging-020 — Why bottle bottoms have tiny raised symbols** (reviewed)
+  - Explanation to establish: Mould identification marks support manufacturing traceability.
+  - Show: Trace a mould identifier back to a production cavity.
+  - Source: [o-i.com](https://www.o-i.com/wp-content/uploads/2019/04/O-I_ReadGlass.pdf)
+- **packaging-021 — Why brown bottles protect some drinks better than clear ones** (reviewed)
+  - Explanation to establish: Coloured glass filters parts of the light spectrum that can affect sensitive contents.
+  - Show: Compare transmitted light through clear and amber glass.
+  - Source: [o-i.com](https://www.o-i.com/news/is-beer-better-in-glass-or-cans-heres-what-you-need-to-know/)
+- **packaging-022 — Why a glass jar lid has a button that pops** (pending_review)
+  - Explanation to establish: Pressure differences deflect a vacuum-indicator panel in the closure.
+  - Show: Show the panel rising as the vacuum is released.
+  - Source: [silganclosures.com](https://silganclosures.com/)
+- **packaging-023 — Why a jar lid can loosen after warming it** (pending_review)
+  - Explanation to establish: Thermal expansion and changes at the seal can affect opening resistance.
+  - Show: Compare expansion of metal lid and glass neck.
+  - Source: [ballmasonjars.com](https://www.ballmasonjars.com/faqs)
+- **packaging-024 — Why food cans have raised rings around their sides** (pending_review)
+  - Explanation to establish: Beads can increase wall stiffness against deformation.
+  - Show: Compare buckling in smooth and beaded cylinders.
+  - Source: [crowncork.com](https://www.crowncork.com/news/revolutionary-peelfittm-can-crown-takes-functionality-and-sustainability-next-level)
+- **packaging-025 — Why a drinks can has a domed bottom** (pending_review)
+  - Explanation to establish: The formed base manages internal pressure with a lightweight structure.
+  - Show: Show pressure on a domed can base.
+  - Source: [ball.com](https://www.ball.com/getmedia/4db64513-133d-4fa8-9de0-89fd7c2724f9/How_a_Ball_Metal_Beverage_Can_Is_Made.pdf)
+- **packaging-026 — Why a can top has a scored outline under the tab** (pending_review)
+  - Explanation to establish: A controlled weak line defines where the opening panel tears.
+  - Show: Trace force from tab to scored panel.
+  - Source: [crowncork.com](https://www.crowncork.com/news/beverage-brands-make-their-mark-crowns-laser-etched-tabs)
+- **packaging-027 — Why the pull tab stays attached after opening** (pending_review)
+  - Explanation to establish: A stay-on-tab design retains the tab and opening panel at the can end.
+  - Show: Animate the rivet and hinged panel.
+  - Source: [crowncork.com](https://www.crowncork.com/beverage-packaging/products/beverage-ends)
+- **packaging-028 — Why metal food cans have an inner coating** (reviewed)
+  - Explanation to establish: A thin internal lining separates food from the metal to limit interaction between the contents and the can.
+  - Show: Separate the wall into metal and thin lining layers; label the enlarged thickness schematic, not to scale.
+  - Source: [crowncork.com](https://crowncork.com/sites/default/files/2023-10/Crown_ProductSafety_2023_v3.pdf)
+- **packaging-029 — Why a can lid is folded several times at its edge** (reviewed)
+  - Explanation to establish: A double seam mechanically interlocks body and end with sealing compound.
+  - Show: Unroll the seam layers in cross-section.
+  - Source: [crowncork.com](https://www.crowncork.com/aerosol-food-packaging/essentials/seaming)
+- **packaging-030 — Why aluminium foil has a shiny side and a dull side** (reviewed)
+  - Explanation to establish: Two sheets rolled together acquire different finishes on contact and roller-facing surfaces.
+  - Show: Show paired foil layers passing through rollers.
+  - Source: [reynoldsbrands.com](https://www.reynoldsbrands.com/products/aluminum-foil/pitmasters-choice-aluminum-foil)
+- **packaging-031 — Why cling film sticks better to some bowls** (pending_review)
+  - Explanation to establish: Material properties, contact and surface conditions affect how the film clings.
+  - Show: Compare smooth dry contact with a rough rim.
+  - Source: [glad.com](https://www.glad.com/products/food-wraps/press-n-seal/)
+- **packaging-032 — Why baking paper releases food when ordinary paper does not** (reviewed)
+  - Explanation to establish: A heat-suitable release coating limits sticking.
+  - Show: Compare dough contacting coated and uncoated paper.
+  - Source: [reynoldsbrands.com](https://www.reynoldsbrands.com/tips-and-how-tos/parchment-vs-butcher-paper)
+- **packaging-033 — Why parchment curls as soon as you cut it** (pending_review)
+  - Explanation to establish: The sheet retains curvature from storage on a roll.
+  - Show: Unroll fibres and show retained curvature.
+  - Source: [reynoldsbrands.com](https://www.reynoldsbrands.com/products/parchment-paper/parchment-paper-rolls)
+- **packaging-034 — Why corrugated cardboard is strong despite being mostly air** (reviewed)
+  - Explanation to establish: Fluted material separates liner sheets and increases structural stiffness efficiently.
+  - Show: Load a corrugated board cross-section.
+  - Source: [fefco.org](https://www.fefco.org/download/file/fid/2998)
+- **packaging-035 — Why cardboard boxes fold at lines without tearing apart** (reviewed)
+  - Explanation to establish: Creasing locally changes the board so it bends at intended locations.
+  - Show: Magnify a crease under a folding panel.
+  - Source: [holmen.com](https://www.holmen.com/en/board-and-paper/insights/paper-academy/paperboard-creasing-and-folding/)
+- **packaging-036 — Why a cardboard box gets much weaker when wet** (pending_review)
+  - Explanation to establish: Moisture changes fibre bonding and mechanical strength.
+  - Show: Compare loaded dry and wet fibre networks.
+  - Source: [fefco.org](https://www.fefco.org/sites/default/files/documents/Cover%20Page%20from%20LCA%20Report%202015-Final_0_1.pdf)
+- **packaging-037 — Why paper bags have a folded block at the bottom** (pending_review)
+  - Explanation to establish: The folded base creates a volume-supporting bottom from a flat paper tube.
+  - Show: Unfold the base into its original panels.
+  - Source: [mondigroup.com](https://www.mondigroup.com/products-and-solutions/ecommerce/paper-mailers/)
+- **packaging-038 — Why padded envelopes have different layers inside** (pending_review)
+  - Explanation to establish: Cushioning structures deform to distribute impacts around the contents.
+  - Show: Compare a direct impact with a cushioned one.
+  - Source: [sealedair.com](https://www.sealedair.com/uk/products/protective-packaging/mailers/paper-mailers)
+- **packaging-039 — Why bubble wrap holds air in separate pockets** (pending_review)
+  - Explanation to establish: Sealed cells localize cushioning and limit total loss when one pocket fails.
+  - Show: Burst one cell beside intact neighbours.
+  - Source: [sealedair.com](https://www.sealedair.com/products/protective-packaging/bubble-wrap-cushioning/bubble-wrap-rolls)
+- **packaging-040 — Why packing foam springs back after being squeezed** (pending_review)
+  - Explanation to establish: A cellular polymer structure deforms and then recovers within its operating range.
+  - Show: Compress and release a foam cell network.
+  - Source: [basf.com](https://www.basf.com/dam/jcr%3A03e665de-3653-3888-af5d-eca73bafd88a/basf/www/cn/documents/zh/news-and-media/publication/BASF-Information-Dec-2013.pdf)
+- **packaging-041 — Why moulded pulp trays fit products so closely** (pending_review)
+  - Explanation to establish: Wet fibres are formed and dried against shaped tooling.
+  - Show: Show pulp forming against a perforated mould.
+  - Source: [huhtamaki.com](https://www.huhtamaki.com/en-us/north-america/foodservice/product-catalog//drink-carriers--trays/cafeteria-trays/5-compartment-cafeteria-pltslp5sw/)
+- **packaging-042 — Why egg cartons use individual cups** (pending_review)
+  - Explanation to establish: Compartment geometry supports and separates fragile eggs during handling.
+  - Show: Trace loads around two protected eggs.
+  - Source: [huhtamaki.com](https://www.huhtamaki.com/en-us/north-america/consumer-goods/eggcarton/)
+- **packaging-043 — Why vacuum packs hug some foods but not others** (pending_review)
+  - Explanation to establish: Air removal lets external pressure press flexible film around the product.
+  - Show: Remove gas and collapse a pouch around its contents.
+  - Source: [sealedair.com](https://www.sealedair.com/products/food-packaging/shrink-films/vacuum-skin-packaging/darfresh-film)
+- **packaging-044 — Why meat packaging can contain a small absorbent pad** (pending_review)
+  - Explanation to establish: An absorbent layer captures released liquid within the pack.
+  - Show: Show liquid entering an absorbent core.
+  - Source: [novipax.com](https://novipax.com/product/cellu-liner/)
+- **packaging-045 — Why some food trays have a thin film that peels cleanly** (pending_review)
+  - Explanation to establish: A controlled peel seal is designed to separate at a particular interface.
+  - Show: Trace the peel front through the seal.
+  - Source: [amcor.com](https://www.amcor.com/media/news/b/amcor-flexibles-exclusive-supplier-of-peelable-pla-for-fresh-produce)
+- **packaging-046 — Why resealable pouches need a separate first-opening strip** (pending_review)
+  - Explanation to establish: An initial tamper-evident seal and a reusable closure perform different functions.
+  - Show: Open the strip then operate the reusable zipper.
+  - Source: [mondigroup.com](https://northamerica.mondigroup.com/products-solutions/mondi-bags/pe-inliner-bags/)
+- **packaging-047 — Why tear notches work only when pulled in the right direction** (pending_review)
+  - Explanation to establish: A notch concentrates stress to start a tear along the film structure.
+  - Show: Compare stress at a notch and an intact edge.
+  - Source: [amcor.com](https://www.amcor.com/insights/blogs/the-power-of-packaging-for-vitamins-and-supplements)
+- **packaging-048 — Why some snack wrappers tear straight and others stretch** (pending_review)
+  - Explanation to establish: Film orientation, layers and tear features influence crack propagation.
+  - Show: Trace tears through two different film structures.
+  - Source: [toray.com](https://www.toray.com/global/ir/pdf/lib/lib_a162.pdf)
+- **packaging-049 — Why a snack wrapper looks metallic but feels like plastic** (pending_review)
+  - Explanation to establish: A very thin metal layer can provide barrier properties on a polymer film.
+  - Show: Peel a metallized film into labelled layers.
+  - Source: [toray.com](https://www.toray.com/story_newspicks/newspicks_07.html)
+- **packaging-050 — Why medicine blister packs make each tablet its own compartment** (pending_review)
+  - Explanation to establish: Individual sealed cavities limit exposure until a dose is removed.
+  - Show: Open one cavity while neighbouring seals remain intact.
+  - Source: [amcor.com](https://www.amcor.com/insights/blogs/moisture-absorbing-packaging)
+- **packaging-051 — Why silica-gel packets can keep a box dry** (reviewed)
+  - Explanation to establish: Porous silica adsorbs water vapour from enclosed air.
+  - Show: Move water molecules into a pore network.
+  - Source: [clariant.com](https://www.clariant.com/en/products/desiccant-types)
+- **packaging-052 — Why some packages use oxygen absorbers rather than desiccants** (pending_review)
+  - Explanation to establish: Oxygen scavengers remove oxygen through a chemical reaction rather than simply collecting moisture.
+  - Show: Compare oxygen and water removal paths.
+  - Source: [mitsubishigaschemical.com](https://mitsubishigaschemical.com/)
+- **packaging-053 — Why a plastic recycling triangle does not guarantee local recycling** (reviewed)
+  - Explanation to establish: A resin identification code describes material type rather than local collection acceptance.
+  - Show: Separate resin identity from collection rules.
+  - Source: [astm.org](https://store.astm.org/d7611_d7611m-20.html)
+- **packaging-054 — Why compostable packaging does not always belong in a garden compost pile** (pending_review)
+  - Explanation to establish: Some certified materials require industrial composting conditions.
+  - Show: Compare controlled industrial conditions with a garden pile.
+  - Source: [tuv-at.be](https://www.tuv-at.be/fileadmin/user_upload/docs/download-documents/CS/CS-OK20-EN_biobased.pdf)
+- **packaging-055 — Why paper cups need a lining even though they look like paper** (reviewed)
+  - Explanation to establish: A barrier layer limits liquid penetration through the fibre structure.
+  - Show: Show water stopped by an inner liner.
+  - Source: [huhtamaki.com](https://www.huhtamaki.com/en/highlights/sustainability/how-paper-cups-are-made/)
+- **packaging-056 — Why a takeaway lid has a second tiny hole** (pending_review)
+  - Explanation to establish: A vent admits air as liquid leaves, reducing pressure disruption.
+  - Show: Trace separate air and liquid paths.
+  - Source: [dartcontainer.com](https://www.dartcontainer.com/products/foodservice/lids/plastic/solo-polypropylene-plastic-lids/lvp508-0100)
+- **packaging-057 — Why drink lids have small raised buttons** (pending_review)
+  - Explanation to establish: On some lids the buttons identify drink variations for handling.
+  - Show: Show a marked option beside the drinking opening.
+  - Source: [dartcontainer.com](https://www.dartcontainer.com/products/foodservice/lids/plastic/lids-for-plastic-cups/l32cr)
+- **packaging-058 — Why takeaway containers have steam vents** (pending_review)
+  - Explanation to establish: Venting allows moisture and pressure to escape rather than collecting entirely inside.
+  - Show: Compare condensation in vented and closed packs.
+  - Source: [huhtamaki.com](https://www.huhtamaki.com/globalassets/foodservice-eao/fs-campaign-takeaway-and-hd/packaging-that-delivers-brochure-2021.pdf)
+- **packaging-059 — Why a bottle label can shrink tightly around awkward curves** (reviewed)
+  - Explanation to establish: Heat-shrink film contracts around the container after placement.
+  - Show: Heat a loose sleeve around a shaped bottle.
+  - Source: [ccllabel.com](https://ccllabel.com/en/solutions/solution-by-product/shrink-sleeves)
+- **packaging-060 — Why peel-off labels leave different amounts of glue** (reviewed)
+  - Explanation to establish: Adhesive formulation, substrate and removal conditions determine where separation occurs.
+  - Show: Compare adhesive and cohesive failure paths.
+  - Source: [averydennison.com](https://label.averydennison.com/content/dam/averydennison/lpm-responsive/asia-pacific/en-sa/documents/promotional/removables/wp-retail-removable-labels-an-under-estimated-functionality-sapssa.pdf)
+- **packaging-061 — Why security labels reveal a hidden pattern when removed** (reviewed)
+  - Explanation to establish: Layer separation transfers or reveals a tamper-evident pattern.
+  - Show: Peel a label to expose its internal pattern.
+  - Source: [averydennison.com](https://label.averydennison.com/content/dam/averydennison/lpm-responsive/na/doc/technical-bulletins/technical%20marketing%20bulletins/tmb-void-polyesters.pdf)
+- **packaging-062 — Why some shipping labels turn black when heated** (reviewed)
+  - Explanation to establish: Direct thermal coatings change colour under localized heat.
+  - Show: Move a printhead across a thermal label.
+  - Source: [zebra.com](https://www.zebra.com/us/en/resource-library/faq/what-is-a-thermal-printer.html)
+- **packaging-063 — Why a glossy package has tiny coloured squares at the edge** (reviewed)
+  - Explanation to establish: Printed control patches let production staff monitor colour and printing consistency while the packaging is made.
+  - Show: Align colour separations against control patches.
+  - Source: [heidelberg.com](https://www.heidelberg.com/global/media/en/global_media/products___prinect/products___prinect_topics/pdf_1/color_quality.pdf)
+- **packaging-064 — Why a snack wrapper has seams across both ends** (reviewed)
+  - Explanation to establish: A flow wrapper forms a tube around products, then crosswise jaws seal and cut between them, making the repeated end seams.
+  - Show: Animate three products in one film tube; seal and cut in the gaps to reveal an individual wrapped product.
+  - Source: [syntegon.com](https://www.syntegon.com/hubfs/03_blog/02_files/Brochure-Sealing-Cutting-EN.pdf)
+- **packaging-065 — Why bags of frozen food have tiny holes on some designs** (pending_review)
+  - Explanation to establish: Selected venting designs allow trapped air to escape during packing and handling.
+  - Show: Show air leaving a specifically vented frozen-food bag.
+  - Source: [mondigroup.com](https://www.mondigroup.com/products-and-solutions/release-liner/release-liner-for-graphic-arts/)
+
+## Transport and street systems
+
+- **transport-001 — Why a car indicator clicks even without an old relay** (pending_review)
+  - Explanation to establish: Some modern vehicles generate feedback electronically rather than through a mechanical flasher.
+  - Show: Compare relay switching with an electronic sound signal.
+  - Source: [hella.com](https://www.hella.com/soe/assets/documents_global/10045700a_AM0.pdf)
+- **transport-002 — Why indicator flashing speeds up after a bulb fails** (pending_review)
+  - Explanation to establish: Some systems detect a changed electrical load and signal a lamp fault through faster flashing.
+  - Show: Remove a bulb from a monitored circuit.
+  - Source: [hella.com](https://www.hella.com/techworld/us/lounge/can-bus-vehicle-lighting-bulb-replacement-workshop/)
+- **transport-003 — Why reversing lights can look different on each side** (pending_review)
+  - Explanation to establish: Regional lamp arrangements may assign separate positions to reverse and rear fog functions.
+  - Show: Label a region-specific rear lamp cluster.
+  - Source: [hella.com](https://www.hella.com/partnerworld/assets/documents/1793_Flyer_Reversing_Lights_HELLA_EN.pdf)
+- **transport-004 — Why a rear fog light is much brighter than a tail light** (pending_review)
+  - Explanation to establish: Its purpose is visibility in poor conditions, requiring a different light distribution and output.
+  - Show: Compare labelled tail and fog beams.
+  - Source: [hella.com](https://www.hella.com/techworld/us/passenger-car-parts/vehicle-lighting/bulbs/)
+- **transport-005 — Why a car mirror has a dotted vertical line** (pending_review)
+  - Explanation to establish: Some mirrors divide standard and aspheric zones to widen the field of view.
+  - Show: Trace rays through the two mirror zones.
+  - Source: [magna.com](https://www.magna.com/docs/default-source/ces-media-kit-assets/company-information/media-kit_driver-assistance_magna.pdf?sfvrsn=ea47783d_2)
+- **transport-006 — Why the passenger mirror makes cars look smaller** (pending_review)
+  - Explanation to establish: A convex surface widens the view while reducing apparent image size.
+  - Show: Compare a flat and convex mirror's ray paths.
+  - Source: [nhtsa.gov](https://www.nhtsa.gov/interpretations/1786y)
+- **transport-007 — Why an automatic rear-view mirror darkens** (pending_review)
+  - Explanation to establish: An electrochromic layer changes transmission in response to detected glare.
+  - Show: Show sensor input changing the mirror layer.
+  - Source: [gentex.com](https://ir.gentex.com/static-files/e0cb915a-ca7f-4957-9684-238c4267530b)
+- **transport-008 — Why a windscreen has a black dotted border** (pending_review)
+  - Explanation to establish: The ceramic frit masks and protects bonding areas; dotted transitions soften the visible border.
+  - Show: Show the adhesive behind the frit band.
+  - Source: [agc-automotive.com](https://www.agc-automotive.com/news/p-polarized-head-up-display)
+- **transport-009 — Why rear windows use visible wires to clear mist** (pending_review)
+  - Explanation to establish: Resistive tracks warm the glass and help remove condensation.
+  - Show: Trace current and heat through the rear screen.
+  - Source: [pilkington.com](https://www.pilkington.com/en/gbl/automotive-glass/automotive-glass-overview/automotive-product-catalogue/backlites/hydrophobic-coatings)
+- **transport-010 — Why windscreen wipers flip direction at each stroke** (reviewed)
+  - Explanation to establish: The flexible wiping edge changes its contact orientation as motion reverses.
+  - Show: Magnify the rubber edge at stroke reversal.
+  - Source: [boschaftermarket.com](https://www.boschaftermarket.com/xrm/media/images/country_specific/za/services_20/xx_pdfs_31/bosch_wipers_aerotwin_jet_blade.pdf)
+- **transport-011 — Why some tyres have tiny rubber hairs** (pending_review)
+  - Explanation to establish: Vent features in tyre moulds can leave small rubber projections.
+  - Show: Show rubber entering a mould vent.
+  - Source: [michelin.com](https://pro.africa.michelin.com/en/tyres/michelin-xdr-250)
+- **transport-012 — Why new tyres have coloured stripes on the tread** (pending_review)
+  - Explanation to establish: Manufacturing and logistics markings can identify tyre stock during production and handling.
+  - Show: Track a marked tread through factory sorting.
+  - Source: [continental-tires.com](https://www.continental-tires.com/tire-knowledge/motorcycle-tires-discoloration/)
+- **transport-013 — Why tyre grooves are not all the same direction** (reviewed)
+  - Explanation to establish: Asymmetric tyres can put water-clearing grooves on the inside and larger handling blocks on the outside.
+  - Show: Trace water through a specified tread pattern.
+  - Source: [michelin.com](https://africa.michelin.com/en/auto/assistance/glossary)
+- **transport-014 — Why tyre tread blocks have tiny slits** (reviewed)
+  - Explanation to establish: Winter tyre sipes and block edges grip and pack snow into pockets; too many sipes would reduce tread-block stability on dry roads.
+  - Show: Flex a siped tread block against a surface.
+  - Source: [continental-tires.com](https://www.continental-tires.com/about-us/stories/tire-treads/)
+- **transport-015 — Why worn tyres reveal small bridges across the grooves** (reviewed)
+  - Explanation to establish: Moulded wear indicators sit inside tread grooves and become flush with the tread as the tyre wears.
+  - Show: Lower tread around a wear indicator.
+  - Source: [michelin.com](https://middle-east.michelin.com/en/auto/advice/change-tyres/tyre-wear)
+- **transport-016 — Why tyre pressure rises after driving** (pending_review)
+  - Explanation to establish: Warming the contained gas increases its pressure as the tyre operates.
+  - Show: Compare cold and warm tyre pressure diagrams.
+  - Source: [michelin.com](https://middle-east.michelin.com/en/auto/advice/tyre-pressure/check-tyre-pressure)
+- **transport-017 — Why a slow tyre leak can become a dashboard warning later** (pending_review)
+  - Explanation to establish: Monitoring systems detect pressure or wheel-behaviour changes only under their operating conditions.
+  - Show: Compare direct sensing and indirect wheel-speed sensing.
+  - Source: [continental.com](https://www.continental.com/en/press/press-releases/20230803-real-time-digital-tire-monitoring/)
+- **transport-018 — Why car wheels have tiny metal blocks stuck inside** (reviewed)
+  - Explanation to establish: Precisely placed small weights correct wheel-and-tyre imbalance that would otherwise cause vibration as it rotates.
+  - Show: Show an off-centre mass on a rotating wheel, then a small opposing correction; label illustrative and do not imply every vibration has this cause.
+  - Source: [hunter.com](https://www.hunter.com/en-int/wheel-balancers/smartweight/)
+- **transport-019 — Why wheels have ventilation openings near the brakes** (pending_review)
+  - Explanation to establish: Wheel geometry permits airflow and accommodates mass, strength and brake-clearance needs.
+  - Show: Show airflow through an example wheel to the brake.
+  - Source: [brembo.com](https://www.brembo.com/en/motorsport/formula1/f1-brake-ventilation)
+- **transport-020 — Why some brake discs have holes right where the pads rub** (reviewed)
+  - Explanation to establish: Surface holes can interrupt water lying between a brake disc and its pad; outward-facing slots help disperse that water.
+  - Show: Transparent pad sweeps across an illustrative water film; a hole interrupts the film and a radial slot provides a path outward. Separate surface features from internal vents.
+  - Source: [brembo.com](https://www.brembo.com/en/news-archive/disc-drilled-or-slotted)
+- **transport-021 — Why your brake pedal can kick back during a hard stop** (reviewed)
+  - Explanation to establish: Wheel-speed sensors let ABS detect impending wheel lock. Valves reduce and restore pressure at that wheel; this cycling can be felt as pedal pulses.
+  - Show: Animate wheel-speed signal into a valve that releases and reapplies brake pressure as wheel rotation recovers. Use no unsupported cycle frequency.
+  - Source: [bosch-mobility.com](https://www.bosch-mobility.com/en/solutions/driving-safety/antilock-braking-system/)
+- **transport-022 — Why an electric car slows when you lift your foot** (pending_review)
+  - Explanation to establish: Regenerative braking can use the motor as a generator under enabled driving settings.
+  - Show: Reverse energy flow from wheels to battery.
+  - Source: [tesla.com](https://www.tesla.com/ownersmanual/2020_2024_modely/en_us/Owners_Manual.pdf)
+- **transport-023 — Why regenerative braking can weaken with a full battery** (reviewed)
+  - Explanation to establish: The battery may have limited capacity to accept additional charging power.
+  - Show: Show the energy-acceptance limit near full charge.
+  - Source: [tesla.com](https://service.tesla.com/docs/Public/Roadster/TheoryOp/1.2.5/do/39.html)
+- **transport-024 — Why an electric car makes an artificial low-speed sound** (pending_review)
+  - Explanation to establish: Pedestrian warning systems provide audible presence when propulsion noise is low.
+  - Show: Compare low-speed vehicle sound with warning active.
+  - Source: [nhtsa.gov](https://www.nhtsa.gov/sites/nhtsa.gov/files/quietcar-noi-draft.pdf)
+- **transport-025 — Why cruise control behaves differently downhill** (pending_review)
+  - Explanation to establish: Some systems only reduce drive power while others can apply braking.
+  - Show: Compare two downhill speed-control strategies.
+  - Source: [ford.com](https://performanceparts.ford.com/download/charts/Fuel_Injectors_and_Adaptors.pdf)
+- **transport-026 — Why a seatbelt locks if you pull it suddenly** (pending_review)
+  - Explanation to establish: An emergency-locking retractor responds to rapid webbing movement or vehicle deceleration.
+  - Show: Show a pawl engaging the reel.
+  - Source: [autoliv.com](https://www.autoliv.com/seatbelt)
+- **transport-027 — Why a seatbelt can retract slowly near the end** (pending_review)
+  - Explanation to establish: Retraction depends on spring force and friction along the belt path.
+  - Show: Compare spring torque with belt-path friction.
+  - Source: [autoliv.com](https://www.autoliv.com/press/autoliv-announces-new-adaptable-seatbelt-1291821)
+- **transport-028 — Why fuel doors are on different sides of cars** (pending_review)
+  - Explanation to establish: Vehicle packaging and manufacturer design choices determine filler placement.
+  - Show: Compare two platform layouts without inventing one universal reason.
+  - Source: [ford.com](https://www.caribe.ford.com/content/dam/Ford/website-assets/cca/cca-compartido/brochures-caribe/ford-caribbean-bronco-2022-brochure-download-eng.pdf)
+- **transport-029 — Why a fuel pump stops before fuel spills out** (pending_review)
+  - Explanation to establish: A sensing passage and pressure change trigger the nozzle's automatic shutoff.
+  - Show: Trace air through the nozzle sensing port.
+  - Source: [opwglobal.com](https://www.opwglobal.com/products/us/standard-dispensing-equipment/automatic-nozzles-gas-station/11a-and-11b-automatic-nozzles)
+- **transport-030 — Why a car horn sounds like more than one note** (pending_review)
+  - Explanation to establish: Some horn assemblies combine tones to create their intended acoustic character.
+  - Show: Overlay two horn frequencies.
+  - Source: [hella.com](https://www.hella.com/lightstyle/in/horns-and-fanfares/)
+- **transport-031 — Why road markings look much brighter at night when dry** (pending_review)
+  - Explanation to establish: Retroreflective beads return headlight illumination, and surface water changes their optical path.
+  - Show: Compare dry and submerged glass beads.
+  - Source: [3m.com](https://www.3m.com/3M/en_US/road-safety-us/resources/road-transportation-safety-center-blog/full-story/~/why-do-pavement-markings-disappear-in-the-rain/?storyid=90b6c8e2-1c04-4491-adc6-9df3e09f022d)
+- **transport-032 — Why rumble strips have regular gaps in some places** (pending_review)
+  - Explanation to establish: Design gaps can accommodate cyclists, drainage or intersections depending on the installation.
+  - Show: Show a bicycle crossing a designed gap.
+  - Source: [fhwa.dot.gov](https://highways.fhwa.dot.gov/safety/rwd/keep-vehicles-road/rumble-strips/rumble-strip-implementation-guide-addressing-bicycle)
+- **transport-033 — Why traffic lights sometimes stay red when the road looks empty** (pending_review)
+  - Explanation to establish: Signal timing may include minimum intervals, coordination or detection constraints.
+  - Show: Show the active timing stages in a junction.
+  - Source: [fhwa.dot.gov](https://www.fhwa.dot.gov/innovation/everydaycounts/edc-1/asct.cfm)
+- **transport-034 — Why a bicycle sometimes fails to trigger a junction detector** (reviewed)
+  - Explanation to establish: Inductive detector response depends on loop design, sensitivity and vehicle position.
+  - Show: Compare bicycle positions over a loop.
+  - Source: [fhwa.dot.gov](https://www.fhwa.dot.gov/policyinformation/tmguide/tmg_2022/traffic-data-collection.cfm)
+- **transport-035 — Why traffic lights include an all-red pause** (reviewed)
+  - Explanation to establish: Clearance intervals provide time between conflicting movements.
+  - Show: Track the final vehicle before the next phase.
+  - Source: [fhwa.dot.gov](https://highways.fhwa.dot.gov/sites/fhwa.dot.gov/files/2023-12/FHWASA09014.pdf)
+- **transport-036 — Why a crossing countdown can run while the hand is flashing** (reviewed)
+  - Explanation to establish: In this US signal design, the countdown measures the pedestrian clearance interval, not an unrestricted invitation to start crossing.
+  - Show: Label walk and clearance phases for one jurisdiction.
+  - Source: [fhwa.dot.gov](https://mutcd.fhwa.dot.gov/htm/2009/part4/part4e.htm)
+- **transport-037 — Why some junctions let pedestrians move before cars** (reviewed)
+  - Explanation to establish: A leading pedestrian interval establishes pedestrians in the crossing before turning traffic starts.
+  - Show: Animate staggered release at a crossing.
+  - Source: [fhwa.dot.gov](https://ops.fhwa.dot.gov/publications/fhwahop08024/chapter4.htm)
+- **transport-038 — Why crossing islands are staggered instead of straight** (pending_review)
+  - Explanation to establish: A staggered layout can orient pedestrians toward approaching traffic and separate crossing stages.
+  - Show: Trace a pedestrian's sightline on a refuge island.
+  - Source: [gov.uk](https://www.southwark.gov.uk/sites/default/files/2024-10/ds_113_traffic_islands.pdf)
+- **transport-039 — Why bus lanes sometimes end before a junction** (pending_review)
+  - Explanation to establish: Lane transitions depend on turning movements, signal design and local priorities.
+  - Show: Show one documented junction's bus and turn paths.
+  - Source: [tfl.gov.uk](https://content.tfl.gov.uk/bus-priority-best-practice-design-guidance-nov-2025.pdf)
+- **transport-040 — Why buses lower themselves at a stop** (pending_review)
+  - Explanation to establish: Kneeling suspension reduces the step or ramp height for boarding.
+  - Show: Lower an air-suspended bus beside a kerb.
+  - Source: [volvobuses.com](https://driverguide.volvobuses.com/lang/en/chassi/VOLVO790042/topic/254344)
+- **transport-041 — Why bus doors may refuse to open while moving** (pending_review)
+  - Explanation to establish: Interlocks restrict door operation according to vehicle speed and system state.
+  - Show: Show speed input blocking a door command.
+  - Source: [volvobuses.com](https://www.volvobuses.com/content/dam/volvo-buses/markets/global/classic/news/2011/111202__Pressinfo_EBSF_ENG.pdf)
+- **transport-042 — Why long buses bend behind the driver** (pending_review)
+  - Explanation to establish: An articulated joint lets a long passenger vehicle negotiate turns.
+  - Show: Compare the swept paths of rigid and articulated buses.
+  - Source: [mercedes-benz-bus.com](https://www.mercedes-benz-bus.com/en_DE/models/capacity/comfort-and-design/design.html)
+- **transport-043 — Why trains have tapered wheel treads** (pending_review)
+  - Explanation to establish: Wheel-rail geometry can help guide a wheelset through curves within design limits.
+  - Show: Show different rolling radii as a wheelset shifts.
+  - Source: [networkrail.co.uk](https://www.networkrail.co.uk/our-work/looking-after-the-railway/track/)
+- **transport-044 — Why train wheels can squeal on a tight curve** (pending_review)
+  - Explanation to establish: Wheel-rail contact and lateral slip can excite vibration on curves.
+  - Show: Animate lateral slip and wheel vibration.
+  - Source: [networkrail.co.uk](https://www.networkrail.co.uk/wp-content/uploads/2019/06/Challenge-statement-track-improved-application-of-friction-management.pdf)
+- **transport-045 — Why railway tracks sit on jagged stones** (pending_review)
+  - Explanation to establish: Ballast supports sleepers, distributes load and provides drainage while resisting movement.
+  - Show: Trace loads and water through a ballast bed.
+  - Source: [networkrail.co.uk](https://www.networkrail.co.uk/our-work/looking-after-the-railway/track/)
+- **transport-046 — Why some rail sections have small insulated joints** (pending_review)
+  - Explanation to establish: Insulated joints separate electrical sections used by particular signalling systems.
+  - Show: Split a track circuit at an insulated joint.
+  - Source: [networkrail.co.uk](https://www.networkrail.co.uk/wp-content/uploads/2017/09/FOI2017-00552-High-Pitch-Sounds-.pdf)
+- **transport-047 — Why a platform can have two different stopping marks** (pending_review)
+  - Explanation to establish: Different train lengths or door arrangements require different stopping positions.
+  - Show: Align two train formations with platform doors.
+  - Source: [networkrail.co.uk](https://www.networkrail.co.uk/wp-content/uploads/2023/12/NR-GN-CIV-100-03-Station-Capacity-Planning-guidance.pdf)
+- **transport-048 — Why platform doors do not open until the train is aligned** (pending_review)
+  - Explanation to establish: Interlocks coordinate the platform barrier with the train's position and door state.
+  - Show: Show alignment enabling paired door opening.
+  - Source: [smrt.com.sg](https://www.smrt.com.sg/getmedia/d02f5c96-d20b-4c3b-9985-c10d9d589b7b/SMRT_OpsReview2017.pdf?ext=.pdf)
+- **transport-049 — Why train announcements sometimes precede the visible train** (pending_review)
+  - Explanation to establish: Signalling or location systems can report an approaching train before it reaches the platform.
+  - Show: Trace location data to a passenger display.
+  - Source: [tfl.gov.uk](https://tfl.gov.uk/corporate/transparency/freedom-of-information/foi-request-detail?referenceId=FOI-0354-2223)
+- **transport-050 — Why metro trains can stop so precisely** (reviewed)
+  - Explanation to establish: Automatic train operation uses position and speed feedback to control braking toward a stopping point.
+  - Show: Plot a controlled approach to a platform marker.
+  - Source: [alstom.com](https://www.alstom.com/press-releases-news/2022/7/who-drives-driverless-train)
+- **transport-051 — Why aeroplane wing tips bend upward** (reviewed)
+  - Explanation to establish: Wingtip devices can reduce induced drag by modifying the wingtip flow.
+  - Show: Compare airflow behind wings with and without winglets.
+  - Source: [nasa.gov](https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/winglets/)
+- **transport-052 — Why aircraft wings flex during flight** (pending_review)
+  - Explanation to establish: Elastic structural design allows load-dependent deflection within certified limits.
+  - Show: Bend a wing under distributed lift.
+  - Source: [airbus.com](https://www.airbus.com/en/newsroom/press-releases/2019-06-how-the-albatross-is-inspiring-next-generation-of-aircraft-wings)
+- **transport-053 — Why aircraft tyres smoke briefly on landing** (pending_review)
+  - Explanation to establish: A stationary wheel accelerates rapidly on contact with the runway, producing frictional heating.
+  - Show: Show wheel spin-up at touchdown.
+  - Source: [michelin.com](https://middle-east.michelin.com/en/tyre-fire-hazards)
+- **transport-054 — Why aeroplane windows have several panes** (pending_review)
+  - Explanation to establish: Multiple panes divide pressure-bearing and protective functions in the window assembly.
+  - Show: Label the separate panes of a passenger window.
+  - Source: [airbus.com](https://safetyfirst.airbus.com/under-the-spotlights/?airbus-iframe=true&airbus-post=2055)
+- **transport-055 — Why some jet engines have a sawtooth edge** (reviewed)
+  - Explanation to establish: Chevron nozzle edges change the mixing of hot core air and cooler fan air to reduce jet noise.
+  - Show: Animate hot and cool flow meeting behind smooth and chevron edges; label the flow as an illustration, with no invented noise measurements.
+  - Source: [nasa.gov](https://www.nasa.gov/aeronautics/nasa-helps-create-a-more-silent-night/)
+- **transport-056 — Why overhead air nozzles feel stronger when partly closed** (pending_review)
+  - Explanation to establish: Changing outlet area and direction alters the local jet felt by the passenger.
+  - Show: Compare nozzle opening and air-jet shape.
+  - Source: [collinsaerospace.com](https://www.collinsaerospace.com/-/media/CA/product-assets/files/commercial/flight-deck/surveillance/air-data-systems/angle-of-attack-aoa-systems.pdf?rev=5334a65820844e7ebc8b8b89d7bf4422)
+- **transport-057 — Why your ears react during descent rather than just at takeoff** (pending_review)
+  - Explanation to establish: Cabin pressure changes require pressure equalization across the eardrum.
+  - Show: Compare cabin and middle-ear pressure.
+  - Source: [faa.gov](https://www.faa.gov/air_traffic/publications/atpubs/aip_html/part2_enr_section_1.15.html)
+- **transport-058 — Why an aircraft seems to speed up just before landing** (pending_review)
+  - Explanation to establish: Changes in perspective, sound and control settings can differ from actual airspeed.
+  - Show: Compare sightline motion with labelled speed data.
+  - Source: [faa.gov](https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/airplane_handbook/04_afh_ch3.pdf)
+- **transport-059 — Why luggage belts have overlapping metal or rubber plates** (pending_review)
+  - Explanation to establish: Overlapping segments let the conveyor follow curved paths while supporting bags.
+  - Show: Move linked plates around a carousel bend.
+  - Source: [vanderlande.com](https://www.vanderlande.com/systems/baggage-handling/variotray/)
+- **transport-060 — Why a bag sometimes takes a longer route inside an airport** (pending_review)
+  - Explanation to establish: Sorting and screening systems route bags according to destination and processing requirements.
+  - Show: Trace one bag through a documented sorting flow.
+  - Source: [vanderlande.com](https://www.vanderlande.com/systems/transportation/fleet-bag/)
+- **transport-061 — Why airport jet bridges have accordion-like sections** (pending_review)
+  - Explanation to establish: Flexible joints accommodate changes in bridge position and aircraft alignment.
+  - Show: Extend and rotate a bridge joint.
+  - Source: [tkairport.com](https://tkairport.com/)
+- **transport-062 — Why ship propellers can make clouds of bubbles underwater** (reviewed)
+  - Explanation to establish: Low pressure around a propeller can produce cavitation bubbles under some conditions.
+  - Show: Show pressure dropping on a blade surface.
+  - Source: [wartsila.com](https://www.wartsila.com/insights/article/battling-noise-pollution)
+- **transport-063 — Why ferry ramps change angle with the tide** (pending_review)
+  - Explanation to establish: The ramp bridges a changing vertical difference between vessel and shore.
+  - Show: Raise water level beneath a hinged ramp.
+  - Source: [damen.com](https://www.damen.com/services/shiprepair/projects/vehicles-carrier-tirranna-harbour-and-voyage-repair-and-conversion)
+- **transport-064 — Why bicycles click when coasting but not always when pedalling** (pending_review)
+  - Explanation to establish: A freewheel or freehub ratchet permits wheel rotation without driving the pedals.
+  - Show: Show pawls slipping while the wheel overruns.
+  - Source: [shimano.com](https://bike.shimano.com/en-NA/technologies/details/free-shift.html)
+- **transport-065 — Why bicycle gears shift more easily while pedalling gently** (pending_review)
+  - Explanation to establish: The moving chain must travel between sprockets while excessive load can resist the shift.
+  - Show: Trace chain movement across adjacent sprockets.
+  - Source: [shimano.com](https://bike.shimano.com/en-UK/technologies/details/linkglide.html)
+
+## Shopping and payments
+
+- **shopping-001 — Why a pending card payment can differ from the final bill** (pending_review)
+  - Explanation to establish: An authorization reserves an amount before the merchant submits the final transaction.
+  - Show: Show authorization and settlement as separate stages.
+  - Source: [visa.com](https://usa.visa.com/content/dam/VCOM/regional/na/us/support-legal/documents/authorization-and-reversal-processing-best-practices-for-merchants.pdf)
+- **shopping-002 — Why a refunded payment takes longer than a purchase notification** (pending_review)
+  - Explanation to establish: Refund processing follows a separate chain from the instant authorization response.
+  - Show: Trace refund instructions through merchant and issuer.
+  - Source: [stripe.com](https://docs.stripe.com/issuing/purchases/transactions)
+- **shopping-003 — Why tapping a phone can show different card digits on a receipt** (reviewed)
+  - Explanation to establish: Tokenized payments can use a device-specific payment credential instead of the underlying card number.
+  - Show: Compare card number and device token.
+  - Source: [emvco.com](https://www.emvco.com/wp-content/uploads/2023/03/EMVCo-Payment-Tokenisation-A-Guide-To-Use-Cases-v2.2.1.pdf)
+- **shopping-004 — Why a card terminal occasionally asks for your PIN after taps** (pending_review)
+  - Explanation to establish: Issuer and terminal risk controls can require cardholder verification under applicable rules.
+  - Show: Show a verification decision without universal tap limits.
+  - Source: [mastercard.com](https://www.mastercard.com/content/dam/public/mastercardcom/na/us/en/documents/SPME-Manual-September-2019.pdf)
+- **shopping-005 — Why removing a card too soon can cancel payment** (pending_review)
+  - Explanation to establish: Chip communication must finish before the terminal can complete the required transaction steps.
+  - Show: Show the interrupted exchange between card and terminal.
+  - Source: [emvco.com](https://www.emvco.com/knowledge-hub/what-did-you-miss-roundup-from-the-emv-user-meeting/)
+- **shopping-006 — Why a payment terminal can work during a brief connection outage** (reviewed)
+  - Explanation to establish: Some configurations support limited offline processing subject to payment rules and risk controls.
+  - Show: Compare online authorization with a qualified offline flow.
+  - Source: [squareup.com](https://squareup.com/us/en/the-bottom-line/operating-your-business/how-to-choose-a-payment-terminal)
+- **shopping-007 — Why a contactless card can be read but still declined** (pending_review)
+  - Explanation to establish: Successful radio communication is separate from authorization and verification.
+  - Show: Separate communication success from issuer decision.
+  - Source: [visa.com](https://africa.visa.com/content/dam/VCOM/regional/na/us/partner-with-us/documents/transaction-acceptance-device-guide-tadg.pdf)
+- **shopping-008 — Why your bank app shows a different shop name from the sign outside** (pending_review)
+  - Explanation to establish: A transaction's statement descriptor can differ from the consumer-facing shop name.
+  - Show: Trace a shop name and configured statement descriptor through a payment.
+  - Source: [stripe.com](https://support.stripe.com/questions/why-do-customers-see-statement-descriptors-that-don-t-match-what-i-ve-set-in-stripe)
+- **shopping-009 — Why a receipt has several different transaction numbers** (reviewed)
+  - Explanation to establish: Order numbers identify purchases while payment references identify transactions, so one receipt can link several separate records.
+  - Show: Trace one purchase across labelled identifiers.
+  - Source: [stripe.com](https://stripe.com/gb/resources/more/customer-reference)
+- **shopping-010 — Why a supermarket barcode can include the item's weight** (pending_review)
+  - Explanation to establish: Variable-measure retail labels may encode weight or price under regional conventions.
+  - Show: Decode one scoped variable-measure label.
+  - Source: [gs1.org](https://www.gs1.org/docs/freshfood/Fresh_Food_Implementation_Guide.pdf)
+- **shopping-011 — Why the same product can have different barcodes in different sizes** (pending_review)
+  - Explanation to establish: Trade-item identifiers distinguish commercial variants such as pack size.
+  - Show: Compare two sizes with separate identifiers.
+  - Source: [gs1.org](https://support.gs1.org/support/solutions/articles/43000734137-what-is-the-gs1-barcode-commonly-used-for-trade-item-identification-)
+- **shopping-012 — Why a box of products has a different barcode from one item** (reviewed)
+  - Explanation to establish: Packaging levels can have distinct identifiers for logistics and trade.
+  - Show: Map item, case and pallet identifiers.
+  - Source: [gs1.org](https://support.gs1.org/support/solutions/articles/43000756210-is-it-sufficient-to-assign-a-gtin-solely-to-the-base-item-or-do-we-also-need-to-allocate-distinct-gt)
+- **shopping-013 — Why a barcode has a final check digit** (pending_review)
+  - Explanation to establish: The digit helps detect certain data-entry or reading errors through a prescribed calculation.
+  - Show: Change one digit and show a failed check.
+  - Source: [gs1.org](https://www.gs1.org/standards/gs1-datamatrix-guideline/25)
+- **shopping-014 — Why a checkout can scan a barcode upside down** (pending_review)
+  - Explanation to establish: Readers decode supported patterns after determining orientation.
+  - Show: Rotate a symbol while keeping its encoded data unchanged.
+  - Source: [zebra.com](https://techdocs.zebra.com/simulscan/1-1/guide/templatebuilder/)
+- **shopping-015 — Why a shiny wrapper is harder to scan at some angles** (pending_review)
+  - Explanation to establish: Reflections and contrast can obscure the symbol from the reader.
+  - Show: Move glare across a barcode.
+  - Source: [zebra.com](https://www.zebra.com/content/dam/support-dam/en/documentation/unrestricted/guide/product/mc94-prg-en.pdf)
+- **shopping-016 — Why a cash total can round off while the card total does not** (reviewed)
+  - Explanation to establish: Cash rounding can accommodate the available coins while electronic payments can still settle to the exact cent.
+  - Show: Split a labelled Canadian example into a cash total and an exact electronic total; apply rounding to the final cash total, not every item.
+  - Source: [canada.ca](https://www.canada.ca/en/news/archive/2013/02/government-canada-royal-canadian-mint-bid-farewell-canadian-penny.html)
+- **shopping-017 — Why loose produce needs a short number at checkout** (pending_review)
+  - Explanation to establish: PLU codes identify produce categories for retail handling and pricing.
+  - Show: Map a produce code to an item record.
+  - Source: [ifpsglobal.com](https://www.ifpsglobal.com/s/PLU-Site-FAQs-May-2025-FINAL.pdf)
+- **shopping-018 — Why a shop weighing scale has a tiny level indicator** (reviewed)
+  - Explanation to establish: Tilting some portable weighing scales changes their accuracy, so a level indicator helps establish the intended operating position.
+  - Show: Animate a scale platform tilting beside its level indicator; label the reading as an illustrative example.
+  - Source: [nist.gov](https://nvlpubs.nist.gov/nistpubs/hb/2019/NIST.HB.44-2019.pdf)
+- **shopping-019 — Why the larger pack is not necessarily cheaper per gram** (pending_review)
+  - Explanation to establish: Retail prices and promotions can vary independently of package size.
+  - Show: Calculate unit prices for labelled illustrative packs.
+  - Source: [gov.uk](https://www.gov.uk/government/publications/unit-pricing-analysis-and-consumer-research/summary-of-consumer-research-and-unit-pricing-analysis)
+- **shopping-020 — Why a sale label can show a previous price as well as today's** (pending_review)
+  - Explanation to establish: Reference-price display requirements and conventions depend on jurisdiction.
+  - Show: Compare a labelled regional before-and-after price display.
+  - Source: [europa.eu](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52021XC1229%2806%29)
+- **shopping-021 — Why digital shelf labels do not need a power cable** (pending_review)
+  - Explanation to establish: Low-power displays and intermittent wireless updates allow battery operation.
+  - Show: Show sleep periods between price updates.
+  - Source: [ses-imagotag.com](https://www.ses-imagotag.com/wp-content/uploads/2023/05/SES-imagotag_2022_URD_EN.pdf)
+- **shopping-022 — Why some payment cards have a notch on one edge** (reviewed)
+  - Explanation to establish: Tactile notches can help distinguish card types without reading the printed face.
+  - Show: Compare the documented notch shapes on example cards.
+  - Source: [mastercard.com](https://newsroom.mastercard.com/news/press/2021/october/mastercard-introduces-accessible-card-for-blind-and-partially-sighted-people/)
+- **shopping-023 — Why supermarket scales have a customer-facing display** (pending_review)
+  - Explanation to establish: Legal-for-trade requirements can make weight and price information visible to the customer.
+  - Show: Trace weight into the displayed price calculation.
+  - Source: [nist.gov](https://nvlpubs.nist.gov/nistpubs/hb/2019/NIST.HB.44-2019.pdf)
+- **shopping-024 — Why the deli scale subtracts the container weight** (pending_review)
+  - Explanation to establish: A tare operation separates packaging mass from the charged product mass.
+  - Show: Compare gross, tare and net weight.
+  - Source: [nist.gov](https://www.nist.gov/how-do-you-measure-it/how-do-you-know-if-grocery-store-scales-are-accurate)
+- **shopping-025 — Why a shopping basket security tag disappears at checkout** (pending_review)
+  - Explanation to establish: The tag may be deactivated rather than physically removed.
+  - Show: Show the active state changing at a deactivation pad.
+  - Source: [sensormatic.com](https://www.sensormatic.com/en_uk/loss-prevention-liability/eas/detachers-and-deactivators)
+- **shopping-026 — Why a clothing security tag needs a special remover** (pending_review)
+  - Explanation to establish: A mechanical locking mechanism retains the pin until released by the matching tool.
+  - Show: Show a generic locked pin without bypass instructions.
+  - Source: [sensormatic.com](https://www.sensormatic.com/resources/ar/2026/seam-tag-plus-trad-tagging-blog)
+- **shopping-027 — Why supermarket trolley wheels sometimes lock at the car park edge** (pending_review)
+  - Explanation to establish: A boundary-control system signals a locking wheel at a designated perimeter.
+  - Show: Trace a trolley crossing a marked control boundary.
+  - Source: [gatekeepersystems.com](https://www.gatekeepersystems.com/wp-content/uploads/2024/06/L110-2-4-UK1-CartControl-User-Manual-UK.pdf)
+- **shopping-028 — Why some shops use a coin slot on trolley handles** (pending_review)
+  - Explanation to establish: A returnable deposit mechanism links trolley release to another trolley's connector.
+  - Show: Show the coin returned when the chain reconnects.
+  - Source: [wanzl.com](https://www.wanzl.com/Downloads/Prospekte/Retail/1193_Shopping-trolleys_EN.pdf)
+- **shopping-029 — Why vending machines drop a spiral instead of pushing the snack** (pending_review)
+  - Explanation to establish: A rotating helix advances the selected item toward the edge.
+  - Show: Rotate one coil and track a snack.
+  - Source: [evoca.com](https://evoca.com/)
+- **shopping-030 — Why a vending machine can detect whether anything fell** (pending_review)
+  - Explanation to establish: Delivery sensors can check the product path before confirming a vend.
+  - Show: Show an item crossing a delivery sensor.
+  - Source: [cranepi.com](https://www.cranepi.com/en/system/files/Support/Note%20Recyclers/VNR/Level%200%20-%20Public/Data%20Sheet/DS_VNR_MDB_EN_1-1.pdf)
+- **shopping-031 — Why a bottle-return machine rejects a crushed bottle** (pending_review)
+  - Explanation to establish: Recognition can depend on readable identifiers and shape features under the scheme's rules.
+  - Show: Compare a recognized container with obscured features.
+  - Source: [tomra.com](https://www.tomra.com/en-ie/reverse-vending/media-center/feature-articles/50-years-reverse-vending-innovation)
+- **shopping-032 — Why parcel lockers send a new code for each delivery** (pending_review)
+  - Explanation to establish: Time-limited or delivery-specific credentials link access to an assigned compartment.
+  - Show: Map a delivery token to one locker.
+  - Source: [quadient.com](https://www.quadient.com/en-ca/blog/quadient-and-decathlon-partnership-expansion-new-stores-and-services-2024)
+- **shopping-033 — Why click-and-collect can say ready after payment has cleared** (pending_review)
+  - Explanation to establish: Payment confirmation and physical picking are different stages.
+  - Show: Trace an order from payment to shelf picking.
+  - Source: [shopify.com](https://www.shopify.com/blog/order-placement)
+- **shopping-034 — Why an online basket does not always reserve the last item** (pending_review)
+  - Explanation to establish: Inventory reservation timing depends on the store platform and checkout configuration.
+  - Show: Show two baskets competing before stock reservation.
+  - Source: [shopify.com](https://community.shopify.com/c/shopify-discussions/reserve-item-to-cart-for-limited-time-frame/m-p/2254310/highlight/true)
+- **shopping-035 — Why a delivery date changes after you enter your address** (pending_review)
+  - Explanation to establish: Fulfilment location, service availability and transit estimates depend on destination.
+  - Show: Compare two address-specific delivery paths.
+  - Source: [ups.com](https://www.ups.com/ae/en/support/tracking-support/where-is-my-package/understanding-tracking-status)
+- **shopping-036 — Why a parcel can be scanned without changing cities** (pending_review)
+  - Explanation to establish: Tracking events include processing stages within the same facility.
+  - Show: Move a parcel between sorting stages at one hub.
+  - Source: [dhl.com](https://www.dhl.com/content/dam/dhl/local/gb/dhl-parcel/documents/pdf/gb-parcel-journey-of-a-parcel.pdf)
+- **shopping-037 — Why tracking can say label created before the courier has the parcel** (pending_review)
+  - Explanation to establish: Electronic shipment data can arrive before physical handover.
+  - Show: Separate label transmission from collection.
+  - Source: [ups.com](https://www.ups.com/ca/en/support/tracking-support/where-is-my-package/understanding-tracking-status)
+- **shopping-038 — Why stores scan returns even when they refund by receipt** (pending_review)
+  - Explanation to establish: Returns processing can update stock, eligibility and transaction records separately.
+  - Show: Trace one return across payment and inventory systems.
+  - Source: [shopify.com](https://changelog.shopify.com/posts/confirm-your-returns-with-returns-processing-and-improve-financial-accuracy)
+- **shopping-039 — Why self-service kiosks ask you to confirm an order you just selected** (pending_review)
+  - Explanation to establish: A confirmation stage separates editing from committing the transaction.
+  - Show: Show editable choices becoming a submitted order.
+  - Source: [ncrvoyix.com](https://docs.ncrvoyix.com/restaurant/aloha-takeout/implementing/field_definitions/takeout_settings/takeoutsettings_options_tab)
+- **shopping-040 — Why contactless travel fares can appear later as one charge** (reviewed)
+  - Explanation to establish: Some transit systems aggregate taps before calculating and charging the fare.
+  - Show: Group a day's taps into a scoped fare calculation.
+  - Source: [tfl.gov.uk](https://content.tfl.gov.uk/aac-20141217-part-1-item12-contactless-payments.pdf)
+
+## Clothing and personal items
+
+- **clothing-001 — Why a zip stays up until you lift its pull tab** (reviewed)
+  - Explanation to establish: A locking slider can engage the elements until pull-tab movement releases it.
+  - Show: Cut away a pin-lock slider being lifted.
+  - Source: [ykk.com](https://www.ykk.com/english/ykk/tech/03.html)
+- **clothing-002 — Why a zip can close two rows of teeth in one motion** (reviewed)
+  - Explanation to establish: The slider guides opposing elements into an interlocking path.
+  - Show: Show teeth entering the slider's Y-shaped channel.
+  - Source: [ykk.com](https://www.ykk.com/english/ykk/tech/01.html)
+- **clothing-003 — Why a jacket zip needs its bottom pin fully inserted** (pending_review)
+  - Explanation to establish: The separable pin and box align the two chains before the slider joins them.
+  - Show: Compare aligned and misaligned starting positions.
+  - Source: [ykk.com](https://www.ykk.com/ykk/mame/fas_03.html)
+- **clothing-004 — Why some jacket zips open from the bottom too** (pending_review)
+  - Explanation to establish: Two-way sliders allow separate opening positions along a closed chain.
+  - Show: Move upper and lower sliders independently.
+  - Source: [ykk.com](https://www.ykk.com/english/ykk/tech/03.html)
+- **clothing-005 — Why a waterproof-looking zip is not necessarily watertight** (reviewed)
+  - Explanation to establish: A water-repellent zipper can still admit water through the chain slit; its laminated surface is not the same as a watertight closure.
+  - Show: Animate the coating and central slit separately, with an illustrative droplet path through the slit.
+  - Source: [ykkamericas.com](https://ykkamericas.com/wp-content/uploads/2021/10/ykk-zipper-instruction-manual-compressed.pdf)
+- **clothing-006 — Why backpack buckles release when you squeeze their sides** (pending_review)
+  - Explanation to establish: Flexible latch arms disengage from the socket under inward pressure.
+  - Show: Cut away two latch arms being squeezed.
+  - Source: [duraflexgroup.com](https://www.duraflexgroup.com/community/0)
+- **clothing-007 — Why a strap stays tight after threading through a small buckle** (pending_review)
+  - Explanation to establish: The routing creates friction that resists movement under load.
+  - Show: Trace the strap path around a ladder-lock buckle.
+  - Source: [duraflexgroup.com](https://www.duraflexgroup.com/community/8)
+- **clothing-008 — Why hook-and-loop fasteners collect fluff** (reviewed)
+  - Explanation to establish: Hooks can engage stray fibres as well as the intended loops.
+  - Show: Magnify hooks holding loops and loose fibres.
+  - Source: [velcro.com](https://www.velcro.com/news-and-blog/2026/02/an-idea-that-stuck-how-george-de-mestral-invented-the-velcro-fastener/)
+- **clothing-009 — Why jeans have metal rivets at pocket corners** (pending_review)
+  - Explanation to establish: Rivets reinforce points that experience concentrated stress.
+  - Show: Show load spreading from a pocket corner.
+  - Source: [levi.com](https://www.levi.com/US/en_US/blog/article/our-complete-guide-to-denim-terminology)
+- **clothing-010 — Why denim shows white on the inside** (reviewed)
+  - Explanation to establish: Traditional denim uses differently coloured warp and weft yarns in a twill weave.
+  - Show: Magnify coloured warp over pale weft.
+  - Source: [cottonworks.com](https://cottonworks.com/learning-hub/denim/denim-basics/)
+- **clothing-011 — Why denim fades most at folds and seams** (reviewed)
+  - Explanation to establish: Wear removes dye preferentially from exposed surfaces of the yarn.
+  - Show: Compare abrasion at raised and protected areas.
+  - Source: [cottonworks.com](https://cottonworks.com/learning-hub/denim/denim-finishing/)
+- **clothing-012 — Why some fabrics stretch more diagonally** (pending_review)
+  - Explanation to establish: Bias loading allows the yarn network to change angle more easily than along its yarn directions.
+  - Show: Pull a woven grid on-axis and diagonally.
+  - Source: [cottonworks.com](https://cottonworks.com/learning-hub/quality-assurance/shrinking-and-skewing/)
+- **clothing-013 — Why the ribbed cuff stretches more than the rest of a jumper** (reviewed)
+  - Explanation to establish: Alternating face and back wales in rib knit open like an accordion when stretched sideways.
+  - Show: Animate alternating face and back knit columns unfolding sideways like an accordion; compare the relaxed and stretched cuff.
+  - Source: [cottonworks.com](https://cottonworks.com/learning-hub/knitting/single-and-double-knits/)
+- **clothing-014 — Why a cotton shirt can shrink after its first wash** (reviewed)
+  - Explanation to establish: Wet processing and drying can relax tensions introduced during manufacture.
+  - Show: Compare stretched and relaxed yarn geometry.
+  - Source: [cottonworks.com](https://cottonworks.com/wp-content/uploads/2017/11/ISP_1009_Guide_to_Improved_Shrinkage_Performance_of_Cotton_Fabrics.pdf)
+- **clothing-015 — Why wool can felt into a smaller dense fabric** (reviewed)
+  - Explanation to establish: Fibre surface scales and agitation can promote directional interlocking.
+  - Show: Show fibres migrating and interlocking.
+  - Source: [woolmark.com](https://www.woolmark.com/globalassets/_06-new-woolmark/_about/06-our-story/media/beyond-the-bale-pdfs/beyond-the-bale---june-2021.pdf.pdf)
+- **clothing-016 — Why your wool jumper pills more in some places** (reviewed)
+  - Explanation to establish: Repeated rubbing during wear can form pills on wool clothing, especially where the garment contacts itself or another surface.
+  - Show: Highlight contact areas on a jumper silhouette, then show surface pills in a close-up; do not invent a measured wear rate.
+  - Source: [woolmark.com](https://www.woolmark.com/it/care/pilling/)
+- **clothing-017 — Why your T-shirt side seam moves toward the front after washing** (reviewed)
+  - Explanation to establish: Residual twist in the yarn can distort knitted loops; laundering lets the fabric move toward its relaxed spiral shape, shifting a T-shirt seam.
+  - Show: Show twisted yarn distorting a loop grid, then relaxing a shirt silhouette so its seam rotates; no measured angle.
+  - Source: [cottontech.co.uk](https://www.cottontech.co.uk/index_htm_files/SRM%20PDF%20RefMan%202018%2010%20Spirality.pdf)
+- **clothing-018 — Why a wet down jacket loses much of its loft** (pending_review)
+  - Explanation to establish: Moisture can clump down clusters and reduce trapped-air volume.
+  - Show: Compare dry clusters with wet collapsed clusters.
+  - Source: [alliedfeather.com](https://alliedfeather.com/wp-content/uploads/2021/07/AFD_IR-fxDOWN.pdf)
+- **clothing-019 — Why water beads on a rain jacket before it soaks in** (reviewed)
+  - Explanation to establish: A durable water-repellent surface treatment changes wetting behaviour.
+  - Show: Compare droplets on treated and worn outer fabric.
+  - Source: [gore-tex.com](https://www.gore-tex.com/pfcgoal)
+- **clothing-020 — Why a rain jacket can feel clammy without leaking** (reviewed)
+  - Explanation to establish: An outer fabric can become saturated while the membrane beneath it still blocks water, producing a clammy sensation without a leak.
+  - Show: Show a two-layer jacket cutaway: saturated outer fabric above an intact waterproof membrane. Keep the water outside the membrane.
+  - Source: [gore-tex.com](https://www.gore-tex.com/en_uk/support/frequently-asked-questions)
+- **clothing-021 — Why waterproof jackets have tape over inside seams** (reviewed)
+  - Explanation to establish: Needle holes and seam construction need sealing to limit water entry.
+  - Show: Show tape covering a stitched seam cross-section.
+  - Source: [gore-tex.com](https://www.gore-tex.com/support/frequently-asked-questions)
+- **clothing-022 — Why sports shirts move sweat away from one spot** (reviewed)
+  - Explanation to establish: Fibre and fabric design can promote liquid spreading and capillary transport.
+  - Show: Trace liquid through a wicking fabric.
+  - Source: [polartec.com](https://www.polartec.com/news/featured-partner-hoka-one-one)
+- **clothing-023 — Why a loose thread can unzip part of a knitted jumper** (pending_review)
+  - Explanation to establish: A damaged loop can release connected loops along a knitted structure.
+  - Show: Animate a ladder running through knit loops.
+  - Source: [woolmark.com](https://www.woolmark.com/care/how-to-repair-wool/)
+- **clothing-024 — Why clothes care labels use dots inside the iron symbol** (pending_review)
+  - Explanation to establish: The dots encode permitted ironing-temperature categories under the relevant system.
+  - Show: Translate dot counts into labelled care categories.
+  - Source: [ginetex.net](https://www.ginetex.net/userfiles/files/Textile_care_symbols_en.pdf)
+- **clothing-025 — Why some washing symbols have a line underneath** (reviewed)
+  - Explanation to establish: Bars indicate modified mechanical action in the care-symbol system.
+  - Show: Compare wash-action levels represented by bars.
+  - Source: [ginetex.net](https://www.ginetex.net/share/article/4201/care-symbols)
+- **clothing-026 — Why shoe soles have flex grooves across the forefoot** (reviewed)
+  - Explanation to establish: Grooves influence bending where the foot flexes during movement.
+  - Show: Bend a sole at its forefoot grooves.
+  - Source: [nike.com](https://about.nike.com/en-GB/magazine/fast-forward-how-distance-shoes-from-nikes-vault-inspire-sportswear-sneakers-of-today)
+- **clothing-027 — Why running-shoe foam feels different from rubber underneath** (pending_review)
+  - Explanation to establish: Midsole and outsole materials have different cushioning and wear roles.
+  - Show: Compare deformation in two sole layers.
+  - Source: [asics.com](https://www.asics.com/gb/en-gb/running-advice/the-anatomy-of-a-running-shoe/)
+- **clothing-028 — Why shoes have an extra lace hole near the ankle** (reviewed)
+  - Explanation to establish: The final eyelets can form loops that hold crossed laces around the upper shoe, reducing heel movement for a suitable fit.
+  - Show: Trace each lace through the final loop and across the shoe; compare heel movement schematically without medical claims.
+  - Source: [asics.com](https://www.asics.com/nz/en-nz/mk/choosing-the-right-running-shoe/lacing)
+- **clothing-029 — Why shoelaces come loose while you walk** (reviewed)
+  - Explanation to establish: Repeated impacts and swinging ends can destabilize a knot.
+  - Show: Animate impact followed by end movement.
+  - Source: [berkeley.edu](https://news.berkeley.edu/2017/04/11/shoe-string-theory-science-shows-why-shoelaces-come-untied/)
+- **clothing-030 — Why wet shoes can squeak on a smooth floor** (pending_review)
+  - Explanation to establish: Contact friction and stick-slip behaviour can excite vibrations.
+  - Show: Show alternating stick and slip at the sole.
+  - Source: [continental.com](https://cdn.continental.com/fileadmin/__imported/sites/corporate/_international/german/hubpages/10_20presse/02_events_de/2024/tires_launch_event_2024/continental-f-e-infobook-en-web.pdf)
+- **clothing-031 — Why a suitcase handle locks at several heights** (pending_review)
+  - Explanation to establish: Spring-loaded pins engage holes at selected telescoping positions.
+  - Show: Cut away a pin entering a handle hole.
+  - Source: [samsonite.com](https://shop.samsonite.com/lock-style-1.html)
+- **clothing-032 — Why a retractable umbrella stays open without continuous pressure** (pending_review)
+  - Explanation to establish: A latch holds the runner after it reaches the open position.
+  - Show: Show a runner engaging its latch.
+  - Source: [knirps.com](https://knirps.com/care/)
+- **clothing-033 — Why an umbrella can invert in a gust** (pending_review)
+  - Explanation to establish: Wind loads can exceed the supporting rib geometry's resistance in that direction.
+  - Show: Compare rib loading from above and below.
+  - Source: [knirps.com](https://knirps.com/windtunnel)
+- **clothing-034 — Why sunglasses make reflections disappear at certain angles** (reviewed)
+  - Explanation to establish: Polarizing filters attenuate a selected orientation of reflected light.
+  - Show: Rotate a polarizer over a reflected scene.
+  - Source: [zeiss.com](https://www.zeiss.com/vision-care/us/eye-health-and-care/sports-leisure/not-all-sunglasses-are-equal.html)
+- **clothing-035 — Why photochromic glasses may darken less inside a car** (reviewed)
+  - Explanation to establish: Many lenses respond to UV that some vehicle glass filters, depending on lens design.
+  - Show: Compare activating light outside and behind glass.
+  - Source: [transitions.com](https://connected.transitions.com/assets/downloads/Five%20Patient%20Questions%20You%20Should%20Be%20Ready%20For.pdf)

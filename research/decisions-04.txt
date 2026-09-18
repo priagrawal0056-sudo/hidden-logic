@@ -1,0 +1,10 @@
+home-003|a vacuum is built up by air exchange|Freezers with a sealed door; an equalization valve changes how long the effect lasts.
+home-009|Anti-Crease: Periodically tumbles clothes after the drying cycle|Bosch dryers with the anti-crease feature enabled; not a claim that every dryer continues tumbling.
+home-010|a closed loop system that continuously recycles warm air|Heat-pump dryers; compare the airflow route without unsupported duration or savings numbers.|Heat-pump dryers recycle warm air in a closed loop instead of exhausting that air outdoors.|Why a dryer can work without blowing hot air outside
+home-015|Induction cookware works by using a magnetic field under the cooktop's surface|Induction-compatible cookware with suitable magnetic coupling; not every metal pan is compatible.
+home-019|It is normal for the internal fan for the electronics to continue to run|Specified GE microwave cooling fans; do not diagnose all unexplained appliance noises.
+home-020|It is normal for the oven elements (bake and broil) to turn off and on during a cycle|Electric oven heating elements cycling during temperature regulation; distinguish from the oven's interior light.|An oven cycles its heating elements on and off during cooking to regulate temperature.|Why your oven's heating element goes dark before cooking ends
+home-025|If the float valve is still up and/or the lid is difficult to open|Instant Pot pressure lid and float-valve design; never suggest forcing the lid open.
+home-029|Water left in the shower- head / tub spout is draining away|Brief drainage after shutoff on the described shower design; persistent leaking requires a different explanation.
+home-031|the water in a simple drain trap has evaporated|An unused trap can lose its water seal; do not claim this diagnoses every drain smell.
+home-032|Gurgling sounds that suggest inadequate air admittance|Gurgling associated with inadequate drain venting; not the only possible cause.

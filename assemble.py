@@ -9,6 +9,76 @@ Builds the final 1080x1920 Short with real production polish:
 import json
 import os
 import subprocess
+import re
+import shutil
+import math
+
+
+def _ffmpeg():
+    if shutil.which('ffmpeg'):
+        return shutil.which('ffmpeg')
+    import imageio_ffmpeg
+    return imageio_ffmpeg.get_ffmpeg_exe()
+
+
+def resolve_sound_cues(words, cues):
+    """Resolve a small number of authored payoff cues against the actual narration."""
+    norm = lambda s: re.sub(r'[^a-z0-9]', '', s.lower())
+    tokens = [norm(w['word']) for w in words]
+    result = []
+    for cue in (cues or [])[:3]:
+        phrase = [norm(w) for w in cue['phrase'].split()]
+        matches = [i for i in range(len(tokens)-len(phrase)+1) if tokens[i:i+len(phrase)] == phrase]
+        if not phrase or len(matches) != 1 or cue['kind'] not in ('scan', 'chime'):
+            raise ValueError('Sound cue must identify one spoken payoff phrase')
+        result.append({'time': float(words[matches[0]]['start']), 'kind': cue['kind']})
+    return result
+
+
+def sentence_segments(words, script, hold=0.12):
+    """Use script punctuation and measured word ends, never an arbitrary cut cadence."""
+    clean = lambda value: re.sub(r"[^a-z0-9]", "", value.lower())
+    tokens = re.findall(r"\S+", script)
+    expected = "".join(clean(token) for token in tokens)
+    actual = "".join(clean(w.get("word", "")) for w in words)
+    if not expected or actual != expected:
+        raise ValueError("Narration transcript does not match script; cannot place safe cuts")
+    previous = 0.0
+    offsets, offset = {}, 0
+    for i, word in enumerate(words):
+        start, end = float(word["start"]), float(word["end"])
+        if (word.get("estimated") or not math.isfinite(start) or not math.isfinite(end)
+                or start < previous - .001 or end <= start):
+            raise ValueError("Measured, ordered word timings are required")
+        previous = end
+        offset += len(clean(word["word"]))
+        offsets[offset] = i
+    duration = previous + .8
+    boundaries, offset = [0.0], 0
+    for token in tokens[:-1]:
+        offset += len(clean(token))
+        if re.search(r"[.!?][\"'’”)]*$", token) and offset in offsets:
+            i = offsets[offset]
+            end = float(words[i]["end"])
+            next_start = float(words[i + 1]["start"]) if i + 1 < len(words) else duration
+            boundary = end + min(hold, max(0.0, next_start - end) / 2)
+            if boundary - boundaries[-1] >= .5:
+                boundaries.append(boundary)
+    boundaries.append(duration)
+    return [b - a for a, b in zip(boundaries, boundaries[1:])]
+
+
+def _segment_frames(durations, fps=30):
+    """Round cumulative cuts forward so rounding cannot accumulate early cuts."""
+    result, elapsed, previous = [], 0.0, 0
+    for duration in durations:
+        elapsed += duration
+        end = math.ceil(elapsed * fps - 1e-8)
+        result.append(end - previous)
+        previous = end
+    if any(n <= 0 for n in result):
+        raise ValueError("Every scene must contain at least one frame")
+    return result
 
 SEG = 3.3          # seconds per background clip; overridden by config 'cut_seconds'
 W, H = 1080, 1920
@@ -141,18 +211,36 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
              emphasis_words=None, sfx_dir: str | None = None,
              brand_label: str | None = None, fast_pacing: bool = True,
              opening_hook_text: str | None = None, show_subscribe_cue: bool = False,
-             show_follow_cue: bool = False):
+             show_follow_cue: bool = False, editorial_effects: bool = False, shot_plan: list | None = None,
+             hook_motion: bool = False, sound_cues=None, closing_start: float | None = None):
+    if not bg_paths or len({os.path.normcase(os.path.realpath(p)) for p in bg_paths}) != len(bg_paths):
+        raise ValueError("Every narration beat needs a distinct footage file")
+    if shot_plan is not None and len(shot_plan) != len(bg_paths):
+        raise ValueError("Shot plan must match the footage list")
+    identities = [shot.get('source_id') for shot in (shot_plan or []) if shot.get('source_id')]
+    if len(set(identities)) != len(identities):
+        raise ValueError('Each source video may appear only once, including alternate crops or trims')
+    import hashlib
+    hashes = []
+    for path in bg_paths:
+        if os.path.isfile(path):
+            with open(path, 'rb') as asset:
+                hashes.append(hashlib.sha256(asset.read()).hexdigest())
+    if len(set(hashes)) != len(hashes):
+        raise ValueError('Renaming a repeated footage file does not make it a distinct source')
     duration = _audio_duration(timings_path)
-    punch_beats = _emphasis_beats(timings_path, emphasis_words)
+    punch_beats = _emphasis_beats(timings_path, emphasis_words) if editorial_effects else []
     
     if isinstance(seg_seconds, list):
         # We are using sentence-aware durations
-        n_segs = min(len(seg_seconds), len(bg_paths)) if bg_paths else len(seg_seconds)
-        bg_paths = list(bg_paths)[:n_segs]
-        durs_array = seg_seconds[:n_segs]
-        # if the total duration of clips doesn't quite match audio, scale them
-        total_durs = sum(durs_array)
-        durs_array = [d * (duration / total_durs) for d in durs_array] if total_durs > 0 else [duration/n_segs]*n_segs
+        if len(seg_seconds) != len(bg_paths):
+            raise ValueError("Sentence durations must match the footage list")
+        durs_array = [float(d) for d in seg_seconds]
+        if any(not math.isfinite(d) or d <= 0 for d in durs_array):
+            raise ValueError("Scene durations must be positive and finite")
+        if abs(sum(durs_array) - duration) > .01:
+            raise ValueError("Scene durations must match narration; timing rescaling is disabled")
+        n_segs = len(bg_paths)
     else:
         # Fallback to legacy fixed pacing
         if seg_seconds:
@@ -166,21 +254,34 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
     
     ass_escaped = ass_path.replace("\\", "/").replace(":", "\\:")
 
-    cmd = ["ffmpeg", "-y"]
-    # inputs: loop each bg so short clips still fill their segment
+    executable = shutil.which("ffmpeg")
+    if not executable:
+        import imageio_ffmpeg
+        executable = imageio_ffmpeg.get_ffmpeg_exe()
+    cmd = [executable, "-y"]
+    # Unique footage inputs; insufficient source duration fails before rendering.
     for p in bg_paths:
-        cmd += ["-stream_loop", "-1", "-i", p]
+        cmd += ["-i", p]
     vi_voice = len(bg_paths)
     cmd += ["-i", voice_path]
     has_music = bool(music_path and os.path.exists(music_path))
     if has_music:
         cmd += ["-stream_loop", "-1", "-i", music_path]
+    payoff_inputs = []
+    for cue in sound_cues or []:
+        at = float(cue['time'])
+        if cue['kind'] not in ('scan', 'chime') or not math.isfinite(at) or not 0 <= at < duration:
+            raise ValueError('Invalid payoff sound cue')
+        index = len(bg_paths) + 1 + int(has_music) + len(payoff_inputs)
+        hz = 1400 if cue['kind'] == 'scan' else 880
+        cmd += ['-f', 'lavfi', '-i', f'sine=frequency={hz}:duration=0.16:sample_rate=48000']
+        payoff_inputs.append((index, at))
     # sound design: synth whoosh + impact, add as inputs
-    whoosh_p, impact_p = _make_sfx(os.path.dirname(out_path) or ".")
+    whoosh_p, impact_p = _make_sfx(os.path.dirname(out_path) or ".") if editorial_effects else (None, None)
     has_sfx = bool(whoosh_p and impact_p)
     vi_whoosh = vi_impact = None
     if has_sfx:
-        base_inputs = len(bg_paths) + 1 + (1 if has_music else 0)
+        base_inputs = len(bg_paths) + 1 + (1 if has_music else 0) + len(payoff_inputs)
         cmd += ["-i", whoosh_p, "-i", impact_p]
         vi_whoosh = base_inputs
         vi_impact = base_inputs + 1
@@ -193,42 +294,33 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
     # gets an offset (safe fallback to old behavior).
     def _probe_dur(p):
         try:
-            r = subprocess.run(["ffprobe", "-v", "quiet", "-show_entries", "format=duration",
-                                "-of", "csv=p=0", p], capture_output=True, text=True, timeout=15)
-            return float(r.stdout.strip())
-        except Exception:
+            if shutil.which("ffprobe"):
+                r = subprocess.run(["ffprobe", "-v", "quiet", "-show_entries", "format=duration",
+                                    "-of", "csv=p=0", p], capture_output=True, text=True, timeout=15)
+                return float(r.stdout.strip())
+            r = subprocess.run([executable, "-hide_banner", "-i", p], capture_output=True, text=True, timeout=15)
+            match = re.search(r"Duration: (\d+):(\d+):([\d.]+)", r.stderr)
+            return int(match[1])*3600 + int(match[2])*60 + float(match[3]) if match else None
+        except (OSError, ValueError, subprocess.TimeoutExpired):
             return None
     _bg_durs = [_probe_dur(p) for p in bg_paths]
     _src_use_count = {}
 
+    frame_counts = _segment_frames(durs_array)
+    # Source paths, provider identities and content hashes were checked above.
+    # Alternate trims never make a repeated source acceptable.
     for s in range(n_segs):
-        seg_len = durs_array[s]
-        frames = int(seg_len * 30)
-        # one distinct clip per segment, in order (no repeats within the video). EXCEPTION:
-        # the LAST segment reuses the FIRST clip so the closing visual matches the opening -
-        # a "perfect loop" (research: the strongest retention signal, pushes >100% replays).
-        if n_segs >= 3 and s == n_segs - 1:
-            src = 0
-        else:
-            src = s % len(bg_paths)
-        # REUSE OFFSET: when clip supply < segment count, the same clip serves multiple segments.
-        # Previously every segment trimmed from t=0, so a reused clip replayed its EXACT same
-        # opening seconds - visibly "the same clip again". Now each reuse advances its start
-        # offset (~3.5s stride, clamped to the clip's real length), so reuse #2 shows a later
-        # window of the footage - it reads as a different shot of the same scene, which is
-        # exactly what scene consistency wants. The loop-back final segment stays at t=0 ON
-        # PURPOSE: it must mirror the opening frame for the seamless loop. Probe failures
-        # fall back to offset 0 (today's behavior, no worse).
-        if n_segs >= 3 and s == n_segs - 1:
-            start_off = 0.0
-        else:
-            _src_key = bg_paths[src]  # key by PATH: duplicate path entries share one counter
-            prior_uses = _src_use_count.get(_src_key, 0)
-            clip_dur = _bg_durs[src]
-            start_off = 0.0
-            if prior_uses > 0 and clip_dur and clip_dur > (seg_len + 0.1):
-                start_off = min(prior_uses * 3.5, max(0.0, clip_dur - seg_len - 0.05))
-            _src_use_count[_src_key] = prior_uses + 1
+        frames = frame_counts[s]
+        seg_len = frames / 30
+        src = s
+        clip_dur = _bg_durs[src]
+        shot = shot_plan[s] if shot_plan is not None else {}
+        start_off = float(shot.get("source_start", 0.0))
+        center = float(shot.get("crop_center", .5))
+        if not 0 <= center <= 1 or start_off < 0:
+            raise ValueError("Invalid shot framing or start time")
+        if clip_dur is None or clip_dur + .05 < start_off + seg_len:
+            raise ValueError("Footage duration unavailable or too short; do not loop a clip to fill the scene")
         base = (f"[{src}:v]trim=start={start_off:.2f}:duration={seg_len},"
                 f"setpts=PTS-STARTPTS,"
                 f"scale={PAN_SCALE_W}:{PAN_SCALE_H}:force_original_aspect_ratio=increase,"
@@ -241,22 +333,34 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
         else:
             x_expr = f"(in_w-{W})*(t/{seg_len:.3f})" if kind == 0 else f"(in_w-{W})*(1-t/{seg_len:.3f})"
             motion = f"crop={W}:{H}:x='{x_expr}':y='(in_h-{H})/2',"
-        fc.append(base + motion + f"format=yuv420p[v{s}]")
+        if not editorial_effects:
+            # Retain native portrait framing; only crop wide clips at their reviewed focal point.
+            base = (f"[{src}:v]trim=start={start_off:.3f}:duration={seg_len},setpts=PTS-STARTPTS,"
+                    f"scale={W}:{H}:force_original_aspect_ratio=increase,")
+            motion = (f"crop={W}:{H}:x='max(0,min(in_w-{W},in_w*{center}-{W}/2))':"
+                      f"y='(in_h-{H})/2',setsar=1,fps=30,")
+            if s == 0 and hook_motion:
+                motion += (f"zoompan=z='1+0.045*min(on/{max(1,frames-1)},1)':"
+                           f"x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':d=1:s={W}x{H}:fps=30,")
+        fc.append(base + motion + f"tpad=stop_mode=clone:stop_duration=0.034,trim=end_frame={frames},setpts=N/(30*TB),format=yuv420p[v{s}]")
         seg_labels.append(f"[v{s}]")
     fc.append("".join(seg_labels) + f"concat=n={n_segs}:v=1:a=0[vcat]")
-    fc.append(
-        # Cinematic grade: a gentle S-curve for contrast depth, a slight cool-shadow / warm-
-        # highlight push (the subtle "teal-orange" look that makes stock footage read as graded),
-        # richer saturation, light sharpening, and a soft vignette. This is the difference between
-        # "raw Pexels clip" and "looks colour-graded by an editor" - all free, all in one pass.
-        "[vcat]curves=preset=medium_contrast,"
-        "eq=contrast=1.08:brightness=0.012:saturation=1.20:gamma=0.98,"
-        "colorbalance=rs=-0.04:gs=-0.01:bs=0.04:rh=0.04:gh=0.01:bh=-0.03,"
-        "unsharp=5:5:0.45:5:5:0.0,vignette=angle=PI/4.6"
-        # (removed the burned-in gold progress bar: it sat in the bottom 10px, exactly where
-        #  YouTube's own Shorts progress bar + title overlay it, so it was redundant/covered.)
-        "[vgrade]"
-    )
+    if editorial_effects:
+        fc.append(
+            # Cinematic grade: a gentle S-curve for contrast depth, a slight cool-shadow / warm-
+            # highlight push (the subtle "teal-orange" look that makes stock footage read as graded),
+            # richer saturation, light sharpening, and a soft vignette. This is the difference between
+            # "raw Pexels clip" and "looks colour-graded by an editor" - all free, all in one pass.
+            "[vcat]curves=preset=medium_contrast,"
+            "eq=contrast=1.08:brightness=0.012:saturation=1.20:gamma=0.98,"
+            "colorbalance=rs=-0.04:gs=-0.01:bs=0.04:rh=0.04:gh=0.01:bh=-0.03,"
+            "unsharp=5:5:0.45:5:5:0.0,vignette=angle=PI/4.6"
+            # (removed the burned-in gold progress bar: it sat in the bottom 10px, exactly where
+            #  YouTube's own Shorts progress bar + title overlay it, so it was redundant/covered.)
+            "[vgrade]"
+        )
+    else:
+        fc.append("[vcat]eq=contrast=1.02:saturation=1.02[vgrade]")
     # ZOOM-PUNCH on emphasis beats: brief scale pulse synced to key words (a real
     # editor's punch-in on emphasis). Build a piecewise zoom expression over 't'.
     if punch_beats:
@@ -347,9 +451,9 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
         # Toggle via show_follow_cue in config (default off; test it for ~1 week and watch subs).
         follow = ""
         if show_follow_cue:
-            follow = (",drawtext=text='\u25B6 follow for more':x=44:y=244:fontsize=30:"
+            follow = (",drawtext=text='Follow Hidden Logic':x=(w-tw)/2:y=h*0.56:fontsize=48:"
                       "fontcolor=0xFFFFFF@0.92:box=1:boxcolor=0x000000@0.30:boxborderw=10:"
-                      "shadowcolor=0x000000@0.6:shadowx=2:shadowy=2" + ff)
+                      f"shadowcolor=0x000000@0.6:shadowx=2:shadowy=2:enable='gte(t,{closing_start if closing_start is not None else max(0,duration-3):.3f})'" + ff)
         # OPENING TEXT HOOK: a big bold claim on-screen for the first ~2.8s. Research: on-
         # screen text during the hook lifts watch time ~18% on faceless Shorts, because most
         # viewers watch the first second with sound off and the text is what stops the swipe.
@@ -386,15 +490,31 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
     fade_start = max(0.0, duration - 0.6)
     voice_fx = ("highpass=f=85,acompressor=threshold=-18dB:ratio=3:attack=8:release=120,"
                 "equalizer=f=3200:t=q:w=1.2:g=2")
+    if not editorial_effects:
+        voice_fx = "anull"  # Preserve the approved voice's timbre and delivery.
     # base voice (+music) bus first
     if has_music:
-        fc.append(f"[{vi_voice}:a]{voice_fx}[vx]")
-        fc.append(f"[{vi_voice+1}:a]volume={music_volume:.2f}[m]")
+        fc.append(f"[{vi_voice}:a]{voice_fx},apad=whole_dur={duration}[vx]")
+        # Smooth the music's own short level holes, on a continuous bus. Never
+        # duck or crossfade it at picture cuts, or apply this to the voice.
+        fc.append(f"[{vi_voice+1}:a]dynaudnorm=f=50:g=5:p=0.95:m=5:r=0.2:b=1,"
+                  f"loudnorm=I=-24:TP=-3:LRA=7,volume={music_volume:.4f},"
+                  f"afade=t=in:d=0.3,afade=t=out:st={fade_start:.2f}:d=0.6[m]")
         # normalize=0 so adding the music bed does NOT halve the voice (amix otherwise divides
         # by the input count); loudnorm downstream sets the final integrated loudness.
         fc.append(f"[vx][m]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[abed]")
     else:
-        fc.append(f"[{vi_voice}:a]{voice_fx}[abed]")
+        fc.append(f"[{vi_voice}:a]{voice_fx},apad=whole_dur={duration}[abed]")
+
+    if payoff_inputs:
+        labels = []
+        for k, (index, at) in enumerate(payoff_inputs):
+            fc.append(f'[{index}:a]afade=t=in:d=0.008,afade=t=out:st=0.04:d=0.12,volume=0.12,adelay={int(at*1000)}:all=1[pay{k}]')
+            labels.append(f'[pay{k}]')
+        fc.append(f"[abed]{''.join(labels)}amix=inputs={1+len(labels)}:duration=first:normalize=0[paybed]")
+        fc.append('[paybed]anull[masterbed]')
+    else:
+        fc.append('[abed]anull[masterbed]')
 
     if has_sfx:
         # whoosh at each internal cut boundary; impact once at the twist (~65%)
@@ -417,12 +537,12 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
         fc.append(f"[{vi_impact}:a]adelay={idelay}|{idelay},volume=0.6[imp]")
         sfx_labels.append("[imp]")
         # mix bed + all sfx, then master
-        fc.append(f"[abed]{''.join(sfx_labels)}amix=inputs={1+len(sfx_labels)}:"
+        fc.append(f"[masterbed]{''.join(sfx_labels)}amix=inputs={1+len(sfx_labels)}:"
                   f"duration=first:dropout_transition=0:normalize=0,"
-                  f"loudnorm=I=-14:TP=-1.5:LRA=9,"
+                  f"loudnorm=I=-16:TP=-1.5:LRA=9,"
                   f"afade=t=out:st={fade_start:.2f}:d=0.6[aout]")
     else:
-        fc.append(f"[abed]loudnorm=I=-14:TP=-1.5:LRA=9,"
+        fc.append(f"[masterbed]loudnorm=I=-14:TP=-1.5:LRA=7,"
                   f"afade=t=out:st={fade_start:.2f}:d=0.6[aout]")
 
     cmd += ["-filter_complex", ";".join(fc),
@@ -445,36 +565,60 @@ def assemble(bg_paths: list[str], voice_path: str, timings_path: str,
     # Two-pass loudnorm post-process so output hits -14 LUFS precisely (single-pass lands ~1 LU
     # quiet, so Shorts sound softer than competitors in-feed). Best-effort, keeps original on fail.
     _normalize_loudness(out_path)
+    cover = os.path.splitext(out_path)[0] + '.cover.jpg'
+    subprocess.run([_ffmpeg(), '-v', 'error', '-y', '-i', out_path,
+                    '-frames:v', '1', '-update', '1', cover], check=True, capture_output=True)
     return out_path
 
 
-def _normalize_loudness(path: str, target_i: float = -14.0, target_tp: float = -1.5, target_lra: float = 9.0):
-    """Optional 2-pass loudnorm: measure the rendered file, then re-apply loudnorm with the
-    measured values so the output hits the target LUFS precisely. Audio-only re-encode (video is
-    copied, so it's fast and lossless). Best-effort - on ANY error the original file is untouched."""
+def _measure_loudness(path):
+    measure = subprocess.run([_ffmpeg(), '-hide_banner', '-nostats', '-i', path, '-af',
+                              'loudnorm=I=-14:TP=-1.5:LRA=7:print_format=json', '-f', 'null', '-'],
+                             capture_output=True, text=True, check=True)
+    match = re.search(r'\{[^{}]*"input_i"[\s\S]*?\}', measure.stderr)
+    if not match:
+        raise RuntimeError('Loudness measurement unavailable')
+    stats = json.loads(match[0])
+    if not all(math.isfinite(float(stats[key])) for key in ('input_i','input_tp','input_lra','input_thresh')):
+        raise RuntimeError('Audio loudness is not measurable')
+    return stats
+
+
+def _normalize_loudness(path: str, target_i: float = -14.0, target_tp: float = -1.5, target_lra: float = 7.0):
+    """Two-pass audio mastering with encoded-output verification; fail visibly on errors."""
     try:
         import re as _re, json as _json
-        measure = subprocess.run(
-            ["ffmpeg", "-hide_banner", "-nostats", "-i", path, "-af",
-             f"loudnorm=I={target_i}:TP={target_tp}:LRA={target_lra}:print_format=json",
-             "-f", "null", "-"],
-            capture_output=True, text=True)
-        m = _re.search(r"\{[^{}]*\"input_i\"[\s\S]*?\}", measure.stderr or "")
-        if not m:
-            return
-        st = _json.loads(m.group(0))
+        st = _measure_loudness(path)
         af = (f"loudnorm=I={target_i}:TP={target_tp}:LRA={target_lra}:"
               f"measured_I={st['input_i']}:measured_TP={st['input_tp']}:"
               f"measured_LRA={st['input_lra']}:measured_thresh={st['input_thresh']}:"
               f"offset={st.get('target_offset', '0.0')}:linear=true")
         tmp = path + ".norm.mp4"
         r2 = subprocess.run(
-            ["ffmpeg", "-hide_banner", "-y", "-i", path, "-af", af,
+            [_ffmpeg(), "-hide_banner", "-y", "-i", path, "-af", af,
              "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-ar", "48000", "-ac", "2", tmp],
             capture_output=True, text=True)
         if r2.returncode == 0 and os.path.exists(tmp) and os.path.getsize(tmp) > 1000:
+            final = _measure_loudness(tmp)
+            # Short speech can undershoot even in two-pass dynamic mode. Correct only
+            # when measured peak headroom permits a simple gain change, then remeasure AAC.
+            correction = target_i - float(final['input_i'])
+            if abs(correction) > .7 and float(final['input_tp']) + correction <= target_tp - .3:
+                corrected = path + '.gain.mp4'
+                subprocess.run([_ffmpeg(), '-v', 'error', '-y', '-i', tmp,
+                                '-af', f'volume={correction:.3f}dB', '-c:v', 'copy',
+                                '-c:a', 'aac', '-b:a', '160k', corrected], check=True, capture_output=True)
+                os.replace(corrected, tmp)
+                final = _measure_loudness(tmp)
+            if abs(float(final['input_i']) - target_i) > .7 or float(final['input_tp']) > target_tp + .3:
+                raise RuntimeError('Export failed loudness/true-peak limits')
             os.replace(tmp, path)
+            with open(path + '.audio-quality.json', 'w', encoding='utf-8') as report:
+                json.dump({'target_lufs':target_i, 'measured':final, 'passed':True}, report, indent=2)
         elif os.path.exists(tmp):
             os.remove(tmp)
-    except Exception:
-        pass
+            raise RuntimeError('Loudness normalization failed')
+        else:
+            raise RuntimeError('Normalized export missing')
+    except Exception as error:
+        raise RuntimeError('Final audio verification failed') from error

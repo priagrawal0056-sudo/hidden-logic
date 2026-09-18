@@ -323,21 +323,12 @@ def _parse_slot(s) -> tuple | None:
 
 
 def compute_publish_slots(cfg: dict, n: int) -> list:
-    """Build the next n publish datetimes from config 'publish_slots'
-    (local times like ["11:00","15:00","19:00","23:00"]), rolling into
-    following days as needed. Returns local datetimes, soonest first.
-
-    ANTI-BOT JITTER: YouTube's 2026 anti-repetitive system flags channels that post at the
-    EXACT same minute every day as bot-like (content-farm fingerprint), which suppresses
-    reach. So each slot gets a random 0-25 minute forward offset, re-rolled every run.
-    Slots stay in their intended windows (a 12:00 slot lands 12:00-12:25) but never
-    repeat the same minute day after day. Forward-only jitter so a slot can't slip into
-    the past relative to the build."""
+    """Build exact Singapore publication slots, independent of runner timezone."""
     slots = cfg.get("publish_slots")
     if not slots:
         return []
-    import random as _jrnd
-    now = dt.datetime.now()
+    from zoneinfo import ZoneInfo
+    now = dt.datetime.now(ZoneInfo(cfg.get('timezone','Asia/Singapore')))
     candidates = []
     for day in range(8):
         for s in slots:
@@ -346,7 +337,6 @@ def compute_publish_slots(cfg: dict, n: int) -> list:
                 continue  # skip malformed entries like "15" missing minutes, bad text, etc.
             h, m = parsed
             t = (now + dt.timedelta(days=day)).replace(hour=h, minute=m, second=0, microsecond=0)
-            t = t + dt.timedelta(minutes=_jrnd.randint(0, 25))  # anti-bot jitter
             if t > now + dt.timedelta(minutes=3):
                 candidates.append(t)
     candidates.sort()  # chronological, so an overnight slot is never skipped
@@ -490,7 +480,7 @@ def _pick_music_by_mood(music_dir: str, meta: dict, log=print):
     from the flat folder (so existing setups keep working). Mood subfolders are matched by
     name keyword. Fully non-fatal - music never blocks a build."""
     import random
-    exts = (".mp3", ".m4a", ".wav")
+    exts = (".mp3", ".m4a", ".wav", ".ogg")
     try:
         mood = _classify_mood(meta)
         # Folder-name keywords for each mood. The first alias is the exact folder name; the
@@ -598,103 +588,18 @@ def make_one(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None = No
     ass = os.path.join(workdir, "captions.ass")
     out = os.path.join(workdir, "short.mp4")
 
-    tts.synthesize(meta["script"], voice, timings, cfg.get("voice") or tts.pick_voice(),
-                   api_key=cfg.get("gemini_api_key", ""), engine=cfg.get("tts_engine", "auto"),
-                   cfg=cfg)
-    # per-video surface variation (anti-sameness): rotate caption accent color and the
-    # cut interval within the research-backed 2-3s pattern-interrupt band, so consecutive
-    # videos don't fingerprint as the same template. A config 'cut_seconds' pins it (opt-out
-    # of variation); otherwise it varies per video. Decide ONCE so the clip count and the
-    # actual cut length always match.
-    import random as _rand
-    accent = _rand.choice(["gold", "cyan", "green", "orange"])
-    # cut cadence: an explicit config "cut_seconds" always wins. Otherwise, if fast_pacing is
-    # on (default), use a tighter 1.8-2.4s cadence (research: viral faceless Shorts change the
-    # visual every ~1-2s; slow visuals cause mid-video drop-off). With fast_pacing off, fall
-    # back to the older, calmer 2.4-3.0s. Still randomised so videos don't fingerprint.
-    if cfg.get("cut_seconds"):
-        cut_sec = float(cfg["cut_seconds"])
-    elif cfg.get("fast_pacing", True):
-        cut_sec = round(_rand.uniform(1.8, 2.4), 1)
-    else:
-        cut_sec = round(_rand.uniform(2.4, 3.0), 1)
-    captions.build_ass(timings, ass, meta.get("emphasis_words", []), accent=accent)
-    with open(timings) as f:
-        words = json.load(f)
-        audio_len = words[-1]["end"] + 0.8
-        
-    cut_times = []
-    for w in words:
-        if w.get("word", "").strip().endswith((".", "?", "!")):
-            cut_times.append(w["end"])
-            
-    if not cut_times:
-        cut_times.append(audio_len)
-    else:
-        cut_times[-1] = audio_len
-        
-    sentence_durs = []
-    last_c = 0.0
-    for ct in cut_times:
-        dur = ct - last_c
-        if dur > 0.5:
-            sentence_durs.append(dur)
-            last_c = ct
-            
-    if last_c < audio_len and sentence_durs:
-        sentence_durs[-1] += (audio_len - last_c)
-        
-    final_durs = []
-    for i, d in enumerate(sentence_durs):
-        # CUT PACING (2026 retention research): a frame held >4s reads as "static" and triggers
-        # swipes; viral faceless Shorts change visuals every 1-3s. Old threshold (4.5s) let
-        # segments sit right ON the swipe line. Now: no segment over ~3.2s, and the FIRST
-        # segment splits even earlier (>2.4s) so a visible cut lands inside the 0-2.4s hook
-        # zone - early motion is a pattern interrupt exactly where the swipe decision happens.
-        limit = 2.4 if i == 0 else 3.2
-        if d > limit:
-            final_durs.extend([d/2, d/2])
-        else:
-            final_durs.append(d)
-            
-    n_clips = len(final_durs)
-    cut_sec = final_durs  # pass the array instead of a float
-    # Pass the real Gemini key so b-roll RELEVANCE scoring runs (esp. the first frame = the
-    # de-facto Shorts thumbnail). It was hard-disabled with None, so clips were picked by
-    # search-order/shuffle only. Cost is modest (one batched call per keyword) and the pinned
-    # topic-gate fix freed up ample quota. Set "score_broll": false in config to disable.
-    bgs = visuals.fetch_backgrounds(cfg["pexels_api_key"], meta.get("broll_keywords", []),
-                                    workdir, count=n_clips,
-                                    pixabay_key=cfg.get("pixabay_api_key"),
-                                    gemini_api_key=(cfg.get("gemini_api_key") if cfg.get("score_broll", True) else None),
-                                    visual_thesis=meta.get("visual_thesis", ""),
-                                    first_frame_description=meta.get("first_frame_description", ""),
-                                    topic=meta.get("topic", ""))
-    music = cfg.get("music_file") or None
-    if music and os.path.isdir(music):
-        import random
-        chosen = _pick_music_by_mood(music, meta, log)
-        music = chosen
-        if music:
-            log(f"Music: {os.path.basename(music)}")
-    brand_label = None
-    # opening text hook = the script's hook line (first sentence), shown big for the first
-    # ~2.8s. Toggle the two retention features from config (default on).
-    # the distinct on-screen TEXT HOOK (third hook), e.g. "ON PURPOSE" - amplifies the gap and
-    # is different from the spoken captions. Shown big at the top for the first ~2.3s.
-    hook_text = (meta.get("text_hook") or "").strip()
-    if not cfg.get("opening_hook_text", True):
-        hook_text = ""
-    assemble.assemble(bgs, voice, timings, ass, out, music,
-                      music_volume=float(cfg.get("music_volume", 0.10)),
-                      seg_seconds=cut_sec,
-                      emphasis_words=meta.get("emphasis_words", []),
-                      brand_label=brand_label,
-                      fast_pacing=bool(cfg.get("fast_pacing", True)),
-                      opening_hook_text=hook_text or None,
-                      show_subscribe_cue=bool(cfg.get("show_subscribe_cue", False)),
-                      show_follow_cue=bool(cfg.get("show_follow_cue", False)))
-    log(f"Built {out} (accent={accent}, cut={cut_sec}s)")
+    import editorial_media
+    # Both entry points require a complete first-draft production brief. Never
+    # patch missing visual direction with an unrelated last-minute graphic.
+    from production_brief import media_metadata
+    from credible.storyboard import validate_storyboard
+    meta = media_metadata(meta)
+    validate_storyboard(meta.get('storyboard'))
+    editorial_media.synthesize(meta, workdir, cfg)
+    edit = editorial_media.render(meta, workdir, cfg)
+    meta["sentence_scene_durations"] = [s["end"]-s["start"] for s in edit["scenes"]]
+    meta["edit"] = edit
+    log(f"Built {out} with distinct footage and a measured explanation scene")
 
     with open(os.path.join(workdir, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, indent=2)
@@ -1561,6 +1466,21 @@ def main():
                              "of the normal daily quota - the full-autopilot mode, no human input")
     args = parser.parse_args()
 
+    # Explicit legacy entry points must not bypass the production rollout gate.
+    if not args.dry_run and (args.topic or args.upload_only or args.compile_now):
+        from credible.pipeline import settings
+        if not settings()['rollout_enabled']:
+            parser.error('Publishing is disabled pending pilot review; use credible.single for an unpublished preview')
+
+    # Daily generation shares the evidence-backed selector and upload ledger.
+    # Explicit maintenance commands below retain their existing behavior.
+    if not (args.topic or args.upload_only or args.compile_now):
+        from credible.pipeline import run
+        if args.count not in (None, 3):
+            parser.error('Daily production uses three slots; use credible.single for one unpublished preview')
+        run('preview' if args.dry_run else 'publish')
+        return
+
     # startup integrity check: catches mismatched file swaps with a clear message
     import inspect
     problems = []
@@ -1574,8 +1494,6 @@ def main():
         sys.exit("FILES OUT OF SYNC: " + ", ".join(sorted(set(problems))) +
                  " do not match this run_daily.py. Update all files from the same version together.")
 
-    if not os.path.exists(CONFIG_FILE):
-        sys.exit("config.json missing. Copy config.example.json to config.json and fill in your keys.")
     import config_loader
     cfg = config_loader.load_config(CONFIG_FILE)
     # one-time security nudge if live secrets are still sitting in config.json

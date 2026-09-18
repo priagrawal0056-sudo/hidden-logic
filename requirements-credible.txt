@@ -1,0 +1,10 @@
+requests>=2.32,<3
+pypdf>=5,<7
+edge-tts>=7.2,<8
+Pillow>=10,<13
+imageio-ffmpeg>=0.6,<1
+google-api-python-client>=2.150,<3
+google-auth-oauthlib>=1.2,<2
+tzdata>=2025.2
+faster-whisper>=1.1,<2
+pytrends>=4.9,<5

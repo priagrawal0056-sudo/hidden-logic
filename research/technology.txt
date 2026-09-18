@@ -1,0 +1,70 @@
+Why phone videos show bands across an LED sign|Camera exposure timing can interact with a display's refresh or brightness modulation.|Slide a rolling shutter across a pulsing sign.|sony.com
+Why a spinning wheel can look as if it turns backward on video|Discrete frames can sample repeating spokes at misleading positions.|Advance spokes between labelled frame snapshots.|exploratorium.edu
+Why your phone camera switches lenses when you get close|Some phones use a different camera for macro focusing at short distances.|Show the active camera changing near a subject.|support.apple.com
+Why a portrait photo blurs the wrong edge of your glasses|Computational depth estimates can misclassify thin or transparent boundaries.|Compare an estimated depth mask with the subject.|research.google
+Why night-mode photos take several seconds|Multi-frame capture combines information across exposures to improve low-light results.|Stack short exposures into one final image.|research.google
+Why bright lights turn into stars in some photos|Diffraction around the aperture shape can create rays around bright points.|Show aperture edges and a diffraction pattern.|nikonusa.com
+Why phone photos can look sharper after you stop moving|Stabilization and multi-frame processing depend on motion and available image data.|Compare aligned and misaligned image stacks.|research.google
+Why your selfie preview and saved photo can face different ways|Preview mirroring and saved-image settings can use different orientations.|Flip a labelled letter between preview and photo.|support.apple.com
+Why indoor white walls look orange in a camera|White balance must compensate for the spectrum of the light source.|Compare raw colour cast with corrected neutral grey.|canon-europe.com
+Why autofocus hunts through a fence|The camera must choose a focus target among competing distance and contrast cues.|Move the focus plane between fence and subject.|sony.com
+Why a television picture disappears behind some sunglasses|Polarized lenses can block polarized light emerging from a display.|Rotate sunglasses in front of a screen.|sony.com
+Why an OLED screen can use less power with a dark image|Its pixels emit their own light, so darker pixels can require less emission power.|Compare lit-pixel area in two images.|samsung.com
+Why an LCD can look grey even when the picture is black|A backlight and imperfect light blocking can leave residual illumination.|Show backlight leakage through closed pixels.|eizo.com
+Why one video looks brighter than the buttons around it|An HDR-capable display can render video highlights above standard interface white using available brightness headroom.|Show a phone interface and video region on a labelled illustrative brightness scale; do not pretend the SDR Short reproduces actual HDR highlights.|developer.apple.com
+Why a phone screen reacts to your finger but not a pencil|Capacitive touch sensing detects electrical changes that an ordinary dry pencil may not produce.|Compare capacitance changes under two contact objects.|microchip.com
+Why water drops can make a touchscreen misbehave|Conductive droplets can disturb capacitive measurements and resemble touches.|Show a droplet bridging sensing regions.|infineon.com
+Why some gloves work on touchscreens|Conductive fibres can couple a finger's electrical influence to the screen.|Trace coupling through a conductive fingertip.|3m.com
+Why your phone charges quickly at first and slowly near full|Charging controls reduce current as the battery approaches its voltage limit.|Plot current through constant-current and voltage stages.|support.apple.com
+Why a phone sometimes waits at 80 percent overnight|Optimized charging can delay completion based on charging habits and settings.|Show a planned hold before wake-up time.|support.apple.com
+Why cold weather can make a phone shut down early|Low temperature can reduce available battery power and increase voltage drop under load.|Compare loaded battery voltage in warm and cold conditions.|support.apple.com
+Why wireless charging is fussy about where the phone sits|Coil alignment affects magnetic coupling and power transfer efficiency.|Slide receiving and transmitting coils out of alignment.|wirelesspowerconsortium.com
+Why two USB-C cables charge at different speeds|Cable capabilities and electronic identification can limit negotiated power.|Compare two labelled cable power negotiations.|usb.org
+Why a USB-C port does not guarantee video output|Connector shape does not establish support for optional data or display modes.|Separate connector shape from capability icons.|usb.org
+Why a USB plug can work for charging but not file transfer|Some cables omit data conductors or do not support the required data connection.|Compare power-only and data cable wiring.|usb.org
+Why Bluetooth headphones lag more in some apps|Encoding, buffering, transmission and decoding add delay; some apps compensate visually.|Draw the audio path beside a compensated video timeline.|bluetooth.com
+Why a Bluetooth mouse can run for months on a small battery|Low-duty-cycle communication allows the device to sleep between short transmissions.|Show brief radio bursts separated by sleep.|bluetooth.com
+Why wireless earbuds pause when you take one out|Wear-detection sensors infer whether the earbud is being worn.|Compare sensor signals in and out of an ear.|support.apple.com
+Why noise cancellation works better on a steady engine than a sudden voice|Predictability, frequency and processing delay affect active cancellation performance.|Compare steady and rapidly changing waveforms.|bose.com
+Why headphones sound different when their seal breaks|An acoustic leak changes low-frequency pressure and the earphone's response.|Open a small gap in an ear-pad seal.|shure.com
+Why a phone speaker sounds fuller on a table|Nearby surfaces can alter sound radiation and reflections.|Compare free-space and tabletop sound paths.|jbl.com
+Why Wi-Fi can show full bars with no internet|Signal strength measures the local radio connection, not the upstream internet service.|Separate device-router and router-internet links.|support.google.com
+Why 5 GHz Wi-Fi can be worse through walls|Propagation loss and obstruction effects differ with frequency and environment.|Compare attenuated signals crossing the same wall.|cisco.com
+Why a microwave can disturb nearby Wi-Fi|Microwave leakage and some Wi-Fi systems share the 2.4 GHz band.|Show overlapping frequencies during oven operation.|cisco.com
+Why a mesh network can slow down at the far node|Wireless backhaul and repeated transmissions consume shared airtime.|Trace a packet across multiple wireless hops.|support.google.com
+Why a video buffers even after a speed test looks good|Sustained throughput, latency variation and the route to the media server can differ from a speed test.|Compare steady delivery with bursts and gaps.|cloudflare.com
+Why sending a photo can make the file much smaller|An app may resize or recompress the image before transmission.|Compare pixel counts and compression stages.|support.google.com
+Why a screenshot can look different on another screen|Colour profiles, display capabilities and viewing settings change colour reproduction.|Show one image through two display profiles.|eizo.com
+Why deleted files can remain in the recycle bin|Deletion can first move a file into a recoverable state instead of erasing its contents.|Trace a file through live, trashed and removed states.|support.microsoft.com
+Why a computer reports less storage than the box advertises|Decimal and binary units plus reserved storage affect the displayed usable capacity.|Compare byte totals under two unit conventions.|seagate.com
+Why copying thousands of tiny files is slower than one big file|Per-file metadata and access overhead can dominate transfer time.|Compare one long transfer with many setup operations.|learn.microsoft.com
+Why an app update needs more free space than its download|Installation can require unpacked files and temporary working space in addition to the download.|Show download, expansion and replacement stages.|support.apple.com
+Why a progress bar can jump backward|Estimates may change as the system discovers more work or enters a different phase.|Add newly discovered tasks to a progress total.|learn.microsoft.com
+Why restarting fixes some devices without changing any settings|Restarting clears transient process state and reinitializes hardware and services.|Compare a stuck running state with a fresh startup.|support.microsoft.com
+Why a laptop fan speeds up during a video call|Camera processing, encoding and other workloads increase heat that cooling must remove.|Trace video tasks to processor heat and airflow.|support.apple.com
+Why a laptop can wake when you open its lid|A lid-position sensor signals a power-state transition to the system.|Move a magnet past a lid sensor.|dell.com
+Why a printer cleans itself before printing|Some inkjet maintenance cycles clear or protect nozzles so droplets eject reliably.|Show dried residue and a cleaning cycle.|epson.com
+Why printers mix colour ink into some black areas|Print modes can use composite black for particular media or tonal effects.|Compare pigment black with a composite colour mix.|canon-europe.com
+Why laser printers deliver warm paper|A fuser uses heat and pressure to bond toner to the sheet.|Trace a page through toner transfer and fusing.|hp.com
+Why a scanner light moves across the page|A scanning assembly samples successive lines to construct the full image.|Build an image one scanned line at a time.|epson.com
+Why optical mice struggle on some glass desks|The sensor needs usable surface features or optical returns to estimate movement.|Compare tracked texture with transparent glass.|logitech.com
+Why a mechanical keyboard can register before the key bottoms out|The switch's actuation point occurs before the end of its travel.|Show contact closure partway through a keystroke.|cherry.de
+Why a mouse wheel clicks in little steps|A detent mechanism provides incremental tactile feedback independent of cursor motion.|Cut away the wheel detent and encoder.|logitech.com
+Why an e-reader can keep an image with its power off|Bistable electronic ink can retain a pigment arrangement without continuous drive.|Move pigment particles then remove the field.|eink.com
+Why e-readers flash black when changing pages|A full refresh can reset pigment states and reduce residual ghosting.|Compare partial update residue with a full reset.|eink.com
+Why a stylus can work without a battery|Some pen systems receive energy from the tablet's electromagnetic field.|Trace power and position signals between pen and tablet.|wacom.com
+Why a contactless card works without being charged|The reader's field supplies energy to the passive card electronics.|Show induction powering a card chip.|nxp.com
+Why QR codes have three large corner squares|Finder patterns help locate and orient the code before decoding.|Rotate a code while its corners remain identifiable.|qrcode.com
+Why a QR code can survive a small missing patch|Error-correcting information can recover some damaged data within the code's limits.|Remove cells and reconstruct a labelled data block.|qrcode.com
+Why a barcode needs blank space beside the stripes|Quiet zones help readers distinguish the symbol from surrounding graphics.|Compare scanning with and without clear margins.|gs1.org
+Why a remote works when you point it at a wall|Infrared light can reflect from surfaces and still reach the receiver.|Trace a reflected infrared path.|sony.com
+Why a phone camera can show a remote's flashing light|Some image sensors detect near-infrared that human vision does not, depending on filtering.|Compare visible and near-infrared sensitivity.|sony.com
+Why a smartwatch light flashes green against your skin|Optical sensors estimate pulse from changes in reflected light associated with blood volume.|Animate reflected intensity over a pulse cycle.|support.apple.com
+Why step counters can count some non-walking movements|Motion classifiers infer steps from sensor patterns rather than observing feet directly.|Compare acceleration patterns and a classification threshold.|support.google.com
+Why GPS directions can hesitate when you leave a tunnel|The receiver must reacquire usable satellite signals and update its position estimate.|Show satellite visibility returning at a tunnel exit.|gps.gov
+Why airplane mode can still allow Wi-Fi|Cellular, Wi-Fi and Bluetooth radios can be controlled separately under device settings.|Switch radio blocks independently.|support.apple.com
+Why phones ask for a passcode after restarting|Some encrypted data and biometric functions require the initial passcode unlock.|Show startup encryption keys remaining locked.|support.apple.com
+Why passkeys work without sending your secret to a website|Public-key authentication proves possession of a private key through a signed challenge.|Trace challenge and signature while the key stays local.|fidoalliance.org
+Why a download can resume where it stopped|Servers and clients can use byte-range requests to retrieve the missing portion.|Request only the unreceived range of a file.|developer.mozilla.org
+Why a web page loads faster the second time|Caches can reuse valid stored resources instead of downloading every resource again.|Compare first load with validated cached assets.|developer.mozilla.org
+Why an online meeting can show video after audio drops|Audio and video streams have separate processing and network behaviours.|Split media into independently buffered streams.|webrtc.org

@@ -1,0 +1,15 @@
+clothing-001|The lock stays engaged unless the puller is held|YKK locking sliders; demonstrate pin-lock or automatic-lock operation accurately, not every zipper.
+clothing-002|There is a Y-shaped tunnel inside the slider|Interlocking zip elements guided by a slider; illustrative cutaway, not a universal tooth geometry.
+clothing-008|burr hooks latched onto fabric loops and fur|Hook-and-loop fasteners; loose fibres can catch on hooks, not a claim about every lint contaminant.
+clothing-010|warp yarns that are dyed continuously with blue indigo dye and filling yarn which is kept white|Traditional indigo denim construction; other denim weaves and colours exist.
+clothing-011|areas of abrasion or color loss that mimic what happens naturally over many wearings and home launderings|Indigo-dyed denim wear and finishing; avoid implying every fade has the same cause.
+clothing-015|the small scales on the surface of wool fibres can interlock when exposed to moisture and agitation leading to felting|Untreated wool under suitable agitation and moisture; shrink-resistant treatments change the response.
+clothing-017|creating small thermal air pockets within the fabric|Lofted fleece insulation; do not repeat manufacturer's comparative performance numbers.
+clothing-019|applied to the outermost fabric layer so that water beads up|Durable water-repellent treatment on an outer textile; distinguish it from the waterproof membrane.
+clothing-021|small needle holes that have not been seam sealed|Seam-sealed waterproof garments; not all outdoor clothing is waterproof.
+clothing-022|fibers oriented across the body rapidly spread out sweat moisture|Polartec Power Dry design as an example; omit uncorroborated comparative drying percentages.
+clothing-025|One bar below the wash tub characterises a milder cycle with reduced mechanical action|GINETEX care-symbol system; follow the complete care label, not a universal machine programme.
+clothing-026|Deep flex grooves allowed the forefoot to bend naturally|Nike Skylon example; other sole constructions may use different flexibility features.
+clothing-029|both the impulsive force at the base of the knot|Study of knot failure under walking-like forces; not every knot unties on every walk.
+clothing-034|the light waves align and swing only in one direction|Polarizing sunglasses reducing appropriate reflected glare; effect depends on orientation and surface.
+clothing-035|The glass in car windshields blocks most UV light|Conventional UV-activated photochromic lenses; visible-light-responsive variants can darken in cars.

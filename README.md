@@ -1,5 +1,13 @@
 # Hidden Logic — Automated Shorts Pipeline
 
+**Current production update:** [Approved editor and GitHub rollout](GITHUB_UPDATE.md).
+**Topic selector update:** [Research status, shared bank and verification](docs/TOPIC_SELECTOR_UPDATE.md).
+The version-4 scheduler now reuses the original narration and editing modules,
+with distinct footage, a longer mechanism demonstration, one caption layer and
+a complete callback/CTA. Publishing remains disabled for finished-pilot review.
+The older feature inventory below describes the legacy runner; use the linked
+rollout document and [Actions setup](GITHUB_ACTIONS_SETUP.md) for current defaults.
+
 Hidden Logic is a faceless YouTube Shorts channel that explains the **hidden systems behind everyday frustrations** — why milk is at the back of the store, why airport gates change last minute, why your cart keeps getting bigger. This repo is the full automation pipeline: it picks a topic, writes and fact-checks a script, voices it, captions it, fetches relevant b‑roll, renders a vertical Short, makes a thumbnail, uploads on a schedule, then learns from performance and engages with comments — hands‑off.
 
 Everything runs on free tiers (Gemini, Edge TTS, Pexels/Pixabay, YouTube Data API). The only paid option is ElevenLabs for a premium voice, which is optional.

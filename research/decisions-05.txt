@@ -1,0 +1,14 @@
+packaging-001|allowing gas to escape from inside the package while simultaneously preventing its entry|One-way degassing valves on coffee packaging; do not claim they remove all oxygen already inside.
+packaging-003|Cartons are designed with a multi-layer protective structure|The described Tetra Pak carton construction; some newer cartons use different barrier layers.
+packaging-005|tethered strings that keep the lid attached to the package|Tetra Pak TwistCap OSO 34 Pro example; do not generalize the hinge construction to every tethered closure.
+packaging-009|priming strokes is required to purge the air off the system and dip tube|Displacement spray pumps needing initial priming; use a generic pump cutaway, not dosing advice.
+packaging-011|using a piston or bag-in-bottle inner system that pushes the formula upwards|Show the piston version of airless packaging; bag-in-bottle designs work differently.
+packaging-015|As liquid moves through or exits a nozzle, it breaks into droplets and forms a spray|Atomizing nozzle geometry, pressure and liquid properties jointly shape droplets.
+packaging-017|Traditional hot-fill bottles employ ribs and panels to absorb vacuum|Hot-filled PET bottles with vacuum panels; pressure changes arise as the contents cool.
+packaging-020|enable our inspection equipment to read the bottle identiﬁcation information|O-I bottle identification marks; symbols and coding differ between manufacturers.
+packaging-021|the specific color of the glass bottle determines how much sunlight reaches the drink|Coloured beverage glass and light-sensitive contents; omit uncorroborated protection percentages.
+packaging-029|A double seam creates a hermetic seal by interlocking the edges|Double-seamed metal cans; distinguish body hook, end hook and sealing material in the drawing.
+packaging-030|We mill two layers in contact with each other at the same time|Ordinary rolled aluminium foil; coated non-stick foil has separate usage instructions.
+packaging-032|coated with a proprietary food grade coating|Reynolds baking parchment; the release coating and temperature limits are product-specific.
+packaging-034|This structure gives corrugated board considerable rigidity and resistance|Fluted corrugated board with liner sheets; not solid paperboard.
+packaging-035|paperboard can – and should – be creased before folding|Creasing multi-ply paperboard before folding; not simply scoring every type of cardboard.

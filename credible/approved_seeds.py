@@ -1,0 +1,41 @@
+"""New narration for the already supported reserve mechanisms; no new factual claims."""
+BEATS = {
+ 'gps': ["Your map dot moved.", "Buildings can reflect GPS signals.",
+         "A reflected signal takes a longer path to your phone than a direct one. Buildings can also block signals entirely. Both can make the position estimate less reliable, especially beside tall buildings.",
+         "That jumping dot doesn't necessarily mean you moved. Follow Hidden Logic for more everyday explanations."],
+ 'bluetooth': ["Your music keeps playing.", "Bluetooth hops channels around interference.",
+         "In adaptive frequency hopping, a channel with interference can be left out. The connection uses other channels instead. The drawing slows those changes down so you can follow them.",
+         "Your headphones don't need one permanently empty channel. Follow Hidden Logic for more everyday explanations."],
+ 'dns': ["You typed a website name.", "DNS finds its internet address.",
+         "Your device asks a resolver to look up that name. The address comes back, and your browser can contact the website. You get to remember a name instead of a string of numbers.",
+         "That familiar name starts a lookup. Follow Hidden Logic for more everyday explanations."],
+ 'roundabout': ["Why that bend?", "A roundabout's curved approach slows arriving traffic.",
+         "The arriving car also yields to traffic already circulating. It waits for a gap before joining. Those are two different jobs: the curve reduces approach speed, while the yield point gives circulating traffic priority.",
+         "That bend is part of the approach. Follow Hidden Logic for more everyday explanations."],
+ 'baggage': ["Which suitcase is yours?", "The airline's tags identify each bag.",
+         "A destination tag goes on the luggage. You get a bag identification label with a barcode. That gives similar-looking suitcases distinct identities without relying on their colour or shape.",
+         "Keep the little label until your bag is back. Follow Hidden Logic for more everyday explanations."],
+ 'screening': ["A note in your suitcase?", "TSA leaves one after opening a bag.",
+         "In the United States, checked baggage goes through screening. Technology can screen bags without opening them. When a physical inspection is needed, TSA puts a notice inside.",
+         "The note records a check you didn't see. Follow Hidden Logic for more everyday explanations."],
+ 'unit': ["Which pack is better value?", "Compare prices for the same weight.",
+         "In this example, a hundred grams costs two dollars. Two hundred grams costs three. The larger pack costs a dollar fifty per hundred grams, despite its higher checkout price.",
+         "Check that the unit labels match before comparing. Follow Hidden Logic for more everyday explanations."],
+ 'barcode': ["Same barcode, on sale?", "The code identifies the item.",
+         "The store's database supplies the price. Update that price, and the same packet can scan for less. This is an ordinary product barcode; special barcodes can carry more information.",
+         "Same barcode, new price. Follow Hidden Logic for more everyday explanations."],
+ 'payment': ["Two identical taps.", "EMV payments generate a fresh security code.",
+         "Each contactless transaction gets a one-time code. In this example, code A and code B are labels showing the change. It's one layer of fraud protection; other payment scams are still possible.",
+         "Same tapping motion, fresh code. Follow Hidden Logic for more everyday explanations."]
+}
+QUERIES = {
+ 'gps':['phone navigation map close up','satellite antenna tracking','person using phone outdoors'],
+ 'bluetooth':['wireless headphones close up','phone playing music','earbuds charging case'],
+ 'dns':['typing website laptop','network cables close up','browser laptop hands'],
+ 'roundabout':['roundabout aerial traffic','car approaching roundabout','roundabout road sign'],
+ 'baggage':['suitcase luggage tag close up','airport baggage belt','traveller picking up suitcase'],
+ 'screening':['opening suitcase packing','airport luggage conveyor','suitcase zip close up'],
+ 'unit':['supermarket shelf price labels','grocery packages close up','shopping comparing products'],
+ 'barcode':['grocery product barcode close up','handheld barcode scanner groceries','supermarket sale price tag'],
+ 'payment':['contactless card terminal close up','payment card in hand','phone contactless payment']
+}

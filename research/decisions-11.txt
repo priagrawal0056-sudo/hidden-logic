@@ -1,0 +1,8 @@
+packaging-051|Sorb-It binds water molecules in random intersection channels|Silica-gel desiccant example; explain adsorption without treating packets as safe to eat or reuse indiscriminately.
+packaging-053|Resin Identification Codes are not “recycle codes.”|ASTM resin identification context; local collection and processing acceptance must be checked separately.
+packaging-055|it acts as a barrier to ensure food hygiene and to make the cup liquid-proof.|Plastic-lined paper-cup example; other barrier coatings also exist and recycling arrangements vary.
+packaging-059|Shrink Sleeves are labels made from plastic film that are applied around a container and then shrunk using heat|Heat-shrink sleeve labels, not stretch sleeves or pressure-sensitive labels.
+packaging-060|If this force is higher than the internal strength of the front material, the label might tear|Pressure-sensitive label removal; the weakest interface or material depends on the adhesive, facestock and substrate.
+packaging-061|causes the special coating to release revealing the word or pattern|Tamper-evident polyester label design example; different security labels use other constructions.
+packaging-062|chemically treated, heat-sensitive media that blackens when it passes under the thermal printhead.|Direct thermal labels; distinguish these from thermal-transfer labels that use a ribbon.
+packaging-063|Mini Spots for color and process monitoring|Heidelberg print-control elements example; marks are production controls, not a consumer ingredient code.|Printed control patches let production staff monitor colour and printing consistency while the packaging is made.

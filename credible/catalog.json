@@ -1,0 +1,11 @@
+[
+  {"id":"gps","publisher":"GPS.gov","url":"https://www.gps.gov/gps-accuracy-0","pillar":"technology"},
+  {"id":"bluetooth","publisher":"Bluetooth SIG","url":"https://www.bluetooth.com/bluetooth-le-primer/","pillar":"technology"},
+  {"id":"dns","publisher":"Cloudflare","url":"https://developers.cloudflare.com/learning-paths/cybersafe/concepts/what-is-dns/","pillar":"technology"},
+  {"id":"roundabout","publisher":"FHWA","url":"https://highways.dot.gov/safety/proven-safety-countermeasures/roundabouts","pillar":"travel"},
+  {"id":"baggage","publisher":"US DOT","url":"https://www.transportation.gov/lost-delayed-or-damaged-baggage","pillar":"travel"},
+  {"id":"screening","publisher":"TSA","url":"https://www.tsa.gov/travel/security-screening","pillar":"travel"},
+  {"id":"unit","publisher":"UK CMA","url":"https://www.gov.uk/government/publications/unit-pricing-information-for-consumers/unit-pricing-information-for-consumers","pillar":"shopping"},
+  {"id":"barcode","publisher":"GS1","url":"https://support.gs1.org/support/solutions/articles/43000734158-are-the-description-and-price-of-the-item-included-in-the-barcode-","pillar":"shopping"},
+  {"id":"payment","publisher":"EMVCo","url":"https://www.emvco.com/emv-technologies/emv-contactless-chip/","pillar":"shopping"}
+]
