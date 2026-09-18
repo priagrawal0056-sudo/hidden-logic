@@ -31,6 +31,7 @@ def assess(path, duration, narration, previous, key, model='gemini-2.5-flash'):
         if not result.stdout: raise ValueError('Footage frame unavailable')
         parts.append({'inlineData':{'mimeType':'image/jpeg',
                       'data':base64.b64encode(result.stdout).decode('ascii')}})
+    service_limits.before_request()
     response = requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
         headers={'x-goog-api-key':key}, timeout=75,
         json={'contents':[{'parts':parts}], 'generationConfig':{'temperature':0,'responseMimeType':'application/json'}})

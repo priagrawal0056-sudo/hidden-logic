@@ -1,0 +1,1323 @@
+[
+  {
+    "title": "Why Shop Scales Have That Tiny Bubble",
+    "plan": [
+      {
+        "heading": "Shop Scale Bubble",
+        "purpose": "Introduce the scale and its level indicator.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              400,
+              300,
+              80
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              120,
+              320,
+              260,
+              80
+            ],
+            "color": "paper",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              180,
+              250,
+              140,
+              50
+            ],
+            "color": "dark",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "text": "DISPLAY",
+            "box": [
+              190,
+              265,
+              120,
+              20
+            ],
+            "color": "paper",
+            "size": 20
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              350,
+              420,
+              40,
+              40
+            ],
+            "color": "ink",
+            "filled": false
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              355,
+              425,
+              30,
+              30
+            ],
+            "color": "paper",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "text": "Level Bubble",
+            "box": [
+              320,
+              470,
+              100,
+              20
+            ],
+            "color": "ink",
+            "size": 16
+          }
+        ]
+      },
+      {
+        "heading": "Tilt Affects Accuracy",
+        "purpose": "Demonstrate how tilt changes the reading.",
+        "example": true,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              400,
+              300,
+              80
+            ],
+            "color": "panel",
+            "filled": true,
+            "rotate": -5,
+            "move": [
+              0,
+              20
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "rect",
+            "box": [
+              120,
+              320,
+              260,
+              80
+            ],
+            "color": "paper",
+            "filled": true,
+            "rotate": -5,
+            "move": [
+              0,
+              20
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "rect",
+            "box": [
+              180,
+              250,
+              140,
+              50
+            ],
+            "color": "dark",
+            "filled": true,
+            "rotate": -5,
+            "move": [
+              0,
+              20
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "text",
+            "text": "0.95 kg",
+            "box": [
+              190,
+              265,
+              120,
+              20
+            ],
+            "color": "accent",
+            "size": 20,
+            "example": true,
+            "until": 0.5
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              350,
+              420,
+              40,
+              40
+            ],
+            "color": "ink",
+            "filled": false,
+            "rotate": -5,
+            "move": [
+              0,
+              20
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              365,
+              425,
+              30,
+              30
+            ],
+            "color": "paper",
+            "filled": true,
+            "move": [
+              -10,
+              0
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "text",
+            "text": "Level Bubble",
+            "box": [
+              320,
+              470,
+              100,
+              20
+            ],
+            "color": "ink",
+            "size": 16,
+            "rotate": -5,
+            "move": [
+              0,
+              20
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "arrow",
+            "box": [
+              400,
+              480,
+              50,
+              -30
+            ],
+            "color": "red",
+            "reveal": 0.2,
+            "until": 0.5
+          },
+          {
+            "type": "text",
+            "text": "Tilted Reading",
+            "box": [
+              180,
+              300,
+              120,
+              20
+            ],
+            "color": "red",
+            "size": 16,
+            "reveal": 0.2,
+            "until": 0.5
+          }
+        ]
+      },
+      {
+        "heading": "Level for Accuracy",
+        "purpose": "Show the correction and accurate reading.",
+        "example": true,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              400,
+              300,
+              80
+            ],
+            "color": "panel",
+            "filled": true,
+            "rotate": 0,
+            "move": [
+              0,
+              -20
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "rect",
+            "box": [
+              120,
+              320,
+              260,
+              80
+            ],
+            "color": "paper",
+            "filled": true,
+            "rotate": 0,
+            "move": [
+              0,
+              -20
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "rect",
+            "box": [
+              180,
+              250,
+              140,
+              50
+            ],
+            "color": "dark",
+            "filled": true,
+            "rotate": 0,
+            "move": [
+              0,
+              -20
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "text",
+            "text": "1.00 kg",
+            "box": [
+              190,
+              265,
+              120,
+              20
+            ],
+            "color": "accent",
+            "size": 20,
+            "example": true,
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              350,
+              420,
+              40,
+              40
+            ],
+            "color": "ink",
+            "filled": false,
+            "rotate": 0,
+            "move": [
+              0,
+              -20
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              355,
+              425,
+              30,
+              30
+            ],
+            "color": "paper",
+            "filled": true,
+            "move": [
+              10,
+              0
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "text",
+            "text": "Level Bubble",
+            "box": [
+              320,
+              470,
+              100,
+              20
+            ],
+            "color": "ink",
+            "size": 16,
+            "rotate": 0,
+            "move": [
+              0,
+              -20
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "text",
+            "text": "Correct Reading",
+            "box": [
+              180,
+              300,
+              120,
+              20
+            ],
+            "color": "accent",
+            "size": 16,
+            "reveal": 0.5,
+            "until": 1.0
+          }
+        ]
+      },
+      {
+        "heading": "Fair Weighing",
+        "purpose": "Show the resolved state for accurate measurement.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              400,
+              300,
+              80
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              120,
+              320,
+              260,
+              80
+            ],
+            "color": "paper",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              180,
+              250,
+              140,
+              50
+            ],
+            "color": "dark",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "text": "1.00 kg",
+            "box": [
+              190,
+              265,
+              120,
+              20
+            ],
+            "color": "accent",
+            "size": 20,
+            "example": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              350,
+              420,
+              40,
+              40
+            ],
+            "color": "ink",
+            "filled": false
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              355,
+              425,
+              30,
+              30
+            ],
+            "color": "paper",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "text": "Level Bubble",
+            "box": [
+              320,
+              470,
+              100,
+              20
+            ],
+            "color": "ink",
+            "size": 16
+          },
+          {
+            "type": "text",
+            "text": "Accurate Weighing",
+            "box": [
+              150,
+              550,
+              200,
+              30
+            ],
+            "color": "accent",
+            "size": 24,
+            "reveal": 0.2,
+            "move": [
+              0,
+              -50
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Why Shop Scales Have That Tiny Bubble",
+    "plan": [
+      {
+        "heading": "Shop Scale Bubble",
+        "purpose": "Introduce the scale and its level indicator.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              400,
+              300,
+              80
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              120,
+              320,
+              260,
+              80
+            ],
+            "color": "paper",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              180,
+              250,
+              140,
+              50
+            ],
+            "color": "dark",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "text": "DISPLAY",
+            "box": [
+              190,
+              265,
+              120,
+              26
+            ],
+            "color": "paper",
+            "size": 20
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              350,
+              420,
+              40,
+              40
+            ],
+            "color": "ink",
+            "filled": false
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              355,
+              425,
+              30,
+              30
+            ],
+            "color": "paper",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "text": "Level Bubble",
+            "box": [
+              320,
+              470,
+              100,
+              22
+            ],
+            "color": "ink",
+            "size": 16
+          }
+        ]
+      },
+      {
+        "heading": "Tilt Affects Accuracy",
+        "purpose": "Demonstrate how tilt changes the reading.",
+        "example": true,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              400,
+              300,
+              80
+            ],
+            "color": "panel",
+            "filled": true,
+            "rotate": -5,
+            "move": [
+              0,
+              20
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "rect",
+            "box": [
+              120,
+              320,
+              260,
+              80
+            ],
+            "color": "paper",
+            "filled": true,
+            "rotate": -5,
+            "move": [
+              0,
+              20
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "rect",
+            "box": [
+              180,
+              250,
+              140,
+              50
+            ],
+            "color": "dark",
+            "filled": true,
+            "rotate": -5,
+            "move": [
+              0,
+              20
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "text",
+            "text": "0.95 kg",
+            "box": [
+              190,
+              265,
+              120,
+              26
+            ],
+            "color": "accent",
+            "size": 20,
+            "example": true,
+            "until": 0.5
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              350,
+              420,
+              40,
+              40
+            ],
+            "color": "ink",
+            "filled": false,
+            "rotate": -5,
+            "move": [
+              0,
+              20
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              365,
+              425,
+              30,
+              30
+            ],
+            "color": "paper",
+            "filled": true,
+            "move": [
+              -10,
+              0
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "text",
+            "text": "Level Bubble",
+            "box": [
+              320,
+              470,
+              100,
+              22
+            ],
+            "color": "ink",
+            "size": 16,
+            "rotate": -5,
+            "move": [
+              0,
+              20
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "arrow",
+            "box": [
+              400,
+              480,
+              50,
+              -30
+            ],
+            "color": "red",
+            "reveal": 0.2,
+            "until": 0.5
+          },
+          {
+            "type": "text",
+            "text": "Tilted Reading",
+            "box": [
+              180,
+              300,
+              120,
+              22
+            ],
+            "color": "red",
+            "size": 16,
+            "reveal": 0.2,
+            "until": 0.5
+          }
+        ]
+      },
+      {
+        "heading": "Level for Accuracy",
+        "purpose": "Show the correction and accurate reading.",
+        "example": true,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              400,
+              300,
+              80
+            ],
+            "color": "panel",
+            "filled": true,
+            "rotate": 0,
+            "move": [
+              0,
+              -20
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "rect",
+            "box": [
+              120,
+              320,
+              260,
+              80
+            ],
+            "color": "paper",
+            "filled": true,
+            "rotate": 0,
+            "move": [
+              0,
+              -20
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "rect",
+            "box": [
+              180,
+              250,
+              140,
+              50
+            ],
+            "color": "dark",
+            "filled": true,
+            "rotate": 0,
+            "move": [
+              0,
+              -20
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "text",
+            "text": "1.00 kg",
+            "box": [
+              190,
+              265,
+              120,
+              26
+            ],
+            "color": "accent",
+            "size": 20,
+            "example": true,
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              350,
+              420,
+              40,
+              40
+            ],
+            "color": "ink",
+            "filled": false,
+            "rotate": 0,
+            "move": [
+              0,
+              -20
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              355,
+              425,
+              30,
+              30
+            ],
+            "color": "paper",
+            "filled": true,
+            "move": [
+              10,
+              0
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "text",
+            "text": "Level Bubble",
+            "box": [
+              320,
+              470,
+              100,
+              22
+            ],
+            "color": "ink",
+            "size": 16,
+            "rotate": 0,
+            "move": [
+              0,
+              -20
+            ],
+            "reveal": 0.5,
+            "until": 1.0
+          },
+          {
+            "type": "text",
+            "text": "Correct Reading",
+            "box": [
+              180,
+              300,
+              120,
+              22
+            ],
+            "color": "accent",
+            "size": 16,
+            "reveal": 0.5,
+            "until": 1.0
+          }
+        ]
+      },
+      {
+        "heading": "Fair Weighing",
+        "purpose": "Show the resolved state for accurate measurement.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              400,
+              300,
+              80
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              120,
+              320,
+              260,
+              80
+            ],
+            "color": "paper",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              180,
+              250,
+              140,
+              50
+            ],
+            "color": "dark",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "text": "1.00 kg",
+            "box": [
+              190,
+              265,
+              120,
+              26
+            ],
+            "color": "accent",
+            "size": 20,
+            "example": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              350,
+              420,
+              40,
+              40
+            ],
+            "color": "ink",
+            "filled": false
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              355,
+              425,
+              30,
+              30
+            ],
+            "color": "paper",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "text": "Level Bubble",
+            "box": [
+              320,
+              470,
+              100,
+              22
+            ],
+            "color": "ink",
+            "size": 16
+          },
+          {
+            "type": "text",
+            "text": "Accurate Weighing",
+            "box": [
+              150,
+              550,
+              200,
+              30
+            ],
+            "color": "accent",
+            "size": 24,
+            "reveal": 0.2,
+            "move": [
+              0,
+              -50
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Why Pavement Has Deliberate Cuts Across It",
+    "plan": [
+      {
+        "heading": "Pavement Cuts",
+        "purpose": "Introduce the visible cuts in concrete pavement.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              50,
+              300,
+              400,
+              200
+            ],
+            "color": "muted",
+            "filled": true
+          },
+          {
+            "type": "line",
+            "box": [
+              100,
+              300,
+              0,
+              200
+            ],
+            "color": "ink"
+          },
+          {
+            "type": "line",
+            "box": [
+              250,
+              300,
+              0,
+              200
+            ],
+            "color": "ink"
+          },
+          {
+            "type": "line",
+            "box": [
+              400,
+              300,
+              0,
+              200
+            ],
+            "color": "ink"
+          },
+          {
+            "type": "text",
+            "box": [
+              180,
+              240,
+              150,
+              30
+            ],
+            "text": "Pavement Cuts",
+            "size": 24,
+            "color": "ink"
+          }
+        ]
+      },
+      {
+        "heading": "Contraction Joint",
+        "purpose": "Highlight a single cut as a contraction joint and show initial stress.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              350,
+              300,
+              150
+            ],
+            "color": "muted",
+            "filled": true
+          },
+          {
+            "type": "line",
+            "box": [
+              250,
+              350,
+              0,
+              150
+            ],
+            "color": "ink"
+          },
+          {
+            "type": "arrow",
+            "box": [
+              150,
+              380,
+              100,
+              0
+            ],
+            "color": "warm"
+          },
+          {
+            "type": "arrow",
+            "box": [
+              250,
+              470,
+              -100,
+              0
+            ],
+            "color": "warm"
+          },
+          {
+            "type": "arrow",
+            "box": [
+              120,
+              400,
+              0,
+              50
+            ],
+            "color": "warm"
+          },
+          {
+            "type": "arrow",
+            "box": [
+              380,
+              400,
+              0,
+              50
+            ],
+            "color": "warm"
+          },
+          {
+            "type": "text",
+            "box": [
+              150,
+              300,
+              200,
+              30
+            ],
+            "text": "Contraction Joint",
+            "size": 24,
+            "color": "ink"
+          }
+        ]
+      },
+      {
+        "heading": "Controlled Crack",
+        "purpose": "Demonstrate how a contraction joint guides crack formation under stress.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              350,
+              300,
+              150
+            ],
+            "color": "muted",
+            "filled": true
+          },
+          {
+            "type": "line",
+            "box": [
+              250,
+              350,
+              0,
+              150
+            ],
+            "color": "ink"
+          },
+          {
+            "type": "arrow",
+            "box": [
+              150,
+              380,
+              100,
+              0
+            ],
+            "color": "warm"
+          },
+          {
+            "type": "arrow",
+            "box": [
+              250,
+              470,
+              -100,
+              0
+            ],
+            "color": "warm"
+          },
+          {
+            "type": "arrow",
+            "box": [
+              120,
+              400,
+              0,
+              50
+            ],
+            "color": "warm"
+          },
+          {
+            "type": "arrow",
+            "box": [
+              380,
+              400,
+              0,
+              50
+            ],
+            "color": "warm"
+          },
+          {
+            "type": "line",
+            "box": [
+              250,
+              350,
+              0,
+              150
+            ],
+            "color": "accent",
+            "reveal": 0.3,
+            "until": 0.7
+          },
+          {
+            "type": "text",
+            "box": [
+              150,
+              300,
+              200,
+              30
+            ],
+            "text": "Shrinkage Stress",
+            "size": 24,
+            "color": "warm"
+          },
+          {
+            "type": "text",
+            "box": [
+              280,
+              300,
+              180,
+              30
+            ],
+            "text": "Controlled Crack",
+            "size": 24,
+            "color": "accent"
+          }
+        ]
+      },
+      {
+        "heading": "Planned Cracks",
+        "purpose": "Show the final state of pavement with cracks contained by joints.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              50,
+              300,
+              400,
+              200
+            ],
+            "color": "muted",
+            "filled": true
+          },
+          {
+            "type": "line",
+            "box": [
+              100,
+              300,
+              0,
+              200
+            ],
+            "color": "ink"
+          },
+          {
+            "type": "line",
+            "box": [
+              250,
+              300,
+              0,
+              200
+            ],
+            "color": "ink"
+          },
+          {
+            "type": "line",
+            "box": [
+              400,
+              300,
+              0,
+              200
+            ],
+            "color": "ink"
+          },
+          {
+            "type": "line",
+            "box": [
+              100,
+              300,
+              0,
+              200
+            ],
+            "color": "accent",
+            "reveal": 0.0,
+            "until": 1.0
+          },
+          {
+            "type": "line",
+            "box": [
+              250,
+              300,
+              0,
+              200
+            ],
+            "color": "accent",
+            "reveal": 0.0,
+            "until": 1.0
+          },
+          {
+            "type": "line",
+            "box": [
+              400,
+              300,
+              0,
+              200
+            ],
+            "color": "accent",
+            "reveal": 0.0,
+            "until": 1.0
+          },
+          {
+            "type": "text",
+            "box": [
+              180,
+              240,
+              150,
+              30
+            ],
+            "text": "Planned Cracks",
+            "size": 24,
+            "color": "ink"
+          }
+        ]
+      }
+    ]
+  }
+]

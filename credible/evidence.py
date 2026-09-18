@@ -149,6 +149,7 @@ class FreeModel:
         if not self.key or self.exhausted or self.remaining <= 0:
             raise RuntimeError('Free model unavailable; use verified reserve')
         self.remaining -= 1
+        service_limits.before_request()
         response = requests.post(
             f'https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent',
             headers={'x-goog-api-key': self.key}, timeout=75,
@@ -240,7 +241,7 @@ def generate_episode(model, documents, history, arm, topic=None):
     if not documents:
         raise ValueError('No retrieved documents available for generation')
     from .storyboard import SCHEMA
-    from .storyboard import validate_storyboard
+    from .storyboard import validate_storyboard, layout_storyboard
     from production_brief import RULES, validate as validate_brief
     prompt = (EDITORIAL_RULES + RULES + SCHEMA + '\nOpening style: ' + arm +
               '\nAvoid these recent claims and subjects: ' + json.dumps(compact) +
@@ -274,7 +275,8 @@ def generate_episode(model, documents, history, arm, topic=None):
             data['scene_kind'] = 'storyboard'
             data['production_version'] = getattr(model,'production_version',4)
             data['source_label'] = documents[data['evidence'][0]['source_url']]['publisher']
-            validate_storyboard(data.get('storyboard'))
+            data['storyboard'], data['drawing_layout_changes'] = layout_storyboard(data.get('storyboard'))
+            validate_storyboard(data['storyboard'])
             validate_brief(data)
             break
         except (ValueError, KeyError, TypeError, IndexError) as exc:

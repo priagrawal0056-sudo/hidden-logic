@@ -1,6 +1,12 @@
 name: Unpublished topic-bank pilots
 on:
   workflow_dispatch:
+    inputs:
+      category:
+        description: 'Test one category first; all runs the three-category review'
+        type: choice
+        default: home
+        options: [home, food, clothing, all]
 permissions:
   contents: read
 jobs:
@@ -11,7 +17,7 @@ jobs:
       fail-fast: false
       max-parallel: 1
       matrix:
-        category: [home, food, clothing]
+        category: ${{ fromJSON(inputs.category == 'all' && '["home","food","clothing"]' || format('["{0}"]', inputs.category || 'home')) }}
     env:
       PYTHONUNBUFFERED: '1'
       HL_GEMINI_API_KEY: ${{ secrets.HL_GEMINI_API_KEY }}

@@ -1,6 +1,7 @@
 """Shared, run-scoped Gemini stop signal. No keys or quota guesses are stored."""
 from contextlib import contextmanager
 from contextvars import ContextVar
+import time
 
 _current = ContextVar('gemini_run_limit', default=None)
 
@@ -28,3 +29,17 @@ def observe(status):
     if state is not None and status in (401, 403, 429):
         state['status'] = status
         check()
+
+
+def before_request():
+    """Space live requests across writer, narration and footage review."""
+    check()
+    state = _current.get()
+    if state is None:
+        return
+    previous = state.get('last_request')
+    if previous is not None:
+        delay = 15 - (time.monotonic() - previous)
+        if delay > 0:
+            time.sleep(delay)
+    state['last_request'] = time.monotonic()

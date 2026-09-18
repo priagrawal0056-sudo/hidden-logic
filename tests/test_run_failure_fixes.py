@@ -92,3 +92,10 @@ class RunFailureTests(unittest.TestCase):
                 seed_reserve(Path('.'),{'production_version':4,'reserve_build_attempts_per_run':2},docs,catalog,{},[],errors,9)
             self.assertEqual(prepare.call_count,2)
             self.assertEqual(len(errors),2)
+
+    def test_all_consumers_share_request_spacing(self):
+        import service_limits
+        with service_limits.session(), patch('service_limits.time.monotonic',side_effect=[0,2,15]), patch('service_limits.time.sleep') as sleep:
+            service_limits.before_request()
+            service_limits.before_request()
+            sleep.assert_called_once_with(13)

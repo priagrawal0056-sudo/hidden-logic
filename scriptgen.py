@@ -1017,6 +1017,7 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
         for attempt in range(_max_tries):
             service_limits.check()
             try:
+                service_limits.before_request()
                 r = requests.post(GEMINI_URL.format(model=model, key=api_key), json=body, timeout=90)
                 service_limits.observe(r.status_code)
                 if r.status_code == 404:

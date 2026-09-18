@@ -18,11 +18,13 @@ objects (3-40). Each object has type rect/ellipse/line/arrow/text, box [x,y,w,h]
 color ink/muted/accent/warm/red/panel/dark/paper. All boxes stay inside x=38..460,
 y=210..680. Rect/ellipse: filled boolean (default true). Text: text, size 16..32;
 put each short label in its OWN empty box, no text overlap. A single line
-needs height >= size+6; two lines need >=2*(size+6). Labels cannot move.
+needs height >= size+6; two lines need >=2*(size+6). Labels cannot move. The renderer fits label heights and pins labels locally.
 Give labels generous width and short text. Motion endpoints must ALSO stay
 inside the safe area, including the full width and height of each object. Line/arrow box is
 start x,y plus signed delta w,h to end; horizontal and vertical lines are allowed. Optional move [dx,dy], reveal 0..0.7,
 until 0.3..1 control movement/visibility relative to that narration beat.
+Rectangles and ellipses may use rotate (degrees, -45..45) about their centre.
+Scaling and opacity are not supported.
 Use actual objects, paths or comparisons, not four generic text boxes. Draw the
 recognizable subject in scene one. Change the geometry/state meaningfully in
 each next scene. Label illustrative values with example=true. Never render
@@ -31,6 +33,82 @@ The fourth state is the resolved mechanism, used under the spoken follow request
 Keep it inside the same story. Never draw a subscribe/follow request or channel-name
 text: the narration captions already carry the CTA. Use meaningful object motion.
 '''
+
+
+def rotated_points(obj):
+    """The same rotated geometry is used for drawing and bounds validation."""
+    x,y,w,h=obj['box'];angle=math.radians(obj.get('rotate',0))
+    cx,cy=x+w/2,y+h/2
+    if obj['type']=='ellipse':
+        points=[(cx+w/2*math.cos(i*math.pi/32),cy+h/2*math.sin(i*math.pi/32)) for i in range(64)]
+    else:
+        points=[(x,y),(x+w,y),(x+w,y+h),(x,y+h)]
+    return [(cx+(a-cx)*math.cos(angle)-(b-cy)*math.sin(angle),
+             cy+(a-cx)*math.sin(angle)+(b-cy)*math.cos(angle)) for a,b in points]
+
+
+def layout_storyboard(plan):
+    """Fit and pin labels locally; never rewrite claims or silently drop geometry."""
+    import copy
+    from .media import font, wrap
+    output = copy.deepcopy(plan)
+    if not isinstance(output, list):
+        raise ValueError('Four executable storyboard scenes required')
+    draw = ImageDraw.Draw(Image.new('RGB', (540, 960)))
+    changes = []
+    for scene_index, scene in enumerate(output):
+        occupied = []
+        geometry = [o for o in scene.get('objects',[]) if o.get('type') != 'text']
+        if geometry:
+            first=min(o.get('reveal',0) for o in geometry)
+            last=max(o.get('until',1) for o in geometry)
+            if not 0 <= first < last <= 1:
+                raise ValueError('Invalid scene visibility interval')
+            if first != 0 or last != 1:
+                for i,obj in enumerate(scene['objects']):
+                    before=copy.deepcopy(obj)
+                    for key,default in (('reveal',0),('until',1)):
+                        obj[key]=max(0,min(1,(obj.get(key,default)-first)/(last-first)))
+                    changes.append({'scene':scene_index,'object':i,'before':before,'after':copy.deepcopy(obj)})
+        for object_index, obj in enumerate(scene.get('objects', [])):
+            if obj.get('type') != 'text':
+                continue
+            box = obj.get('box')
+            if not isinstance(box,list) or len(box)!=4 or not all(
+                    isinstance(v,(int,float)) and math.isfinite(v) for v in box):
+                raise ValueError('Invalid drawing coordinates')
+            x,y,w,h = box
+            if not (38 <= x < 460 and 210 <= y < 680 and w > 0):
+                raise ValueError('Drawing outside safe area')
+            size = obj.get('size',22)
+            if not isinstance(size,int) or not 16 <= size <= 32:
+                raise ValueError('Illegible drawing label size')
+            before = copy.deepcopy(obj)
+            fitted = None
+            # Keep the label near its authored anchor, in at most two lines.
+            # Expand its reserved height before reducing readable type size.
+            for candidate_size in range(size,15,-1):
+                try: lines=wrap(draw,obj.get('text',''),font(candidate_size),min(w,460-x))
+                except ValueError: continue
+                if not lines or len(lines)>2: continue
+                height=len(lines)*(candidate_size+6)
+                for delta in [0]+[v for step in range(4,65,4) for v in (step,-step)]:
+                    top=y+delta
+                    if top<210 or top+height>680: continue
+                    candidate=[x,top,min(w,460-x),height]
+                    if any(x<a+c and x+candidate[2]>a and top<b+d and top+height>b
+                           for a,b,c,d in occupied): continue
+                    fitted=(candidate,candidate_size);break
+                if fitted:break
+            if not fitted:
+                raise ValueError('Drawing label cannot fit safely; shorten label or redesign scene')
+            obj['box'],obj['size']=fitted
+            obj.pop('move',None);obj.pop('motion_path',None);obj.pop('rotate',None)
+            occupied.append(obj['box'])
+            if before != obj:
+                changes.append({'scene':scene_index,'object':object_index,
+                                'before':before,'after':copy.deepcopy(obj)})
+    return output, changes
 
 
 def validate_storyboard(plan):
@@ -59,6 +137,10 @@ def validate_storyboard(plan):
             if not all(isinstance(v, (int, float)) and math.isfinite(v) for v in box + move):
                 raise ValueError('Invalid drawing coordinates')
             x, y, w, h = box
+            rotation=obj.get('rotate',0)
+            if (not isinstance(rotation,(int,float)) or not math.isfinite(rotation) or
+                    abs(rotation)>45 or (rotation and kind not in ('rect','ellipse'))):
+                raise ValueError('Unsupported drawing rotation')
             is_path = kind in ('line','arrow')
             if (not is_path and (w <= 0 or h <= 0)) or (is_path and w == 0 and h == 0 and obj.get('end', [x,y]) == [x,y]):
                 raise ValueError('Empty drawing')
@@ -73,6 +155,10 @@ def validate_storyboard(plan):
                 if not (38 <= min(x,ex)+dx <= max(x,ex)+dx <= 460 and
                         210 <= min(y,ey)+dy <= max(y,ey)+dy <= 680):
                     raise ValueError('Drawing outside safe area')
+            if rotation:
+                for dx,dy in ([0,0],move):
+                    if any(not (38 <= px+dx <= 460 and 210 <= py+dy <= 680) for px,py in rotated_points(obj)):
+                        raise ValueError('Rotated drawing outside safe area')
             path = obj.get('motion_path', [])
             if path:
                 if not isinstance(path,list) or not 2 <= len(path) <= 60:
@@ -112,7 +198,7 @@ def validate_storyboard(plan):
 
 def draw_storyboard(draw, scene, progress):
     from .media import font, wrap, arrow
-    for obj in scene['objects']:
+    for obj in sorted(scene['objects'], key=lambda obj: obj['type']=='text'):
         if not obj.get('reveal', 0) <= progress <= obj.get('until', 1):
             continue
         t = min(1, max(0, (progress-obj.get('reveal', 0)) / .65))
@@ -127,7 +213,10 @@ def draw_storyboard(draw, scene, progress):
             x=path[n][0]+(path[n+1][0]-path[n][0])*fraction
             y=path[n][1]+(path[n+1][1]-path[n][1])*fraction
         color, kind = COLORS[obj['color']], obj['type']
-        if kind == 'rect':
+        if obj.get('rotate',0) and kind in ('rect','ellipse'):
+            points=rotated_points({**obj,'box':[x,y,w,h]})
+            draw.polygon(points,fill=color if obj.get('filled',True) else None,outline=color,width=3)
+        elif kind == 'rect':
             draw.rounded_rectangle((x,y,x+w,y+h), radius=min(14,w/4,h/4),
                 fill=color if obj.get('filled', True) else None,
                 outline=color, width=3)
@@ -141,6 +230,8 @@ def draw_storyboard(draw, scene, progress):
             arrow(draw, (x,y), tuple(obj.get('end',[x+w,y+h])), color, 4)
         else:
             size = obj.get('size', 22)
+            if obj['color'] in ('dark','panel'): color=COLORS['ink']
+            draw.rounded_rectangle((x,y,x+w,y+h),radius=4,fill=COLORS['dark'])
             for n, line in enumerate(wrap(draw, obj['text'], font(size), w)):
                 draw.text((x,y+n*(size+6)), line, font=font(size), fill=color)
 
