@@ -269,26 +269,37 @@ def synthesize(episode, folder, config):
 
 def punctuated_words(text, words):
     """Align service lexical tokens to written words, including contractions."""
-    lexical = []
-    for word in words:
-        parts = tokens(word['text'])
-        for i, part in enumerate(parts):
-            step = (word['end']-word['start'])/len(parts)
-            lexical.append((part, word['start']+i*step, word['start']+(i+1)*step))
-    output, cursor = [], 0
+    # Use the same character comparison as sentence_segments. ASR may split
+    # DNS into D / N / S or join a contraction; spelling must still match exactly.
+    from assemble import sentence_segments
+    measured = [{'word': w['text'], 'start': w['start'], 'end': w['end'],
+                 'estimated': w.get('estimated', False)} for w in words]
+    try:
+        sentence_segments(measured, text)
+    except ValueError as exc:
+        raise ValueError('Narration punctuation alignment mismatch: ' + str(exc)) from exc
+    clean = lambda value: re.sub(r'[^a-z0-9]', '', value.lower())
+    ends, offset = {}, 0
+    for i, word in enumerate(words):
+        offset += len(clean(word['text']))
+        ends[offset] = i
+    output, offset, first, pending = [], 0, 0, []
     for written in text.split():
-        parts = tokens(written)
-        if not parts:
-            if output: output[-1]['text'] += ' '+written
-            continue
-        selected = lexical[cursor:cursor+len(parts)]
-        if [p[0] for p in selected] != parts:
+        pending.append(written)
+        offset += len(clean(written))
+        if offset in ends and ends[offset] >= first:
+            last = ends[offset]
+            output.append({'text': ' '.join(pending), 'start': words[first]['start'],
+                           'end': words[last]['end']})
+            first, pending = last + 1, []
+    if pending:
+        if clean(''.join(pending)) or not output:
             raise ValueError('Narration punctuation alignment mismatch')
-        output.append({'text':written,'start':selected[0][1],'end':selected[-1][2]})
-        cursor += len(parts)
-    if cursor != len(lexical):
+        output[-1]['text'] += ' ' + ' '.join(pending)
+    if first != len(words):
         raise ValueError('Extra narration words')
     return output
+
 
 
 def editorial_frame(episode, elapsed, config):

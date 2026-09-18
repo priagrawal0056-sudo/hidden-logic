@@ -124,17 +124,21 @@ def _align_with_whisper(text: str, mp3_path: str):
         return None
     try:
         model = WhisperModel(_TTS_CFG.get("alignment_model", "base.en"), device="cpu", compute_type="int8")
-        segments, _ = model.transcribe(mp3_path, word_timestamps=True, language="en",
-                                       vad_filter=True, condition_on_previous_text=False,
-                                       beam_size=1, hallucination_silence_threshold=0.5)
-        words = []
-        for seg in segments:
-            for w in (seg.words or []):
-                words.append({"word": w.word.strip(), "start": round(w.start, 3),
-                              "end": round(w.end, 3)})
-        if words:
-            from assemble import sentence_segments
-            sentence_segments(words, text)  # Reject missing, repeated or substituted narration.
+        # Retry recognition of the SAME audio, not a new paid/quota TTS request.
+        # No script prompt: do not steer ASR into confirming words it did not hear.
+        from assemble import sentence_segments
+        for beam in (1, 5):
+            segments, _ = model.transcribe(mp3_path, word_timestamps=True, language="en",
+                                           vad_filter=True, condition_on_previous_text=False,
+                                           beam_size=beam, hallucination_silence_threshold=0.5)
+            words = [{"word": w.word.strip(), "start": round(w.start, 3),
+                      "end": round(w.end, 3)}
+                     for seg in segments for w in (seg.words or [])]
+            try:
+                sentence_segments(words, text)
+            except ValueError:
+                print(f"[tts] transcript/timing check failed (beam={beam}); no estimated timings used")
+                continue
             print(f"[tts] measured alignment used ({len(words)} words; transcript checked)")
             return words
     except Exception as e:

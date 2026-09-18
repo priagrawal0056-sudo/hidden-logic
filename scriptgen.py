@@ -20,11 +20,7 @@ _discovered = None
 
 
 def _best_models(api_key: str) -> list:
-    """Ask Google which models this key can actually use, then order for resilience:
-    premium Flash first (best quality for scripts/review), then Flash-Lite models
-    which have FAR higher daily limits (e.g. 500 RPD vs 20 RPD) as deep fallback so
-    the pipeline almost never runs dry. Falls back to the static list if discovery
-    fails. Cached per run."""
+    """Use a bounded stable model chain, never every discovered preview model."""
     global _discovered
     if _discovered:
         return _discovered
@@ -39,17 +35,12 @@ def _best_models(api_key: str) -> list:
             # keep flash + flash-lite text models; drop image/audio/tts/live/experimental
             if "flash" in n and not any(x in n for x in ("image", "audio", "live", "tts", "exp", "8b")):
                 names.append(n)
-        def version(n):
-            import re as _re
-            m2 = _re.search(r"gemini-(\d+(?:\.\d+)?)", n)
-            return float(m2.group(1)) if m2 else 0.0
-        # premium flash first (newest version), THEN lite (newest first). Lite sorts
-        # after non-lite at any version, but is always retained as fallback.
-        names.sort(key=lambda n: ("lite" in n, -version(n), len(n)))
-        # keep more models than before so the high-RPD lite tiers are always reachable
-        if names:
-            _discovered = names[:15]
-            print(f"[scriptgen] model chain (premium first, lite fallback): {_discovered}")
+        # Discovery is availability information, not a quality or quota ranking.
+        # Keep the known production preference order and at most three models.
+        preferred = [name for name in MODELS if name in names]
+        if preferred:
+            _discovered = preferred
+            print(f"[scriptgen] bounded production model chain: {_discovered}")
             return _discovered
     except Exception:
         pass
