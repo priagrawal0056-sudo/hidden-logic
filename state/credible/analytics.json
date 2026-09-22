@@ -1382,6 +1382,14 @@
           "public_views": 2,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "nkq0KuXswwg",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 849.962,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-18T07:20:00Z",
@@ -1404,7 +1412,7 @@
         "start_date": "2026-08-19",
         "end_date": "2026-08-25",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -1541,6 +1549,14 @@
           "public_views": 2,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "hsYtHQauZU4",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 847.912,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-18T09:23:00Z",
@@ -1563,7 +1579,7 @@
         "start_date": "2026-08-19",
         "end_date": "2026-08-25",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -1700,6 +1716,14 @@
           "public_views": 8,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "s209gssEBLM",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 826.228,
+          "public_views": 8,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-19T07:04:00Z",
@@ -1722,7 +1746,7 @@
         "start_date": "2026-08-20",
         "end_date": "2026-08-26",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -1859,6 +1883,14 @@
           "public_views": 5,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "p7tHQ6U_j3k",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 824.045,
+          "public_views": 5,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-19T09:15:00Z",
@@ -1881,7 +1913,7 @@
         "start_date": "2026-08-20",
         "end_date": "2026-08-26",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -2018,6 +2050,14 @@
           "public_views": 4,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "KDTqGrXqHDA",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 802.128,
+          "public_views": 4,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-20T07:10:00Z",
@@ -2047,7 +2087,7 @@
         "start_date": "2026-08-21",
         "end_date": "2026-08-27",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -2184,6 +2224,14 @@
           "public_views": 1,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "wKzQ3W0PoFw",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 778.112,
+          "public_views": 1,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-21T07:11:00Z",
@@ -2213,7 +2261,7 @@
         "start_date": "2026-08-22",
         "end_date": "2026-08-28",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -2350,6 +2398,14 @@
           "public_views": 7,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "gLiq7n-1CSk",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 776.212,
+          "public_views": 7,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-21T09:05:00Z",
@@ -2372,7 +2428,7 @@
         "start_date": "2026-08-22",
         "end_date": "2026-08-28",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -2509,6 +2565,14 @@
           "public_views": 19,
           "likes": 1,
           "comments": 0
+        },
+        {
+          "video_id": "uinfYRSozkQ",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 774.078,
+          "public_views": 19,
+          "likes": 1,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-21T11:13:00Z",
@@ -2531,7 +2595,7 @@
         "start_date": "2026-08-22",
         "end_date": "2026-08-28",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -2668,6 +2732,14 @@
           "public_views": 8,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "kjLv2m3GVjk",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 754.028,
+          "public_views": 8,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-22T07:16:00Z",
@@ -2690,7 +2762,7 @@
         "start_date": "2026-08-23",
         "end_date": "2026-08-29",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -2827,6 +2899,14 @@
           "public_views": 2,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "7oVDqDkfV7k",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 751.895,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-22T09:24:00Z",
@@ -2849,7 +2929,7 @@
         "start_date": "2026-08-23",
         "end_date": "2026-08-29",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -2986,6 +3066,14 @@
           "public_views": 5,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "P2vP7AHbi6E",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 750.012,
+          "public_views": 5,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-22T11:17:00Z",
@@ -3008,7 +3096,7 @@
         "start_date": "2026-08-23",
         "end_date": "2026-08-29",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -3145,6 +3233,14 @@
           "public_views": 3,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "4Y1Nh1EsmPM",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 729.878,
+          "public_views": 3,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-23T07:25:00Z",
@@ -3167,7 +3263,7 @@
         "start_date": "2026-08-24",
         "end_date": "2026-08-30",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -3304,6 +3400,14 @@
           "public_views": 17,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "tbY4-bwwS9g",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 728.128,
+          "public_views": 17,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-23T09:10:00Z",
@@ -3326,7 +3430,7 @@
         "start_date": "2026-08-24",
         "end_date": "2026-08-30",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -3463,6 +3567,14 @@
           "public_views": 9,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "bz7xxSo1h8s",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 726.012,
+          "public_views": 9,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-23T11:17:00Z",
@@ -3485,7 +3597,7 @@
         "start_date": "2026-08-24",
         "end_date": "2026-08-30",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -3622,6 +3734,14 @@
           "public_views": 7,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "d6rAcoOR69g",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 725.028,
+          "public_views": 7,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-23T12:16:00Z",
@@ -3644,7 +3764,7 @@
         "start_date": "2026-08-24",
         "end_date": "2026-08-30",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -3781,6 +3901,14 @@
           "public_views": 2,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "eLm7whgfXPY",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 723.512,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-23T13:47:00Z",
@@ -3810,7 +3938,7 @@
         "start_date": "2026-08-24",
         "end_date": "2026-08-30",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -3947,6 +4075,14 @@
           "public_views": 3,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "d749iQLzZ-k",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 705.945,
+          "public_views": 3,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-24T07:21:00Z",
@@ -3969,7 +4105,7 @@
         "start_date": "2026-08-25",
         "end_date": "2026-08-31",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -4106,6 +4242,14 @@
           "public_views": 2,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "_NevRI8wlww",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 704.162,
+          "public_views": 2,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-24T09:08:00Z",
@@ -4128,7 +4272,7 @@
         "start_date": "2026-08-25",
         "end_date": "2026-08-31",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -4265,6 +4409,14 @@
           "public_views": 0,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "6IrCokIp--E",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 682.178,
+          "public_views": 0,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-25T07:07:00Z",
@@ -4294,7 +4446,7 @@
         "start_date": "2026-08-26",
         "end_date": "2026-09-01",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -4431,6 +4583,14 @@
           "public_views": 6,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "AuLDP8zVrs4",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 680.195,
+          "public_views": 6,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-25T09:06:00Z",
@@ -4453,7 +4613,7 @@
         "start_date": "2026-08-26",
         "end_date": "2026-09-01",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -4590,6 +4750,14 @@
           "public_views": 6,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "nxfI4fCA-eE",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 678.195,
+          "public_views": 6,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-25T11:06:00Z",
@@ -4612,7 +4780,7 @@
         "start_date": "2026-08-26",
         "end_date": "2026-09-01",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -4749,6 +4917,14 @@
           "public_views": 259,
           "likes": 1,
           "comments": 0
+        },
+        {
+          "video_id": "QlbULZRU7sk",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 657.878,
+          "public_views": 259,
+          "likes": 1,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-26T07:25:00Z",
@@ -4771,7 +4947,7 @@
         "start_date": "2026-08-27",
         "end_date": "2026-09-02",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -5315,6 +5491,14 @@
           "public_views": 563,
           "likes": 4,
           "comments": 0
+        },
+        {
+          "video_id": "VXkoAsUcxn0",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 656.095,
+          "public_views": 563,
+          "likes": 4,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-26T09:12:00Z",
@@ -5337,7 +5521,7 @@
         "start_date": "2026-08-27",
         "end_date": "2026-09-02",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -5886,6 +6070,14 @@
           "public_views": 979,
           "likes": 6,
           "comments": 0
+        },
+        {
+          "video_id": "dDha5aTWDKY",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 634.162,
+          "public_views": 979,
+          "likes": 6,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-27T07:08:00Z",
@@ -5908,7 +6100,7 @@
         "start_date": "2026-08-28",
         "end_date": "2026-09-03",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -6446,6 +6638,14 @@
           "public_views": 7,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "F_E4oatj_3w",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 632.195,
+          "public_views": 7,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-27T09:06:00Z",
@@ -6468,7 +6668,7 @@
         "start_date": "2026-08-28",
         "end_date": "2026-09-03",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -6605,6 +6805,14 @@
           "public_views": 1073,
           "likes": 10,
           "comments": 0
+        },
+        {
+          "video_id": "e08EnOFGlpI",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 610.228,
+          "public_views": 1073,
+          "likes": 10,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-28T07:04:00Z",
@@ -6627,7 +6835,7 @@
         "start_date": "2026-08-29",
         "end_date": "2026-09-04",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -6764,6 +6972,14 @@
           "public_views": 989,
           "likes": 14,
           "comments": 0
+        },
+        {
+          "video_id": "QGyQRa_iV5Q",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 608.128,
+          "public_views": 989,
+          "likes": 14,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-28T09:10:00Z",
@@ -6786,7 +7002,7 @@
         "start_date": "2026-08-29",
         "end_date": "2026-09-04",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -6923,6 +7139,14 @@
           "public_views": 294,
           "likes": 2,
           "comments": 0
+        },
+        {
+          "video_id": "zIIjY2Lquhc",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 585.912,
+          "public_views": 294,
+          "likes": 2,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-29T07:23:00Z",
@@ -6945,7 +7169,7 @@
         "start_date": "2026-08-30",
         "end_date": "2026-09-05",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -7082,6 +7306,14 @@
           "public_views": 265,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "p8YC6SsaqFs",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 584.162,
+          "public_views": 265,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-29T09:08:00Z",
@@ -7111,7 +7343,7 @@
         "start_date": "2026-08-30",
         "end_date": "2026-09-05",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -7248,6 +7480,14 @@
           "public_views": 1002,
           "likes": 6,
           "comments": 0
+        },
+        {
+          "video_id": "FqvYBKEqQOw",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 582.078,
+          "public_views": 1002,
+          "likes": 6,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-29T11:13:00Z",
@@ -7270,7 +7510,7 @@
         "start_date": "2026-08-30",
         "end_date": "2026-09-05",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -7808,6 +8048,14 @@
           "public_views": 882,
           "likes": 4,
           "comments": 0
+        },
+        {
+          "video_id": "NNknoMKoCw0",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 562.178,
+          "public_views": 882,
+          "likes": 4,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-30T07:07:00Z",
@@ -7830,7 +8078,7 @@
         "start_date": "2026-08-31",
         "end_date": "2026-09-06",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -8374,6 +8622,14 @@
           "public_views": 190,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "j0-UWGFvcD4",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 560.245,
+          "public_views": 190,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-30T09:03:00Z",
@@ -8396,7 +8652,7 @@
         "start_date": "2026-08-31",
         "end_date": "2026-09-06",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -8533,6 +8789,14 @@
           "public_views": 791,
           "likes": 3,
           "comments": 0
+        },
+        {
+          "video_id": "qjIQp4d88-Y",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 558.295,
+          "public_views": 791,
+          "likes": 3,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-30T11:00:00Z",
@@ -8555,7 +8819,7 @@
         "start_date": "2026-08-31",
         "end_date": "2026-09-06",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -9093,6 +9357,14 @@
           "public_views": 921,
           "likes": 11,
           "comments": 0
+        },
+        {
+          "video_id": "mMN8iq2DpVA",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 537.895,
+          "public_views": 921,
+          "likes": 11,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-31T07:24:00Z",
@@ -9115,7 +9387,7 @@
         "start_date": "2026-09-01",
         "end_date": "2026-09-07",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -9252,6 +9524,14 @@
           "public_views": 878,
           "likes": 6,
           "comments": 1
+        },
+        {
+          "video_id": "Kt0En4-Ppsc",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 535.945,
+          "public_views": 878,
+          "likes": 6,
+          "comments": 1
         }
       ],
       "publish_at": "2026-08-31T09:21:00Z",
@@ -9274,7 +9554,7 @@
         "start_date": "2026-09-01",
         "end_date": "2026-09-07",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -9823,6 +10103,14 @@
           "public_views": 891,
           "likes": 4,
           "comments": 0
+        },
+        {
+          "video_id": "n6Uy2nMqXjI",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 534.012,
+          "public_views": 891,
+          "likes": 4,
+          "comments": 0
         }
       ],
       "publish_at": "2026-08-31T11:17:00Z",
@@ -9845,7 +10133,7 @@
         "start_date": "2026-09-01",
         "end_date": "2026-09-07",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -9982,6 +10270,14 @@
           "public_views": 1147,
           "likes": 10,
           "comments": 1
+        },
+        {
+          "video_id": "GoKXbdtQBYo",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 514.128,
+          "public_views": 1147,
+          "likes": 10,
+          "comments": 1
         }
       ],
       "publish_at": "2026-09-01T07:10:00Z",
@@ -10004,7 +10300,7 @@
         "start_date": "2026-09-02",
         "end_date": "2026-09-08",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -10553,6 +10849,14 @@
           "public_views": 1049,
           "likes": 10,
           "comments": 0
+        },
+        {
+          "video_id": "3Vs5fYkQA7A",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 512.145,
+          "public_views": 1049,
+          "likes": 10,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-01T09:09:00Z",
@@ -10575,7 +10879,7 @@
         "start_date": "2026-09-02",
         "end_date": "2026-09-08",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -10712,6 +11016,14 @@
           "public_views": 56,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "6U7Bfxd7thI",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 466.262,
+          "public_views": 56,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-03T07:02:00Z",
@@ -10734,7 +11046,7 @@
         "start_date": "2026-09-04",
         "end_date": "2026-09-10",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -10871,6 +11183,14 @@
           "public_views": 7,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "d4A6JQ-0-lo",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 464.245,
+          "public_views": 7,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-03T09:03:00Z",
@@ -10893,7 +11213,7 @@
         "start_date": "2026-09-04",
         "end_date": "2026-09-10",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -11030,6 +11350,14 @@
           "public_views": 978,
           "likes": 8,
           "comments": 0
+        },
+        {
+          "video_id": "7zpfkYuYF4M",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 462.262,
+          "public_views": 978,
+          "likes": 8,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-03T11:02:00Z",
@@ -11052,7 +11380,7 @@
         "start_date": "2026-09-04",
         "end_date": "2026-09-10",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -11189,6 +11517,14 @@
           "public_views": 5,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "Lhgt3Dx8EPs",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 461.128,
+          "public_views": 5,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-03T12:10:00Z",
@@ -11211,7 +11547,7 @@
         "start_date": "2026-09-04",
         "end_date": "2026-09-10",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -11348,6 +11684,14 @@
           "public_views": 10,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "rPt8PhWddtA",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 442.162,
+          "public_views": 10,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-04T07:08:00Z",
@@ -11377,7 +11721,7 @@
         "start_date": "2026-09-05",
         "end_date": "2026-09-11",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -11514,6 +11858,14 @@
           "public_views": 12,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "XV9sJGDtLf4",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 440.128,
+          "public_views": 12,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-04T09:10:00Z",
@@ -11536,7 +11888,7 @@
         "start_date": "2026-09-05",
         "end_date": "2026-09-11",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -11673,6 +12025,14 @@
           "public_views": 1125,
           "likes": 6,
           "comments": 1
+        },
+        {
+          "video_id": "abyL33SLKhc",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 418.028,
+          "public_views": 1125,
+          "likes": 6,
+          "comments": 1
         }
       ],
       "publish_at": "2026-09-05T07:16:00Z",
@@ -11695,7 +12055,7 @@
         "start_date": "2026-09-06",
         "end_date": "2026-09-12",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -12233,6 +12593,14 @@
           "public_views": 1029,
           "likes": 18,
           "comments": 0
+        },
+        {
+          "video_id": "2MfuOY5EDPc",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 416.128,
+          "public_views": 1029,
+          "likes": 18,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-05T09:10:00Z",
@@ -12255,7 +12623,7 @@
         "start_date": "2026-09-06",
         "end_date": "2026-09-12",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -12799,6 +13167,14 @@
           "public_views": 922,
           "likes": 8,
           "comments": 0
+        },
+        {
+          "video_id": "Aw7I8eva9SM",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 393.878,
+          "public_views": 922,
+          "likes": 8,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-06T07:25:00Z",
@@ -12821,7 +13197,7 @@
         "start_date": "2026-09-07",
         "end_date": "2026-09-13",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -12958,6 +13334,14 @@
           "public_views": 4,
           "likes": 1,
           "comments": 0
+        },
+        {
+          "video_id": "q7b2ZX_aWC8",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 392.295,
+          "public_views": 4,
+          "likes": 1,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-06T09:00:00Z",
@@ -12980,7 +13364,7 @@
         "start_date": "2026-09-07",
         "end_date": "2026-09-13",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -13117,6 +13501,14 @@
           "public_views": 1020,
           "likes": 12,
           "comments": 0
+        },
+        {
+          "video_id": "m9rmKS67-64",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 390.145,
+          "public_views": 1020,
+          "likes": 12,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-06T11:09:00Z",
@@ -13139,7 +13531,7 @@
         "start_date": "2026-09-07",
         "end_date": "2026-09-13",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -13276,6 +13668,14 @@
           "public_views": 1001,
           "likes": 10,
           "comments": 1
+        },
+        {
+          "video_id": "435flCjJtO0",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 389.245,
+          "public_views": 1001,
+          "likes": 10,
+          "comments": 1
         }
       ],
       "publish_at": "2026-09-06T12:03:00Z",
@@ -13298,7 +13698,7 @@
         "start_date": "2026-09-07",
         "end_date": "2026-09-13",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -13435,6 +13835,14 @@
           "public_views": 292,
           "likes": 5,
           "comments": 0
+        },
+        {
+          "video_id": "i1y7I07aelE",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 369.928,
+          "public_views": 292,
+          "likes": 5,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-07T07:22:00Z",
@@ -13457,7 +13865,7 @@
         "start_date": "2026-09-08",
         "end_date": "2026-09-14",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -13594,6 +14002,14 @@
           "public_views": 937,
           "likes": 8,
           "comments": 1
+        },
+        {
+          "video_id": "kY7Y9R3GY08",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 346.178,
+          "public_views": 937,
+          "likes": 8,
+          "comments": 1
         }
       ],
       "publish_at": "2026-09-08T07:07:00Z",
@@ -13616,7 +14032,7 @@
         "start_date": "2026-09-09",
         "end_date": "2026-09-15",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -13753,6 +14169,14 @@
           "public_views": 67,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "khqHj9f4GZc",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 343.978,
+          "public_views": 67,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-08T09:19:00Z",
@@ -13775,7 +14199,7 @@
         "start_date": "2026-09-09",
         "end_date": "2026-09-15",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -13912,6 +14336,14 @@
           "public_views": 995,
           "likes": 8,
           "comments": 0
+        },
+        {
+          "video_id": "Xhkf_xi_KmQ",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 321.912,
+          "public_views": 995,
+          "likes": 8,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-09T07:23:00Z",
@@ -13936,7 +14368,7 @@
         "start_date": "2026-09-10",
         "end_date": "2026-09-16",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -14071,6 +14503,14 @@
           "public_views": 918,
           "likes": 9,
           "comments": 0
+        },
+        {
+          "video_id": "Z1v8E_wmESY",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 320.228,
+          "public_views": 918,
+          "likes": 9,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-09T09:04:00Z",
@@ -14095,7 +14535,7 @@
         "start_date": "2026-09-10",
         "end_date": "2026-09-16",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -14230,6 +14670,14 @@
           "public_views": 873,
           "likes": 7,
           "comments": 0
+        },
+        {
+          "video_id": "7JwuHPs2sKw",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 317.895,
+          "public_views": 873,
+          "likes": 7,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-09T11:24:00Z",
@@ -14254,7 +14702,7 @@
         "start_date": "2026-09-10",
         "end_date": "2026-09-16",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -14796,6 +15244,14 @@
           "public_views": 920,
           "likes": 7,
           "comments": 0
+        },
+        {
+          "video_id": "Xm5GqeSJ2e8",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 298.095,
+          "public_views": 920,
+          "likes": 7,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-10T07:12:00Z",
@@ -14820,7 +15276,7 @@
         "start_date": "2026-09-11",
         "end_date": "2026-09-17",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -15362,6 +15818,14 @@
           "public_views": 1134,
           "likes": 7,
           "comments": 0
+        },
+        {
+          "video_id": "2T3isBD1nEk",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 296.012,
+          "public_views": 1134,
+          "likes": 7,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-10T09:17:00Z",
@@ -15386,7 +15850,7 @@
         "start_date": "2026-09-11",
         "end_date": "2026-09-17",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -15521,6 +15985,14 @@
           "public_views": 417,
           "likes": 7,
           "comments": 0
+        },
+        {
+          "video_id": "SZtm9suPQuI",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 293.895,
+          "public_views": 417,
+          "likes": 7,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-10T11:24:00Z",
@@ -15545,7 +16017,7 @@
         "start_date": "2026-09-11",
         "end_date": "2026-09-17",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -16087,6 +16559,14 @@
           "public_views": 927,
           "likes": 1,
           "comments": 0
+        },
+        {
+          "video_id": "n_lvlHV-fS8",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 293.128,
+          "public_views": 927,
+          "likes": 1,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-10T12:10:00Z",
@@ -16111,7 +16591,7 @@
         "start_date": "2026-09-11",
         "end_date": "2026-09-17",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -16668,6 +17148,14 @@
           "public_views": 643,
           "likes": 4,
           "comments": 0
+        },
+        {
+          "video_id": "XKKPWj4gkxs",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 273.978,
+          "public_views": 643,
+          "likes": 4,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-11T07:19:00Z",
@@ -16692,7 +17180,7 @@
         "start_date": "2026-09-12",
         "end_date": "2026-09-18",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -17228,6 +17716,14 @@
           "public_views": 1088,
           "likes": 16,
           "comments": 0
+        },
+        {
+          "video_id": "GCpBzzMHv7A",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 272.145,
+          "public_views": 1088,
+          "likes": 16,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-11T09:09:00Z",
@@ -17252,7 +17748,7 @@
         "start_date": "2026-09-12",
         "end_date": "2026-09-18",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [
         [
@@ -17799,6 +18295,14 @@
           "public_views": 13,
           "likes": 0,
           "comments": 0
+        },
+        {
+          "video_id": "y1_4ariTzps",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 270.095,
+          "public_views": 13,
+          "likes": 0,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-11T11:12:00Z",
@@ -17823,7 +18327,7 @@
         "start_date": "2026-09-12",
         "end_date": "2026-09-18",
         "window": "seven_complete_pacific_days_after_publish_day",
-        "fetched_at": "2026-09-21T13:21:37.078049+00:00"
+        "fetched_at": "2026-09-22T17:17:41.962969+00:00"
       },
       "retention_curve": [],
       "retention_availability": "unavailable",
@@ -17955,6 +18459,14 @@
           "video_id": "kt4Ip7xSeAg",
           "observed_at": "2026-09-22T12:02:41.264901+00:00",
           "age_hours": 244.761,
+          "public_views": 2245,
+          "likes": 23,
+          "comments": 0
+        },
+        {
+          "video_id": "kt4Ip7xSeAg",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 250.012,
           "public_views": 2245,
           "likes": 23,
           "comments": 0
@@ -18515,6 +19027,14 @@
           "video_id": "QVjLLixBIeA",
           "observed_at": "2026-09-22T12:02:41.264901+00:00",
           "age_hours": 242.845,
+          "public_views": 262,
+          "likes": 2,
+          "comments": 0
+        },
+        {
+          "video_id": "QVjLLixBIeA",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 248.095,
           "public_views": 262,
           "likes": 2,
           "comments": 0
@@ -19084,6 +19604,14 @@
           "public_views": 1102,
           "likes": 9,
           "comments": 0
+        },
+        {
+          "video_id": "Ekj_WOgilAY",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 246.178,
+          "public_views": 1102,
+          "likes": 9,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-12T11:07:00Z",
@@ -19243,6 +19771,14 @@
           "public_views": 910,
           "likes": 3,
           "comments": 0
+        },
+        {
+          "video_id": "c2wfoCz6RPU",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 226.145,
+          "public_views": 910,
+          "likes": 3,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-13T07:09:00Z",
@@ -19381,6 +19917,14 @@
           "video_id": "h4iWpDI6TuY",
           "observed_at": "2026-09-22T12:02:41.264901+00:00",
           "age_hours": 218.811,
+          "public_views": 470,
+          "likes": 2,
+          "comments": 0
+        },
+        {
+          "video_id": "h4iWpDI6TuY",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 224.062,
           "public_views": 470,
           "likes": 2,
           "comments": 0
@@ -19525,6 +20069,14 @@
           "public_views": 1142,
           "likes": 23,
           "comments": 1
+        },
+        {
+          "video_id": "4R6mFlVVlqg",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 222.112,
+          "public_views": 1142,
+          "likes": 23,
+          "comments": 1
         }
       ],
       "publish_at": "2026-09-13T11:11:00Z",
@@ -19663,6 +20215,14 @@
           "video_id": "doy4tXTZO04",
           "observed_at": "2026-09-22T12:02:41.264901+00:00",
           "age_hours": 148.678,
+          "public_views": 19,
+          "likes": 0,
+          "comments": 0
+        },
+        {
+          "video_id": "doy4tXTZO04",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 153.928,
           "public_views": 19,
           "likes": 0,
           "comments": 0
@@ -19807,6 +20367,14 @@
           "public_views": 638,
           "likes": 4,
           "comments": 0
+        },
+        {
+          "video_id": "r38576g3Ph8",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 130.012,
+          "public_views": 638,
+          "likes": 4,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-17T07:17:00Z",
@@ -19945,6 +20513,14 @@
           "video_id": "mSeSNPg7l8c",
           "observed_at": "2026-09-22T12:02:41.264901+00:00",
           "age_hours": 122.961,
+          "public_views": 951,
+          "likes": 8,
+          "comments": 0
+        },
+        {
+          "video_id": "mSeSNPg7l8c",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 128.212,
           "public_views": 951,
           "likes": 8,
           "comments": 0
@@ -20089,6 +20665,14 @@
           "public_views": 883,
           "likes": 2,
           "comments": 0
+        },
+        {
+          "video_id": "IQhEb214c4c",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 125.962,
+          "public_views": 883,
+          "likes": 2,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-17T11:20:00Z",
@@ -20227,6 +20811,14 @@
           "video_id": "GDZsmxac6gg",
           "observed_at": "2026-09-22T12:02:41.264901+00:00",
           "age_hours": 100.761,
+          "public_views": 495,
+          "likes": 1,
+          "comments": 0
+        },
+        {
+          "video_id": "GDZsmxac6gg",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 106.012,
           "public_views": 495,
           "likes": 1,
           "comments": 0
@@ -20371,6 +20963,14 @@
           "public_views": 1089,
           "likes": 7,
           "comments": 0
+        },
+        {
+          "video_id": "aC8Zq34kYww",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 104.012,
+          "public_views": 1089,
+          "likes": 7,
+          "comments": 0
         }
       ],
       "publish_at": "2026-09-18T09:17:00Z",
@@ -20512,6 +21112,14 @@
           "public_views": 958,
           "likes": 5,
           "comments": 1
+        },
+        {
+          "video_id": "pwq15dcPeGI",
+          "observed_at": "2026-09-22T17:17:41.962969+00:00",
+          "age_hours": 102.095,
+          "public_views": 958,
+          "likes": 5,
+          "comments": 1
         }
       ],
       "publish_at": "2026-09-18T11:12:00Z",
@@ -20525,5 +21133,5 @@
       "experiment_eligible": false
     }
   },
-  "last_polled_at": "2026-09-22T12:02:41.264901+00:00"
+  "last_polled_at": "2026-09-22T17:17:41.962969+00:00"
 }
