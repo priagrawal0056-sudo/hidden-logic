@@ -143,18 +143,21 @@ class FreeModel:
         self.remaining = config['max_model_calls']
         self.exhausted = False
 
-    def call(self, prompt):
+    def call(self, prompt, schema=None):
         service_limits.check()
         import requests
         if not self.key or self.exhausted or self.remaining <= 0:
             raise RuntimeError('Free model unavailable; use verified reserve')
         self.remaining -= 1
         service_limits.before_request()
+        generation = {'temperature': .2, 'responseMimeType': 'application/json'}
+        if schema is not None:
+            generation['responseJsonSchema'] = schema
         response = requests.post(
             f'https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent',
             headers={'x-goog-api-key': self.key}, timeout=75,
             json={'contents': [{'parts': [{'text': prompt}]}],
-                  'generationConfig': {'temperature': .2, 'responseMimeType': 'application/json'}})
+                  'generationConfig': generation})
         service_limits.observe(response.status_code)
         if response.status_code in (401,403,429):
             self.exhausted = True
@@ -251,11 +254,13 @@ def generate_episode(model, documents, history, arm, topic=None):
                    '\nExplain precisely this mechanism and scope. Do not substitute another topic. '
                    'Copy topic_id, claim_id, subject and category exactly. '
                    'The title may improve, but must preserve the selected observation and mechanism.')
+    from .draft_schema import DRAFT_SCHEMA
+    prompt += '\nWriter contract: use only fields in the response schema; express arrow direction with signed box deltas, never rotate.'
     feedback = ''
     # One bounded drawing repair, then a fresh source review. Twelve normal
     # writer/reviewer calls plus at most six repairs fit the daily call budget.
     for attempt in range(2):
-        data = model.call(prompt + feedback)
+        data = model.call(prompt + feedback, schema=DRAFT_SCHEMA)
         try:
             if topic is not None:
                 for key in ('topic_id','claim_id','subject','category'):

@@ -115,3 +115,15 @@ class RunFailureTests(unittest.TestCase):
                 report = json.loads((Path(directory) / 'result.json').read_text())
                 self.assertIn(f'HTTP {status}', report['reason'])
                 self.assertFalse(report['published'])
+
+    def test_writer_schema_is_sent_but_review_requests_stay_independent(self):
+        from credible.evidence import FreeModel
+        from credible.draft_schema import DRAFT_SCHEMA
+        response=Mock(status_code=200,ok=True)
+        response.json.return_value={'candidates':[{'content':{'parts':[{'text':'{}'}]}}]}
+        model=FreeModel({'model':'gemini-2.5-flash','max_model_calls':2});model.key='test'
+        with patch('requests.post',return_value=response) as post:
+            model.call('draft',schema=DRAFT_SCHEMA)
+            self.assertEqual(post.call_args.kwargs['json']['generationConfig']['responseJsonSchema'],DRAFT_SCHEMA)
+            model.call('review')
+            self.assertNotIn('responseJsonSchema',post.call_args.kwargs['json']['generationConfig'])
