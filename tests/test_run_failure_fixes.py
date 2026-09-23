@@ -127,3 +127,14 @@ class RunFailureTests(unittest.TestCase):
             self.assertEqual(post.call_args.kwargs['json']['generationConfig']['responseJsonSchema'],DRAFT_SCHEMA)
             model.call('review')
             self.assertNotIn('responseJsonSchema',post.call_args.kwargs['json']['generationConfig'])
+
+    def test_invalid_request_diagnostics_redact_secrets_and_urls(self):
+        from credible.evidence import FreeModel
+        model=FreeModel({'model':'gemini-2.5-flash','max_model_calls':1});model.key='private-key'
+        response=Mock(status_code=400,ok=False)
+        response.json.return_value={'error':{'message':'Unknown schema field; private-key https://example.com/?key=private-key'}}
+        with patch('requests.post',return_value=response):
+            with self.assertRaises(RuntimeError) as caught:model.call('draft')
+        self.assertIn('unknown schema field',str(caught.exception))
+        self.assertNotIn('private-key',str(caught.exception))
+        self.assertNotIn('https://',str(caught.exception))

@@ -38,3 +38,19 @@ DRAFT_SCHEMA=obj({
     'broll_keywords':array(TEXT,3,6),
     'sound_cues':array(obj({'phrase':TEXT,'kind':{'type':'string','enum':['scan','chime']}}),0,2),
 })
+
+
+def serving_schema(value):
+    """Avoid Gemini's nested length/range state explosion.
+
+    Renderer and editorial validation enforce these bounds locally. The API
+    schema constrains structure and enums, not the full artistic contract.
+    """
+    if isinstance(value, dict):
+        return {k:serving_schema(v) for k,v in value.items()
+                if k not in ('minItems','maxItems','minimum','maximum')}
+    if isinstance(value,list):
+        return [serving_schema(v) for v in value]
+    return value
+
+DRAFT_SCHEMA = serving_schema(DRAFT_SCHEMA)
