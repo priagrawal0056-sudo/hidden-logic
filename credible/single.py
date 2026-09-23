@@ -57,7 +57,7 @@ def main():
     except Exception as exc:
         # Some libraries include request URLs or credentials in exception text.
         message=str(exc)
-        reason=(message if message.startswith(('Gemini credential unavailable;',
+        reason=(message if isinstance(exc, service_limits.ServiceUnavailable) or message.startswith(('Gemini credential unavailable;',
             'Stock credential unavailable;','Free model request failed: HTTP')) else type(exc).__name__)
         save(args.output/'result.json',{'status':'failed','error_type':type(exc).__name__,
                                       'reason':reason,'published':False})

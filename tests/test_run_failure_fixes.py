@@ -99,3 +99,19 @@ class RunFailureTests(unittest.TestCase):
             service_limits.before_request()
             service_limits.before_request()
             sleep.assert_called_once_with(13)
+
+    def test_service_failure_report_keeps_safe_status(self):
+        import service_limits
+        import tempfile
+        import json
+        from pathlib import Path
+        from credible.single import main
+        for status in (401, 403, 429):
+            with tempfile.TemporaryDirectory() as directory:
+                with patch('sys.argv', ['single', '--output', directory]), patch(
+                        'credible.single.build', side_effect=service_limits.ServiceUnavailable(status)):
+                    with self.assertRaises(SystemExit):
+                        main()
+                report = json.loads((Path(directory) / 'result.json').read_text())
+                self.assertIn(f'HTTP {status}', report['reason'])
+                self.assertFalse(report['published'])

@@ -6,7 +6,12 @@ import time
 _current = ContextVar('gemini_run_limit', default=None)
 
 class ServiceUnavailable(RuntimeError):
-    pass
+    def __init__(self, status):
+        self.status = int(status)
+        descriptions = {401: 'authentication rejected', 403: 'access denied',
+                        429: 'rate limit or quota exhausted'}
+        detail = descriptions.get(self.status, 'service unavailable')
+        super().__init__(f'Gemini HTTP {self.status}: {detail}; new API work stopped for this run')
 
 @contextmanager
 def session():
@@ -22,7 +27,7 @@ def blocked():
 def check():
     status = (_current.get() or {}).get('status')
     if status:
-        raise ServiceUnavailable(f'Gemini HTTP {status}; new API work stopped for this run')
+        raise ServiceUnavailable(status)
 
 def observe(status):
     state = _current.get()
