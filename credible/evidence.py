@@ -164,6 +164,7 @@ class FreeModel:
         if not response.ok:
             # Do not log response bodies or request URLs containing credentials.
             hint = 'service_error'
+            message = ''
             try:
                 message = response.json().get('error', {}).get('message', '').lower()
                 if 'leak' in message: hint = 'key_blocked_as_leaked_replace_in_ai_studio'
@@ -173,6 +174,12 @@ class FreeModel:
                 elif response.status_code == 429: hint = 'quota_exhausted'
             except (ValueError,TypeError):
                 pass
+            if response.status_code == 400:
+                # Keep schema diagnostics useful without exposing keys, URLs or
+                # echoed opaque identifiers from a provider error message.
+                detail = message.replace(self.key.lower(), '[redacted]') if self.key else message
+                detail = re.sub(r'https?://\S+|[a-zA-Z0-9_/-]{35,}', '[redacted]', detail)
+                hint = 'invalid_request: ' + detail[:600]
             raise RuntimeError(f'Free model request failed: HTTP {response.status_code}; {hint}')
         return json.loads(response.json()['candidates'][0]['content']['parts'][0]['text'])
 
