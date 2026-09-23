@@ -90,3 +90,10 @@ class FirstDraftTests(unittest.TestCase):
             self.assertIn('broll_keywords (three strings)',prompt)
 
 if __name__=='__main__':unittest.main()
+
+    def test_opening_word_count_is_only_a_pre_narration_ceiling(self):
+        data=brief()
+        data['beats'][:2]=["Why's your freezer door tough to reopen?", 'Cold air inside creates a vacuum.']
+        self.assertTrue(validate(data))
+        data['beats'][0]='Why is the door of your freezer sometimes so difficult to reopen?'
+        with self.assertRaisesRegex(ValueError,'drafting ceiling'):validate(data)

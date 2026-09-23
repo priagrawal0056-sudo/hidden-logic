@@ -59,8 +59,10 @@ def validate(data):
         raise ValueError('Keep the final spoken CTA short')
     script=' '.join(beats)
     if not data.get('authored'):
-        if len((beats[0]+' '+beats[1]).split())>12:
-            raise ValueError('Hook plus useful answer must fit twelve words')
+        # Twelve words is the writing target; measured audio enforces six seconds.
+        # Allow a small drafting margin rather than rejecting natural 13-word hooks.
+        if len((beats[0]+' '+beats[1]).split())>16:
+            raise ValueError('Opening exceeds sixteen-word drafting ceiling; target twelve words')
         if not 12<=len(beats[2].split())<=28:
             raise ValueError('Mechanism narration must fit a readable short demonstration')
         if len(groups[3])!=2:
