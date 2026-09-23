@@ -91,3 +91,20 @@ def media_metadata(data):
     return {**data,'script':' '.join(data['beats']),
             'diagram_sentence_index':2,
             'diagram_sentence_count':len(sentences(data['beats'][2]))}
+
+
+def usable_sound_cues(beats, cues):
+    """Optional effects must never stop a supported, otherwise valid episode."""
+    if not isinstance(beats,list) or any(not isinstance(b,str) for b in beats):
+        return [], ['Invalid beats; narration validation required']
+    script=' '.join(beats).casefold(); meaningful=' '.join(beats[2:]).casefold()
+    kept=[]; removed=[]
+    for cue in cues if isinstance(cues,list) else []:
+        phrase=cue.get('phrase','') if isinstance(cue,dict) else ''
+        if (not isinstance(phrase,str) or not phrase.strip() or
+                cue.get('kind') not in ('scan','chime') or
+                script.count(phrase.casefold())!=1 or phrase.casefold() not in meaningful or
+                any(c['phrase'].casefold()==phrase.casefold() for c in kept) or len(kept)>=2):
+            removed.append('Optional sound cue omitted: no unique mechanism/payoff anchor')
+        else:kept.append(cue)
+    return kept,removed

@@ -252,7 +252,7 @@ def generate_episode(model, documents, history, arm, topic=None):
         raise ValueError('No retrieved documents available for generation')
     from .storyboard import SCHEMA
     from .storyboard import validate_storyboard, layout_storyboard
-    from production_brief import RULES, validate as validate_brief
+    from production_brief import RULES, validate as validate_brief, usable_sound_cues
     prompt = (EDITORIAL_RULES + RULES + SCHEMA + '\nOpening style: ' + arm +
               '\nAvoid these recent claims and subjects: ' + json.dumps(compact) +
               '\nSource documents: ' + json.dumps(excerpts))
@@ -289,6 +289,7 @@ def generate_episode(model, documents, history, arm, topic=None):
             data['source_label'] = documents[data['evidence'][0]['source_url']]['publisher']
             data['storyboard'], data['drawing_layout_changes'] = layout_storyboard(data.get('storyboard'))
             validate_storyboard(data['storyboard'])
+            data['sound_cues'], data['sound_cue_adjustments'] = usable_sound_cues(data.get('beats'),data.get('sound_cues',[]))
             validate_brief(data)
             break
         except (ValueError, KeyError, TypeError, IndexError) as exc:

@@ -138,3 +138,12 @@ class RunFailureTests(unittest.TestCase):
         self.assertIn('unknown schema field',str(caught.exception))
         self.assertNotIn('private-key',str(caught.exception))
         self.assertNotIn('https://',str(caught.exception))
+
+    def test_ambiguous_optional_effects_do_not_abort_valid_narration(self):
+        from production_brief import usable_sound_cues
+        beats=['Pressure?', 'It changes.', 'Air lowers pressure.', 'Pressure matters. Follow Hidden Logic.']
+        good={'phrase':'Air lowers pressure','kind':'chime'}
+        cues,notes=usable_sound_cues(beats,[{'phrase':'pressure','kind':'chime'},good,good,{'phrase':'Follow Hidden Logic','kind':'bad'}])
+        self.assertEqual(cues,[good])
+        self.assertEqual(len(notes),3)
+        self.assertEqual(usable_sound_cues(beats,[None])[0],[])
