@@ -87,18 +87,22 @@ def layout_storyboard(plan):
             fitted = None
             # Keep the label near its authored anchor, in at most two lines.
             # Expand its reserved height before reducing readable type size.
-            for candidate_size in range(size,15,-1):
-                try: lines=wrap(draw,obj.get('text',''),font(candidate_size),min(w,460-x))
-                except ValueError: continue
-                if not lines or len(lines)>2: continue
-                height=len(lines)*(candidate_size+6)
-                for delta in [0]+[v for step in range(4,65,4) for v in (step,-step)]:
-                    top=y+delta
-                    if top<210 or top+height>680: continue
-                    candidate=[x,top,min(w,460-x),height]
-                    if any(x<a+c and x+candidate[2]>a and top<b+d and top+height>b
-                           for a,b,c,d in occupied): continue
-                    fitted=(candidate,candidate_size);break
+            for extra_width in (0, 8, 16, 32, 48, 64):
+                width=min(w+extra_width,422)
+                left=max(38,min(x-extra_width/2,460-width))
+                for candidate_size in range(size,15,-1):
+                    try: lines=wrap(draw,obj.get('text',''),font(candidate_size),width)
+                    except ValueError: continue
+                    if not lines or len(lines)>2: continue
+                    height=len(lines)*(candidate_size+6)
+                    for delta in [0]+[v for step in range(4,65,4) for v in (step,-step)]:
+                        top=y+delta
+                        if top<210 or top+height>680: continue
+                        candidate=[left,top,width,height]
+                        if any(left<a+c and left+width>a and top<b+d and top+height>b
+                               for a,b,c,d in occupied): continue
+                        fitted=(candidate,candidate_size);break
+                    if fitted:break
                 if fitted:break
             if not fitted:
                 raise ValueError('Drawing label cannot fit safely; shorten label or redesign scene')

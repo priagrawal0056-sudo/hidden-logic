@@ -1319,5 +1319,742 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Why your freezer door gets stuck after closing attempt 2",
+    "plan": [
+      {
+        "heading": "Freezer Door",
+        "purpose": "Introduce the familiar object and problem.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              50,
+              250,
+              200,
+              400
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              50,
+              260,
+              180,
+              380
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              60,
+              400,
+              15,
+              80
+            ],
+            "color": "dark",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "box": [
+              280,
+              250,
+              160,
+              30
+            ],
+            "text": "Freezer Door",
+            "size": 24,
+            "color": "paper"
+          }
+        ]
+      },
+      {
+        "heading": "Warm Air Enters",
+        "purpose": "Show warm air entering the freezer as the door opens.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              50,
+              250,
+              200,
+              400
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              70,
+              260,
+              180,
+              380
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              80,
+              400,
+              15,
+              80
+            ],
+            "color": "dark",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              150,
+              300,
+              100,
+              100
+            ],
+            "color": "warm",
+            "filled": true,
+            "reveal": 0.2
+          },
+          {
+            "type": "arrow",
+            "box": [
+              200,
+              350,
+              50,
+              0
+            ],
+            "color": "warm",
+            "reveal": 0.4
+          },
+          {
+            "type": "arrow",
+            "box": [
+              200,
+              400,
+              50,
+              0
+            ],
+            "color": "warm",
+            "reveal": 0.5
+          },
+          {
+            "type": "text",
+            "box": [
+              280,
+              250,
+              160,
+              30
+            ],
+            "text": "Warm Air Enters",
+            "size": 24,
+            "color": "paper"
+          }
+        ]
+      },
+      {
+        "heading": "Air Cools & Shrinks",
+        "purpose": "Demonstrate the air cooling and contracting, causing pressure drop.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              50,
+              250,
+              200,
+              400
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              70,
+              260,
+              180,
+              380
+            ],
+            "color": "ink",
+            "filled": true,
+            "move": [
+              -20,
+              0
+            ]
+          },
+          {
+            "type": "rect",
+            "box": [
+              80,
+              400,
+              15,
+              80
+            ],
+            "color": "dark",
+            "filled": true,
+            "move": [
+              -20,
+              0
+            ]
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              170,
+              320,
+              60,
+              60
+            ],
+            "color": "accent",
+            "filled": true,
+            "reveal": 0.2
+          },
+          {
+            "type": "rect",
+            "box": [
+              300,
+              400,
+              60,
+              60
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "line",
+            "box": [
+              330,
+              430,
+              0,
+              -20
+            ],
+            "color": "red",
+            "move": [
+              0,
+              15
+            ],
+            "until": 0.7
+          },
+          {
+            "type": "text",
+            "box": [
+              300,
+              465,
+              60,
+              20
+            ],
+            "text": "Pressure",
+            "size": 16,
+            "color": "ink"
+          },
+          {
+            "type": "text",
+            "box": [
+              280,
+              250,
+              160,
+              30
+            ],
+            "text": "Air Cools & Shrinks",
+            "size": 24,
+            "color": "paper"
+          }
+        ]
+      },
+      {
+        "heading": "Pressure Equalized",
+        "purpose": "Show the pressure relief valve allowing the door to open easily.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              50,
+              250,
+              200,
+              400
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              50,
+              260,
+              180,
+              380
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              60,
+              400,
+              15,
+              80
+            ],
+            "color": "dark",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              170,
+              320,
+              60,
+              60
+            ],
+            "color": "accent",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              300,
+              400,
+              60,
+              60
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "line",
+            "box": [
+              330,
+              430,
+              0,
+              -20
+            ],
+            "color": "ink",
+            "move": [
+              0,
+              -15
+            ],
+            "reveal": 0.5
+          },
+          {
+            "type": "text",
+            "box": [
+              300,
+              465,
+              60,
+              20
+            ],
+            "text": "Pressure",
+            "size": 16,
+            "color": "ink"
+          },
+          {
+            "type": "rect",
+            "box": [
+              240,
+              300,
+              10,
+              30
+            ],
+            "color": "dark",
+            "filled": true,
+            "reveal": 0.5
+          },
+          {
+            "type": "arrow",
+            "box": [
+              250,
+              315,
+              30,
+              0
+            ],
+            "color": "paper",
+            "reveal": 0.7
+          },
+          {
+            "type": "text",
+            "box": [
+              280,
+              250,
+              160,
+              30
+            ],
+            "text": "Pressure Equalized",
+            "size": 24,
+            "color": "paper"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Why your freezer door gets stuck after closing attempt 1",
+    "plan": [
+      {
+        "heading": "Freezer Door",
+        "purpose": "Introduce the familiar object and problem.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              150,
+              250,
+              200,
+              400
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              160,
+              260,
+              180,
+              380
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "line",
+            "box": [
+              340,
+              400,
+              20,
+              0
+            ],
+            "color": "ink"
+          },
+          {
+            "type": "text",
+            "box": [
+              180,
+              430,
+              140,
+              30
+            ],
+            "text": "Freezer Door",
+            "size": 24,
+            "color": "paper"
+          }
+        ]
+      },
+      {
+        "heading": "Warm Air Enters",
+        "purpose": "Show warm air entering the freezer as the door closes.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              150,
+              250,
+              200,
+              400
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              160,
+              260,
+              180,
+              380
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              170,
+              270,
+              160,
+              360
+            ],
+            "color": "warm",
+            "filled": true,
+            "reveal": 0.2
+          },
+          {
+            "type": "arrow",
+            "box": [
+              300,
+              300,
+              -50,
+              50
+            ],
+            "color": "warm",
+            "reveal": 0.4
+          },
+          {
+            "type": "arrow",
+            "box": [
+              300,
+              350,
+              -50,
+              50
+            ],
+            "color": "warm",
+            "reveal": 0.5
+          },
+          {
+            "type": "text",
+            "box": [
+              180,
+              430,
+              140,
+              30
+            ],
+            "text": "Warm Air Enters",
+            "size": 24,
+            "color": "paper"
+          }
+        ]
+      },
+      {
+        "heading": "Air Cools & Shrinks",
+        "purpose": "Demonstrate the air cooling and contracting, causing pressure drop.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              150,
+              250,
+              200,
+              400
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              160,
+              260,
+              180,
+              380
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              180,
+              280,
+              140,
+              340
+            ],
+            "color": "accent",
+            "filled": true,
+            "move": [
+              0,
+              0
+            ],
+            "until": 0.5
+          },
+          {
+            "type": "rect",
+            "box": [
+              380,
+              300,
+              60,
+              60
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              385,
+              305,
+              50,
+              50
+            ],
+            "color": "ink",
+            "filled": false
+          },
+          {
+            "type": "line",
+            "box": [
+              410,
+              330,
+              0,
+              -20
+            ],
+            "color": "red",
+            "move": [
+              0,
+              15
+            ],
+            "until": 0.7
+          },
+          {
+            "type": "text",
+            "box": [
+              380,
+              365,
+              60,
+              20
+            ],
+            "text": "Pressure",
+            "size": 16,
+            "color": "ink"
+          },
+          {
+            "type": "text",
+            "box": [
+              180,
+              430,
+              140,
+              30
+            ],
+            "text": "Air Cools & Shrinks",
+            "size": 24,
+            "color": "paper"
+          }
+        ]
+      },
+      {
+        "heading": "Pressure Equalizes",
+        "purpose": "Show the pressure relief valve allowing the door to open easily.",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              150,
+              250,
+              200,
+              400
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              160,
+              260,
+              180,
+              380
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              180,
+              280,
+              140,
+              340
+            ],
+            "color": "accent",
+            "filled": true
+          },
+          {
+            "type": "rect",
+            "box": [
+              380,
+              300,
+              60,
+              60
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              385,
+              305,
+              50,
+              50
+            ],
+            "color": "ink",
+            "filled": false
+          },
+          {
+            "type": "line",
+            "box": [
+              410,
+              330,
+              0,
+              -20
+            ],
+            "color": "ink",
+            "move": [
+              0,
+              -15
+            ],
+            "reveal": 0.5
+          },
+          {
+            "type": "text",
+            "box": [
+              380,
+              365,
+              60,
+              20
+            ],
+            "text": "Pressure",
+            "size": 16,
+            "color": "ink"
+          },
+          {
+            "type": "rect",
+            "box": [
+              340,
+              380,
+              10,
+              30
+            ],
+            "color": "dark",
+            "filled": true
+          },
+          {
+            "type": "arrow",
+            "box": [
+              350,
+              395,
+              30,
+              0
+            ],
+            "color": "paper",
+            "reveal": 0.7
+          },
+          {
+            "type": "text",
+            "box": [
+              180,
+              430,
+              140,
+              30
+            ],
+            "text": "Pressure Equalizes",
+            "size": 24,
+            "color": "paper"
+          }
+        ]
+      }
+    ]
   }
 ]
