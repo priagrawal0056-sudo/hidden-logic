@@ -8,7 +8,7 @@ import subprocess
 
 import assemble
 import captions
-from credible.core import file_hash, save
+from credible.core import digest, file_hash, save
 
 ROOT = Path(__file__).resolve().parent
 STYLE_FILES = ('editorial_profile.json', 'editorial_media.py', 'assemble.py',
@@ -198,6 +198,70 @@ def contact_sheet(video, scenes, path):
     sheet.save(path)
 
 
+def _stock_signature(meta, words, scenes):
+    return digest({'version': 1, 'script': meta['script'], 'words': words,
+                   'queries': meta.get('broll_keywords', []), 'scenes': scenes,
+                   'title': meta.get('title', ''),
+                   'visual_thesis': meta.get('visual_thesis', meta['script']),
+                   'first_frame_description': meta.get('first_frame_description', ''),
+                   'frame_review_code': file_hash(ROOT / 'footage_review.py')})
+
+
+def _stock_asset(path, folder):
+    """Bind a local download to its unchanged provider identity and bytes."""
+    path = Path(path).resolve()
+    if path.parent != folder.resolve() or not path.is_file():
+        raise ValueError('Stock checkpoint must refer to an existing episode-local clip')
+    provenance = Path(str(path) + '.source.json')
+    record = json.loads(provenance.read_text(encoding='utf-8'))
+    if not isinstance(record, dict) or any(not isinstance(record.get(k), str) or not record[k].strip()
+            for k in ('source_id', 'provider', 'license', 'sha256')):
+        raise ValueError('Stock checkpoint requires complete source provenance')
+    checksum = file_hash(path)
+    if record['sha256'] != checksum:
+        raise ValueError('Stock clip no longer matches its source provenance')
+    asset = {'path': path.name, 'sha256': checksum, 'provenance_sha256': file_hash(provenance),
+             'source_id': record['source_id']}
+    return asset, record
+
+
+def _valid_stock_review(review):
+    assessment = review.get('assessment') if isinstance(review, dict) else None
+    return (isinstance(assessment, dict) and review.get('assessment_status') == 'sampled_frames_checked'
+            and all(assessment.get(k) is True for k in ('relevant', 'exposure_ok', 'distinct'))
+            and isinstance(assessment.get('description'), str) and bool(assessment['description'].strip()))
+
+
+def _load_stock_checkpoint(folder, signature, needed):
+    try:
+        checkpoint = json.loads((folder / 'stock-checkpoint.json').read_text(encoding='utf-8'))
+        if (not isinstance(checkpoint, dict) or checkpoint.get('signature') != signature
+                or not isinstance(checkpoint.get('assets'), list) or len(checkpoint['assets']) != needed):
+            return None
+        records = []
+        for expected in checkpoint['assets']:
+            if not isinstance(expected, dict) or not isinstance(expected.get('path'), str):
+                return None
+            actual, record = _stock_asset(folder / expected['path'], folder)
+            if actual != expected:
+                return None
+            records.append(record)
+        if (len({a['source_id'] for a in checkpoint['assets']}) != needed
+                or len({a['sha256'] for a in checkpoint['assets']}) != needed):
+            return None
+        # Only a consecutive, fully successful prefix can be reused: each later
+        # review was conditioned on descriptions of all preceding accepted shots.
+        prefix = []
+        for review in checkpoint.get('reviews', [])[:needed]:
+            if not _valid_stock_review(review):
+                break
+            prefix.append(review)
+        checkpoint['reviews'] = prefix
+        return checkpoint, records
+    except (OSError, ValueError, TypeError, KeyError):
+        return None
+
+
 def render(meta, folder, config, stock=None):
     import visuals
     folder = Path(folder)
@@ -207,25 +271,50 @@ def render(meta, folder, config, stock=None):
     sentence_durations = assemble.sentence_segments(words,meta['script'])
     needed = sum(s['kind']=='stock' for s in scenes)
     if stock is None:
-        previous_cache = visuals.CACHE_FILE
-        visuals.CACHE_FILE = str(config.get('clip_history_path', folder/'used_clips.json'))
-        Path(visuals.CACHE_FILE).parent.mkdir(parents=True,exist_ok=True)
-        try:
-            paths = visuals.fetch_backgrounds(config.get('pexels_api_key',''), meta.get('broll_keywords',[]),
-                str(folder), count=needed, pixabay_key=config.get('pixabay_api_key'),
-                gemini_api_key=config.get('gemini_api_key'), visual_thesis=meta.get('visual_thesis',meta['script']),
-                first_frame_description=meta.get('first_frame_description',''), topic=meta.get('title',''))
-        finally:
-            visuals.CACHE_FILE = previous_cache
+        signature = _stock_signature(meta, words, scenes)
+        cached = _load_stock_checkpoint(folder, signature, needed)
+        if cached is not None:
+            checkpoint, records = cached
+            paths = [str(folder / asset['path']) for asset in checkpoint['assets']]
+        else:
+            previous_cache = visuals.CACHE_FILE
+            visuals.CACHE_FILE = str(config.get('clip_history_path', folder/'used_clips.json'))
+            Path(visuals.CACHE_FILE).parent.mkdir(parents=True,exist_ok=True)
+            try:
+                paths = visuals.fetch_backgrounds(config.get('pexels_api_key',''), meta.get('broll_keywords',[]),
+                    str(folder), count=needed, pixabay_key=config.get('pixabay_api_key'),
+                    gemini_api_key=config.get('gemini_api_key'), visual_thesis=meta.get('visual_thesis',meta['script']),
+                    first_frame_description=meta.get('first_frame_description',''), topic=meta.get('title',''),
+                    # Actual sampled-frame review below is mandatory. Ranking URL
+                    # descriptions first adds calls without establishing visual fit.
+                    metadata_scoring=False)
+            finally:
+                visuals.CACHE_FILE = previous_cache
+            if len(paths) != needed:
+                raise ValueError('Every stock scene needs a distinct supplied source')
+            inspected = [_stock_asset(path, folder) for path in paths]
+            assets, records = [pair[0] for pair in inspected], [pair[1] for pair in inspected]
+            if (len({a['source_id'] for a in assets}) != needed
+                    or len({a['sha256'] for a in assets}) != needed):
+                raise ValueError('Stock scenes require distinct source identities and content')
+            checkpoint = {'signature': signature, 'assets': assets, 'reviews': []}
+        # Preserve the downloaded selection even if the first review hits quota.
+        save(folder / 'stock-checkpoint.json', checkpoint)
         stock = []
         from footage_review import assess
         stock_scenes = [s for s in scenes if s['kind']=='stock']
-        for path, scene in zip(paths,stock_scenes):
-            record = json.loads(Path(path+'.source.json').read_text(encoding='utf-8'))
-            spoken = ' '.join(w['word'] for w in words if scene['start'] <= w['start'] < scene['end'])
-            record.update(assess(path,scene['end']-scene['start'],spoken,
-                [s['assessment']['description'] for s in stock],config.get('gemini_api_key','')))
-            stock.append({**record, 'path':path})
+        for index, (path, scene, record) in enumerate(zip(paths, stock_scenes, records)):
+            if index < len(checkpoint['reviews']):
+                review = checkpoint['reviews'][index]
+            else:
+                spoken = ' '.join(w['word'] for w in words if scene['start'] <= w['start'] < scene['end'])
+                review = assess(path,scene['end']-scene['start'],spoken,
+                    [s['assessment']['description'] for s in stock],config.get('gemini_api_key',''))
+                if not _valid_stock_review(review):
+                    raise ValueError('Footage review is incomplete; no passing checkpoint saved')
+                checkpoint['reviews'].append(review)
+                save(folder / 'stock-checkpoint.json', checkpoint)
+            stock.append({**record, **review, 'path':path})
     if len(stock) != needed:
         raise ValueError('Every stock scene needs a distinct supplied source')
     paths, shots, assets = [], [], []

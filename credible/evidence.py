@@ -158,7 +158,7 @@ class FreeModel:
             headers={'x-goog-api-key': self.key}, timeout=75,
             json={'contents': [{'parts': [{'text': prompt}]}],
                   'generationConfig': generation})
-        service_limits.observe(response.status_code)
+        service_limits.observe(response.status_code, response)
         if response.status_code in (401,403,429):
             self.exhausted = True
         if not response.ok:

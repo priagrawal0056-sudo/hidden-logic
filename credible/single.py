@@ -3,7 +3,7 @@ import service_limits
 import argparse
 from pathlib import Path
 from config_loader import load_config
-from .core import read,save,now
+from .core import read,save,now,digest,file_hash
 from .evidence import FreeModel,generate_episode
 from .pipeline import settings,documents,prepare
 from .topics import CATEGORY_COUNTS, load_bank, shortlist, sources_for
@@ -37,7 +37,20 @@ def build(pillar, root, topic_id=None):
     docs,source_errors=documents(root,sources_for(topic))
     # One candidate with the existing bounded automatic structural repair and
     # independent evidence review. Failure is visible; this command never uploads.
-    episode=generate_episode(model,docs,history,'question_first',topic=topic)
+    # Reuse a reviewed draft after quota/stock failure, but never across changes
+    # to the authoring contract or topic. Revalidate its saved evidence locally.
+    contract=digest([topic,config['production_version'],
+        file_hash(Path(__file__).with_name('evidence.py')),
+        file_hash(Path(__file__).with_name('draft_schema.py')),
+        file_hash(Path(__file__).parents[1]/'production_brief.py')])
+    checkpoint=read(root/'draft.json',{})
+    episode=checkpoint.get('episode') if checkpoint.get('contract')==contract else None
+    if episode:
+        from .evidence import verify_support
+        verify_support(episode.get('evidence'),docs)
+    else:
+        episode=generate_episode(model,docs,history,'question_first',topic=topic)
+        save(root/'draft.json',{'contract':contract,'episode':episode})
     script_checks(episode)
     episode=prepare(episode,root,config)
     save(root/'result.json',{'status':'ready_for_review','at':now().isoformat(),
@@ -58,7 +71,10 @@ def main():
         # Some libraries include request URLs or credentials in exception text.
         message=str(exc)
         reason=(message if isinstance(exc, service_limits.ServiceUnavailable) or message.startswith(('Gemini credential unavailable;',
-            'Stock credential unavailable;','Free model request failed: HTTP')) else type(exc).__name__)
+            'Stock credential unavailable;','Free model request failed: HTTP',
+            'Every stock scene needs','Footage failed sampled-frame',
+            'Independent editorial review rejected','Candidate failed source/drawing validation:',
+            'First useful answer must','Narration transcript','Caption overflow')) else type(exc).__name__)
         save(args.output/'result.json',{'status':'failed','error_type':type(exc).__name__,
                                       'reason':reason,'published':False})
         raise SystemExit('Generation/render failed: '+reason+'. No upload was attempted.') from None

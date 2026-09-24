@@ -430,7 +430,8 @@ def _search_and_score(keys: dict, gemini_api_key: str | None, query: str,
 
 def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: int = 4,
                       pixabay_key: str | None = None, gemini_api_key: str | None = None,
-                      visual_thesis: str = "", first_frame_description: str = "", topic: str = "") -> list[str]:
+                      visual_thesis: str = "", first_frame_description: str = "", topic: str = "",
+                      metadata_scoring: bool = True) -> list[str]:
     keys = {"pexels": api_key, "pixabay": pixabay_key}
     # Lock the whole video to ONE scene concept so clips never drift to a different subject
     # (the car -> motorcycle problem). anchor is fed to the scorer to reject off-anchor clips.
@@ -457,7 +458,8 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
         # Search and score candidates
         vids, all_vids = _search_and_score(keys, gemini_api_key, cleaned_q,
                                            visual_thesis, first_frame_description,
-                                           topic, is_first_frame, threshold, anchor=anchor)
+                                           topic, is_first_frame, threshold,
+                                           skip_scoring=not metadata_scoring, anchor=anchor)
         found = False
         
         # Pass 1: Strict mode - avoid clips used in past videos AND avoid clips already used in THIS video

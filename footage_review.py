@@ -35,7 +35,7 @@ def assess(path, duration, narration, previous, key, model='gemini-2.5-flash'):
     response = requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
         headers={'x-goog-api-key':key}, timeout=75,
         json={'contents':[{'parts':parts}], 'generationConfig':{'temperature':0,'responseMimeType':'application/json'}})
-    service_limits.observe(response.status_code)
+    service_limits.observe(response.status_code, response)
     if not response.ok:
         if response.status_code in (401,403,429): _unavailable = response.status_code
         raise RuntimeError(f'Footage remains unverified: frame review HTTP {response.status_code}')

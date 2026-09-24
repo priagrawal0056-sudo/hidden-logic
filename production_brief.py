@@ -14,6 +14,9 @@ Beat 4: a complete payoff that connects to the hook, THEN a separate final sente
 The follow sentence plays over a newly animated resolved state of the same mechanism.
 Return exactly three specific stock searches, in order: hook object, answer/context from
 a different angle or action, then payoff object. These must be distinct source videos.
+Search for common visible objects and actions a stock camera can record: freezer door,
+freezer groceries, refrigerator handle. Do not search for invisible mechanisms or specialist
+internal parts such as pressure equalization or relief valves; the drawing explains those.
 Keep the same real-world subject; do not broaden the last shot to generic lifestyle footage.
 Storyboard states 2 and 3 show the mechanism's before/process and after/result; state 4 is
 the resolved visual callback with meaningful movement. Use readable shapes, short labels

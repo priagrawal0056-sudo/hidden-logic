@@ -15,6 +15,10 @@ from .seeds import RECIPES, build_recipe
 from .topics import load_bank, shortlist, reserve_topic, release_topic, sync_ledger, sources_for, balanced_slot
 
 
+class DailyIncompleteError(RuntimeError):
+    """An expected incomplete run; recovery details are in run-report.json."""
+
+
 def settings():
     return read('credible/settings.json')
 
@@ -26,8 +30,11 @@ def documents(root, catalog):
         try:
             result[source['url']] = retrieve(source, root / 'evidence')
         except Exception as exc:
-            errors.append({'source': source['id'], 'error': type(exc).__name__})
+            issue = {'source': source['id'], 'error': type(exc).__name__}
+            errors.append(issue)
             if source['url'] in snapshots:
+                issue.update(fallback='reviewed_snapshot',
+                             retrieved_at=snapshots[source['url']].get('retrieved_at'))
                 result[source['url']] = snapshots[source['url']]
                 save(root/'evidence'/(digest(source['url'])[:20]+'.json'),snapshots[source['url']])
     return result, errors
@@ -83,6 +90,14 @@ def prepare(episode, root, config):
         episode = synthesize(episode, folder, config)
     timeline_checks(episode, folder, config)
     episode.pop('quality', None)
+    episode.pop('render_signature', None)
+    # Narration has already passed transcript and timing checks. Preserve that
+    # expensive, measured work even if footage review or rendering fails later.
+    episode['status'] = 'narration_ready'
+    episode['narration_signature'] = narration_signature
+    if config['production_version'] >= 4:
+        episode['timing_sha256'] = file_hash(folder/'timings.json')
+    save(folder / 'episode.json', episode)
     render(episode, folder, config)
     episode['quality'] = rendered_checks(episode, folder, config)
     episode['render_version'] = config['production_version']
@@ -105,7 +120,8 @@ def history(state, reserve):
     reserve_rows = [r for r in reserve + read('state/credible/reserve.json', [])
                     if r.get('status') in ('ready','needs_rebuild','reserved','allocated')
                     and r.get('id') not in allocated]
-    all_rows = slot_rows + reserve_rows + legacy
+    pending_rows = list(state.get('pending_episodes', {}).values()) + list(production.get('pending_episodes', {}).values())
+    all_rows = slot_rows + reserve_rows + pending_rows + legacy
     seen, result = set(), []
     for row in all_rows:
         key = row.get('video_id') or row.get('id') or digest(row)
@@ -158,7 +174,14 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
         state = read(state_dir / 'production.json', {'schema_version': 2, 'slots': {}})
         reserve = read(root / 'reserve.json', [])
         topic_ledger = state.setdefault('topics', {})
-        sync_ledger(topic_ledger, reserve + list(state['slots'].values()))
+        pending = state.setdefault('pending_episodes', {})
+        allocated_ids = {r.get('episode_id', r.get('id'))
+                         for r in reserve + list(state['slots'].values())}
+        # Recover a process stopped between saving its destination and cleanup.
+        for episode_id in list(pending):
+            if episode_id in allocated_ids:
+                pending.pop(episode_id)
+        sync_ledger(topic_ledger, reserve + list(state['slots'].values()) + list(pending.values()))
         errors = []
         # Cache eviction is recoverable: rebuild verified ready episodes from their
         # saved scripts, rather than considering a missing video a usable reserve.
@@ -182,6 +205,21 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
             seed_reserve(root, config, docs, catalog, state, reserve, errors, config['reserve_target'])
             save(root / 'run-report.json', {'reserve_ready': sum(r.get('status') == 'ready' for r in reserve), 'errors': errors})
             return reserve
+        candidates = []
+        # Finish a grounded script before spending quota on another writer call.
+        # Pending drafts are part of the durable production ledger, so a quota
+        # failure or interrupted worker cannot make their claims look unused.
+        for episode_id, draft in list(pending.items()):
+            if service_limits.blocked():
+                break
+            try:
+                candidates.append(prepare(draft, root, config))
+            except Exception as exc:
+                errors.append({'resume': episode_id, 'error': str(exc)[:160]})
+                if not service_limits.blocked():
+                    pending.pop(episode_id)
+                    release_topic(topic_ledger, draft.get('topic_id'), type(exc).__name__)
+                save(state_dir/'production.json', state)
         model = FreeModel(config)
         model.diagnostics_dir = root / 'diagnostics'
         bank = load_bank()
@@ -193,7 +231,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
         # Bounded, automatic pre-script review. Failures never mark a topic used.
         review_count=0
         for lead in review_queue(effective, attempts, now().date().isoformat()):
-            if review_count >= config.get('topic_reviews_per_run',6) or not model.key or model.exhausted:
+            if review_count >= config.get('topic_reviews_per_run',6) or not model.key or model.exhausted or service_limits.blocked():
                 break
             review_count+=1
             try:
@@ -207,7 +245,6 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
             attempts[lead['topic_id']]={'revision':revision(lead),'date':now().date().isoformat(),'result':result}
             save(state_dir/'production.json',state)
         bank=reviewed_bank(bank,reviews)
-        candidates = []
         run_day = now().astimezone(ZoneInfo(config['timezone'])).date().isoformat()
         plan_slots = state.setdefault('run_days', {}).get(run_day)
         if plan_slots is None:
@@ -220,10 +257,18 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
         open_indices = [s['slot_index'] for s in plan_slots if s['id'] not in state['slots']]
         # If today's slots already exist, fresh candidates can replenish reserves.
         candidate_indices = open_indices or [s['slot_index'] for s in plan_slots]
-        topics = shortlist(bank, history(state, reserve), visible_ledger, config['briefs_per_day'])
-        if not topics:
+        # Six briefs are alternatives, not six compulsory renders. Finish the
+        # open slots first; completed-day reruns replenish one reserve at a time.
+        candidate_target = len(open_indices) or int(
+            sum(r.get('status') == 'ready' for r in reserve) < config['reserve_target'])
+        want_topics = not service_limits.blocked() and len(candidates) < candidate_target
+        topics = (shortlist(bank, history(state, reserve), visible_ledger, config['briefs_per_day'])
+                  if want_topics else [])
+        if want_topics and not topics:
             errors.append({'topics': 'No eligible source-reviewed briefs; use verified reserve only'})
         for i, topic in enumerate(topics):
+            if len(candidates) >= candidate_target:
+                break
             reserve_topic(topic_ledger, topic, run_day)
             save(state_dir/'production.json', state)
             assigned_history = list(state['slots'].values())
@@ -238,9 +283,17 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                 if duplicate(candidate, history(state, reserve) + candidates):
                     raise ValueError('Candidate duplicates recent or reserved explanation')
                 candidate['experiment'] = ex
-                candidates.append(candidate)
+                # This draft has passed factual/editorial checks, but is not a
+                # publishable reserve until prepare completes all media checks.
+                pending[candidate['id']] = {**copy.deepcopy(candidate), 'status':'reserved'}
+                save(state_dir/'production.json', state)
+                candidates.append(prepare(candidate, root, config))
             except Exception as exc:
-                release_topic(topic_ledger, topic['topic_id'], type(exc).__name__)
+                has_draft = any(d.get('topic_id') == topic['topic_id'] for d in pending.values())
+                if not (has_draft and service_limits.blocked()):
+                    for episode_id in [k for k, d in pending.items() if d.get('topic_id') == topic['topic_id']]:
+                        pending.pop(episode_id)
+                    release_topic(topic_ledger, topic['topic_id'], type(exc).__name__)
                 save(state_dir/'production.json', state)
                 errors.append({'brief': i, 'error': str(exc)[:160]})
                 if not model.key or model.exhausted or service_limits.blocked():
@@ -261,13 +314,16 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
             episode = None
             for candidate in ordered:
                 try:
-                    episode = prepare(candidate, root, config)
+                    # Candidates were already prepared before the next draft.
+                    rendered_checks(candidate, root/'episodes'/candidate['id'], config)
+                    episode = copy.deepcopy(candidate)
                     if episode['experiment']['slot_index'] != planned['slot_index']:
                         episode['experiment'] = {**episode['experiment'], 'id':'topic-slot-fallback-observational',
                                                 'slot_index':planned['slot_index']}
                     candidates.remove(candidate)
                     break
                 except Exception as exc:
+                    pending.pop(candidate['id'], None)
                     release_topic(topic_ledger, candidate.get('topic_id'), type(exc).__name__)
                     errors.append({'candidate': candidate['id'], 'error': str(exc)[:160]})
                     candidates.remove(candidate)
@@ -292,6 +348,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                 continue
             state['slots'][planned['id']] = {**episode, **planned, 'episode_id': episode['id'], 'status': 'prepared'}
             selected_categories.add(episode.get('category', episode.get('pillar')))
+            pending.pop(episode['id'], None)
             sync_ledger(topic_ledger, [state['slots'][planned['id']]])
             save(state_dir/'production.json', state)
             save(root/'reserve.json', reserve)
@@ -329,14 +386,17 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
         # Preserve unused generated candidates as reserves without regenerating audio later.
         for candidate in candidates:
             if sum(r.get('status') == 'ready' for r in reserve) >= config['reserve_target']:
+                pending.pop(candidate['id'], None)
                 release_topic(topic_ledger, candidate.get('topic_id'), 'reserve_full')
                 continue
             try:
-                episode = prepare(candidate, root, config)
+                episode = candidate
                 reserve.append(episode)
+                pending.pop(episode['id'], None)
                 sync_ledger(topic_ledger, [episode])
                 save(root/'reserve.json', reserve)
             except Exception as exc:
+                pending.pop(candidate['id'], None)
                 release_topic(topic_ledger, candidate.get('topic_id'), type(exc).__name__)
                 errors.append({'reserve_build': candidate['id'], 'error': str(exc)[:160]})
         save(state_dir/'production.json', state)
@@ -348,16 +408,17 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                   'status':('needs_attention' if recovery else 'ready') if completed == len(plan_slots) else 'incomplete',
                   'recovery_slots':recovery,
                   'topics': {'total':len(bank), 'source_reviewed':sum(t.get('evidence_status')=='reviewed' for t in bank)},
-                  'reserve_ready': sum(r.get('status') == 'ready' for r in reserve), 'errors': errors}
+                  'reserve_ready': sum(r.get('status') == 'ready' for r in reserve),
+                  'pending_episodes': len(pending), 'errors': errors}
         save(root/'run-report.json', report)
         if mode == 'publish':
             from .state_io import checkpoint
             checkpoint(root)
         print(json.dumps(report, indent=2))
         if completed < len(plan_slots):
-            raise RuntimeError('Daily target incomplete; see run-report.json. Prepared work and upload reservations preserved.')
+            raise DailyIncompleteError('Daily target incomplete; see run-report.json. Prepared work and upload reservations preserved.')
         if recovery:
-            raise RuntimeError('Current slots completed; overdue reservations require recovery. See run-report.json.')
+            raise DailyIncompleteError('Current slots completed; overdue reservations require recovery. See run-report.json.')
         return state
 
 
@@ -367,7 +428,10 @@ def main():
     parser.add_argument('--output')
     args = parser.parse_args()
     output = args.output or ('outputs/preview' if args.mode == 'preview' else 'outputs/credible')
-    run(args.mode, Path(output))
+    try:
+        run(args.mode, Path(output))
+    except DailyIncompleteError as exc:
+        parser.exit(1, str(exc) + '\n')
 
 
 if __name__ == '__main__':

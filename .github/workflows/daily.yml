@@ -39,14 +39,20 @@ jobs:
           sudo apt-get install -y ffmpeg fonts-dejavu-core
           pip install -r requirements-credible.txt
       - name: Run focused tests
-        run: python -m unittest discover -s tests -v
+        run: python -m unittest discover -s tests -v -b
       - name: Check release files
         run: python release_check.py
       - uses: actions/cache/restore@v4
         with:
           path: outputs/credible
-          key: credible-reserve-v4-${{ github.run_id }}
+          key: credible-reserve-v4-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: credible-reserve-v4-
+      - uses: actions/cache/restore@v4
+        if: inputs.mode == 'preview'
+        with:
+          path: outputs/preview
+          key: credible-preview-v5-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: credible-preview-v5-
       - name: Restore authoritative reserve manifest
         run: |
           mkdir -p outputs/credible
@@ -69,7 +75,12 @@ jobs:
         if: always()
         with:
           path: outputs/credible
-          key: credible-reserve-v4-${{ github.run_id }}
+          key: credible-reserve-v4-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/cache/save@v4
+        if: always() && inputs.mode == 'preview'
+        with:
+          path: outputs/preview
+          key: credible-preview-v5-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Save review artifacts
         if: always()
         uses: actions/upload-artifact@v4

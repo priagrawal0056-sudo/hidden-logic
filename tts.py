@@ -515,7 +515,7 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
             service_limits.before_request()
             r = requests.post(GEMINI_TTS_URL.format(model=model, key=api_key),
                               json=body, timeout=120)
-            service_limits.observe(r.status_code)
+            service_limits.observe(r.status_code, r)
             if r.status_code in (401, 403, 429):
                 print(f"[tts] Gemini narration unavailable (HTTP {r.status_code}); stopping without changing voices.")
                 return None

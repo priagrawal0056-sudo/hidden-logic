@@ -1019,7 +1019,7 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
             try:
                 service_limits.before_request()
                 r = requests.post(GEMINI_URL.format(model=model, key=api_key), json=body, timeout=90)
-                service_limits.observe(r.status_code)
+                service_limits.observe(r.status_code, r)
                 if r.status_code == 404:
                     _dead_models.add(model)
                     break  # model retired, try next model
