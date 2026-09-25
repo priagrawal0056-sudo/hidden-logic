@@ -2,6 +2,7 @@
 from contextlib import contextmanager
 from contextvars import ContextVar
 import time
+import json
 
 _current = ContextVar('gemini_run_limit', default=None)
 
@@ -75,3 +76,67 @@ def before_request():
         if delay > 0:
             time.sleep(delay)
     state['last_request'] = time.monotonic()
+
+
+class ResponseFormatError(ValueError):
+    """A successful HTTP response did not contain the requested JSON object."""
+
+
+class TransientServiceError(RuntimeError):
+    """A bounded request attempt ended with a temporary provider failure."""
+
+
+def is_retryable(error):
+    """Keep verified work when a provider could not complete its assessment.
+
+    A negative editorial verdict or ordinary validation error is not a service
+    failure. They must not be silently retained as publishable work.
+    """
+    import requests
+    return isinstance(error, (ServiceUnavailable, ResponseFormatError,
+                              TransientServiceError, requests.Timeout,
+                              requests.ConnectionError))
+
+
+def request_with_retry(send, max_attempts=3):
+    """Retry only temporary server failures, respecting shared pacing and quota.
+
+    ``send`` owns its call budget and is invoked for every actual request. A
+    retry cannot bypass authentication, quota, or a caller's remaining budget.
+    """
+    max_attempts = max(1, min(3, int(max_attempts)))
+    for attempt in range(max_attempts):
+        before_request()
+        response = send()
+        observe(response.status_code, response)
+        if response.status_code not in (502, 503, 504) or attempt + 1 == max_attempts:
+            return response
+        time.sleep((5, 15)[attempt])
+
+
+def response_object(response):
+    """Validate the provider envelope and JSON root without exposing its body."""
+    try:
+        envelope = response.json()
+        if not isinstance(envelope, dict):
+            raise ResponseFormatError('Gemini returned an invalid response envelope')
+        candidates = envelope.get('candidates')
+        if not isinstance(candidates, list) or not candidates or not isinstance(candidates[0], dict):
+            raise ResponseFormatError('Gemini returned no complete text candidate')
+        candidate = candidates[0]
+        if candidate.get('finishReason') not in (None, 'STOP'):
+            raise ResponseFormatError('Gemini returned an incomplete text candidate')
+        content = candidate.get('content')
+        parts = content.get('parts') if isinstance(content, dict) else None
+        if not isinstance(parts, list):
+            raise ResponseFormatError('Gemini returned no JSON text')
+        chunks = [part['text'] for part in parts if isinstance(part, dict)
+                  and isinstance(part.get('text'), str) and not part.get('thought')]
+        result = json.loads(''.join(chunks))
+    except (ValueError, TypeError) as exc:
+        if isinstance(exc, ResponseFormatError):
+            raise
+        raise ResponseFormatError('Gemini returned malformed JSON') from None
+    if not isinstance(result, dict):
+        raise ResponseFormatError('Gemini returned a JSON list or scalar; one object is required')
+    return result

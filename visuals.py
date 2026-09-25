@@ -431,7 +431,9 @@ def _search_and_score(keys: dict, gemini_api_key: str | None, query: str,
 def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: int = 4,
                       pixabay_key: str | None = None, gemini_api_key: str | None = None,
                       visual_thesis: str = "", first_frame_description: str = "", topic: str = "",
-                      metadata_scoring: bool = True) -> list[str]:
+                      metadata_scoring: bool = True, excluded_source_ids=(),
+                      excluded_sha256=(), filename_prefix: str = "bg",
+                      record_history: bool = True) -> list[str]:
     keys = {"pexels": api_key, "pixabay": pixabay_key}
     # Lock the whole video to ONE scene concept so clips never drift to a different subject
     # (the car -> motorcycle problem). anchor is fed to the scorer to reject off-anchor clips.
@@ -439,9 +441,27 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
     anchor = SCENE_LIBRARY.get(concept, {}).get("anchor", "") if concept else ""
     if concept:
         print(f"[visuals] Scene concept: '{concept}' | anchor lock: {anchor}")
+    import hashlib
+    import re
+    if not re.fullmatch(r'[A-Za-z0-9_-]+', filename_prefix):
+        raise ValueError("Footage filename prefix must be a local filename")
     used = _load_used()
-    downloaded_ids: set = set()
+    downloaded_ids = set(excluded_source_ids)
+    fingerprints = set(excluded_sha256)
     paths: list = []
+
+    def download_distinct(video, out):
+        # Rejected clips and selected clips stay excluded in every fallback pass,
+        # including another provider returning identical bytes under a new ID.
+        if str(video['id']) in downloaded_ids or not _download(video, out):
+            return False
+        with open(out, 'rb') as clip:
+            checksum = hashlib.file_digest(clip, 'sha256').hexdigest()
+        if checksum in fingerprints:
+            downloaded_ids.add(str(video['id']))
+            return False
+        fingerprints.add(checksum)
+        return True
 
     if not keywords:
         raise ValueError("Scene-specific footage queries are required")
@@ -467,8 +487,8 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
             vid_id = str(vid["id"])
             if vid_id in downloaded_ids or vid_id in used:
                 continue
-            out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-            if _download(vid, out):
+            out = os.path.join(workdir, f"{filename_prefix}_{len(paths)+1}.mp4")
+            if download_distinct(vid, out):
                 used.add(vid_id)
                 downloaded_ids.add(vid_id)
                 paths.append(out)
@@ -481,8 +501,8 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                 vid_id = str(vid["id"])
                 if vid_id in downloaded_ids:
                     continue
-                out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-                if _download(vid, out):
+                out = os.path.join(workdir, f"{filename_prefix}_{len(paths)+1}.mp4")
+                if download_distinct(vid, out):
                     downloaded_ids.add(vid_id)
                     paths.append(out)
                     found = True
@@ -502,8 +522,8 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                     vid_id = str(vid["id"])
                     if vid_id in downloaded_ids:
                         continue
-                    out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-                    if _download(vid, out):
+                    out = os.path.join(workdir, f"{filename_prefix}_{len(paths)+1}.mp4")
+                    if download_distinct(vid, out):
                         downloaded_ids.add(vid_id)
                         paths.append(out)
                         found = True
@@ -538,8 +558,8 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                     vid_id = str(vid["id"])
                     if vid_id in downloaded_ids:
                         continue
-                    out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-                    if _download(vid, out):
+                    out = os.path.join(workdir, f"{filename_prefix}_{len(paths)+1}.mp4")
+                    if download_distinct(vid, out):
                         downloaded_ids.add(vid_id)
                         paths.append(out)
                         found = True
@@ -552,10 +572,14 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
         # Pass 4.7: hand-picked LOCAL proof-clip library (always on-anchor) - use this before we
         # resort to deferring or duplicating, so weak niches can be permanently fixed by the operator.
         if not found and concept:
-            out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
+            out = os.path.join(workdir, f"{filename_prefix}_{len(paths)+1}.mp4")
             if _library_clip(concept, downloaded_ids, out):
-                paths.append(out)
-                found = True
+                with open(out, 'rb') as clip:
+                    checksum = hashlib.file_digest(clip, 'sha256').hexdigest()
+                if checksum not in fingerprints:
+                    fingerprints.add(checksum)
+                    paths.append(out)
+                    found = True
 
         if not found:
             raise RuntimeError(f"Missing distinct footage for scene {idx + 1}: {q}. Select another topic; do not repeat a clip.")
@@ -563,7 +587,8 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
         if not (_RATE_LIMITED and "pexels" in _RATE_LIMITED and "pixabay" in _RATE_LIMITED):
             time.sleep(0.25)
 
-    _save_used(used)
+    if record_history:
+        _save_used(used)
 
     if not paths:
         if _RATE_LIMITED:

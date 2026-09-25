@@ -4,7 +4,9 @@ import service_limits
 import argparse
 import copy
 import json
+import math
 from pathlib import Path
+import shutil
 from zoneinfo import ZoneInfo
 
 from .core import assignment, duplicate, lock, now, parse, read, save, slots, digest, file_hash
@@ -38,6 +40,69 @@ def documents(root, catalog):
                 result[source['url']] = snapshots[source['url']]
                 save(root/'evidence'/(digest(source['url'])[:20]+'.json'),snapshots[source['url']])
     return result, errors
+
+
+def _timing_feedback(episode, config, error):
+    """Retake only an otherwise measured modern voice that missed its pacing gate."""
+    if episode.get('production_version', 0) < 4 or str(error) not in (
+            'Measured duration outside trial band',
+            'First useful answer must finish within six seconds'):
+        return None
+    try:
+        values = {key: float(value) for key, value in {
+            'previous_duration': episode['duration'],
+            'previous_first_answer_end': episode['first_answer_end'],
+            'duration_min': config['duration_min'],
+            'duration_max': config['duration_max'],
+            'first_answer_max': 6.0,
+        }.items()}
+    except (KeyError, TypeError, ValueError):
+        return None
+    if not all(math.isfinite(value) and value > 0 for value in values.values()):
+        return None
+    if values['duration_min'] > values['duration_max']:
+        return None
+    return values
+
+
+def _check_narration_with_retake(episode, folder, config):
+    """One continuous retake; never retime words or relax the final checks."""
+    try:
+        timeline_checks(episode, folder, config)
+        return episode
+    except ValueError as exc:
+        feedback = _timing_feedback(episode, config, exc)
+        if feedback is None:
+            raise
+        reason = str(exc)
+    diagnostic = {'initial_failure': reason, 'measurements': feedback,
+                  'retake_limit': 1, 'status': 'retake_requested'}
+    # Keep the actual rejected take and its measured timings for inspection.
+    # These names stay inside the existing voice.mp3* artifact allowlist.
+    for source, suffix in (('voice.mp3', 'mp3'), ('timings.json', 'timings.json'),
+                           ('words.json', 'words.json'), ('captions.ass', 'captions.ass'),
+                           ('voice.mp3.alignment.json', 'alignment.json'),
+                           ('voice.mp3.pause-edits.json', 'pause-edits.json')):
+        if (folder/source).is_file():
+            shutil.copyfile(folder/source, folder/f'voice.mp3.timing-rejected-1.{suffix}')
+    save(folder/'voice.mp3.timing-review.json', diagnostic)
+    print('[tts] Measured pacing needs one continuous retake: '
+          f"duration={feedback['previous_duration']:.2f}s, "
+          f"first answer={feedback['previous_first_answer_end']:.2f}s.", flush=True)
+    try:
+        episode = synthesize(copy.deepcopy(episode), folder,
+                             {**config, 'narration_timing_feedback': feedback})
+        diagnostic['retake_measurements'] = {
+            'duration': episode.get('duration'), 'first_answer_end': episode.get('first_answer_end')}
+        # Includes every caption, asset and scene gate, even after timing passes.
+        timeline_checks(episode, folder, config)
+    except Exception as exc:
+        diagnostic.update(status='rejected', error_type=type(exc).__name__)
+        save(folder/'voice.mp3.timing-review.json', diagnostic)
+        raise
+    diagnostic['status'] = 'passed'
+    save(folder/'voice.mp3.timing-review.json', diagnostic)
+    return episode
 
 
 def prepare(episode, root, config):
@@ -88,7 +153,7 @@ def prepare(episode, root, config):
             episode['scenes'] = episode['beats_timing']
     else:
         episode = synthesize(episode, folder, config)
-    timeline_checks(episode, folder, config)
+    episode = _check_narration_with_retake(episode, folder, config)
     episode.pop('quality', None)
     episode.pop('render_signature', None)
     # Narration has already passed transcript and timing checks. Preserve that
@@ -216,7 +281,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                 candidates.append(prepare(draft, root, config))
             except Exception as exc:
                 errors.append({'resume': episode_id, 'error': str(exc)[:160]})
-                if not service_limits.blocked():
+                if not service_limits.is_retryable(exc):
                     pending.pop(episode_id)
                     release_topic(topic_ledger, draft.get('topic_id'), type(exc).__name__)
                 save(state_dir/'production.json', state)
@@ -290,7 +355,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                 candidates.append(prepare(candidate, root, config))
             except Exception as exc:
                 has_draft = any(d.get('topic_id') == topic['topic_id'] for d in pending.values())
-                if not (has_draft and service_limits.blocked()):
+                if not (has_draft and service_limits.is_retryable(exc)):
                     for episode_id in [k for k, d in pending.items() if d.get('topic_id') == topic['topic_id']]:
                         pending.pop(episode_id)
                     release_topic(topic_ledger, topic['topic_id'], type(exc).__name__)

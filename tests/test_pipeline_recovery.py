@@ -9,6 +9,7 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 import service_limits
+import requests
 from credible.core import UTC, file_hash, read, save
 from credible.pipeline import DailyIncompleteError, documents, history, prepare, run, settings
 
@@ -126,6 +127,34 @@ class PipelineRecoveryTests(unittest.TestCase):
             self.assertEqual(mocks['credible.pipeline.generate_episode'].call_count, 3)
             self.assertEqual(mocks['credible.pipeline.prepare'].call_count, 3)
             self.assertEqual(set(result['topics']), {'topic-0', 'topic-1', 'topic-2'})
+
+    def test_transient_media_failures_preserve_draft_through_repeated_resumes(self):
+        failures = (service_limits.TransientServiceError('Frame review HTTP 503'),
+                    service_limits.ResponseFormatError('Invalid review structure'),
+                    requests.Timeout('Timed out'), requests.ConnectionError('Disconnected'))
+        for failure in failures:
+            with self.subTest(failure=type(failure).__name__), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                with pipeline_dependencies([brief(0)], lambda *a, topic, **k: draft(topic),
+                                           Mock(side_effect=failure), videos=1):
+                    with self.assertRaises(DailyIncompleteError):
+                        run('preview', root)
+                saved = read(root/'preview-state'/'production.json')
+                self.assertIn('topic-0', saved['pending_episodes'])
+                self.assertEqual(saved['topics']['topic-0']['status'], 'reserved')
+                # An outage while resuming must not discard the draft either.
+                with pipeline_dependencies([], Mock(side_effect=AssertionError('Must not rewrite')),
+                                           Mock(side_effect=failure), videos=1):
+                    with self.assertRaises(DailyIncompleteError):
+                        run('preview', root)
+                self.assertIn('topic-0', read(root/'preview-state'/'production.json')['pending_episodes'])
+                with pipeline_dependencies([], Mock(side_effect=AssertionError('Must not rewrite')),
+                                           lambda ep, *a: {**ep, 'status': 'ready'}, videos=1) as mocks:
+                    result = run('preview', root)
+                self.assertEqual(mocks['credible.pipeline.generate_episode'].call_count, 0)
+                self.assertEqual(mocks['credible.pipeline.prepare'].call_count, 1)
+                self.assertEqual(len(result['slots']), 1)
+                self.assertEqual(result['pending_episodes'], {})
 
     def test_completed_day_replenishes_one_reserve_then_stops_when_full(self):
         generator = lambda *a, topic, **k: draft(topic)

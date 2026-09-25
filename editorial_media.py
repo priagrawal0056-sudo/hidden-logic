@@ -256,10 +256,53 @@ def _load_stock_checkpoint(folder, signature, needed):
             if not _valid_stock_review(review):
                 break
             prefix.append(review)
+        rejected = checkpoint.get('rejected_assets', [])
+        attempts = checkpoint.get('replacement_attempts', [0] * needed)
+        if (not isinstance(rejected, list) or any(not isinstance(item, dict)
+                or not isinstance(item.get('source_id'), str)
+                or not isinstance(item.get('sha256'), str) for item in rejected)
+                or not isinstance(attempts, list) or len(attempts) != needed
+                or any(type(value) is not int or not 0 <= value <= 2 for value in attempts)):
+            return None
+        for index, asset in enumerate(checkpoint['assets']):
+            if any(asset['source_id'] == item['source_id'] or asset['sha256'] == item['sha256']
+                   for item in rejected):
+                prefix = prefix[:index]
+                break
         checkpoint['reviews'] = prefix
+        checkpoint['rejected_assets'] = rejected
+        checkpoint['replacement_attempts'] = attempts
         return checkpoint, records
     except (OSError, ValueError, TypeError, KeyError):
         return None
+
+
+def _fetch_stock(meta, folder, config, count, **selection):
+    import visuals
+    previous_cache = visuals.CACHE_FILE
+    visuals.CACHE_FILE = str(config.get('clip_history_path', folder / 'used_clips.json'))
+    Path(visuals.CACHE_FILE).parent.mkdir(parents=True, exist_ok=True)
+    try:
+        return visuals.fetch_backgrounds(config.get('pexels_api_key', ''),
+            selection.pop('queries', meta.get('broll_keywords', [])), str(folder), count=count,
+            pixabay_key=config.get('pixabay_api_key'), gemini_api_key=config.get('gemini_api_key'),
+            visual_thesis=meta.get('visual_thesis', meta['script']),
+            first_frame_description=meta.get('first_frame_description', ''), topic=meta.get('title', ''),
+            # Frame review is mandatory; URL scoring would add no visual evidence.
+            metadata_scoring=False, record_history=False, **selection)
+    finally:
+        visuals.CACHE_FILE = previous_cache
+
+
+def _record_accepted_stock(folder, config, assets):
+    import visuals
+    previous_cache = visuals.CACHE_FILE
+    visuals.CACHE_FILE = str(config.get('clip_history_path', folder / 'used_clips.json'))
+    Path(visuals.CACHE_FILE).parent.mkdir(parents=True, exist_ok=True)
+    try:
+        visuals._save_used(visuals._load_used() | {asset['source_id'] for asset in assets})
+    finally:
+        visuals.CACHE_FILE = previous_cache
 
 
 def render(meta, folder, config, stock=None):
@@ -277,19 +320,7 @@ def render(meta, folder, config, stock=None):
             checkpoint, records = cached
             paths = [str(folder / asset['path']) for asset in checkpoint['assets']]
         else:
-            previous_cache = visuals.CACHE_FILE
-            visuals.CACHE_FILE = str(config.get('clip_history_path', folder/'used_clips.json'))
-            Path(visuals.CACHE_FILE).parent.mkdir(parents=True,exist_ok=True)
-            try:
-                paths = visuals.fetch_backgrounds(config.get('pexels_api_key',''), meta.get('broll_keywords',[]),
-                    str(folder), count=needed, pixabay_key=config.get('pixabay_api_key'),
-                    gemini_api_key=config.get('gemini_api_key'), visual_thesis=meta.get('visual_thesis',meta['script']),
-                    first_frame_description=meta.get('first_frame_description',''), topic=meta.get('title',''),
-                    # Actual sampled-frame review below is mandatory. Ranking URL
-                    # descriptions first adds calls without establishing visual fit.
-                    metadata_scoring=False)
-            finally:
-                visuals.CACHE_FILE = previous_cache
+            paths = _fetch_stock(meta, folder, config, needed)
             if len(paths) != needed:
                 raise ValueError('Every stock scene needs a distinct supplied source')
             inspected = [_stock_asset(path, folder) for path in paths]
@@ -297,24 +328,69 @@ def render(meta, folder, config, stock=None):
             if (len({a['source_id'] for a in assets}) != needed
                     or len({a['sha256'] for a in assets}) != needed):
                 raise ValueError('Stock scenes require distinct source identities and content')
-            checkpoint = {'signature': signature, 'assets': assets, 'reviews': []}
+            checkpoint = {'signature': signature, 'assets': assets, 'reviews': [],
+                          'rejected_assets': [], 'replacement_attempts': [0] * needed}
         # Preserve the downloaded selection even if the first review hits quota.
         save(folder / 'stock-checkpoint.json', checkpoint)
         stock = []
-        from footage_review import assess
+        from footage_review import assess, RejectedFootage
         stock_scenes = [s for s in scenes if s['kind']=='stock']
-        for index, (path, scene, record) in enumerate(zip(paths, stock_scenes, records)):
+        for index, scene in enumerate(stock_scenes):
             if index < len(checkpoint['reviews']):
                 review = checkpoint['reviews'][index]
             else:
                 spoken = ' '.join(w['word'] for w in words if scene['start'] <= w['start'] < scene['end'])
-                review = assess(path,scene['end']-scene['start'],spoken,
-                    [s['assessment']['description'] for s in stock],config.get('gemini_api_key',''))
-                if not _valid_stock_review(review):
-                    raise ValueError('Footage review is incomplete; no passing checkpoint saved')
-                checkpoint['reviews'].append(review)
-                save(folder / 'stock-checkpoint.json', checkpoint)
-            stock.append({**record, **review, 'path':path})
+                while True:
+                    asset = checkpoint['assets'][index]
+                    rejected = any(asset['source_id'] == item['source_id'] or asset['sha256'] == item['sha256']
+                                   for item in checkpoint['rejected_assets'])
+                    if not rejected:
+                        try:
+                            review = assess(paths[index], scene['end'] - scene['start'], spoken,
+                                [s['assessment']['description'] for s in stock], config.get('gemini_api_key', ''))
+                        except RejectedFootage as error:
+                            checkpoint['rejected_assets'].append({
+                                'source_id': asset['source_id'], 'sha256': asset['sha256'],
+                                'scene': index, 'reason': str(error)})
+                            checkpoint['reviews'] = checkpoint['reviews'][:index]
+                            save(folder / 'stock-checkpoint.json', checkpoint)
+                            rejected = True
+                        else:
+                            if not _valid_stock_review(review):
+                                raise ValueError('Footage review is incomplete; no passing checkpoint saved')
+                            checkpoint['reviews'].append(review)
+                            save(folder / 'stock-checkpoint.json', checkpoint)
+                            break
+                    if rejected:
+                        attempts = checkpoint['replacement_attempts'][index]
+                        if attempts >= 2:
+                            raise RejectedFootage(f'No acceptable distinct footage for scene {index + 1} '
+                                                  'after two replacements; narration and accepted shots preserved')
+                        # Charge the budget only for a complete, distinct choice.
+                        # A temporary search/download failure must remain retryable
+                        # without exhausting all alternatives before any arrives.
+                        excluded = checkpoint['assets'] + checkpoint['rejected_assets']
+                        queries = meta.get('broll_keywords', [])
+                        if not queries:
+                            raise ValueError('Scene-specific footage queries are required')
+                        replacement = _fetch_stock(meta, folder, config, 1,
+                            queries=[queries[index % len(queries)]],
+                            excluded_source_ids={a['source_id'] for a in excluded},
+                            excluded_sha256={a['sha256'] for a in excluded},
+                            filename_prefix=f'replacement_{index + 1}_{attempts + 1}')
+                        if len(replacement) != 1:
+                            raise ValueError('Replacement needs exactly one distinct source')
+                        selected, record = _stock_asset(replacement[0], folder)
+                        if any(selected['source_id'] == a['source_id'] or selected['sha256'] == a['sha256']
+                               for a in excluded):
+                            raise ValueError('Replacement footage repeats an existing or rejected source')
+                        paths[index], records[index] = replacement[0], record
+                        checkpoint['assets'][index] = selected
+                        checkpoint['replacement_attempts'][index] = attempts + 1
+                        checkpoint['reviews'] = checkpoint['reviews'][:index]
+                        save(folder / 'stock-checkpoint.json', checkpoint)
+            stock.append({**records[index], **review, 'path': paths[index]})
+        _record_accepted_stock(folder, config, checkpoint['assets'])
     if len(stock) != needed:
         raise ValueError('Every stock scene needs a distinct supplied source')
     paths, shots, assets = [], [], []

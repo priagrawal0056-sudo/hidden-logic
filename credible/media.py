@@ -278,22 +278,23 @@ def punctuated_words(text, words):
         sentence_segments(measured, text)
     except ValueError as exc:
         raise ValueError('Narration punctuation alignment mismatch: ' + str(exc)) from exc
-    clean = lambda value: re.sub(r'[^a-z0-9]', '', value.lower())
+    from speech_matching import spoken_keys, alignment_keys
+    expected_keys, actual_keys = alignment_keys(text.split(), [w['text'] for w in words])
     ends, offset = {}, 0
     for i, word in enumerate(words):
-        offset += len(clean(word['text']))
+        offset += len(actual_keys[i])
         ends[offset] = i
     output, offset, first, pending = [], 0, 0, []
-    for written in text.split():
+    for written, key in zip(text.split(), expected_keys):
         pending.append(written)
-        offset += len(clean(written))
+        offset += len(key)
         if offset in ends and ends[offset] >= first:
             last = ends[offset]
             output.append({'text': ' '.join(pending), 'start': words[first]['start'],
                            'end': words[last]['end']})
             first, pending = last + 1, []
     if pending:
-        if clean(''.join(pending)) or not output:
+        if any(spoken_keys(pending)) or not output:
             raise ValueError('Narration punctuation alignment mismatch')
         output[-1]['text'] += ' ' + ' '.join(pending)
     if first != len(words):

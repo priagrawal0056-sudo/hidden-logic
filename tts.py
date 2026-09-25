@@ -479,9 +479,37 @@ def _discover_tts_models(api_key: str) -> list:
     return _tts_models
 
 
+def _narration_timing_direction(config):
+    """Optional measured feedback for one fresh take, never a tempo filter."""
+    feedback = config.get('narration_timing_feedback')
+    if not feedback:
+        return ''
+    import math
+    try:
+        duration, answer, low, high, deadline = (
+            float(feedback[key]) for key in ('previous_duration', 'previous_first_answer_end',
+                                             'duration_min', 'duration_max', 'first_answer_max'))
+    except (KeyError, TypeError, ValueError):
+        raise ValueError('Invalid measured narration timing feedback') from None
+    if not all(math.isfinite(value) and value > 0 for value in (duration, answer, low, high, deadline)) or low > high:
+        raise ValueError('Invalid measured narration timing feedback')
+    timing = (f' The previous take measured {duration:.2f} seconds including the final hold; '
+              f'the first useful answer finished at {answer:.2f} seconds. Record the SAME complete '
+              f'SCRIPT again in one continuous take. Keep the completed video between {low:g} and '
+              f'{high:g} seconds including its 0.8-second final hold, and finish the opening '
+              f'observation plus its first answer within {deadline:g} seconds. ')
+    if duration > high or answer > deadline:
+        timing += ('Use a connected, conversational pace, particularly across the opening and answer; '
+                   'avoid unnecessary pauses or drawn-out words. ')
+    elif duration < low:
+        timing += 'Let complete thoughts breathe naturally rather than rushing through the explanation. '
+    return timing + ('Keep the same voice and natural emphasis. Do not add, omit or rewrite words, '
+                     'rush into an unnatural delivery, or speak any timing directions. '
+                     'No artificial speed-up or time stretching is requested.')
+
+
 def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
-    """Gemini native TTS: the most natural free voice available. Returns word
-    timings (whisper-aligned or estimated) or None to fall through to Edge."""
+    """Continuous Gemini narration with measured, transcript-checked word timings."""
     if not api_key:
         return None
     import base64
@@ -500,6 +528,7 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
               "with understated curiosity and emphasis on the meaningful contrast. Let the "
               "final invitation sound like part of the conversation, without a sales pitch. "
               "Read exactly the script, without added words or performed laughter.")
+    style += _narration_timing_direction(_TTS_CFG)
     body = {
         "contents": [{"parts": [{"text": style + "\n\nSCRIPT:\n" + text}]}],
         "generationConfig": {

@@ -4,9 +4,34 @@ import base64
 import json
 import subprocess
 import requests
+from pathlib import Path
 from assemble import _ffmpeg
 
 _unavailable = None
+
+
+class RejectedFootage(ValueError):
+    """A valid sampled-frame assessment explicitly rejected this stock clip."""
+
+
+FootageRejected = RejectedFootage
+
+
+def _assessment(response):
+    result = service_limits.response_object(response)
+    if any(type(result.get(field)) is not bool for field in ('relevant', 'exposure_ok', 'distinct')):
+        raise service_limits.ResponseFormatError('Frame review omitted a required boolean verdict')
+    if not isinstance(result.get('description'), str) or not result['description'].strip():
+        raise service_limits.ResponseFormatError('Frame review omitted its visual description')
+    return {field: result[field] for field in ('relevant', 'exposure_ok', 'distinct', 'description')}
+
+
+def _save_rejection(path, assessment):
+    # Only the fixed verdict and a short visual description are persisted; never
+    # the raw API envelope, request headers, frame bytes or credential-bearing URL.
+    record = {'assessment_status': 'rejected', 'clip': Path(path).name,
+              'assessment': dict(assessment, description=assessment['description'][:500])}
+    Path(str(path) + '.review.json').write_text(json.dumps(record, indent=2), encoding='utf-8')
 
 
 def assess(path, duration, narration, previous, key, model='gemini-2.5-flash'):
@@ -31,16 +56,36 @@ def assess(path, duration, narration, previous, key, model='gemini-2.5-flash'):
         if not result.stdout: raise ValueError('Footage frame unavailable')
         parts.append({'inlineData':{'mimeType':'image/jpeg',
                       'data':base64.b64encode(result.stdout).decode('ascii')}})
-    service_limits.before_request()
-    response = requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
-        headers={'x-goog-api-key':key}, timeout=75,
-        json={'contents':[{'parts':parts}], 'generationConfig':{'temperature':0,'responseMimeType':'application/json'}})
-    service_limits.observe(response.status_code, response)
-    if not response.ok:
-        if response.status_code in (401,403,429): _unavailable = response.status_code
-        raise RuntimeError(f'Footage remains unverified: frame review HTTP {response.status_code}')
-    result = json.loads(response.json()['candidates'][0]['content']['parts'][0]['text'])
+    schema = {'type': 'object', 'properties': {
+        'relevant': {'type': 'boolean'}, 'exposure_ok': {'type': 'boolean'},
+        'distinct': {'type': 'boolean'}, 'description': {'type': 'string'}},
+        'required': ['relevant', 'exposure_ok', 'distinct', 'description']}
+    def send():
+        return requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
+            headers={'x-goog-api-key':key}, timeout=75,
+            json={'contents':[{'parts':parts}], 'generationConfig':{'temperature':0,
+                  'responseMimeType':'application/json', 'responseJsonSchema': schema}})
+    for format_attempt in range(2):
+        response = service_limits.request_with_retry(send)
+        if not response.ok:
+            if response.status_code in (401,403,429): _unavailable = response.status_code
+            error_type = (service_limits.TransientServiceError
+                          if response.status_code in (502, 503, 504) else RuntimeError)
+            raise error_type(f'Footage remains unverified: frame review HTTP {response.status_code}')
+        try:
+            result = _assessment(response)
+            break
+        except service_limits.ResponseFormatError as exc:
+            if format_attempt:
+                raise service_limits.ResponseFormatError(
+                    'Footage remains unverified: malformed frame-review response') from exc
+            parts.append({'text': 'The previous response had an invalid structure. Review the same '
+                'frames again and return exactly one JSON object with three boolean verdicts '
+                '(relevant, exposure_ok, distinct) and a visual description. Do not return a list; '
+                'do not assume any verdict passed.'})
     if any(result.get(k) is not True for k in ('relevant','exposure_ok','distinct')):
-        raise ValueError('Footage failed sampled-frame editorial review')
+        _save_rejection(path, result)
+        failed = ', '.join(k for k in ('relevant', 'exposure_ok', 'distinct') if result[k] is False)
+        raise RejectedFootage('Footage failed sampled-frame editorial review: ' + failed)
     return {'assessment_status':'sampled_frames_checked','assessment':result,
             'limitations':'Sampled frames cannot establish consent or guarantee whole-clip quality.'}

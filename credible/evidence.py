@@ -148,17 +148,32 @@ class FreeModel:
         import requests
         if not self.key or self.exhausted or self.remaining <= 0:
             raise RuntimeError('Free model unavailable; use verified reserve')
-        self.remaining -= 1
-        service_limits.before_request()
         generation = {'temperature': .2, 'responseMimeType': 'application/json'}
         if schema is not None:
             generation['responseJsonSchema'] = schema
-        response = requests.post(
-            f'https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent',
-            headers={'x-goog-api-key': self.key}, timeout=75,
-            json={'contents': [{'parts': [{'text': prompt}]}],
-                  'generationConfig': generation})
-        service_limits.observe(response.status_code, response)
+        def send():
+            if self.remaining <= 0:
+                raise RuntimeError('Free model call budget exhausted; use verified reserve')
+            self.remaining -= 1
+            return requests.post(
+                f'https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent',
+                headers={'x-goog-api-key': self.key}, timeout=75,
+                json={'contents': [{'parts': [{'text': prompt}]}],
+                      'generationConfig': generation})
+        # A malformed answer gets one fresh formatting request, never a guessed
+        # passing verdict. Every HTTP retry is also charged to the call budget.
+        for format_attempt in range(2):
+            response = service_limits.request_with_retry(send, max_attempts=min(3, self.remaining))
+            if not response.ok:
+                break
+            try:
+                return service_limits.response_object(response)
+            except service_limits.ResponseFormatError:
+                if format_attempt or self.remaining <= 0:
+                    raise
+                prompt += ('\nYour previous response had an invalid JSON structure. Return one complete '
+                           'JSON object with the requested fields, not a list, scalar or Markdown. '
+                           'Re-evaluate the original request; do not assume any review passed.')
         if response.status_code in (401,403,429):
             self.exhausted = True
         if not response.ok:
@@ -172,7 +187,7 @@ class FreeModel:
                 elif 'disabled' in message or 'not been used' in message: hint = 'api_not_enabled'
                 elif response.status_code == 403: hint = 'project_or_key_permission_denied'
                 elif response.status_code == 429: hint = 'quota_exhausted'
-            except (ValueError,TypeError):
+            except (ValueError,TypeError,AttributeError):
                 pass
             if response.status_code == 400:
                 # Keep schema diagnostics useful without exposing keys, URLs or
@@ -180,8 +195,9 @@ class FreeModel:
                 detail = message.replace(self.key.lower(), '[redacted]') if self.key else message
                 detail = re.sub(r'https?://\S+|[a-zA-Z0-9_/-]{35,}', '[redacted]', detail)
                 hint = 'invalid_request: ' + detail[:600]
-            raise RuntimeError(f'Free model request failed: HTTP {response.status_code}; {hint}')
-        return json.loads(response.json()['candidates'][0]['content']['parts'][0]['text'])
+            error_type = (service_limits.TransientServiceError
+                          if response.status_code in (502, 503, 504) else RuntimeError)
+            raise error_type(f'Free model request failed: HTTP {response.status_code}; {hint}')
 
 
 EDITORIAL_RULES = '''You write Hidden Logic, clear everyday explanations.
@@ -269,6 +285,8 @@ def generate_episode(model, documents, history, arm, topic=None):
     for attempt in range(2):
         data = model.call(prompt + feedback, schema=DRAFT_SCHEMA)
         try:
+            if not isinstance(data, dict):
+                raise ValueError('Writer must return one episode object')
             if topic is not None:
                 for key in ('topic_id','claim_id','subject','category'):
                     if key in data and data[key] != topic[key]:
@@ -279,6 +297,8 @@ def generate_episode(model, documents, history, arm, topic=None):
                 from .topics import LEGACY_PILLARS
                 data['pillar'] = LEGACY_PILLARS[topic['category']]
             for evidence in data.get('evidence', []):
+                if not isinstance(evidence, dict):
+                    raise ValueError('Writer evidence entries must be objects')
                 reference = passages.get(evidence.get('passage_id'))
                 if reference is None:
                     raise ValueError('Writer cited an unknown passage ID')
@@ -317,6 +337,13 @@ def generate_episode(model, documents, history, arm, topic=None):
                          'Return {"topic_matches":bool,"supported":bool,"title_matches":bool,"duplicate":bool,'
                          '"visuals_match":bool,"natural_script":bool,"needs_corroboration":bool,"reason":str}.\n' +
                          json.dumps({'episode': data, 'sources': excerpts, 'history': compact, 'selected_topic': topic}))
+    if not isinstance(verdict, dict):
+        raise ValueError('Independent editorial review returned an invalid object')
+    required = ('supported','title_matches','duplicate','visuals_match','natural_script','needs_corroboration')
+    if topic is not None:
+        required += ('topic_matches',)
+    if any(type(verdict.get(field)) is not bool for field in required):
+        raise ValueError('Independent editorial review omitted a required boolean verdict')
     if topic is not None and verdict.get('topic_matches') is not True:
         raise ValueError('Independent review rejected topic drift')
     if (verdict.get('supported') is not True or verdict.get('title_matches') is not True

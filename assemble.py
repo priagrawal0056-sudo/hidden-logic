@@ -37,10 +37,11 @@ def resolve_sound_cues(words, cues):
 
 def sentence_segments(words, script, hold=0.12):
     """Use script punctuation and measured word ends, never an arbitrary cut cadence."""
-    clean = lambda value: re.sub(r"[^a-z0-9]", "", value.lower())
+    from speech_matching import alignment_keys
     tokens = re.findall(r"\S+", script)
-    expected = "".join(clean(token) for token in tokens)
-    actual = "".join(clean(w.get("word", "")) for w in words)
+    expected_keys, actual_keys = alignment_keys(tokens, [w.get('word','') for w in words])
+    expected = ''.join(expected_keys)
+    actual = ''.join(actual_keys)
     if not expected or actual != expected:
         raise ValueError("Narration transcript does not match script; cannot place safe cuts")
     previous = 0.0
@@ -51,12 +52,12 @@ def sentence_segments(words, script, hold=0.12):
                 or start < previous - .001 or end <= start):
             raise ValueError("Measured, ordered word timings are required")
         previous = end
-        offset += len(clean(word["word"]))
+        offset += len(actual_keys[i])
         offsets[offset] = i
     duration = previous + .8
     boundaries, offset = [0.0], 0
-    for token in tokens[:-1]:
-        offset += len(clean(token))
+    for token, key in zip(tokens[:-1], expected_keys[:-1]):
+        offset += len(key)
         if re.search(r"[.!?][\"'’”)]*$", token) and offset in offsets:
             i = offsets[offset]
             end = float(words[i]["end"])
