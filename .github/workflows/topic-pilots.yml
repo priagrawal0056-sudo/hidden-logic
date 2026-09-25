@@ -68,4 +68,5 @@ jobs:
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/voice.mp3*
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/stock-checkpoint.json
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/*.review.json
+            outputs/topic-pilot-${{ matrix.category }}/episodes/*/*.source.json
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/timings.json

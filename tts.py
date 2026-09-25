@@ -538,6 +538,13 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
         },
     }
     model = _TTS_CFG.get("gemini_tts_model", "gemini-3.1-flash-tts-preview")
+    attempts = []
+    last_failure = None
+    def record_request(attempt, **outcome):
+        # Never save provider response bodies, request URLs, keys or headers.
+        attempts.append({'attempt': attempt + 1, **outcome})
+        with open(mp3_path + '.service.json', 'w', encoding='utf-8') as diagnostic:
+            json.dump({'service': 'gemini_narration', 'attempts': attempts}, diagnostic, indent=2)
     for narration_attempt in range(2):
         service_limits.check()
         try:
@@ -546,17 +553,46 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
                               json=body, timeout=120)
             service_limits.observe(r.status_code, r)
             if r.status_code in (401, 403, 429):
-                print(f"[tts] Gemini narration unavailable (HTTP {r.status_code}); stopping without changing voices.")
-                return None
-            if r.status_code == 404:
-                return None
-            r.raise_for_status()
-            part = r.json()["candidates"][0]["content"]["parts"][0]
-            pcm = base64.b64decode(part["inlineData"]["data"])
-        except service_limits.ServiceUnavailable:
+                # Keep the same behavior when called outside a pipeline session.
+                kind, retry = service_limits.quota_details(r)
+                raise service_limits.ServiceUnavailable(r.status_code, kind, retry)
+            if r.status_code in (502, 503, 504):
+                raise service_limits.TransientServiceError(f'Gemini narration HTTP {r.status_code}')
+            if not 200 <= r.status_code < 300:
+                record_request(narration_attempt, status='http_error', http_status=r.status_code)
+                raise RuntimeError(f'Gemini narration request rejected (HTTP {r.status_code}); voice unchanged')
+            data = r.json()
+            candidates = data.get('candidates') if isinstance(data, dict) else None
+            candidate = candidates[0] if isinstance(candidates, list) and candidates else None
+            content = candidate.get('content') if isinstance(candidate, dict) else None
+            parts = content.get('parts') if isinstance(content, dict) else None
+            if (not isinstance(parts, list) or candidate.get('finishReason') not in (None, 'STOP')):
+                raise service_limits.ResponseFormatError('Gemini narration returned no complete audio candidate')
+            inline = next((p['inlineData'] for p in parts if isinstance(p, dict)
+                           and isinstance(p.get('inlineData'), dict)), {})
+            encoded = inline.get('data')
+            if not isinstance(encoded, str) or not encoded:
+                raise service_limits.ResponseFormatError('Gemini narration returned no audio data')
+            pcm = base64.b64decode(encoded, validate=True)
+            if not pcm or len(pcm) % 2:
+                raise service_limits.ResponseFormatError('Gemini narration returned invalid PCM data')
+        except service_limits.ServiceUnavailable as exc:
+            record_request(narration_attempt, status='service_blocked', http_status=exc.status,
+                           limit_kind=exc.limit_kind)
             raise
-        except Exception:
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            last_failure = service_limits.TransientServiceError('Gemini narration request failed: ' + type(exc).__name__)
+            record_request(narration_attempt, status='request_unavailable', error_type=type(exc).__name__)
             continue
+        except service_limits.TransientServiceError as exc:
+            last_failure = exc
+            record_request(narration_attempt, status='service_unavailable', http_status=r.status_code)
+            continue
+        except (ValueError, TypeError) as exc:
+            last_failure = service_limits.ResponseFormatError('Gemini narration returned malformed audio data')
+            record_request(narration_attempt, status='malformed_audio', error_type=type(exc).__name__)
+            continue
+        record_request(narration_attempt, status='audio_received')
         raw = mp3_path + ".pcm"
         with open(raw, "wb") as f:
             f.write(pcm)
@@ -580,6 +616,8 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
             json.dump(words, f, indent=2)
         print(f"[tts] Gemini TTS used ({model}, {len(words)} words)")
         return words
+    if last_failure is not None:
+        raise last_failure
     return None
 
 

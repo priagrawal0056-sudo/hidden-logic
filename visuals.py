@@ -6,7 +6,6 @@ Ensures 1:1 mapping between the scene's requested keyword and the downloaded cli
 """
 import json
 import os
-import random
 import time
 import requests
 
@@ -209,13 +208,49 @@ def _search_pixabay(api_key: str, query: str):
     return out
 
 def _search_all(keys: dict, query: str):
-    clips = []
+    providers = []
     if keys.get("pexels"):
-        clips += _search_pexels(keys["pexels"], query)
+        providers.append(_search_pexels(keys["pexels"], query))
     if keys.get("pixabay"):
-        clips += _search_pixabay(keys["pixabay"], query)
-    random.shuffle(clips)
-    return clips
+        providers.append(_search_pixabay(keys["pixabay"], query))
+    # Preserve each provider's relevance order and give both providers a turn.
+    # Shuffling here used to discard good matches before the shortlist was made.
+    from itertools import zip_longest
+    return [clip for row in zip_longest(*providers) for clip in row if clip is not None]
+
+
+_SEARCH_FILLER = frozenset({
+    "a", "an", "the", "of", "on", "in", "at", "with", "and", "to", "from",
+    "close", "up", "closeup", "shot", "shots", "view", "footage", "video",
+    "portrait", "vertical", "pov", "macro", "slow", "motion", "cinematic",
+    "person", "people", "man", "woman", "hand", "hands", "using", "use",
+    "holding", "hold", "pull", "pulling", "opening", "closing", "walking",
+})
+
+
+def _search_terms(text: str) -> list[str]:
+    import re
+    return re.findall(r"[a-z0-9]+", str(text).lower())
+
+
+def _prioritize_candidates(query: str, candidates: list[dict]) -> list[dict]:
+    """Use descriptions only to order search, never to approve a clip.
+
+    Literal object/detail matches outrank camera directions such as 'close up'
+    and generic actions such as 'holding'. Unknown descriptions stay eligible;
+    stable ties retain the provider relevance order established above.
+    """
+    subjects = list(dict.fromkeys(term for term in _search_terms(query)
+                                  if term not in _SEARCH_FILLER))
+    if not subjects:
+        return list(candidates)
+
+    def priority(video):
+        description = set(_search_terms(_get_description(video)))
+        matches = [term in description for term in subjects]
+        return (sum(matches), matches[0])
+
+    return sorted(candidates, key=priority, reverse=True)
 
 def _download(video: dict, out_path: str) -> bool:
     files = [f for f in video["video_files"] if f["height"] >= f["width"] and f["height"] >= 1280]
@@ -406,12 +441,15 @@ Respond ONLY with a JSON object in this format:
 def _search_and_score(keys: dict, gemini_api_key: str | None, query: str,
                       visual_thesis: str, first_frame_description: str,
                       topic: str, is_first_frame: bool, threshold: float,
-                      skip_scoring: bool = False, anchor: str = "") -> tuple[list[dict], list[dict]]:
+                      skip_scoring: bool = False, anchor: str = "",
+                      excluded_source_ids=()) -> tuple[list[dict], list[dict]]:
     """Search candidates across providers and score them. Returns (filtered_candidates, all_candidates_sorted)."""
-    vids = _search_all(keys, query)
+    excluded = {str(source_id) for source_id in excluded_source_ids}
+    vids = [v for v in _search_all(keys, query) if str(v['id']) not in excluded]
     if not vids:
         return [], []
-    vids = vids[:12]  # Limit to top 12 candidates to save API call size and speed up ranking!
+    # Rank the complete provider results before applying the bounded shortlist.
+    vids = _prioritize_candidates(query, vids)[:12]
     if gemini_api_key and not skip_scoring:
         scores = _score_candidates(gemini_api_key, query, vids,
                                   visual_thesis, first_frame_description,
@@ -479,7 +517,8 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
         vids, all_vids = _search_and_score(keys, gemini_api_key, cleaned_q,
                                            visual_thesis, first_frame_description,
                                            topic, is_first_frame, threshold,
-                                           skip_scoring=not metadata_scoring, anchor=anchor)
+                                           skip_scoring=not metadata_scoring, anchor=anchor,
+                                           excluded_source_ids=downloaded_ids)
         found = False
         
         # Pass 1: Strict mode - avoid clips used in past videos AND avoid clips already used in THIS video
@@ -517,7 +556,8 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                 svids, sall_vids = _search_and_score(keys, gemini_api_key, simple_q,
                                                      visual_thesis, first_frame_description,
                                                      topic, is_first_frame, threshold,
-                                                     skip_scoring=True)
+                                                     skip_scoring=True,
+                                                     excluded_source_ids=downloaded_ids)
                 for vid in svids:
                     vid_id = str(vid["id"])
                     if vid_id in downloaded_ids:
@@ -553,7 +593,8 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
                 fvids, fall_vids = _search_and_score(keys, gemini_api_key, fq,
                                                      visual_thesis, first_frame_description,
                                                      topic, is_first_frame, threshold,
-                                                     skip_scoring=True, anchor=anchor)
+                                                     skip_scoring=True, anchor=anchor,
+                                                     excluded_source_ids=downloaded_ids)
                 for vid in fvids:
                     vid_id = str(vid["id"])
                     if vid_id in downloaded_ids:

@@ -69,3 +69,29 @@ saved, leaving only a generic error. The follow-up keeps the review gate and:
 
 A finished live pilot is still required; unit tests alone do not establish that
 available stock, narration, and rendering all succeed together.
+
+## Follow-up: runs 36115075962 and 36117318790
+
+The clothing pilot passed writing and measured narration, then correctly rejected
+three unrelated clips. The subsequent daily preview also rejected irrelevant
+scale footage, successfully corrected a honey draft, and ultimately exhausted
+the explicitly reported daily Gemini quota. It finished with one pending episode
+and no completed slots.
+
+- Preserve provider relevance order, interleave both providers, and prioritize
+  literal subject matches before the twelve-candidate limit. Description matching
+  only orders candidates; every clip still requires actual sampled-frame review.
+- Exclude rejected/current sources before that limit so they cannot hide later
+  alternatives. Changed selection code invalidates stale footage checkpoints;
+  stock-only changes leave the narration contract unchanged.
+- Category pilots can move to another reviewed topic after exhausting genuinely
+  rejected footage. Service errors stop instead; explicit topic requests stay fixed.
+- Preserve specific temporary narration service errors and malformed-audio
+  failures after the existing two attempts. Record safe request outcomes, never
+  keys or raw provider messages. These failures now retain the approved draft.
+  This TTS implementation update changes the existing narration cache signature
+  once; later retries reuse verified takes under the new signature.
+
+Daily quota exhaustion is an external blocker, not a successful video. No further
+live generation was requested after that explicit daily-limit response. Publishing
+remains disabled; the updated footage selection still needs a finished live pilot.

@@ -115,7 +115,9 @@ class OriginalEditorialTests(unittest.TestCase):
                     visuals.fetch_backgrounds('test',['scanner','price'],folder,count=2)
 
     def test_auth_failure_stops_tts_without_trying_other_models(self):
+        import service_limits
         response=SimpleNamespace(status_code=403)
-        with patch.object(tts.requests if hasattr(tts,'requests') else __import__('requests'),'post',return_value=response) as post:
-            self.assertIsNone(tts._try_gemini_tts('test','voice.mp3','words.json','test-key'))
+        with tempfile.TemporaryDirectory() as directory, patch.object(tts.requests if hasattr(tts,'requests') else __import__('requests'),'post',return_value=response) as post:
+            with self.assertRaises(service_limits.ServiceUnavailable):
+                tts._try_gemini_tts('test',str(Path(directory)/'voice.mp3'),str(Path(directory)/'words.json'),'test-key')
             self.assertEqual(post.call_count,1)

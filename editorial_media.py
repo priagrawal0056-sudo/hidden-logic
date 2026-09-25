@@ -204,6 +204,7 @@ def _stock_signature(meta, words, scenes):
                    'title': meta.get('title', ''),
                    'visual_thesis': meta.get('visual_thesis', meta['script']),
                    'first_frame_description': meta.get('first_frame_description', ''),
+                   'stock_selection_code': file_hash(ROOT / 'visuals.py'),
                    'frame_review_code': file_hash(ROOT / 'footage_review.py')})
 
 

@@ -67,10 +67,12 @@ class ProductionPolishTests(unittest.TestCase):
 
     def test_gemini_sends_whole_script_once(self):
         import requests
+        import service_limits
         response = SimpleNamespace(status_code=403)
         script = 'One connected question? Here is its answer. Follow Hidden Logic.'
-        with patch.object(requests,'post',return_value=response) as post:
-            tts._try_gemini_tts(script,'voice.mp3','words.json','test')
+        with tempfile.TemporaryDirectory() as directory, patch.object(requests,'post',return_value=response) as post:
+            with self.assertRaises(service_limits.ServiceUnavailable):
+                tts._try_gemini_tts(script,str(Path(directory)/'voice.mp3'),str(Path(directory)/'words.json'),'test')
             self.assertEqual(post.call_count,1)
             body = post.call_args.kwargs['json']
             self.assertTrue(body['contents'][0]['parts'][0]['text'].endswith(script))

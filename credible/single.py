@@ -3,6 +3,7 @@ import service_limits
 import argparse
 from pathlib import Path
 from config_loader import load_config
+from footage_review import RejectedFootage
 from .core import read,save,now,digest,file_hash
 from .evidence import EditorialRejected,FreeModel,generate_episode
 from .pipeline import settings,documents,prepare
@@ -71,9 +72,22 @@ def build(pillar, root, topic_id=None):
             save(root/'draft.json',{'contract':contract,'episode':episode})
         attempt['status']='draft_reviewed'
         save(root/'attempts.json',attempts)
+        script_checks(episode)
+        try:
+            episode=prepare(episode,root,config)
+        except RejectedFootage:
+            # Every selected replacement was actually assessed and rejected.
+            # Keep its narration/diagnostics, but try a filmable alternative.
+            # Quota, networking and malformed assessments never enter this path.
+            attempt['status']='footage_rejected'
+            save(root/'attempts.json',attempts)
+            if topic_id or topic is choices[-1]:
+                raise
+            print('Footage alternatives rejected; trying another eligible subject in this category.',flush=True)
+            continue
+        attempt['status']='ready_for_review'
+        save(root/'attempts.json',attempts)
         break
-    script_checks(episode)
-    episode=prepare(episode,root,config)
     save(root/'result.json',{'status':'ready_for_review','at':now().isoformat(),
                            'episode':episode,'source_errors':source_errors,
                            'attempts':attempts,'published':False})
@@ -92,7 +106,7 @@ def main():
     except Exception as exc:
         # Some libraries include request URLs or credentials in exception text.
         message=str(exc)
-        reason=(message if isinstance(exc, (EditorialRejected, service_limits.ServiceUnavailable)) or message.startswith(('Gemini credential unavailable;',
+        reason=(message if isinstance(exc, (EditorialRejected, RejectedFootage, service_limits.ServiceUnavailable)) or message.startswith(('Gemini credential unavailable;',
             'Stock credential unavailable;','Free model request failed: HTTP',
             'Every stock scene needs','Footage failed sampled-frame',
             'Independent editorial review rejected','Candidate failed source/drawing validation:',

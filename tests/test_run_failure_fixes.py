@@ -63,13 +63,15 @@ class RunFailureTests(unittest.TestCase):
             with self.assertRaises(ValueError):validate_storyboard(plan)
 
     def test_quota_failure_stops_other_gemini_consumers_in_same_run(self):
+        import tempfile
+        from pathlib import Path
         import service_limits
         import footage_review
         from credible.evidence import FreeModel
         response=Mock(status_code=429)
-        with service_limits.session(), patch('requests.post',return_value=response) as post:
+        with tempfile.TemporaryDirectory() as directory, service_limits.session(), patch('requests.post',return_value=response) as post:
             with self.assertRaises(service_limits.ServiceUnavailable):
-                tts._try_gemini_tts('Hello.','unused.mp3','unused.json','key')
+                tts._try_gemini_tts('Hello.',str(Path(directory)/'unused.mp3'),str(Path(directory)/'unused.json'),'key')
             model=FreeModel({'model':'gemini-2.5-flash','max_model_calls':5})
             with self.assertRaises(service_limits.ServiceUnavailable):model.call('draft')
             with self.assertRaises(service_limits.ServiceUnavailable):

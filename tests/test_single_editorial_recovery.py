@@ -9,6 +9,7 @@ import service_limits
 from credible.core import read
 from credible.evidence import EditorialRejected
 from credible.single import build
+from footage_review import RejectedFootage
 
 
 @contextlib.contextmanager
@@ -46,7 +47,7 @@ class SingleEditorialRecoveryTests(unittest.TestCase):
             root = Path(temp)
             self.assertEqual(build('clothing', root), self.episode)
             attempts = read(root/'attempts.json')
-            self.assertEqual([a['status'] for a in attempts], ['editorial_rejected', 'draft_reviewed'])
+            self.assertEqual([a['status'] for a in attempts], ['editorial_rejected', 'ready_for_review'])
             self.assertEqual(mocks['credible.single.generate_episode'].call_count, 2)
             mocks['credible.single.prepare'].assert_called_once_with(self.episode, root,
                 {'production_version': 4, 'clip_history_path': str(root/'preview-state'/'used_clips.json')})
@@ -92,6 +93,35 @@ class SingleEditorialRecoveryTests(unittest.TestCase):
             self.assertEqual(mocks['credible.single.generate_episode'].call_count, 2)
             self.assertEqual(mocks['credible.single.prepare'].call_count, 2)
             self.assertEqual(read(root/'attempts.json')[0]['topic_id'], '1')
+
+    def test_exhausted_rejected_footage_moves_to_another_reviewed_topic(self):
+        alternative = {'id': 'alternative', 'evidence': []}
+        with tempfile.TemporaryDirectory() as temp, dependencies(
+                self.choices, [self.episode, alternative],
+                [RejectedFootage('All selected clips irrelevant'), alternative]) as mocks:
+            root = Path(temp)
+            self.assertEqual(build('clothing', root), alternative)
+            attempts = read(root/'attempts.json')
+            self.assertEqual([a['status'] for a in attempts], ['footage_rejected', 'ready_for_review'])
+            self.assertEqual(mocks['credible.single.generate_episode'].call_count, 2)
+            self.assertEqual(read(root/'draft.json')['episode'], alternative)
+
+    def test_explicit_topic_never_switches_after_footage_rejection(self):
+        with tempfile.TemporaryDirectory() as temp, dependencies(
+                self.choices[:1], [self.episode], [RejectedFootage('All clips irrelevant')]) as mocks:
+            with self.assertRaises(RejectedFootage):
+                build('clothing', Path(temp), topic_id='0')
+            self.assertEqual(mocks['credible.single.generate_episode'].call_count, 1)
+            self.assertEqual(mocks['credible.single.prepare'].call_count, 1)
+
+    def test_temporary_media_error_keeps_selected_draft_and_stops_other_topics(self):
+        with tempfile.TemporaryDirectory() as temp, dependencies(
+                self.choices, [self.episode], [service_limits.ResponseFormatError('Bad assessment')]) as mocks:
+            root = Path(temp)
+            with self.assertRaises(service_limits.ResponseFormatError):
+                build('clothing', root)
+            self.assertEqual(mocks['credible.single.generate_episode'].call_count, 1)
+            self.assertEqual(read(root/'draft.json')['episode'], self.episode)
 
 
 if __name__ == '__main__':
