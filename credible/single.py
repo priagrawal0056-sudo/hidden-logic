@@ -4,7 +4,7 @@ import argparse
 from pathlib import Path
 from config_loader import load_config
 from .core import read,save,now,digest,file_hash
-from .evidence import FreeModel,generate_episode
+from .evidence import EditorialRejected,FreeModel,generate_episode
 from .pipeline import settings,documents,prepare
 from .topics import CATEGORY_COUNTS, load_bank, shortlist, sources_for
 from .quality import script_checks
@@ -31,30 +31,52 @@ def build(pillar, root, topic_id=None):
     if topic_id:
         bank=[t for t in bank if t['topic_id']==topic_id]
     category={'travel':'transport'}.get(pillar,pillar)
-    choices=shortlist(bank,history,state.get('topics',{}),n=1,category=None if topic_id else category)
+    # A category preview can choose an alternative reviewed subject after a
+    # negative editorial verdict. An explicit topic request must never drift.
+    choices=shortlist(bank,history,state.get('topics',{}),n=1 if topic_id else 3,
+                      category=None if topic_id else category)
     if not choices: raise RuntimeError('No eligible source-reviewed topic in requested category')
-    topic=choices[0]
-    docs,source_errors=documents(root,sources_for(topic))
-    # One candidate with the existing bounded automatic structural repair and
-    # independent evidence review. Failure is visible; this command never uploads.
     # Reuse a reviewed draft after quota/stock failure, but never across changes
     # to the authoring contract or topic. Revalidate its saved evidence locally.
-    contract=digest([topic,config['production_version'],
+    def contract_for(topic):
+        return digest([topic,config['production_version'],
         file_hash(Path(__file__).with_name('evidence.py')),
         file_hash(Path(__file__).with_name('draft_schema.py')),
         file_hash(Path(__file__).parents[1]/'production_brief.py')])
     checkpoint=read(root/'draft.json',{})
-    episode=checkpoint.get('episode') if checkpoint.get('contract')==contract else None
-    if episode:
-        from .evidence import verify_support
-        verify_support(episode.get('evidence'),docs)
-    else:
-        episode=generate_episode(model,docs,history,'question_first',topic=topic)
-        save(root/'draft.json',{'contract':contract,'episode':episode})
+    choices.sort(key=lambda topic: contract_for(topic)!=checkpoint.get('contract'))
+    attempts=[]
+    for topic in choices:
+        contract=contract_for(topic)
+        docs,source_errors=documents(root,sources_for(topic))
+        episode=checkpoint.get('episode') if checkpoint.get('contract')==contract else None
+        attempt={'topic_id':topic['topic_id'],'status':'reviewing','source_errors':source_errors}
+        attempts.append(attempt)
+        save(root/'attempts.json',attempts)
+        if episode:
+            from .evidence import verify_support
+            verify_support(episode.get('evidence'),docs)
+        else:
+            try:
+                episode=generate_episode(model,docs,history,'question_first',topic=topic)
+            except EditorialRejected:
+                attempt['status']='editorial_rejected'
+                save(root/'attempts.json',attempts)
+                if topic_id or topic is choices[-1]:
+                    raise
+                # Service errors are deliberately not caught: they retain work
+                # and stop API consumption instead of cycling through subjects.
+                print('Draft rejected; trying another eligible subject in this category.',flush=True)
+                continue
+            save(root/'draft.json',{'contract':contract,'episode':episode})
+        attempt['status']='draft_reviewed'
+        save(root/'attempts.json',attempts)
+        break
     script_checks(episode)
     episode=prepare(episode,root,config)
     save(root/'result.json',{'status':'ready_for_review','at':now().isoformat(),
-                           'episode':episode,'source_errors':source_errors,'published':False})
+                           'episode':episode,'source_errors':source_errors,
+                           'attempts':attempts,'published':False})
     print('Ready:',str(root/'episodes'/episode['id']/'short.mp4'),flush=True)
     return episode
 
@@ -70,7 +92,7 @@ def main():
     except Exception as exc:
         # Some libraries include request URLs or credentials in exception text.
         message=str(exc)
-        reason=(message if isinstance(exc, service_limits.ServiceUnavailable) or message.startswith(('Gemini credential unavailable;',
+        reason=(message if isinstance(exc, (EditorialRejected, service_limits.ServiceUnavailable)) or message.startswith(('Gemini credential unavailable;',
             'Stock credential unavailable;','Free model request failed: HTTP',
             'Every stock scene needs','Footage failed sampled-frame',
             'Independent editorial review rejected','Candidate failed source/drawing validation:',

@@ -50,3 +50,22 @@ footage and temporary provider failures. The follow-up patch:
 
 These changes do not certify source claims or artistic quality. Unique relevant
 stock and available free-tier services remain required for a successful live run.
+
+## Follow-up: run 36089523477
+
+The unpublished clothing pilot passed all 201 regressions, then its independent
+editorial review rejected the draft before narration. No verdict explanation was
+saved, leaving only a generic error. The follow-up keeps the review gate and:
+
+- Saves the draft and individual review verdicts for diagnosis.
+- Gives the reviewer the same production format used by the writer and editor.
+- Allows one targeted rewrite for correctable presentation failures, followed by
+  fresh local checks and independent review. Unsupported claims, topic drift,
+  duplicate mechanisms and missing corroboration remain hard rejections.
+- Lets a category pilot try up to three eligible briefs after editorial rejection.
+  Explicit topic requests never switch topics, and service failures stop the run.
+- Resumes an approved alternative draft after media failure, and includes draft,
+  attempted topics, timing and footage-review checkpoints in pilot artifacts.
+
+A finished live pilot is still required; unit tests alone do not establish that
+available stock, narration, and rendering all succeed together.

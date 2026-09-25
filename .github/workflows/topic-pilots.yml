@@ -59,8 +59,13 @@ jobs:
           retention-days: 7
           path: |
             outputs/topic-pilot-${{ matrix.category }}/result.json
+            outputs/topic-pilot-${{ matrix.category }}/attempts.json
+            outputs/topic-pilot-${{ matrix.category }}/draft.json
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/short.mp4
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/episode.json
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/contact-sheet.jpg
             outputs/topic-pilot-${{ matrix.category }}/diagnostics/*.json
             outputs/topic-pilot-${{ matrix.category }}/episodes/*/voice.mp3*
+            outputs/topic-pilot-${{ matrix.category }}/episodes/*/stock-checkpoint.json
+            outputs/topic-pilot-${{ matrix.category }}/episodes/*/*.review.json
+            outputs/topic-pilot-${{ matrix.category }}/episodes/*/timings.json
