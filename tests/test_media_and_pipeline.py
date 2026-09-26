@@ -119,6 +119,7 @@ class PipelineTests(unittest.TestCase):
             self.assertTrue((root/'preview-state'/'production.json').exists())
 
     def test_rerun_does_not_allocate_or_upload_twice(self):
+        import service_limits
         config=settings();config['rollout_enabled']=True
         fixed=dt.datetime(2026,9,13,0,tzinfo=UTC)
         with tempfile.TemporaryDirectory() as tmp:
@@ -129,7 +130,7 @@ class PipelineTests(unittest.TestCase):
             for ep in reserves: save(root/'episodes'/ep['id']/'episode.json',ep)
             backend=Mock();backend.find.return_value=None
             backend.upload_private.side_effect=['video1','video2','video3']
-            model=Mock();model.key='';model.exhausted=False
+            model=Mock();model.key='test';model.exhausted=False
             with patch('credible.pipeline.settings',return_value=config), \
                  patch('credible.pipeline.now',return_value=fixed), \
                  patch('credible.core.now',return_value=fixed), \
@@ -141,7 +142,7 @@ class PipelineTests(unittest.TestCase):
                  patch('credible.pipeline.rendered_checks',return_value={'passed':True}), \
                  patch('credible.pipeline.FreeModel',return_value=model), \
                  patch('credible.pilots.require_pilot_review'), \
-                 patch('credible.pipeline.generate_episode',side_effect=RuntimeError('No quota')), \
+                 patch('credible.pipeline.generate_episode',side_effect=lambda *a,**k:service_limits.observe(429)), \
                  patch('credible.youtube.YouTube',return_value=backend), \
                  patch('credible.state_io.checkpoint'):
                 first=run('publish',root,state)

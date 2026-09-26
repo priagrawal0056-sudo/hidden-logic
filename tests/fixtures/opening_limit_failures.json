@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Why brick walls have tiny open gaps near the bottom",
+    "beats": [
+      "Ever notice small gaps in brick walls?",
+      "They're weeps, letting water out.",
+      "Rainwater can penetrate the outer brick layer, collecting in an air space. Flashing then directs this moisture down to the weep openings.",
+      "So those small gaps aren't mistakes; they're essential drainage, protecting your home. Follow Hidden Logic for more everyday explanations."
+    ],
+    "broll_keywords": [
+      "brick wall close up weep hole",
+      "rainwater dripping down brick wall",
+      "weep hole draining water"
+    ],
+    "sound_cues": [
+      {
+        "phrase": "protecting your home",
+        "kind": "chime"
+      }
+    ]
+  },
+  {
+    "title": "Why your denim shows white on the inside",
+    "beats": [
+      "Blue jeans are white inside, why?",
+      "It's the fabric's unique weave.",
+      "Denim uses blue warp yarns lengthwise and white filling yarns crosswise. The twill weave brings more blue threads to the surface, hiding white underneath.",
+      "So, your blue jeans are white inside because of that specific weave. Follow Hidden Logic for more everyday explanations."
+    ],
+    "broll_keywords": [
+      "blue jeans close up texture",
+      "denim fabric weaving loom",
+      "folded denim jeans stack"
+    ],
+    "sound_cues": [
+      {
+        "phrase": "twill weave",
+        "kind": "chime"
+      }
+    ]
+  }
+]

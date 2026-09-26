@@ -17,13 +17,18 @@ from tests.test_service_responses import response
 
 
 class LiveMediaSelectionTests(unittest.TestCase):
-    def test_failed_pavement_opening_is_shortened_before_tts(self):
+    def test_opening_length_is_measured_rather_than_rejected_by_word_count(self):
         draft = brief()
         draft['beats'][:2] = ['Notice cuts in concrete pavement?',
                               "They're contraction joints, controlling where cracks form."]
-        with self.assertRaisesRegex(ValueError, 'ten-word'):
-            validate(draft)
-        # The writer must keep the same explanation while simplifying its opening.
+        self.assertTrue(validate(draft))
+        # A draft passing a word-count heuristic cannot bypass measured timing.
+        from credible.quality import timeline_checks
+        episode={'production_version':4,'duration':24,'first_answer_end':6.66,
+                 'scenes':[{'start':0,'end':24}]}
+        with patch('credible.quality.script_checks'):
+            with self.assertRaisesRegex(ValueError,'within six seconds'):
+                timeline_checks(episode,Path('.'),{'duration_min':20,'duration_max':28})
         draft['beats'][:2] = ['Why cut concrete?', 'To control where cracks form.']
         self.assertTrue(validate(draft))
 

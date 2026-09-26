@@ -6,11 +6,12 @@ import subprocess
 import requests
 from pathlib import Path
 from assemble import _ffmpeg
+from credible.rejections import CandidateRejected
 
 _unavailable = None
 
 
-class RejectedFootage(ValueError):
+class RejectedFootage(CandidateRejected):
     """A valid sampled-frame assessment explicitly rejected this stock clip."""
 
 

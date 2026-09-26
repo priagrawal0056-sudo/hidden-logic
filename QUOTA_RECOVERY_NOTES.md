@@ -98,8 +98,8 @@ remains disabled; the updated footage selection still needs a finished live pilo
 
 ## Expected quota deferral exits successfully
 
-At the owner's request, a run blocked only by Gemini HTTP 429 now exits with code
-0 after saving its report and recovery state. It prints the quota/rate-limit
+At the owner's request, a run blocked by Gemini HTTP 429 with no operational errors
+exits with code 0 after saving its report and recovery state. It prints the quota/rate-limit
 message and records `status: deferred_quota`, with truthful completed and pending
 counts. This is successful handling of a deferral, not a completed video.
 
@@ -108,6 +108,11 @@ notices and recovered source warnings are separate from errors. Authentication,
 other unresolved failures, missed publication recovery and failed persistence
 still fail the run. Bootstrap retains its bounded partial-progress behavior;
 single previews also save an unpublished deferred result on quota exhaustion.
+Known negative draft/editorial/footage decisions during candidate preparation are
+listed under `rejected_candidates`. They never make a video publishable, but they
+do not block a later quota deferral. Untyped exceptions and failures in upload or
+already-prepared output checks remain operational errors. With no quota response,
+an unfinished daily target still fails rather than pretending delivery succeeded.
 
 The workflow does not use `continue-on-error`. Its artifact and cache steps still
 run, and a later invocation resumes preserved work. No extra live Gemini calls
@@ -129,8 +134,8 @@ and 6.80 seconds after its retake.
 - Repeated-action rejections try other authored shot queries instead of requesting
   the same action again. Exhausted footage alternatives give that topic a seven-day
   cooldown while leaving it unused. Other failures retain their existing retry policy.
-- The first draft now limits the hook and first answer to ten plain spoken words;
-  local validation triggers correction before narration. Measured six-second checks
+- The first draft targets about ten plain spoken words across the hook and first
+  answer. This is guidance, not a rejection threshold. Measured six-second checks
   and the single continuous retake remain mandatory.
 - A disabled scheduled rollout exits normally with `skipped_rollout` and no API,
   credential, cache-save or production-state work. Explicit publishing remains blocked,
@@ -139,3 +144,11 @@ and 6.80 seconds after its retake.
 These changes have offline regression coverage. They still require a successful
 finished live pilot; no tests can guarantee free-service availability or that stock
 libraries contain a suitable distinct shot for every topic.
+
+Run 36229169700 exposed conflicting opening instructions (twelve words in one
+prompt versus a ten-word validator). A twelve-word brick-weep opening was returned
+unchanged by the correction request and rejected twice; an eleven-word denim
+opening was rejected before the next request reached daily quota. The shared
+production prompt is now the only source of combined-opening length guidance.
+There is no word-count repair request for otherwise valid eleven/twelve-word
+openings; the unchanged measured-audio checks decide whether their timing passes.

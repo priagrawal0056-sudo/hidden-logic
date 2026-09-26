@@ -9,6 +9,7 @@ from .evidence import EditorialRejected,FreeModel,generate_episode
 from .pipeline import settings,documents,prepare
 from .topics import CATEGORY_COUNTS, load_bank, shortlist, sources_for
 from .quality import script_checks
+from .rejections import CandidateRejected
 
 
 @service_limits.session()
@@ -60,7 +61,7 @@ def build(pillar, root, topic_id=None):
         else:
             try:
                 episode=generate_episode(model,docs,history,'question_first',topic=topic)
-            except EditorialRejected:
+            except CandidateRejected:
                 attempt['status']='editorial_rejected'
                 save(root/'attempts.json',attempts)
                 if topic_id or topic is choices[-1]:
@@ -114,7 +115,7 @@ def main():
             return
         # Some libraries include request URLs or credentials in exception text.
         message=str(exc)
-        reason=(message if isinstance(exc, (EditorialRejected, RejectedFootage, service_limits.ServiceUnavailable)) or message.startswith(('Gemini credential unavailable;',
+        reason=(message if isinstance(exc, (CandidateRejected, service_limits.ServiceUnavailable)) or message.startswith(('Gemini credential unavailable;',
             'Stock credential unavailable;','Free model request failed: HTTP',
             'Every stock scene needs','Footage failed sampled-frame',
             'Independent editorial review rejected','Candidate failed source/drawing validation:',

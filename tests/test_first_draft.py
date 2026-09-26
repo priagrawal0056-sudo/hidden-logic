@@ -1,4 +1,6 @@
 import copy
+import json
+from pathlib import Path
 import unittest
 from unittest.mock import Mock
 from credible.authored_boards import board
@@ -90,11 +92,31 @@ class FirstDraftTests(unittest.TestCase):
             self.assertIn('broll_keywords (three strings)',prompt)
 
 
-    def test_opening_word_count_is_only_a_pre_narration_ceiling(self):
+    def test_opening_word_count_is_guidance_not_a_false_timing_measurement(self):
         data=brief()
-        data['beats'][:2]=['Freezer stuck shut?', 'Cooling air lowers the pressure inside.']
+        data['beats'][:2]=["Why's your freezer door tough to reopen?", 'Cold air inside creates a vacuum.']
         self.assertTrue(validate(data))
-        data['beats'][0]='Why is the door of your freezer sometimes so difficult to reopen?'
-        with self.assertRaisesRegex(ValueError,'drafting ceiling'):validate(data)
+
+    def test_twelve_word_opening_uses_only_writer_and_independent_review(self):
+        data=brief()
+        data['beats'][:2]=['Why did the price change?', 'The barcode only identifies the actual item.']
+        verdict={'supported':True,'title_matches':True,'duplicate':False,'visuals_match':True,
+                 'natural_script':True,'needs_corroboration':False}
+        model=Mock();model.production_version=4;model.remaining=6
+        model.call.side_effect=[data,verdict]
+        doc={'url':'https://example.org/source','publisher':'Test primary source',
+             'text':' '.join(PASSAGES['barcode']),'retrieved_at':'2026-09-16'}
+        result=generate_episode(model,{doc['url']:doc},[],'question_first')
+        self.assertEqual(model.call.call_count,2)
+        self.assertEqual(result['beats'][:2],data['beats'][:2])
+        self.assertNotIn('at most 12 spoken words',model.call.call_args_list[0].args[0])
+        self.assertIn('Aim for about 10 spoken words',model.call.call_args_list[0].args[0])
+
+    def test_saved_live_openings_no_longer_trigger_word_count_repair(self):
+        cases=json.loads((Path(__file__).parent/'fixtures/opening_limit_failures.json').read_text())
+        self.assertEqual([len(' '.join(case['beats'][:2]).split()) for case in cases],[12,11])
+        for case in cases:
+            with self.subTest(title=case['title']):
+                self.assertTrue(validate(case))
 
 if __name__=='__main__':unittest.main()
