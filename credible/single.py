@@ -104,6 +104,14 @@ def main():
     args=parser.parse_args()
     try: build(args.category or args.pillar,args.output,args.topic_id)
     except Exception as exc:
+        quota=service_limits.quota_deferral(exc)
+        if quota:
+            message=service_limits.quota_message(quota)
+            save(args.output/'result.json',{'status':'deferred_quota','quota':quota,
+                                          'reason':message,'published':False})
+            print(message)
+            print('Run deferred. Saved work retained for a later run. Exiting successfully.')
+            return
         # Some libraries include request URLs or credentials in exception text.
         message=str(exc)
         reason=(message if isinstance(exc, (EditorialRejected, RejectedFootage, service_limits.ServiceUnavailable)) or message.startswith(('Gemini credential unavailable;',

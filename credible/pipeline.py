@@ -21,6 +21,26 @@ class DailyIncompleteError(RuntimeError):
     """An expected incomplete run; recovery details are in run-report.json."""
 
 
+class QuotaDeferred(DailyIncompleteError):
+    """Saved work is incomplete only because Gemini returned HTTP 429."""
+
+
+def _issue(exc, **context):
+    quota = service_limits.quota_deferral(exc)
+    return {**context, 'error': str(exc)[:180], **({'quota': quota} if quota else {})}
+
+
+def _quota_report(errors):
+    """A quota notice must not hide unrelated failures or lost state."""
+    quota = service_limits.quota_deferral()
+    remaining = [row for row in errors if not row.get('quota') and not row.get('deferred_quota')]
+    blocking = [row for row in remaining if not row.get('fallback')]
+    notices = [{'message': service_limits.quota_message(row['quota']),
+                **{k: v for k, v in row.items() if k not in ('error', 'quota')}}
+               for row in errors if row.get('quota')]
+    return quota, remaining, blocking, notices
+
+
 def settings():
     return read('credible/settings.json')
 
@@ -217,7 +237,7 @@ def seed_reserve(root, config, docs, catalog, state, reserve, errors, limit=9):
             save(root / 'reserve.json', reserve)
             print('Prepared reserve:', episode['title'], flush=True)
         except Exception as exc:
-            errors.append({'candidate': recipe[0], 'error': str(exc)[:180]})
+            errors.append(_issue(exc, candidate=recipe[0]))
             print('Reserve unavailable:', recipe[0], type(exc).__name__, flush=True)
 
 
@@ -257,7 +277,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                 except Exception as exc:
                     episode['status'] = ('needs_rebuild' if episode.get('production_version') == config['production_version']
                                          else 'superseded')
-                    errors.append({'reserve': episode['id'], 'error': str(exc)[:160]})
+                    errors.append(_issue(exc, reserve=episode['id']))
         save(root/'reserve.json', reserve)
         catalog = read('credible/catalog.json')
         if mode != 'bootstrap' and config.get('supplementary_discovery', False):
@@ -268,7 +288,22 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
         # Authored scripts need no writer calls; new Orus narration still needs TTS quota.
         if mode == 'bootstrap':
             seed_reserve(root, config, docs, catalog, state, reserve, errors, config['reserve_target'])
-            save(root / 'run-report.json', {'reserve_ready': sum(r.get('status') == 'ready' for r in reserve), 'errors': errors})
+            quota, issues, blocking, notices = _quota_report(errors)
+            ready_count = sum(r.get('status') == 'ready' for r in reserve)
+            deferred = bool(quota and not blocking and ready_count < config['reserve_target'])
+            report = {'mode': mode, 'reserve_ready': ready_count, 'reserve_target': config['reserve_target'],
+                      'status': 'deferred_quota' if deferred else 'incomplete' if blocking else
+                                'ready' if ready_count >= config['reserve_target'] else 'partial_ready',
+                      'errors': blocking, 'warnings':[row for row in issues if row.get('fallback')],
+                      'notices': notices, 'quota': quota}
+            save(state_dir/'production.json', state)
+            save(root / 'run-report.json', report)
+            print(json.dumps(report, indent=2))
+            if blocking:
+                raise DailyIncompleteError('Reserve preparation failed; see run-report.json. Saved work preserved.')
+            if deferred:
+                print(service_limits.quota_message(quota))
+                print('Unfinished work saved for a later run. Exiting successfully.')
             return reserve
         candidates = []
         # Finish a grounded script before spending quota on another writer call.
@@ -280,7 +315,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
             try:
                 candidates.append(prepare(draft, root, config))
             except Exception as exc:
-                errors.append({'resume': episode_id, 'error': str(exc)[:160]})
+                errors.append(_issue(exc, resume=episode_id))
                 if not service_limits.is_retryable(exc):
                     pending.pop(episode_id)
                     release_topic(topic_ledger, draft.get('topic_id'), type(exc).__name__)
@@ -306,7 +341,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                 result='reviewed'
             except Exception as exc:
                 result=type(exc).__name__
-                errors.append({'topic_review':lead['topic_id'],'error':result})
+                errors.append(_issue(exc, topic_review=lead['topic_id']))
             attempts[lead['topic_id']]={'revision':revision(lead),'date':now().date().isoformat(),'result':result}
             save(state_dir/'production.json',state)
         bank=reviewed_bank(bank,reviews)
@@ -360,7 +395,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                         pending.pop(episode_id)
                     release_topic(topic_ledger, topic['topic_id'], type(exc).__name__)
                 save(state_dir/'production.json', state)
-                errors.append({'brief': i, 'error': str(exc)[:160]})
+                errors.append(_issue(exc, brief=i))
                 if not model.key or model.exhausted or service_limits.blocked():
                     break
         # Same-day reruns finish existing slots; they do not add another day's quota.
@@ -390,7 +425,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                 except Exception as exc:
                     pending.pop(candidate['id'], None)
                     release_topic(topic_ledger, candidate.get('topic_id'), type(exc).__name__)
-                    errors.append({'candidate': candidate['id'], 'error': str(exc)[:160]})
+                    errors.append(_issue(exc, candidate=candidate['id']))
                     candidates.remove(candidate)
             if episode is None:
                 available = [r for r in reserve if r.get('status') == 'ready']
@@ -407,9 +442,12 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                         fallback['status'] = 'allocated'
                         break
                     except Exception as exc:
-                        errors.append({'reserve': fallback['id'], 'error': str(exc)[:160]})
+                        errors.append(_issue(exc, reserve=fallback['id']))
             if episode is None:
-                errors.append({'slot': planned['id'], 'error': 'No verified ready episode; no fabricated filler'})
+                if service_limits.quota_deferral():
+                    errors.append({'slot': planned['id'], 'deferred_quota': True})
+                else:
+                    errors.append({'slot': planned['id'], 'error': 'No verified ready episode; no fabricated filler'})
                 continue
             state['slots'][planned['id']] = {**episode, **planned, 'episode_id': episode['id'], 'status': 'prepared'}
             selected_categories.add(episode.get('category', episode.get('pillar')))
@@ -446,7 +484,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                     deliver(row, episode, root/'episodes'/row['episode_id'], backend,
                             persist)
                 except Exception as exc:
-                    errors.append({'slot': row['id'], 'error': str(exc)[:180]})
+                    errors.append(_issue(exc, slot=row['id']))
                     break  # Quota/uncertain upload: stop, keep prepared work for recovery.
         # Preserve unused generated candidates as reserves without regenerating audio later.
         for candidate in candidates:
@@ -463,23 +501,31 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
             except Exception as exc:
                 pending.pop(candidate['id'], None)
                 release_topic(topic_ledger, candidate.get('topic_id'), type(exc).__name__)
-                errors.append({'reserve_build': candidate['id'], 'error': str(exc)[:160]})
+                errors.append(_issue(exc, reserve_build=candidate['id']))
         save(state_dir/'production.json', state)
         completed = sum(state['slots'].get(slot['id'], {}).get('status') ==
                         ('scheduled' if mode == 'publish' else 'prepared') for slot in plan_slots)
         recovery = [row['id'] for row in state['slots'].values() if row.get('recovery_required')]
+        quota, issues, blocking, notices = _quota_report(errors)
+        deferred = bool(quota and not blocking and not recovery and completed < len(plan_slots))
         report = {'mode': mode, 'at': now().isoformat(), 'slots': len(state['slots']),
                   'planned_slots':len(plan_slots), 'completed_slots':completed,
-                  'status':('needs_attention' if recovery else 'ready') if completed == len(plan_slots) else 'incomplete',
+                  'status':'deferred_quota' if deferred else
+                           ('needs_attention' if recovery else 'ready') if completed == len(plan_slots) else 'incomplete',
                   'recovery_slots':recovery,
                   'topics': {'total':len(bank), 'source_reviewed':sum(t.get('evidence_status')=='reviewed' for t in bank)},
                   'reserve_ready': sum(r.get('status') == 'ready' for r in reserve),
-                  'pending_episodes': len(pending), 'errors': errors}
+                  'pending_episodes': len(pending), 'errors': blocking,
+                  'warnings':[row for row in issues if row.get('fallback')],
+                  'notices': notices, 'quota': quota,
+                  'deferred_slots':[row['slot'] for row in errors if row.get('deferred_quota')]}
         save(root/'run-report.json', report)
         if mode == 'publish':
             from .state_io import checkpoint
             checkpoint(root)
         print(json.dumps(report, indent=2))
+        if deferred:
+            raise QuotaDeferred(service_limits.quota_message(quota))
         if completed < len(plan_slots):
             raise DailyIncompleteError('Daily target incomplete; see run-report.json. Prepared work and upload reservations preserved.')
         if recovery:
@@ -495,6 +541,12 @@ def main():
     output = args.output or ('outputs/preview' if args.mode == 'preview' else 'outputs/credible')
     try:
         run(args.mode, Path(output))
+    except QuotaDeferred as exc:
+        # The report and recovery checkpoints were written before this signal.
+        # Returning normally gives GitHub a successful exit, not a false video.
+        print(str(exc))
+        print('Unfinished work saved for a later run. Exiting successfully.')
+        return
     except DailyIncompleteError as exc:
         parser.exit(1, str(exc) + '\n')
 

@@ -112,10 +112,14 @@ class RunFailureTests(unittest.TestCase):
             with tempfile.TemporaryDirectory() as directory:
                 with patch('sys.argv', ['single', '--output', directory]), patch(
                         'credible.single.build', side_effect=service_limits.ServiceUnavailable(status)):
-                    with self.assertRaises(SystemExit):
+                    if status == 429:
                         main()
+                    else:
+                        with self.assertRaises(SystemExit):
+                            main()
                 report = json.loads((Path(directory) / 'result.json').read_text())
                 self.assertIn(f'HTTP {status}', report['reason'])
+                self.assertEqual(report['status'], 'deferred_quota' if status == 429 else 'failed')
                 self.assertFalse(report['published'])
 
     def test_writer_schema_is_sent_but_review_requests_stay_independent(self):

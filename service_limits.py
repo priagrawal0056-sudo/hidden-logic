@@ -29,6 +29,28 @@ def session():
 def blocked():
     return bool((_current.get() or {}).get('status'))
 
+
+def quota_deferral(error=None):
+    """Return safe quota details from a typed exception or this run's signal."""
+    if error is not None:
+        if not isinstance(error, ServiceUnavailable) or error.status != 429:
+            return None
+        kind, retry = error.limit_kind, error.retry_after
+    else:
+        state = _current.get() or {}
+        if state.get('status') != 429:
+            return None
+        kind, retry = state.get('limit_kind'), state.get('retry_after')
+    return {'http_status': 429, 'limit_kind': kind or 'unknown', 'retry_after': retry}
+
+
+def quota_message(quota):
+    kind = quota.get('limit_kind')
+    label = ('Gemini daily quota exhausted' if kind == 'daily' else
+             'Gemini per-minute rate limit reached' if kind == 'per_minute' else
+             'Gemini rate limit or quota exhausted')
+    return label + ' (HTTP 429). No further Gemini requests will be made in this run.'
+
 def check():
     status = (_current.get() or {}).get('status')
     if status:

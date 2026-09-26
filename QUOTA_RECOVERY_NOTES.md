@@ -95,3 +95,20 @@ and no completed slots.
 Daily quota exhaustion is an external blocker, not a successful video. No further
 live generation was requested after that explicit daily-limit response. Publishing
 remains disabled; the updated footage selection still needs a finished live pilot.
+
+## Expected quota deferral exits successfully
+
+At the owner's request, a run blocked only by Gemini HTTP 429 now exits with code
+0 after saving its report and recovery state. It prints the quota/rate-limit
+message and records `status: deferred_quota`, with truthful completed and pending
+counts. This is successful handling of a deferral, not a completed video.
+
+Daily, per-minute and unspecified 429 responses keep distinct messages. Quota
+notices and recovered source warnings are separate from errors. Authentication,
+other unresolved failures, missed publication recovery and failed persistence
+still fail the run. Bootstrap retains its bounded partial-progress behavior;
+single previews also save an unpublished deferred result on quota exhaustion.
+
+The workflow does not use `continue-on-error`. Its artifact and cache steps still
+run, and a later invocation resumes preserved work. No extra live Gemini calls
+are needed to test this exit policy.
