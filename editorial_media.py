@@ -306,6 +306,17 @@ def _record_accepted_stock(folder, config, assets):
         visuals.CACHE_FILE = previous_cache
 
 
+def _replacement_query(queries, index, attempts, reason):
+    """Change a repeated action instead of requesting that action again."""
+    original = queries[index % len(queries)]
+    if 'distinct' not in reason:
+        return original
+    # Alternate only within the writer's same-subject shot list. A fresh frame
+    # assessment still has to establish relevance and a different composition.
+    alternatives = [q for i, q in enumerate(queries) if i != index % len(queries)]
+    return alternatives[attempts % len(alternatives)] if alternatives else original
+
+
 def render(meta, folder, config, stock=None):
     import visuals
     folder = Path(folder)
@@ -348,7 +359,11 @@ def render(meta, folder, config, stock=None):
                     if not rejected:
                         try:
                             review = assess(paths[index], scene['end'] - scene['start'], spoken,
-                                [s['assessment']['description'] for s in stock], config.get('gemini_api_key', ''))
+                                [s['assessment']['description'] for s in stock], config.get('gemini_api_key', ''),
+                                context={'title': meta.get('title', ''), 'script': meta['script'],
+                                         'role': 'hook' if index == 0 else 'context' if index == 1 else 'payoff',
+                                         'requested_shot': meta['broll_keywords'][index % len(meta['broll_keywords'])],
+                                         'mechanism_visual': 'separate authored animation'})
                         except RejectedFootage as error:
                             checkpoint['rejected_assets'].append({
                                 'source_id': asset['source_id'], 'sha256': asset['sha256'],
@@ -375,7 +390,8 @@ def render(meta, folder, config, stock=None):
                         if not queries:
                             raise ValueError('Scene-specific footage queries are required')
                         replacement = _fetch_stock(meta, folder, config, 1,
-                            queries=[queries[index % len(queries)]],
+                            queries=[_replacement_query(queries, index, attempts,
+                                checkpoint['rejected_assets'][-1].get('reason', ''))],
                             excluded_source_ids={a['source_id'] for a in excluded},
                             excluded_sha256={a['sha256'] for a in excluded},
                             filename_prefix=f'replacement_{index + 1}_{attempts + 1}')

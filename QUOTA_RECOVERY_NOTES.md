@@ -112,3 +112,30 @@ single previews also save an unpublished deferred result on quota exhaustion.
 The workflow does not use `continue-on-error`. Its artifact and cache steps still
 run, and a later invocation resumes preserved work. No extra live Gemini calls
 are needed to test this exit policy.
+
+## September 26 preview and scheduled-run recovery
+
+The saved preview from run 36227372000 reached live narration after quota reset,
+then rejected three footage selections and a late first answer before exhausting
+Gemini again. This was not a quota-only failure. Its failed footage reviews include
+coffee scales for a shop-scale detail, folded jeans for a zipper, and repeated
+honey-stirring compositions. The pavement opening measured 6.66 seconds initially
+and 6.80 seconds after its retake.
+
+- Stock search now includes high-resolution landscape footage. The frame reviewer
+  sees the same center portrait crop as the editor, and every clip still needs a
+  passing review. Full-episode and shot-role context distinguishes contextual footage
+  from the separate mechanism animation; pointed-out hook details must remain visible.
+- Repeated-action rejections try other authored shot queries instead of requesting
+  the same action again. Exhausted footage alternatives give that topic a seven-day
+  cooldown while leaving it unused. Other failures retain their existing retry policy.
+- The first draft now limits the hook and first answer to ten plain spoken words;
+  local validation triggers correction before narration. Measured six-second checks
+  and the single continuous retake remain mandatory.
+- A disabled scheduled rollout exits normally with `skipped_rollout` and no API,
+  credential, cache-save or production-state work. Explicit publishing remains blocked,
+  and manual Preview and Bootstrap remain available. No publishing setting was enabled.
+
+These changes have offline regression coverage. They still require a successful
+finished live pilot; no tests can guarantee free-service availability or that stock
+libraries contain a suitable distinct shot for every topic.

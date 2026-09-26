@@ -82,7 +82,7 @@ class StockRequestBudgetTests(unittest.TestCase):
         return review, error
 
     def test_approved_path_still_reviews_every_clip_and_passes_prior_descriptions(self):
-        def assessment(path, duration, spoken, previous, key):
+        def assessment(path, duration, spoken, previous, key, **kwargs):
             return {'assessment_status': 'sampled_frames_checked',
                     'assessment': {'description': Path(path).stem,
                                    'relevant': True, 'exposure_ok': True, 'distinct': True}}

@@ -162,8 +162,11 @@ def release_topic(ledger, topic_id, reason, at=None):
     record = ledger.get(topic_id, {})
     if record.get('status') != 'reserved':
         return  # Prepared or potentially uploaded work must be recovered, not freed.
+    # A fully rejected set of stock alternatives will not become filmable six
+    # hours later. Give other reviewed subjects a turn without consuming this one.
+    delay = dt.timedelta(days=7) if reason == 'RejectedFootage' else dt.timedelta(hours=6)
     record.update(status='available', last_failure=reason,
-                  retry_after=((at or now()) + dt.timedelta(hours=6)).isoformat())
+                  retry_after=((at or now()) + delay).isoformat())
 
 
 def sync_ledger(ledger, episodes):

@@ -146,7 +146,7 @@ def _search_pexels(api_key: str, query: str):
         return []
     try:
         r = requests.get(SEARCH_URL, headers={"Authorization": api_key},
-                         params={"query": query, "orientation": "portrait", "per_page": 15},
+                         params={"query": query, "per_page": 15},
                          timeout=30)
     except Exception:
         return []
@@ -256,6 +256,11 @@ def _download(video: dict, out_path: str) -> bool:
     files = [f for f in video["video_files"] if f["height"] >= f["width"] and f["height"] >= 1280]
     if not files:
         files = [f for f in video["video_files"] if f["height"] >= f["width"] and f["height"] >= 1080]
+    if not files:
+        # The editor already crops at the reviewed focal point. Excluding every
+        # wide clip discarded most Pixabay results and many exact object shots.
+        files = [f for f in video["video_files"] if f.get("height", 0) >= 1080
+                 and f.get("width", 0) >= 1080]
     if not files:
         return False
     files.sort(key=lambda f: (abs(f["height"] - 1920), -f["height"]))
@@ -551,7 +556,8 @@ def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: in
         if not found:
             words = q.split()
             if len(words) > 1:
-                simple_q = " ".join(words[:2])
+                subjects = [word for word in _search_terms(q) if word not in _SEARCH_FILLER]
+                simple_q = " ".join(subjects[:2]) or " ".join(words[:2])
                 print(f"[visuals] No clips for '{q}'. Trying simplified query '{simple_q}'...")
                 svids, sall_vids = _search_and_score(keys, gemini_api_key, simple_q,
                                                      visual_thesis, first_frame_description,

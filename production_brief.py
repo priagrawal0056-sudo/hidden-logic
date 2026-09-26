@@ -5,7 +5,8 @@ RULES = '''APPROVED PRODUCTION FORMAT — write for the actual editor on your FI
 Return beats (four strings), storyboard (four states), and broll_keywords (three strings).
 If also returning script, it MUST equal the four beats joined with spaces.
 Beat 1: one natural, concrete hook sentence about a recognizable object or situation.
-Beat 2: one useful answer sentence. Keep hook and answer combined within 12 spoken words.
+Beat 2: one useful answer sentence. Keep hook and answer combined within 10 spoken words.
+Use plain, short words here; introduce technical names in beat 3 after the useful answer.
 Beat 3: one to three complete sentences demonstrating the mechanism, ideally 16-24 words.
 This ENTIRE beat is the explanatory animation, usually 5-8 seconds. Do not put essential
 diagram actions outside this beat. Show a change, comparison or process, not decorative labels.
@@ -14,6 +15,8 @@ Beat 4: a complete payoff that connects to the hook, THEN a separate final sente
 The follow sentence plays over a newly animated resolved state of the same mechanism.
 Return exactly three specific stock searches, in order: hook object, answer/context from
 a different angle or action, then payoff object. These must be distinct source videos.
+Vary the visible action, not just the wording: three honey-stirring searches still repeat
+the same shot. Do not promise a tiny feature in the hook unless ordinary stock can show it.
 Search for common visible objects and actions a stock camera can record: freezer door,
 freezer groceries, refrigerator handle. Do not search for invisible mechanisms or specialist
 internal parts such as pressure equalization or relief valves; the drawing explains those.
@@ -62,10 +65,10 @@ def validate(data):
         raise ValueError('Keep the final spoken CTA short')
     script=' '.join(beats)
     if not data.get('authored'):
-        # Twelve words is the writing target; measured audio enforces six seconds.
-        # Allow a small drafting margin rather than rejecting natural 13-word hooks.
-        if len((beats[0]+' '+beats[1]).split())>16:
-            raise ValueError('Opening exceeds sixteen-word drafting ceiling; target twelve words')
+        # Live twelve-word openings exceeded six seconds even after a retake.
+        # Shorten the draft before paying for narration; still measure the audio.
+        if len((beats[0]+' '+beats[1]).split())>10:
+            raise ValueError('Opening exceeds ten-word drafting ceiling; shorten hook and answer using plain words')
         if not 12<=len(beats[2].split())<=28:
             raise ValueError('Mechanism narration must fit a readable short demonstration')
         if len(groups[3])!=2:
