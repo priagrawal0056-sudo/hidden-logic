@@ -44,6 +44,11 @@ listed for this key. Orus TTS remains `gemini-3.1-flash-tts-preview`.
 References: https://ai.google.dev/gemini-api/docs/deprecations and
 https://ai.google.dev/gemini-api/docs/pricing (checked September 28, 2026 Singapore).
 
+Run 36342450242 then hit repeated 503 responses from 3.8 Flash, before narration.
+The writer now has one configured 3.5 Flash-Lite fallback only for 502/503/504,
+with the same schema, sources, independent review and shared request budget.
+Quota, authentication and model-access responses never trigger model rotation.
+
 The connection check and one-candidate pilot never upload a video. Publishing
 remains disabled; three daily uploads remain the intended production target.
 

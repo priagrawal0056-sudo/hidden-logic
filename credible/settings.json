@@ -12,6 +12,7 @@
   "briefs_per_day": 6,
   "max_model_calls": 18,
   "model": "gemini-3.8-flash",
+  "fallback_model": "gemini-3.5-flash-lite",
   "voice": "Orus",
   "voice_rate": "+0%",
   "production_version": 4,

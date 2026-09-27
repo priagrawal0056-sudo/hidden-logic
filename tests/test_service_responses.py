@@ -17,6 +17,46 @@ def response(value=None, status=200):
 
 
 class ServiceResponseTests(unittest.TestCase):
+    def test_configured_fallback_is_bounded_and_keeps_writer_contract(self):
+        model = FreeModel({'model':'gemini-3.8-flash','fallback_model':'gemini-3.5-flash-lite',
+                           'max_model_calls':6})
+        model.key = 'private-test-key'
+        with service_limits.session(), patch('service_limits.time.sleep'), \
+                patch('requests.post', side_effect=[response(status=503),response(status=503),
+                     response({'beats':['complete']}),response({'supported':True})]) as post:
+            self.assertEqual(model.call('exact sourced draft',schema={'type':'object'}), {'beats':['complete']})
+            self.assertEqual(model.call('independent review'), {'supported':True})
+            requests_report = service_limits.report()
+        self.assertEqual(model.remaining,2)
+        self.assertIn('gemini-3.8-flash:',post.call_args_list[0].args[0])
+        self.assertIn('gemini-3.5-flash-lite:',post.call_args_list[2].args[0])
+        self.assertIn('gemini-3.5-flash-lite:',post.call_args_list[3].args[0])
+        self.assertEqual(post.call_args_list[0].kwargs['json'],post.call_args_list[2].kwargs['json'])
+        self.assertEqual(requests_report['total_attempts'],4)
+
+    def test_configured_fallback_never_bypasses_quota_or_authentication(self):
+        for status in (401,403,404,429):
+            with self.subTest(status=status), service_limits.session(), \
+                    patch('requests.post',return_value=response(status=status)) as post:
+                model = FreeModel({'model':'gemini-3.8-flash','fallback_model':'gemini-3.5-flash-lite',
+                                   'max_model_calls':6})
+                model.key = 'private-test-key'
+                with self.assertRaises(service_limits.ServiceUnavailable):
+                    model.call('exact draft')
+                self.assertEqual(post.call_count,1)
+                self.assertEqual(model.model,'gemini-3.8-flash')
+
+    def test_primary_and_fallback_share_one_request_budget(self):
+        model = FreeModel({'model':'gemini-3.8-flash','fallback_model':'gemini-3.5-flash-lite',
+                           'max_model_calls':3})
+        model.key = 'private-test-key'
+        with service_limits.session(), patch('service_limits.time.sleep'), \
+                patch('requests.post',return_value=response(status=503)) as post:
+            with self.assertRaises(service_limits.TransientServiceError):
+                model.call('exact draft')
+            self.assertEqual(post.call_count,3)
+            self.assertEqual(model.remaining,0)
+
     def model(self, budget=8):
         model = FreeModel({'model': 'gemini-2.5-flash', 'max_model_calls': budget})
         model.key = 'private-test-key'

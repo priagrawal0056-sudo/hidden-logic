@@ -149,6 +149,9 @@ class FreeModel:
             from config_loader import load_config
             self.key = load_config().get('gemini_api_key','')
         self.model = config['model']
+        self.fallback_model = config.get('fallback_model')
+        if self.fallback_model == self.model:
+            self.fallback_model = None
         self.remaining = config['max_model_calls']
         self.exhausted = False
 
@@ -172,8 +175,16 @@ class FreeModel:
         # A malformed answer gets one fresh formatting request, never a guessed
         # passing verdict. Every HTTP retry is also charged to the call budget.
         for format_attempt in range(2):
-            response = service_limits.request_with_retry(send, max_attempts=min(3, self.remaining),
+            response = service_limits.request_with_retry(send,
+                max_attempts=min(2 if self.fallback_model else 3, self.remaining),
                 model=self.model, stage='script_draft' if schema else 'script_review')
+            if (response.status_code in (502, 503, 504) and self.fallback_model and self.remaining > 0):
+                # One configured free-tier alternative for a server outage only.
+                # Quota/auth/model-access failures never rotate through models.
+                self.model, self.fallback_model = self.fallback_model, None
+                print('[scriptgen] Primary service unavailable; using configured fallback ' + self.model, flush=True)
+                response = service_limits.request_with_retry(send, max_attempts=min(2, self.remaining),
+                    model=self.model, stage='script_draft' if schema else 'script_review')
             if not response.ok:
                 break
             try:

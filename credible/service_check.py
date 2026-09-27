@@ -62,10 +62,13 @@ def main():
     args = parser.parse_args()
     config = read('credible/settings.json')
     profile = read('editorial_profile.json')
-    result = check(os.environ.get('HL_GEMINI_API_KEY', ''), {
+    models = {
         'writing': config['model'],
         'footage_review': profile.get('footage_review_model', 'gemini-3.5-flash-lite'),
-        'narration': profile['gemini_tts_model']})
+        'narration': profile['gemini_tts_model']}
+    if config.get('fallback_model'):
+        models['writing_fallback'] = config['fallback_model']
+    result = check(os.environ.get('HL_GEMINI_API_KEY', ''), models)
     save(args.output, result)
     print(json.dumps(result, indent=2))
     output = os.environ.get('GITHUB_OUTPUT')
