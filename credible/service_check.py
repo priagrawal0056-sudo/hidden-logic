@@ -64,7 +64,7 @@ def main():
     profile = read('editorial_profile.json')
     result = check(os.environ.get('HL_GEMINI_API_KEY', ''), {
         'writing': config['model'],
-        'footage_review': profile.get('footage_review_model', 'gemini-2.5-flash'),
+        'footage_review': profile.get('footage_review_model', 'gemini-3.5-flash-lite'),
         'narration': profile['gemini_tts_model']})
     save(args.output, result)
     print(json.dumps(result, indent=2))

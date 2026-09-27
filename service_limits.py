@@ -128,6 +128,12 @@ def session():
     token = _current.set({})
     try:
         yield
+    except Exception as exc:
+        # A CLI may handle the error after this context has reset. Preserve only
+        # safe aggregate counts, never the request or its credentials.
+        if not hasattr(exc, 'request_report'):
+            exc.request_report = report()
+        raise
     finally:
         _current.reset(token)
 

@@ -34,6 +34,16 @@ GitHub setup: repository Settings -> Secrets and variables -> Actions -> Secrets
 Name: `HL_GEMINI_API_KEY`. Value: only the API key, without quotes, JSON, `Bearer`
 or `HL_GEMINI_API_KEY=`. A separate Actions variable is unnecessary.
 
+Live checks: connection run 36342075097 accepted the key and listed the models;
+one-candidate run 36342136540 then reproduced a generation 404 before narration.
+Google now documents restricted Gemini 2.5 access for new projects, and listing
+metadata did not establish generation access in this case. Writing/review now use
+`gemini-3.8-flash`; actual stock frames use `gemini-3.5-flash-lite`, so those checks
+do not consume the writer model's small allowance. Both have free tiers and were
+listed for this key. Orus TTS remains `gemini-3.1-flash-tts-preview`.
+References: https://ai.google.dev/gemini-api/docs/deprecations and
+https://ai.google.dev/gemini-api/docs/pricing (checked September 28, 2026 Singapore).
+
 The connection check and one-candidate pilot never upload a video. Publishing
 remains disabled; three daily uploads remain the intended production target.
 

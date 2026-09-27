@@ -126,7 +126,8 @@ def main():
             'Independent editorial review rejected','Candidate failed source/drawing validation:',
             'First useful answer must','Narration transcript','Caption overflow')) else type(exc).__name__)
         save(args.output/'result.json',{'status':'failed','error_type':type(exc).__name__,
-                                      'reason':reason,'published':False})
+                                      'reason':reason,'published':False,
+                                      'gemini_requests':getattr(exc,'request_report',None)})
         raise SystemExit('Generation/render failed: '+reason+'. No upload was attempted.') from None
 
 

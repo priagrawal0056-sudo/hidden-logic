@@ -22,7 +22,7 @@ class RunFailureTests(unittest.TestCase):
         response=Mock()
         response.json.return_value={'models':[{'name':'models/'+n,'supportedGenerationMethods':['generateContent']} for n in ['gemini-3.8-flash','gemini-2.5-flash-lite','gemini-2.5-flash']]}
         with patch.object(scriptgen,'_discovered',None), patch.object(scriptgen.requests,'get',return_value=response):
-            self.assertEqual(scriptgen._best_models('test'), ['gemini-2.5-flash','gemini-2.5-flash-lite'])
+            self.assertEqual(scriptgen._best_models('test'), ['gemini-3.8-flash'])
 
     def test_alignment_retries_recognition_without_regenerating_voice(self):
         def segments(word):

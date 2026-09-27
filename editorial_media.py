@@ -360,7 +360,7 @@ def render(meta, folder, config, stock=None):
                         try:
                             review = assess(paths[index], scene['end'] - scene['start'], spoken,
                                 [s['assessment']['description'] for s in stock], config.get('gemini_api_key', ''),
-                                model=config.get('footage_review_model', 'gemini-2.5-flash'),
+                                model=config.get('footage_review_model', 'gemini-3.5-flash-lite'),
                                 context={'title': meta.get('title', ''), 'script': meta['script'],
                                          'role': 'hook' if index == 0 else 'context' if index == 1 else 'payoff',
                                          'requested_shot': meta['broll_keywords'][index % len(meta['broll_keywords'])],

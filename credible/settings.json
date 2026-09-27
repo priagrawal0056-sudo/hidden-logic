@@ -11,7 +11,7 @@
   "reserve_target": 9,
   "briefs_per_day": 6,
   "max_model_calls": 18,
-  "model": "gemini-2.5-flash",
+  "model": "gemini-3.8-flash",
   "voice": "Orus",
   "voice_rate": "+0%",
   "production_version": 4,

@@ -15,7 +15,7 @@ import requests
 import winner_memory
 
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
-MODELS = ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]  # static fallback
+MODELS = ["gemini-3.8-flash", "gemini-3.5-flash-lite"]  # bounded, free-tier text models
 LIST_URL = "https://generativelanguage.googleapis.com/v1beta/models?key={key}&pageSize=200"
 _discovered = None
 

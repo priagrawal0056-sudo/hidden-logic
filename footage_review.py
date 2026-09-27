@@ -35,7 +35,7 @@ def _save_rejection(path, assessment):
     Path(str(path) + '.review.json').write_text(json.dumps(record, indent=2), encoding='utf-8')
 
 
-def assess(path, duration, narration, previous, key, model='gemini-2.5-flash', context=None):
+def assess(path, duration, narration, previous, key, model='gemini-3.5-flash-lite', context=None):
     global _unavailable
     service_limits.check()
     if _unavailable is not None:

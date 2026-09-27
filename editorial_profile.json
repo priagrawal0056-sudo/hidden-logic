@@ -6,6 +6,7 @@
   "tts_engine": "gemini",
   "preferred_tts_engine": "gemini",
   "gemini_tts_model": "gemini-3.1-flash-tts-preview",
+  "footage_review_model": "gemini-3.5-flash-lite",
   "gemini_voice": "Orus",
   "allow_voice_fallback": false,
   "narration_direction": "Explain one concrete thing to a friend. Sound curious at the question, clear at the answer, and lightly amused only where the words warrant it. Carry thoughts across sentence boundaries. Vary emphasis and pace naturally; no announcer cadence, forced slang, added laughter or extra words. Read the complete script as one connected take.",
