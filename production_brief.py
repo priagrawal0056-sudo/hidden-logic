@@ -9,6 +9,10 @@ Beat 2: one useful answer sentence. Aim for about 10 spoken words across hook an
 That is writing guidance, not a word-count quota; measured narration must finish both
 within six seconds. Preserve a natural, complete thought and all necessary qualifications.
 Use plain, short words here; introduce technical names in beat 3 after the useful answer.
+Start with the observed detail itself, without padded lead-ins such as "Ever notice" or
+"Have you noticed". Prefer words that are quick and natural to say in the opening.
+If the hook plus answer exceeds 16 words, rewrite that opening before submitting.
+This generous drafting ceiling only catches oversized openings; shorter ones still need measured timing.
 Beat 3: one to three complete sentences demonstrating the mechanism, ideally 16-24 words.
 This ENTIRE beat is the explanatory animation, usually 5-8 seconds. Do not put essential
 diagram actions outside this beat. Show a change, comparison or process, not decorative labels.
@@ -67,9 +71,11 @@ def validate(data):
         raise ValueError('Keep the final spoken CTA short')
     script=' '.join(beats)
     if not data.get('authored'):
-        # Word count cannot establish spoken timing. A rigid combined limit
-        # rejected natural drafts and burned repair quota; timeline_checks owns
-        # the six-second requirement after verified narration is measured.
+        # The former ten-word gate rejected natural 11-12 word openings. This
+        # wider preflight catches the 18-21 word openings that used nine seconds
+        # in actual runs. It never certifies timing: the measured gate still owns it.
+        if len(' '.join(beats[:2]).split()) > 16:
+            raise ValueError('Opening exceeds sixteen-word drafting ceiling; move detail into the mechanism and keep the complete early answer')
         if not 12<=len(beats[2].split())<=28:
             raise ValueError('Mechanism narration must fit a readable short demonstration')
         if len(groups[3])!=2:

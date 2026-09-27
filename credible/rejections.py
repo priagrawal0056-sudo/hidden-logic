@@ -7,3 +7,7 @@ class CandidateRejected(ValueError):
 
 class DraftRejected(CandidateRejected):
     """Generated content failed bounded local validation; never ready to render."""
+
+
+class TimingRejected(CandidateRejected):
+    """Verified narration missed its pacing gates; the script needs revision."""

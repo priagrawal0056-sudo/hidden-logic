@@ -9,11 +9,13 @@ from .evidence import EditorialRejected,FreeModel,generate_episode
 from .pipeline import settings,documents,prepare
 from .topics import CATEGORY_COUNTS, load_bank, shortlist, sources_for
 from .quality import script_checks
-from .rejections import CandidateRejected
+from .rejections import CandidateRejected, TimingRejected
 
 
 @service_limits.session()
-def build(pillar, root, topic_id=None):
+def build(pillar, root, topic_id=None, max_candidates=3):
+    if type(max_candidates) is not int or not 1 <= max_candidates <= 3:
+        raise ValueError('Single-preview candidate limit must be between one and three')
     root=Path(root)
     config=settings()
     config['clip_history_path']=str(root/'preview-state'/'used_clips.json')
@@ -35,7 +37,7 @@ def build(pillar, root, topic_id=None):
     category={'travel':'transport'}.get(pillar,pillar)
     # A category preview can choose an alternative reviewed subject after a
     # negative editorial verdict. An explicit topic request must never drift.
-    choices=shortlist(bank,history,state.get('topics',{}),n=1 if topic_id else 3,
+    choices=shortlist(bank,history,state.get('topics',{}),n=1 if topic_id else max_candidates,
                       category=None if topic_id else category)
     if not choices: raise RuntimeError('No eligible source-reviewed topic in requested category')
     # Reuse a reviewed draft after quota/stock failure, but never across changes
@@ -76,22 +78,22 @@ def build(pillar, root, topic_id=None):
         script_checks(episode)
         try:
             episode=prepare(episode,root,config)
-        except RejectedFootage:
+        except (RejectedFootage, TimingRejected) as exc:
             # Every selected replacement was actually assessed and rejected.
             # Keep its narration/diagnostics, but try a filmable alternative.
             # Quota, networking and malformed assessments never enter this path.
-            attempt['status']='footage_rejected'
+            attempt['status']='timing_rejected' if isinstance(exc, TimingRejected) else 'footage_rejected'
             save(root/'attempts.json',attempts)
             if topic_id or topic is choices[-1]:
                 raise
-            print('Footage alternatives rejected; trying another eligible subject in this category.',flush=True)
+            print('Candidate media rejected; trying another eligible subject in this category.',flush=True)
             continue
         attempt['status']='ready_for_review'
         save(root/'attempts.json',attempts)
         break
     save(root/'result.json',{'status':'ready_for_review','at':now().isoformat(),
                            'episode':episode,'source_errors':source_errors,
-                           'attempts':attempts,'published':False})
+                           'attempts':attempts,'published':False,'gemini_requests':service_limits.report()})
     print('Ready:',str(root/'episodes'/episode['id']/'short.mp4'),flush=True)
     return episode
 
@@ -101,15 +103,18 @@ def main():
     parser.add_argument('--category',choices=tuple(CATEGORY_COUNTS))
     parser.add_argument('--pillar',choices=('technology','travel','shopping'),default='shopping',help='Legacy category alias')
     parser.add_argument('--topic-id',help='Preview a specific eligible brief')
+    parser.add_argument('--max-candidates',type=int,choices=(1,2,3),default=3,
+                        help='Bound topic attempts; one avoids trying extra topics after a rejection')
     parser.add_argument('--output',type=Path,default=Path('outputs/single-preview'))
     args=parser.parse_args()
-    try: build(args.category or args.pillar,args.output,args.topic_id)
+    try: build(args.category or args.pillar,args.output,args.topic_id,args.max_candidates)
     except Exception as exc:
         quota=service_limits.quota_deferral(exc)
         if quota:
             message=service_limits.quota_message(quota)
             save(args.output/'result.json',{'status':'deferred_quota','quota':quota,
-                                          'reason':message,'published':False})
+                                          'reason':message,'published':False,
+                                          'gemini_requests':getattr(exc,'request_report',None)})
             print(message)
             print('Run deferred. Saved work retained for a later run. Exiting successfully.')
             return

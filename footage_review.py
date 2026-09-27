@@ -76,7 +76,7 @@ def assess(path, duration, narration, previous, key, model='gemini-2.5-flash', c
             json={'contents':[{'parts':parts}], 'generationConfig':{'temperature':0,
                   'responseMimeType':'application/json', 'responseJsonSchema': schema}})
     for format_attempt in range(2):
-        response = service_limits.request_with_retry(send)
+        response = service_limits.request_with_retry(send, model=model, stage='footage_review')
         if not response.ok:
             if response.status_code in (401,403,429): _unavailable = response.status_code
             error_type = (service_limits.TransientServiceError

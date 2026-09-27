@@ -15,7 +15,7 @@ from .media import render, synthesize
 from .quality import rendered_checks, script_checks, timeline_checks, editorial_checks
 from .seeds import RECIPES, build_recipe
 from .topics import load_bank, shortlist, reserve_topic, release_topic, sync_ledger, sources_for, balanced_slot
-from .rejections import CandidateRejected
+from .rejections import CandidateRejected, TimingRejected
 
 
 class DailyIncompleteError(RuntimeError):
@@ -88,8 +88,8 @@ def _timing_feedback(episode, config, error):
     return values
 
 
-def _check_narration_with_retake(episode, folder, config):
-    """One continuous retake; never retime words or relax the final checks."""
+def _check_narration_with_retake(episode, folder, config, timing_key=None):
+    """Retake plausible near misses only; large misses need different writing."""
     try:
         timeline_checks(episode, folder, config)
         return episode
@@ -98,8 +98,19 @@ def _check_narration_with_retake(episode, folder, config):
         if feedback is None:
             raise
         reason = str(exc)
+    # A nine-second opening needs over 50% faster speech to fit six seconds.
+    # Asking the same voice to repeat the same words wastes a scarce full take.
+    # Twenty percent is a retry policy, not a relaxed publication threshold.
+    near_miss = (feedback['previous_first_answer_end'] <= 6 * 1.2 and
+                 feedback['previous_duration'] <= feedback['duration_max'] * 1.2 and
+                 feedback['previous_duration'] >= feedback['duration_min'] / 1.2)
     diagnostic = {'initial_failure': reason, 'measurements': feedback,
-                  'retake_limit': 1, 'status': 'retake_requested'}
+                  'beats': episode.get('beats'), 'timing_key': timing_key,
+                  'retake_limit': 1, 'status': 'retake_requested' if near_miss else 'needs_script_revision'}
+    if not near_miss:
+        save(folder/'voice.mp3.timing-review.json', diagnostic)
+        print('[tts] Measured pacing needs a shorter script; skipping an unchanged-script retake.', flush=True)
+        raise TimingRejected(reason)
     # Keep the actual rejected take and its measured timings for inspection.
     # These names stay inside the existing voice.mp3* artifact allowlist.
     for source, suffix in (('voice.mp3', 'mp3'), ('timings.json', 'timings.json'),
@@ -120,8 +131,12 @@ def _check_narration_with_retake(episode, folder, config):
         # Includes every caption, asset and scene gate, even after timing passes.
         timeline_checks(episode, folder, config)
     except Exception as exc:
-        diagnostic.update(status='rejected', error_type=type(exc).__name__)
+        timing_failure = isinstance(exc, ValueError) and _timing_feedback(episode, config, exc) is not None
+        diagnostic.update(status='needs_script_revision' if timing_failure else 'rejected',
+                          error_type=type(exc).__name__, error=str(exc)[:180])
         save(folder/'voice.mp3.timing-review.json', diagnostic)
+        if timing_failure:
+            raise TimingRejected(str(exc)) from exc
         raise
     diagnostic['status'] = 'passed'
     save(folder/'voice.mp3.timing-review.json', diagnostic)
@@ -159,6 +174,14 @@ def prepare(episode, root, config):
             pass
     script_checks(episode)
     episode = copy.deepcopy(episode)
+    timing_key = digest([narration_signature, config['duration_min'], config['duration_max'],
+                         'near-miss-retake-v1'])
+    timing_review = read(folder/'voice.mp3.timing-review.json', {})
+    if (timing_review.get('timing_key') == timing_key and
+            timing_review.get('status') in ('needs_script_revision', 'retake_requested')):
+        # Persisted before the retake starts, so an interrupted run cannot reset
+        # its budget. A changed script/voice/timing contract may be tried again.
+        raise TimingRejected('Saved narration needs a revised script; unchanged take will not be regenerated')
     voice_asset = next((a for a in (previous or {}).get('assets',[]) if a.get('path')=='voice.mp3'),None)
     if (previous and previous.get('narration_signature')==narration_signature and voice_asset
             and (folder/'voice.mp3').exists() and file_hash(folder/'voice.mp3')==voice_asset['sha256']
@@ -176,7 +199,7 @@ def prepare(episode, root, config):
             episode['scenes'] = episode['beats_timing']
     else:
         episode = synthesize(episode, folder, config)
-    episode = _check_narration_with_retake(episode, folder, config)
+    episode = _check_narration_with_retake(episode, folder, config, timing_key)
     episode.pop('quality', None)
     episode.pop('render_signature', None)
     # Narration has already passed transcript and timing checks. Preserve that
@@ -301,7 +324,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                                 'ready' if ready_count >= config['reserve_target'] else 'partial_ready',
                       'errors': blocking, 'warnings':[row for row in issues if row.get('fallback')],
                       'rejected_candidates':[row for row in issues if row.get('candidate_rejected')],
-                      'notices': notices, 'quota': quota}
+                      'notices': notices, 'quota': quota, 'gemini_requests': service_limits.report()}
             save(state_dir/'production.json', state)
             save(root / 'run-report.json', report)
             print(json.dumps(report, indent=2))
@@ -524,7 +547,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                   'pending_episodes': len(pending), 'errors': blocking,
                   'warnings':[row for row in issues if row.get('fallback')],
                   'rejected_candidates':[row for row in issues if row.get('candidate_rejected')],
-                  'notices': notices, 'quota': quota,
+                  'notices': notices, 'quota': quota, 'gemini_requests': service_limits.report(),
                   'deferred_slots':[row['slot'] for row in errors if row.get('deferred_quota')]}
         save(root/'run-report.json', report)
         if mode == 'publish':

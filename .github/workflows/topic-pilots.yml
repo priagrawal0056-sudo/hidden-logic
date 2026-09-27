@@ -7,6 +7,11 @@ on:
         type: choice
         default: home
         options: [home, food, clothing, all]
+      max_candidates:
+        description: 'Topic attempts per category (one conserves quota)'
+        type: choice
+        default: '1'
+        options: ['1', '2', '3']
 permissions:
   contents: read
 concurrency:
@@ -40,13 +45,20 @@ jobs:
           pip install -r requirements-credible.txt
       - name: Run regression suite
         run: python -m unittest discover -s tests -q -b
+      - name: Check Gemini model access before generating
+        id: gemini
+        run: python -m credible.service_check
       - uses: actions/cache/restore@v4
         with:
           path: outputs/topic-pilot-${{ matrix.category }}
           key: credible-pilot-v5-${{ matrix.category }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: credible-pilot-v5-${{ matrix.category }}-
       - name: Generate one unpublished episode
-        run: python -m credible.single --category "${{ matrix.category }}" --output "outputs/topic-pilot-${{ matrix.category }}"
+        if: steps.gemini.outputs.ready == 'true'
+        env:
+          PILOT_CATEGORY: ${{ matrix.category }}
+          MAX_CANDIDATES: ${{ inputs.max_candidates || '1' }}
+        run: python -m credible.single --category "$PILOT_CATEGORY" --max-candidates "$MAX_CANDIDATES" --output "outputs/topic-pilot-$PILOT_CATEGORY"
       - uses: actions/cache/save@v4
         if: always()
         with:
@@ -58,6 +70,7 @@ jobs:
           name: topic-pilot-${{ matrix.category }}
           retention-days: 7
           path: |
+            outputs/connection-check.json
             outputs/topic-pilot-${{ matrix.category }}/result.json
             outputs/topic-pilot-${{ matrix.category }}/attempts.json
             outputs/topic-pilot-${{ matrix.category }}/draft.json

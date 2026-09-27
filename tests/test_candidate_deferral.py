@@ -10,7 +10,7 @@ import service_limits
 from credible import pipeline
 from credible.core import read, save
 from credible.evidence import EditorialRejected
-from credible.rejections import DraftRejected
+from credible.rejections import DraftRejected, TimingRejected
 from footage_review import RejectedFootage
 from tests import test_pipeline_recovery as fixtures
 from tests.test_quota_exit import exhausted
@@ -58,6 +58,7 @@ with fixtures.pipeline_dependencies([fixtures.brief(0), fixtures.brief(1)],
 
     def test_editorial_and_footage_rejections_are_separate_from_quota_errors(self):
         for rejected in (EditorialRejected('Unsupported title'),
+                         TimingRejected('First useful answer must finish within six seconds'),
                          RejectedFootage('Every sampled clip was unsuitable')):
             with self.subTest(rejection=type(rejected).__name__):
                 def writer(*args, topic, **kwargs):

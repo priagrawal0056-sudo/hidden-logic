@@ -480,10 +480,36 @@ def _discover_tts_models(api_key: str) -> list:
 
 
 def _narration_timing_direction(config):
-    """Optional measured feedback for one fresh take, never a tempo filter."""
+    """Explicit first-take targets or measured feedback, never a tempo filter."""
     feedback = config.get('narration_timing_feedback')
     if not feedback:
-        return ''
+        target = config.get('narration_timing_target')
+        if target is None:
+            return ''
+        import math
+        try:
+            opening = target['opening_text']
+            low, high, deadline, hold = (float(target[key]) for key in (
+                'duration_min', 'duration_max', 'first_answer_max', 'final_hold'))
+        except (KeyError, TypeError, ValueError):
+            raise ValueError('Invalid narration timing target') from None
+        if (not isinstance(opening, str) or not opening.strip() or
+                not all(math.isfinite(value) for value in (low, high, deadline, hold)) or
+                not 0 <= hold < low <= high or not 0 < deadline <= high - hold):
+            raise ValueError('Invalid narration timing target')
+        # Leave a small delivery margin; only measured word timings can pass QA.
+        aim = max(deadline * .8, deadline - .5)
+        return (f' Record the complete SCRIPT in one continuous take. Aim to finish its opening '
+                f'observation and first useful answer in about {aim:g} seconds, before the '
+                f'{deadline:g}-second limit. The exact opening portion already in SCRIPT is: '
+                f'{json.dumps(opening, ensure_ascii=False)}. Read it once as part of SCRIPT; '
+                f'do not repeat it separately. Keep the completed video between {low:g} and '
+                f'{high:g} seconds, including its {hold:g}-second final hold after speech. '
+                'Use a connected, conversational opening with clear emphasis and no padded '
+                'lead-in or drawn-out words. Let the explanation breathe naturally after '
+                'the early answer. Keep the same voice. Do not add, omit or rewrite words, '
+                'rush into an unnatural delivery, or speak any timing directions. '
+                'No artificial speed-up or time stretching is requested.')
     import math
     try:
         duration, answer, low, high, deadline = (
@@ -548,7 +574,7 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
     for narration_attempt in range(2):
         service_limits.check()
         try:
-            service_limits.before_request()
+            service_limits.before_request(model=model, stage='narration')
             r = requests.post(GEMINI_TTS_URL.format(model=model, key=api_key),
                               json=body, timeout=120)
             service_limits.observe(r.status_code, r)

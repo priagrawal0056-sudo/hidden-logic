@@ -172,7 +172,8 @@ class FreeModel:
         # A malformed answer gets one fresh formatting request, never a guessed
         # passing verdict. Every HTTP retry is also charged to the call budget.
         for format_attempt in range(2):
-            response = service_limits.request_with_retry(send, max_attempts=min(3, self.remaining))
+            response = service_limits.request_with_retry(send, max_attempts=min(3, self.remaining),
+                model=self.model, stage='script_draft' if schema else 'script_review')
             if not response.ok:
                 break
             try:

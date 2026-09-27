@@ -21,6 +21,13 @@ def metadata(episode):
 def synthesize(episode, folder, config):
     from .media import punctuated_words
     cfg = config_for(config)
+    cfg['narration_timing_target'] = {
+        'opening_text': ' '.join(episode['beats'][:2]),
+        'duration_min': cfg.get('duration_min', 20),
+        'duration_max': cfg.get('duration_max', 28),
+        'first_answer_max': 6,
+        'final_hold': .8,
+    }
     words = editorial_media.synthesize(metadata(episode),folder,cfg)
     punctuated = punctuated_words(' '.join(episode['beats']),
                                 [{'text':w['word'],'start':w['start'],'end':w['end']} for w in words])

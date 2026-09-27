@@ -1,5 +1,42 @@
 # Generation recovery fixes
 
+## September 27 quota and model-access diagnosis
+
+Run 36318793368 made nine successful Gemini narration takes before its next
+request returned a daily 429. Four same-script pacing retakes failed; the three
+largest original opening times were 9.76, 9.30 and 9.20 seconds. Local Whisper
+alignment retries do not consume Gemini quota. The later run 36320719650, after
+the repository secret update, successfully narrated three reserves but returned
+404 for the configured text/footage model. That is a different failure from quota.
+
+- First takes now receive the actual opening and duration targets. The Orus voice,
+  continuous script, final measured six-second gate and media checks are unchanged.
+- Oversized openings above 16 words use the existing bounded writer correction
+  before narration; the legitimate 11-12-word regression cases still pass drafting.
+- Only plausible pacing near misses get one unchanged-script retake. Large misses
+  need different writing. Persisted script/voice/timing signatures prevent the same
+  rejected or interrupted retake from spending more narration calls on a rerun.
+- Confirmed measured pacing rejections are candidate decisions. A later real 429
+  can therefore exit normally without hiding unrelated implementation/save errors.
+- Reports count actual request attempts by model, stage and HTTP status, including
+  retries. Provider quota IDs and numeric caps are included only when returned.
+  Counts cover this run, not other jobs or the project's remaining allowance.
+- Narration requests are spaced by at least 20.5 seconds; general request spacing
+  remains 15 seconds. No guessed model rotation or automatic paid fallback is added.
+- A model 404 stops further API work instead of trying six topics and generating
+  reserve narration that cannot be reviewed. Ready reserves can still be published
+  without a successful Gemini metadata check when publishing is eventually enabled.
+- The manual `Gemini connection check` workflow tests the repository secret and
+  lists model access with zero generation calls. It does not claim to test remaining
+  generation quota. The one-video pilot workflow defaults to one candidate attempt.
+
+GitHub setup: repository Settings -> Secrets and variables -> Actions -> Secrets.
+Name: `HL_GEMINI_API_KEY`. Value: only the API key, without quotes, JSON, `Bearer`
+or `HL_GEMINI_API_KEY=`. A separate Actions variable is unnecessary.
+
+The connection check and one-candidate pilot never upload a video. Publishing
+remains disabled; three daily uploads remain the intended production target.
+
 A Gemini HTTP 429 can stop generation before any video is ready. The previous
 pipeline wrote several drafts before preparing their media, and preview retries
 did not restore their output cache. That combination wasted limited requests.

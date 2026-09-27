@@ -41,7 +41,8 @@ class NarrationTimingRepairTests(unittest.TestCase):
                     with self.assertRaisesRegex(ValueError,error):
                         _check_narration_with_retake(self.episode(),folder,{'duration_min':20,'duration_max':28})
                     self.assertEqual(synth.call_count,1)
-                self.assertEqual(json.loads((folder/'voice.mp3.timing-review.json').read_text())['status'],'rejected')
+                expected = 'needs_script_revision' if error == 'Measured duration outside trial band' else 'rejected'
+                self.assertEqual(json.loads((folder/'voice.mp3.timing-review.json').read_text())['status'],expected)
 
     def test_unrelated_errors_never_trigger_a_take(self):
         with patch('credible.pipeline.timeline_checks',side_effect=ValueError('Caption overflow')), \
