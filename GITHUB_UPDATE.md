@@ -22,6 +22,18 @@ release scan reports no problems. Use **Unpublished topic-bank pilots**, one
 category and `max_candidates: 1`, for the next end-to-end check. A green metadata
 check or test suite does not certify a completed video. Publishing stays disabled.
 
+Live checks on this update:
+- [Pilot 36422480881](https://github.com/priagrawal0056-sudo/hidden-logic/actions/runs/36422480881)
+  generated a draft that passed local validation. Independent review received
+  HTTP 503 from both configured models. Five generation attempts, no TTS calls.
+- [Delayed retry 36423218974](https://github.com/priagrawal0056-sudo/hidden-logic/actions/runs/36423218974)
+  received two primary-model 503 responses and one fallback read timeout.
+  Three attempts, no TTS calls. Neither run hit quota or completed a video.
+
+Authentication and local checks are verified; fresh end-to-end rendering remains
+unverified while these upstream service failures persist. Do not enable publishing
+or weaken the independent review to make these runs appear successful.
+
 The September 16 notes below describe the original approved-editor rollout;
 their local-only and quota observations are historical.
 
