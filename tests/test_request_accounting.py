@@ -35,9 +35,9 @@ class RequestAccountingTests(unittest.TestCase):
 
     def test_no_responses_remain_unknown_not_successful(self):
         with service_limits.session(), patch('service_limits.time.sleep'):
-            with self.assertRaises(requests.Timeout):
+            with self.assertRaises(service_limits.TransientServiceError):
                 service_limits.request_with_retry(Mock(side_effect=requests.Timeout('private-key')),
-                                                 model='gemini-2.5-flash', stage='writing')
+                                                 model='gemini-2.5-flash', stage='writing', stop_on_failure=False)
             service_limits.request_with_retry(lambda: response(200),
                                              model='gemini-2.5-flash', stage='writing')
             report = service_limits.report()

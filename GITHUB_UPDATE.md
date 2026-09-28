@@ -1,5 +1,27 @@
 # Approved editor rollout
 
+## September 29 service-outage recovery
+
+The September 28 daily log made 30 requests after writing/review services became
+unavailable, including three successful narration calls for videos whose footage
+could not be checked. Terminal Gemini 502/503/504 and transport failures now open
+a shared stop signal after the existing bounded attempts and configured writer
+fallback. No further Gemini stage or reserve narration starts in that run.
+
+An outage-only run saves its work and reports `deferred_service` with a successful
+process exit. This means deferred work, not completed videos. Counts, failed
+model/stage, actual request attempts and deferred slots remain in the report.
+The next run starts with a fresh service state and resumes verified pending work.
+Already completed reserves remain usable. Authentication, malformed responses,
+quality failures, upload failures and state-save failures keep their real errors.
+
+The approved narration, renderer, footage checks and their asset signatures are
+unchanged. This recovery fix does not require regenerating saved verified audio
+or discard accepted footage. Regression coverage replays the six-topic/three-
+reserve cascade: all-503 writing now stops at four requests and starts no TTS.
+All 320 tests pass; the offline release scan reports no problems. Publishing
+remains disabled pending finished-pilot review.
+
 ## September 28 recovery update
 
 Authentication with the repository's Gemini secret has passed a live metadata

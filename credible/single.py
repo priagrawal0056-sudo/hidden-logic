@@ -110,9 +110,11 @@ def main():
     try: build(args.category or args.pillar,args.output,args.topic_id,args.max_candidates)
     except Exception as exc:
         quota=service_limits.quota_deferral(exc)
-        if quota:
-            message=service_limits.quota_message(quota)
-            save(args.output/'result.json',{'status':'deferred_quota','quota':quota,
+        service=service_limits.service_deferral(exc)
+        if quota or service:
+            message=service_limits.quota_message(quota) if quota else service_limits.service_message(service)
+            save(args.output/'result.json',{'status':'deferred_quota' if quota else 'deferred_service',
+                                          'quota':quota,'service':service,
                                           'reason':message,'published':False,
                                           'gemini_requests':getattr(exc,'request_report',None)})
             print(message)

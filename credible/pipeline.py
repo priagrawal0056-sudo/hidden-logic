@@ -26,21 +26,38 @@ class QuotaDeferred(DailyIncompleteError):
     """Saved work is incomplete only because Gemini returned HTTP 429."""
 
 
-def _issue(exc, candidate_stage=False, **context):
+class ServiceDeferred(DailyIncompleteError):
+    """Saved work is incomplete only because a Gemini service is unavailable."""
+
+
+def _issue(exc, candidate_stage=False, generation_stage=False, **context):
     quota = service_limits.quota_deferral(exc)
+    service = None
+    if candidate_stage or generation_stage:
+        # Only typed Gemini failures can defer generation. A failed upload,
+        # missing source, malformed response or local bug must remain an error.
+        service = service_limits.service_deferral(exc)
+        if service:
+            service_limits.stop_transient(exc)
+            service = service_limits.service_deferral(exc)
     return {**context, 'error': str(exc)[:180], **({'quota': quota} if quota else {}),
+            **({'service': service} if service else {}),
             **({'candidate_rejected': True, 'error_type': type(exc).__name__}
                if candidate_stage and isinstance(exc, CandidateRejected) else {})}
 
 
 def _quota_report(errors):
-    """A quota notice must not hide unrelated failures or lost state."""
+    """Provider deferrals must not hide unrelated failures or lost state."""
     quota = service_limits.quota_deferral()
-    remaining = [row for row in errors if not row.get('quota') and not row.get('deferred_quota')]
+    remaining = [row for row in errors if not any(row.get(key) for key in
+                 ('quota', 'service', 'deferred_quota', 'deferred_service'))]
     blocking = [row for row in remaining if not row.get('fallback') and not row.get('candidate_rejected')]
     notices = [{'message': service_limits.quota_message(row['quota']),
                 **{k: v for k, v in row.items() if k not in ('error', 'quota')}}
                for row in errors if row.get('quota')]
+    notices += [{'message': service_limits.service_message(row['service']),
+                 **{k: v for k, v in row.items() if k not in ('error', 'service')}}
+                for row in errors if row.get('service')]
     return quota, remaining, blocking, notices
 
 
@@ -297,6 +314,8 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
         # Cache eviction is recoverable: rebuild verified ready episodes from their
         # saved scripts, rather than considering a missing video a usable reserve.
         for n, episode in enumerate(reserve):
+            if service_limits.blocked():
+                break
             if episode.get('status') in ('ready','needs_rebuild'):
                 try:
                     reserve[n] = prepare(episode, root, config)
@@ -315,23 +334,24 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
         if mode == 'bootstrap':
             seed_reserve(root, config, docs, catalog, state, reserve, errors, config['reserve_target'])
             quota, issues, blocking, notices = _quota_report(errors)
+            service = service_limits.service_deferral()
             ready_count = sum(r.get('status') == 'ready' for r in reserve)
-            deferred = bool(quota and not blocking and ready_count < config['reserve_target'])
-            rejected_only = (not quota and ready_count == 0
+            deferred = bool((quota or service) and not blocking and ready_count < config['reserve_target'])
+            rejected_only = (not (quota or service) and ready_count == 0
                              and any(row.get('candidate_rejected') for row in issues))
             report = {'mode': mode, 'reserve_ready': ready_count, 'reserve_target': config['reserve_target'],
-                      'status': 'deferred_quota' if deferred else 'incomplete' if blocking or rejected_only else
+                      'status': ('deferred_quota' if quota else 'deferred_service') if deferred else 'incomplete' if blocking or rejected_only else
                                 'ready' if ready_count >= config['reserve_target'] else 'partial_ready',
                       'errors': blocking, 'warnings':[row for row in issues if row.get('fallback')],
                       'rejected_candidates':[row for row in issues if row.get('candidate_rejected')],
-                      'notices': notices, 'quota': quota, 'gemini_requests': service_limits.report()}
+                      'notices': notices, 'quota': quota, 'service': service, 'gemini_requests': service_limits.report()}
             save(state_dir/'production.json', state)
             save(root / 'run-report.json', report)
             print(json.dumps(report, indent=2))
             if blocking or rejected_only:
                 raise DailyIncompleteError('Reserve preparation failed; see run-report.json. Saved work preserved.')
             if deferred:
-                print(service_limits.quota_message(quota))
+                print(service_limits.quota_message(quota) if quota else service_limits.service_message(service))
                 print('Unfinished work saved for a later run. Exiting successfully.')
             return reserve
         candidates = []
@@ -370,7 +390,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                 result='reviewed'
             except Exception as exc:
                 result=type(exc).__name__
-                errors.append(_issue(exc, topic_review=lead['topic_id']))
+                errors.append(_issue(exc, generation_stage=True, topic_review=lead['topic_id']))
             attempts[lead['topic_id']]={'revision':revision(lead),'date':now().date().isoformat(),'result':result}
             save(state_dir/'production.json',state)
         bank=reviewed_bank(bank,reviews)
@@ -396,7 +416,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
         if want_topics and not topics:
             errors.append({'topics': 'No eligible source-reviewed briefs; use verified reserve only'})
         for i, topic in enumerate(topics):
-            if len(candidates) >= candidate_target:
+            if service_limits.blocked() or len(candidates) >= candidate_target:
                 break
             reserve_topic(topic_ledger, topic, run_day)
             save(state_dir/'production.json', state)
@@ -430,7 +450,7 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
         # Same-day reruns finish existing slots; they do not add another day's quota.
         needed = sum(s['id'] not in state['slots'] for s in plan_slots)
         ready = sum(r.get('status') == 'ready' for r in reserve)
-        if len(candidates) + ready < needed:
+        if not service_limits.blocked() and len(candidates) + ready < needed:
             seed_reserve(root, config, docs, catalog, state, reserve, errors,
                          min(config['reserve_target'], needed - len(candidates)))
         selected_categories = {row.get('category', row.get('pillar')) for row in state['slots'].values()
@@ -475,6 +495,8 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
             if episode is None:
                 if service_limits.quota_deferral():
                     errors.append({'slot': planned['id'], 'deferred_quota': True})
+                elif service_limits.service_deferral():
+                    errors.append({'slot': planned['id'], 'deferred_service': True})
                 else:
                     errors.append({'slot': planned['id'], 'error': 'No verified ready episode; no fabricated filler'})
                 continue
@@ -536,10 +558,11 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                         ('scheduled' if mode == 'publish' else 'prepared') for slot in plan_slots)
         recovery = [row['id'] for row in state['slots'].values() if row.get('recovery_required')]
         quota, issues, blocking, notices = _quota_report(errors)
-        deferred = bool(quota and not blocking and not recovery and completed < len(plan_slots))
+        service = service_limits.service_deferral()
+        deferred = bool((quota or service) and not blocking and not recovery and completed < len(plan_slots))
         report = {'mode': mode, 'at': now().isoformat(), 'slots': len(state['slots']),
                   'planned_slots':len(plan_slots), 'completed_slots':completed,
-                  'status':'deferred_quota' if deferred else
+                  'status':('deferred_quota' if quota else 'deferred_service') if deferred else
                            ('needs_attention' if recovery or blocking else 'ready') if completed == len(plan_slots) else 'incomplete',
                   'recovery_slots':recovery,
                   'topics': {'total':len(bank), 'source_reviewed':sum(t.get('evidence_status')=='reviewed' for t in bank)},
@@ -547,15 +570,17 @@ def run(mode='preview', root=Path('outputs/credible'), state_dir=Path('state/cre
                   'pending_episodes': len(pending), 'errors': blocking,
                   'warnings':[row for row in issues if row.get('fallback')],
                   'rejected_candidates':[row for row in issues if row.get('candidate_rejected')],
-                  'notices': notices, 'quota': quota, 'gemini_requests': service_limits.report(),
-                  'deferred_slots':[row['slot'] for row in errors if row.get('deferred_quota')]}
+                  'notices': notices, 'quota': quota, 'service': service, 'gemini_requests': service_limits.report(),
+                  'deferred_slots':[row['slot'] for row in errors if row.get('deferred_quota') or row.get('deferred_service')]}
         save(root/'run-report.json', report)
         if mode == 'publish':
             from .state_io import checkpoint
             checkpoint(root)
         print(json.dumps(report, indent=2))
         if deferred:
-            raise QuotaDeferred(service_limits.quota_message(quota))
+            if quota:
+                raise QuotaDeferred(service_limits.quota_message(quota))
+            raise ServiceDeferred(service_limits.service_message(service))
         if completed < len(plan_slots):
             raise DailyIncompleteError('Daily target incomplete; see run-report.json. Prepared work and upload reservations preserved.')
         if recovery:
@@ -573,7 +598,7 @@ def main():
     output = args.output or ('outputs/preview' if args.mode == 'preview' else 'outputs/credible')
     try:
         run(args.mode, Path(output))
-    except QuotaDeferred as exc:
+    except (QuotaDeferred, ServiceDeferred) as exc:
         # The report and recovery checkpoints were written before this signal.
         # Returning normally gives GitHub a successful exit, not a false video.
         print(str(exc))

@@ -174,17 +174,29 @@ class FreeModel:
                       'generationConfig': generation})
         # A malformed answer gets one fresh formatting request, never a guessed
         # passing verdict. Every HTTP retry is also charged to the call budget.
+        stage = 'script_draft' if schema else 'script_review'
         for format_attempt in range(2):
-            response = service_limits.request_with_retry(send,
-                max_attempts=min(2 if self.fallback_model else 3, self.remaining),
-                model=self.model, stage='script_draft' if schema else 'script_review')
-            if (response.status_code in (502, 503, 504) and self.fallback_model and self.remaining > 0):
+            response, transport_error = None, None
+            try:
+                response = service_limits.request_with_retry(send,
+                    max_attempts=min(2 if self.fallback_model else 3, self.remaining),
+                    model=self.model, stage=stage, stop_on_failure=False)
+            except service_limits.TransientServiceError as exc:
+                transport_error = exc
+            if ((transport_error or response.status_code in (502, 503, 504))
+                    and self.fallback_model and self.remaining > 0):
                 # One configured free-tier alternative for a server outage only.
                 # Quota/auth/model-access failures never rotate through models.
                 self.model, self.fallback_model = self.fallback_model, None
                 print('[scriptgen] Primary service unavailable; using configured fallback ' + self.model, flush=True)
-                response = service_limits.request_with_retry(send, max_attempts=min(2, self.remaining),
-                    model=self.model, stage='script_draft' if schema else 'script_review')
+                try:
+                    response = service_limits.request_with_retry(send, max_attempts=min(2, self.remaining),
+                        model=self.model, stage=stage, stop_on_failure=False)
+                    transport_error = None
+                except service_limits.TransientServiceError as exc:
+                    transport_error = exc
+            if transport_error:
+                raise service_limits.stop_transient(transport_error)
             if not response.ok:
                 break
             try:
@@ -216,9 +228,11 @@ class FreeModel:
                 detail = message.replace(self.key.lower(), '[redacted]') if self.key else message
                 detail = re.sub(r'https?://\S+|[a-zA-Z0-9_/-]{35,}', '[redacted]', detail)
                 hint = 'invalid_request: ' + detail[:600]
-            error_type = (service_limits.TransientServiceError
-                          if response.status_code in (502, 503, 504) else RuntimeError)
-            raise error_type(f'Free model request failed: HTTP {response.status_code}; {hint}')
+            if response.status_code in (502, 503, 504):
+                raise service_limits.stop_transient(service_limits.TransientServiceError(
+                    f'Free model request failed: HTTP {response.status_code}; {hint}',
+                    http_status=response.status_code, kind='server_error', model=self.model, stage=stage))
+            raise RuntimeError(f'Free model request failed: HTTP {response.status_code}; {hint}')
 
 
 EDITORIAL_RULES = '''You write Hidden Logic, clear everyday explanations.

@@ -131,6 +131,8 @@ def session():
     except Exception as exc:
         # A CLI may handle the error after this context has reset. Preserve only
         # safe aggregate counts, never the request or its credentials.
+        if isinstance(exc, TransientServiceError):
+            stop_transient(exc)
         if not hasattr(exc, 'request_report'):
             exc.request_report = report()
         raise
@@ -138,7 +140,8 @@ def session():
         _current.reset(token)
 
 def blocked():
-    return bool((_current.get() or {}).get('status'))
+    state = _current.get() or {}
+    return bool(state.get('status') or state.get('service_outage'))
 
 
 def quota_deferral(error=None):
@@ -171,6 +174,9 @@ def check():
         state = _current.get()
         raise ServiceUnavailable(status, state.get('limit_kind'), state.get('retry_after'),
                                  diagnostics=state.get('quota_diagnostics'))
+    outage = service_deferral()
+    if outage:
+        raise TransientServiceError(**outage)
 
 def quota_details(response):
     """Extract fixed classifications, never provider messages or project IDs."""
@@ -269,6 +275,55 @@ class ResponseFormatError(ValueError):
 class TransientServiceError(RuntimeError):
     """A bounded request attempt ended with a temporary provider failure."""
 
+    def __init__(self, message=None, *, http_status=None, kind='unavailable', model=None, stage=None):
+        self.service_details = {
+            'http_status': http_status if type(http_status) is int and http_status in (502, 503, 504) else None,
+            'kind': kind if kind in ('server_error', 'timeout', 'connection_error', 'unavailable') else 'unavailable',
+            'model': _model_label(model), 'stage': _stage_label(stage)}
+        super().__init__(message or service_message(self.service_details))
+
+
+def service_deferral(error=None):
+    """Only a typed Gemini outage may become a clean generation deferral."""
+    if error is not None:
+        return deepcopy(error.service_details) if isinstance(error, TransientServiceError) else None
+    return deepcopy((_current.get() or {}).get('service_outage'))
+
+
+def service_message(details):
+    status = details.get('http_status')
+    detail = ('HTTP ' + str(status) if status in (502, 503, 504) else
+              'request timed out' if details.get('kind') == 'timeout' else
+              'connection failed' if details.get('kind') == 'connection_error' else 'temporary outage')
+    return ('Gemini service temporarily unavailable (' + detail + '). '
+            'No further Gemini requests will be made in this run.')
+
+
+def stop_transient(error):
+    """Open the run's circuit only after a caller exhausts its recovery policy.
+
+    The writer still gets its one configured fallback first. A successful
+    fallback does not disable narration or review. No outage state survives the
+    next run, and no raw provider text or credential is persisted here.
+    """
+    if not isinstance(error, TransientServiceError):
+        raise TypeError('A typed Gemini service failure is required')
+    state = _current.get()
+    if state is not None:
+        details = deepcopy(error.service_details)
+        attempts = state.get('requests', [])
+        if attempts:
+            for field in ('model', 'stage'):
+                if details[field] == 'unknown':
+                    details[field] = attempts[-1][field]
+            # Older callers already emit a typed terminal service failure. Use
+            # the measured HTTP result, never parse arbitrary exception text.
+            if details['kind'] == 'unavailable' and attempts[-1]['status'] in ('502', '503', '504'):
+                details.update(http_status=int(attempts[-1]['status']), kind='server_error')
+        state.setdefault('service_outage', details)
+        error.service_details = deepcopy(state['service_outage'])
+    return error
+
 
 def is_retryable(error):
     """Keep verified work when a provider could not complete its assessment.
@@ -282,18 +337,31 @@ def is_retryable(error):
                               requests.ConnectionError))
 
 
-def request_with_retry(send, max_attempts=3, *, model=None, stage=None):
+def request_with_retry(send, max_attempts=3, *, model=None, stage=None, stop_on_failure=True):
     """Retry only temporary server failures, respecting shared pacing and quota.
 
     ``send`` owns its call budget and is invoked for every actual request. A
     retry cannot bypass authentication, quota, or a caller's remaining budget.
+    Only a caller with its own bounded fallback may delay the terminal stop.
     """
     max_attempts = max(1, min(3, int(max_attempts)))
+    import requests
     for attempt in range(max_attempts):
         before_request(model=model, stage=stage)
-        response = send()
+        try:
+            response = send()
+        except (requests.Timeout, requests.ConnectionError) as exc:
+            state = _current.get()
+            if state is not None:
+                state['active_request'] = None  # Counted as no_response, not an HTTP status.
+            kind = 'timeout' if isinstance(exc, requests.Timeout) else 'connection_error'
+            error = TransientServiceError(kind=kind, model=model, stage=stage)
+            raise (stop_transient(error) if stop_on_failure else error) from None
         observe(response.status_code, response)
         if response.status_code not in (502, 503, 504) or attempt + 1 == max_attempts:
+            if response.status_code in (502, 503, 504) and stop_on_failure:
+                raise stop_transient(TransientServiceError(http_status=response.status_code,
+                    kind='server_error', model=model, stage=stage))
             return response
         time.sleep((5, 15)[attempt])
 

@@ -32,6 +32,13 @@ The daily workflow runs at 22:17 UTC (06:17 Singapore), not at the publication
 times. GitHub may delay a scheduled run; reserves and advance upload reduce that
 exposure. Analytics runs independently. A state-save failure blocks further uploads.
 
+`deferred_quota` and `deferred_service` are normal exits with unfinished work saved.
+A green workflow with either status does not mean videos were produced: check
+`completed_slots` (or the single-pilot result) in the report. After bounded Gemini
+retries fail, new Gemini work stops for that run; later runs retry with fresh
+service state and reuse verified work. Genuine validation, upload and persistence
+failures still fail the workflow. Do not enable publishing to bypass a deferral.
+
 Local checks before pushing:
 
 ```text
