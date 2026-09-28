@@ -13,9 +13,9 @@ Research status is explicit. Only source-reviewed briefs can enter generation. W
   - Show: Trace heat from milk to rear coils.
   - Source: [energy.gov](https://www1.eere.energy.gov/buildings/appliance_standards/pdfs/refrig_finalrule_tsd.pdf)
 - **home-003 — Why a freezer door is harder to reopen immediately** (reviewed)
-  - Explanation to establish: Cooling recently admitted air reduces pressure inside a well-sealed freezer.
-  - Show: Show warm air shrinking behind the gasket.
-  - Source: [liebherr.com](https://home.liebherr.com/media/hau/brochures/commercial-use/en-le/pdf/liebherr-download-en-le-commercial-appliances-bakeries-2016_2017.pdf)
+  - Explanation to establish: Recently admitted warm air can create a partial vacuum as it cools in a well-sealed freezer, briefly making the door harder to reopen.
+  - Show: Show warm air entering the freezer, then lower pressure holding the closed door; finish with pressure equalizing.
+  - Source: [Signature Kitchen Suite (LG)](https://www.signaturekitchensuite.com/media/documents/freezer_owners_manual_mfl70339814_0_0.pdf)
 - **home-004 — Why your dishwasher leaves plastic wetter than glass** (reviewed)
   - Explanation to establish: Plastic stores less heat, leaving less energy to evaporate water during drying.
   - Show: Compare cooling and droplets on two plates.

@@ -1,4 +1,31 @@
-# Approved editor rollout — September 16, 2026
+# Approved editor rollout
+
+## September 28 recovery update
+
+Authentication with the repository's Gemini secret has passed a live metadata
+check. This proves key acceptance, not remaining generation quota. Generation
+now records actual HTTP attempts by model and stage. One configured free writer
+fallback handles temporary server outages; quota errors stop requests and defer
+unfinished work without claiming that a video was completed.
+
+The latest failed pilot exposed two local problems: entire drawings were offset
+outside the screen, and a repair request only reported the first validation
+error. The editor now translates a whole fitting scene while preserving its
+geometry and motion. Oversized or otherwise unsafe scenes still fail. A single
+bounded rewrite receives both drawing and narration errors. Version 4 permits
+a simpler unused opening sketch; all rendered diagram states retain their
+checks. Freezer-topic support now comes from two directly retrieved manufacturer
+documents, with reviewed excerpts available if retrieval temporarily fails.
+
+Offline validation: 304 tests pass, including both actual failed drawings;
+release scan reports no problems. Use **Unpublished topic-bank pilots**, one
+category and `max_candidates: 1`, for the next end-to-end check. A green metadata
+check or test suite does not certify a completed video. Publishing stays disabled.
+
+The September 16 notes below describe the original approved-editor rollout;
+their local-only and quota observations are historical.
+
+## September 16 implementation notes
 
 The evidence-led scheduler now calls the original `tts.py`, `captions.py`,
 `visuals.py` and `assemble.py` through a small shared editor. `run_daily.py`

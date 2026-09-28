@@ -76,26 +76,32 @@
     "pillar": "technology",
     "title": "Why a freezer door is harder to reopen immediately",
     "observation": "a freezer door is harder to reopen immediately",
-    "claim": "Cooling recently admitted air reduces pressure inside a well-sealed freezer.",
+    "claim": "Recently admitted warm air can create a partial vacuum as it cools in a well-sealed freezer, briefly making the door harder to reopen.",
     "novelty": "The resistance changes immediately after closing, although the same door and seal are being used.",
-    "scope": "Freezers with a sealed door; an equalization valve changes how long the effect lasts.",
+    "scope": "Well-sealed freezer doors immediately after closing; temporary pressure resistance, not a dirty or damaged seal. Equalization time varies with the design.",
     "region": "Global where the specified design is used",
-    "footage": "Film a freezer door is harder to reopen immediately; start with the visible detail, then a different close-up of the same object.",
-    "demonstration": "Show warm air shrinking behind the gasket.",
+    "footage": "Freezer door handle and opening action; frozen groceries seen inside; a different freezer door closing. Avoid searching for invisible pressure or internal valves.",
+    "demonstration": "Show warm air entering the freezer, then lower pressure holding the closed door; finish with pressure equalizing.",
     "sources": [
       {
-        "url": "https://home.liebherr.com/media/hau/brochures/commercial-use/en-le/pdf/liebherr-download-en-le-commercial-appliances-bakeries-2016_2017.pdf",
-        "publisher": "liebherr.com",
-        "passage": "a vacuum is built up by air exchange",
-        "retrieved_at": "2026-09-16T05:10:36.698816+00:00"
+        "url": "https://www.signaturekitchensuite.com/media/documents/freezer_owners_manual_mfl70339814_0_0.pdf",
+        "publisher": "Signature Kitchen Suite (LG)",
+        "passage": "When you open the door, warmer air enters the freezer. As the warm air cools, it can create a vacuum.",
+        "retrieved_at": "2026-09-28T04:47:17.043574+00:00"
+      },
+      {
+        "url": "https://products.geappliances.com/appliance/gea-support-search-content?contentId=18946",
+        "publisher": "geappliances.com",
+        "passage": "Once the air equalizes, the door or drawer will open as normal again.",
+        "retrieved_at": "2026-09-28T04:44:16.668202+00:00"
       }
     ],
     "evidence_status": "reviewed",
     "support_review": {
-      "reviewed_at": "2026-09-16T05:14:58.061998+00:00",
-      "method": "Editorial comparison of stated mechanism with retrieved primary text",
-      "finding": "Cooling recently admitted air reduces pressure inside a well-sealed freezer.",
-      "scope": "Freezers with a sealed door; an equalization valve changes how long the effect lasts."
+      "reviewed_at": "2026-09-28T12:30:24.216562+00:00",
+      "method": "Editorial comparison with two retrieved manufacturer sources",
+      "finding": "LG explicitly links admitted warm air cooling to a vacuum and difficulty reopening. GE independently describes temporary vacuum resistance and normal opening after pressure equalizes. No universal waiting time is claimed.",
+      "scope": "Well-sealed freezer doors immediately after closing; temporary pressure resistance, not a dirty or damaged seal. Equalization time varies with the design."
     },
     "editorial_scores": {
       "recognition": 3,

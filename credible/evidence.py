@@ -323,10 +323,22 @@ def generate_episode(model, documents, history, arm, topic=None):
         data['scene_kind'] = 'storyboard'
         data['production_version'] = getattr(model,'production_version',4)
         data['source_label'] = documents[data['evidence'][0]['source_url']]['publisher']
-        data['storyboard'], data['drawing_layout_changes'] = layout_storyboard(data.get('storyboard'))
-        validate_storyboard(data['storyboard'])
+        # Check the independent drawing and narration contracts together. A
+        # single bounded correction should see both problems, rather than spend
+        # a request fixing a drawing only to discover an oversized opening next.
+        issues = []
+        try:
+            data['storyboard'], data['drawing_layout_changes'] = layout_storyboard(data.get('storyboard'))
+            validate_storyboard(data['storyboard'], opening_is_stock=data['production_version'] >= 4)
+        except ValueError as exc:
+            issues.append('Drawing: ' + str(exc))
         data['sound_cues'], data['sound_cue_adjustments'] = usable_sound_cues(data.get('beats'),data.get('sound_cues',[]))
-        validate_brief(data)
+        try:
+            validate_brief(data)
+        except ValueError as exc:
+            issues.append('Narration/production: ' + str(exc))
+        if issues:
+            raise ValueError('; '.join(issues))
         return data
 
     def diagnostic(stage, attempt, data, **details):
@@ -355,8 +367,8 @@ def generate_episode(model, documents, history, arm, topic=None):
             if isinstance(exc, _TopicIdentityError) or attempt or model.remaining <= 1:
                 error_type = DraftRejected if isinstance(exc, ValueError) else ValueError
                 raise error_type('Candidate failed source/drawing validation: ' + str(exc)[:200]) from exc
-            feedback = ('\nPrevious draft failed local validation: '+str(exc)[:150]+
-                        '. Correct this specific draft and return the entire episode again. '
+            feedback = ('\nPrevious draft failed local validation: '+str(exc)[:1000]+
+                        '. Correct every listed issue in this specific draft and return the entire episode again. '
                         'Preserve the supported mechanism and valid parts. Failed draft: ' + json.dumps(data))
     review_prompt = (RULES + '\nINDEPENDENT REVIEW OF THE SCRIPTED PLAN. '
                          'The editor uses storyboard states 2 and 3 for beat 3, then state 4 '

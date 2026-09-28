@@ -1,0 +1,338 @@
+[
+  {
+    "at": "2026-09-27T19:04:11.502046+00:00",
+    "reason": "Storyboard object count invalid",
+    "plan": [
+      {
+        "heading": "Initial closed door",
+        "purpose": "Shows a freezer door closed tight",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              250,
+              200,
+              380
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "box": [
+              150.0,
+              420,
+              100,
+              30
+            ],
+            "color": "ink",
+            "text": "Closed",
+            "size": 24
+          }
+        ]
+      },
+      {
+        "heading": "Warm air entry",
+        "purpose": "Shows warm air entering the compartment",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              250,
+              200,
+              380
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              150,
+              300,
+              80,
+              80
+            ],
+            "color": "warm",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "box": [
+              150.0,
+              420,
+              100,
+              30
+            ],
+            "color": "ink",
+            "text": "Warm air",
+            "size": 24
+          }
+        ]
+      },
+      {
+        "heading": "Cooling and vacuum",
+        "purpose": "Shows trapped air cooling and shrinking",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              100,
+              250,
+              200,
+              380
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              160,
+              310,
+              50,
+              50
+            ],
+            "color": "accent",
+            "filled": true
+          },
+          {
+            "type": "arrow",
+            "box": [
+              180,
+              340,
+              20,
+              0
+            ],
+            "color": "red"
+          },
+          {
+            "type": "text",
+            "box": [
+              150.0,
+              420,
+              100,
+              60
+            ],
+            "color": "ink",
+            "text": "Cooled air",
+            "size": 24
+          }
+        ]
+      },
+      {
+        "heading": "Pressure equalized",
+        "purpose": "Shows door returning to normal operation",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              120,
+              250,
+              180,
+              380
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "arrow",
+            "box": [
+              80,
+              300,
+              30,
+              0
+            ],
+            "color": "accent"
+          },
+          {
+            "type": "text",
+            "box": [
+              150.0,
+              420,
+              100,
+              28
+            ],
+            "color": "ink",
+            "text": "Equalized",
+            "size": 22
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "at": "2026-09-27T19:04:25.744712+00:00",
+    "reason": "Drawing outside safe area",
+    "plan": [
+      {
+        "heading": "Initial closed door",
+        "purpose": "Shows a freezer door closed tight",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              250,
+              150,
+              180,
+              260
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "box": [
+              450,
+              150,
+              100,
+              30
+            ],
+            "color": "ink",
+            "text": "Closed",
+            "size": 24
+          }
+        ]
+      },
+      {
+        "heading": "Warm air entry",
+        "purpose": "Shows warm air entering the compartment",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              250,
+              150,
+              180,
+              260
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              280,
+              200,
+              80,
+              80
+            ],
+            "color": "warm",
+            "filled": true
+          },
+          {
+            "type": "text",
+            "box": [
+              450,
+              150,
+              100,
+              30
+            ],
+            "color": "ink",
+            "text": "Warm air",
+            "size": 24
+          }
+        ]
+      },
+      {
+        "heading": "Cooling and vacuum",
+        "purpose": "Shows trapped air cooling and shrinking",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              250,
+              150,
+              180,
+              260
+            ],
+            "color": "panel",
+            "filled": true
+          },
+          {
+            "type": "ellipse",
+            "box": [
+              290,
+              210,
+              50,
+              50
+            ],
+            "color": "accent",
+            "filled": true
+          },
+          {
+            "type": "arrow",
+            "box": [
+              320,
+              280,
+              20,
+              0
+            ],
+            "color": "red"
+          },
+          {
+            "type": "text",
+            "box": [
+              450,
+              150,
+              100,
+              30
+            ],
+            "color": "ink",
+            "text": "Cooled air",
+            "size": 24
+          }
+        ]
+      },
+      {
+        "heading": "Pressure equalized",
+        "purpose": "Shows door returning to normal operation",
+        "example": false,
+        "objects": [
+          {
+            "type": "rect",
+            "box": [
+              250,
+              150,
+              180,
+              260
+            ],
+            "color": "ink",
+            "filled": true
+          },
+          {
+            "type": "arrow",
+            "box": [
+              340,
+              220,
+              -30,
+              0
+            ],
+            "color": "accent"
+          },
+          {
+            "type": "text",
+            "box": [
+              450,
+              150,
+              100,
+              30
+            ],
+            "color": "ink",
+            "text": "Equalized",
+            "size": 24
+          }
+        ]
+      }
+    ]
+  }
+]

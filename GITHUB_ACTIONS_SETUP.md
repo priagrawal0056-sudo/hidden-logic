@@ -10,10 +10,18 @@ a new ZIP or discard its saved channel state.
    `HL_PEXELS_API_KEY` / `HL_PIXABAY_API_KEY`, and for publishing
    `YT_TOKEN_B64` / `CLIENT_SECRET_JSON`. The token secret is the base64
    encoding of the existing YouTube OAuth token file; never put it in source.
+   For `HL_GEMINI_API_KEY`, paste only the raw key into the secret value—no
+   assignment, quotes, JSON or `Bearer` prefix. A separate Actions variable is
+   not required. The **Gemini connection check** workflow verifies authentication
+   and lists configured models without generating content; it does not test the
+   remaining generation quota.
 3. Keep the Gemini project on its free allowance. This code stops failed requests;
    it cannot switch off billing in a provider account.
-4. Run the Daily Autopilot manually in **preview** mode. Review its artifacts and
-   error report. Preview does not upload or restore YouTube credentials.
+4. Start with **Unpublished topic-bank pilots**, category `home`,
+   `max_candidates: 1`. This attempts one topic and records actual Gemini request
+   counts by model, stage and status in `result.json`. It does not upload.
+   After a pilot succeeds, use Daily Autopilot in **preview** mode to check the
+   three-slot flow. Preview does not upload or restore YouTube credentials.
 5. Build and review six pilots across the three pillars and prepare nine unused
    current-style reserves. Follow the review-record instructions in
    [GITHUB_UPDATE.md](GITHUB_UPDATE.md).

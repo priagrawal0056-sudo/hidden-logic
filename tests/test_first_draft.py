@@ -64,6 +64,25 @@ class FirstDraftTests(unittest.TestCase):
         data=brief();data['script']='A different script.'
         with self.assertRaisesRegex(ValueError,'differ'): validate(data)
 
+    def test_one_repair_sees_both_drawing_and_narration_errors(self):
+        good = brief()
+        bad = copy.deepcopy(good)
+        bad['storyboard'][1]['heading'] = 'x' * 40
+        bad['beats'][:2] = ["That freezer door won't budge right after you shut it.",
+                            'Warm room air cools down fast inside.']
+        model = Mock(); model.production_version = 4; model.remaining = 6
+        model.call.side_effect = [bad, good, {'supported': True, 'title_matches': True,
+            'duplicate': False, 'visuals_match': True, 'natural_script': True,
+            'needs_corroboration': False}]
+        doc = {'url': 'https://example.org/source', 'publisher': 'Test primary source',
+               'text': ' '.join(PASSAGES['barcode']), 'retrieved_at': '2026-09-16'}
+        result = generate_episode(model, {doc['url']: doc}, [], 'question_first')
+        feedback = model.call.call_args_list[1].args[0]
+        self.assertIn('Storyboard heading overflow', feedback)
+        self.assertIn('sixteen-word drafting ceiling', feedback)
+        self.assertEqual(result['beats'], good['beats'])
+        self.assertEqual(model.call.call_count, 3)
+
     def test_cta_cannot_share_payoff_sentence(self):
         data=brief();data['beats'][3]='Same barcode, new price, so follow Hidden Logic.'
         with self.assertRaisesRegex(ValueError,'separate'): validate(data)

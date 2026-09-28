@@ -47,8 +47,95 @@ def rotated_points(obj):
              cy+(a-cx)*math.sin(angle)+(b-cy)*math.cos(angle)) for a,b in points]
 
 
+def _object_bounds(obj):
+    """Include authored geometry and its complete movement, not just its anchor."""
+    box, move = obj.get('box'), obj.get('move', [0, 0])
+    if (not isinstance(box, list) or len(box) != 4 or
+            not isinstance(move, list) or len(move) != 2 or
+            not all(isinstance(v, (int, float)) and math.isfinite(v) for v in box + move)):
+        raise ValueError('Invalid drawing coordinates')
+    x, y, w, h = box
+    rotation = obj.get('rotate', 0)
+    if (not isinstance(rotation, (int, float)) or not math.isfinite(rotation) or
+            abs(rotation) > 45 or (rotation and obj.get('type') not in ('rect', 'ellipse'))):
+        raise ValueError('Unsupported drawing rotation')
+    end = obj.get('end') if obj.get('type') in ('line', 'arrow') else None
+    if end is not None and (not isinstance(end, list) or len(end) != 2 or
+            not all(isinstance(v, (int, float)) and math.isfinite(v) for v in end)):
+        raise ValueError('Invalid path endpoint')
+    path = obj.get('motion_path') or []
+    if path and (not isinstance(path, list) or not 2 <= len(path) <= 60):
+        raise ValueError('Invalid motion path')
+    for point in path:
+        if not isinstance(point, list) or len(point) != 2 or not all(
+                isinstance(v, (int, float)) and math.isfinite(v) for v in point):
+            raise ValueError('Invalid motion path')
+    points = []
+    # Linear interpolation stays inside the union of the endpoint bounds.
+    for px, py in [[x, y], [x + move[0], y + move[1]]] + path:
+        points.extend([(px, py), (px + w, py + h)] if end is None else [(px, py), tuple(end)])
+        if rotation:
+            points.extend(rotated_points({**obj, 'box': [px, py, w, h]}))
+    if end is not None:
+        # Preserve the existing conservative check of the moved absolute end.
+        points.append((end[0] + move[0], end[1] + move[1]))
+    return (min(p[0] for p in points), min(p[1] for p in points),
+            max(p[0] for p in points), max(p[1] for p in points))
+
+
+def _position_scene(scene, scene_index, changes):
+    """Translate a fitting scene together; never resize or discard its contents."""
+    import copy
+    objects = scene.get('objects', [])
+    if not objects:
+        return
+    def scene_bounds(items):
+        # Labels are pinned by the existing layout pass below. Their discarded
+        # motion/rotation must not enlarge the bounds of the rendered scene.
+        bounds = [_object_bounds({k: v for k, v in obj.items()
+                                  if k not in ('move', 'motion_path', 'rotate')}
+                                 if obj.get('type') == 'text' else obj)
+                  for obj in items]
+        return (min(b[0] for b in bounds), min(b[1] for b in bounds),
+                max(b[2] for b in bounds), max(b[3] for b in bounds))
+
+    left, top, right, bottom = scene_bounds(objects)
+    if right - left > 422 or bottom - top > 470:
+        raise ValueError('Drawing outside safe area; scene cannot fit without redesign')
+    dx = max(38 - left, min(0, 460 - right))
+    dy = max(210 - top, min(0, 680 - bottom))
+    if dx == 0 and dy == 0:
+        return
+    for _ in range(8):
+        translated = copy.deepcopy(objects)
+        for obj in translated:
+            obj['box'][:2] = [obj['box'][0] + dx, obj['box'][1] + dy]
+            if obj.get('type') in ('line', 'arrow') and obj.get('end') is not None:
+                obj['end'] = [obj['end'][0] + dx, obj['end'][1] + dy]
+            if obj.get('motion_path'):
+                obj['motion_path'] = [[x + dx, y + dy] for x, y in obj['motion_path']]
+        left, top, right, bottom = scene_bounds(translated)
+        cx = max(38 - left, min(0, 460 - right))
+        cy = max(210 - top, min(0, 680 - bottom))
+        if cx == 0 and cy == 0:
+            break
+        # Recomputed rotated vertices can round past an edge. Correct only
+        # that roundoff, retaining the strict final bounds and the shared shift.
+        if cx:
+            dx = math.nextafter(dx + cx, math.inf if cx > 0 else -math.inf)
+        if cy:
+            dy = math.nextafter(dy + cy, math.inf if cy > 0 else -math.inf)
+    else:
+        raise ValueError('Drawing outside safe area; scene cannot fit without redesign')
+    for object_index, (before, obj) in enumerate(zip(objects, translated)):
+        changes.append({'scene': scene_index, 'object': object_index,
+                        'reason': 'scene_translation', 'translation': [dx, dy],
+                        'before': copy.deepcopy(before), 'after': copy.deepcopy(obj)})
+    scene['objects'] = translated
+
+
 def layout_storyboard(plan):
-    """Fit and pin labels locally; never rewrite claims or silently drop geometry."""
+    """Position complete scenes and fit labels without changing their meaning."""
     import copy
     from .media import font, wrap
     output = copy.deepcopy(plan)
@@ -57,6 +144,7 @@ def layout_storyboard(plan):
     draw = ImageDraw.Draw(Image.new('RGB', (540, 960)))
     changes = []
     for scene_index, scene in enumerate(output):
+        _position_scene(scene, scene_index, changes)
         occupied = []
         geometry = [o for o in scene.get('objects',[]) if o.get('type') != 'text']
         if geometry:
@@ -115,19 +203,22 @@ def layout_storyboard(plan):
     return output, changes
 
 
-def validate_storyboard(plan):
+def validate_storyboard(plan, *, opening_is_stock=False):
     from .media import font, wrap
     if not isinstance(plan, list) or len(plan) != 4:
         raise ValueError('Four executable storyboard scenes required')
     draw = ImageDraw.Draw(Image.new('RGB', (540, 960)))
     shapes = []
-    for scene in plan:
+    for scene_index, scene in enumerate(plan):
         if not isinstance(scene.get('example'), bool) or not scene.get('purpose'):
             raise ValueError('Storyboard needs purpose and explicit example status')
         if not scene.get('heading') or len(scene['heading']) > 28:
             raise ValueError('Storyboard heading overflow')
         objects = scene.get('objects', [])
-        if not 3 <= len(objects) <= 80:
+        # The approved stock-footage editor never renders state zero. It may
+        # retain a simple subject sketch; every rendered state stays complete.
+        stock_opening = opening_is_stock and scene_index == 0
+        if not (2 if stock_opening else 3) <= len(objects) <= 80:
             raise ValueError('Storyboard object count invalid')
         text_boxes = []
         geometry = []
@@ -173,6 +264,9 @@ def validate_storyboard(plan):
                         raise ValueError('Invalid motion path')
                     if not (38 <= point[0] <= 460-w and 210 <= point[1] <= 680-h):
                         raise ValueError('Motion path outside safe area')
+                left, top, right, bottom = _object_bounds(obj)
+                if not (38 <= left <= right <= 460 and 210 <= top <= bottom <= 680):
+                    raise ValueError('Motion path outside safe area')
             if not 0 <= obj.get('motion_start',0) < 1:
                 raise ValueError('Invalid motion start')
             if not 0 <= obj.get('reveal', 0) < obj.get('until', 1) <= 1:
@@ -192,7 +286,7 @@ def validate_storyboard(plan):
                 text_boxes.append(box)
             else:
                 geometry.append(obj)
-        if len(geometry) < 2:
+        if len(geometry) < (1 if stock_opening else 2):
             raise ValueError('Text-only storyboard is not a demonstration')
         shapes.append(digest(geometry))
     if len(set(shapes)) < 3:

@@ -31,7 +31,7 @@ def editorial_checks(episode, history=()):
         for obj in state.get('objects',[]):
             if obj.get('type')=='text' and re.search(r'\b(subscribe|follow hidden logic)\b',obj.get('text',''),re.I):
                 raise ValueError('CTA belongs in narration captions, not a duplicate diagram label')
-    validate_storyboard(episode.get('storyboard'))
+    validate_storyboard(episode.get('storyboard'), opening_is_stock=episode.get('production_version', 0) >= 4)
     if not episode.get('source_label') or len(episode['source_label']) > 42:
         raise ValueError('Readable source credit required')
     for old in history:

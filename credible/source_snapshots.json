@@ -1,5 +1,47 @@
 [
-  {"url":"https://www.gps.gov/gps-accuracy-0", "publisher":"GPS.gov", "retrieved_at":"2026-09-13T00:00:00+00:00", "retrieval_method":"Official archived page reviewed during implementation", "resolved_url":"https://archive.gps.gov/systems/gps/performance/accuracy/", "text":"Satellite signal blockage due to buildings, bridges, trees, etc. Indoor or underground use Signals reflected off buildings or walls (\"multipath\")", "snapshot_only":true},
-  {"url":"https://highways.dot.gov/safety/proven-safety-countermeasures/roundabouts", "publisher":"FHWA", "retrieved_at":"2026-09-13T00:00:00+00:00", "retrieval_method":"Official page retrieved through research browser during implementation", "text":"curved approaches that reduce vehicle speed, entry yield control that gives right-of-way to circulating traffic", "snapshot_only":true},
-  {"url":"https://www.transportation.gov/lost-delayed-or-damaged-baggage", "publisher":"US DOT", "retrieved_at":"2026-09-13T00:00:00+00:00", "retrieval_method":"Official page retrieved through research browser during implementation", "text":"a baggage destination tag on your luggage and will give you the bag identification tag (i.e., a label with a barcode)", "snapshot_only":true}
+  {
+    "url": "https://www.gps.gov/gps-accuracy-0",
+    "publisher": "GPS.gov",
+    "retrieved_at": "2026-09-13T00:00:00+00:00",
+    "retrieval_method": "Official archived page reviewed during implementation",
+    "resolved_url": "https://archive.gps.gov/systems/gps/performance/accuracy/",
+    "text": "Satellite signal blockage due to buildings, bridges, trees, etc. Indoor or underground use Signals reflected off buildings or walls (\"multipath\")",
+    "snapshot_only": true
+  },
+  {
+    "url": "https://highways.dot.gov/safety/proven-safety-countermeasures/roundabouts",
+    "publisher": "FHWA",
+    "retrieved_at": "2026-09-13T00:00:00+00:00",
+    "retrieval_method": "Official page retrieved through research browser during implementation",
+    "text": "curved approaches that reduce vehicle speed, entry yield control that gives right-of-way to circulating traffic",
+    "snapshot_only": true
+  },
+  {
+    "url": "https://www.transportation.gov/lost-delayed-or-damaged-baggage",
+    "publisher": "US DOT",
+    "retrieved_at": "2026-09-13T00:00:00+00:00",
+    "retrieval_method": "Official page retrieved through research browser during implementation",
+    "text": "a baggage destination tag on your luggage and will give you the bag identification tag (i.e., a label with a barcode)",
+    "snapshot_only": true
+  },
+  {
+    "url": "https://www.signaturekitchensuite.com/media/documents/freezer_owners_manual_mfl70339814_0_0.pdf",
+    "publisher": "Signature Kitchen Suite (LG)",
+    "retrieved_at": "2026-09-28T04:47:17.043574+00:00",
+    "resolved_url": "https://www.sksappliances.com/media/documents/freezer_owners_manual_mfl70339814_0_0.pdf",
+    "text": "When you open the door, warmer air enters the freezer. As the warm air cools, it can create a vacuum. If the door is hard to open, wait one minute to allow the air pressure to equalize, then see if it opens more easily. Lights do not work. LED interior lighting failure. The freezer compartment lamp is LED interior lighting, and service should be performed by a qualified technician. The interior of the freezer is covered with dust or soot. The freezer is located near a fire source, such as a fireplace, chimney, or candle. Make sure that the freezer is not located near a fire source, such as a fireplace, chimney or candle. 36 TROUBLESHOOTING Noises Problem Possible Cause Solutions Clicking The",
+    "text_hash": "c0514cbc87f05d523ea1baf715b5ffe2f65b6f2a70ed589dc7ff93ea15f6a184",
+    "snapshot_only": true,
+    "retrieval_method": "Retrieved manufacturer document excerpt; reviewed for home-003"
+  },
+  {
+    "url": "https://products.geappliances.com/appliance/gea-support-search-content?contentId=18946",
+    "publisher": "geappliances.com",
+    "retrieved_at": "2026-09-28T04:44:16.668202+00:00",
+    "resolved_url": "https://products.geappliances.com/appliance/gea-support-search-content?contentId=18946",
+    "text": "Refrigerator - Door or Drawer Hard To Open Refrigerator - Door or Drawer Hard To Open When you open the fresh food or freezer door or drawer on your refrigerator, warm air rushes inside. When you close the door or drawer, all the warm air rushes to the evaporator, which in turn creates a vacuum. If you close one of the doors but then need to open one again right away, the vacuum makes the doors hard to open for about 10 to 15 seconds after closing. Once the air equalizes, the door or drawer will open as normal again. Correcting a Door or Drawer That Is Always Hard To Open on a Refrigerator Try rubbing paraffin wax or petroleum jelly along the edges of the entire gasket. Paraffin wax is used ",
+    "text_hash": "c3b8b17f8cc8199138ddf32ee87f570ddbfe0c6ff37e0b95a76df668555ceb31",
+    "snapshot_only": true,
+    "retrieval_method": "Retrieved manufacturer document excerpt; reviewed for home-003"
+  }
 ]

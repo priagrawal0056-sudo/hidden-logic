@@ -133,7 +133,7 @@ def diagram_frame(meta, progress):
         return image
     from credible.storyboard import draw_storyboard, validate_storyboard
     plan = meta.get('storyboard')
-    validate_storyboard(plan)
+    validate_storyboard(plan, opening_is_stock=meta.get('production_version', 0) >= 4)
     # Show the mechanism and its changed state, with a readable final hold.
     transition = meta.get('_diagram_transition_progress',.38)
     state = plan[3] if meta.get('_callback') else plan[1] if progress < transition else plan[2]
