@@ -518,7 +518,7 @@
       "avg_returning_viewers": null
     },
     "Why drivers in red cars feel faster to you": {
-      "count": 14,
+      "count": 15,
       "avg_views_first_60m": 289.5,
       "avg_views_first_6h": 289.5,
       "avg_views_first_24h": null,
@@ -712,7 +712,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 18.1,
+      "avg_likes_per_1000_views": 18.0,
       "avg_returning_viewers": null
     },
     "Why hotel hallways feeling endless happens to you constantly": {
@@ -1163,7 +1163,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.4,
-      "avg_likes_per_1000_views": 4.4,
+      "avg_likes_per_1000_views": 4.3,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by tearing up at ads you don't care about": {
@@ -1713,7 +1713,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.9,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 8.7,
       "avg_returning_viewers": null
     },
     "Why milk being at the very back of the store keeps happening no matter what": {
@@ -1768,7 +1768,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 250.0,
       "avg_returning_viewers": null
     },
     "Why strangers matching your walking speed is a universal experience": {
@@ -1779,7 +1779,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 10.8,
+      "avg_likes_per_1000_views": 11.8,
       "avg_returning_viewers": null
     },
     "Why buying things you don't need keeps happening no matter what": {
@@ -1845,7 +1845,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.0,
+      "avg_likes_per_1000_views": 5.3,
       "avg_returning_viewers": null
     },
     "Why you can never escape the download stuck at 99 percent": {
@@ -1856,7 +1856,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 15.2,
+      "avg_likes_per_1000_views": 16.8,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by forgetting why you entered a room": {
@@ -1878,7 +1878,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 7.7,
+      "avg_likes_per_1000_views": 6.2,
       "avg_returning_viewers": null
     },
     "Why gas station pumps being painfully slow happens to you constantly": {
@@ -1900,7 +1900,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 13.1,
+      "avg_likes_per_1000_views": 10.2,
       "avg_returning_viewers": null
     },
     "Why everyone is secretly annoyed by autoplay starting before you decide": {
@@ -1911,7 +1911,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 7.6,
       "avg_returning_viewers": null
     },
     "Why everyone picking the wrong queue makes everyone act predictably": {
@@ -1923,6 +1923,28 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 8.2,
+      "avg_returning_viewers": null
+    },
+    "Why mirroring how the person across from you sits is definitely not an accident": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 4.2,
+      "avg_returning_viewers": null
+    },
+    "Why elevator doors closing the moment you run keeps happening no matter what": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.9,
+      "avg_likes_per_1000_views": 20.1,
       "avg_returning_viewers": null
     }
   },
@@ -1946,7 +1968,7 @@
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
       "avg_comments_per_1000_views": 79.0,
-      "avg_likes_per_1000_views": 82.8,
+      "avg_likes_per_1000_views": 82.9,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -2311,7 +2333,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.9,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 8.7,
       "avg_returning_viewers": null
     },
     "secrets": {
@@ -2619,7 +2641,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 8.8,
+      "avg_likes_per_1000_views": 8.7,
       "avg_returning_viewers": null
     },
     "psychological_manipulation": {
@@ -2795,7 +2817,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.1,
-      "avg_likes_per_1000_views": 13.8,
+      "avg_likes_per_1000_views": 13.5,
       "avg_returning_viewers": null
     },
     "Time Perception": {
@@ -2927,7 +2949,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 125.0,
       "avg_returning_viewers": null
     },
     "Digital Addiction": {
@@ -3261,14 +3283,14 @@
       "avg_returning_viewers": null
     },
     "optical_illusions": {
-      "count": 3,
+      "count": 4,
       "avg_views_first_60m": 284.3,
       "avg_views_first_6h": 284.3,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 2.0,
+      "avg_likes_per_1000_views": 2.3,
       "avg_returning_viewers": null
     },
     "food": {
@@ -3334,7 +3356,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 3.3,
+      "avg_likes_per_1000_views": 3.7,
       "avg_returning_viewers": null
     },
     "Spatial Awareness": {
@@ -4049,7 +4071,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 10.8,
+      "avg_likes_per_1000_views": 11.8,
       "avg_returning_viewers": null
     },
     "retail_manipulation": {
@@ -4071,7 +4093,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 17.3,
+      "avg_likes_per_1000_views": 17.1,
       "avg_returning_viewers": null
     },
     "manipulation": {
@@ -4137,7 +4159,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.0,
+      "avg_likes_per_1000_views": 5.3,
       "avg_returning_viewers": null
     },
     "user_experience": {
@@ -4148,7 +4170,7 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 15.2,
+      "avg_likes_per_1000_views": 16.8,
       "avg_returning_viewers": null
     },
     "everyday-annoyance": {
@@ -4181,20 +4203,42 @@
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 7.6,
+      "avg_returning_viewers": null
+    },
+    "body_language": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 4.2,
+      "avg_returning_viewers": null
+    },
+    "building_design": {
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.9,
+      "avg_likes_per_1000_views": 20.1,
       "avg_returning_viewers": null
     }
   },
   "hook_types": {
     "physical_moment": {
-      "count": 240,
+      "count": 243,
       "avg_views_first_60m": 188.6,
       "avg_views_first_6h": 200.9,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
-      "avg_comments_per_1000_views": 7.4,
-      "avg_likes_per_1000_views": 18.5,
+      "avg_comments_per_1000_views": 7.3,
+      "avg_likes_per_1000_views": 19.6,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

@@ -2703,5 +2703,115 @@
     "hook_type": "physical_moment",
     "cluster": null,
     "quality_score": 46.0
+  },
+  {
+    "title": "Why You Love Last-Minute Goals",
+    "views": 19,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why Your Online Arguments Never Finish",
+    "views": 187,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": "internet_behavior",
+    "quality_score": 0
+  },
+  {
+    "title": "give me please \ud83e\udd7a\ud83e\udd7a",
+    "views": 28,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "sleepy baby \ud83d\ude34\ud83d\ude34",
+    "views": 34,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "crunchy snack \ud83c\udf57\ud83c\udf57",
+    "views": 17,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "the fall at the end \ud83d\ude2d\ud83d\ude2d\ud83d\ude2d",
+    "views": 0,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "awoo",
+    "views": 1,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "cat attack!",
+    "views": 2,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "explainer",
+    "cluster": null,
+    "quality_score": 0
+  },
+  {
+    "title": "Why You Always Cheer For Underdogs",
+    "views": 292,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": null,
+    "quality_score": 45.0
+  },
+  {
+    "title": "Why Elevators Always Shut In Your Face",
+    "views": 294,
+    "environment": false,
+    "annoyance": 0,
+    "visual": 9.0,
+    "universality": 0,
+    "hook_type": "physical_moment",
+    "cluster": "elevator",
+    "quality_score": 47.0
   }
 ]
