@@ -7021,5 +7021,20 @@
     "topic": "Brain Cell Engaged \ud83d\udcf1",
     "date": "2026-09-14",
     "n": 0
+  },
+  {
+    "video_id": "ONFQVkXZVJo",
+    "title": "Why You Always Refresh Your Feed",
+    "topic": "Why infinite feeds you can't put down happens to you constantly",
+    "date": "2026-09-29",
+    "n": 583,
+    "source": "pool",
+    "visual_score": 9.0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

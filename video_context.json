@@ -1270,5 +1270,11 @@
     "topic": "Why elevator doors closing the moment you run keeps happening no matter what",
     "visual_thesis": "Demonstrating how elevator light sensors fail to detect approaching runners while exit-triggers accelerate door closures.",
     "script": "You sprint for the elevator, but the doors shut on purpose. It feels like bad timing, but building sensors are programmed to reject your run. Standard light curtains only scan the threshold, ignoring the hallway entirely. But here’s the sinister part: the moment someone steps out, the door timer instantly cuts in half. You aren't missing the elevator by accident. They're literally programmed to lock you out right as"
+  },
+  "ONFQVkXZVJo": {
+    "title": "Why You Always Refresh Your Feed",
+    "topic": "Why infinite feeds you can't put down happens to you constantly",
+    "visual_thesis": "The 'pull-to-refresh' animation is a psychological trap designed to mimic the tension of a slot machine.",
+    "script": "You pull down to refresh your feed. That spinning wheel isn't actually loading anything. It’s pausing on purpose. If the app loaded instantly, you’d get bored and leave. But by making you wait, it mimics a slot machine. You don't know if the next post is a win or a dud. This uncertainty turns your thumb into a gambler’s lever, forcing you to pull down to refresh your feed."
   }
 }

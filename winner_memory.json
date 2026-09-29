@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 1821.4,
+  "channel_avg_views": 1821.5,
   "topic_clusters": {
     "airport": {
       "videos": 14,
@@ -84,7 +84,7 @@
       "best_views": 1774,
       "recent_views": [
         1090,
-        910,
+        911,
         1088,
         920,
         873,
@@ -184,10 +184,10 @@
     },
     "restaurant": {
       "videos": 10,
-      "avg_views": 761.7,
-      "best_views": 2523,
+      "avg_views": 765.4,
+      "best_views": 2547,
       "recent_views": [
-        2523,
+        2547,
         1029,
         5,
         4,
@@ -303,10 +303,10 @@
     },
     "perception": {
       "videos": 2,
-      "avg_views": 77155.7,
-      "best_views": 115727,
+      "avg_views": 77159.0,
+      "best_views": 115732,
       "recent_views": [
-        115727,
+        115732,
         13
       ],
       "avg_stayed_to_watch": null,
@@ -434,5 +434,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-09-29T09:13:36.339255"
+  "last_updated": "2026-09-29T20:21:16.987542"
 }

@@ -5583,7 +5583,7 @@
     "visual_thesis": "Driver perspective in highway traffic watching a red car pass in the side mirror, transitioning to visual ray-tracing of retina wavelength processing.",
     "first_frame_description": "Driver side-mirror view on a busy highway as a bright red sedan passes by in the fast lane.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 3.3
+    "likes_per_1000_views": 3.29
   },
   "h4iWpDI6TuY": {
     "variant": "B",
@@ -5622,5 +5622,22 @@
     "first_frame_description": "First-person POV sprinting down a brightly lit office hallway as elevator doors rapidly slide shut.",
     "comments_per_1000_views": 0.88,
     "likes_per_1000_views": 20.14
+  },
+  "ONFQVkXZVJo": {
+    "variant": "A",
+    "title": "Why You Always Refresh Your Feed",
+    "date": "2026-09-29",
+    "publish_at": "2026-09-30T07:21:00Z",
+    "cluster": null,
+    "topic": "Why infinite feeds you can't put down happens to you constantly",
+    "subcluster": "Social Media",
+    "hook_type": "physical_moment",
+    "series": "App & Website Tricks",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The 'pull-to-refresh' animation is a psychological trap designed to mimic the tension of a slot machine.",
+    "first_frame_description": "A macro close-up of a thumb pulling down on a smartphone screen, showing the 'spinning wheel' animation starting to rotate."
   }
 }
