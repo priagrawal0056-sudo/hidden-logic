@@ -41,7 +41,7 @@ class RequestAccountingTests(unittest.TestCase):
             service_limits.request_with_retry(lambda: response(200),
                                              model='gemini-2.5-flash', stage='writing')
             report = service_limits.report()
-        self.assertEqual(report['total_attempts'], 2)
+        self.assertEqual(report['total_attempts'], 4)
         self.assertEqual([row['status'] for row in report['requests']], ['200', 'no_response'])
         self.assertNotIn('private-key', json.dumps(report))
 

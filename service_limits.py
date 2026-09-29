@@ -7,6 +7,14 @@ import re
 from copy import deepcopy
 
 _current = ContextVar('gemini_run_limit', default=None)
+_TRANSIENT_HTTP = (408, 500, 502, 503, 504)
+
+# Explicit compatible free-tier candidates, not model aliases or paid-only Pro
+# models. The repository's model-access check verifies availability separately.
+TEXT_MODELS = ('gemini-3.8-flash', 'gemini-3.5-flash-lite', 'gemini-3.1-flash-lite',
+               'gemini-3-flash-preview', 'gemini-2.5-flash', 'gemini-2.5-flash-lite')
+TTS_MODELS = ('gemini-3.1-flash-tts-preview', 'gemini-3.8-flash-tts',
+              'gemini-2.5-flash-preview-tts')
 
 _STAGES = frozenset(('writing', 'draft', 'editorial_review', 'source_review',
                      'script_review', 'footage_review', 'narration',
@@ -198,13 +206,33 @@ def quota_details(response):
     return kind,retry
 
 
-def observe(status, response=None):
+def observe(status, response=None, *, model_failure=False):
     state = _current.get()
     if state is not None:
         attempt = state.get('active_request')
         if attempt is not None:
             attempt['status'] = str(status) if isinstance(status, int) and 100 <= status <= 599 else 'unknown'
             state['active_request'] = None
+    if model_failure and status in (404, 429):
+        diagnostics = {}
+        if state is not None and attempt is not None:
+            diagnostics = {field: attempt[field] for field in ('model', 'stage')}
+        kind, retry = quota_details(response) if response is not None else (None, None)
+        if response is not None:
+            diagnostics['violations'] = _quota_violations(response)
+        error = ServiceUnavailable(status, kind, retry, diagnostics=diagnostics)
+        error.model_scoped = True
+        raise error
+    if status in (401, 403, 404, 429) and state is None:
+        kind, retry = quota_details(response) if response is not None else (None, None)
+        error = ServiceUnavailable(status, kind, retry)
+        if status == 403 and response is not None:
+            try:
+                if 'leak' in response.json().get('error', {}).get('message', '').lower():
+                    error.args = (str(error) + '; key_blocked_as_leaked_replace_in_ai_studio',)
+            except (ValueError, AttributeError, TypeError):
+                pass
+        raise error
     if state is not None and status in (401, 403, 404, 429):
         state['status'] = status
         if status == 429:
@@ -277,8 +305,8 @@ class TransientServiceError(RuntimeError):
 
     def __init__(self, message=None, *, http_status=None, kind='unavailable', model=None, stage=None):
         self.service_details = {
-            'http_status': http_status if type(http_status) is int and http_status in (502, 503, 504) else None,
-            'kind': kind if kind in ('server_error', 'timeout', 'connection_error', 'unavailable') else 'unavailable',
+            'http_status': http_status if type(http_status) is int and http_status in _TRANSIENT_HTTP else None,
+            'kind': kind if kind in ('server_error', 'timeout', 'connection_error', 'unavailable', 'request_budget') else 'unavailable',
             'model': _model_label(model), 'stage': _stage_label(stage)}
         super().__init__(message or service_message(self.service_details))
 
@@ -291,8 +319,10 @@ def service_deferral(error=None):
 
 
 def service_message(details):
+    if details.get('kind') == 'request_budget':
+        return 'Gemini request budget reached. Unfinished work will resume in a later run.'
     status = details.get('http_status')
-    detail = ('HTTP ' + str(status) if status in (502, 503, 504) else
+    detail = ('HTTP ' + str(status) if status in _TRANSIENT_HTTP else
               'request timed out' if details.get('kind') == 'timeout' else
               'connection failed' if details.get('kind') == 'connection_error' else 'temporary outage')
     return ('Gemini service temporarily unavailable (' + detail + '). '
@@ -302,8 +332,8 @@ def service_message(details):
 def stop_transient(error):
     """Open the run's circuit only after a caller exhausts its recovery policy.
 
-    The writer still gets its one configured fallback first. A successful
-    fallback does not disable narration or review. No outage state survives the
+    The caller exhausts its configured compatible models first. A successful
+    backup does not disable narration or review. No outage state survives the
     next run, and no raw provider text or credential is persisted here.
     """
     if not isinstance(error, TransientServiceError):
@@ -318,7 +348,7 @@ def stop_transient(error):
                     details[field] = attempts[-1][field]
             # Older callers already emit a typed terminal service failure. Use
             # the measured HTTP result, never parse arbitrary exception text.
-            if details['kind'] == 'unavailable' and attempts[-1]['status'] in ('502', '503', '504'):
+            if details['kind'] == 'unavailable' and attempts[-1]['status'] in tuple(map(str, _TRANSIENT_HTTP)):
                 details.update(http_status=int(attempts[-1]['status']), kind='server_error')
         state.setdefault('service_outage', details)
         error.service_details = deepcopy(state['service_outage'])
@@ -337,8 +367,30 @@ def is_retryable(error):
                               requests.ConnectionError))
 
 
-def request_with_retry(send, max_attempts=3, *, model=None, stage=None, stop_on_failure=True):
-    """Retry only temporary server failures, respecting shared pacing and quota.
+def wait_for_retry(model, stage, next_attempt=None):
+    """Back off after failure; normal request pacing may require a longer wait."""
+    check()
+    label = f' (attempt {next_attempt})' if next_attempt else ''
+    print(f'[gemini] {_model_label(model)} {_stage_label(stage)}: retrying in 10s{label}', flush=True)
+    time.sleep(10)
+
+
+def model_quota(response):
+    """Only explicit per-model limits permit trying another model's allowance."""
+    try:
+        rows = [row for detail in response.json()['error']['details']
+                for row in detail.get('violations', [])]
+        return bool(rows) and all(isinstance(row, dict)
+            and isinstance(row.get('quotaId'), str)
+            and _QUOTA_ID.fullmatch(row['quotaId'])
+            and 'PerModel' in row['quotaId'] for row in rows)
+    except (ValueError, TypeError, KeyError, AttributeError):
+        return False
+
+
+def request_with_retry(send, max_attempts=3, *, model=None, stage=None, stop_on_failure=True,
+                       allow_model_fallback=False):
+    """Retry network failures and temporary HTTP errors with ten-second pauses.
 
     ``send`` owns its call budget and is invoked for every actual request. A
     retry cannot bypass authentication, quota, or a caller's remaining budget.
@@ -356,14 +408,88 @@ def request_with_retry(send, max_attempts=3, *, model=None, stage=None, stop_on_
                 state['active_request'] = None  # Counted as no_response, not an HTTP status.
             kind = 'timeout' if isinstance(exc, requests.Timeout) else 'connection_error'
             error = TransientServiceError(kind=kind, model=model, stage=stage)
+            if attempt + 1 < max_attempts:
+                wait_for_retry(model, stage, attempt + 2)
+                continue
             raise (stop_transient(error) if stop_on_failure else error) from None
-        observe(response.status_code, response)
-        if response.status_code not in (502, 503, 504) or attempt + 1 == max_attempts:
-            if response.status_code in (502, 503, 504) and stop_on_failure:
+        observe(response.status_code, response, model_failure=allow_model_fallback and
+                (response.status_code == 404 or (response.status_code == 429 and model_quota(response))))
+        if response.status_code not in _TRANSIENT_HTTP or attempt + 1 == max_attempts:
+            if response.status_code in _TRANSIENT_HTTP and stop_on_failure:
                 raise stop_transient(TransientServiceError(http_status=response.status_code,
                     kind='server_error', model=model, stage=stage))
             return response
-        time.sleep((5, 15)[attempt])
+        wait_for_retry(model, stage, attempt + 2)
+
+
+class ModelChain:
+    """Exhaust bounded retries and compatible backups before deferring a run.
+
+    Remember failed models for this run so later reviews don't retry a known
+    outage. A successful response never bypasses the caller's quality checks.
+    """
+
+    def __init__(self, models, budget=None):
+        self.models = tuple(dict.fromkeys(models))
+        if not self.models or any(_model_label(m) != m for m in self.models):
+            raise ValueError('Configure explicit Gemini model IDs')
+        self.model = self.models[0]
+        self.remaining = len(self.models) * 3 if budget is None else int(budget)
+        self.failed = {}
+        self.stopped = None
+
+    def request(self, send, *, stage):
+        check()
+        if self.stopped is not None:
+            raise self.stopped
+        state = _current.get()
+        failed = state.setdefault('failed_models', {}) if state is not None else self.failed
+        candidates = tuple(dict.fromkeys((self.model, *self.models)))
+        last = None
+        switching = False
+        for model in candidates:
+            if model in failed:
+                last = failed[model]
+                continue
+            if self.remaining <= 0:
+                raise stop_transient(TransientServiceError(kind='request_budget', model=model, stage=stage))
+            if switching:
+                print(f'[gemini] Trying backup model {model} for {_stage_label(stage)}', flush=True)
+                wait_for_retry(model, stage)
+            self.model = model
+
+            def dispatch():
+                self.remaining -= 1
+                return send(model)
+
+            try:
+                response = request_with_retry(dispatch, max_attempts=min(3, self.remaining),
+                    model=model, stage=stage, stop_on_failure=False, allow_model_fallback=True)
+                if response.status_code not in _TRANSIENT_HTTP:
+                    return response
+                last = TransientServiceError(http_status=response.status_code, kind='server_error',
+                                             model=model, stage=stage)
+            except TransientServiceError as exc:
+                last = exc
+            except ServiceUnavailable as exc:
+                # Global/unknown quota and auth failures have already opened the
+                # stop signal. Only explicitly model-scoped limits may rotate.
+                if blocked() or not getattr(exc, 'model_scoped', False):
+                    self.stopped = exc
+                    raise
+                last = exc
+            failed[model] = last
+            switching = True
+
+        if isinstance(last, ServiceUnavailable) and last.status == 429:
+            if state is not None:
+                state.update(status=429, limit_kind=last.limit_kind, retry_after=last.retry_after,
+                             quota_diagnostics=last.quota_diagnostics)
+            last.request_report = report()
+            raise last
+        if not isinstance(last, TransientServiceError):
+            last = TransientServiceError(model=self.model, stage=stage)
+        raise stop_transient(last)
 
 
 def response_object(response):

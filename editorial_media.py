@@ -9,6 +9,7 @@ import subprocess
 import assemble
 import captions
 from credible.core import digest, file_hash, save
+from credible.cache_compat import asset_code_hash
 
 ROOT = Path(__file__).resolve().parent
 STYLE_FILES = ('editorial_profile.json', 'editorial_media.py', 'assemble.py',
@@ -18,7 +19,7 @@ STYLE_FILES = ('editorial_profile.json', 'editorial_media.py', 'assemble.py',
 
 
 def fingerprint():
-    return [(name, file_hash(ROOT/name)) for name in STYLE_FILES]
+    return [(name, asset_code_hash(ROOT/name)) for name in STYLE_FILES]
 
 
 def plan_scenes(words, script, config, diagram_index=1, diagram_count=None):
@@ -205,7 +206,7 @@ def _stock_signature(meta, words, scenes):
                    'visual_thesis': meta.get('visual_thesis', meta['script']),
                    'first_frame_description': meta.get('first_frame_description', ''),
                    'stock_selection_code': file_hash(ROOT / 'visuals.py'),
-                   'frame_review_code': file_hash(ROOT / 'footage_review.py')})
+                   'frame_review_code': asset_code_hash(ROOT / 'footage_review.py')})
 
 
 def _stock_asset(path, folder):

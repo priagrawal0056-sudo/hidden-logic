@@ -39,7 +39,7 @@ class ServiceCircuitTests(unittest.TestCase):
             model = writer_model()
             with self.assertRaises(service_limits.TransientServiceError):
                 model.call('draft', schema={'type': 'object'})
-            self.assertEqual(post.call_count, 4)
+            self.assertEqual(post.call_count, 6)
             self.assertTrue(service_limits.blocked())
             self.assertEqual(service_limits.service_deferral()['http_status'], 503)
             self.assertIsNone(service_limits.quota_deferral())
@@ -49,8 +49,8 @@ class ServiceCircuitTests(unittest.TestCase):
             with tempfile.TemporaryDirectory() as tmp, self.assertRaises(service_limits.TransientServiceError):
                 tts._try_gemini_tts('A complete script.', str(Path(tmp)/'voice.mp3'),
                                     str(Path(tmp)/'timings.json'), 'private-test-key')
-            self.assertEqual(service_limits.report()['total_attempts'], 4)
-            self.assertEqual(post.call_count, 4)
+            self.assertEqual(service_limits.report()['total_attempts'], 6)
+            self.assertEqual(post.call_count, 6)
         self.assertFalse(service_limits.blocked())
         with service_limits.session(), patch('requests.post', return_value=response({'supported': True})):
             self.assertEqual(writer_model().call('review'), {'supported': True})
@@ -60,9 +60,9 @@ class ServiceCircuitTests(unittest.TestCase):
                         requests.ConnectionError('secret')):
             with self.subTest(error=type(failure).__name__), service_limits.session(), \
                     patch('service_limits.time.sleep'), patch('requests.post', side_effect=[
-                        failure, response({'supported': True})]) as post:
+                        failure, failure, failure, response({'supported': True})]) as post:
                 self.assertEqual(writer_model().call('review'), {'supported': True})
-                self.assertEqual(post.call_count, 2)
+                self.assertEqual(post.call_count, 4)
                 self.assertFalse(service_limits.blocked())
                 self.assertEqual(service_limits.report()['requests'][-1]['status'], 'no_response')
                 self.assertNotIn('secret', json.dumps(service_limits.report()))
@@ -76,7 +76,7 @@ class ServiceCircuitTests(unittest.TestCase):
             self.assertEqual(details['kind'], 'timeout')
             self.assertIsNone(details['http_status'])
             self.assertTrue(service_limits.blocked())
-            self.assertEqual(post.call_count, 2)
+            self.assertEqual(post.call_count, 6)
             self.assertNotIn('secret', str(caught.exception) + json.dumps(details))
 
     def test_terminal_footage_failure_stops_future_narration(self):
@@ -86,11 +86,11 @@ class ServiceCircuitTests(unittest.TestCase):
                 patch('requests.post', return_value=response(status=503)) as post:
             with self.assertRaises(service_limits.TransientServiceError):
                 footage_review.assess('clip.mp4', 4, 'Test narration.', [], 'private-test-key')
-            self.assertEqual(post.call_count, 3)
+            self.assertEqual(post.call_count, len(service_limits.TEXT_MODELS) * 3)
             self.assertEqual(service_limits.service_deferral()['stage'], 'footage_review')
             with self.assertRaises(service_limits.TransientServiceError):
                 service_limits.before_request(model='gemini-3.1-flash-tts-preview', stage='narration')
-            self.assertEqual(service_limits.report()['total_attempts'], 3)
+            self.assertEqual(service_limits.report()['total_attempts'], len(service_limits.TEXT_MODELS) * 3)
 
     def test_untyped_errors_cannot_open_circuit_or_claim_service_deferral(self):
         for error in (RuntimeError('HTTP 503'), requests.Timeout('Stock service timeout'),
@@ -102,8 +102,7 @@ class ServiceCircuitTests(unittest.TestCase):
                 self.assertFalse(service_limits.blocked())
 
     def test_existing_narration_failures_get_safe_details_when_reported(self):
-        # Keep the voice implementation unchanged so existing verified audio
-        # keeps its signature and can be resumed instead of synthesized again.
+        # Narration exhausts bounded same-voice model alternatives before stopping.
         with tempfile.TemporaryDirectory() as tmp, service_limits.session(), \
                 patch('service_limits.time.sleep'), \
                 patch('requests.post', return_value=response(status=503)) as post:
@@ -114,7 +113,7 @@ class ServiceCircuitTests(unittest.TestCase):
             self.assertEqual(issue['service']['http_status'], 503)
             self.assertEqual(issue['service']['stage'], 'narration')
             self.assertTrue(service_limits.blocked())
-            self.assertEqual(post.call_count, 2)
+            self.assertEqual(post.call_count, len(service_limits.TTS_MODELS) * 3)
 
     def test_terminal_exception_keeps_service_details_after_session_reset(self):
         with self.assertRaises(service_limits.TransientServiceError) as caught:
@@ -140,10 +139,10 @@ class PipelineServiceDeferralTests(unittest.TestCase):
             self.assertEqual(report['status'], 'deferred_service')
             self.assertEqual(report['completed_slots'], 0)
             self.assertEqual(len(report['deferred_slots']), 3)
-            self.assertEqual(report['gemini_requests']['total_attempts'], 4)
+            self.assertEqual(report['gemini_requests']['total_attempts'], 6)
             self.assertEqual(report['errors'], [])
             self.assertIsNone(report['quota'])
-            self.assertEqual(post.call_count, 4)
+            self.assertEqual(post.call_count, 6)
             self.assertEqual(mocks['credible.pipeline.generate_episode'].call_count, 1)
             mocks['credible.pipeline.prepare'].assert_not_called()
             mocks['credible.pipeline.seed_reserve'].assert_not_called()

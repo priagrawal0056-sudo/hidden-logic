@@ -34,8 +34,13 @@ exposure. Analytics runs independently. A state-save failure blocks further uplo
 
 `deferred_quota` and `deferred_service` are normal exits with unfinished work saved.
 A green workflow with either status does not mean videos were produced: check
-`completed_slots` (or the single-pilot result) in the report. After bounded Gemini
-retries fail, new Gemini work stops for that run; later runs retry with fresh
+`completed_slots` (or the single-pilot result) in the report. Temporary Gemini
+failures get up to three attempts per model, with ten-second backoff (plus normal
+rate pacing), then compatible backup models. Text/vision has six configured
+options; speech has three, all keeping the selected voice. Explicit per-model
+quota limits skip to backups; unknown/global quota and invalid credentials do
+not rotate models. Every retry counts against the existing request budget.
+After all options or that budget are exhausted, new Gemini work stops; later runs retry with fresh
 service state and reuse verified work. Genuine validation, upload and persistence
 failures still fail the workflow. Do not enable publishing to bypass a deferral.
 

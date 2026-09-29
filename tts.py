@@ -564,26 +564,20 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
         },
     }
     model = _TTS_CFG.get("gemini_tts_model", "gemini-3.1-flash-tts-preview")
+    chain = service_limits.ModelChain([model, *service_limits.TTS_MODELS])
     attempts = []
     last_failure = None
     def record_request(attempt, **outcome):
         # Never save provider response bodies, request URLs, keys or headers.
-        attempts.append({'attempt': attempt + 1, **outcome})
+        attempts.append({'attempt': attempt + 1, 'model': chain.model, **outcome})
         with open(mp3_path + '.service.json', 'w', encoding='utf-8') as diagnostic:
             json.dump({'service': 'gemini_narration', 'attempts': attempts}, diagnostic, indent=2)
     for narration_attempt in range(2):
         service_limits.check()
         try:
-            service_limits.before_request(model=model, stage='narration')
-            r = requests.post(GEMINI_TTS_URL.format(model=model, key=api_key),
-                              json=body, timeout=120)
-            service_limits.observe(r.status_code, r)
-            if r.status_code in (401, 403, 429):
-                # Keep the same behavior when called outside a pipeline session.
-                kind, retry = service_limits.quota_details(r)
-                raise service_limits.ServiceUnavailable(r.status_code, kind, retry)
-            if r.status_code in (502, 503, 504):
-                raise service_limits.TransientServiceError(f'Gemini narration HTTP {r.status_code}')
+            r = chain.request(lambda active_model: requests.post(
+                GEMINI_TTS_URL.format(model=active_model, key=api_key),
+                json=body, timeout=120), stage='narration')
             if not 200 <= r.status_code < 300:
                 record_request(narration_attempt, status='http_error', http_status=r.status_code)
                 raise RuntimeError(f'Gemini narration request rejected (HTTP {r.status_code}); voice unchanged')
@@ -606,14 +600,10 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
             record_request(narration_attempt, status='service_blocked', http_status=exc.status,
                            limit_kind=exc.limit_kind)
             raise
-        except (requests.Timeout, requests.ConnectionError) as exc:
-            last_failure = service_limits.TransientServiceError('Gemini narration request failed: ' + type(exc).__name__)
-            record_request(narration_attempt, status='request_unavailable', error_type=type(exc).__name__)
-            continue
         except service_limits.TransientServiceError as exc:
-            last_failure = exc
-            record_request(narration_attempt, status='service_unavailable', http_status=r.status_code)
-            continue
+            record_request(narration_attempt, status='service_unavailable',
+                           **service_limits.service_deferral(exc))
+            raise
         except (ValueError, TypeError) as exc:
             last_failure = service_limits.ResponseFormatError('Gemini narration returned malformed audio data')
             record_request(narration_attempt, status='malformed_audio', error_type=type(exc).__name__)
@@ -640,7 +630,7 @@ def _try_gemini_tts(text: str, mp3_path: str, timings_path: str, api_key: str):
             raise RuntimeError("Gemini narration needs verified word timings; estimated cuts are disabled")
         with open(timings_path, "w", encoding="utf-8") as f:
             json.dump(words, f, indent=2)
-        print(f"[tts] Gemini TTS used ({model}, {len(words)} words)")
+        print(f"[tts] Gemini TTS used ({chain.model}, {len(words)} words)")
         return words
     if last_failure is not None:
         raise last_failure

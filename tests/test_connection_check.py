@@ -13,6 +13,9 @@ from tests.test_single_editorial_recovery import dependencies
 
 
 class ConnectionCheckTests(unittest.TestCase):
+    def setUp(self):
+        self.enterContext(patch('credible.service_check.time.sleep'))
+
     def test_missing_or_misformatted_secret_makes_no_request(self):
         for key in ('', ' my-key', 'my-key\n', '"my-key"', 'HL_GEMINI_API_KEY=my-key'):
             get = Mock()

@@ -1,5 +1,42 @@
 # Approved editor rollout
 
+## September 29 retry and model-backup update
+
+Network timeouts previously skipped the same-model retry loop. Writing, footage
+review and narration now retry temporary HTTP 408/500/502/503/504 responses,
+timeouts and connection failures up to three total attempts per model. Each retry
+waits ten seconds after failure; existing request-rate pacing may add more time.
+Logs identify the model, stage, next attempt and backup switch without credentials.
+
+Writing and frame review can use six explicitly configured compatible models:
+3.8 Flash, 3.5 Flash Lite, 3.1 Flash Lite, 3 Flash Preview, 2.5 Flash and 2.5 Flash
+Lite. Narration can use 3.1 Flash TTS Preview, 3.8 Flash TTS and 2.5 Flash Preview
+TTS, preserving the complete script, selected Orus voice and measured timing
+checks. These are separate text/vision and speech pools, never a change to a
+different narration engine. Writing retains its 18-request run budget, counting
+every retry; exhausting that budget defers saved work rather than raising a bug.
+
+After a model exhausts its retries, subsequent work skips that failed model for
+the rest of the run. An explicitly model-scoped quota limit or unavailable model
+also advances to a backup; unknown/global quota, authentication failures, malformed
+content and negative editorial verdicts do not trigger model shopping. Model-access
+checks accept an available backup when the primary is missing and also retry
+temporary failures. Exhausted service/model options keep generation disabled and
+exit cleanly. Reports still distinguish unfinished work from completed videos.
+
+An exact-hash compatibility record preserves the prior narration and stock-review
+cache contracts for these transport-only edits. Future source edits invalidate
+those signatures normally. Saved audio, timing and footage hashes are still checked;
+prompts, voice direction, alignment, captions, music and rendering stay unchanged.
+
+Verification covers timeout recovery on the third attempt, recovery on the third
+model, all-model exhaustion, ten-second backoff plus rate pacing, real request
+accounting, quota scope, metadata recovery, same-voice TTS failover, negative
+footage verdicts, and saved asset compatibility. These tests use mocked services;
+they do not establish live Gemini availability or certify a finished pilot.
+All 339 regression tests pass and the offline release scan reports no problems.
+Publishing remains disabled.
+
 ## September 29 service-outage recovery
 
 The September 28 daily log made 30 requests after writing/review services became

@@ -154,21 +154,20 @@ class FreeModel:
             self.fallback_model = None
         self.remaining = config['max_model_calls']
         self.exhausted = False
+        backups = config.get('fallback_models', [self.fallback_model] if self.fallback_model else [])
+        self.chain = service_limits.ModelChain([self.model, *backups], budget=self.remaining)
 
     def call(self, prompt, schema=None):
         service_limits.check()
         import requests
-        if not self.key or self.exhausted or self.remaining <= 0:
+        if not self.key or self.exhausted:
             raise RuntimeError('Free model unavailable; use verified reserve')
         generation = {'temperature': .2, 'responseMimeType': 'application/json'}
         if schema is not None:
             generation['responseJsonSchema'] = schema
-        def send():
-            if self.remaining <= 0:
-                raise RuntimeError('Free model call budget exhausted; use verified reserve')
-            self.remaining -= 1
+        def send(model):
             return requests.post(
-                f'https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent',
+                f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
                 headers={'x-goog-api-key': self.key}, timeout=75,
                 json={'contents': [{'parts': [{'text': prompt}]}],
                       'generationConfig': generation})
@@ -176,27 +175,14 @@ class FreeModel:
         # passing verdict. Every HTTP retry is also charged to the call budget.
         stage = 'script_draft' if schema else 'script_review'
         for format_attempt in range(2):
-            response, transport_error = None, None
+            self.chain.remaining = self.remaining
             try:
-                response = service_limits.request_with_retry(send,
-                    max_attempts=min(2 if self.fallback_model else 3, self.remaining),
-                    model=self.model, stage=stage, stop_on_failure=False)
-            except service_limits.TransientServiceError as exc:
-                transport_error = exc
-            if ((transport_error or response.status_code in (502, 503, 504))
-                    and self.fallback_model and self.remaining > 0):
-                # One configured free-tier alternative for a server outage only.
-                # Quota/auth/model-access failures never rotate through models.
-                self.model, self.fallback_model = self.fallback_model, None
-                print('[scriptgen] Primary service unavailable; using configured fallback ' + self.model, flush=True)
-                try:
-                    response = service_limits.request_with_retry(send, max_attempts=min(2, self.remaining),
-                        model=self.model, stage=stage, stop_on_failure=False)
-                    transport_error = None
-                except service_limits.TransientServiceError as exc:
-                    transport_error = exc
-            if transport_error:
-                raise service_limits.stop_transient(transport_error)
+                response = self.chain.request(send, stage=stage)
+            except service_limits.ServiceUnavailable:
+                self.exhausted = True
+                raise
+            finally:
+                self.model, self.remaining = self.chain.model, self.chain.remaining
             if not response.ok:
                 break
             try:

@@ -70,13 +70,14 @@ def assess(path, duration, narration, previous, key, model='gemini-3.5-flash-lit
         'relevant': {'type': 'boolean'}, 'exposure_ok': {'type': 'boolean'},
         'distinct': {'type': 'boolean'}, 'description': {'type': 'string'}},
         'required': ['relevant', 'exposure_ok', 'distinct', 'description']}
-    def send():
-        return requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
+    chain = service_limits.ModelChain([model, *service_limits.TEXT_MODELS])
+    def send(active_model):
+        return requests.post(f'https://generativelanguage.googleapis.com/v1beta/models/{active_model}:generateContent',
             headers={'x-goog-api-key':key}, timeout=75,
             json={'contents':[{'parts':parts}], 'generationConfig':{'temperature':0,
                   'responseMimeType':'application/json', 'responseJsonSchema': schema}})
     for format_attempt in range(2):
-        response = service_limits.request_with_retry(send, model=model, stage='footage_review')
+        response = chain.request(send, stage='footage_review')
         if not response.ok:
             if response.status_code in (401,403,429): _unavailable = response.status_code
             error_type = (service_limits.TransientServiceError
@@ -97,5 +98,5 @@ def assess(path, duration, narration, previous, key, model='gemini-3.5-flash-lit
         _save_rejection(path, result)
         failed = ', '.join(k for k in ('relevant', 'exposure_ok', 'distinct') if result[k] is False)
         raise RejectedFootage('Footage failed sampled-frame editorial review: ' + failed)
-    return {'assessment_status':'sampled_frames_checked','assessment':result,
+    return {'assessment_status':'sampled_frames_checked','assessment':result, 'model':chain.model,
             'limitations':'Sampled frames cannot establish consent or guarantee whole-clip quality.'}

@@ -80,7 +80,7 @@ class FirstTakeTimingTests(unittest.TestCase):
 
     def test_first_take_keeps_complete_script_and_reports_request_model_and_stage(self):
         script = self.target()['opening_text'] + ' The store record provides the price.'
-        model = 'configured-tts-model'
+        model = 'gemini-configured-tts-model'
         response = Mock(status_code=429)
         with tempfile.TemporaryDirectory() as directory, \
              patch.object(tts, '_TTS_CFG', {'gemini_voice': 'Orus', 'gemini_tts_model': model,

@@ -66,7 +66,8 @@ class SharedEditorTests(unittest.TestCase):
             assess('clip.mp4',5,'words',[],'')
         response=Mock(ok=False,status_code=429)
         frame=Mock(stdout=b'jpeg')
-        with patch('footage_review._unavailable',None), patch('footage_review.subprocess.run',return_value=frame), patch('footage_review.requests.post',return_value=response) as post:
+        import service_limits
+        with service_limits.session(), patch('footage_review._unavailable',None), patch('footage_review.subprocess.run',return_value=frame), patch('footage_review.requests.post',return_value=response) as post:
             with self.assertRaisesRegex(RuntimeError,'HTTP 429'):
                 assess('clip.mp4',5,'words',[],'private')
             with self.assertRaisesRegex(RuntimeError,'HTTP 429'):

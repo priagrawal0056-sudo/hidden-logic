@@ -22,20 +22,20 @@ class ServiceResponseTests(unittest.TestCase):
                            'max_model_calls':6})
         model.key = 'private-test-key'
         with service_limits.session(), patch('service_limits.time.sleep'), \
-                patch('requests.post', side_effect=[response(status=503),response(status=503),
+                patch('requests.post', side_effect=[response(status=503),response(status=503),response(status=503),
                      response({'beats':['complete']}),response({'supported':True})]) as post:
             self.assertEqual(model.call('exact sourced draft',schema={'type':'object'}), {'beats':['complete']})
             self.assertEqual(model.call('independent review'), {'supported':True})
             requests_report = service_limits.report()
-        self.assertEqual(model.remaining,2)
+        self.assertEqual(model.remaining,1)
         self.assertIn('gemini-3.8-flash:',post.call_args_list[0].args[0])
-        self.assertIn('gemini-3.5-flash-lite:',post.call_args_list[2].args[0])
         self.assertIn('gemini-3.5-flash-lite:',post.call_args_list[3].args[0])
-        self.assertEqual(post.call_args_list[0].kwargs['json'],post.call_args_list[2].kwargs['json'])
-        self.assertEqual(requests_report['total_attempts'],4)
+        self.assertIn('gemini-3.5-flash-lite:',post.call_args_list[4].args[0])
+        self.assertEqual(post.call_args_list[0].kwargs['json'],post.call_args_list[3].kwargs['json'])
+        self.assertEqual(requests_report['total_attempts'],5)
 
     def test_configured_fallback_never_bypasses_quota_or_authentication(self):
-        for status in (401,403,404,429):
+        for status in (401,403,429):
             with self.subTest(status=status), service_limits.session(), \
                     patch('requests.post',return_value=response(status=status)) as post:
                 model = FreeModel({'model':'gemini-3.8-flash','fallback_model':'gemini-3.5-flash-lite',
@@ -70,7 +70,7 @@ class ServiceResponseTests(unittest.TestCase):
             self.assertEqual(model.call('review'), {'supported': True})
         self.assertEqual(post.call_count, 3)
         self.assertEqual(model.remaining, 5)
-        self.assertEqual([call.args[0] for call in sleep.call_args_list], [5, 15])
+        self.assertEqual([call.args[0] for call in sleep.call_args_list], [10, 10])
 
     def test_exhausted_server_retries_keep_failure_and_consume_real_budget(self):
         model = self.model()
@@ -176,7 +176,7 @@ class ServiceResponseTests(unittest.TestCase):
     def test_frame_server_failure_is_not_an_editorial_rejection(self):
         with tempfile.TemporaryDirectory() as directory:
             with self.assertRaisesRegex(service_limits.TransientServiceError, 'HTTP 503'):
-                self.assess([response(status=503)] * 3, directory)
+                self.assess([response(status=503)] * (len(service_limits.TEXT_MODELS) * 3), directory)
 
     def test_editorial_failures_are_not_classified_as_transient_service_failures(self):
         for failure in (ValueError('Unsupported claim'),
