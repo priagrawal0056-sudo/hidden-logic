@@ -2352,5 +2352,16 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why The Cashier Flips The Screen",
+    "hook_text": "The cashier flips the screen to weaponize your silence.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden Intent",
+    "first_frame_description": "A first-person POV shot of a barista's hand grabbing the top of a white iPad stand and rotating it 180 degrees toward the viewer in a bright coffee shop.",
+    "visual_thesis": "The POS screen swivel is a psychological tool designed to convert social awkwardness into revenue through forced eye contact.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

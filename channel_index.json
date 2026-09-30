@@ -7036,5 +7036,20 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "v4FZNphlaQo",
+    "title": "Why The Cashier Flips The Screen",
+    "topic": "Why the tip screen flipping around to face you happens to you constantly",
+    "date": "2026-09-30",
+    "n": 584,
+    "source": "pool",
+    "visual_score": 9.8,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 48.0,
+    "trend_heat": 0.0,
+    "variant": "A",
+    "hook_type": "physical_moment"
   }
 ]

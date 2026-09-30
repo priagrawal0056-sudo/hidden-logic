@@ -1276,5 +1276,11 @@
     "topic": "Why infinite feeds you can't put down happens to you constantly",
     "visual_thesis": "The 'pull-to-refresh' animation is a psychological trap designed to mimic the tension of a slot machine.",
     "script": "You pull down to refresh your feed. That spinning wheel isn't actually loading anything. It’s pausing on purpose. If the app loaded instantly, you’d get bored and leave. But by making you wait, it mimics a slot machine. You don't know if the next post is a win or a dud. This uncertainty turns your thumb into a gambler’s lever, forcing you to pull down to refresh your feed."
+  },
+  "v4FZNphlaQo": {
+    "title": "Why The Cashier Flips The Screen",
+    "topic": "Why the tip screen flipping around to face you happens to you constantly",
+    "visual_thesis": "The POS screen swivel is a psychological tool designed to convert social awkwardness into revenue through forced eye contact.",
+    "script": "The cashier flips the screen to weaponize your silence. That swivel isn’t for your convenience. Suddenly, you’re solving a math problem with an audience. But the screen isn't just asking for money. It’s measuring your fear of eye contact. Designers make tip buttons huge so you'll pay to end the silence. They’re exploiting social friction when"
   }
 }

@@ -5638,6 +5638,27 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The 'pull-to-refresh' animation is a psychological trap designed to mimic the tension of a slot machine.",
-    "first_frame_description": "A macro close-up of a thumb pulling down on a smartphone screen, showing the 'spinning wheel' animation starting to rotate."
+    "first_frame_description": "A macro close-up of a thumb pulling down on a smartphone screen, showing the 'spinning wheel' animation starting to rotate.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 0,
+    "views_first_6h": 0
+  },
+  "v4FZNphlaQo": {
+    "variant": "A",
+    "title": "Why The Cashier Flips The Screen",
+    "date": "2026-09-30",
+    "publish_at": "2026-10-01T07:11:00Z",
+    "cluster": null,
+    "topic": "Why the tip screen flipping around to face you happens to you constantly",
+    "subcluster": "Dark Patterns",
+    "hook_type": "physical_moment",
+    "series": "Everyday Design",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The POS screen swivel is a psychological tool designed to convert social awkwardness into revenue through forced eye contact.",
+    "first_frame_description": "A first-person POV shot of a barista's hand grabbing the top of a white iPad stand and rotating it 180 degrees toward the viewer in a bright coffee shop."
   }
 }
