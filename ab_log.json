@@ -5457,7 +5457,7 @@
     "visual_thesis": "The second-cheapest wine on a restaurant menu is a psychological trap designed to unload the lowest-quality, highest-markup bottle on prideful customers.",
     "first_frame_description": "A first-person POV close-up of a finger pointing at the second-cheapest price option on a textured leather restaurant wine menu.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 6.22,
+    "likes_per_1000_views": 6.21,
     "views_first_60m": 175,
     "views_first_6h": 175
   },
@@ -5659,6 +5659,10 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The POS screen swivel is a psychological tool designed to convert social awkwardness into revenue through forced eye contact.",
-    "first_frame_description": "A first-person POV shot of a barista's hand grabbing the top of a white iPad stand and rotating it 180 degrees toward the viewer in a bright coffee shop."
+    "first_frame_description": "A first-person POV shot of a barista's hand grabbing the top of a white iPad stand and rotating it 180 degrees toward the viewer in a bright coffee shop.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 2,
+    "views_first_6h": 2
   }
 }

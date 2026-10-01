@@ -1957,6 +1957,17 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+    },
+    "Why the tip screen flipping around to face you happens to you constantly": {
+      "count": 1,
+      "avg_views_first_60m": 2.0,
+      "avg_views_first_6h": 2.0,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": 0.0,
+      "avg_likes_per_1000_views": 0.0,
+      "avg_returning_viewers": null
     }
   },
   "clusters": {
@@ -3855,9 +3866,9 @@
       "avg_returning_viewers": null
     },
     "Dark Patterns": {
-      "count": 1,
-      "avg_views_first_60m": 0.0,
-      "avg_views_first_6h": 0.0,
+      "count": 2,
+      "avg_views_first_60m": 1.0,
+      "avg_views_first_6h": 1.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
@@ -4242,14 +4253,14 @@
   },
   "hook_types": {
     "physical_moment": {
-      "count": 244,
-      "avg_views_first_60m": 187.6,
-      "avg_views_first_6h": 199.8,
+      "count": 245,
+      "avg_views_first_60m": 186.7,
+      "avg_views_first_6h": 198.8,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 14.4,
       "avg_comments_per_1000_views": 7.2,
-      "avg_likes_per_1000_views": 19.5,
+      "avg_likes_per_1000_views": 19.4,
       "avg_returning_viewers": 180.0
     },
     "explainer": {
