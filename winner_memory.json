@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 1738.5,
+  "channel_avg_views": 1751.3,
   "topic_clusters": {
     "airport": {
       "videos": 14,
@@ -58,7 +58,7 @@
     },
     "mall": {
       "videos": 13,
-      "avg_views": 224.6,
+      "avg_views": 224.7,
       "best_views": 1078,
       "recent_views": [
         995,
@@ -71,7 +71,7 @@
         13,
         4,
         12,
-        14,
+        15,
         2,
         201
       ],
@@ -80,7 +80,7 @@
     },
     "traffic": {
       "videos": 55,
-      "avg_views": 496.2,
+      "avg_views": 509.6,
       "best_views": 1774,
       "recent_views": [
         1090,
@@ -107,7 +107,7 @@
         2,
         3,
         0,
-        4,
+        5,
         8,
         8,
         2,
@@ -184,10 +184,10 @@
     },
     "restaurant": {
       "videos": 10,
-      "avg_views": 779.5,
-      "best_views": 2639,
+      "avg_views": 790.9,
+      "best_views": 2713,
       "recent_views": [
-        2639,
+        2713,
         1029,
         5,
         4,
@@ -203,7 +203,7 @@
     },
     "supermarket": {
       "videos": 30,
-      "avg_views": 383.0,
+      "avg_views": 376.1,
       "best_views": 1374,
       "recent_views": [
         638,
@@ -303,10 +303,10 @@
     },
     "perception": {
       "videos": 2,
-      "avg_views": 77164.3,
-      "best_views": 115740,
+      "avg_views": 77166.3,
+      "best_views": 115743,
       "recent_views": [
-        115740,
+        115743,
         13
       ],
       "avg_stayed_to_watch": null,
@@ -357,7 +357,7 @@
         2,
         3,
         6,
-        5,
+        6,
         7,
         16,
         19,
@@ -373,7 +373,7 @@
         86
       ],
       "avg_stayed_to_watch": 65.5,
-      "avg_avd": 14.5
+      "avg_avd": 7.2
     },
     "internet_behavior": {
       "videos": 4,
@@ -423,11 +423,11 @@
     },
     "money_psychology": {
       "videos": 5,
-      "avg_views": 635.9,
+      "avg_views": 636.4,
       "best_views": 1107,
       "recent_views": [
         995,
-        978,
+        980,
         1,
         32,
         1107
@@ -436,5 +436,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-10-01T20:43:23.948999"
+  "last_updated": "2026-10-02T20:16:12.003555"
 }

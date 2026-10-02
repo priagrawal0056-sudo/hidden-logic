@@ -7051,5 +7051,23 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "9945o61GCRk",
+    "title": "Why That Car Ahead Looks So Slow",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "date": "2026-10-02",
+    "n": 585,
+    "source": "pool",
+    "relatability_score": 10,
+    "memory_trigger_score": 10,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

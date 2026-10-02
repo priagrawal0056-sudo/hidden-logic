@@ -5037,7 +5037,7 @@
     "visual_thesis": "The 'Anchor' effect: showing a high-priced item first to make subsequent prices seem lower by comparison.",
     "first_frame_description": "POV walking into a high-end boutique, camera pans to a gold watch with a massive '$10,000' price tag in sharp focus.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 8.18,
+    "likes_per_1000_views": 8.16,
     "views_first_60m": 743,
     "views_first_6h": 743
   },
@@ -5642,7 +5642,9 @@
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 0.0,
     "views_first_60m": 0,
-    "views_first_6h": 0
+    "views_first_6h": 0,
+    "avd": 0.0,
+    "retention": 0.0
   },
   "v4FZNphlaQo": {
     "variant": "A",
@@ -5664,5 +5666,22 @@
     "likes_per_1000_views": 0.0,
     "views_first_60m": 2,
     "views_first_6h": 2
+  },
+  "9945o61GCRk": {
+    "variant": "B",
+    "title": "Why That Car Ahead Looks So Slow",
+    "date": "2026-10-02",
+    "publish_at": "2026-10-03T07:09:00Z",
+    "cluster": "traffic",
+    "topic": "Why your brain thinks the car in front is slower than it is",
+    "subcluster": "Perception",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The looming effect: an object approaching at a constant speed appears to stay the same size until an exponential expansion in the final moments.",
+    "first_frame_description": "A first-person POV from a driver's seat, gripping a leather steering wheel, looking at a silver sedan on a sun-drenched highway."
   }
 }

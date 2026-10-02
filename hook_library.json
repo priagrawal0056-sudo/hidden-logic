@@ -2363,5 +2363,16 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why That Car Ahead Looks So Slow",
+    "hook_text": "You\u2019re flying down the highway at eighty miles per hour.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Frustration",
+    "first_frame_description": "A first-person POV from a driver's seat, gripping a leather steering wheel, looking at a silver sedan on a sun-drenched highway.",
+    "visual_thesis": "The looming effect: an object approaching at a constant speed appears to stay the same size until an exponential expansion in the final moments.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]

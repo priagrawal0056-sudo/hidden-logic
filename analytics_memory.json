@@ -1953,7 +1953,7 @@
       "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
-      "avg_avd": null,
+      "avg_avd": 0.0,
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
@@ -3673,7 +3673,7 @@
       "avg_views_first_6h": 0.0,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
-      "avg_avd": null,
+      "avg_avd": 0.0,
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
@@ -4258,7 +4258,7 @@
       "avg_views_first_6h": 198.8,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
-      "avg_avd": 14.4,
+      "avg_avd": 11.5,
       "avg_comments_per_1000_views": 7.2,
       "avg_likes_per_1000_views": 19.4,
       "avg_returning_viewers": 180.0
