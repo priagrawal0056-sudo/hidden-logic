@@ -86,8 +86,8 @@ redo this step. The failure alert (Step 7) tells you when this happens.
 
 ────────────────────────────────────────────────────────────────────────
 ## STEP 6 — Test it by hand BEFORE trusting the schedule
-1. Opening or updating a PR into `main` automatically runs a one-video dry run; check the PR's **Checks** tab and download the `hidden-logic-dry-run-...` artifact to play the MP4.
-2. You can also trigger it manually from Actions → "Hidden Logic Daily Autopilot" → "Run workflow". Enable **Build one test video without uploading it** when running on `main`; non-main branches are forced to dry-run.
+1. Each push to the `arena/01a0fe0a-hidden-logic` PR branch automatically runs a one-video dry run; open the run under **Actions** and download its `hidden-logic-dry-run-...` artifact to play the MP4.
+2. After the workflow change is merged to `main`, PR runs also appear as checks. You can trigger it manually from Actions → "Hidden Logic Daily Autopilot" → "Run workflow". Enable **Build one test video without uploading it** when running on `main`; non-main branches are forced to dry-run.
 3. A dry run checks script generation, voice, b-roll, captions, ffmpeg rendering, and the output MP4 without touching YouTube.
 4. After the PR is merged, run the workflow on `main` with dry-run **off** to restore YouTube credentials, upload/schedule videos, and commit updated state.
 5. Check YouTube and the repo for the uploaded/scheduled video and the `autopilot state update ...` commit.
