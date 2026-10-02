@@ -86,10 +86,10 @@ redo this step. The failure alert (Step 7) tells you when this happens.
 
 ────────────────────────────────────────────────────────────────────────
 ## STEP 6 — Test it by hand BEFORE trusting the schedule
-1. Repo → Actions tab → "Hidden Logic Daily Autopilot" → "Run workflow".
-2. First enable **Build one test video without uploading it**. This checks script generation, voice, b-roll, captions, ffmpeg rendering, and the output MP4 without touching YouTube.
-3. When it completes, download the `hidden-logic-dry-run-...` artifact and play the MP4.
-4. Manual runs on non-main branches are always dry runs. After the PR is merged, run the workflow on `main` with dry-run **off** to restore YouTube credentials, upload/schedule videos, and commit updated state.
+1. Opening or updating a PR into `main` automatically runs a one-video dry run; check the PR's **Checks** tab and download the `hidden-logic-dry-run-...` artifact to play the MP4.
+2. You can also trigger it manually from Actions → "Hidden Logic Daily Autopilot" → "Run workflow". Enable **Build one test video without uploading it** when running on `main`; non-main branches are forced to dry-run.
+3. A dry run checks script generation, voice, b-roll, captions, ffmpeg rendering, and the output MP4 without touching YouTube.
+4. After the PR is merged, run the workflow on `main` with dry-run **off** to restore YouTube credentials, upload/schedule videos, and commit updated state.
 5. Check YouTube and the repo for the uploaded/scheduled video and the `autopilot state update ...` commit.
 
 A dry run needs `HL_GEMINI_API_KEY` and at least one of `HL_PEXELS_API_KEY` / `HL_PIXABAY_API_KEY`. A production run also needs `YT_TOKEN_B64` and `CLIENT_SECRET_JSON`. The workflow validates these before spending time generating; it reports missing secret names without exposing their values.

@@ -4,8 +4,8 @@ name: Hidden Logic Daily Autopilot
 # Runs the whole pipeline on GitHub's servers, on a schedule, with no laptop.
 # After each production run it COMMITS the updated state files (idea_bank, ab_log, etc.)
 # back to the triggering branch, so the pipeline remembers what it made across runs.
-# Manual dry runs instead keep their state isolated and upload only the rendered MP4.
-# Workflow dispatches on non-main branches are always dry runs; publishing happens from main.
+# Pull requests and manual dry runs stay isolated, render one MP4, and never publish.
+# Non-main branches are always dry runs; publishing happens only from main.
 # ───────────────────────────────────────────────────────────────────────────
 
 on:
@@ -14,6 +14,9 @@ on:
     # Example: 09:30 UTC. Find your local time -> convert to UTC.
     # (e.g. if you want 3:00pm Singapore time = 07:00 UTC, use '0 7 * * *')
     - cron: '0 16 * * *'
+  # PR checks render a one-video preview but never upload or commit state.
+  pull_request:
+    branches: [main]
   # Run manually from the Actions tab. Set dry_run to build one MP4 without uploading;
   # the result is attached to the run as an artifact.
   workflow_dispatch:
@@ -52,7 +55,7 @@ jobs:
           HL_PIXABAY_API_KEY: ${{ secrets.HL_PIXABAY_API_KEY }}
           YT_TOKEN_B64: ${{ secrets.YT_TOKEN_B64 }}
           CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && (inputs.dry_run || github.ref_name != 'main') }}
+          DRY_RUN: ${{ github.ref_name != 'main' || (github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
         run: |
           missing=0
           if [[ -z "$HL_GEMINI_API_KEY" ]]; then
@@ -103,7 +106,7 @@ jobs:
 
       - name: Restore the YouTube OAuth token from secret
         # yt_token.pickle is binary, so we store it base64-encoded as a secret.
-        if: ${{ github.event_name != 'workflow_dispatch' || (inputs.dry_run != true && github.ref_name == 'main') }}
+        if: ${{ github.ref_name == 'main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.dry_run != true)) }}
         env:
           YT_TOKEN_B64: ${{ secrets.YT_TOKEN_B64 }}
         run: |
@@ -111,7 +114,7 @@ jobs:
           echo "token restored ($(wc -c < yt_token.pickle) bytes)"
 
       - name: Restore client_secret.json from secret
-        if: ${{ github.event_name != 'workflow_dispatch' || (inputs.dry_run != true && github.ref_name == 'main') }}
+        if: ${{ github.ref_name == 'main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.dry_run != true)) }}
         env:
           CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
         run: |
@@ -125,7 +128,7 @@ jobs:
           HL_PIXABAY_API_KEY:       ${{ secrets.HL_PIXABAY_API_KEY }}
           HL_FOOTBALLDATA_API_KEY:  ${{ secrets.HL_FOOTBALLDATA_API_KEY }}
           HL_ALERT_WEBHOOK_URL:     ${{ secrets.HL_ALERT_WEBHOOK_URL }}
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && (inputs.dry_run || github.ref_name != 'main') }}
+          DRY_RUN: ${{ github.ref_name != 'main' || (github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
           PYTHONUNBUFFERED: '1'
         run: |
           if [[ "$DRY_RUN" == "true" ]]; then
@@ -136,7 +139,7 @@ jobs:
           fi
 
       - name: Upload dry-run video artifact
-        if: ${{ always() && github.event_name == 'workflow_dispatch' && (inputs.dry_run || github.ref_name != 'main') }}
+        if: ${{ always() && (github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && (inputs.dry_run || github.ref_name != 'main'))) }}
         uses: actions/upload-artifact@v4
         with:
           name: hidden-logic-dry-run-${{ github.run_number }}
@@ -148,7 +151,7 @@ jobs:
         # This is the CRITICAL step: without it, the pipeline forgets everything
         # each run (re-makes the same topics, loses its learning). We commit only
         # the state JSONs that the run updates - never secrets or rendered videos.
-        if: ${{ always() && (github.event_name != 'workflow_dispatch' || (inputs.dry_run != true && github.ref_name == 'main')) }}   # preserve state only after production runs
+        if: ${{ always() && github.ref_name == 'main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.dry_run != true)) }}   # preserve state only after production runs
         run: |
           git config user.name  "hidden-logic-bot"
           git config user.email "bot@users.noreply.github.com"
