@@ -546,7 +546,7 @@ def _pick_music_by_mood(music_dir: str, meta: dict, log=print):
 def make_one(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None = None,
              topic: str | None = None, strict_topic_lock: bool = False, generate_only: bool = False) -> str | None | dict:
     os.makedirs(workdir, exist_ok=True)
-    scriptgen.PROVIDER = cfg.get("llm_provider", "gemini")
+    scriptgen.PROVIDER = str(cfg.get("llm_provider", "gemini")).strip().lower()
     scriptgen.MIN_SCORE = float(cfg.get("min_quality", 8))
     scriptgen.MAX_ATTEMPTS = int(cfg.get("max_attempts_per_video", 8))
     scriptgen.QUALITY_FLOOR = float(cfg.get("quality_floor", 6))
@@ -1536,6 +1536,38 @@ def print_upload_summary(total, succeeded, failed, already):
     sys.stdout.flush()
 
 
+def _startup_preflight(cfg: dict, dry_run: bool, upload_only: bool = False) -> None:
+    """Fail early with actionable setup errors instead of burning a run on missing tools/keys."""
+    import shutil
+
+    problems = []
+    if upload_only:
+        # Drafts are already built; only the uploader's own auth checks apply.
+        return
+
+    def configured(value):
+        text = str(value or "").strip()
+        return bool(text) and not text.upper().startswith("PASTE_")
+
+    provider = str(cfg.get("llm_provider", "gemini")).strip().lower()
+    if provider == "claude_code":
+        if not any(shutil.which(name) for name in ("claude", "claude.cmd", "claude.exe")):
+            problems.append("Claude Code is selected but its CLI is not installed/on PATH")
+    elif not configured(cfg.get("gemini_api_key")):
+        problems.append("Gemini API key missing (set gemini_api_key or HL_GEMINI_API_KEY)")
+    if not (configured(cfg.get("pexels_api_key")) or configured(cfg.get("pixabay_api_key"))):
+        problems.append("B-roll API key missing (set Pexels or Pixabay key)")
+    missing_tools = [tool for tool in ("ffmpeg", "ffprobe") if not shutil.which(tool)]
+    if missing_tools:
+        problems.append("media tools not found on PATH: " + ", ".join(missing_tools))
+    if not dry_run and not (os.path.exists("client_secret.json") or os.path.exists("yt_token.pickle")):
+        problems.append("YouTube credentials missing (add client_secret.json or yt_token.pickle)")
+
+    if problems:
+        raise SystemExit("SETUP ERROR:\n- " + "\n- ".join(problems) +
+                         "\nSee README.md > One-time setup / Troubleshooting.")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
@@ -1589,6 +1621,8 @@ def main():
     if args.upload_only:
         run_upload_only(cfg, args, log)
         return
+
+    _startup_preflight(cfg, dry_run=args.dry_run)
 
     if not args.dry_run:
         try:
@@ -1663,6 +1697,8 @@ def main():
                 log(f"auto-replies failed (non-fatal): {e}")
             _send_digest(cfg, ok=(1 - failed), fail=failed, made=made,
                          replies_posted=replies_posted)
+        if rec is None:
+            raise SystemExit("On-demand video was not created. Review the errors above and the run log.")
         return
 
     n = args.count or cfg.get("videos_per_day", 2)
@@ -1876,7 +1912,11 @@ def main():
                 rec = publish_draft(cfg, draft["dir"], args.dry_run, publish_at)
                 if isinstance(rec, dict):
                     made.append(rec)
-                ok += 1
+                    ok += 1
+                else:
+                    fail += 1
+                    log(f"ERROR publishing draft {draft['dir']}: no publish result was returned")
+                    flag("A video draft had no publish result and was not counted as successful.")
             except Exception as e:
                 _emsg = str(e)
                 # Quota / daily upload limit: stop the batch and KEEP the remaining drafts for the
@@ -1917,6 +1957,12 @@ def main():
                 compilation.run_weekly_compilation(cfg, log)
         except Exception as e:
             log(f"weekly compilation failed (non-fatal): {e}")
+    if ok == 0:
+        # A fully green process that produced no Short is not a successful run. Make the
+        # scheduler/Actions job fail visibly after the digest is sent so this cannot look done.
+        fail = max(fail, 1)
+        flag("No video was successfully generated or published in this run.")
+        log("ERROR: no video was successfully generated or published.")
     log(f"Done. {ok} succeeded, {fail} failed.")
     # Cumulative slot tracking
     try:
@@ -1979,6 +2025,8 @@ def main():
             log(f"auto-replies failed (non-fatal): {e}")
     if not args.dry_run:
         _send_digest(cfg, ok=ok, fail=fail, made=made, replies_posted=replies_posted)
+    if ok == 0:
+        raise SystemExit("No videos were created. Review the errors above and the run log.")
 
 
 if __name__ == "__main__":

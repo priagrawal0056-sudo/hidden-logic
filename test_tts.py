@@ -15,11 +15,14 @@ Output: writes tts_sample.mp3 in this folder. Open/play it to hear the voice.
 import sys
 import os
 
-import tts
-import config_loader
-
 
 def main():
+    # This file is a manual smoke-test CLI, not an automated unittest module.
+    # Import optional TTS dependencies only when the CLI is actually run, so
+    # standard test discovery works even in a minimal environment.
+    import tts
+    import config_loader
+
     args = [a for a in sys.argv[1:]]
     engine = "elevenlabs"
     if "--auto" in args:

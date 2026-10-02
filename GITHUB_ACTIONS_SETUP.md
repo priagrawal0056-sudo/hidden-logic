@@ -86,15 +86,13 @@ redo this step. The failure alert (Step 7) tells you when this happens.
 
 ────────────────────────────────────────────────────────────────────────
 ## STEP 6 — Test it by hand BEFORE trusting the schedule
-1. Repo → Actions tab → "Hidden Logic Daily Autopilot" → "Run workflow"
-2. Watch the live log. Confirm it:
-   - installs deps, restores the token
-   - generates + uploads at least one video
-   - the final "Commit updated state files" step pushes a commit
-3. Check YouTube: did the video appear?
-4. Check your repo: is there a new "autopilot state update ..." commit?
+1. Repo → Actions tab → "Hidden Logic Daily Autopilot" → "Run workflow".
+2. First enable **Build one test video without uploading it**. This checks script generation, voice, b-roll, captions, ffmpeg rendering, and the output MP4 without touching YouTube.
+3. When it completes, download the `hidden-logic-dry-run-...` artifact and play the MP4.
+4. If that looks right, run the workflow again with dry-run **off**. This restores the YouTube credentials, uploads/schedules the videos, and commits updated state.
+5. Check YouTube and the repo for the uploaded/scheduled video and the `autopilot state update ...` commit.
 
-If both happened → it works. The schedule will now run it daily, hands-free.
+A dry run needs `HL_GEMINI_API_KEY` and at least one of `HL_PEXELS_API_KEY` / `HL_PIXABAY_API_KEY`. A production run also needs `YT_TOKEN_B64` and `CLIENT_SECRET_JSON`. The workflow validates these before spending time generating; it reports missing secret names without exposing their values.
 
 ────────────────────────────────────────────────────────────────────────
 ## STEP 7 — The safety net (so you KNOW if it dies while you're busy)

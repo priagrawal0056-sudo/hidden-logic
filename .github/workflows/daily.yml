@@ -2,8 +2,9 @@ name: Hidden Logic Daily Autopilot
 
 # ───────────────────────────────────────────────────────────────────────────
 # Runs the whole pipeline on GitHub's servers, on a schedule, with no laptop.
-# After each run it COMMITS the updated state files (idea_bank, ab_log, etc.)
-# back to the repo, so the pipeline remembers what it made across runs.
+# After each production run it COMMITS the updated state files (idea_bank, ab_log, etc.)
+# back to the triggering branch, so the pipeline remembers what it made across runs.
+# Manual dry runs instead keep their state isolated and upload only the rendered MP4.
 # ───────────────────────────────────────────────────────────────────────────
 
 on:
@@ -12,8 +13,15 @@ on:
     # Example: 09:30 UTC. Find your local time -> convert to UTC.
     # (e.g. if you want 3:00pm Singapore time = 07:00 UTC, use '0 7 * * *')
     - cron: '0 16 * * *'
-  # also lets you trigger a run by hand from the Actions tab (great for testing)
+  # Run manually from the Actions tab. Set dry_run to build one MP4 without uploading;
+  # the result is attached to the run as an artifact.
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Build one test video without uploading it"
+        required: false
+        type: boolean
+        default: false
 
 # Allow the workflow to push the updated state files back to the repo.
 permissions:
@@ -36,6 +44,40 @@ jobs:
           # we need write access to push state back
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Validate required API and upload secrets
+        env:
+          HL_GEMINI_API_KEY: ${{ secrets.HL_GEMINI_API_KEY }}
+          HL_PEXELS_API_KEY: ${{ secrets.HL_PEXELS_API_KEY }}
+          HL_PIXABAY_API_KEY: ${{ secrets.HL_PIXABAY_API_KEY }}
+          YT_TOKEN_B64: ${{ secrets.YT_TOKEN_B64 }}
+          CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: |
+          missing=0
+          if [[ -z "$HL_GEMINI_API_KEY" ]]; then
+            echo "::error::Missing GitHub Actions secret HL_GEMINI_API_KEY (required to write scripts)."
+            missing=1
+          fi
+          if [[ -z "$HL_PEXELS_API_KEY" && -z "$HL_PIXABAY_API_KEY" ]]; then
+            echo "::error::Set at least one b-roll secret: HL_PEXELS_API_KEY or HL_PIXABAY_API_KEY."
+            missing=1
+          fi
+          if [[ "$DRY_RUN" != "true" ]]; then
+            if [[ -z "$YT_TOKEN_B64" ]]; then
+              echo "::error::Missing GitHub Actions secret YT_TOKEN_B64 (required to upload)."
+              missing=1
+            fi
+            if [[ -z "$CLIENT_SECRET_JSON" ]]; then
+              echo "::error::Missing GitHub Actions secret CLIENT_SECRET_JSON (required for YouTube OAuth)."
+              missing=1
+            fi
+          else
+            echo "Manual dry run: YouTube upload credentials are not needed."
+          fi
+          if [[ "$missing" -ne 0 ]]; then
+            exit 1
+          fi
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -43,10 +85,12 @@ jobs:
 
       - name: Install ffmpeg (GitHub runners have it, but pin it to be safe)
         run: |
-          # Remove third-party apt repos (Microsoft/azure-cli) that intermittently break the
-          # runner's `apt-get update` with signature errors. We don't need them - only ffmpeg.
+          # Microsoft/Azure CLI apt repos sometimes fail signature checks on GitHub's
+          # hosted runners. They are unrelated to this pipeline, so remove them before
+          # updating package indexes.
           sudo rm -f /etc/apt/sources.list.d/microsoft-prod.list /etc/apt/sources.list.d/azure-cli.list || true
-          # Don't let a partial repo failure abort the whole job.
+          # A transient mirror failure should not block installing ffmpeg if the runner's
+          # package lists are already usable.
           sudo apt-get update || true
           sudo apt-get install -y ffmpeg fonts-liberation
           ffmpeg -version | head -1
@@ -57,15 +101,20 @@ jobs:
           pip install -r requirements.txt
 
       - name: Restore the YouTube OAuth token from secret
-        # yt_token.pickle is binary, so we store it base64-encoded as a secret
-        # and decode it back to a file here. (Setup guide explains how to make it.)
+        # yt_token.pickle is binary, so we store it base64-encoded as a secret.
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run != true }}
+        env:
+          YT_TOKEN_B64: ${{ secrets.YT_TOKEN_B64 }}
         run: |
-          echo "${{ secrets.YT_TOKEN_B64 }}" | base64 -d > yt_token.pickle
+          printf '%s' "$YT_TOKEN_B64" | base64 -d > yt_token.pickle
           echo "token restored ($(wc -c < yt_token.pickle) bytes)"
 
       - name: Restore client_secret.json from secret
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run != true }}
+        env:
+          CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
         run: |
-          echo '${{ secrets.CLIENT_SECRET_JSON }}' > client_secret.json
+          printf '%s' "$CLIENT_SECRET_JSON" > client_secret.json
 
       - name: Run the autopilot
         env:
@@ -75,15 +124,30 @@ jobs:
           HL_PIXABAY_API_KEY:       ${{ secrets.HL_PIXABAY_API_KEY }}
           HL_FOOTBALLDATA_API_KEY:  ${{ secrets.HL_FOOTBALLDATA_API_KEY }}
           HL_ALERT_WEBHOOK_URL:     ${{ secrets.HL_ALERT_WEBHOOK_URL }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
           PYTHONUNBUFFERED: '1'
         run: |
-          python -u autopilot.py
+          if [[ "$DRY_RUN" == "true" ]]; then
+            echo "Building one video without uploading it."
+            python -u run_daily.py --hero --dry-run --count 1
+          else
+            python -u autopilot.py
+          fi
+
+      - name: Upload dry-run video artifact
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hidden-logic-dry-run-${{ github.run_number }}
+          path: drafts/draft_*/short.mp4
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Commit updated state files back to the repo
         # This is the CRITICAL step: without it, the pipeline forgets everything
         # each run (re-makes the same topics, loses its learning). We commit only
         # the state JSONs that the run updates - never secrets or rendered videos.
-        if: always()   # commit state even if the run partially failed, so progress isn't lost
+        if: ${{ always() && (github.event_name != 'workflow_dispatch' || inputs.dry_run != true) }}   # preserve state after production runs; dry runs stay isolated
         run: |
           git config user.name  "hidden-logic-bot"
           git config user.email "bot@users.noreply.github.com"
@@ -103,13 +167,23 @@ jobs:
             git diff --cached --name-only
             git commit -m "autopilot state update $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             # The repo may have moved (you pushed code, or a prior run committed).
-            # Rebase our state commit on top before pushing so we never lose state to
-            # a rejected push. Retry a couple of times in case of a race.
+            # Rebase onto the branch that triggered this run, not always main, so a
+            # workflow_dispatch on a feature branch can save its state there too.
+            branch="$GITHUB_REF_NAME"
+            pushed=0
             for i in 1 2 3; do
-              git pull --rebase --autostash origin main && git push && { echo "State pushed."; break; }
+              if git pull --rebase --autostash origin "$branch" && git push origin "HEAD:$branch"; then
+                echo "State pushed to $branch."
+                pushed=1
+                break
+              fi
               echo "push attempt $i failed, retrying..."
               sleep 5
             done
+            if [[ "$pushed" -ne 1 ]]; then
+              echo "::error::State changes could not be pushed to $branch after three attempts."
+              exit 1
+            fi
           fi
 
       - name: Clean up secrets from the runner (belt and suspenders)

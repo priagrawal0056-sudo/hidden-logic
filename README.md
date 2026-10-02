@@ -23,7 +23,15 @@ Everything runs on free tiers (Gemini, Edge TTS, Pexels/Pixabay, YouTube Data AP
 
 **1. Install Python 3.11+ and ffmpeg.** Tick "Add Python to PATH". Install ffmpeg with `winget install ffmpeg`, then confirm `ffmpeg -version`.
 
-**2. Install dependencies.** In the project folder: `pip install -r requirements.txt`. If you use conda, install into the same env your scheduler will use (see Troubleshooting).
+**2. Install dependencies in the project folder.** A project-local virtual environment avoids the common “packages installed into a different Python” error:
+
+```bat
+py -3.11 -m venv .venv
+.venv\Scripts\python.exe -m pip install --upgrade pip
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+On macOS/Linux, use `python3 -m venv .venv` and `.venv/bin/python -m pip install -r requirements.txt`. If you prefer an existing Python/Conda environment, set `HL_PYTHON` to its full `python.exe` path for Task Scheduler.
 
 **3. Create `config.json`.** Copy `config.example.json` to `config.json` and fill it in (keys explained below).
 
@@ -37,7 +45,7 @@ Everything runs on free tiers (Gemini, Edge TTS, Pexels/Pixabay, YouTube Data AP
 
 **6. Enable the upload API.** In Google Cloud Console: new project → enable **YouTube Data API v3** → OAuth consent screen (External, add your Gmail as a test user) → Create OAuth client ID (Desktop app) → download JSON → rename to `client_secret.json` in the project folder. To avoid 7‑day token expiry, click **Publish app** on the consent screen.
 
-**7. First test run:** `python run_daily.py --dry-run --count 1` builds a video without uploading. Watch `drafts/<id>/short.mp4`. Then `python run_daily.py --count 1` does the first real upload (a browser opens once to authorize).
+**7. First test run:** `python run_daily.py --dry-run --count 1` builds a video without uploading. On Windows, the equivalent is `run_autopilot.bat --dry-run`. Watch `drafts/<id>/short.mp4`. Then `python run_daily.py --count 1` does the first real upload (a browser opens once to authorize).
 
 ---
 
@@ -48,7 +56,9 @@ Everything runs on free tiers (Gemini, Edge TTS, Pexels/Pixabay, YouTube Data AP
 - `python autopilot.py` — zero‑input full autopilot (wraps `run_daily.py --hero`: auto‑picks the day's best topic, fills the rest, uploads on schedule).
 - `python run_daily.py --upload-only` — upload already‑built drafts in `drafts/` without regenerating. `--immediate` posts now; `--max-workers N` sets parallelism.
 
-**Schedule it (Windows Task Scheduler):** point a Basic Task at **`run_autopilot.bat`** (not `python` directly — the .bat activates your conda env, logs which interpreter ran, and checks dependencies). Tick "Run task as soon as possible after a scheduled start is missed" and "Wake the computer to run this task". The bat writes a dated log to `logs/`.
+**Schedule it (Windows Task Scheduler):** point a Basic Task at **`run_autopilot.bat`** (not `python` directly). It starts in the repository folder, prefers `.venv`, checks Python packages, ffmpeg, and generation keys before starting, and writes a dated log to `logs/`. If using a different environment, set `HL_PYTHON` to that environment's full `python.exe` path. Tick “Run task as soon as possible after a scheduled start is missed” and “Wake the computer to run this task”.
+
+**Test the cloud workflow without publishing:** Actions → **Hidden Logic Daily Autopilot** → **Run workflow** → enable **Build one test video without uploading it**. It builds one MP4 and attaches it to the run as an artifact. This needs Gemini and at least one stock-footage API key, but not YouTube OAuth. Leave the option off only when you intentionally want the full upload run.
 
 ---
 
@@ -102,7 +112,8 @@ Check the Discord digest after each run (it lists what shipped with links, what'
 
 ## Troubleshooting
 
-- **Scheduled run produced nothing / `ModuleNotFoundError: No module named 'google'`** — the scheduler ran a different Python than the one with your packages. `run_autopilot.bat` now logs `where python` and runs a dependency check; an import failure also sends a Discord alert and writes `STARTUP_FAILED.txt`. Fix: `pip install -r requirements.txt` in the exact env the bat activates.
+- **`SETUP ERROR` before a run starts** — install the project dependencies and ffmpeg/ffprobe, then configure a Gemini key and at least one Pexels/Pixabay key. The launcher and pipeline now stop early and name missing requirements instead of spending a run before failing.
+- **Scheduled run produced nothing / `ModuleNotFoundError: No module named 'google'`** — the scheduler ran a different Python than the one with your packages. `run_autopilot.bat` now logs the selected interpreter and checks dependencies; an import failure also sends a Discord alert and writes `STARTUP_FAILED.txt`. Fix: install `requirements.txt` into the same `.venv` or Python selected by `HL_PYTHON`.
 - **Uploads fail with auth errors** — delete `yt_token.pickle` and run once manually to re‑authorize.
 - **Quota exceeded** — expected past ~6 uploads/day; remaining drafts are deferred to the next run.
 
