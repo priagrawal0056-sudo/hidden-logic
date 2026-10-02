@@ -5,6 +5,7 @@ name: Hidden Logic Daily Autopilot
 # After each production run it COMMITS the updated state files (idea_bank, ab_log, etc.)
 # back to the triggering branch, so the pipeline remembers what it made across runs.
 # Manual dry runs instead keep their state isolated and upload only the rendered MP4.
+# Workflow dispatches on non-main branches are always dry runs; publishing happens from main.
 # ───────────────────────────────────────────────────────────────────────────
 
 on:
@@ -51,7 +52,7 @@ jobs:
           HL_PIXABAY_API_KEY: ${{ secrets.HL_PIXABAY_API_KEY }}
           YT_TOKEN_B64: ${{ secrets.YT_TOKEN_B64 }}
           CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && (inputs.dry_run || github.ref_name != 'main') }}
         run: |
           missing=0
           if [[ -z "$HL_GEMINI_API_KEY" ]]; then
@@ -102,7 +103,7 @@ jobs:
 
       - name: Restore the YouTube OAuth token from secret
         # yt_token.pickle is binary, so we store it base64-encoded as a secret.
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run != true }}
+        if: ${{ github.event_name != 'workflow_dispatch' || (inputs.dry_run != true && github.ref_name == 'main') }}
         env:
           YT_TOKEN_B64: ${{ secrets.YT_TOKEN_B64 }}
         run: |
@@ -110,7 +111,7 @@ jobs:
           echo "token restored ($(wc -c < yt_token.pickle) bytes)"
 
       - name: Restore client_secret.json from secret
-        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run != true }}
+        if: ${{ github.event_name != 'workflow_dispatch' || (inputs.dry_run != true && github.ref_name == 'main') }}
         env:
           CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
         run: |
@@ -124,7 +125,7 @@ jobs:
           HL_PIXABAY_API_KEY:       ${{ secrets.HL_PIXABAY_API_KEY }}
           HL_FOOTBALLDATA_API_KEY:  ${{ secrets.HL_FOOTBALLDATA_API_KEY }}
           HL_ALERT_WEBHOOK_URL:     ${{ secrets.HL_ALERT_WEBHOOK_URL }}
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && (inputs.dry_run || github.ref_name != 'main') }}
           PYTHONUNBUFFERED: '1'
         run: |
           if [[ "$DRY_RUN" == "true" ]]; then
@@ -135,7 +136,7 @@ jobs:
           fi
 
       - name: Upload dry-run video artifact
-        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && (inputs.dry_run || github.ref_name != 'main') }}
         uses: actions/upload-artifact@v4
         with:
           name: hidden-logic-dry-run-${{ github.run_number }}
@@ -147,7 +148,7 @@ jobs:
         # This is the CRITICAL step: without it, the pipeline forgets everything
         # each run (re-makes the same topics, loses its learning). We commit only
         # the state JSONs that the run updates - never secrets or rendered videos.
-        if: ${{ always() && (github.event_name != 'workflow_dispatch' || inputs.dry_run != true) }}   # preserve state after production runs; dry runs stay isolated
+        if: ${{ always() && (github.event_name != 'workflow_dispatch' || (inputs.dry_run != true && github.ref_name == 'main')) }}   # preserve state only after production runs
         run: |
           git config user.name  "hidden-logic-bot"
           git config user.email "bot@users.noreply.github.com"

@@ -58,7 +58,7 @@ On macOS/Linux, use `python3 -m venv .venv` and `.venv/bin/python -m pip install
 
 **Schedule it (Windows Task Scheduler):** point a Basic Task at **`run_autopilot.bat`** (not `python` directly). It starts in the repository folder, prefers `.venv`, checks Python packages, ffmpeg, and generation keys before starting, and writes a dated log to `logs/`. If using a different environment, set `HL_PYTHON` to that environment's full `python.exe` path. Tick “Run task as soon as possible after a scheduled start is missed” and “Wake the computer to run this task”.
 
-**Test the cloud workflow without publishing:** Actions → **Hidden Logic Daily Autopilot** → **Run workflow** → enable **Build one test video without uploading it**. It builds one MP4 and attaches it to the run as an artifact. This needs Gemini and at least one stock-footage API key, but not YouTube OAuth. Leave the option off only when you intentionally want the full upload run.
+**Test the cloud workflow without publishing:** Actions → **Hidden Logic Daily Autopilot** → **Run workflow**. A manual run from a non-main branch is automatically a dry run; on `main`, enable **Build one test video without uploading it**. It builds one MP4 and attaches it to the run as an artifact. This needs Gemini and at least one stock-footage API key, but not YouTube OAuth. Only a manual run on `main` with dry-run off performs the full upload.
 
 ---
 
