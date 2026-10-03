@@ -40,6 +40,13 @@ GENERIC_VISUAL_QUERIES = {
 
 PROMPT_LEAK_PATTERNS = (
     r"\bread this in a\b",
+    r"\bread\s+(?:this|the following|the script)\s+(?:in|with)\s+(?:a\s+)?"
+    r"(?:warm|friendly|natural|curious|conversational|confident|understated|calm)\b",
+    r"\bread\s+(?:in|with)\s+(?:a\s+)?(?:warm|friendly|natural|curious|"
+    r"conversational|confident|understated|calm)\b",
+    r"\b(?:use|keep|maintain)\s+(?:a\s+)?(?:warm|friendly|natural|curious|"
+    r"conversational|confident|understated|calm)\b.{0,60}\b(?:tone|voice|cadence|delivery)\b",
+    r"\b(?:voice|delivery|speech|tts)\s+(?:direction|instruction|prompt)\b",
     r"\bthe following (?:text|script)\b",
     r"\bwarm,? friendly,? natural voice\b",
     r"\bvoice direction\b",
@@ -49,6 +56,12 @@ PROMPT_LEAK_PATTERNS = (
     r"\bdo not read (?:the )?instructions\b",
     r"\bspeech metadata\b",
 )
+
+
+def contains_spoken_instruction(text: str) -> bool:
+    """True when text contains an internal production/TTS direction, not narration."""
+    return any(re.search(pattern, str(text or ""), flags=re.I | re.S)
+               for pattern in PROMPT_LEAK_PATTERNS)
 
 FORCED_SUSPENSE_PATTERNS = (
     r"you've been tricked",
@@ -289,7 +302,7 @@ def validate_script(script: str, title: str, topic: str = "", broll_keywords: It
         issues.append("generic_ai_phrase")
     if any(re.search(pattern, clean, re.I) for pattern in UNIVERSAL_CLAIM_PATTERNS):
         issues.append("unsupported_universal_claim_wording")
-    if any(re.search(pattern, clean, re.I) for pattern in PROMPT_LEAK_PATTERNS):
+    if contains_spoken_instruction(clean):
         issues.append("tts_instruction_leak_in_script")
 
     quote = _first_answer_quote(clean, first_answer_quote)

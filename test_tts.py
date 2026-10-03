@@ -57,6 +57,13 @@ class GeminiRequestTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             tts._gemini_tts_request_body("  ", "Orus", "curious_observation", "model")
 
+    def test_internal_tts_prompt_is_rejected_instead_of_spoken(self):
+        with self.assertRaisesRegex(ValueError, "internal TTS/production instruction"):
+            tts._gemini_tts_request_body(
+                "Read this in a warm, curious tone. " + SCRIPT,
+                "Orus", "curious_observation", "gemini-3.8-flash-tts",
+            )
+
     def test_interactions_audio_payload_is_extracted(self):
         import base64
         expected = b"RIFF" + b"sample-audio"
@@ -137,6 +144,28 @@ class SynthesisTakeTests(unittest.TestCase):
         self.assertEqual(mocked_write.call_count, 2)
         self.assertFalse(os.path.exists(audio))
         self.assertFalse(os.path.exists(timings))
+
+    def test_narration_prompt_leak_is_rejected_before_any_tts_call(self):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        with mock.patch.object(tts, "_write_gemini_audio") as writer:
+            with self.assertRaisesRegex(tts.TTSQualityError, "internal TTS/production instruction"):
+                tts.synthesize(
+                    "Read this in a warm, curious tone. " + SCRIPT,
+                    os.path.join(temp.name, "voice.mp3"),
+                    os.path.join(temp.name, "timings.json"),
+                    api_key="offline-test-key", direction="curious_observation",
+                )
+        writer.assert_not_called()
+
+    def test_prompt_direction_spoken_by_tts_fails_audio_transcript_review(self):
+        transcript = "Read this in a warm, curious tone. " + SCRIPT
+        words = _word_timings(transcript)
+        with mock.patch.object(tts, "_transcribe_audio", return_value=(transcript, words)), \
+                mock.patch.object(tts, "_audio_duration", return_value=25.0), \
+                mock.patch.object(tts, "_pitch_span_and_peak", return_value=(3.6, False)):
+            _words, _metrics, issues = tts._take_metrics(SCRIPT, "offline-fake.mp3")
+        self.assertIn("tts_direction_spoken_in_audio", issues)
 
     def test_api_failure_does_not_trigger_a_second_take_or_voice_fallback(self):
         temp = tempfile.TemporaryDirectory()

@@ -102,6 +102,9 @@ def _gemini_tts_request_body(transcript: str, voice: str, direction: str, model:
     transcript = str(transcript or "").strip()
     if not transcript:
         raise ValueError("Cannot synthesize an empty script")
+    from editorial_quality import contains_spoken_instruction
+    if contains_spoken_instruction(transcript):
+        raise ValueError("Narration contains an internal TTS/production instruction; refusing to speak it")
     return {
         "model": model,
         "input": [{
@@ -215,6 +218,7 @@ def _pitch_span_and_peak(mp3_path: str) -> tuple[float | None, bool]:
 def _take_metrics(script: str, mp3_path: str) -> tuple[list[dict], dict, list[str]]:
     from editorial_quality import (
         coefficient_of_variation,
+        contains_spoken_instruction,
         transcript_accuracy,
         validate_word_timings,
         voice_delivery_issues,
@@ -222,11 +226,15 @@ def _take_metrics(script: str, mp3_path: str) -> tuple[list[dict], dict, list[st
     transcript, words = _transcribe_audio(mp3_path)
     duration = _audio_duration(mp3_path)
     accuracy = transcript_accuracy(script, transcript)
+    if contains_spoken_instruction(transcript):
+        issues = ["tts_direction_spoken_in_audio"]
+    else:
+        issues = []
     durations = [max(0.0, float(w["end"]) - float(w["start"])) for w in words]
     gaps = [max(0.0, float(b["start"]) - float(a["end"]))
             for a, b in zip(words, words[1:])]
     pitch_span, clipping = _pitch_span_and_peak(mp3_path)
-    issues = validate_word_timings(words, duration_seconds=duration)
+    issues.extend(validate_word_timings(words, duration_seconds=duration))
     delivery_issues = voice_delivery_issues(
         transcript_accuracy_value=accuracy,
         duration_seconds=duration,
@@ -307,6 +315,10 @@ def synthesize(text: str, mp3_path: str, timings_path: str, voice: str = DEFAULT
         raise ValueError(f"Unknown delivery direction: {direction}")
 
     import editorial_quality
+    if editorial_quality.contains_spoken_instruction(text):
+        raise TTSQualityError(
+            "Narration contains an internal TTS/production instruction; refusing to synthesize it"
+        )
     current_direction = direction
     last_issues: list[str] = []
     for take in (1, 2):

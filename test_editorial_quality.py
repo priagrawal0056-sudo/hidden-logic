@@ -84,6 +84,12 @@ class ScriptAndTimingTests(unittest.TestCase):
         self.assertEqual(issues, [])
         self.assertTrue(eq.title_matches_script(TITLE, SCRIPT, TOPIC))
 
+    def test_tts_instruction_phrasings_are_detected_without_flagging_normal_narration(self):
+        self.assertTrue(eq.contains_spoken_instruction("Read this in a warm curious tone. " + SCRIPT))
+        self.assertTrue(eq.contains_spoken_instruction("Read in a friendly, natural voice. " + SCRIPT))
+        self.assertTrue(eq.contains_spoken_instruction("Use a calm conversational tone. " + SCRIPT))
+        self.assertFalse(eq.contains_spoken_instruction(SCRIPT))
+
     def test_prompt_leak_and_forced_suspense_are_rejected(self):
         leaky = SCRIPT.replace("A shopper lifts", "Use a curious observation as a shopper lifts")
         issues = eq.validate_script(leaky, TITLE, TOPIC, QUERIES, ANSWER, EVIDENCE)
