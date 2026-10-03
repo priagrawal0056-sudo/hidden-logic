@@ -127,20 +127,35 @@ def _library_clip(concept: str, downloaded_ids: set, dst_path: str) -> bool:
     return False
 
 def _load_used():
-    if os.path.exists(CACHE_FILE):
-        try:
-            with open(CACHE_FILE) as f:
-                return set(json.load(f))
-        except Exception:
-            return set()
-    return set()
+    if not os.path.exists(CACHE_FILE):
+        return set()
+    try:
+        with open(CACHE_FILE, encoding="utf-8") as f:
+            payload = json.load(f)
+        if not isinstance(payload, list) or any(not isinstance(item, str) for item in payload):
+            raise ValueError("used clip registry must be a JSON string list")
+        return set(payload)
+    except Exception as exc:
+        raise RuntimeError(
+            f"used clip registry is unreadable; refusing to risk footage reuse: {exc}"
+        ) from exc
+
 
 def _save_used(used):
+    temp_path = CACHE_FILE + ".tmp"
     try:
-        with open(CACHE_FILE, "w") as f:
-            json.dump(sorted(used)[-600:], f)
-    except Exception:
-        pass
+        with open(temp_path, "w", encoding="utf-8") as f:
+            json.dump(sorted(used)[-10000:], f)
+        os.replace(temp_path, CACHE_FILE)
+    except Exception as exc:
+        try:
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
+        except OSError:
+            pass
+        raise RuntimeError(
+            f"could not persist used clip registry; refusing to complete footage selection: {exc}"
+        ) from exc
 
 def _search_pexels(api_key: str, query: str):
     if "pexels" in _RATE_LIMITED:
@@ -161,10 +176,16 @@ def _search_pexels(api_key: str, query: str):
         return []
     out = []
     for v in r.json().get("videos", []):
+        user = v.get("user") or {}
         out.append({
             "provider": "pexels",
             "id": "px_" + str(v["id"]),
-            "url": v.get("url", ""),
+            "provider_id": str(v["id"]),
+            "source_url": v.get("url", ""),
+            "creator": user.get("name", ""),
+            "creator_url": user.get("url", ""),
+            "license": "Pexels License",
+            "duration_seconds": float(v.get("duration") or 0),
             "video_files": v.get("video_files", []),
         })
     return out
@@ -202,7 +223,12 @@ def _search_pixabay(api_key: str, query: str):
         out.append({
             "provider": "pixabay",
             "id": "pb_" + str(v["id"]),
-            "url": "",
+            "provider_id": str(v["id"]),
+            "source_url": v.get("pageURL", ""),
+            "creator": v.get("user", ""),
+            "creator_url": "https://pixabay.com/users/" + str(v.get("user", "")) + "-" + str(v.get("user_id", "")) + "/",
+            "license": "Pixabay Content License",
+            "duration_seconds": float((v.get("videos") or {}).get("large", {}).get("duration") or 0),
             "slug": slug,
             "video_files": files,
         })
@@ -214,23 +240,38 @@ def _search_all(keys: dict, query: str):
         clips += _search_pexels(keys["pexels"], query)
     if keys.get("pixabay"):
         clips += _search_pixabay(keys["pixabay"], query)
-    random.shuffle(clips)
+    # Preserve provider relevance order for reproducible candidate review.
     return clips
 
 def _download(video: dict, out_path: str) -> bool:
-    files = [f for f in video["video_files"] if f["height"] >= f["width"] and f["height"] >= 1280]
-    if not files:
-        files = [f for f in video["video_files"] if f["height"] >= f["width"] and f["height"] >= 1080]
+    """Download the highest useful stock file and retain its source dimensions/URL."""
+    files = [
+        f for f in video.get("video_files", [])
+        if f.get("link") and max(int(f.get("height", 0)), int(f.get("width", 0))) >= 1280
+    ]
     if not files:
         return False
-    files.sort(key=lambda f: (abs(f["height"] - 1920), -f["height"]))
+    files.sort(key=lambda f: (
+        int(f.get("width", 0)) * int(f.get("height", 0)),
+        max(int(f.get("width", 0)), int(f.get("height", 0))),
+    ), reverse=True)
+    selected = files[0]
     try:
-        data = requests.get(files[0]["link"], timeout=120)
-        data.raise_for_status()
+        response = requests.get(selected["link"], timeout=120)
+        response.raise_for_status()
+        if len(response.content) < 20_000:
+            return False
+        with open(out_path, "wb") as fh:
+            fh.write(response.content)
     except Exception:
         return False
-    with open(out_path, "wb") as fh:
-        fh.write(data.content)
+    video["selected_file"] = {
+        "url": selected.get("link", ""),
+        "width": int(selected.get("width", 0)),
+        "height": int(selected.get("height", 0)),
+        "quality": selected.get("quality", ""),
+        "file_type": selected.get("file_type", "video/mp4"),
+    }
     return True
 
 def _refine_query(q: str) -> str:
@@ -321,7 +362,7 @@ def _score_candidates(gemini_key: str, query: str, candidates: list[dict],
                       topic: str, is_first_frame: bool, anchor: str = "") -> dict[str, float]:
     """Score candidates using Gemini. Returns a dict of vid_id -> score (0.0 to 10.0)."""
     if not gemini_key or not candidates:
-        return {c["id"]: 10.0 for c in candidates}
+        return {c["id"]: 0.0 for c in candidates}
 
     cache_key = (
         topic,
@@ -334,7 +375,7 @@ def _score_candidates(gemini_key: str, query: str, candidates: list[dict],
     if cache_key in _SCORE_CACHE:
         print(f"[visuals] Score cache hit for query: '{query}'")
         cached_scores = _SCORE_CACHE[cache_key]
-        return {c["id"]: cached_scores.get(c["id"], 10.0) for c in candidates}
+        return {c["id"]: cached_scores.get(c["id"], 0.0) for c in candidates}
 
     candidate_items = []
     for c in candidates:
@@ -390,8 +431,8 @@ Respond ONLY with a JSON object in this format:
         _SCORE_CACHE[cache_key] = scores
         return scores
     except Exception as e:
-        print(f"[visuals] Candidate scoring failed: {e}. Defaulting all to 10.0")
-        return {c["id"]: 10.0 for c in candidates}
+        print(f"[visuals] Candidate scoring failed: {e}; rejecting unreviewed candidates")
+        return {c["id"]: 0.0 for c in candidates}
 
 def _search_and_score(keys: dict, gemini_api_key: str | None, query: str,
                       visual_thesis: str, first_frame_description: str,
@@ -412,204 +453,348 @@ def _search_and_score(keys: dict, gemini_api_key: str | None, query: str,
         filtered = [v for v in vids if v.get("score", 0.0) >= threshold]
         return filtered, vids
     else:
+        # Unscored candidates are never treated as relevant; callers must obtain actual review.
         for vid in vids:
-            vid["score"] = 10.0
-        return vids, vids
+            vid["score"] = 0.0
+        return [], vids
 
-def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: int = 4,
+STORY_BEAT_LABELS = (
+    "observation",
+    "action_start",
+    "detail",
+    "change_comparison",
+    "payoff",
+)
+MIN_VISUAL_SCORE = 8.0
+MAX_CANDIDATES_PER_BEAT = 5
+
+
+class FootageGateError(RuntimeError):
+    """Raised when a five-beat, source-reviewed stock sequence cannot be built."""
+
+
+def _probe_duration(path: str) -> float:
+    import subprocess
+    probe = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", path],
+        capture_output=True, text=True, check=True, timeout=30,
+    )
+    duration = float(probe.stdout.strip())
+    if duration <= 0:
+        raise ValueError("stock clip has no positive duration")
+    return duration
+
+
+def _sha256(path: str) -> str:
+    import hashlib
+    digest = hashlib.sha256()
+    with open(path, "rb") as fh:
+        for block in iter(lambda: fh.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _sample_clip_windows(path: str, duration: float, segment_duration: float,
+                         review_dir: str, beat_index: int) -> tuple[list[dict], list[float]]:
+    """Save two sampled frames for up to three valid source windows for visual inspection."""
+    import subprocess
+    if duration + 0.05 < segment_duration:
+        raise ValueError(
+            f"clip is {duration:.2f}s but beat needs {segment_duration:.2f}s; looping is disallowed"
+        )
+    max_start = max(0.0, duration - segment_duration)
+    raw_starts = [0.0, max_start / 2.0, max_start]
+    starts = []
+    for value in raw_starts:
+        value = round(max(0.0, min(max_start, value)), 3)
+        if not starts or value > starts[-1] + 0.05:
+            starts.append(value)
+    os.makedirs(review_dir, exist_ok=True)
+    samples = []
+    for window_index, source_start in enumerate(starts):
+        times = [
+            min(duration - 0.05, source_start + segment_duration * 0.22),
+            min(duration - 0.05, source_start + segment_duration * 0.78),
+        ]
+        frame_paths = []
+        for frame_index, sample_time in enumerate(times):
+            frame_path = os.path.join(
+                review_dir, f"beat_{beat_index+1}_window_{window_index}_{frame_index}.jpg"
+            )
+            subprocess.run(
+                ["ffmpeg", "-y", "-v", "error", "-ss", f"{sample_time:.3f}", "-i", path,
+                 "-frames:v", "1", "-vf", "scale=768:1365:force_original_aspect_ratio=decrease",
+                 "-q:v", "4", frame_path],
+                capture_output=True, check=True, timeout=45,
+            )
+            if not os.path.exists(frame_path) or os.path.getsize(frame_path) < 1_000:
+                raise RuntimeError("ffmpeg did not produce a usable sampled frame")
+            frame_paths.append(frame_path)
+        samples.append({"window_index": window_index, "source_start": source_start,
+                        "sample_times": times, "frame_paths": frame_paths})
+    return samples, starts
+
+
+def _review_sampled_frames(api_key: str, query: str, beat: str, sentence: str,
+                           segment_duration: float, samples: list[dict], topic: str) -> tuple[dict, str]:
+    """Ask Gemini vision to inspect actual frames, not only provider titles/tags."""
+    import base64
+    import scriptgen
+
+    prompt = f"""You are reviewing sampled stock-video frames for a factual Hidden Logic short.
+Episode topic: {topic}
+Story beat: {beat}
+Exact spoken sentence for this beat: {sentence}
+Scene-specific stock query: {query}
+Required uninterrupted segment duration: {segment_duration:.2f} seconds
+
+Inspect every frame as evidence of what the clip visibly contains. Choose one complete sampled
+source window and a crop that keeps the relevant person/object/action inside a 9:16 vertical frame.
+Do not infer motion that the sampled frames do not support. Reject unrelated footage, decorative
+b-roll, absent action, the wrong place/object/category, or frames where the useful subject cannot
+survive a vertical crop. A static close-up can count as action only if a visible hand/object
+interaction or a clearly changing detail is present.
+
+Return ONLY JSON. `recommended_window` must be one of the listed window_index values;
+`crop_x` must be left, center, or right; `crop_y` must be top, center, or bottom.
+{{"relevant":true,"category_match":true,"action_visible":true,"score":8.5,
+"visible_action":"...","reason":"...","recommended_window":0,"crop_x":"center","crop_y":"center"}}"""
+    parts = [{"text": prompt}]
+    for sample in samples:
+        for frame_index, frame_path in enumerate(sample["frame_paths"]):
+            sample_time = sample["sample_times"][frame_index]
+            parts.append({"text": (
+                f"Sample window {sample['window_index']} frame {frame_index} at "
+                f"{sample_time:.2f} seconds:"
+            )})
+            with open(frame_path, "rb") as fh:
+                parts.append({"inline_data": {
+                    "mime_type": "image/jpeg",
+                    "data": base64.b64encode(fh.read()).decode("ascii"),
+                }})
+    body = {
+        "contents": [{"parts": parts}],
+        "generationConfig": {"temperature": 0.1, "responseMimeType": "application/json"},
+    }
+    model_names = ["gemini-3.8-flash", "gemini-2.5-flash"]
+    try:
+        discovered = scriptgen._best_models(api_key)
+        model_names = list(dict.fromkeys((discovered or [])[:2] + model_names))
+    except Exception:
+        pass
+    last_error = None
+    for model in model_names[:4]:
+        try:
+            response = requests.post(
+                scriptgen.GEMINI_URL.format(model=model),
+                headers={"x-goog-api-key": api_key}, json=body, timeout=90,
+            )
+            response.raise_for_status()
+            candidates = response.json().get("candidates", [])
+            if not candidates:
+                raise ValueError("Gemini visual review returned no candidate")
+            text = "\n".join(
+                part.get("text", "") for part in candidates[0].get("content", {}).get("parts", [])
+                if part.get("text")
+            ).strip()
+            text = text.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+            result = json.loads(text)
+            if not isinstance(result, dict):
+                raise ValueError("visual review must be a JSON object")
+            return result, model
+        except Exception as exc:
+            last_error = exc
+    raise FootageGateError(f"sampled-frame review unavailable: {last_error}")
+
+
+def _valid_visual_review(review: dict, sample_count: int) -> tuple[bool, str]:
+    required_bools = ("relevant", "category_match", "action_visible")
+    if not all(isinstance(review.get(key), bool) for key in required_bools):
+        return False, "malformed_visual_review_flags"
+    try:
+        score = float(review.get("score", 0))
+        window = int(review.get("recommended_window", -1))
+    except (TypeError, ValueError):
+        return False, "malformed_visual_review_score_or_window"
+    if window < 0 or window >= sample_count:
+        return False, "invalid_reviewed_source_window"
+    if score < MIN_VISUAL_SCORE:
+        return False, "visual_relevance_below_threshold"
+    if not review.get("relevant"):
+        return False, "off_topic_stock_clip"
+    if not review.get("category_match"):
+        return False, "stock_category_mismatch"
+    if not review.get("action_visible") or not str(review.get("visible_action", "")).strip():
+        return False, "missing_visible_action"
+    if review.get("crop_x") not in {"left", "center", "right"}:
+        return False, "invalid_reviewed_crop_x"
+    if review.get("crop_y") not in {"top", "center", "bottom"}:
+        return False, "invalid_reviewed_crop_y"
+    return True, ""
+
+
+def fetch_backgrounds(api_key: str, keywords: list[str], workdir: str, count: int = 5,
                       pixabay_key: str | None = None, gemini_api_key: str | None = None,
-                      visual_thesis: str = "", first_frame_description: str = "", topic: str = "") -> list[str]:
+                      visual_thesis: str = "", first_frame_description: str = "", topic: str = "",
+                      *, segment_durations: list[float] | None = None,
+                      sentences: list[str] | None = None,
+                      episode_meta: dict | None = None,
+                      max_candidates_per_beat: int = MAX_CANDIDATES_PER_BEAT) -> list[str]:
+    """Build exactly five distinct, frame-reviewed stock shots; never fill a weak beat.
+
+    The return type remains a list of local clip paths for compatibility with assemble.py.
+    The reviewed clip records are added to `episode_meta['footage_shots']` when supplied.
+    """
+    if not gemini_api_key:
+        raise FootageGateError("Gemini key is required for sampled-frame review")
+    if not api_key and not pixabay_key:
+        raise FootageGateError("Pexels or Pixabay credentials are required for stock footage")
+    if count != len(STORY_BEAT_LABELS) or len(keywords or []) != len(STORY_BEAT_LABELS):
+        raise FootageGateError("the episode must have exactly five separate shot queries")
+    if not segment_durations or len(segment_durations) != len(STORY_BEAT_LABELS):
+        raise FootageGateError("five positive narration-aligned segment durations are required")
+    if any(not isinstance(value, (int, float)) or value <= 0 for value in segment_durations):
+        raise FootageGateError("segment durations must all be positive")
+    if sentences and len(sentences) != len(STORY_BEAT_LABELS):
+        raise FootageGateError("five spoken sentences are required to review the beat mapping")
+    if any(len(str(q).split()) < 3 for q in keywords):
+        raise FootageGateError("shot queries must be specific, scene-level phrases")
+
+    os.makedirs(workdir, exist_ok=True)
     keys = {"pexels": api_key, "pixabay": pixabay_key}
-    # Lock the whole video to ONE scene concept so clips never drift to a different subject
-    # (the car -> motorcycle problem). anchor is fed to the scorer to reject off-anchor clips.
-    concept = _detect_concept(topic, keywords, visual_thesis)
-    anchor = SCENE_LIBRARY.get(concept, {}).get("anchor", "") if concept else ""
-    if concept:
-        print(f"[visuals] Scene concept: '{concept}' | anchor lock: {anchor}")
     used = _load_used()
-    downloaded_ids: set = set()
-    paths: list = []
+    selected_ids: set[str] = set()
+    selected_hashes: set[str] = set()
+    paths: list[str] = []
+    records: list[dict] = []
+    sentence_list = list(sentences or [""] * len(STORY_BEAT_LABELS))
 
-    if not keywords:
-        keywords = ["cinematic documentary", "abstract logic", "modern design"]
-        
-    queries = []
-    for i in range(count):
-        queries.append(keywords[i % len(keywords)])
-
-    first_frame_deferred = False   # set True only if slot 0 finds no on-topic clip
-    for idx, q in enumerate(queries):
-        is_first_frame = (idx == 0)
-        threshold = 8.0 if is_first_frame else 7.0
-        cleaned_q = _refine_query(q)
-        
-        # Search and score candidates
-        vids, all_vids = _search_and_score(keys, gemini_api_key, cleaned_q,
-                                           visual_thesis, first_frame_description,
-                                           topic, is_first_frame, threshold, anchor=anchor)
-        found = False
-        
-        # Pass 1: Strict mode - avoid clips used in past videos AND avoid clips already used in THIS video
-        for vid in vids:
-            vid_id = str(vid["id"])
-            if vid_id in downloaded_ids or vid_id in used:
+    for beat_index, (beat, raw_query, segment_duration) in enumerate(
+        zip(STORY_BEAT_LABELS, keywords, segment_durations)
+    ):
+        query = str(raw_query).strip()
+        candidates = _search_all(keys, query)
+        if not candidates:
+            raise FootageGateError(f"beat {beat_index+1} ({beat}) has no stock results for {query!r}")
+        accepted = None
+        failures = []
+        for candidate_index, candidate in enumerate(candidates[:max_candidates_per_beat]):
+            clip_id = str(candidate.get("id", "")).strip()
+            if not clip_id or clip_id in used or clip_id in selected_ids:
+                failures.append("clip_id_reused")
                 continue
-            out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-            if _download(vid, out):
-                used.add(vid_id)
-                downloaded_ids.add(vid_id)
-                paths.append(out)
-                found = True
+            candidate_path = os.path.join(workdir, f".candidate_{beat_index+1}_{candidate_index+1}.mp4")
+            review_dir = os.path.join(workdir, "frame_review", f"beat_{beat_index+1}_candidate_{candidate_index+1}")
+            try:
+                if not _download(candidate, candidate_path):
+                    failures.append("stock_download_or_resolution_failed")
+                    continue
+                duration = _probe_duration(candidate_path)
+                supplied_duration = float(candidate.get("duration_seconds") or 0)
+                if supplied_duration > 0 and abs(supplied_duration - duration) > max(2.0, duration * 0.15):
+                    candidate["provider_duration_seconds"] = supplied_duration
+                if duration + 0.05 < float(segment_duration):
+                    failures.append("clip_too_short_for_beat")
+                    continue
+                file_hash = _sha256(candidate_path)
+                if "sha256:" + file_hash in used or file_hash in selected_hashes:
+                    failures.append("clip_hash_reused")
+                    continue
+                samples, allowed_starts = _sample_clip_windows(
+                    candidate_path, duration, float(segment_duration), review_dir, beat_index
+                )
+                review, reviewer_model = _review_sampled_frames(
+                    gemini_api_key, query, beat, sentence_list[beat_index],
+                    float(segment_duration), samples, topic,
+                )
+                valid, rejection = _valid_visual_review(review, len(samples))
+                if not valid:
+                    failures.append(rejection)
+                    continue
+                recommended_window = int(review["recommended_window"])
+                source_start = float(allowed_starts[recommended_window])
+                crop_position = {"x": review["crop_x"], "y": review["crop_y"]}
+                final_path = os.path.join(workdir, f"bg_{beat_index+1}.mp4")
+                os.replace(candidate_path, final_path)
+                accepted = {
+                    "beat": beat,
+                    "query": query,
+                    "provider": candidate.get("provider", ""),
+                    "provider_id": candidate.get("provider_id", clip_id),
+                    "clip_id": clip_id,
+                    "source_url": candidate.get("source_url", ""),
+                    "download_url": (candidate.get("selected_file") or {}).get("url", ""),
+                    "license": candidate.get("license", ""),
+                    "creator": candidate.get("creator", ""),
+                    "creator_url": candidate.get("creator_url", ""),
+                    "duration_seconds": round(duration, 3),
+                    "segment_duration_seconds": round(float(segment_duration), 3),
+                    "source_start": round(source_start, 3),
+                    "crop_position": crop_position,
+                    "sha256": file_hash,
+                    "local_path": final_path,
+                    "sampled_frames": [
+                        {"path": os.path.relpath(frame, workdir).replace("\\", "/"),
+                         "time_seconds": round(t, 3), "window_index": sample["window_index"]}
+                        for sample in samples
+                        for frame, t in zip(sample["frame_paths"], sample["sample_times"])
+                    ],
+                    "review": {
+                        "status": "accepted",
+                        "reviewer": "Gemini multimodal frame review",
+                        "reviewer_model": reviewer_model,
+                        "score": float(review["score"]),
+                        "relevant": review["relevant"],
+                        "category_match": review["category_match"],
+                        "action_visible": review["action_visible"],
+                        "visible_action": str(review.get("visible_action", ""))[:300],
+                        "reason": str(review.get("reason", ""))[:600],
+                        "reviewed_window": recommended_window,
+                        "reviewed_source_start": round(source_start, 3),
+                        "human_review": "pending",
+                    },
+                }
+                paths.append(final_path)
+                records.append(accepted)
+                selected_ids.add(clip_id)
+                selected_hashes.add(file_hash)
+                # Keep sampled frames only for the accepted candidate, for human review.
+                for other_index in range(candidate_index):
+                    previous_dir = os.path.join(
+                        workdir, "frame_review", f"beat_{beat_index+1}_candidate_{other_index+1}"
+                    )
+                    if os.path.isdir(previous_dir):
+                        import shutil
+                        shutil.rmtree(previous_dir, ignore_errors=True)
                 break
-                
-        # Pass 2: Relaxed mode - if no fresh clip found for this keyword, allow past clips
-        if not found:
-            for vid in vids:
-                vid_id = str(vid["id"])
-                if vid_id in downloaded_ids:
-                    continue
-                out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-                if _download(vid, out):
-                    downloaded_ids.add(vid_id)
-                    paths.append(out)
-                    found = True
-                    break
+            except FootageGateError:
+                raise
+            except Exception as exc:
+                failures.append(type(exc).__name__ + ": " + str(exc)[:160])
+            finally:
+                if os.path.exists(candidate_path):
+                    try:
+                        os.remove(candidate_path)
+                    except OSError:
+                        pass
+        if accepted is None:
+            if episode_meta is not None:
+                episode_meta["footage_shots"] = records
+            raise FootageGateError(
+                f"beat {beat_index+1} ({beat}) rejected; no reviewed distinct stock clip for "
+                f"{query!r}; reasons={','.join(failures[-8:]) or 'no_acceptable_candidates'}"
+            )
 
-        # Pass 3: Simplified search query (first 2 words) if query is multi-word
-        if not found:
-            words = q.split()
-            if len(words) > 1:
-                simple_q = " ".join(words[:2])
-                print(f"[visuals] No clips for '{q}'. Trying simplified query '{simple_q}'...")
-                svids, sall_vids = _search_and_score(keys, gemini_api_key, simple_q,
-                                                     visual_thesis, first_frame_description,
-                                                     topic, is_first_frame, threshold,
-                                                     skip_scoring=True)
-                for vid in svids:
-                    vid_id = str(vid["id"])
-                    if vid_id in downloaded_ids:
-                        continue
-                    out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-                    if _download(vid, out):
-                        downloaded_ids.add(vid_id)
-                        paths.append(out)
-                        found = True
-                        break
-                if not found:
-                    all_vids.extend(sall_vids)
-
-        # Pass 4: Niche-specific or generic fallback keywords search.
-        # IMPORTANT: for the FIRST FRAME we skip the *generic* fallbacks entirely. The first
-        # frame is the swipe-or-stay moment - opening on a generic "moody dark / cinematic
-        # shadow" clip (or anything off-topic) is exactly what makes viewers swipe in the first
-        # second. We'd rather defer the first frame and reuse a later on-topic clip (handled in
-        # the deferral below) than open on a mismatched generic shot. Niche fallbacks that are
-        # clearly topic-relevant (airport terminal, supermarket aisle, etc.) are still allowed
-        # for the first frame; only the generic catch-alls are withheld.
-        if not found:
-            generic_fallbacks = ["moody dark", "cinematic shadow", "abstract geometry", "mysterious lighting"]
-            # Anchor-consistent, proof-oriented fallbacks from the scene library: keeps the whole
-            # video on ONE subject and biased toward shots that DEMONSTRATE the mechanism, instead
-            # of the old thin "traffic cars"-style fallback that let a car video drift to a bike.
-            niche_fallbacks = list(SCENE_LIBRARY.get(concept, {}).get("queries", []))
-            # First frame: on-anchor library fallbacks only (never a generic dark shot).
-            fallbacks = niche_fallbacks if is_first_frame else (niche_fallbacks + generic_fallbacks)
-
-            for fq in fallbacks:
-                print(f"[visuals] No clips for '{q}'. Trying fallback query '{fq}'...")
-                fvids, fall_vids = _search_and_score(keys, gemini_api_key, fq,
-                                                     visual_thesis, first_frame_description,
-                                                     topic, is_first_frame, threshold,
-                                                     skip_scoring=True, anchor=anchor)
-                for vid in fvids:
-                    vid_id = str(vid["id"])
-                    if vid_id in downloaded_ids:
-                        continue
-                    out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-                    if _download(vid, out):
-                        downloaded_ids.add(vid_id)
-                        paths.append(out)
-                        found = True
-                        break
-                if found:
-                    break
-                else:
-                    all_vids.extend(fall_vids)
-
-        # Pass 4.5: Relaxed Score Pass - if we couldn't find any candidate satisfying the threshold,
-        # try the highest scored candidate we collected from all search query passes.
-        if not found and all_vids:
-            all_vids.sort(key=lambda x: x.get("score", 0.0), reverse=True)
-            print(f"[visuals] No clips met threshold {threshold} for '{q}'. Trying relaxed score fallback...")
-            for vid in all_vids:
-                vid_id = str(vid["id"])
-                if vid_id in downloaded_ids:
-                    continue
-                out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-                if _download(vid, out):
-                    downloaded_ids.add(vid_id)
-                    paths.append(out)
-                    found = True
-                    print(f"[visuals] Downloaded relaxed score fallback: {vid_id} (score: {vid.get('score')})")
-                    break
-
-        # Pass 4.7: hand-picked LOCAL proof-clip library (always on-anchor) - use this before we
-        # resort to deferring or duplicating, so weak niches can be permanently fixed by the operator.
-        if not found and concept:
-            out = os.path.join(workdir, f"bg_{len(paths)+1}.mp4")
-            if _library_clip(concept, downloaded_ids, out):
-                paths.append(out)
-                found = True
-
-        # Pass 5: Last resort - duplicate previous downloaded clip to preserve segment pacing.
-        # For the FIRST frame there is no previous clip, and we refuse to open on a generic one.
-        # Instead we DEFER it: leave the slot empty for now, finish gathering the other (on-topic)
-        # clips, then promote the best-scoring on-topic clip to be the opener. This guarantees the
-        # swipe-or-stay first frame is always topic-relevant, never a generic dark shot.
-        if not found and is_first_frame:
-            first_frame_deferred = True
-            print(f"[visuals] First frame found no on-topic clip for '{q}'. Deferring - will open "
-                  f"with the best on-topic clip from the rest of the video instead of a generic shot.")
-        elif not found and paths:
-            # duplicate a RANDOM earlier clip, never the immediately-previous one - adjacent
-            # identical clips read as "the video is looping". With 2+ clips available we
-            # exclude the last; the reuse-offset in assemble then shows a different time
-            # window of whichever clip we copy, so the repeat is nearly invisible.
-            import random as _dup_rnd
-            _pool = paths[:-1] if len(paths) >= 2 else paths
-            prev_clip = _dup_rnd.choice(_pool)
-            # Reference the SAME file (no copy): assemble keys its reuse-offset counter by
-            # path, so a repeated path gets a staggered start time instead of replaying the
-            # identical opening seconds (the 'same clip twice in a row' complaint).
-            paths.append(prev_clip)
-            found = True
-            print(f"[visuals] Failed all search queries for '{q}'. Reusing an earlier clip (assemble offsets it).")
-        
-        if not (_RATE_LIMITED and "pexels" in _RATE_LIMITED and "pixabay" in _RATE_LIMITED):
-            time.sleep(0.25)
-
+    # Enforce final episode-level uniqueness before reserving IDs and hashes.
+    if len(paths) != 5 or len(set(selected_ids)) != 5 or len(set(selected_hashes)) != 5:
+        raise FootageGateError("five-beat footage failed episode-level uniqueness")
+    used.update(selected_ids)
+    used.update("sha256:" + value for value in selected_hashes)
     _save_used(used)
-
-    # If the first frame was deferred (no on-topic clip found for slot 0), promote the strongest
-    # on-topic clip we DID find to the front, so the video opens on-topic. Fall back to just using
-    # what we have if we somehow got nothing else.
-    if first_frame_deferred and len(paths) >= 1:
-        # paths currently holds clips for slots 1..N (the first slot was skipped). Duplicate the
-        # first available on-topic clip to serve as the opener too, so pacing/segment count holds.
-        # Same-path reference (no copy) so assemble's per-path reuse offset applies here too.
-        paths.insert(0, paths[0])
-        print("[visuals] Promoted best on-topic clip to the first frame (deferred opener).")
-    
-    if not paths:
-        if _RATE_LIMITED:
-            raise RuntimeError("Could not get clips: source(s) rate-limited "
-                               f"({', '.join(sorted(_RATE_LIMITED))}). Try again later.")
-        raise RuntimeError("Could not download any background clips from Pexels/Pixabay")
-        
-    if len(paths) < count:
-        print(f"[visuals] WARNING: only {len(paths)} distinct clips for {count} segments "
-              f"(sources thin or rate-limited); video will use fewer, longer cuts")
-              
+    if episode_meta is not None:
+        episode_meta["footage_shots"] = records
+        episode_meta["visual_review_status"] = "automated frame review passed; human review pending"
     return paths
 
 PHOTO_URL = "https://api.pexels.com/v1/search"

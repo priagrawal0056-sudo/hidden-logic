@@ -1,111 +1,112 @@
-# Hidden Logic — Automated Shorts Pipeline
+# Hidden Logic — Python/FFmpeg Shorts Pipeline
 
-Hidden Logic is a faceless YouTube Shorts channel that explains the **hidden systems behind everyday frustrations** — why milk is at the back of the store, why airport gates change last minute, why your cart keeps getting bigger. This repo is the full automation pipeline: it picks a topic, writes and fact-checks a script, voices it, captions it, fetches relevant b‑roll, renders a vertical Short, makes a thumbnail, uploads on a schedule, then learns from performance and engages with comments — hands‑off.
+Hidden Logic explains supported mechanisms behind small, observable everyday moments. This repository keeps the existing Python/FFmpeg renderer, script/evidence records, analytics, upload integration, and reserve system. The editorial production path uses Gemini TTS with the fixed Orus voice, five narration-aligned stock-footage beats, verified word timings, quiet phrase captions, and fail-closed quality/publication gates.
 
-Everything runs on free tiers (Gemini, Edge TTS, Pexels/Pixabay, YouTube Data API). The only paid option is ElevenLabs for a premium voice, which is optional.
-
----
-
-## How it works (one daily run)
-
-1. **Topic** — picked from the idea bank, a seed×format matrix, or a live trend (`scriptgen.py`, `idea_bank.py`, `trends.py`).
-2. **Script + review** — Gemini writes the script, then a second "retention analyst" pass fact‑checks it and rewrites for hook/escalation/delayed‑reveal. Multiple quality gates must pass or the slot is skipped.
-3. **Voice** — ElevenLabs if keys are set, otherwise free Edge TTS (`tts.py`). Word timings come from Whisper alignment when available.
-4. **Captions** — word‑synced `.ass` captions with pop‑in animation and gold emphasis (`captions.py`).
-5. **B‑roll** — Pexels/Pixabay clips, ranked for relevance by Gemini (first frame = the de‑facto Shorts thumbnail) (`visuals.py`).
-6. **Assemble** — ffmpeg builds a 1080×1920 / 30 fps Short with grade, music bed, SFX, and the Hidden Logic wordmark (`assemble.py`).
-7. **Upload** — scheduled to your publish slots via the YouTube Data API; first comment + self‑like seeded (`upload.py`).
-8. **Learn + engage** — analytics polling, winner/loser memory, A/B variants, auto‑replies, weekly insight report (`analytics_poll.py`, `winner_memory.py`, `boost.py`).
+**Publication is disabled by default.** No video may be uploaded until the six unpublished pilots have passed human review and both `rollout_enabled` and `pilot_review_complete` are explicitly enabled. A weak script, voice take, crop, clip, caption, or render is skipped rather than used to fill a slot.
 
 ---
 
-## One‑time setup (~45 min)
+## How the editorial pipeline works
 
-**1. Install Python 3.11+ and ffmpeg.** Tick "Add Python to PATH". Install ffmpeg with `winget install ffmpeg`, then confirm `ffmpeg -version`.
-
-**2. Install dependencies.** In the project folder: `pip install -r requirements.txt`. If you use conda, install into the same env your scheduler will use (see Troubleshooting).
-
-**3. Create `config.json`.** Copy `config.example.json` to `config.json` and fill it in (keys explained below).
-
-**4. Get free API keys.**
-- Gemini: https://aistudio.google.com/apikey → `gemini_api_key`
-- Pexels: https://www.pexels.com/api/ → `pexels_api_key`
-- Pixabay (optional, more b‑roll): https://pixabay.com/api/docs/ → `pixabay_api_key`
-- Discord webhook (run alerts): a channel → Integrations → Webhooks → `alert_webhook_url`
-
-**5. Create the YouTube channel** and confirm in Studio → Settings → Channel that it is **NOT made for kids** (otherwise comments/likes fail).
-
-**6. Enable the upload API.** In Google Cloud Console: new project → enable **YouTube Data API v3** → OAuth consent screen (External, add your Gmail as a test user) → Create OAuth client ID (Desktop app) → download JSON → rename to `client_secret.json` in the project folder. To avoid 7‑day token expiry, click **Publish app** on the consent screen.
-
-**7. First test run:** `python run_daily.py --dry-run --count 1` builds a video without uploading. Watch `drafts/<id>/short.mp4`. Then `python run_daily.py --count 1` does the first real upload (a browser opens once to authorize).
+1. **Topic and script** — the existing topic selection and evidence workflow produce a five-sentence, 45–75-word observed mini-story: concrete object/place opening, useful answer early, one supported mechanism, a practical implication, and a complete ending. Forced suspense, universal claims, invented numbers, generic AI phrasing, and spoken production directions are rejected.
+2. **Orus narration** — Gemini TTS keeps the narration transcript separate from structured delivery metadata. A primary take is measured for transcript accuracy, actual word timings, pauses, pitch movement, even timing, clipping, duration, and answer timing. One alternate Orus take is allowed only after a measurable quality failure. There is no alternate voice, estimated-timing fallback, or time-stretching.
+3. **Captions** — restrained phrase-level `.ass` captions use actual ASR word boundaries, safe margins, readable widths, and a short final takeaway hold. Caption fade is disabled.
+4. **Stock footage** — five separate scene-specific searches follow the story in order. Sampled frames are inspected; clips must show a relevant action, match the scene, and support a reviewed source start and crop. Reused IDs/hashes, weak matches, and missing actions are rejected. Source, provider, license, creator, start, crop, frame review, and hash are recorded.
+5. **FFmpeg render** — the existing vertical renderer respects the reviewed starts/crops and beat timing. Color treatment is light; loop-backs, zoom punches, whooshes, and decorative overlays are off by default. Music is opt-in. The final MP4 is checked for codecs, 1080×1920 resolution, duration, and usable audio.
+6. **Reserve and upload** — machine-checkable script, evidence, title, footage, voice, caption, audio, and render gates run before a draft enters the reserve or any upload path. User rejection is final for that draft. `logs/skip_reasons.jsonl` records skipped slots. Upload routes share the publication gate.
+7. **Analytics and existing integrations** — the existing channel index, analytics, reserve, comments, and compilation modules remain in place; compilation is also blocked while rollout is disabled.
 
 ---
 
-## Running it
+## One-time setup
 
-- `python run_daily.py` — full run, uses `videos_per_day` from config.
-- `python run_daily.py --dry-run` — build without uploading (still uses Gemini/Pexels quota).
-- `python autopilot.py` — zero‑input full autopilot (wraps `run_daily.py --hero`: auto‑picks the day's best topic, fills the rest, uploads on schedule).
-- `python run_daily.py --upload-only` — upload already‑built drafts in `drafts/` without regenerating. `--immediate` posts now; `--max-workers N` sets parallelism.
+1. Install Python 3.11+ and FFmpeg/FFprobe. On Windows, `winget install ffmpeg` is one option; confirm `ffmpeg -version` and `ffprobe -version`.
+2. Create a project-local environment and install dependencies:
 
-**Schedule it (Windows Task Scheduler):** point a Basic Task at **`run_autopilot.bat`** (not `python` directly — the .bat activates your conda env, logs which interpreter ran, and checks dependencies). Tick "Run task as soon as possible after a scheduled start is missed" and "Wake the computer to run this task". The bat writes a dated log to `logs/`.
+   **Windows PowerShell:**
+   ```powershell
+   py -3.11 -m venv .venv
+   .\.venv\Scripts\python.exe -m pip install --upgrade pip
+   .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+   ```
 
----
+   **macOS/Linux:**
+   ```bash
+   python3 -m venv .venv
+   .venv/bin/python -m pip install --upgrade pip
+   .venv/bin/python -m pip install -r requirements.txt
+   ```
 
-## Config keys
-
-**Secrets** (prefer environment variables — see Security): `gemini_api_key`, `pexels_api_key`, `pixabay_api_key`, `alert_webhook_url`, `elevenlabs_api_keys`.
-
-**Cadence & scheduling:**
-- `videos_per_day` — videos per run (the real YouTube quota ceiling is ~6 uploads/day; see Limits).
-- `bank_videos_per_day` — how many come pre‑locked from the idea bank.
-- `draft_buffer_multiplier` — over‑generate by this factor, publish the best N (unselected drafts are auto‑cleaned).
-- `publish_slots` — local times to schedule the day's videos, e.g. `["15:00","17:00","19:00","21:00"]`. (Legacy `spread_hours` is a fallback if no slots are set.)
-- `post_first_immediately` — publish video #1 now, schedule the rest.
-
-**Quality gates** (three thresholds): `absolute_quality_floor` (hard reject below this) < `quality_floor` < `min_quality` (target). A draft that can't clear the gates after `max_attempts_per_video` tries sacrifices its slot — that's the gate working, not a crash. Lower `min_quality` if too many slots are sacrificed.
-
-**Generation:** `llm_provider`, `script_ab` (A/B script variants), `strict_topic_lock`.
-
-**Voice:** `tts_engine` (`auto`), `voice`, `elevenlabs_voice_id`, `elevenlabs_model_id`, `elevenlabs_api_keys` (pool; leave blank to use free Edge — you'll see a one‑time note in the log when it falls back).
-
-**Media:** `music_file` (folder or file), `music_volume`, `score_broll` (Gemini‑ranks b‑roll for relevance; set `false` to save Gemini quota).
-
-**Growth:** `sequel_threshold`, `revive_view_floor`.
+   `faster-whisper` is required for transcript verification and actual word timings; missing ASR fails closed.
+3. Copy `config.example.json` to the git-ignored `config.json`. Set Gemini and at least one stock-footage key (Pexels or Pixabay). Keep `rollout_enabled` and `pilot_review_complete` false.
+4. YouTube OAuth credentials are only needed for uploads, not for local pilot generation. Keep `client_secret.json` and `yt_token.pickle` out of Git.
 
 ---
 
-## Security (do this)
+## Create and review the six unpublished pilots
 
-`config.json`, `client_secret.json`, and `yt_token.pickle` are **secrets**. Together they allow full control of your channel and billing. They are git‑ignored by the included `.gitignore` — keep it that way.
+The batch is two technology stories, two queue/travel stories, and two shopping/pricing stories. It keeps Orus as the only voice identity and rotates only among the three controlled delivery directions. The command is inert unless `--generate` is provided.
 
-Best practice: move secrets out of `config.json` into environment variables, which the pipeline reads automatically (`config_loader.py`):
-
-```
-HL_GEMINI_API_KEY, HL_PEXELS_API_KEY, HL_PIXABAY_API_KEY,
-HL_ALERT_WEBHOOK_URL, HL_ELEVENLABS_API_KEYS (comma-separated)
+**Windows PowerShell:**
+```powershell
+.\.venv\Scripts\python.exe pilot_batch.py                 # show the plan only
+.\.venv\Scripts\python.exe pilot_batch.py --generate      # generate unpublished drafts
 ```
 
-Set them in the Task Scheduler action or your machine environment. If keys ever live in `config.json`, you'll get a one‑time security warning on each run. **If this folder was ever zipped, shared, or pushed anywhere, rotate every key.**
+**macOS/Linux:**
+```bash
+.venv/bin/python pilot_batch.py
+.venv/bin/python pilot_batch.py --generate
+```
+
+Drafts, sampled frames, metadata, skip reasons, and `pilot_batch_report.json` are written under `pilots/unpublished/YYYYMMDD/`. That directory is git-ignored. Open its generated `index.html` for a local review index with video playback, clickable five-beat seek points, early-answer timing, evidence claims/sources, the actual Orus transcript and delivery metrics, caption/render checks, and each reviewed stock source/crop/action. Each completed draft also has its own `index.html`. These pages are static review aids only: they have no approval or upload endpoint. The batch never calls YouTube upload APIs and writes `rollout_enabled: false`. Inspect every MP4 and its source/crop records; mark each pilot's `human_review_status` as approved or rejected. Do not enable rollout unless all six pass human review. Rejected pilots remain unpublished.
+
+The integration from [youtube-agentic-ai-studio](https://github.com/raunakpatil/youtube-agentic-ai-studio#-quick-star) is deliberately selective: this pipeline adopts the useful human-review-before-upload presentation, implemented as a static artifact for Actions and local review. Its Quick Start's alternate TTS, image-based visuals, separate renderer, retention prompts, and direct-upload path are not used; Orus, stock footage, the existing FFmpeg renderer, evidence gates, and the publication lock remain authoritative.
+
+### GitHub Actions
+
+Pushes to the Arena working branch and pull-request previews remain dry-run paths. To create the pilot batch on a GitHub runner, open **Actions → Hidden Logic Daily Autopilot → Run workflow**, select **Generate six unpublished editorial pilots**, and run it. The job uses the configured Gemini/Pexels/Pixabay secrets, does not require YouTube OAuth for pilots, and attaches the `pilots/unpublished/` review package as an artifact. It persists only the stock clip IDs and hashes in `used_clips.json` so later batches cannot recycle pilot footage; rendered videos stay in the artifact, not Git. The normal scheduled/main upload path remains blocked until the publication flags are explicitly approved and enabled.
+
+Dry-run artifacts now include each successful MP4, metadata, and static review page. If no MP4 was produced, the artifact step warns instead of adding a second workflow error; a separate diagnostics artifact retains `pipeline_log.txt`, quality skip reasons, and any partial draft metadata. The pipeline step itself still fails when it cannot produce a valid video, so a missing preview is never reported as success.
 
 ---
 
-## Limits & staying clean
+## Running the existing pipeline
 
-- The YouTube Data API free quota is ~10,000 units/day ≈ **6 uploads/day**. The pipeline now detects quota exhaustion, stops the batch, keeps the remaining drafts, and tells you in the Discord digest. Keep `videos_per_day` at or below ~5.
-- B‑roll is generic Pexels/Pixabay footage only — never add copyrighted clips or real photos.
-- Accuracy builds trust: if a published video's claim looks wrong, delete it.
+- `python run_daily.py --dry-run --count 1` — generate and render one private local test draft; no upload.
+- `python run_daily.py --upload-only` — validate and upload eligible drafts only if the shared publication gate permits it.
+- `python autopilot.py` — existing scheduled/autopilot entry point; it is fail-closed while rollout flags are false.
 
-## Operator routine (weekly, ~15 min)
+On Windows, `run_autopilot.bat --dry-run` remains available. For Task Scheduler, point the task at `run_autopilot.bat` and set the working directory to the repository. Do not schedule a publishing run before the pilots have passed human review.
 
-Check the Discord digest after each run (it lists what shipped with links, what's growing, what needs attention). Once a week, skim `pipeline_log.txt` for ERROR lines, glance at retention in YouTube Studio, and reply to a few comments. The weekly insight report is auto‑posted to Discord.
+---
 
-## Troubleshooting
+## Configuration
 
-- **Scheduled run produced nothing / `ModuleNotFoundError: No module named 'google'`** — the scheduler ran a different Python than the one with your packages. `run_autopilot.bat` now logs `where python` and runs a dependency check; an import failure also sends a Discord alert and writes `STARTUP_FAILED.txt`. Fix: `pip install -r requirements.txt` in the exact env the bat activates.
-- **Uploads fail with auth errors** — delete `yt_token.pickle` and run once manually to re‑authorize.
-- **Quota exceeded** — expected past ~6 uploads/day; remaining drafts are deferred to the next run.
+**Generation secrets** (prefer environment variables):
+- `HL_GEMINI_API_KEY`
+- `HL_PEXELS_API_KEY`
+- `HL_PIXABAY_API_KEY` (optional if Pexels is configured)
+- `HL_ALERT_WEBHOOK_URL` (optional)
 
-## Costs
+**Publication safety:**
+- `rollout_enabled`: keep `false` until the pilot batch has passed human review.
+- `pilot_review_complete`: keep `false` until all six pilots have been reviewed and approved.
+- Both must be explicitly `true` before publishing routes proceed. A pilot draft also needs `human_review_status: "approved"`.
+- For GitHub Actions, the equivalent non-secret repository variables are `HL_ROLLOUT_ENABLED` and `HL_PILOT_REVIEW_COMPLETE`; leave them unset/false until review.
 
-$0 on free tiers (Gemini, Edge TTS, Pexels/Pixabay, ffmpeg, YouTube API). ElevenLabs (premium voice) is the only optional paid add‑on.
+**TTS/editorial:** `voice` is locked to `Orus`; `gemini_tts_model` selects the Gemini model; `tts_direction` chooses the baseline delivery direction. `editorial_music_enabled` defaults to `false`. No Edge, ElevenLabs, or other voice fallback is used.
+
+The loader uses `config.example.json` in hosted CI when the ignored `config.json` is absent, then overlays configured `HL_*` environment variables. Missing publication flags default to false.
+
+---
+
+## Security and quality operation
+
+`config.json`, OAuth files, generated media, and `pilots/unpublished/` are excluded from Git. Never paste or log secret values. If credentials were exposed, rotate them.
+
+Quality takes priority over cadence. Review the skip log rather than lowering gates to fill a slot. A failed or interrupted render is not considered a draft; an interrupted upload does not become a success marker. Run the offline regression suite with:
+
+```bash
+python -m unittest discover -v
+```

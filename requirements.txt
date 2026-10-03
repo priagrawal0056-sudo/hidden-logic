@@ -1,10 +1,9 @@
-edge-tts
 requests
 google-api-python-client
 google-auth-oauthlib
+Pillow
 
-# faster-whisper gives TRUE per-word timestamps so captions are frame-accurate. WITHOUT it the
-# pipeline falls back to LENGTH-BASED ESTIMATION, which drifts out of sync with the voice (the
-# "captions off-timing" problem). Installing it is what makes captions actually match the audio.
+# Required for transcript verification and true word boundaries. The TTS path fails closed
+# without ASR; it does not substitute estimated timings.
 faster-whisper
 pytrends

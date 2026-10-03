@@ -12,10 +12,11 @@ import os
 import random
 import requests
 import winner_memory
+from editorial_quality import validate_script
 
-GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 MODELS = ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]  # static fallback
-LIST_URL = "https://generativelanguage.googleapis.com/v1beta/models?key={key}&pageSize=200"
+LIST_URL = "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200"
 _discovered = None
 
 
@@ -29,7 +30,7 @@ def _best_models(api_key: str) -> list:
     if _discovered:
         return _discovered
     try:
-        r = requests.get(LIST_URL.format(key=api_key), timeout=30)
+        r = requests.get(LIST_URL, headers={"x-goog-api-key": api_key}, timeout=30)
         r.raise_for_status()
         names = []
         for m in r.json().get("models", []):
@@ -59,21 +60,21 @@ def _best_models(api_key: str) -> list:
 # ---------------------------------------------------------------- content matrix
 # Variant A = factual everyday mysteries
 FACT_FORMATS = [
-    "Why {seed} happens to you constantly",
-    "Why you can never escape {seed}",
-    "Why {seed} is a universal experience",
-    "Why everyone is secretly annoyed by {seed}",
+    "The everyday reason behind {seed}",
+    "A closer look at {seed}",
+    "What makes {seed} happen",
+    "The small design detail behind {seed}",
 ]
 
-# Variant B = opinionated / highly debated / manipulative systems (better retention)
+# Neutral topic labels: the narration must establish a mechanism before attributing intent.
 HOTTAKE_FORMATS = [
-    ("manipulation", "Why {seed} is definitely not an accident"),
-    ("design", "Why {seed} keeps happening no matter what"),
-    ("psychology", "The psychological reason behind {seed}"),
-    ("behavior", "Why {seed} makes everyone act predictably"),
+    ("design", "The design behind {seed}"),
+    ("psychology", "The psychology of {seed}"),
+    ("behavior", "Why {seed} can happen"),
+    ("technology", "How {seed} works"),
 ]
 
-_PILLAR_WEIGHTS = {"manipulation": 40, "design": 30, "psychology": 20, "behavior": 10}
+_PILLAR_WEIGHTS = {"design": 35, "technology": 30, "psychology": 20, "behavior": 15}
 
 
 MEMORY_SEEDS = [
@@ -209,68 +210,40 @@ def _get_trending_seeds() -> list:
     except Exception:
         return []
 
-TOPIC_FILTER_PROMPT = """You are a master YouTube retention strategist.
-Your job is to pick the SINGLE best video concept from the list below for a cinematic "everyday mysteries explained" Shorts channel.
+TOPIC_FILTER_PROMPT = """Choose one Hidden Logic topic that can support an observed, factual mini-story.
 
-RULES FOR A WINNING TOPIC:
-We score topics out of 10 based on this EXACT weighted formula:
-Final Score = (Environment Score * 0.25) + (Annoyance Score * 0.30) + (Universality Score * 0.20) + (Visual Score * 0.10) + (Winner Similarity Score * 0.15)
+Editorial standard:
+- It starts from a concrete object, place, or action someone can actually observe.
+- A useful, supported explanation can arrive within about six seconds.
+- The mechanism can be explained without invented statistics, universal claims, assumed intent,
+  sensational framing, or implying that ordinary design is a conspiracy.
+- Five distinct, relevant stock-footage actions could plausibly show the observation, action,
+  detail, change/comparison, and payoff. This is a plausibility check, not a substitute for
+  later footage search and review.
+- It has a practical or explanatory payoff and a complete ending, not a manufactured open loop.
 
-1. ENVIRONMENT SCORE (0-10): How concrete is the physical environment, everyday setting, or situational context? (e.g. airport, hotel, supermarket, elevator, traffic, gas station, mall, restaurant, airline, or everyday human brain/social contexts like waiting in line, sitting on a bus, checking your phone, shopping, making decisions = 10; abstract theoretical concepts = 0-3).
-2. ANNOYANCE SCORE (0-10): Does this setting or context trigger a universal frustration, daily annoyance, or deep curiosity about a relatable mystery? (e.g. long walks, bad sleep, hidden products, phantom phone vibrations, forgetting names, songs stuck in head, urgent sales pressure = 10).
-3. UNIVERSALITY SCORE (0-10): Have millions of people personally experienced this exact behavior, quirk, or frustration?
-4. VISUAL SCORE (0-10): Can the setting and hook be instantly recognized visually in under one second?
+Score each candidate from 0–10 on: concrete setting/action, relevance to an ordinary viewer,
+visual specificity, evidenceability, and adjacency to successful topics without cloning them.
+Do not reward outrage, manipulation, hidden incentives, suspense, or a shocking number by default.
+Historical performance is a weak selection signal, not proof that a claim or framing is true.
 
-5. WINNER SIMILARITY SCORE (0-10): Evaluate how closely this concept aligns with the traits of our channel's proven winners (which succeed due to relatable situational context, not exact physical locations). Evaluate overlap in context, daily habit, frustration, and reveal against our recent winners.
-   Ideal traits to look for:
-   - Relatable situational context (e.g. traveling, shopping, driving, using apps, socializing, memory quirks).
-   - Universal annoyance or daily frustration/quirk (e.g. waiting, phantom notifications, forgetting names, sales pressure, fixed layouts).
-   - High recognition (millions of people have personally experienced it).
-   - Visually situational (viewer can picture the physical moment instantly).
-   
-   To score high (8-10): The concept must embody ALL of these traits (e.g. "Why You Forget Why You Entered A Room" = 9, because it is an everyday situation that directly causes a highly relatable memory frustration).
-   To score low (0-4): The concept is merely an academic fact check, abstract trivia, or does not involve a direct everyday annoyance/visual situation (e.g. "Why Airport Security Bins Are Always Gray" = 3, "Why Traffic Signs Use Helvetica" = 2).
-
-6. WINNER CLONE PENALTY: 
-   - If Winner Similarity Score > 8: subtract 2 points from final score.
-   - If Winner Similarity Score > 9: DO NOT select this candidate. We want ADJACENT winners, not identical clones.
-
-7. CLUSTER STRENGTH SCORE: Evaluate the candidate's environment against the cluster_strengths provided below. A strong cluster means higher baseline views.
-
-8. CLUSTER PENALTY: Subtract 1.5 from the final score if the candidate's environment matches any of these recently used clusters: {recent_clusters}. Exceptional topics can overcome this penalty.
-
-9. TRENDING BOOST: Any candidate prefixed with "TRENDING NOW:" is tied to a live cultural moment (a race weekend, a tournament, etc.) and rides extra real-time search/interest. Add +2 to its final score IF it still embodies a universal everyday-psychology angle (it should - these are pre-filtered to be about relatable perception/behavior, never gossip or results). Do NOT pick a trending candidate that is merely topical but lacks a relatable hidden mechanism. When a trending candidate is genuinely strong, prefer it - capturing live attention is valuable.
-
-CRITICAL GATING RULE:
-Prioritize highly relatable everyday mysteries, social behaviors, and brain quirks. Reject any academic or abstract topics.
-
-CHANNEL IDENTITY (narrow on purpose): This channel is "the hidden psychology and design behind everyday life" - the everyday things people see, touch, buy, and feel every day, and the deliberate design or mental trick behind them. STRONGLY prefer topics in: consumer psychology, pricing/sales tricks, store/restaurant/app design, product design, memory and perception quirks, social behavior. DOWNRANK pure science trivia, history facts, abstract physics, or "interesting fact" topics with no everyday hook and no hidden incentive - those dilute the brand identity. The ONLY exception is a genuinely live seasonal sports/event angle (see TRENDING BOOST), which is allowed when tied to universal psychology.
-
-HIDDEN INCENTIVE PREFERENCE (emotional payoff): The most satisfying topics expose a HIDDEN INCENTIVE - someone profits, or you're being nudged to do something - or a deliberate manipulation/design trick. These produce a strong "I've been tricked / that's kind of evil" reaction. DOWNRANK topics whose real explanation is only a dry regulation, building code, or neutral technical requirement (e.g. "U-shaped toilet seats = health code"): they are true but emotionally flat and tend to underperform. If a topic's only payoff is a regulation, score it low unless there is a surprising incentive angle.
-
-HIDDEN MECHANISM PREFERENCE:
-Prefer topics where the viewer's current mental model is WRONG. The strongest Hidden Logic topics create a "wait, that's not how I thought it worked" reaction. Reject topics that are merely interesting facts without a hidden mechanism behind them.
-  Strong: "Airports make more money from shopping than flying" (viewer assumes airports make money from flights)
-  Strong: "Printer companies lose money selling printers" (viewer assumes printers are profitable)
-  Weak: "Why airports are expensive" (no wrong assumption challenged)
-  Weak: "Why printers cost so little" (interesting fact but no hidden system revealed)
-
-Pick the ONE candidate that scores highest using the formula.
-
-Recent Videos (DO NOT REPEAT THESE CONCEPTS):
+Recent topics (avoid close duplicates):
 {recent_videos}
 
-FLOPPED ANGLES (these badly underperformed - AVOID picking anything close to these):
-{flopped_angles}
+Recent clusters: {recent_clusters}
 
-Cluster Strengths (0-10):
+Cluster strengths (context only):
 {cluster_strengths}
 
 Candidates:
 {candidates}
 
-Evaluate the candidates. Focus purely on physical settings and universal everyday annoyances.
-Respond ONLY with JSON: {{"winning_index": 0, "reason": "...", "scores": {{"environment": 0, "annoyance": 0, "universality": 0, "visual": 0, "winner_similarity": 0}}}} (where winning_index is the chosen index from the list above, and scores are the scores of the winning candidate)."""
+Avoid these historically weak angles, unless a materially different observed story makes them worthwhile:
+{flopped_angles}
+
+Return ONLY JSON with the selected index, a brief factual/visual rationale, and scores for the existing
+fields. A candidate that lacks a plausible supported mechanism or five-beat visual path should not win.
+{{"winning_index":0,"reason":"...","scores":{{"environment":0,"annoyance":0,"universality":0,"visual":0,"winner_similarity":0}}}}"""
 
 def _seed_concept(seed: str) -> str:
     s = seed.lower()
@@ -741,302 +714,75 @@ def pick_topic(variant: str = "A", publish_at: str | None = None) -> tuple[str, 
 
 
 # ---------------------------------------------------------------- prompts
-# BRAND SIGNATURE SYSTEM: a rotating set of opening phrases that all communicate the same
-# "this was deliberately designed / your brain is being played" idea. Spoken in the first
-# ~1 second of EVERY video for instant brand recognition, then immediately followed by the
-# physical hook. Rotating (rather than one fixed phrase) avoids "banner blindness" for repeat
-# viewers while keeping the channel instantly recognizable. "This isn't an accident." is the
-# primary/anchor phrase and is weighted to appear most often.
-BRAND_SIGNATURES = [
-    "This isn't an accident.",          # primary anchor (weighted heavily below)
-    "This isn't an accident.",
-    "This isn't an accident.",
-    "You've been tricked.",
-    "Nobody notices this.",
-    "Here's what they don't tell you.",
-    "This was designed on purpose.",
-    "Your brain falls for this every time.",
-    "There's a hidden reason for this.",
-]
+WRITE_PROMPT = """You write short, natural, footage-led stories for Hidden Logic.
 
+Topic: "{topic}"
+Length target: {length_rule}
 
-def _pick_signature() -> str:
-    import random as _r
-    return _r.choice(BRAND_SIGNATURES)
+Write one observed mini-story, not a trailer, lecture, listicle, or sales pitch.
+Use concrete speech, contractions, varied sentence lengths, and a calm human voice.
+The viewer should feel that a person noticed this in a real place and is explaining it plainly.
 
+SCRIPT SHAPE — exactly five complete spoken sentences, 45–75 words total:
+1. Opening observation: begin in the middle of an observable moment involving a specific object or place.
+2. Early useful answer: explain the first supported part of the mechanism within roughly six seconds. Do not tease it or postpone it.
+3. Close-up: follow the same person/object/action and make one supported mechanism visible.
+4. Change/comparison: show what changes and give one practical implication for the viewer.
+5. Payoff: finish the explanation in a complete, natural sentence. No unfinished loop or CTA.
 
-WRITE_PROMPT = """You are the scriptwriter for 'Hidden Logic', a high-end cinematic documentary YouTube Shorts channel 
-about everyday psychological mysteries explained. You write in a calm, confident, cinematic documentary style (Think: Vox, Johnny Harris). 
-Your tone is "You've probably noticed this before." Not "DID YOU KNOW...".
+Do not use forced suspense, "you've been tricked", sinister motives, universal claims, invented statistics,
+unsupported claims, or generic AI phrases. Do not say "wait until the end", "but that's not even the clever part",
+or withhold an answer to manufacture retention. Do not write stage directions, production notes, or voice instructions
+inside the spoken script. Do not append the title, prompt, evidence notes, or scene queries to the script.
 
-Write ONE script on this topic: "{topic}"
-Ensure the script strictly follows this Series format: {series_format}
+FOOTAGE PLAN: return exactly five specific stock-footage search queries in narration order, one for each sentence:
+1. opening observation; 2. person/object beginning the action; 3. close-up of the relevant detail;
+4. visible change or comparison; 5. complete payoff. Each query must describe a distinct visible action or object,
+not mood or atmosphere. Keep the same subject and place where possible. Do not invent shots that cannot be filmed.
 
-Hard rules:
-- {length_rule}
-- STORYTELLING/NARRATIVE STYLE (CRITICAL): Do NOT write like a dry mini-documentary or college textbook. Do NOT open with general facts. Instead, place the viewer directly in the scene, building immediate relatability and narrative tension.
-  Example:
-  Instead of: "Your brain is lying to you. Songs get stuck in your head because of a cognitive loop."
-  Write: "You walk away from the radio, but that same chorus keeps echoing in your ears. It is looping on repeat, and you can't shut it off. That's because your brain hasn't finished processing the pattern."
-- SCRIPT ORDER (CRITICAL): The script must follow this exact progression:
-  1. Location (Physical scene)
-  2. Frustration (The annoyance)
-  3. Reveal (The twist)
-  4. Explanation (The 'why')
-  Never explain before the viewer understands the location.
-- INFORMATION LOOP RULE (CRITICAL): The script must open an unanswered question within the first 3 seconds that is only fully resolved near the END of the video. The viewer stays because a loop was opened and not yet closed. Do NOT dump all facts upfront. Structure: Question → Context → Context → Answer. Good structure: Hook opens mystery → builds context/tension → delayed payoff resolves it at the end.
-- The script must be built around a universal human experience. Find everyday annoyances experienced by millions of people. Then explain the hidden reason. DO NOT think: "What's an interesting design concept?" DO NOT sound like a college lecture.
-- BAN WORDS: Do NOT use the words "Hidden", "Secret", "Dark Design", "Manipulation", "Simulation", "Matrix", "Brainwashing", "Control", or "Conspiracy" in the script or title.
-- UNIVERSAL APPEAL: The hook must be highly visual and instantly recognizable. Start with the human experience, not the system.
-- TITLE FORMULAS (Use one): "Why [Everyday Frustration]", "Why You Always [Do Something]". Example S-Tier Titles: "Why Your Brain Thinks Your Phone Vibrated", "Why Awkward Silences Feel So Long", "Why Songs Get Stuck In Your Head", "Why You Forget Why You Entered The Room".
-- TITLE MUST BE A BANGER (CRITICAL): The title's ONE job is to make a scroller stop because it names a frustration they personally feel ALL THE TIME. Before finalizing, the title must pass this test: "Would a random person reading this instantly think 'OMG THIS HAPPENS TO ME'?" If not, rewrite it. The frustration must be:
-  * UNIVERSAL: millions experience it weekly (not a niche or clever observation).
-  * VISCERAL: it names a specific irritating moment, not an abstract category. Bad: "Why Elevators Are Slow". Banger: "Why The Elevator Always Stops On Every Floor But Yours".
-  * PERSONAL: centered on "You/Your", making the viewer the subject. Bad: "Why Wi-Fi Drops". Banger: "Why Your Wi-Fi Dies The Second You Need It".
-  * RECOGNIZABLE IN UNDER 1 SECOND: the viewer must instantly grasp what the video is about OR feel an instant pull to find out. Plain frustration titles work; so do short intriguing claims that withhold the answer (e.g. "That one red light is personal"). Avoid only titles that need genuine decoding (obscure metaphors).
-  Draft 3 title options - at least one plain/visceral AND at least one intrigue/curiosity-gap - then pick the one with the strongest pull, whether that pull is "that's SO me" or "wait, what? I need to know".
-- CURIOSITY GAP RULE (CRITICAL): Two title styles BOTH work for this channel - use whichever fits the topic better, and draft options in both styles:
-  STYLE A (plain + visceral): names a universal frustration in direct words. Proven winners: "Why You Can Never Sleep At The Airport", "Why You Always Buy Things You Don't Even Need". Use when the frustration itself is the hook.
-  STYLE B (intrigue / curiosity-gap): a short, slightly mysterious claim that makes the viewer NEED the answer. Proven winners: "That one red light is personal", "The Evil Reason Walks Are So Long". Use when a plain title would give away the answer - the title should open a loop the video closes.
-  The data shows STYLE B titles can hit the HIGHEST retention (one held 68% of viewers) precisely because the title withholds the reveal. So do NOT default to bland descriptive titles. A title like "Why Airport Gates Change Last Minute" explains itself and gives the viewer no reason to watch - rewrite it into either an instantly-felt frustration (Style A) or an intriguing claim that withholds the answer (Style B).
-  Keep titles SHORT (ideally under 8 words for Style B). Center the viewer ("you/your") when natural, but a punchy non-"you" intrigue title ("That one red light is personal") is great too. Avoid titles that need real decoding (no obscure metaphors), but a little mystery that resolves in the first 3 seconds is exactly what makes people stay.
-- DESCRIPTION FORMULA: Must be written EXACTLY in this format, replacing the brackets with specific, concrete revelations (no generic mystery phrases): "[Hook] [Subject] uses [concrete design choice/layout/psychological mechanism] to [psychological effect]. Subscribe for daily explanations of everyday mysteries." where [Hook] is one of the following rotated hook phrases (randomly select the most appropriate one for the topic):
-  - "Your brain is lying to you."
-  - "You've probably noticed this before."
-  - "Here's something weird."
-  - "This happens to almost everyone."
-  - "Most people never realize this."
-  - "There's a reason this keeps happening."
-- VISUAL THESIS: Every script must define a specific "visual_thesis" that visually encapsulates the core subject in the first second (e.g. 'Airport walks too long -> giant airport corridor', 'Milk hidden at back -> dairy aisle').
-- B-ROLL TAGS: Produce a sequence of 5-6 cinematic Pexels keywords that show VISUAL PROGRESSION. The very first keyword MUST perfectly match the spoken hook so the viewer instantly understands the premise visually. Example (Hotel): "Hotel door", "Keycard", "Opening door", "Bed reveal", "Bathroom". CRITICAL FIRST FRAME HOOK: The very first keyword in broll_keywords MUST be a highly specific, high-contrast, instantly recognizable visual representing the core subject of the video (e.g. for snooze: "alarm clock close up" or "hand hitting snooze button"; for airport: "airport gate sign" or "boarding pass close up"). Never use generic, unrelated visuals like "person typing on keyboard", "walking down street", or "man looking at phone" as the first frame unless the hook is literally about typing or phones. SCENE CONSISTENCY (CRITICAL): every keyword must depict the SAME setting, subject and vehicle/environment as the first frame - NEVER mix incompatible scenes. If the hook is a CAR on a road, do NOT include motorcycles, scooters, boats, trains, or unrelated interiors; keep the same vehicle type and setting from first frame to last. A mid-video switch (e.g. car -> motorcycle) shatters immersion and gets swiped instantly. VISUAL PROOF (CRITICAL): at least 2-3 of the keywords must SHOW the actual mechanism the script explains, not just pretty scenery - e.g. for following-distance/tailgating: "car brake lights close up", "tailgating dashcam pov", "cars bumper to bumper", "rear-view mirror car approaching fast". Scenery that doesn't demonstrate the claim weakens retention. SPORT KEYWORDS: if the topic is about football/soccer (World Cup, penalties, goalkeepers, kits), write the keyword as "soccer ..." (e.g. "soccer stadium", "soccer penalty kick") NOT "football ..." - stock libraries return American football for the word "football".
-- CURIOSITY-GAP HOOK RULE (THE #1 DRIVER OF "STAYED-TO-WATCH" - THIS DECIDES EVERYTHING):
-  Viewers swipe in UNDER 1 second. If more than ~40% swipe in the first 1-2s, YouTube STOPS
-  recommending the video no matter how good the rest is - so the opening 1-1.5 seconds ARE the
-  packaging (like a thumbnail/title). The FIRST sentence must do BOTH of these AT ONCE:
-    (1) INSTANT CLARITY: name/show the familiar everyday thing so the viewer knows EXACTLY what
-        this is in under a second - zero figuring-out time. The subject is unmistakable from word one.
-    (2) OPEN A SPECIFIC CURIOSITY GAP: in the same breath, reveal there's a precise hidden reason
-        behind it that contradicts what they assume - so they feel an itch they NEED scratched.
-  WHY (information-gap theory, Loewenstein): curiosity PEAKS when someone already KNOWS the thing
-  (they live it) but is shown a SPECIFIC, bounded missing piece. So: reference the familiar AND
-  expose the exact gap. General mystery ("the world is strange") does nothing; a precise gap about
-  a thing they know ("milk is at the BACK - on purpose") is irresistible.
-  FRAME AS A LOSS / MANIPULATION where possible (negativity bias - people feel losses ~2x as hard):
-  "it's costing you", "you're being steered", "it's on purpose", "not an accident" beat a neutral fact.
-  Rules: first sentence <=10 words, concrete, present tense, NO preamble, NO "have you ever", NO
-  "your brain", NO signature phrase, NO slow setup that delays the gap.
-  NAME A SPECIFIC PLACE OR OBJECT IN THE FIRST LINE (mandatory): the hook must name a CONCRETE,
-  recognizable location or thing - "the grocery store", "your hotel bathroom", "the left lane",
-  "a job interview", "your car's cup holder". A GENERIC container fails: "a silent room", "a
-  serious moment", "a certain situation", "everyday life" are all BANNED as hook settings,
-  because the viewer can't picture themselves there. If the topic is internal/abstract (an
-  emotion, a mental habit), ANCHOR it to the most specific real place it happens: nervous
-  laughter -> "You laugh at a funeral" not "You're in a silent, serious room"; forgetting names
-  -> "You shake a hand and blank on the name" not "You meet someone new". Test: could the viewer
-  draw the scene from the first line? If not, it's too vague - rewrite with a named place/object.
-  STRONG (scene + instant gap - the viewer is hooked AND knows what it is):
-  - "Your 'small' soda doesn't fit the cup holder. On purpose."
-  - "Milk sits at the very back of every store. Not by accident."
-  - "Your cart pulls left every single time. Someone designed that."
-  - "Hotel sheets are always white. There's a cold reason."
-  - "You laugh at a funeral. Your body did that on purpose."
-  WEAK (scene but NO gap, or a gap that's too slow/vague - these STILL get swiped):
-  - "You grab a small drink and it floods the cup holder."   (frustration, but no 'why' itch yet)
-  - "You walk into a hotel room and set down your bag."        (pure setup, no gap)
-  - "Have you ever wondered why..."                            (slow preamble)
-  - "Your brain falls for this every time."                   (abstract, no concrete subject)
-  - "You're in a silent, serious room."                       (GENERIC setting, no named place)
-- SPELLING/HOMOPHONE GUARD (the TTS reads the script LITERALLY, so a wrong word is SPOKEN wrong):
-  use the correct word - "brake" (to slow/stop) NOT "break"; "your" vs "you're"; "its" vs "it's";
-  "peak/peek/pique"; "hear/here". Re-read the final script as if speaking it aloud; any homophone
-  error becomes an audible mistake that instantly reads as low-effort/AI. Zero tolerance.
-- MRBEAST RETENTION RULES:
-  * 0-3s HOOK (THE MOST IMPORTANT 3 SECONDS - THIS DECIDES EVERYTHING): This is the single most important part of the entire video. 70% of viewers leave here. The hook must be the BEST-crafted sentence in the script. Requirements, ALL mandatory:
-    - <=9 words. Shorter is stronger.
-    - Open INSIDE a physical moment the viewer has personally lived (physical hook rule). Put them in the scene, mid-action.
-    - It must land an INSTANT micro-payoff or pattern-break in the first sentence - either name the exact frustration they feel ("Your 'small' soda doesn't fit the cup holder.") OR drop a reveal that contradicts what they assume ("Airports make more money from shops than flights."). The viewer must feel something (recognition, surprise, or irritation) before the second sentence.
-    - NO throat-clearing, NO setup, NO "Have you ever", NO atmosphere. The first word should already be in the scene.
-    - The hook and the title must point at the SAME frustration so the first frame confirms the click.
-    Draft THREE hooks, score each on "would this stop MY thumb?", and keep only the most visceral one.
-  * ESCALATING MYSTERY (CRITICAL - THIS IS THE #1 RETENTION RULE): Do NOT explain early. The answer must keep moving FURTHER AWAY, not closer, through the middle of the video. After the hook, each sentence must open a BIGGER question than the one before, not resolve it. The viewer stays because the mystery deepens. Structure the body as:
-    - 3-8s RE-HOOK: Name the exact experience but reject the obvious explanation. ("And it's not because the airport is huge.") This tells the viewer their first guess is wrong, so they MUST keep watching.
-    - 8-20s DEEPEN, DON'T RESOLVE: Each line raises the stakes or reframes the mystery. ("Most people think it's random. It isn't." / "A computer already decided this hours ago.") Every sentence should make the viewer think a new "wait, why?"
-    - EVERY SENTENCE OPENS A LOOP: No sentence in the body should fully answer the question. End lines on the edge of a reveal, then pull back one more layer. Bad (resolves instantly): "Your laptop battery blocks X-rays." Good (opens a loop): "Security isn't even looking at your laptop. They're looking at what it hides."
-  * MULTI-PEAK RETENTION LOOPS: The body must have at least TWO re-openings of curiosity, not one. After the first partial reveal, pivot with a line like "But that's not even the clever part." then deliver a second, bigger reveal. Three peaks beat one. Pattern: partial reveal -> "but here's the real reason" -> bigger reveal -> "and this is the part nobody notices" -> final reveal.
-  * DELAYED REVEAL AT 70-90% (MANDATORY): The single biggest, most satisfying reveal must land in the FINAL THIRD of the script (70-90% through), never at 20%. Before that point the viewer should have pieces but not the full picture. If your draft answers the core question in the first half, you have FAILED - rewrite it to push the payoff to the end.
-  * REWARD-STAYING ENDING (NOT A HARD STOP): The final 2-3 sentences must deliver a REFRAME that makes the viewer glad they stayed and changes how they'll see the thing forever. Not "...which is why they ask you to remove it." Instead: "So next time TSA asks for your laptop - they're not checking the laptop. They're checking everything it was hiding." Aim for the viewer to feel "I'll never unsee that" / "no way" - NOT a flat "oh." End on the reframe, then stop sharply.
-  * EMOTIONAL TARGET: The payoff must trigger a strong reaction - "I've been tricked", "that's kind of evil", "that makes so much sense", "I'll never unsee that". A merely-interesting "oh, okay" is a failure. Expose a HIDDEN INCENTIVE (who profits, what you were nudged to do) wherever possible - those land harder than neutral technical explanations.
-  * SEAMLESS LOOP RULE: The final sentence must seamlessly bleed directly into the very first sentence of the hook, so the replay feels perfectly continuous and the viewer doesn't realize it restarted.
-- SHOW DON'T TELL: Describe the visual experience. Make it feel like a Netflix documentary meets Apple Design.
-- VISUAL PROOF PER CLAIM: Every major claim in the script must have a corresponding visual proof opportunity. For each claim, there must be supporting footage, image, diagram, or chart that can demonstrate it. Avoid claims that cannot be visually demonstrated. If you say "airports earn more from shopping than flights", there must be a visual (airport mall footage, revenue comparison, passenger shopping). Claims without possible visual proof weaken retention.
-- No comedy, no goofy influencer tone, no emojis, no hashtags in the script.
-- TAXONOMY: Classify the topic using [cluster]/[subcluster] format (e.g. airport/sleep, hotel/pillows, traffic/merging).
-- ABRUPT ENDING: Stop sharply on the climax. Do not wind down or say "subscribe".
-- VOICE CALIBRATION (THE MOST IMPORTANT RULE - imitate examples, not adjectives): This channel's
-  voice is a calm insider telling you a tiny true story about a place you were just in. Here are
-  two REAL scripts from this channel's top performers. Imitate their RHYTHM, CONCRETENESS and
-  ESCALATION - never their exact sentences:
-    EXAMPLE A (top performer): "You walk in for milk, but they've hidden it. You wander past
-    endless aisles, getting more confused. That's not bad design - it's a psychological trap.
-    Stores place essentials at the back to force you through a maze. But that's not even the
-    clever part. They constantly rearrange the shelves so your muscle memory fails. They want
-    you lost, because every extra minute adds two dollars to your bill."
-    EXAMPLE B (top performer): "You reach your gate. Every seat is taken. And the flight's only
-    half full. Look closer. Those rows are shorter than last year. The airport quietly pulled
-    seats out. With nowhere to sit, you drift toward the shops. That's where the real money is.
-    So the missing seat isn't a mistake. It's the first sale."
-  What makes these work, in order: (1) a lived micro-scene with a CONTRADICTION the viewer has
-  personally felt; (2) a named actor doing a concrete action ("the airport pulled seats out",
-  "they rearrange the shelves") - never abstract mechanisms; (3) at least one specific,
-  checkable detail or number ("two dollars a minute", "shorter than last year"); (4) one
-  escalation beat where the first answer turns out not to be the full story - open the next
-  gap as the previous one closes; (5) a final reframe that changes what the everyday thing IS
-  ("the missing seat is the first sale").
-  BANNED VOICE (this is what a failed script sounds like): "Hotels use it to expand the visual
-  space. This subtly justifies the price. It's selling you a premium experience. Shaping your
-  entire stay." - abstract verb phrases, no scene, no actor, no number, nothing happens.
-  If a sentence could appear in a marketing deck or a textbook, rewrite it as something a person
-  DID to the viewer, with a detail they can check next time they're there - because the goal is
-  that they involuntarily remember this video the next time they're physically in that place.
-  BANNED AI LANGUAGE (hard bans - any of these marks the script as machine-written):
-    * Banned words/phrases: "delve", "unlock", "harness", "elevate", "seamless", "leverage",
-      "navigate", "landscape", "tapestry", "crucial", "ultimately", "essentially", "fascinating",
-      "intriguing", "remarkable", "premium experience", "curated", "optimized", "subtly",
-      "Imagine...", "Picture this", "Here's the thing", "Here's the kicker", "Let that sink in",
-      "mind-blowing", "game-changer", "But here's where it gets interesting".
-    * Banned abstract nouns as the SUBJECT of a sentence: "perception", "experience",
-      "phenomenon", "mechanism", "concept", "process", "design philosophy". A person or a
-      company does something; a "mechanism" never does anything.
-    * Banned: announcing the emotion instead of causing it ("shocking", "surprising", "crazy",
-      "insane"). If the fact is surprising, the viewer will be surprised without being told to be.
-    * Banned: the "It's not just X - it's Y" template more than ONCE per script, and triadic
-      filler lists ("faster, smarter, better").
-  HUMAN RHYTHM (how people actually talk): vary sentence length like speech - a three-word
-  fragment, then a longer sentence, then a medium one. Use contractions everywhere ("it's",
-  "they've", "you're"). Fragments are good. Read every line as if saying it to a friend across
-  a table; if you wouldn't say it out loud that way, rewrite it until you would. The script is
-  SPOKEN, not written.
-- RETURN HOOK (CRITICAL FOR SUBSCRIBERS): The reframe ending must make the viewer feel there is a
-  SPECIFIC next thing to discover - not a vague "there's more." The strongest version points at the
-  SAME category the video is in, so it reads as "this channel has a whole series exposing THIS kind of
-  thing, and I want the next one." Through the content itself, never a begging "subscribe" line. Two
-  patterns that work:
-    1. Category tease: name the broader pattern this belongs to, implying many siblings. E.g. for an
-       airport video: "And the boarding gate is just one of the ways the airport quietly steers you."
-    2. Open a small adjacent loop: hint at a related everyday thing with its own hidden reason, left
-       unanswered. E.g. "The same trick is why your coffee cup has that little hole - but that's a
-       different story." This creates a concrete curiosity gap that pulls them to find the next video.
-  One short line is enough. It must NOT blunt the abrupt climax - it comes AFTER the main reveal lands,
-  as a final beat, and stays tight. The feeling to create: "every ordinary thing has a hidden logic,
-  this channel keeps exposing them, and there's a specific next one I want to see."
+EVIDENCE: state one supported mechanism and list its supporting claims and source references in evidence_record.
+Use sources actually consulted; never invent citations or numbers. If a claim cannot be supported, remove or qualify it.
+The title must match the script's actual subject. The first_answer_quote must quote the earliest useful answer verbatim
+from the spoken script and occur within six seconds at a normal read pace.
 
-- SERIES: Assign this video to ONE recurring series so viewers can binge a theme. Choose the single best fit from: "Supermarket Secrets", "Fast Food Tricks", "Airport Logic", "Hotel Secrets", "Brain Glitches", "App & Website Tricks", "Money & Pricing Tricks", "Shopping Psychology", "Everyday Design". If none fit well, use "Everyday Design". Return as "series".
-- SEO KEYWORDS: Return "seo_keywords" - 4 to 6 SPECIFIC search phrases a real person would type to find this exact video, broad-to-specific. Use the actual subject, not generic words. Example for a McDonald's drink video: ["why mcdonalds coke tastes better", "mcdonalds coke secret", "fast food soda", "why fountain drinks taste different", "mcdonalds facts"]. NEVER generic filler like "psychology" alone or random numbers. These become the video's search tags.
-- first_comment: a natural, brand-fitting question that invites the viewer to reply AND gives you future topic ideas. Use the content itself, never "subscribe for more". Examples: "What's another everyday thing you've always wondered about?", "Comment one thing you think isn't an accident.", "What should I expose next?" Keep it under 220 characters and end on a complete sentence (it is posted as the pinned first comment).
-- HASHTAGS (exactly 3): each must be a concrete, searchable SUBJECT or place tied to the video (#supermarket, #airports, #pricing, #psychology). NEVER a verb, adverb, or filler word lifted from the title (never #noticing, #wait, #forever, #always, #buy). Always include #shorts. Lowercase, no spaces.
-- TEXT HOOK (the third hook): top creators use a TRIPLE hook - visual + spoken + ON-SCREEN TEXT. Return "text_hook": a 2-5 word punchy on-screen line shown for the first ~2 seconds that AMPLIFIES the curiosity gap and is DIFFERENT from the spoken words (it must add intrigue, not repeat the narration). 80% watch muted, so this text plus the first frame must sell the click. Examples: "This isn't an accident", "On purpose.", "You've been tricked", "Look closer", "It's costing you". Make it specific to the video where possible.
-- NET INFORMATION GAIN / THE SWAP TEST (CRITICAL for distribution): YouTube's 2026 algorithm caps videos that just repeat an idea many channels already made (the "conflict radius" - it stalls around 30k views). The script MUST add something genuinely NEW to the common explanation: a specific surprising number, a non-obvious second mechanism, a fresh analogy, or a counterintuitive twist - not the generic version everyone says. SWAP TEST: if this exact script could sit on any other channel and make sense, it's too generic - add the unique angle/detail that makes it unmistakably yours.
-- MATCH, THEN EXCEED (MrBeast): the FIRST sentence must immediately confirm the promise of the title (so the viewer who clicked feels "yes, this is what I came for") and then over-deliver. Never open on a tangent or a slow build that delays the payoff the title promised.
-- TARGET REACTION: write the script to produce ONE specific shareable reaction by the end ("no way", "I've been tricked", "I'll never unsee that"). People share reactions, not facts - and a one-sentence, easily-retold payoff is what gets sent to a friend.
+Return ONLY valid JSON. Preserve these existing fields and types:
+{{"script":"...","title":"...","description":"...","taxonomy":"cluster/subcluster","visual_thesis":"...","series":"...","text_hook":"...","seo_keywords":["..."],"hashtags":["#shorts","#hiddenlogic","..."],"broll_keywords":["...","...","...","...","..."],"emphasis_words":["one","or two"],"first_comment":"...","first_answer_quote":"...","evidence_record":{{"mechanism":"...","supported_claims":["..."],"sources":[{{"title":"...","url":"..."}}]}}}}"""
 
-Respond ONLY with JSON:
-{{"script": "...", "title": "...", "description": "...", "taxonomy": "...", "visual_thesis": "...", "series": "...", "text_hook": "...", "seo_keywords": ["..","..","..",".."], "hashtags": ["#shorts","#hiddenlogic","..",".."], "broll_keywords": ["..","..","..","..","..",".."], "emphasis_words": ["..",".."], "first_comment": "..."}}"""
+REVIEW_PROMPT = """You are an exacting editor checking a human-feeling, footage-led short.
 
-REVIEW_PROMPT = """You are a brutal YouTube Shorts retention analyst who has seen 10,000 viral shorts.
-
-Script:
+Topic family: "{seed_topic}"
+Draft script:
 \"\"\"{script}\"\"\"
 
 {topic_lock_instruction}
 
-TASK 1 - FACTS, THEME & STORYTELLING: Check every claim. Ground the script entirely in a shared human experience and an everyday annoyance. Rewrite the script if it sounds like an explanation or a textbook definition rather than a story. Use storytelling/narrative style to describe a concrete situation rather than dryly stating facts (e.g. use "You've been awake for six hours. The airport is empty. There are twenty seats right in front of you. And somehow you still can't lie down. That's because those armrests..." instead of "Airport seating uses fixed armrests to prevent passengers from lying down. This isn't an accident...").
+Review the script for factual support, natural spoken language, story clarity, and shootability.
+Do not reward delayed answers, fake suspense, emotional manipulation, ominous motives, or exaggerated claims.
+The viewer should get a useful answer within roughly six seconds and receive a complete explanation at the end.
 
-TASK 1B - TITLE (RECOGNITION FIRST): Optimize the title. BAN colons and category labels. The title's #1 job is INSTANT RECOGNITION: a viewer must recognize the everyday setting/frustration in under one second. This channel's top performers use PLAIN, direct titles, not clever wordplay. Prefer the simple recognizable phrasing over a cleverer one. Good (plain + recognizable): "Why Airports Make You Walk Miles", "Why Your Small Drink Is Actually Too Big", "Why You Forget Why You Entered The Room". Avoid (over-clever / abstract): "The Glitch That Forces Songs To Loop In Your Head", "The Reason Airlines Force You To Stop In Weird Cities". Keep the curiosity coming from the FRUSTRATION itself ("Why You Always..."), not from a riddle the viewer has to decode. Use the "Why [Everyday Frustration]" / "Why You Always [Do Something]" formulas. Center the viewer ("YOU"). A title can be curious AND plain - plain wins ties.
+Check all of these:
+- First line begins with an observable moment and names a specific object or place.
+- The first useful answer arrives within six seconds; identify its exact quote.
+- One person, object, or action carries the five-beat story; each beat can be visibly distinct.
+- The mechanism is supported by the evidence_record; no invented statistics or unsupported universal claims.
+- Title accurately matches the script; the ending is a complete explanation, not an unfinished loop.
+- Spoken language sounds like a person talking plainly, not generic AI narration.
+- Exactly five scene-specific broll_keywords appear in narration order.
 
-TASK 1C - HOOK IMMEDIACY, ENDING & PACING: The very first sentence (0-3s hook) must be <=10 words and must immediately describe an actual physical, relatable human experience/moment (e.g., "You walk into...", "You grab..."). It must NOT be abstract or slow (e.g., no "Have you ever wondered", "Ever noticed how", "Your brain is being tricked", etc.). If it is abstract/slow, rewrite the hook to be an immediate physical moment. CRITICAL: The first 3 seconds must REVEAL a hidden system, not merely introduce a topic. Bad: "Why airports are so expensive." Good: "Airports make more money from shopping than flying." Ensure the ending is abrupt. Ensure the 50% pattern interrupt exists. Enforce short sentences (<15 words). Ensure the SEAMLESS LOOP perfectly connects the very last line directly into the first line so it loops invisibly. LENGTH (CRITICAL FOR RETENTION): the ENTIRE script must be UNDER ~80 words (~30 seconds). Shorter Shorts retain far better - on this channel a 29s video pulled 3.2x the views of a 48s one. If the script runs long, CUT secondary beats, qualifiers, and any repeated idea until it fits. Keep only: hook, the single biggest reveal, and the loop ending.
+If a check fails, rewrite only what is necessary, retaining the requested topic and evidence record.
+Score each field from 0 to 10. Reward clarity, evidence, grounded specificity, natural speech, and a complete ending.
+For compatibility, title_recognition means accurate subject identification; title_frustration means plain-language clarity
+(not emotional pressure); title_curiosity means genuine informational interest (not clickbait). hook_retention and
+swipe_stop_score mean immediate scene recognition and relevance, not an open loop or fear-based hook. novelty_score
+means a specific, supported observation rather than a forced twist. surprise means a modest explanatory insight,
+not sensationalism. Overall is the sum of relatable, memory_trigger, hook_retention, surprise, and shareability (out of 50);
+score all of them against the factual, calm editorial standard above.
+Legacy field delayed_reveal_score is retained for compatibility but now means EARLY ANSWER QUALITY:
+10 means the useful answer arrives promptly; do not delay it. emotional_payoff_score means a satisfying,
+complete explanation with a practical implication, not a heightened or manipulative reaction.
 
-TASK 1E - VISUAL PROOF CHECK: Every major claim in the script must have a corresponding visual proof opportunity. For each claim, confirm that supporting footage, images, diagrams, or charts exist that can demonstrate it on screen. Flag any claim that cannot be visually demonstrated — these weaken retention because the viewer sees generic B-roll instead of proof. If a claim lacks visual proof, rewrite it to be visually demonstrable or remove it.
-
-TASK 1D - ESCALATING MYSTERY, DELAYED PAYOFF & ENDING (CRITICAL - REWRITE IF IT FAILS): This is the #1 retention check.
-(a) ESCALATION: Through the body, does the mystery DEEPEN rather than resolve? Each sentence should open a bigger question, not answer one. If any body sentence fully resolves the question early (e.g. "Your laptop battery blocks X-rays." stated flatly in the first half), REWRITE it to pull back another layer ("Security isn't even looking at your laptop - they're looking at what it hides.").
-(b) DELAYED REVEAL POSITION: The single biggest reveal MUST land in the final third (70-90% through the script). If the core answer arrives in the first half, you MUST restructure so the payoff is at the end: Question -> deepen -> deepen -> partial -> BIGGEST REVEAL last.
-(c) MULTI-PEAK LOOPS: Does the body re-open curiosity at least twice (a "but that's not even the clever part" pivot before a second, bigger reveal)? If there's only one peak, add a second curiosity re-opening.
-(d) REWARD-STAYING ENDING: Does the script end on a REFRAME that makes staying worth it and makes the viewer go "no way / I'll never unsee that" - NOT a flat stop like "...which is why they ask you to remove it"? If the ending merely stops, rewrite the last 2-3 sentences into a reframe.
-Score 'delayed_reveal_score' (0-10): 10 = biggest reveal at the very end with escalation throughout and a reframe ending; 0 = answer dumped upfront, flat ending. Reject anything below 8.
-
-TASK 2 - RETENTION (Topic Scoring System): Score the (corrected) script using this /50 rubric (each category /10, min score for approval is 40/50):
-- Relatable (/10): Can the viewer instantly remember experiencing this?
-- Memory Trigger (/10): How quickly does the viewer remember a real-life moment?
-- Hook Retention (/10): Does the first 3 seconds create an irresistible psychological grip that survives the 70% swipe-away test?
-- Surprise (/10): Genuine "wait, what?" moment?
-- Shareability (/10): Will someone send this to a friend?
-Sum these 5 categories into 'overall' out of 50.
-
-TASK 2B - TITLE GRADER: Score the corrected title out of 30. RECOGNITION is the dominant factor for this channel - a plain title that is instantly recognizable beats a clever one.
-- Recognition (/10): Can a viewer recognize the setting/frustration in under one second? Plain, concrete wording scores high; abstract or riddle-like wording scores low. If the title needs decoding, cap this at 5.
-- Frustration (/10): Does the title trigger a universal everyday frustration or annoyance?
-- Curiosity (/10): Does it spark curiosity about the reason? NOTE: curiosity must come from the relatable frustration, NOT from clever/cryptic wordplay. Penalize titles that sacrifice instant recognition for cleverness (e.g. "The Glitch That..."). When a plain phrasing and a clever phrasing are otherwise equal, the plain one scores higher overall. STRONGEST titles frame the topic as a small mystery or contradiction using PLAIN words - they imply a hidden reason without a riddle. Examples (plain AND intriguing, score high): "Airports Already Knew Your Gate Would Change", "Restaurants Don't Want You Buying Medium", "Websites Literally Forget You Exist". These beat the dry "Why X happens" form when the plainness is preserved.
-
-TASK 3 - TOPIC FIDELITY & VISUAL THESIS: Score how closely the script/title stays within the requested seed topic family: '{seed_topic}'.
-- Topic Fidelity (/10): How closely does the script/title stay within the exact requested seed topic family ('{seed_topic}') without drifting to a broader/different category? (10 = perfect match, 0 = completely drifted/swapped to a different subject/family).
-- Subject Retention (/10): How consistently is the seed topic discussed throughout the script?
-- Visual Thesis Verification: Does the script define a clear, immediate visual thesis? Extract and return this as 'visual_thesis'.
-
-TASK 4 - HOOK TYPE CLASSIFICATION: Classify the hook style into either 'physical_moment' (starts with an immediate physical action/moment like 'You walk into...', 'You grab...', 'You press...') or 'explainer' (starts with an explanation, fact, question, or abstract concept).
-
-TASK 5 - FIRST FRAME SCORE: Score the opening scene's instant visual recognition (0-10):
-- Can a viewer identify the PHYSICAL LOCATION in under 0.5 seconds? (airport, store, hotel, car, elevator, etc.)
-- Can a viewer understand the SITUATION instantly without any explanation?
-- Can a viewer picture themselves there immediately?
-Scoring: 0-3 = abstract/requires thought, 4-6 = recognizable after a moment, 7-8 = strong recognition, 9-10 = instant "I've been there". Reject anything below 8.
-
-TASK 5B - SWIPE-STOP / CURIOSITY-GAP SCORE (0-10) - THE SINGLE MOST IMPORTANT RETENTION CHECK:
-Score ONLY the first 1-1.5 seconds (the first sentence / first ~6 words), because that is where
-50-75% of viewers swipe and where this channel is losing them. Score whether the opening does BOTH
-at once: (a) INSTANT CLARITY - the viewer knows EXACTLY what familiar everyday thing this is, with
-zero figuring-out time (subject named/shown in the first few words); AND (b) SPECIFIC CURIOSITY GAP
-- it immediately exposes a precise, bounded hidden reason that contradicts what they assume ("on
-purpose", "not an accident", "it's costing you"), an itch they NEED scratched. Bonus for a loss/
-manipulation frame (negativity bias). A pure relatable frustration with NO gap, OR a vague/general
-gap, OR any setup that delays the gap past the first sentence, scores LOW. 0-3 = slow/vague/pure
-setup, 4-6 = clear but no real gap (or a gap that's too slow), 7-8 = clear + a real gap, 9-10 =
-instant clarity + an irresistible specific gap in the first ~1 second. Return as 'swipe_stop_score'.
-Reject anything below 8 - if low, REWRITE the first sentence so the subject is unmistakable AND a
-specific hidden reason is teased immediately.
-
-TASK 6 - RETENTION PREDICTION: Predict how well this script will retain viewers through the entire Short (0-10). Average these four factors:
-- Scene Strength: Is the setting vivid and instantly recognizable?
-- Frustration Strength: Does the viewer feel the annoyance viscerally?
-- Curiosity Gap: Does the hook create an irresistible "why?" that survives 5+ seconds?
-- Reveal Payoff: Does the explanation feel satisfying and surprising?
-Score 0-10. Reject anything below 8.
-
-TASK 7 - TOPIC RECOGNITION SCORE (0-10): Can the viewer instantly recognize the topic?
-- Can viewer identify location in <0.5 seconds?
-- Can viewer understand topic without audio?
-- Does first frame immediately match title?
-Score 0-10. Reject anything below 8.
-
-TASK 8 - HOOK STRUCTURE & FIRST FRAME: Extract the 'hook_structure' (e.g., 'Action -> Frustration') and write a 'first_frame_description' depicting the visual opening. Extract 'taxonomy' in [cluster]/[subcluster] format.
-
-TASK 9 - PREDICTED VIEWS SCORE (0-10): Predict the absolute performance based on cluster strength, hook performance, topic novelty, retention prediction, and first frame quality. Rank 0-10.
-
-TASK 10 - VIEWER IDENTITY SCORE (0-10): Evaluate how effectively this topic builds audience loyalty (0-10). Average these four factors:
-- Uniquely Hidden Logic (/2.5): Does it fit the brand theme of exposing everyday psychological mysteries?
-- Memorable (/2.5): Is the everyday realization unforgettable?
-- Discussion Generating (/2.5): Is it debate-worthy or prompts viewers to comment/debate?
-- Emotionally Relatable (/2.5): Does it trigger a strong, universal relatable emotion/frustration?
-Score 0-10. Reject anything below 8.
-
-TASK 11 - EMOTIONAL PAYOFF (0-10): Score the gut reaction the ENDING produces. The target is a strong "no way / I've been tricked / that's kind of evil / I'll never unsee that" reaction. A merely-interesting "oh, okay" is a low score.
-- Does the payoff expose a HIDDEN INCENTIVE (who profits, what you were manipulated into doing, a deliberate design trick)? Incentive/manipulation reveals score high.
-- Pure regulation / building-code / dry technical answers ("it's required by health codes") are CORRECT but emotionally flat - score these 4 or below UNLESS the script reframes them into something surprising.
-Score 0-10. Reject anything below 7. If below 7 because the explanation is a flat regulation/technical answer, note in 'fix' that the topic may simply lack an emotionally satisfying hidden incentive.
-
-TASK 12 - NET INFORMATION GAIN / SWAP TEST (0-10): YouTube's 2026 algorithm caps videos that just repeat an idea many channels already made (the "conflict radius" - it stalls ~30k views). Score how much genuinely NEW value this script adds versus the generic version everyone makes. SWAP TEST: if this exact script could sit on any other channel and still make sense, it is too generic. High score (8-10) = adds a specific surprising number, a non-obvious second mechanism, a fresh analogy, or a counterintuitive twist that makes it unmistakably original. Low score (0-5) = the same explanation anyone could write / a reworded common fact. Return as 'novelty_score'. Reject below 7 - if low, note in 'fix' exactly what NEW angle, number, or mechanism to add.
-
-Respond ONLY with JSON:
-{{"issues_found": "facts note or 'none'", "script": "final corrected script", "title": "corrected title", "taxonomy": "cluster/subcluster", "visual_thesis": "...", "hook_structure": "...", "first_frame_description": "...", "relatable": n, "memory_trigger": n, "hook_retention": n, "surprise": n, "shareability": n, "overall": n, "title_recognition": n, "title_frustration": n, "title_curiosity": n, "hook_type": "physical_moment" or "explainer", "topic_fidelity": n, "subject_retention": n, "first_frame_score": n, "swipe_stop_score": n, "novelty_score": n, "retention_prediction": n, "topic_recognition_score": n, "predicted_views_score": n, "viewer_identity_score": n, "delayed_reveal_score": n, "emotional_payoff_score": n, "fix": "one sentence on the biggest weakness"}}"""
+Return ONLY valid JSON with all listed fields:
+{{"issues_found":"...","script":"...","title":"...","description":"...","taxonomy":"...","visual_thesis":"...","hook_structure":"...","first_frame_description":"...","relatable":0,"memory_trigger":0,"hook_retention":0,"surprise":0,"shareability":0,"overall":0,"title_recognition":0,"title_frustration":0,"title_curiosity":0,"hook_type":"physical_moment or explainer","topic_fidelity":0,"subject_retention":0,"first_frame_score":0,"swipe_stop_score":0,"novelty_score":0,"retention_prediction":0,"topic_recognition_score":0,"predicted_views_score":0,"viewer_identity_score":0,"delayed_reveal_score":0,"emotional_payoff_score":0,"early_answer_score":0,"first_answer_quote":"exact script quote","natural_speech_score":0,"visible_action_count":0,"ending_complete":true,"evidence_record":{{"mechanism":"...","supported_claims":["..."],"sources":[{{"title":"...","url":"..."}}]}},"broll_keywords":["...","...","...","...","..."],"fix":"one concise issue or none"}}"""
 
 
 PROVIDER = "gemini"  # set from config by run_daily; "gemini" or "claude_code"
@@ -1141,77 +887,19 @@ _dead_models = set()
 # lightweight signals the orchestrator reads for the attention digest
 RUN_EVENTS = {"used_claude_fallback": False, "gate_fallbacks": 0, "all_gemini_down": 0, "gemini_exhausted": False, "waited_for_perminute": False}
 
-# ANTI-SAMENESS ROTATION (research: YouTube's 2026 "mass-production" filter suppresses
-# channels where every video has the same length, structure, and pacing - topic variety
-# alone is not enough). We rotate the target length AND the structural skeleton per video
-# so consecutive uploads don't fingerprint as identical templates. Completion-rate research
-# also favors a spread that includes shorter, tighter videos.
+# Editorial pilots use a fixed word band and story contract; do not append a second
+# template, suspense hook, or delivery instruction to the spoken script prompt.
 import random as _rnd
 
-# HARD word cap. Retention is the whole game: your real data shows a 29s Short pulled 3.2x the
-# views of a 48s one (and "watched for longer"). 20-35s is the retention sweet spot; over-length
-# is the single biggest retention killer. A script over this cap is rejected and trimmed. At the
-# channel's narration pace (~2.6-2.7 words/sec) 82 words lands ~30s.
-MAX_SCRIPT_WORDS = 100  # hard ceiling; raised from 78 to permit the 30-38s TEST variant below.
-                        # The 78-word/29s finding came from the ROBOTIC-VOICE era (a bad voice makes
-                        # every extra second painful). 2026 research: sub-15s collapsed (can't clear
-                        # the absolute watch-time bar) and 30-45s is the new sweet spot. With the
-                        # human Gemini voice live, we A/B a longer variant at low weight and let the
-                        # channel's own retention data decide. Most videos still target 16-29s.
-
+MAX_SCRIPT_WORDS = 75
 _LENGTH_VARIANTS = [
-    # Calibrated to THIS channel's real retention data AND 2025/26 Shorts research: the 20-35s
-    # band retains best; over-length kills completion. These are HARD caps, not suggestions.
-    "44 to 56 words (about 16-21 seconds - this channel's BEST-performing length). Tight and "
-    "punchy: one clear hook, one strong beat, one payoff. HARD CAP - if you exceed it, cut "
-    "sentences until you're under it. Every word must earn its place.",
-    "50 to 64 words (about 19-24 seconds). Punchy, zero filler, room for one escalating beat. "
-    "HARD CAP - count your words and trim to fit.",
-    "60 to 78 words (about 23-29 seconds). A touch longer for a richer story, but NEVER drag - "
-    "only use the extra room if the payoff genuinely needs it. HARD CAP at 78 words.",
-    "82 to 100 words (about 31-38 seconds - TEST variant, 2026 research band). Use a two-beat "
-    "structure: hook -> first reveal -> escalation ('but here's the part nobody notices') -> "
-    "deeper payoff -> loop. The extra length must be a SECOND curiosity peak, never slower "
-    "pacing. HARD CAP at 100 words.",
-]
-
-# Repurposable curiosity-gap hook PATTERNS, distilled from proven scroll-stopping short-form
-# openers (information-gap theory + open loops + negativity bias). The writer rotates a few of
-# these per video so hooks stay fresh AND always open a specific gap in the first ~1 second.
-# This is the "repurpose proven hooks" engine: unlimited fresh hooks from a small set of structures.
-CURIOSITY_HOOK_PATTERNS = [
-    "IT'S ON PURPOSE - name the familiar thing, then assert it was deliberately designed. ('Milk sits at the back of every store. On purpose.')",
-    "WRONG ASSUMPTION - state what everyone believes, then flip it. ('You think the long airport walk is bad planning. It isn't.')",
-    "IT'S COSTING YOU - name the thing, reveal it's quietly taking your money or time. ('Your cart got bigger so you'd spend more.')",
-    "HIDDEN NUMBER - a specific surprising number about a familiar thing. ('Your \"small\" soda tripled in size since 1960. On purpose.')",
-    "SOMEONE DECIDED THIS - reveal an invisible hand behind an everyday annoyance. ('A computer already chose your gate change hours ago.')",
-    "YOU'VE NEVER NOTICED - point at a thing they see daily but never questioned. ('Every elevator has a mirror. Not for the reason you think.')",
-    "NOT AN ACCIDENT - a frustration reframed as deliberate design. ('Checkout lines feel unfair because they're built that way.')",
-    "THE REAL REASON - tease that the obvious explanation is wrong and a better one is coming. ('Hotels use white sheets for a colder reason than clean.')",
-    "QUIETLY MANIPULATING YOU - a familiar object/space steering your behavior. ('Slow music in stores is quietly slowing you down.')",
-    "ONCE-NORMAL-NOW-WEIRD - a 'wait, that used to be normal?' fact that poses a question. ('We kept these as pets for centuries. Then they vanished - here's why.')",
-    "MOST PEOPLE ARE WRONG - state the common belief about a familiar thing, then flip it (contrarian framing reliably out-pulls neutral facts). ('Most people blame bad luck for the slow checkout. It's actually math.')",
-    "IT'S AFFECTING YOU RIGHT NOW - a familiar thing quietly steering the viewer in this exact moment. ('Right now, this page's layout is deciding what you'll buy.')",
-    "CLIMAX TEASE - open on the most surprising END image, then rewind to explain it (the payoff is teased, not given). ('This empty shelf is why you spent $40 more. Here's how.')",
-    "DISBELIEF NUMBER - a number so off it sounds wrong, about a thing they know. ('Supermarkets rearrange ~200 items a year so you never learn the layout.')",
-]
-
-_STRUCTURE_VARIANTS = [
-    "TEMPLATE A - LISTICLE MYSTERY: (e.g. '5 Secrets You Didn't Know About X'). Rapid montage of facts. Secret #1, Secret #2, leading to a mini-surprise at the end.",
-    "TEMPLATE B - QUESTION -> EXPLANATION (Story style): 'Ever wonder why...?'. Quickly setup the scenario. Explain the reveal clearly with bullet points. End with a 'wow' significance statement.",
-    "TEMPLATE C - SCENARIO CONFLICT -> SOLUTION: Dramatized problem 'Every morning you...'. Explain the hidden reason that causes it. Give a quick tip/benefit at the end."
+    "45 to 75 spoken words, exactly five complete sentences. Keep every word useful and natural.",
 ]
 
 
 def _rotate_style() -> tuple[str, str]:
-    """Pick a length rule and a structural skeleton for THIS video. Weighted toward the
-    channel's proven best length (~17-21s) based on real retention data, with the longer
-    options used less often. Returns (length_rule, skeleton)."""
-    # weight: 55% the proven sweet spot, 30% slightly longer, 15% longest - bias hard
-    # toward what the data shows actually retains on THIS channel.
-    length_rule = _rnd.choices(_LENGTH_VARIANTS, weights=[60, 25, 5, 10])[0]  # 10% = 30-38s A/B test
-    skeleton = _rnd.choice(_STRUCTURE_VARIANTS)
-    return length_rule, skeleton
+    """Return the single active pilot length rule and no secondary skeleton."""
+    return _LENGTH_VARIANTS[0], ""
 
 
 class _GeminiQuotaExhausted(RuntimeError):
@@ -1231,12 +919,44 @@ class _GeminiQuotaExhausted(RuntimeError):
         self.is_server_busy = is_server_busy
 
 
+def _extract_grounding_sources(grounding_metadata: dict | None) -> list[dict]:
+    """Normalize sources returned by Gemini Search grounding into evidence-record fields."""
+    sources = []
+    seen = set()
+    metadata = grounding_metadata if isinstance(grounding_metadata, dict) else {}
+    for chunk in metadata.get("groundingChunks", []) or []:
+        web = chunk.get("web", {}) if isinstance(chunk, dict) else {}
+        title = str(web.get("title", "")).strip()
+        url = str(web.get("uri", "")).strip()
+        if not title or not url.startswith(("https://", "http://")) or url in seen:
+            continue
+        seen.add(url)
+        sources.append({"title": title, "url": url})
+    return sources
+
+
+def _merge_grounding_sources(*responses: dict) -> list[dict]:
+    merged = []
+    seen = set()
+    for response in responses:
+        for source in (response or {}).get("_grounding_sources", []) or []:
+            url = str(source.get("url", "")).strip()
+            if url and url not in seen:
+                seen.add(url)
+                merged.append({"title": str(source.get("title", "")).strip(), "url": url})
+    return merged
+
+
 def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bool = False) -> dict:
     import time
     body = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": temperature, "responseMimeType": "application/json"},
     }
+    if allow_search:
+        # Gemini supports Google Search grounding alongside JSON responses. Grounding citations
+        # are retained separately from the model-authored response fields below.
+        body["tools"] = [{"googleSearch": {}}]
     last_err = None
     rate_limit_hits = 0          # how many models rejected us with a per-minute 429 this call
     daily_hits = 0               # how many of those were the DAILY cap (Gemini dead for hours)
@@ -1253,7 +973,10 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
         _max_tries = 3 if _model_idx < 2 else 2
         for attempt in range(_max_tries):
             try:
-                r = requests.post(GEMINI_URL.format(model=model, key=api_key), json=body, timeout=90)
+                r = requests.post(
+                    GEMINI_URL.format(model=model),
+                    headers={"x-goog-api-key": api_key}, json=body, timeout=90,
+                )
                 if r.status_code == 404:
                     _dead_models.add(model)
                     break  # model retired, try next model
@@ -1318,9 +1041,19 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
                         "and update config.json."
                     )
                 r.raise_for_status()
-                text = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+                response = r.json()
+                candidate = response["candidates"][0]
+                text = "\n".join(
+                    part.get("text", "")
+                    for part in candidate.get("content", {}).get("parts", [])
+                    if part.get("text")
+                )
                 text = text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-                return json.loads(text)
+                result = json.loads(text)
+                grounded = _extract_grounding_sources(candidate.get("groundingMetadata", {}))
+                if grounded:
+                    result["_grounding_sources"] = grounded
+                return result
             except _GeminiQuotaExhausted:
                 raise  # bubble straight up to _call so it falls back to Claude fast
             except RuntimeError:
@@ -1455,32 +1188,26 @@ MIN_SCORE = 8       # target score; overridden by 'min_quality' in config.json
 MAX_ATTEMPTS = 8    # tries per video before falling back to the best script
 QUALITY_FLOOR = 6   # absolute minimum: below this, no video (config 'quality_floor')
 
-REVISE_PROMPT = """You wrote this 'Everyday Mysteries Explained' Shorts script. A retention expert scored it {score}/50 
-(relatable {relatable}, memory_trigger {memory_trigger}, hook_retention {hook_retention}, surprise {surprise}, shareability {shareability}) 
-and scored the title {title_score}/30 (recognition {title_recognition}, frustration {title_frustration}, curiosity {title_curiosity})
-and said the biggest weakness is: "{fix}"
+REVISE_PROMPT = """Revise this Hidden Logic short to fix the editor's issue: "{fix}"
 
-Attack the LOWEST-scoring dimensions above directly.
-
-Script:
+Topic family: "{seed_topic}"
+Current script:
 \"\"\"{script}\"\"\"
 
-Rewrite it to fix exactly that weakness while keeping everything that works. Same rules: the ENTIRE script must stay UNDER 80 words (~30 seconds) - CUT, never pad, because shorter Shorts retain far better; every sentence <=15 words and one idea each, storytelling hook <=9 words, escalate -> ~50% pattern interrupt -> twist -> payoff -> signature ending loop, written like a premium cinematic documentary (Think: Vox, Johnny Harris). The first sentence MUST begin with an immediate physical, everyday moment AND name a SPECIFIC place or object (not a generic "silent room" / "certain situation" - name the actual funeral, interview, grocery aisle, cup holder). Re-read the final script aloud and fix any homophone the TTS would speak wrong ("brake" not "break", "your" not "you're", "it's" not "its").
+Keep a natural, footage-led mini-story. Exactly five complete spoken sentences and 45–75 words.
+Sentence one is a specific observable moment. Give the first useful answer within roughly six seconds.
+Follow one person, object, or action; show a supported mechanism; include one practical implication;
+end with a complete explanation. No forced suspense, withheld answer, sinister framing, fake numbers,
+universal claims, or production/voice instructions in the spoken text. Keep the title and evidence aligned.
+Return ONLY valid JSON. Keep the existing fields and types, including exactly five narration-order
+broll_keywords, one or two emphasis_words, a verbatim first_answer_quote, and evidence_record.
+{{"script":"...","title":"...","description":"...","taxonomy":"...","visual_thesis":"...","series":"...","text_hook":"...","seo_keywords":["..."],"hashtags":["#shorts","#hiddenlogic","..."],"broll_keywords":["...","...","...","...","..."],"emphasis_words":["..."],"first_comment":"...","first_answer_quote":"...","evidence_record":{{"mechanism":"...","supported_claims":["..."],"sources":[{{"title":"...","url":"..."}}]}}}}"""
 
-Respond ONLY with JSON (keep title/description/hashtags/broll_keywords/emphasis_words consistent with the new script):
-{{"script": "...", "title": "...", "description": "...", "hashtags": ["#shorts","#hiddenlogic","..",".."], "broll_keywords": ["..","..","..","..","..",".."], "emphasis_words": ["..",".."], "first_comment": "..."}}"""
-
-import random
-
-SERIES_FORMATS = [
-    "WHY IT FEELS THAT WAY (e.g. Why Hotel Rooms Feel Familiar, Why Airports Feel So Stressful)",
-    "WHY YOU ALWAYS... (e.g. Why You Always Buy More Than Planned, Why You Always Pick The Slowest Line)",
-    "DESIGNED TO... (e.g. Designed To Keep You Shopping, Designed To Make You Stay Longer)"
-]
 
 def _build_prompt(topic, length_rule, variant):
-    series_format = random.choice(SERIES_FORMATS)
-    return WRITE_PROMPT.format(topic=topic, length_rule=length_rule, series_format=series_format)
+    # The variant parameter stays for callers; editorial pilots share one prompt contract.
+    return WRITE_PROMPT.format(topic=topic or "", length_rule=length_rule)
+
 
 def _extract_seed_topic(topic: str) -> str:
     if not topic:
@@ -1602,9 +1329,8 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
             seed_topic = _extract_seed_topic(topic) if topic else ""
             
         prompt = _build_prompt(topic, length_rule, variant)
-        prompt += "\n\n" + skeleton
         if extra_guidance:
-            prompt += extra_guidance
+            prompt += "\n\nEDITORIAL CONTEXT (not spoken narration):\n" + extra_guidance
         if strict_topic_lock and seed_topic:
             lock_guidance = (
                 f"\n\nSTRICT TOPIC LOCK ACTIVE:\n"
@@ -1615,17 +1341,7 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
                 f"and context of '{seed_topic}' (e.g. if the topic is casino, use casino floors, slots, no clocks in casinos)."
             )
             prompt += lock_guidance
-        import random as _hr
-        _patterns = _hr.sample(CURIOSITY_HOOK_PATTERNS, 4)
-        prompt += ("\n\nHOOK PROCESS (CRITICAL - this decides 'stayed-to-watch'): before writing, "
-                   "draft THREE distinct opening hooks for this topic, each built on a DIFFERENT one "
-                   "of these proven curiosity-gap patterns (repurpose each to THIS exact topic):\n- "
-                   + "\n- ".join(_patterns) +
-                   "\nApply the CURIOSITY-GAP HOOK RULE and the swipe-stop test to each: do the first "
-                   "~6 words instantly name the familiar thing AND open a specific hidden-reason gap? "
-                   "Pick the SINGLE strongest, write the script opening with it, and output ONLY the "
-                   "winning script (not the alternatives).")
-        data = _call(api_key, prompt, temperature=0.95)
+        data = _call(api_key, prompt, temperature=0.55, allow_search=True)
         data["topic"] = topic
         data["filter_scores"] = filter_scores
         review = None
@@ -1648,7 +1364,7 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
                 )
                 if rater_benchmark:
                     review_prompt += rater_benchmark
-                review = _call(api_key, review_prompt, temperature=0.2, allow_search=False)
+                review = _call(api_key, review_prompt, temperature=0.1, allow_search=True)
                 break
             except Exception as e:
                 review_err = e
@@ -1657,6 +1373,19 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
         data["script"] = review.get("script", data["script"])
         if review.get("title"):
             data["title"] = review["title"]
+        for field in ("broll_keywords", "first_answer_quote"):
+            if review.get(field):
+                data[field] = review[field]
+        reviewed_evidence = review.get("evidence_record")
+        if isinstance(reviewed_evidence, dict):
+            data["evidence_record"] = reviewed_evidence
+        elif not isinstance(data.get("evidence_record"), dict):
+            data["evidence_record"] = {}
+        evidence_record = data["evidence_record"]
+        # Only Search-grounded URLs become evidence sources. Model-authored citation URLs are
+        # discarded rather than treated as verified references.
+        evidence_record["sources"] = _merge_grounding_sources(data, review)
+        data["evidence_record"] = evidence_record
         data["factcheck"] = review.get("issues_found", "n/a")
         data["visual_thesis"] = review.get("visual_thesis", "")
         data["taxonomy"] = review.get("taxonomy", "")
@@ -1796,7 +1525,14 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
         # writer routinely overshoots the stated word target, so we ENFORCE the cap here.
         _script_words = len((data.get("script") or "").split())
         data["script_words"] = _script_words
-        is_length_ok = _script_words <= MAX_SCRIPT_WORDS
+        is_length_ok = 45 <= _script_words <= MAX_SCRIPT_WORDS
+        editorial_issues = validate_script(
+            data.get("script", ""), data.get("title", ""), seed_topic,
+            data.get("broll_keywords", []), data.get("first_answer_quote", ""),
+            data.get("evidence_record", {}), require_five_beats=True,
+        )
+        data["editorial_script_issues"] = editorial_issues
+        is_editorial_ok = not editorial_issues
 
         attempt_ok = (
             score >= min_score_local
@@ -1806,15 +1542,15 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
             and is_hook_physical
             and is_swipe_ok
             and is_length_ok
+            and is_editorial_ok
+            and is_first_frame_ok
+            and is_novelty_ok
+            and is_retention_pred_ok
+            and is_topic_rec_ok
+            and is_viewer_identity_ok
+            and is_delayed_reveal_ok
+            and is_emotional_payoff_ok
         )
-        # NOTE: the secondary scores below (first_frame, novelty, retention_prediction,
-        # topic_recognition, viewer_identity, delayed_reveal, emotional_payoff) are still
-        # computed and still drive the revision note (so weak ones get rewritten), but they
-        # are NOT hard accept-gates. Requiring all ~14 to clear at once meant ~3/4 of scripts
-        # burned all 8 attempts and fell back to "best" anyway - just far slower (up to 8 LLM
-        # calls/video). We keep the gates the data actually backs - swipe-stop (the #1 driver
-        # of stayed-to-watch), length (the 29s>48s finding), topic fidelity, title, and overall
-        # quality - strict, and let the rest guide revision without grinding the run.
         _weak_secondary = [
             n for n, ok in (
                 ("first_frame", is_first_frame_ok), ("novelty", is_novelty_ok),
@@ -1842,120 +1578,121 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
             print(f"[scriptgen] ACCEPTED attempt {attempt+1} score={score}")
             return data
             
-        # Revision path if we didn't meet the target
-        has_gate_failure = not is_title_gate_ok or not is_fidelity_ok or not is_hook_physical or not is_first_frame_ok or not is_swipe_ok or not is_novelty_ok or not is_retention_pred_ok or not is_topic_gate_ok or not is_viewer_identity_ok or not is_delayed_reveal_ok or not is_emotional_payoff_ok or not is_length_ok
-        if (score >= 35.0 or has_gate_failure) and (data.get("quality_note") or has_gate_failure):
+        # Revision is only an attempt to repair the same topic; it cannot bypass any gate.
+        has_gate_failure = (
+            not is_title_gate_ok or not is_fidelity_ok or not is_hook_physical
+            or not is_first_frame_ok or not is_swipe_ok or not is_novelty_ok
+            or not is_retention_pred_ok or not is_topic_gate_ok or not is_viewer_identity_ok
+            or not is_delayed_reveal_ok or not is_emotional_payoff_ok
+            or not is_length_ok or not is_editorial_ok
+        )
+        if score >= 35.0 or has_gate_failure:
             try:
-                # determine fix message — prioritize the most critical gate failure.
-                # LENGTH first: an over-length script must be cut before anything else matters
-                # (it's the biggest retention killer and skews every downstream timing).
-                if not is_length_ok:
+                if not is_editorial_ok:
                     fix_message = (
-                        f"CRITICAL LENGTH REJECTION: the script is {_script_words} words, over the "
-                        f"{MAX_SCRIPT_WORDS}-word cap (~30s). Shorter Shorts retain far better - on THIS "
-                        f"channel a 29s video got 3.2x the views of a 48s one. CUT it to {MAX_SCRIPT_WORDS} "
-                        f"words or fewer: keep the hook, the single biggest reveal, and the loop ending; "
-                        f"delete every secondary beat, qualifier, and repeated idea. Tighten every sentence."
+                        "EDITORIAL GATE REJECTION: " + ", ".join(editorial_issues) + ". "
+                        "Repair the specific defects while preserving the requested topic. Keep exactly five "
+                        "complete spoken sentences, 45–75 words, an observable opening, a useful supported answer "
+                        "within six seconds, one coherent action, a practical implication, and a complete ending. "
+                        "Return five distinct scene-specific stock queries in narration order plus a sourced evidence_record. "
+                        "Do not add suspense, universal claims, invented details, or production instructions."
                     )
-                elif not is_swipe_ok:
+                elif not is_length_ok:
                     fix_message = (
-                        f"CRITICAL SWIPE-STOP REJECTION: swipe_stop_score={swipe_stop_score}/10 (min 7). The first "
-                        f"1-1.5 seconds don't stop the swipe - this is where 50-75% of viewers leave. REWRITE the FIRST "
-                        f"sentence so it does BOTH at once: (1) instantly names the familiar everyday thing (zero "
-                        f"figuring-out time), and (2) opens a SPECIFIC hidden-reason gap that contradicts what they assume "
-                        f"('on purpose', 'not an accident', 'it's costing you'). Frame it as a loss/manipulation. No "
-                        f"preamble, no slow setup - the subject AND the 'why' itch must land in the first ~6 words."
-                    )
-                elif not is_novelty_ok:
-                    fix_message = (
-                        f"CRITICAL NOVELTY REJECTION: novelty_score={novelty_score}/10 (min 7). This is the GENERIC "
-                        f"version of this idea that many channels already made - YouTube's algorithm caps that (~30k "
-                        f"views). Add something genuinely NEW so it passes the swap test: a specific surprising number, "
-                        f"a non-obvious SECOND mechanism, a fresh analogy, or a counterintuitive twist. Make it "
-                        f"unmistakably original, not a reworded common fact."
-                    )
-                elif not is_hook_physical:
-                    fix_message = (
-                        f"CRITICAL HOOK REJECTION: The hook is classified as '{data.get('hook_type')}', NOT 'physical_moment'. "
-                        f"The FIRST sentence MUST be an immediate physical action/scene (e.g., 'You walk into...', 'You grab...', 'You press...'). "
-                        f"Rewrite the opening to start with a concrete physical moment the viewer has personally experienced."
-                    )
-                elif not is_first_frame_ok:
-                    fix_message = (
-                        f"CRITICAL FIRST FRAME REJECTION: first_frame_score={first_frame_score}/10 (minimum 8 required). "
-                        f"The opening scene must show a SPECIFIC PHYSICAL LOCATION (airport, store, hotel, car, elevator) "
-                        f"that a viewer can identify in under 0.5 seconds. Rewrite to make the setting instantly recognizable."
-                    )
-                elif not is_topic_rec_ok:
-                    fix_message = (
-                        f"CRITICAL TOPIC RECOGNITION REJECTION: topic_recognition_score={topic_recognition_score}/10 (minimum 8 required). "
-                        f"The viewer must understand the topic without audio and the first frame must immediately match the title. "
-                        f"Rewrite the hook and define a clear 'visual_thesis'."
-                    )
-                elif not is_retention_pred_ok:
-                    fix_message = (
-                        f"CRITICAL RETENTION REJECTION: retention_prediction={retention_prediction}/10 (minimum 8 required). "
-                        f"Strengthen: scene vividness, frustration intensity, curiosity gap, and reveal payoff. "
-                        f"The viewer must FEEL the annoyance before the explanation."
+                        f"The script has {_script_words} words. Revise it to 45–75 spoken words and exactly five "
+                        "complete sentences, retaining the observed action, early explanation, practical implication, "
+                        "and complete ending. Do not add a loop or delay the answer."
                     )
                 elif not is_delayed_reveal_ok:
                     fix_message = (
-                        f"CRITICAL STRUCTURE REJECTION: delayed_reveal_score={delayed_reveal_score}/10 (minimum 8 required). "
-                        f"The biggest reveal is happening TOO EARLY. Restructure so the mystery DEEPENS through the middle "
-                        f"(each sentence opens a bigger question, never resolves it), add at least two curiosity re-openings "
-                        f"('but that's not even the clever part'), and push the single biggest reveal to the FINAL THIRD (70-90%). "
-                        f"End on a reframe that makes the viewer go 'I'll never unsee that', not a flat stop."
+                        f"Early-answer quality is {delayed_reveal_score}/10. State the first useful, evidence-supported "
+                        "explanation earlier (within roughly six seconds); do not deepen or delay a mystery."
+                    )
+                elif not is_swipe_ok:
+                    fix_message = (
+                        f"Opening clarity score is {swipe_stop_score}/10. Make the first sentence immediately "
+                        "recognizable as a specific object/place/action, without exaggeration or an unsupported claim."
+                    )
+                elif not is_novelty_ok:
+                    fix_message = (
+                        f"Specificity score is {novelty_score}/10. Add one genuinely observed, topic-specific detail "
+                        "supported by the sources; do not invent a number, add a second mechanism, or force a twist."
+                    )
+                elif not is_hook_physical:
+                    fix_message = (
+                        f"The opening was classified as '{data.get('hook_type')}'. Begin with a concrete observable "
+                        "moment involving the requested object or place, rather than a general claim or teaser."
+                    )
+                elif not is_first_frame_ok:
+                    fix_message = (
+                        f"Opening visual clarity is {first_frame_score}/10. Name a location or object that a viewer "
+                        "can recognize quickly and that can be shown with relevant stock footage."
+                    )
+                elif not is_topic_rec_ok:
+                    fix_message = (
+                        f"Topic recognition is {topic_recognition_score}/10. Align the first observed moment, title, "
+                        "and requested subject so the viewer can identify what is happening."
+                    )
+                elif not is_retention_pred_ok:
+                    fix_message = (
+                        f"Story clarity is {retention_prediction}/10. Tighten the causal sequence and remove any "
+                        "repeated idea; preserve the early answer and complete ending."
                     )
                 elif not is_emotional_payoff_ok:
                     fix_message = (
-                        f"CRITICAL PAYOFF REJECTION: emotional_payoff_score={emotional_payoff_score}/10 (minimum 7 required). "
-                        f"The ending lands as a flat 'oh, okay' instead of 'no way / I've been tricked'. Reframe the payoff to "
-                        f"expose a HIDDEN INCENTIVE (who profits, what you were nudged to do, a deliberate trick). If the real "
-                        f"answer is only a dry regulation/building code, find the surprising angle or the script will be rejected."
+                        f"Practical payoff is {emotional_payoff_score}/10. Add a grounded implication or useful "
+                        "comparison, then finish the explanation plainly. Do not imply deception or hidden intent."
                     )
                 elif not is_viewer_identity_ok:
                     fix_message = (
-                        f"CRITICAL AUDIENCE IDENTITY REJECTION: viewer_identity_score={viewer_identity_score}/10 (minimum 8 required). "
-                        f"The topic must be uniquely 'Hidden Logic' (exposing everyday psychological mysteries), memorable, "
-                        f"discussion-generating, and emotionally relatable. Rewrite the script to make the mystery "
-                        f"more universal and debate-worthy."
+                        f"Topic fit is {viewer_identity_score}/10. Keep the story tied to an everyday object, place, "
+                        "technology, queue/travel, shopping, or pricing mechanism that fits Hidden Logic."
                     )
                 elif not is_title_gate_ok:
                     fix_message = (
-                        f"CRITICAL TITLE REJECTION: The title '{data.get('title')}' scored {title_score}/30 (rec={title_rec}, frust={title_frust}, cur={title_cur}). "
-                        f"You MUST rewrite the title to score at least 24/30. It must be relatable, starting with 'Why...' and focus on a physical, recognizable setting and frustration."
+                        f"Title quality is {title_score}/30 (accuracy={title_rec}, clarity={title_frust}, "
+                        f"interest={title_cur}). Rewrite it for factual accuracy, plain clarity, and grounded relevance; "
+                        "do not force a 'Why' construction or sensational wording."
                     )
                 elif not is_fidelity_ok:
                     fix_message = (
-                        f"CRITICAL TOPIC DRIFT: The script has drifted from the requested topic '{seed_topic}' "
-                        f"(fidelity scored {topic_fidelity}/10, subject retention scored {subject_retention}/10). "
-                        f"You MUST rewrite the script and title to be strictly and directly about '{seed_topic}'."
+                        f"The script/title drifted from '{seed_topic}' (fidelity={topic_fidelity}/10, "
+                        f"subject retention={subject_retention}/10). Return to that subject and preserve the evidence."
                     )
                 else:
-                    fix_message = data["quality_note"]
-                    
+                    fix_message = str(data.get("quality_note") or "Improve clarity and factual support without changing the topic.")
+
                 revised = _call(api_key, REVISE_PROMPT.format(
-                    score=score, fix=fix_message, script=data["script"],
+                    score=score, fix=fix_message, script=data["script"], seed_topic=seed_topic,
                     relatable=review.get("relatable", "?"), memory_trigger=review.get("memory_trigger", "?"),
                     hook_retention=review.get("hook_retention", "?"), surprise=review.get("surprise", "?"),
                     shareability=review.get("shareability", "?"),
                     title_score=title_score, title_recognition=title_rec,
-                    title_frustration=title_frust, title_curiosity=title_cur), temperature=0.85)
+                    title_frustration=title_frust, title_curiosity=title_cur), temperature=0.35, allow_search=True)
                 revised["topic"] = topic
                 revised["filter_scores"] = filter_scores
-                for k in ("title", "description", "hashtags", "broll_keywords", "emphasis_words", "first_comment", "series", "seo_keywords", "text_hook"):
+                for k in ("title", "description", "hashtags", "broll_keywords", "emphasis_words", "first_comment", "series", "seo_keywords", "text_hook", "first_answer_quote", "evidence_record"):
                     if not revised.get(k):
-                        revised[k] = data.get(k, "" if k in ("title", "description", "first_comment", "series") else [])
+                        revised[k] = data.get(k, {} if k == "evidence_record" else ("" if k in ("title", "description", "first_comment", "series", "first_answer_quote") else []))
                 
                 review2 = _call(api_key, REVIEW_PROMPT.format(
                     script=revised["script"],
                     topic_lock_instruction=lock_inst,
                     seed_topic=seed_topic
-                ), temperature=0.2)
+                ), temperature=0.1, allow_search=True)
                 
                 revised["script"] = review2.get("script", revised["script"])
                 if review2.get("title"):
                     revised["title"] = review2["title"]
+                for field in ("broll_keywords", "first_answer_quote"):
+                    if review2.get(field):
+                        revised[field] = review2[field]
+                reviewed_evidence2 = review2.get("evidence_record")
+                if isinstance(reviewed_evidence2, dict):
+                    revised["evidence_record"] = reviewed_evidence2
+                elif not isinstance(revised.get("evidence_record"), dict):
+                    revised["evidence_record"] = {}
+                revised["evidence_record"]["sources"] = _merge_grounding_sources(revised, review2)
                 # If the rewrite changed the script (e.g. fixed topic drift), the OLD description
                 # may still describe the wrong topic. Prefer a fresh description from the rewrite;
                 # if none provided, clear it so the description is rebuilt from the new script
@@ -2022,6 +1759,17 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
                 revised_viewer_identity_ok = float(revised.get("viewer_identity_score", 0)) >= 8.0
                 revised_delayed_reveal_ok = float(revised.get("delayed_reveal_score", 0)) >= 8.0
                 revised_emotional_payoff_ok = float(revised.get("emotional_payoff_score", 0)) >= 7.0
+                revised_swipe_ok = float(review2.get("swipe_stop_score", 0)) >= 7.0
+                revised_novelty_ok = float(review2.get("novelty_score", 0)) >= 7.0
+                revised["script_words"] = len((revised.get("script") or "").split())
+                revised_length_ok = 45 <= revised["script_words"] <= MAX_SCRIPT_WORDS
+                revised_editorial_issues = validate_script(
+                    revised.get("script", ""), revised.get("title", ""), seed_topic,
+                    revised.get("broll_keywords", []), revised.get("first_answer_quote", ""),
+                    revised.get("evidence_record", {}), require_five_beats=True,
+                )
+                revised["editorial_script_issues"] = revised_editorial_issues
+                revised_editorial_ok = not revised_editorial_issues
                 
                 revised_ok = (
                     revised["quality_score"] >= min_score_local
@@ -2029,6 +1777,10 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
                     and revised_topic_gate_ok
                     and revised_title_gate_ok
                     and revised_hook_physical
+                    and revised_swipe_ok
+                    and revised_novelty_ok
+                    and revised_length_ok
+                    and revised_editorial_ok
                     and revised_first_frame_ok
                     and revised_retention_pred_ok
                     and revised_topic_rec_ok
@@ -2069,43 +1821,64 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
     final_delayed_reveal = float(data.get("delayed_reveal_score", 0))
     final_emotional_payoff = float(data.get("emotional_payoff_score", 0))
     
+    final_script_words = len((data.get("script") or "").split())
+    final_editorial_issues = validate_script(
+        data.get("script", ""), data.get("title", ""), seed_topic,
+        data.get("broll_keywords", []), data.get("first_answer_quote", ""),
+        data.get("evidence_record", {}), require_five_beats=True,
+    )
+    data["script_words"] = final_script_words
+    data["editorial_script_issues"] = final_editorial_issues
+    final_swipe = float(data.get("swipe_stop_score", 0))
+    final_novelty = float(data.get("novelty_score", 0))
+    final_title_clarity = float(data.get("title_frustration", 0))
+    final_fidelity = float(data.get("topic_fidelity", 10.0))
+    final_subject_retention = float(data.get("subject_retention", 10.0))
+    final_fidelity_ok = not (strict_topic_lock or _is_trend) or (
+        final_fidelity >= 8.0 and final_subject_retention >= 8.0
+    )
+    final_topic_gate_ok = pinned or float(filter_scores.get("visual", 0)) >= 8.0
     is_final_ok = (
         best_score >= quality_floor_local
         and final_title_score >= 24
-        and float(data.get("title_frustration", 0)) >= 7.0
+        and final_title_clarity >= 7.0
         and final_hook_type == "physical_moment"
+        and final_swipe >= 7.0
+        and final_novelty >= 7.0
         and final_first_frame >= 8.0
         and final_retention_pred >= 8.0
         and final_topic_rec >= 8.0
         and final_viewer_identity >= 8.0
         and final_delayed_reveal >= 8.0
         and final_emotional_payoff >= 7.0
+        and final_fidelity_ok
+        and final_topic_gate_ok
+        and 45 <= final_script_words <= MAX_SCRIPT_WORDS
+        and not final_editorial_issues
     )
-    
-    # Determine the primary rejection reason for slot stats tracking
+
     if not is_final_ok:
-        if final_hook_type != "physical_moment":
-            reject_reason = "hook_not_physical"
-        elif final_first_frame < 8.0:
-            reject_reason = "first_frame_low"
+        if final_editorial_issues:
+            reject_reason = "editorial_script_evidence"
+        elif final_hook_type != "physical_moment":
+            reject_reason = "opening_not_observable"
         elif final_delayed_reveal < 8.0:
-            reject_reason = "reveal_too_early"
-        elif final_emotional_payoff < 7.0:
-            reject_reason = "weak_emotional_payoff"
-        elif final_topic_rec < 8.0:
-            reject_reason = "topic_recognition_low"
-        elif final_retention_pred < 8.0:
-            reject_reason = "retention_pred_low"
-        elif final_viewer_identity < 8.0:
-            reject_reason = "viewer_identity_low"
-        elif final_title_score < 24:
-            reject_reason = "title_score_low"
+            reject_reason = "early_answer_quality_low"
+        elif final_title_score < 24 or final_title_clarity < 7.0:
+            reject_reason = "title_accuracy_or_clarity_low"
+        elif not final_fidelity_ok:
+            reject_reason = "topic_fidelity_low"
+        elif not final_topic_gate_ok:
+            reject_reason = "topic_visuality_low"
+        elif final_script_words < 45 or final_script_words > MAX_SCRIPT_WORDS:
+            reject_reason = "script_length_out_of_band"
         else:
-            reject_reason = "quality_floor"
+            reject_reason = "editorial_quality_score_low"
         raise RuntimeError(
-            f"QUALITY & GATING REJECTION [{reject_reason}]: Best attempt failed gates "
-            f"(score={best_score}/50, title={final_title_score}/30, hook={final_hook_type}, "
-            f"first_frame={final_first_frame}/10, ret_pred={final_retention_pred}/10, viewer_identity={final_viewer_identity}/10). Sacrificing slot."
+            f"QUALITY & GATING REJECTION [{reject_reason}]: best score={best_score}/50; "
+            f"title={final_title_score}/30, hook={final_hook_type}, first_frame={final_first_frame}/10, "
+            f"early_answer={final_delayed_reveal}/10, script_words={final_script_words}, "
+            f"editorial_issues={final_editorial_issues}. Sacrificing slot."
         )
 
     # Subcluster Cooldown Gate (30 days)
@@ -2143,7 +1916,8 @@ def generate(api_key: str, topic: str | None = None, extra_guidance: str = "",
     data["topic_fidelity"] = data.get("topic_fidelity", 10.0)
     data["subject_retention"] = data.get("subject_retention", 10.0)
     
-    data.setdefault("broll_keywords", ["cinematic", "documentary shot", "slow motion"])
+    data.pop("_grounding_sources", None)
+    data["editorial_prompt_version"] = "observed-mini-story-v1"
     data.setdefault("emphasis_words", [])
     data.setdefault("series", "Everyday Design")
     data.setdefault("seo_keywords", [])
