@@ -1,5 +1,5 @@
 {
-  "channel_avg_views": 1751.3,
+  "channel_avg_views": 1698.1,
   "topic_clusters": {
     "airport": {
       "videos": 14,
@@ -79,10 +79,11 @@
       "avg_avd": 12.4
     },
     "traffic": {
-      "videos": 55,
-      "avg_views": 509.6,
+      "videos": 56,
+      "avg_views": 486.4,
       "best_views": 1774,
       "recent_views": [
+        116,
         1090,
         911,
         1088,
@@ -184,10 +185,10 @@
     },
     "restaurant": {
       "videos": 10,
-      "avg_views": 790.9,
-      "best_views": 2713,
+      "avg_views": 799.8,
+      "best_views": 2771,
       "recent_views": [
-        2713,
+        2771,
         1029,
         5,
         4,
@@ -203,7 +204,7 @@
     },
     "supermarket": {
       "videos": 30,
-      "avg_views": 376.1,
+      "avg_views": 383.2,
       "best_views": 1374,
       "recent_views": [
         638,
@@ -303,10 +304,10 @@
     },
     "perception": {
       "videos": 2,
-      "avg_views": 77166.3,
-      "best_views": 115743,
+      "avg_views": 77169.0,
+      "best_views": 115747,
       "recent_views": [
-        115743,
+        115747,
         13
       ],
       "avg_stayed_to_watch": null,
@@ -314,7 +315,7 @@
     },
     "social_behavior": {
       "videos": 7,
-      "avg_views": 532.5,
+      "avg_views": 489.7,
       "best_views": 1102,
       "recent_views": [
         961,
@@ -340,10 +341,10 @@
     },
     "technology": {
       "videos": 28,
-      "avg_views": 115.9,
+      "avg_views": 116.1,
       "best_views": 1001,
       "recent_views": [
-        2,
+        5,
         1,
         431,
         262,
@@ -436,5 +437,5 @@
       "avg_avd": null
     }
   },
-  "last_updated": "2026-10-02T20:16:12.003555"
+  "last_updated": "2026-10-03T18:56:10.307228"
 }

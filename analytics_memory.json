@@ -463,14 +463,14 @@
       "avg_returning_viewers": null
     },
     "Why your brain thinks the car in front is slower than it is": {
-      "count": 13,
-      "avg_views_first_60m": 195.4,
-      "avg_views_first_6h": 195.5,
+      "count": 14,
+      "avg_views_first_60m": 189.3,
+      "avg_views_first_6h": 189.4,
       "avg_views_first_24h": 0.5,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 3.6,
+      "avg_likes_per_1000_views": 3.3,
       "avg_returning_viewers": null
     },
     "Why hotel mirrors is definitely not an accident": {
@@ -1983,14 +1983,14 @@
       "avg_returning_viewers": null
     },
     "traffic": {
-      "count": 21,
-      "avg_views_first_60m": 242.2,
-      "avg_views_first_6h": 263.3,
+      "count": 22,
+      "avg_views_first_60m": 235.8,
+      "avg_views_first_6h": 255.9,
       "avg_views_first_24h": 860.0,
       "avg_stayed_to_watch": 62.0,
       "avg_avd": 13.8,
-      "avg_comments_per_1000_views": 79.0,
-      "avg_likes_per_1000_views": 82.9,
+      "avg_comments_per_1000_views": 75.0,
+      "avg_likes_per_1000_views": 78.7,
       "avg_returning_viewers": 150.0
     },
     "elevator": {
@@ -2700,14 +2700,14 @@
       "avg_returning_viewers": null
     },
     "Perception": {
-      "count": 3,
-      "avg_views_first_60m": 291.0,
-      "avg_views_first_6h": 291.0,
+      "count": 4,
+      "avg_views_first_60m": 232.7,
+      "avg_views_first_6h": 232.7,
       "avg_views_first_24h": null,
       "avg_stayed_to_watch": null,
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
-      "avg_likes_per_1000_views": 6.0,
+      "avg_likes_per_1000_views": 4.0,
       "avg_returning_viewers": null
     },
     "tires": {
@@ -4253,14 +4253,14 @@
   },
   "hook_types": {
     "physical_moment": {
-      "count": 245,
-      "avg_views_first_60m": 186.7,
-      "avg_views_first_6h": 198.8,
+      "count": 246,
+      "avg_views_first_60m": 186.4,
+      "avg_views_first_6h": 198.4,
       "avg_views_first_24h": 290.1,
       "avg_stayed_to_watch": 64.5,
       "avg_avd": 11.5,
       "avg_comments_per_1000_views": 7.2,
-      "avg_likes_per_1000_views": 19.4,
+      "avg_likes_per_1000_views": 19.3,
       "avg_returning_viewers": 180.0
     },
     "explainer": {

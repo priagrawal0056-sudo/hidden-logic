@@ -5682,6 +5682,44 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The looming effect: an object approaching at a constant speed appears to stay the same size until an exponential expansion in the final moments.",
-    "first_frame_description": "A first-person POV from a driver's seat, gripping a leather steering wheel, looking at a silver sedan on a sun-drenched highway."
+    "first_frame_description": "A first-person POV from a driver's seat, gripping a leather steering wheel, looking at a silver sedan on a sun-drenched highway.",
+    "comments_per_1000_views": 0.0,
+    "likes_per_1000_views": 0.0,
+    "views_first_60m": 116,
+    "views_first_6h": 116
+  },
+  "Mc1mHimuHys": {
+    "variant": "B",
+    "title": "Why You Can't Ignore That Red Dot",
+    "date": "2026-10-03",
+    "publish_at": "2026-10-04T07:04:00Z",
+    "cluster": null,
+    "topic": "Why phone notifications being red is definitely not an accident",
+    "subcluster": "everyday-manipulation",
+    "hook_type": "physical_moment",
+    "series": "App & Website Tricks",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 9.0,
+    "viewer_identity_score": 10.0,
+    "visual_thesis": "The red notification dot on your phone is a deliberate, primal trigger, not just a simple alert.",
+    "first_frame_description": "Close-up of a hand holding a smartphone, thumb poised to tap a prominent red notification dot on the screen."
+  },
+  "cSktjT0fmpE": {
+    "variant": "B",
+    "title": "Why Penalty Takers Look The Wrong Way",
+    "date": "2026-10-03",
+    "publish_at": "2026-10-04T09:24:00Z",
+    "cluster": null,
+    "topic": "Why penalty takers look the wrong way on purpose",
+    "subcluster": "Human Psychology",
+    "hook_type": "physical_moment",
+    "series": "Brain Glitches",
+    "predicted_views_score": 9.0,
+    "retention_prediction": 9.0,
+    "first_frame_score": 10.0,
+    "viewer_identity_score": 9.0,
+    "visual_thesis": "The script uses the contrast between a striker's eye direction and their foot's contact point to demonstrate a biological 'hack' of the goalkeeper's nervous system.",
+    "first_frame_description": "A first-person view from the penalty spot looking at a goalkeeper, with a bright red 'eye-tracking' circle focused on the left post while the ball is positioned for a right-side strike."
   }
 }

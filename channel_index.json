@@ -7069,5 +7069,45 @@
     "quality_score": 46.0,
     "variant": "B",
     "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "6vlvmPvi0Y4",
+    "title": "he said it's all mine",
+    "topic": "he said it's all mine",
+    "date": "2026-10-03",
+    "n": 0
+  },
+  {
+    "video_id": "Mc1mHimuHys",
+    "title": "Why You Can't Ignore That Red Dot",
+    "topic": "Why phone notifications being red is definitely not an accident",
+    "date": "2026-10-03",
+    "n": 587,
+    "source": "pool",
+    "visual_score": 9.5,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 48.0,
+    "trend_heat": 0.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
+  },
+  {
+    "video_id": "cSktjT0fmpE",
+    "title": "Why Penalty Takers Look The Wrong Way",
+    "topic": "Why penalty takers look the wrong way on purpose",
+    "date": "2026-10-03",
+    "n": 588,
+    "source": "pool",
+    "relatability_score": 9,
+    "memory_trigger_score": 9,
+    "curiosity_score": 0,
+    "visual_score": 0,
+    "environment_bonus": 0,
+    "topic_fidelity": 10.0,
+    "subject_retention": 10.0,
+    "quality_score": 46.0,
+    "variant": "B",
+    "hook_type": "physical_moment"
   }
 ]

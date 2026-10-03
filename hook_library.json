@@ -2374,5 +2374,27 @@
     "views": 0,
     "stayed_to_watch": null,
     "average_view_duration": null
+  },
+  {
+    "title": "Why You Can't Ignore That Red Dot",
+    "hook_text": "You tap that red dot on your phone.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Contradiction/Gap",
+    "first_frame_description": "Close-up of a hand holding a smartphone, thumb poised to tap a prominent red notification dot on the screen.",
+    "visual_thesis": "The red notification dot on your phone is a deliberate, primal trigger, not just a simple alert.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
+  },
+  {
+    "title": "Why Penalty Takers Look The Wrong Way",
+    "hook_text": "You\u2019re standing on the penalty spot, staring at the wrong post.",
+    "hook_type": "physical_moment",
+    "hook_structure": "Action -> Hidden System",
+    "first_frame_description": "A first-person view from the penalty spot looking at a goalkeeper, with a bright red 'eye-tracking' circle focused on the left post while the ball is positioned for a right-side strike.",
+    "visual_thesis": "The script uses the contrast between a striker's eye direction and their foot's contact point to demonstrate a biological 'hack' of the goalkeeper's nervous system.",
+    "views": 0,
+    "stayed_to_watch": null,
+    "average_view_duration": null
   }
 ]
