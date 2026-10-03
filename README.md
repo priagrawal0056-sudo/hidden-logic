@@ -59,11 +59,15 @@ The batch is two technology stories, two queue/travel stories, and two shopping/
 .venv/bin/python pilot_batch.py --generate
 ```
 
-Drafts, sampled frames, metadata, skip reasons, and `pilot_batch_report.json` are written under `pilots/unpublished/YYYYMMDD/`. That directory is git-ignored. The batch never calls YouTube upload APIs and writes `rollout_enabled: false`. Inspect every MP4 and its source/crop records; mark each pilot's `human_review_status` as approved or rejected. Do not enable rollout unless all six pass human review. Rejected pilots remain unpublished.
+Drafts, sampled frames, metadata, skip reasons, and `pilot_batch_report.json` are written under `pilots/unpublished/YYYYMMDD/`. That directory is git-ignored. Open its generated `index.html` for a local review index with video playback, narration, voice direction, source/license, sampled frames, and the reviewed crop/action for each available pilot. Each completed draft also has its own `index.html`. These pages are static review aids only: they have no approval or upload endpoint. The batch never calls YouTube upload APIs and writes `rollout_enabled: false`. Inspect every MP4 and its source/crop records; mark each pilot's `human_review_status` as approved or rejected. Do not enable rollout unless all six pass human review. Rejected pilots remain unpublished.
+
+The integration from [youtube-agentic-ai-studio](https://github.com/raunakpatil/youtube-agentic-ai-studio#-quick-star) is deliberately selective: this pipeline adopts the useful human-review-before-upload presentation, implemented as a static artifact for Actions and local review. Its Quick Start's alternate TTS, image-based visuals, separate renderer, retention prompts, and direct-upload path are not used; Orus, stock footage, the existing FFmpeg renderer, evidence gates, and the publication lock remain authoritative.
 
 ### GitHub Actions
 
 Pushes to the Arena working branch and pull-request previews remain dry-run paths. To create the pilot batch on a GitHub runner, open **Actions → Hidden Logic Daily Autopilot → Run workflow**, select **Generate six unpublished editorial pilots**, and run it. The job uses the configured Gemini/Pexels/Pixabay secrets, does not require YouTube OAuth for pilots, and attaches the `pilots/unpublished/` review package as an artifact. It persists only the stock clip IDs and hashes in `used_clips.json` so later batches cannot recycle pilot footage; rendered videos stay in the artifact, not Git. The normal scheduled/main upload path remains blocked until the publication flags are explicitly approved and enabled.
+
+Dry-run artifacts now include each successful MP4, metadata, and static review page. If no MP4 was produced, the artifact step warns instead of adding a second workflow error; a separate diagnostics artifact retains `pipeline_log.txt`, quality skip reasons, and any partial draft metadata. The pipeline step itself still fails when it cannot produce a valid video, so a missing preview is never reported as success.
 
 ---
 

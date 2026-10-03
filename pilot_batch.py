@@ -175,9 +175,22 @@ def main() -> int:
         print(f"{entry['pilot_id']}: {entry['status']}"
               + (f" — {entry['skip_reason']}" if entry.get("skip_reason") else ""))
 
+    try:
+        import review_package
+        review_path = review_package.write_review_page(
+            root, report["pilots"], title="Hidden Logic six-pilot review",
+        )
+        report["review_page"] = review_path.name
+    except Exception as exc:
+        # Keep review rendering helpful but non-blocking; the JSON report and videos remain authoritative.
+        print(f"Static review page unavailable (non-fatal): {type(exc).__name__}: {exc}")
+    _save_report(report_path, report)
+
     ready = sum(item["status"] == "ready_for_human_review" for item in report["pilots"])
     print(f"\nSaved {ready}/{len(PILOT_SPECS)} review-ready pilots under {root}.")
     print(f"Report: {report_path}")
+    if report.get("review_page"):
+        print(f"Review page: {root / report['review_page']}")
     print("No video was uploaded or published; rollout_enabled remains false.")
     return 0 if ready == len(PILOT_SPECS) else 1
 

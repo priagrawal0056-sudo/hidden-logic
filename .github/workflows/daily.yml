@@ -153,13 +153,32 @@ jobs:
             python -u autopilot.py
           fi
 
-      - name: Upload dry-run video artifact
+      - name: Upload dry-run video review artifact
         if: ${{ always() && (github.event_name == 'push' || github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && (inputs.dry_run || github.ref_name != 'main'))) }}
         uses: actions/upload-artifact@v4
         with:
           name: hidden-logic-dry-run-${{ github.run_number }}
-          path: drafts/draft_*/short.mp4
-          if-no-files-found: error
+          path: |
+            drafts/draft_*/short.mp4
+            drafts/draft_*/index.html
+            drafts/draft_*/meta.json
+            drafts/draft_*/frame_review/**
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Upload dry-run diagnostics
+        if: ${{ always() && (github.event_name == 'push' || github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && (inputs.dry_run || github.ref_name != 'main'))) }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hidden-logic-dry-run-diagnostics-${{ github.run_number }}
+          path: |
+            pipeline_log.txt
+            STARTUP_FAILED.txt
+            logs/skip_reasons.jsonl
+            drafts/draft_*/meta.json
+            drafts/draft_*/captions.ass
+            drafts/draft_*/timings.json
+          if-no-files-found: warn
           retention-days: 7
 
       - name: Upload unpublished pilot review batch

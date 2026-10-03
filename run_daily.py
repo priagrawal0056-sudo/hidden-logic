@@ -706,6 +706,25 @@ def make_one(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None = No
 
     with open(os.path.join(workdir, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, indent=2)
+    try:
+        import review_package
+        review_package.write_review_page(
+            workdir,
+            [{
+                "pilot_id": pilot_id or os.path.basename(os.path.normpath(workdir)),
+                "status": "ready_for_human_review" if pilot_id else "preview_ready",
+                "human_review_status": meta.get("human_review_status", "pending"),
+                "workdir": workdir,
+                "meta": meta,
+            }],
+            title="Hidden Logic draft review",
+        )
+        meta["review_page"] = "index.html"
+        with open(os.path.join(workdir, "meta.json"), "w", encoding="utf-8") as f:
+            json.dump(meta, f, indent=2)
+    except Exception as exc:
+        # Review HTML is a convenience artifact; it must never block a valid render.
+        log(f"Static review page unavailable (non-fatal): {type(exc).__name__}: {exc}")
 
     if generate_only:
         log("Generate only mode: skipping upload and cleanup.")
