@@ -75,6 +75,149 @@ def _external_source_link(raw_url: object) -> str:
     return parsed._replace(query="", fragment="").geturl()
 
 
+def _finite_seconds(value: object) -> float | None:
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return None
+    return number if number >= 0 and number < float("inf") else None
+
+
+def _format_time(seconds: float) -> str:
+    minutes = int(seconds // 60)
+    return f"{minutes}:{seconds - minutes * 60:04.1f}"
+
+
+def _definition_rows(rows: list[tuple[str, object]]) -> str:
+    return "".join(
+        f"<dt>{html.escape(label)}</dt><dd>{html.escape(_text(value))}</dd>"
+        for label, value in rows if value not in (None, "")
+    )
+
+
+def _story_block(meta: dict) -> str:
+    beats = meta.get("story_beats")
+    if not isinstance(beats, list) or not beats:
+        return ""
+    rows = []
+    cursor = 0.0
+    for index, beat in enumerate(beats):
+        if not isinstance(beat, dict):
+            continue
+        label = html.escape(_text(beat.get("beat") or f"Beat {index + 1}"))
+        sentence = html.escape(_text(beat.get("sentence")))
+        duration = _finite_seconds(beat.get("duration_seconds"))
+        if duration is not None and duration > 0:
+            start_label = _format_time(cursor)
+            end_label = _format_time(cursor + duration)
+            control = (
+                f'<button type="button" class="beat-jump" data-seek="{cursor:.3f}">'
+                f'{label} · {start_label}–{end_label}</button>'
+            )
+            cursor += duration
+        else:
+            control = f'<span class="beat-label">{label}</span>'
+        rows.append(f'<li>{control}<p>{sentence}</p></li>')
+    quote = html.escape(_text(meta.get("first_answer_quote")))
+    answer_time = _finite_seconds((meta.get("tts_quality") or {}).get("first_answer_seconds")
+                                  if isinstance(meta.get("tts_quality"), dict) else None)
+    answer_note = ""
+    if quote:
+        timing = f" at {_format_time(answer_time)}" if answer_time is not None else ""
+        answer_note = f'<p class="answer-note"><strong>Early answer{timing}:</strong> {quote}</p>'
+    if not rows and not answer_note:
+        return ""
+    return (
+        '<details class="story"><summary>Five-beat story and narration timing</summary>'
+        f'{answer_note}<ol class="beat-list">{"".join(rows)}</ol></details>'
+    )
+
+
+def _evidence_block(meta: dict) -> str:
+    record = meta.get("evidence_record")
+    if not isinstance(record, dict) or not record:
+        return ""
+    mechanism = html.escape(_text(record.get("mechanism")))
+    claims = record.get("supported_claims")
+    claim_list = "".join(
+        f"<li>{html.escape(_text(claim))}</li>"
+        for claim in claims if _text(claim).strip()
+    ) if isinstance(claims, list) else ""
+    sources = []
+    source_records = record.get("sources")
+    if isinstance(source_records, list):
+        for source in source_records:
+            if not isinstance(source, dict):
+                continue
+            title = html.escape(_text(source.get("title") or source.get("url") or "Evidence source"))
+            url = _external_source_link(source.get("url"))
+            if url:
+                sources.append(
+                    f'<li><a href="{html.escape(url, quote=True)}" '
+                    f'target="_blank" rel="noopener noreferrer">{title}</a></li>'
+                )
+            else:
+                sources.append(f"<li>{title}</li>")
+    sections = []
+    if mechanism:
+        sections.append(f'<p><strong>Mechanism:</strong> {mechanism}</p>')
+    if claim_list:
+        sections.append(f'<h4>Supported claims</h4><ul>{claim_list}</ul>')
+    if sources:
+        sections.append(f'<h4>Grounded sources</h4><ul>{"".join(sources)}</ul>')
+    if not sections:
+        return ""
+    return '<details class="evidence"><summary>Evidence and claim support</summary>' + "".join(sections) + "</details>"
+
+
+def _voice_checks(meta: dict) -> str:
+    quality = meta.get("tts_quality") if isinstance(meta.get("tts_quality"), dict) else {}
+    accuracy = _finite_seconds(quality.get("transcript_accuracy"))
+    accuracy_display = f"{accuracy:.1%}" if accuracy is not None and accuracy <= 1 else None
+    first_answer = _finite_seconds(quality.get("first_answer_seconds"))
+    rows = [
+        ("Identity", meta.get("voice_identity") or meta.get("voice")),
+        ("Delivery direction", meta.get("voice_direction")),
+        ("Engine / model", f"{meta.get('tts_engine', '')} / {meta.get('tts_model', '')}".strip(" /")),
+        ("Take", meta.get("tts_take")),
+        ("Transcript match", accuracy_display),
+        ("First answer", f"{first_answer:.2f}s" if first_answer is not None else None),
+        ("Spoken duration", quality.get("duration_seconds")),
+        ("Longest pause", quality.get("max_pause_seconds")),
+        ("Pitch range (semitones)", quality.get("pitch_span_semitones")),
+        ("Word-timing variation", quality.get("word_duration_cv")),
+        ("Clipping detected", quality.get("clipping_detected")),
+        ("Timing source", meta.get("timing_source")),
+    ]
+    body = _definition_rows(rows)
+    transcript = html.escape(_text(meta.get("transcript_actual")))
+    transcript_block = (
+        f'<details class="heard"><summary>Listen-check transcript</summary><p>{transcript}</p></details>'
+        if transcript else ""
+    )
+    if not body and not transcript:
+        return ""
+    return '<details class="voice-check"><summary>Voice and transcript checks</summary><dl>' + body + '</dl>' + transcript_block + '</details>'
+
+
+def _technical_checks(meta: dict) -> str:
+    caption = meta.get("caption_quality") if isinstance(meta.get("caption_quality"), dict) else {}
+    render = meta.get("render_quality") if isinstance(meta.get("render_quality"), dict) else {}
+    rows = [
+        ("Caption timing", caption.get("timing_source")),
+        ("Caption fade", caption.get("fade")),
+        ("Phrase-level captions", caption.get("phrase_level")),
+        ("Video format", f"{render.get('width', '')} × {render.get('height', '')}".strip(" ×")),
+        ("Video / audio codec", f"{render.get('video_codec', '')} / {render.get('audio_codec', '')}".strip(" /")),
+        ("Render duration (seconds)", render.get("duration_seconds")),
+        ("Mean / peak audio (dB)", f"{render.get('mean_volume_db', '')} / {render.get('peak_volume_db', '')}".strip(" /")),
+    ]
+    body = _definition_rows(rows)
+    if not body:
+        return ""
+    return '<details class="technical"><summary>Caption and render checks</summary><dl>' + body + '</dl></details>'
+
+
 def _shot_card(root: Path, workdir: Path | None, shot: dict, index: int) -> str:
     beat = html.escape(_text(shot.get("beat") or f"Beat {index + 1}"))
     review = shot.get("review") if isinstance(shot.get("review"), dict) else {}
@@ -150,16 +293,18 @@ def _episode_card(root: Path, entry: dict, index: int) -> str:
         f'<details class="script"><summary>Read the narration</summary><pre>{script}</pre></details>'
         if script else ""
     )
-    direction = _text(meta.get("voice_direction") or entry.get("voice_direction"))
-    voice = _text(meta.get("voice_identity") or entry.get("voice"))
-    model = _text(meta.get("tts_model") or entry.get("tts_model"))
-    voice_items = [value for value in (voice, direction, model) if value]
-    voice_line = (
-        '<p class="voice"><strong>Voice:</strong> '
-        + " · ".join(html.escape(value) for value in voice_items)
-        + "</p>"
-        if voice_items else ""
-    )
+    # Pilot/report summaries may omit fields that live in meta.json; fill the identity
+    # fields from the batch entry without replacing richer per-take measurements.
+    meta = dict(meta)
+    for key, fallback in (("voice_identity", entry.get("voice")),
+                          ("voice_direction", entry.get("voice_direction")),
+                          ("tts_model", entry.get("tts_model"))):
+        if not meta.get(key) and fallback:
+            meta[key] = fallback
+    voice_block = _voice_checks(meta)
+    story_block = _story_block(meta)
+    evidence_block = _evidence_block(meta)
+    technical_block = _technical_checks(meta)
     shot_records = meta.get("footage_shots")
     shots_html = "".join(
         _shot_card(root, workdir, shot, shot_index)
@@ -185,7 +330,8 @@ def _episode_card(root: Path, entry: dict, index: int) -> str:
         f'<p class="topic">{html.escape(topic)}</p></div>'
         f'<span class="status">{safe_status}</span></div>'
         f'<div class="media">{video}</div>'
-        f'{voice_line}{reason_block}{script_block}{shots_block}'
+        f'{voice_block}{story_block}{evidence_block}{technical_block}'
+        f'{reason_block}{script_block}{shots_block}'
         f'<p class="human"><strong>Human review:</strong> {html.escape(human_status)}. '
         'This page cannot approve or publish a video.</p>'
         '</section>'
@@ -228,9 +374,18 @@ h2 {{ margin:0; font-size:1.35rem; }}
 .media {{ width:min(100%,420px); margin:18px 0; overflow:hidden; border-radius:10px; background:#050608; }}
 video {{ display:block; width:100%; aspect-ratio:9/16; object-fit:contain; }}
 .no-video {{ padding:30px 16px; color:var(--warn); text-align:center; }}
-.script,.sources {{ margin:14px 0; padding:12px 14px; border:1px solid var(--line); border-radius:9px; }}
+.script,.sources,.story,.evidence,.voice-check,.technical {{ margin:14px 0; padding:12px 14px; border:1px solid var(--line); border-radius:9px; }}
 summary {{ cursor:pointer; font-weight:650; }}
 pre {{ overflow-wrap:anywhere; white-space:pre-wrap; color:#d8e1e9; font:inherit; }}
+.beat-list {{ display:grid; gap:10px; padding-left:22px; }}
+.beat-list li {{ padding:8px 0; }}
+.beat-list p {{ margin:5px 0; color:var(--muted); }}
+.beat-jump {{ max-width:100%; padding:5px 9px; border:1px solid var(--line); border-radius:7px; background:#202b35; color:var(--accent); font:inherit; text-align:left; cursor:pointer; }}
+.beat-jump:hover {{ background:#2b3a47; }}
+.beat-label {{ font-weight:650; }}
+.answer-note {{ padding:9px 11px; border-left:3px solid var(--accent); background:#19252b; }}
+.heard {{ margin:12px 0 0; padding:8px 10px; border:1px solid var(--line); border-radius:7px; }}
+.heard p {{ overflow-wrap:anywhere; }}
 .shots {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin-top:12px; }}
 .shot {{ padding:12px; border:1px solid var(--line); border-radius:8px; }}
 .shot h4 {{ margin:0 0 5px; }}
@@ -247,7 +402,23 @@ a {{ color:var(--accent); }}
 <body><main>
 <header><h1>{page_title}</h1><p>Review the full render, narration, reviewed stock sources, selected crop and visible action. This offline page does not record an approval or publish a video.</p></header>
 {cards or '<p>No drafts are available to review yet.</p>'}
-</main></body>
+</main>
+<script>
+for (const episode of document.querySelectorAll(".episode")) {{
+  const player = episode.querySelector("video");
+  if (!player) continue;
+  for (const button of episode.querySelectorAll("[data-seek]")) {{
+    button.addEventListener("click", () => {{
+      const start = Number(button.dataset.seek);
+      if (Number.isFinite(start) && start >= 0) {{
+        player.pause();
+        player.currentTime = start;
+      }}
+    }});
+  }}
+}}
+</script>
+</body>
 </html>
 """
     target = root / "index.html"

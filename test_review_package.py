@@ -21,6 +21,47 @@ class ReviewPackageTests(unittest.TestCase):
                 "voice_identity": "Orus",
                 "voice_direction": "curious_observation",
                 "tts_model": "gemini-test-tts",
+                "tts_engine": "gemini",
+                "tts_take": 1,
+                "timing_source": "faster-whisper-word-timestamps",
+                "first_answer_quote": "The connector is loose.",
+                "transcript_actual": "A cable bends at its connector. The connector is loose.",
+                "tts_quality": {
+                    "transcript_accuracy": 0.99,
+                    "first_answer_seconds": 1.8,
+                    "duration_seconds": 18.4,
+                    "max_pause_seconds": 0.7,
+                    "word_duration_cv": 0.3,
+                    "pitch_span_semitones": 4.5,
+                    "clipping_detected": False,
+                },
+                "story_beats": [{
+                    "beat": "observation",
+                    "sentence": "A cable bends at its connector.",
+                    "duration_seconds": 2.4,
+                }],
+                "evidence_record": {
+                    "mechanism": "A loose conductor can interrupt contact.",
+                    "supported_claims": ["Movement can briefly interrupt an electrical connection."],
+                    "sources": [{
+                        "title": "Example technical reference",
+                        "url": "https://example.com/reference?token=must-not-leak",
+                    }],
+                },
+                "caption_quality": {
+                    "timing_source": "verified_word_boundaries",
+                    "fade": False,
+                    "phrase_level": True,
+                },
+                "render_quality": {
+                    "width": 1080,
+                    "height": 1920,
+                    "video_codec": "h264",
+                    "audio_codec": "aac",
+                    "duration_seconds": 18.4,
+                    "mean_volume_db": -20.0,
+                    "peak_volume_db": -1.0,
+                },
                 "human_review_status": "pending",
                 "footage_shots": [{
                     "beat": "observation",
@@ -52,6 +93,14 @@ class ReviewPackageTests(unittest.TestCase):
             rendered = page.read_text(encoding="utf-8")
             self.assertIn('src="technology-01/short.mp4"', rendered)
             self.assertIn("Read the narration", rendered)
+            self.assertIn("Five-beat story and narration timing", rendered)
+            self.assertIn('data-seek="0.000"', rendered)
+            self.assertIn("Early answer at 0:01.8", rendered)
+            self.assertIn("Evidence and claim support", rendered)
+            self.assertIn("Grounded sources", rendered)
+            self.assertIn("Voice and transcript checks", rendered)
+            self.assertIn("99.0%", rendered)
+            self.assertIn("Caption and render checks", rendered)
             self.assertIn("Footage, action, crop, and source records", rendered)
             self.assertIn("frame_review/beat_1.jpg", rendered)
             self.assertIn("Human review:</strong> pending", rendered)
@@ -61,8 +110,10 @@ class ReviewPackageTests(unittest.TestCase):
             self.assertIn("https://www.pexels.com/video/example/\"", rendered)
             self.assertNotIn("must-not-leak", rendered)
             self.assertNotIn("<script>alert", rendered)
-            self.assertNotIn("<button", rendered.lower())
+            self.assertIn('<button type="button" class="beat-jump"', rendered)
+            self.assertNotIn('id="btn-approve"', rendered.lower())
             self.assertNotIn("/api/approve", rendered.lower())
+            self.assertNotIn("<script src=", rendered.lower())
             self.assertIn("does not record an approval or publish", rendered)
 
     def test_skipped_slot_is_explained_and_out_of_package_paths_are_not_linked(self):
