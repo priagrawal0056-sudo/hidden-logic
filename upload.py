@@ -10,12 +10,6 @@ import socket
 import threading
 import time
 
-from google.auth.transport.requests import Request
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
-from googleapiclient.http import MediaFileUpload
-
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload",
           "https://www.googleapis.com/auth/youtube.force-ssl",
           "https://www.googleapis.com/auth/yt-analytics.readonly"]
@@ -46,6 +40,10 @@ def _video_defaults():
 
 
 def _service():
+    from google.auth.transport.requests import Request
+    from google_auth_oauthlib.flow import InstalledAppFlow
+    from googleapiclient.discovery import build
+
     with _token_lock:
         creds = None
         if os.path.exists(TOKEN_FILE):
@@ -66,8 +64,16 @@ def _service():
 
 
 def upload(video_path: str, title: str, description: str, tags: list[str],
-           publish_at: str | None = None, meta_tags: list[str] | None = None) -> str:
+           publish_at: str | None = None, meta_tags: list[str] | None = None,
+           editorial_meta: dict | None = None) -> str:
+    import config_loader
+    from publication import assert_publication_allowed
+    cfg = config_loader.load_config("config.json")
+    assert_publication_allowed(cfg, editorial_meta, os.path.dirname(os.path.abspath(video_path)),
+                               source="YouTube")
     yt = _service()
+    from googleapiclient.errors import HttpError
+    from googleapiclient.http import MediaFileUpload
     # visible hashtags go in the description; hidden Studio tags use the richer meta_tags
     # set if provided (broad-to-specific search categorization), else fall back to hashtags.
     hidden_tags = [t.lstrip("#") for t in (meta_tags if meta_tags else tags)]

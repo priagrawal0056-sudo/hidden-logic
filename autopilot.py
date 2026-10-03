@@ -1,20 +1,10 @@
 """
-autopilot.py - ONE command, zero decisions. The system does everything.
+autopilot.py - one entry point for the existing daily Hidden Logic pipeline.
 
-    python autopilot.py
-
-That's it. With no input from you, the system:
-  1. Auto-picks today's single highest-potential topic (morning brief: trends + analytics
-     + scored ideas) and makes it video #1 of the day.
-  2. Fills the rest of the day's quota (videos_per_day in config.json) from the trend-aware
-     auto pool - it picks those topics itself too.
-  3. Scripts, gates, voices, captions, fetches b-roll, renders, and uploads each video on a
-     staggered schedule, seeds the first comment, replies to comments, and sends the digest.
-
-No topic to choose, no script to write, no button to press. Walk away.
-
-This is a thin wrapper around 'run_daily.py --hero' so you have one obvious command to run
-(and one obvious thing for Task Scheduler to launch). Pass --dry-run to build without uploading.
+The normal topic, script, evidence, voice, footage, caption, rendering, analytics, and upload
+integrations remain in run_daily.py. Uploads are fail-closed: rollout_enabled and
+pilot_review_complete must both be explicitly approved after the six unpublished pilots pass
+human review. Pass --dry-run to create private local drafts without uploading.
 """
 import os
 import subprocess

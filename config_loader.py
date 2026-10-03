@@ -15,6 +15,8 @@ putting them in config.json):
   HL_PIXABAY_API_KEY       -> pixabay_api_key
   HL_FOOTBALLDATA_API_KEY  -> footballdata_api_key
   HL_ALERT_WEBHOOK_URL     -> alert_webhook_url
+  HL_ROLLOUT_ENABLED       -> rollout_enabled (boolean; default false)
+  HL_PILOT_REVIEW_COMPLETE -> pilot_review_complete (boolean; default false)
 
 Backwards compatible: if you keep your keys in config.json, nothing changes.
 If both are set, the environment variable wins.
@@ -31,7 +33,11 @@ _SECRET_ENV_MAP = {
     "HL_PIXABAY_API_KEY": "pixabay_api_key",
     "HL_FOOTBALLDATA_API_KEY": "footballdata_api_key",
     "HL_ALERT_WEBHOOK_URL": "alert_webhook_url",
-    "HL_ELEVENLABS_API_KEY": "elevenlabs_api_key",
+}
+
+_BOOLEAN_ENV_MAP = {
+    "HL_ROLLOUT_ENABLED": "rollout_enabled",
+    "HL_PILOT_REVIEW_COMPLETE": "pilot_review_complete",
 }
 
 _SECRET_KEYS = set(_SECRET_ENV_MAP.values())
@@ -40,13 +46,26 @@ _SECRET_KEYS = set(_SECRET_ENV_MAP.values())
 def load_config(path: str = CONFIG_FILE) -> dict:
     """Load config.json (if present) and overlay secrets from environment variables."""
     cfg = {}
-    if os.path.exists(path):
-        with open(path, encoding="utf-8") as f:
+    source = path
+    if not os.path.exists(source) and os.path.basename(path) == CONFIG_FILE:
+        # Hosted CI may inject all secrets through environment variables and intentionally
+        # omit the ignored config.json. Use the committed non-secret template in that case.
+        if os.path.exists("config.example.json"):
+            source = "config.example.json"
+    if os.path.exists(source):
+        with open(source, encoding="utf-8") as f:
             cfg = json.load(f)
     for env_name, cfg_key in _SECRET_ENV_MAP.items():
         val = os.environ.get(env_name)
         if val:
             cfg[cfg_key] = val
+    for env_name, cfg_key in _BOOLEAN_ENV_MAP.items():
+        raw = os.environ.get(env_name)
+        if raw is not None:
+            cfg[cfg_key] = raw.strip().lower() in {"1", "true", "yes", "on"}
+    # Missing rollout keys are opt-out; never infer publication permission from an old config.
+    cfg.setdefault("rollout_enabled", False)
+    cfg.setdefault("pilot_review_complete", False)
     return cfg
 
 
@@ -83,9 +102,6 @@ def warn_if_secrets_in_file(path: str = CONFIG_FILE) -> list:
         v = raw.get(k)
         if isinstance(v, str) and v and "PASTE_" not in v and "_HERE" not in v:
             leaked.append(k)
-    pool = raw.get("elevenlabs_api_keys")
-    if isinstance(pool, list) and any(isinstance(x, str) and x.strip() for x in pool):
-        leaked.append("elevenlabs_api_keys")
     if leaked and not _WARNED_SECRETS:
         _WARNED_SECRETS = True
         print("[config] SECURITY: live secrets are stored in config.json (" +

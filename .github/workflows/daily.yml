@@ -1,11 +1,10 @@
 name: Hidden Logic Daily Autopilot
 
 # ───────────────────────────────────────────────────────────────────────────
-# Runs the whole pipeline on GitHub's servers, on a schedule, with no laptop.
-# After each production run it COMMITS the updated state files (idea_bank, ab_log, etc.)
-# back to the triggering branch, so the pipeline remembers what it made across runs.
-# Pull requests and manual dry runs stay isolated, render one MP4, and never publish.
-# Non-main branches are always dry runs; publishing happens only from main.
+# Runs the existing pipeline on GitHub Actions. Pull requests and non-main branches are
+# dry-run paths. Optional manual pilot generation creates six unpublished review drafts and
+# never requires YouTube OAuth. Every upload is also guarded by explicit publication approval.
+# Production state is committed only after a normal, approved run.
 # ───────────────────────────────────────────────────────────────────────────
 
 on:
@@ -19,12 +18,16 @@ on:
     branches: ['arena/01a0fe0a-hidden-logic']
   pull_request:
     branches: [main]
-  # Run manually from the Actions tab. Set dry_run to build one MP4 without uploading;
-  # the result is attached to the run as an artifact.
+  # Run manually from Actions to build one dry-run preview or the six unpublished pilots.
   workflow_dispatch:
     inputs:
       dry_run:
         description: "Build one test video without uploading it"
+        required: false
+        type: boolean
+        default: false
+      generate_pilots:
+        description: "Generate six unpublished editorial pilots for human review (no YouTube credentials used)"
         required: false
         type: boolean
         default: false
@@ -41,7 +44,7 @@ concurrency:
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
-    timeout-minutes: 120   # generous; a 5-video run fits well inside this
+    timeout-minutes: 240   # includes an optional six-pilot batch with local ASR/frame review
 
     steps:
       - name: Check out the repo (your code + current state files)
@@ -58,6 +61,7 @@ jobs:
           YT_TOKEN_B64: ${{ secrets.YT_TOKEN_B64 }}
           CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
           DRY_RUN: ${{ github.ref_name != 'main' || (github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+          GENERATE_PILOTS: ${{ github.event_name == 'workflow_dispatch' && inputs.generate_pilots }}
         run: |
           missing=0
           if [[ -z "$HL_GEMINI_API_KEY" ]]; then
@@ -68,7 +72,7 @@ jobs:
             echo "::error::Set at least one b-roll secret: HL_PEXELS_API_KEY or HL_PIXABAY_API_KEY."
             missing=1
           fi
-          if [[ "$DRY_RUN" != "true" ]]; then
+          if [[ "$DRY_RUN" != "true" && "$GENERATE_PILOTS" != "true" ]]; then
             if [[ -z "$YT_TOKEN_B64" ]]; then
               echo "::error::Missing GitHub Actions secret YT_TOKEN_B64 (required to upload)."
               missing=1
@@ -78,7 +82,7 @@ jobs:
               missing=1
             fi
           else
-            echo "Manual dry run: YouTube upload credentials are not needed."
+            echo "Dry-run/pilot batch: YouTube upload credentials are not needed."
           fi
           if [[ "$missing" -ne 0 ]]; then
             exit 1
@@ -106,9 +110,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Run offline editorial and publication regression suite
+        run: python -m unittest discover -v
+
       - name: Restore the YouTube OAuth token from secret
         # yt_token.pickle is binary, so we store it base64-encoded as a secret.
-        if: ${{ github.ref_name == 'main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.dry_run != true)) }}
+        if: ${{ github.ref_name == 'main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.dry_run != true && inputs.generate_pilots != true)) }}
         env:
           YT_TOKEN_B64: ${{ secrets.YT_TOKEN_B64 }}
         run: |
@@ -116,7 +123,7 @@ jobs:
           echo "token restored ($(wc -c < yt_token.pickle) bytes)"
 
       - name: Restore client_secret.json from secret
-        if: ${{ github.ref_name == 'main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.dry_run != true)) }}
+        if: ${{ github.ref_name == 'main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.dry_run != true && inputs.generate_pilots != true)) }}
         env:
           CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
         run: |
@@ -130,10 +137,16 @@ jobs:
           HL_PIXABAY_API_KEY:       ${{ secrets.HL_PIXABAY_API_KEY }}
           HL_FOOTBALLDATA_API_KEY:  ${{ secrets.HL_FOOTBALLDATA_API_KEY }}
           HL_ALERT_WEBHOOK_URL:     ${{ secrets.HL_ALERT_WEBHOOK_URL }}
+          HL_ROLLOUT_ENABLED:       ${{ vars.HL_ROLLOUT_ENABLED }}
+          HL_PILOT_REVIEW_COMPLETE: ${{ vars.HL_PILOT_REVIEW_COMPLETE }}
           DRY_RUN: ${{ github.ref_name != 'main' || (github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+          GENERATE_PILOTS: ${{ github.event_name == 'workflow_dispatch' && inputs.generate_pilots }}
           PYTHONUNBUFFERED: '1'
         run: |
-          if [[ "$DRY_RUN" == "true" ]]; then
+          if [[ "$GENERATE_PILOTS" == "true" ]]; then
+            echo "Generating six unpublished pilot drafts. YouTube upload is disabled."
+            python -u pilot_batch.py --generate
+          elif [[ "$DRY_RUN" == "true" ]]; then
             echo "Building one video without uploading it."
             python -u run_daily.py --hero --dry-run --count 1
           else
@@ -149,11 +162,51 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
+      - name: Upload unpublished pilot review batch
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.generate_pilots }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hidden-logic-unpublished-pilots-${{ github.run_number }}
+          path: pilots/unpublished/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Persist stock clip IDs reserved by the pilot batch
+        if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.generate_pilots }}
+        run: |
+          if [[ ! -f used_clips.json ]]; then
+            echo "::error::The used-clip registry is missing; refusing to lose pilot reservations."
+            exit 1
+          fi
+          git config user.name  "hidden-logic-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -- used_clips.json
+          if git diff --cached --quiet; then
+            echo "No new stock clip reservations to save."
+            exit 0
+          fi
+          git commit -m "[skip ci] reserve stock clips used by unpublished pilots"
+          branch="$GITHUB_REF_NAME"
+          pushed=0
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin "$branch" && git push origin "HEAD:$branch"; then
+              echo "Pilot stock-clip reservations saved to $branch."
+              pushed=1
+              break
+            fi
+            echo "reservation push attempt $i failed, retrying..."
+            sleep 5
+          done
+          if [[ "$pushed" -ne 1 ]]; then
+            echo "::error::Pilot stock-clip reservations could not be pushed after three attempts."
+            exit 1
+          fi
+
       - name: Commit updated state files back to the repo
         # This is the CRITICAL step: without it, the pipeline forgets everything
         # each run (re-makes the same topics, loses its learning). We commit only
         # the state JSONs that the run updates - never secrets or rendered videos.
-        if: ${{ always() && github.ref_name == 'main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.dry_run != true)) }}   # preserve state only after production runs
+        if: ${{ always() && github.ref_name == 'main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.dry_run != true && inputs.generate_pilots != true)) }}   # preserve state only after production runs
         run: |
           git config user.name  "hidden-logic-bot"
           git config user.email "bot@users.noreply.github.com"

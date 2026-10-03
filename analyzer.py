@@ -197,32 +197,18 @@ def todays_brief() -> dict | None:
 
 
 def brief_prompt_snippet() -> str:
-    """The soft guidance injected into the writer. Empty string if no fresh brief."""
+    """Historical performance may suggest topics, never override editorial gates."""
     b = todays_brief()
-    if not b:
+    if not b or not b.get("hot_subjects"):
         return ""
-    parts = []
-    if b.get("best_formats"):
-        parts.append(f"formats performing best lately: {', '.join(b['best_formats'])}")
-    if b.get("weak_formats"):
-        parts.append(f"underperforming (use sparingly): {', '.join(b['weak_formats'])}")
-    if b.get("best_eras"):
-        parts.append(f"strongest era angle: {b['best_eras'][0]}")
-    if b.get("best_hooks"):
-        hook_label = {"number":"number/stat-led hooks", "question":"question hooks",
-                      "bold_claim":"bold-claim hooks (only/never/first/secret)", "plain":"direct hooks"}
-        labels = [hook_label.get(h, h) for h in b["best_hooks"]]
-        parts.append(f"hook styles retaining best: {', '.join(labels)}")
-    if b.get("hot_subjects"):
-        parts.append(f"subjects driving engagement: {', '.join(b['hot_subjects'][:3])}")
-    if not parts:
-        return ""
-    return ("\n\nDATA SIGNAL (from this channel's OWN recent retention data - this is real "
-            "performance, weight it heavily): " + "; ".join(parts) + ". "
-            "Lean toward the best-performing formats/hooks/subjects above. "
-            "AVOID the underperforming formats unless the topic genuinely demands one - "
-            "they have measurably lost this channel views. Keep enough variety to stay fresh, "
-            "but treat this signal as evidence, not a loose suggestion.")
+    subjects = ", ".join(b["hot_subjects"][:3])
+    return (
+        "Historical performance note (candidate inspiration only; not factual evidence): "
+        f"these subjects previously had stronger engagement: {subjects}. "
+        "Do not imitate old phrasing or framing, and do not let this note override the current "
+        "requirements for an observed action, an early supported answer, evidence fidelity, "
+        "relevant footage, and a complete non-manipulative explanation."
+    )
 
 
 def analysis_topic() -> str | None:
@@ -271,17 +257,13 @@ def retention_insight(cfg: dict, log=print) -> str:
         return ""
     avg_drop = sum(early_drops) / len(early_drops)
     pct = int(avg_drop * 100)
-    if avg_drop < 0.25:
-        where = (f"viewers tend to drop in the FIRST QUARTER (around {pct}% in) - the hook "
-                 f"and opening fact must hit faster; front-load the most shocking detail.")
-    elif avg_drop < 0.6:
-        where = (f"viewers hold through the opening but fall off near the MIDDLE (around {pct}% in) "
-                 f"- tighten the middle, move the twist earlier, keep the like-CTA from stalling pace.")
-    else:
-        where = (f"retention stays strong past the midpoint (half-audience around {pct}% in) "
-                 f"- the structure works; keep doing this.")
-    log(f"retention insight: half-audience point ~{pct}% through")
-    return "\n\nRETENTION SIGNAL (from this channel's own drop-off curves): " + where
+    where = (
+        f"historically, half the sampled viewers had left by about {pct}% of runtime. "
+        "This is a descriptive signal only: keep each beat useful and concise, but do not "
+        "withhold the answer or add suspense to chase retention."
+    )
+    log(f"retention insight: historical half-audience point ~{pct}% through")
+    return "\n\nRETENTION CONTEXT: " + where
 
 
 def rater_benchmark(cfg: dict, log=print) -> str:
@@ -333,12 +315,14 @@ def rater_benchmark(cfg: dict, log=print) -> str:
         r = f"{int(v['ret'])}% retention" if v["ret"] is not None else f"{v['views']} views"
         return f'  - "{title}" ({r})'
 
-    lines = ["\n\nCALIBRATION (this channel's REAL performance - score against THIS standard, "
-             "not generic rules):",
-             "TOP performers (these are what an 8-10 looks like HERE):"]
+    lines = ["\n\nRETROSPECTIVE PERFORMANCE CONTEXT (descriptive, not causal or factual evidence):",
+             "Higher-performing historical titles:"]
     lines += [fmt(v) for v in winners]
-    lines += ["WEAK performers (these are 3-5 - avoid what they did):"]
+    lines += ["Lower-performing historical titles:"]
     lines += [fmt(v) for v in losers]
-    lines.append("Score the new script by how closely it resembles the TOP set's hook style, "
-                 "specificity, and payoff - reward what demonstrably worked here.")
+    lines.append(
+        "Use this only as weak context about possible topic relevance. Do not imitate old wording "
+        "or tone, and never override the observed-story, early-answer, evidence, footage, or "
+        "complete-ending requirements above. Score the present script on those requirements."
+    )
     return "\n".join(lines)

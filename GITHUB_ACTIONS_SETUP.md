@@ -1,9 +1,8 @@
 # Hidden Logic → GitHub Actions: Hands-Free Cloud Setup
 
-Goal: your pipeline runs daily on GitHub's servers, uploads to YouTube, and
-remembers its state — with your laptop completely out of the picture. Free, no card.
+Goal: run safe previews and unpublished editorial pilots on GitHub's servers while preserving the existing pipeline and its state. Publication is disabled until all six pilots have passed human review and both rollout flags are explicitly enabled.
 
-This is a one-time setup (~1-2 hours). After it, you don't touch anything.
+This is a one-time setup (~1-2 hours). Manual pilot generation never requires YouTube OAuth and never uploads or publishes.
 
 ────────────────────────────────────────────────────────────────────────
 ## What you need before starting
@@ -85,14 +84,14 @@ access). If uploads start failing, regenerate yt_token.pickle locally and
 redo this step. The failure alert (Step 7) tells you when this happens.
 
 ────────────────────────────────────────────────────────────────────────
-## STEP 6 — Test it by hand BEFORE trusting the schedule
-1. Each push to the `arena/01a0fe0a-hidden-logic` PR branch automatically runs a one-video dry run; open the run under **Actions** and download its `hidden-logic-dry-run-...` artifact to play the MP4.
-2. After the workflow change is merged to `main`, PR runs also appear as checks. You can trigger it manually from Actions → "Hidden Logic Daily Autopilot" → "Run workflow". Enable **Build one test video without uploading it** when running on `main`; non-main branches are forced to dry-run.
-3. A dry run checks script generation, voice, b-roll, captions, ffmpeg rendering, and the output MP4 without touching YouTube.
-4. After the PR is merged, run the workflow on `main` with dry-run **off** to restore YouTube credentials, upload/schedule videos, and commit updated state.
-5. Check YouTube and the repo for the uploaded/scheduled video and the `autopilot state update ...` commit.
+## STEP 6 — Validate safely and build the six pilots
+1. The workflow runs `python -m unittest discover -v` before any generation path. Push and PR previews are dry-run only; they never upload.
+2. For the review batch, open **Actions → Hidden Logic Daily Autopilot → Run workflow**, select **Generate six unpublished editorial pilots**, and run it on the Arena working branch. The job uses `HL_GEMINI_API_KEY` plus at least one of `HL_PEXELS_API_KEY` / `HL_PIXABAY_API_KEY`; YouTube OAuth credentials are not restored or used.
+3. Download the `hidden-logic-unpublished-pilots-...` artifact. Inspect all six MP4s, captions, source/license records, reviewed crops, and sampled frames. Weak or incomplete slots are reported as skipped, not silently filled.
+4. The workflow persists only clip IDs/hashes reserved by successful pilot footage so later batches do not recycle it. Pilot media remains an artifact and is not committed.
+5. Do not publish or merge/enable production rollout as part of pilot generation. Human review is required; only after all six are explicitly approved should the repository variables `HL_ROLLOUT_ENABLED` and `HL_PILOT_REVIEW_COMPLETE` be set to `true` under separate approval.
 
-A dry run needs `HL_GEMINI_API_KEY` and at least one of `HL_PEXELS_API_KEY` / `HL_PIXABAY_API_KEY`. A production run also needs `YT_TOKEN_B64` and `CLIENT_SECRET_JSON`. The workflow validates these before spending time generating; it reports missing secret names without exposing their values.
+A manual pilot run needs `HL_GEMINI_API_KEY` and at least one stock-footage secret. Only a separate approved production run requires `YT_TOKEN_B64` and `CLIENT_SECRET_JSON`. The workflow reports missing secret names, never their values.
 
 ────────────────────────────────────────────────────────────────────────
 ## STEP 7 — The safety net (so you KNOW if it dies while you're busy)
@@ -106,10 +105,10 @@ if the whole scheduled job never fires — GitHub is reliable, but if you go
 weeks without a Discord digest, that silence is your signal to check.
 
 ────────────────────────────────────────────────────────────────────────
-## Ongoing: you do nothing.
-It runs daily, uploads, commits its own state. You only act if:
-- you get a failure email/Discord alert, or
-- you stop seeing the daily Discord digest (check the Actions tab).
+## Ongoing: keep publication blocked until review.
+Scheduled workflow runs must not publish while the two rollout variables are false. Review the six pilot artifacts first; do not enable rollout or merge the open PR without explicit authorization. You only need to act if:
+- a preview or pilot workflow fails, or
+- you are ready to review the unpublished pilot batch.
 
 ## Watch your free minutes
 Settings → Billing → Plans and usage. Free = 2,000 min/month. One run is
