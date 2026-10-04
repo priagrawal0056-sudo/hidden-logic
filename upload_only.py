@@ -95,7 +95,8 @@ def mark_as_uploaded(workdir: str, url: str, publish_at: str | None):
         except Exception as e:
             log(f"Failed to update meta.json in {workdir}: {e}")
 
-def upload_single_draft(video_path: str, workdir: str, meta: dict, publish_at: str | None, dry_run: bool) -> str:
+def upload_single_draft(video_path: str, workdir: str, meta: dict, publish_at: str | None,
+                        dry_run: bool, cfg: dict | None = None) -> str:
     """Uploads a single draft video and updates metadata / channel indices."""
     title = meta.get("title", "Untitled Short")
     description = meta.get("description", "")
@@ -109,7 +110,12 @@ def upload_single_draft(video_path: str, workdir: str, meta: dict, publish_at: s
 
     # Step 1: Upload
     log(f"Starting upload for {video_path}...")
-    url = upload.upload(video_path, title, description, hashtags, publish_at=publish_at, meta_tags=tags)
+    import config_loader
+    from publication import assert_publication_allowed
+    resolved_config = cfg if isinstance(cfg, dict) else config_loader.load_config("config.json")
+    assert_publication_allowed(resolved_config, meta, workdir, source="upload-only draft")
+    url = upload.upload(video_path, title, description, hashtags, publish_at=publish_at,
+                        meta_tags=tags, editorial_meta=meta)
     log(f"Uploaded: {url}" + (f" (publishes {publish_at})" if publish_at else ""))
     
     video_id = url.rsplit("/", 1)[-1]
@@ -219,14 +225,19 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Do not perform actual uploads; just log what would be done.")
     args = parser.parse_args()
 
-    # Load configuration
-    cfg = {}
-    if os.path.exists("config.json"):
-        try:
-            with open("config.json") as f:
-                cfg = json.load(f)
-        except Exception as e:
-            log(f"Error loading config.json: {e}")
+    # Load the shared config/env overlay so rollout flags and secrets behave exactly as in
+    # run_daily.py (unset publication flags default to false).
+    import config_loader
+    try:
+        cfg = config_loader.load_config("config.json")
+    except Exception as e:
+        log(f"Error loading config.json: {e}")
+        cfg = {}
+
+    # Fail closed before OAuth refresh or any publishing-side API call.
+    if not args.dry_run:
+        from publication import assert_publication_allowed
+        assert_publication_allowed(cfg, source="upload-only batch")
 
     # Check OAuth token first (triggers authentication browser if not set or invalid)
     if not args.dry_run:
@@ -267,7 +278,20 @@ def main():
                             meta = json.load(f)
                     except Exception as e:
                         log(f"Warning: Could not read metadata in {workdir}: {e}")
-                
+                from publication import episode_issues
+                issues = episode_issues(meta, workdir)
+                if issues:
+                    reason = "; ".join(issues)
+                    import editorial_quality
+                    editorial_quality.record_skip_reason(
+                        "logs/skip_reasons.jsonl", episode_id=os.path.basename(workdir),
+                        topic=meta.get("topic", ""), reason=reason, phase="upload_only_reserve",
+                    )
+                    log(f"Skipping upload-only reserve {workdir}: {reason}")
+                    continue
+                if meta.get("pilot_mode") and str(meta.get("human_review_status", "")).lower() != "approved":
+                    log(f"Skipping upload-only pilot {workdir}: human review is not approved")
+                    continue
                 all_drafts.append({
                     "video_path": video_path,
                     "workdir": workdir,
@@ -323,7 +347,8 @@ def main():
                 draft["workdir"], 
                 draft["meta"], 
                 publish_at, 
-                args.dry_run
+                args.dry_run,
+                cfg,
             )
             futures[future] = draft["workdir"]
 

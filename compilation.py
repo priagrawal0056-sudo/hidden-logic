@@ -102,6 +102,8 @@ def build(files: list[str], out_path: str):
 
 
 def run_weekly_compilation(cfg: dict, log=print, top_n: int = 6):
+    from publication import assert_publication_allowed
+    assert_publication_allowed(cfg, source="weekly compilation")
     state = _load()
     cands = [c for c in _candidates() if c["file"] not in state["used_files"]]
     cands = _rank_by_views(cands)[:top_n]

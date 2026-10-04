@@ -544,9 +544,13 @@ def _pick_music_by_mood(music_dir: str, meta: dict, log=print):
 
 
 def make_one(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None = None,
-             topic: str | None = None, strict_topic_lock: bool = False, generate_only: bool = False) -> str | None | dict:
+             topic: str | None = None, strict_topic_lock: bool = False, generate_only: bool = False,
+             voice_direction: str | None = None, pilot_id: str | None = None) -> str | None | dict:
+    if not dry_run and not generate_only:
+        from publication import assert_publication_allowed
+        assert_publication_allowed(cfg)
     os.makedirs(workdir, exist_ok=True)
-    scriptgen.PROVIDER = cfg.get("llm_provider", "gemini")
+    scriptgen.PROVIDER = str(cfg.get("llm_provider", "gemini")).strip().lower()
     scriptgen.MIN_SCORE = float(cfg.get("min_quality", 8))
     scriptgen.MAX_ATTEMPTS = int(cfg.get("max_attempts_per_video", 8))
     scriptgen.QUALITY_FLOOR = float(cfg.get("quality_floor", 6))
@@ -598,106 +602,129 @@ def make_one(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None = No
     ass = os.path.join(workdir, "captions.ass")
     out = os.path.join(workdir, "short.mp4")
 
-    tts.synthesize(meta["script"], voice, timings, cfg.get("voice") or tts.pick_voice(),
-                   api_key=cfg.get("gemini_api_key", ""), engine=cfg.get("tts_engine", "auto"),
-                   cfg=cfg)
-    # per-video surface variation (anti-sameness): rotate caption accent color and the
-    # cut interval within the research-backed 2-3s pattern-interrupt band, so consecutive
-    # videos don't fingerprint as the same template. A config 'cut_seconds' pins it (opt-out
-    # of variation); otherwise it varies per video. Decide ONCE so the clip count and the
-    # actual cut length always match.
-    import random as _rand
-    accent = _rand.choice(["gold", "cyan", "green", "orange"])
-    # cut cadence: an explicit config "cut_seconds" always wins. Otherwise, if fast_pacing is
-    # on (default), use a tighter 1.8-2.4s cadence (research: viral faceless Shorts change the
-    # visual every ~1-2s; slow visuals cause mid-video drop-off). With fast_pacing off, fall
-    # back to the older, calmer 2.4-3.0s. Still randomised so videos don't fingerprint.
-    if cfg.get("cut_seconds"):
-        cut_sec = float(cfg["cut_seconds"])
-    elif cfg.get("fast_pacing", True):
-        cut_sec = round(_rand.uniform(1.8, 2.4), 1)
-    else:
-        cut_sec = round(_rand.uniform(2.4, 3.0), 1)
-    captions.build_ass(timings, ass, meta.get("emphasis_words", []), accent=accent)
-    with open(timings) as f:
+    import editorial_quality
+    sentences = editorial_quality.split_sentences(meta["script"])
+    if len(sentences) != 5:
+        raise RuntimeError(f"Script must contain five complete story beats, found {len(sentences)}")
+    direction = (voice_direction or meta.get("voice_direction")
+                 or cfg.get("pilot_voice_direction") or "curious_observation")
+    meta["voice_direction"] = direction
+    meta["assembly_profile"] = "observed-story-natural-v1"
+    meta["rollout_enabled"] = bool(cfg.get("rollout_enabled", False))
+    if pilot_id:
+        meta.update({
+            "pilot_mode": True,
+            "pilot_id": pilot_id,
+            "human_review_status": "pending",
+            "rollout_enabled": False,
+        })
+
+    tts.synthesize(meta["script"], voice, timings, tts.DEFAULT_VOICE,
+                   api_key=cfg.get("gemini_api_key", ""), cfg=cfg, metadata=meta,
+                   direction=direction)
+    with open(timings, encoding="utf-8") as f:
         words = json.load(f)
-        audio_len = words[-1]["end"] + 0.8
-        
-    cut_times = []
-    for w in words:
-        if w.get("word", "").strip().endswith((".", "?", "!")):
-            cut_times.append(w["end"])
-            
-    if not cut_times:
-        cut_times.append(audio_len)
-    else:
-        cut_times[-1] = audio_len
-        
-    sentence_durs = []
-    last_c = 0.0
-    for ct in cut_times:
-        dur = ct - last_c
-        if dur > 0.5:
-            sentence_durs.append(dur)
-            last_c = ct
-            
-    if last_c < audio_len and sentence_durs:
-        sentence_durs[-1] += (audio_len - last_c)
-        
-    final_durs = []
-    for i, d in enumerate(sentence_durs):
-        # CUT PACING (2026 retention research): a frame held >4s reads as "static" and triggers
-        # swipes; viral faceless Shorts change visuals every 1-3s. Old threshold (4.5s) let
-        # segments sit right ON the swipe line. Now: no segment over ~3.2s, and the FIRST
-        # segment splits even earlier (>2.4s) so a visible cut lands inside the 0-2.4s hook
-        # zone - early motion is a pattern interrupt exactly where the swipe decision happens.
-        limit = 2.4 if i == 0 else 3.2
-        if d > limit:
-            final_durs.extend([d/2, d/2])
-        else:
-            final_durs.append(d)
-            
-    n_clips = len(final_durs)
-    cut_sec = final_durs  # pass the array instead of a float
-    # Pass the real Gemini key so b-roll RELEVANCE scoring runs (esp. the first frame = the
-    # de-facto Shorts thumbnail). It was hard-disabled with None, so clips were picked by
-    # search-order/shuffle only. Cost is modest (one batched call per keyword) and the pinned
-    # topic-gate fix freed up ample quota. Set "score_broll": false in config to disable.
-    bgs = visuals.fetch_backgrounds(cfg["pexels_api_key"], meta.get("broll_keywords", []),
-                                    workdir, count=n_clips,
-                                    pixabay_key=cfg.get("pixabay_api_key"),
-                                    gemini_api_key=(cfg.get("gemini_api_key") if cfg.get("score_broll", True) else None),
-                                    visual_thesis=meta.get("visual_thesis", ""),
-                                    first_frame_description=meta.get("first_frame_description", ""),
-                                    topic=meta.get("topic", ""))
-    music = cfg.get("music_file") or None
+    if not words:
+        raise RuntimeError("TTS returned no verified word timings")
+    # Assembly duration follows the verified spoken-word end plus the intended short tail;
+    # the encoded MP3 can contain extra trailing silence that must not shift shot boundaries.
+    audio_len = float(words[-1]["end"]) + 0.8
+    meta["render_expected_duration_seconds"] = round(audio_len, 3)
+    segment_durs = editorial_quality.five_beat_segment_durations(
+        meta["script"], words, audio_len)
+    meta["story_beats"] = [
+        {"beat": name, "sentence": sentence, "duration_seconds": round(duration, 3)}
+        for name, sentence, duration in zip(
+            ("observation", "action_start", "detail", "change_comparison", "payoff"),
+            sentences, segment_durs)
+    ]
+
+    # Restrained phrase captions use verified word-level timing; no decoration,
+    # moving hooks, or aggressive accents are applied to the image.
+    accent = "gold"
+    captions.build_ass(timings, ass, meta.get("emphasis_words", []), accent=accent)
+
+    # Five distinct shots follow the five explicit story beats. Each query is sent in
+    # spoken order, and footage quality is a hard gate rather than a best-effort toggle.
+    bgs = visuals.fetch_backgrounds(
+        cfg.get("pexels_api_key", ""), meta.get("broll_keywords", []), workdir, count=5,
+        pixabay_key=cfg.get("pixabay_api_key"),
+        gemini_api_key=cfg.get("gemini_api_key"),
+        visual_thesis=meta.get("visual_thesis", ""),
+        first_frame_description=meta.get("first_frame_description", ""),
+        topic=meta.get("topic", ""),
+        segment_durations=segment_durs, sentences=sentences, episode_meta=meta,
+    )
+    meta["shot_plan"] = [
+        {"beat": beat["beat"], "sentence": beat["sentence"],
+         "duration_seconds": beat["duration_seconds"],
+         "footage": os.path.basename(path)}
+        for beat, path in zip(meta["story_beats"], bgs)
+    ]
+
+    # Background music is an explicit opt-in; quiet, clear narration is the default.
+    music = cfg.get("music_file") if cfg.get("editorial_music_enabled", False) else None
     if music and os.path.isdir(music):
-        import random
         chosen = _pick_music_by_mood(music, meta, log)
         music = chosen
         if music:
             log(f"Music: {os.path.basename(music)}")
-    brand_label = None
-    # opening text hook = the script's hook line (first sentence), shown big for the first
-    # ~2.8s. Toggle the two retention features from config (default on).
-    # the distinct on-screen TEXT HOOK (third hook), e.g. "ON PURPOSE" - amplifies the gap and
-    # is different from the spoken captions. Shown big at the top for the first ~2.3s.
-    hook_text = (meta.get("text_hook") or "").strip()
-    if not cfg.get("opening_hook_text", True):
-        hook_text = ""
-    assemble.assemble(bgs, voice, timings, ass, out, music,
-                      music_volume=float(cfg.get("music_volume", 0.10)),
-                      seg_seconds=cut_sec,
-                      emphasis_words=meta.get("emphasis_words", []),
-                      brand_label=brand_label,
-                      fast_pacing=bool(cfg.get("fast_pacing", True)),
-                      opening_hook_text=hook_text or None,
-                      show_subscribe_cue=bool(cfg.get("show_subscribe_cue", False)),
-                      show_follow_cue=bool(cfg.get("show_follow_cue", False)))
-    log(f"Built {out} (accent={accent}, cut={cut_sec}s)")
+    assemble.assemble(
+        bgs, voice, timings, ass, out, music,
+        music_volume=float(cfg.get("music_volume", 0.06)),
+        seg_seconds=segment_durs,
+        emphasis_words=meta.get("emphasis_words", []),
+        brand_label=None,
+        fast_pacing=False,
+        opening_hook_text=None,
+        show_subscribe_cue=False,
+        show_follow_cue=False,
+        shot_records=meta.get("footage_shots", []),
+        strict_editorial=True,
+    )
+    render_issues, render_metrics = editorial_quality.validate_render(
+        out, expected_duration=audio_len)
+    if render_issues:
+        raise RuntimeError("Rendered-video quality gate failed: " + "; ".join(render_issues))
+    meta["render_quality"] = render_metrics
+    meta["caption_quality"] = {
+        "timing_source": "verified_word_boundaries",
+        "accent": accent,
+        "fade": False,
+        "phrase_level": True,
+    }
+    episode_issues = editorial_quality.validate_episode_meta(meta, workdir)
+    if episode_issues:
+        reason = "; ".join(episode_issues)
+        editorial_quality.record_skip_reason(
+            "logs/skip_reasons.jsonl",
+            episode_id=pilot_id or os.path.basename(workdir),
+            topic=meta.get("topic", ""), reason=reason, phase="reserve_quality",
+        )
+        raise RuntimeError("Episode reserve gate rejected draft: " + reason)
+    log(f"Built {out} (five-beat story, natural cuts, accent={accent})")
 
     with open(os.path.join(workdir, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, indent=2)
+    try:
+        import review_package
+        review_package.write_review_page(
+            workdir,
+            [{
+                "pilot_id": pilot_id or os.path.basename(os.path.normpath(workdir)),
+                "status": "ready_for_human_review" if pilot_id else "preview_ready",
+                "human_review_status": meta.get("human_review_status", "pending"),
+                "workdir": workdir,
+                "meta": meta,
+            }],
+            title="Hidden Logic draft review",
+        )
+        meta["review_page"] = "index.html"
+        with open(os.path.join(workdir, "meta.json"), "w", encoding="utf-8") as f:
+            json.dump(meta, f, indent=2)
+    except Exception as exc:
+        # Review HTML is a convenience artifact; it must never block a valid render.
+        log(f"Static review page unavailable (non-fatal): {type(exc).__name__}: {exc}")
 
     if generate_only:
         log("Generate only mode: skipping upload and cleanup.")
@@ -711,7 +738,7 @@ def make_one(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None = No
 
     import upload
     url = upload.upload(out, meta["title"], meta["description"], meta["hashtags"],
-                        publish_at=publish_at, meta_tags=meta.get("tags"))
+                        publish_at=publish_at, meta_tags=meta.get("tags"), editorial_meta=meta)
     log(f"Uploaded: {url}" + (f" (publishes {publish_at})" if publish_at else ""))
     try:
         import video_context
@@ -907,7 +934,20 @@ def publish_draft(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None
         return None
     with open(meta_path, encoding="utf-8") as f:
         meta = json.load(f)
-    
+    from publication import assert_publication_allowed, episode_issues
+    quality_issues = episode_issues(meta, workdir)
+    if quality_issues:
+        reason = "; ".join(quality_issues)
+        import editorial_quality
+        editorial_quality.record_skip_reason(
+            "logs/skip_reasons.jsonl", episode_id=os.path.basename(workdir),
+            topic=meta.get("topic", ""), reason=reason, phase="publication_reserve",
+        )
+        log(f"Skipping reserve {workdir}: {reason}")
+        return None
+    if not dry_run:
+        assert_publication_allowed(cfg, meta, workdir, source="draft")
+
     # We call make_one's second half essentially.
     # To avoid huge code duplication, we'll just re-run the upload logic. 
     # But for simplicity, we assume `make_one` can just be bypassed or we 
@@ -926,7 +966,7 @@ def publish_draft(cfg: dict, workdir: str, dry_run: bool, publish_at: str | None
     import datetime as dt
     import re
     url = upload.upload(out, meta["title"], meta["description"], meta["hashtags"],
-                        publish_at=publish_at, meta_tags=meta.get("tags"))
+                        publish_at=publish_at, meta_tags=meta.get("tags"), editorial_meta=meta)
     log(f"Uploaded: {url}" + (f" (publishes {publish_at})" if publish_at else ""))
     
     video_id = url.rsplit("/", 1)[-1]
@@ -1237,6 +1277,9 @@ def _send_digest(cfg: dict, ok: int, fail: int, made: list, replies_posted: int 
 
 def run_upload_only(cfg: dict, args, log):
     """Scan drafts/ recursively, upload completed drafts, and exit."""
+    if not args.dry_run:
+        from publication import assert_publication_allowed
+        assert_publication_allowed(cfg, source="upload-only batch")
     import upload
     import boost
     import winner_memory
@@ -1299,7 +1342,20 @@ def run_upload_only(cfg: dict, args, log):
                             meta = json.load(f)
                     except Exception as e:
                         log(f"Warning: Could not read metadata in {workdir}: {e}")
-                
+                from publication import episode_issues
+                issues = episode_issues(meta, workdir)
+                if issues:
+                    reason = "; ".join(issues)
+                    import editorial_quality
+                    editorial_quality.record_skip_reason(
+                        "logs/skip_reasons.jsonl", episode_id=os.path.basename(workdir),
+                        topic=meta.get("topic", ""), reason=reason, phase="upload_only_reserve",
+                    )
+                    log(f"Skipping upload-only reserve {workdir}: {reason}")
+                    continue
+                if meta.get("pilot_mode") and str(meta.get("human_review_status", "")).lower() != "approved":
+                    log(f"Skipping upload-only pilot {workdir}: human review is not approved")
+                    continue
                 all_drafts.append({
                     "video_path": video_path,
                     "workdir": workdir,
@@ -1351,7 +1407,8 @@ def run_upload_only(cfg: dict, args, log):
             return "https://youtube.com/watch?v=dryrun"
 
         log(f"Starting upload for {video_path}...")
-        url = upload.upload(video_path, title, description, hashtags, publish_at=publish_at, meta_tags=tags)
+        url = upload.upload(video_path, title, description, hashtags, publish_at=publish_at,
+                            meta_tags=tags, editorial_meta=meta)
         log(f"Uploaded: {url}" + (f" (publishes {publish_at})" if publish_at else ""))
         try:
             import video_context
@@ -1536,6 +1593,38 @@ def print_upload_summary(total, succeeded, failed, already):
     sys.stdout.flush()
 
 
+def _startup_preflight(cfg: dict, dry_run: bool, upload_only: bool = False) -> None:
+    """Fail early with actionable setup errors instead of burning a run on missing tools/keys."""
+    import shutil
+
+    problems = []
+    if upload_only:
+        # Drafts are already built; only the uploader's own auth checks apply.
+        return
+
+    def configured(value):
+        text = str(value or "").strip()
+        return bool(text) and not text.upper().startswith("PASTE_")
+
+    provider = str(cfg.get("llm_provider", "gemini")).strip().lower()
+    if provider == "claude_code":
+        if not any(shutil.which(name) for name in ("claude", "claude.cmd", "claude.exe")):
+            problems.append("Claude Code is selected but its CLI is not installed/on PATH")
+    elif not configured(cfg.get("gemini_api_key")):
+        problems.append("Gemini API key missing (set gemini_api_key or HL_GEMINI_API_KEY)")
+    if not (configured(cfg.get("pexels_api_key")) or configured(cfg.get("pixabay_api_key"))):
+        problems.append("B-roll API key missing (set Pexels or Pixabay key)")
+    missing_tools = [tool for tool in ("ffmpeg", "ffprobe") if not shutil.which(tool)]
+    if missing_tools:
+        problems.append("media tools not found on PATH: " + ", ".join(missing_tools))
+    if not dry_run and not (os.path.exists("client_secret.json") or os.path.exists("yt_token.pickle")):
+        problems.append("YouTube credentials missing (add client_secret.json or yt_token.pickle)")
+
+    if problems:
+        raise SystemExit("SETUP ERROR:\n- " + "\n- ".join(problems) +
+                         "\nSee README.md > One-time setup / Troubleshooting.")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
@@ -1574,8 +1663,8 @@ def main():
         sys.exit("FILES OUT OF SYNC: " + ", ".join(sorted(set(problems))) +
                  " do not match this run_daily.py. Update all files from the same version together.")
 
-    if not os.path.exists(CONFIG_FILE):
-        sys.exit("config.json missing. Copy config.example.json to config.json and fill in your keys.")
+    if not os.path.exists(CONFIG_FILE) and not os.path.exists("config.example.json"):
+        sys.exit("config.json and config.example.json are both missing; create a configuration file.")
     import config_loader
     cfg = config_loader.load_config(CONFIG_FILE)
     # one-time security nudge if live secrets are still sitting in config.json
@@ -1586,9 +1675,18 @@ def main():
     except Exception:
         pass
 
+    if not args.dry_run:
+        from publication import assert_publication_allowed
+        try:
+            assert_publication_allowed(cfg, source="daily pipeline")
+        except RuntimeError as exc:
+            raise SystemExit(str(exc)) from exc
+
     if args.upload_only:
         run_upload_only(cfg, args, log)
         return
+
+    _startup_preflight(cfg, dry_run=args.dry_run)
 
     if not args.dry_run:
         try:
@@ -1663,6 +1761,8 @@ def main():
                 log(f"auto-replies failed (non-fatal): {e}")
             _send_digest(cfg, ok=(1 - failed), fail=failed, made=made,
                          replies_posted=replies_posted)
+        if rec is None:
+            raise SystemExit("On-demand video was not created. Review the errors above and the run log.")
         return
 
     n = args.count or cfg.get("videos_per_day", 2)
@@ -1748,9 +1848,9 @@ def main():
         workdir = os.path.join(drafts_dir, f"draft_{stamp}_{slot_idx+1}")
         if os.path.exists(workdir) and os.path.exists(os.path.join(workdir, "short.mp4")):
             continue
-            
+        slot_topic = overrides[slot_idx] if slot_idx < len(overrides) else None
+
         try:
-            slot_topic = overrides[slot_idx] if slot_idx < len(overrides) else None
             # A trend-hero override is a deliberate, time-sensitive pick: lock it so it can't
             # drift to a different subject. Pool topics (no override) stay flexible so the
             # selector keeps its variety.
@@ -1759,6 +1859,11 @@ def main():
                            topic=slot_topic,
                            strict_topic_lock=slot_lock, generate_only=True)
         except Exception as e:
+            import editorial_quality
+            editorial_quality.record_skip_reason(
+                "logs/skip_reasons.jsonl", episode_id=os.path.basename(workdir),
+                topic=str(slot_topic or ""), reason=f"{type(e).__name__}: {e}", phase="generation",
+            )
             log(f"ERROR generating draft {slot_idx + 1}: {e}")
             err_str = str(e)
             if "[hook_not_physical]" in err_str: _drop_reasons["hook_not_physical"] = _drop_reasons.get("hook_not_physical", 0) + 1
@@ -1783,6 +1888,18 @@ def main():
                     meta = json.load(f)
                 # Skip already uploaded drafts
                 if meta.get("uploaded") is True or os.path.exists(os.path.join(drafts_dir, d, "uploaded.txt")):
+                    continue
+                from publication import episode_issues
+                quality_issues = episode_issues(meta, os.path.join(drafts_dir, d))
+                if quality_issues:
+                    reason = "; ".join(quality_issues)
+                    import editorial_quality
+                    editorial_quality.record_skip_reason(
+                        "logs/skip_reasons.jsonl", episode_id=d,
+                        topic=meta.get("topic", ""), reason=reason, phase="reserve_selection",
+                    )
+                    log(f"Reserve rejected before ranking: {d}: {reason}")
+                    _drop_reasons["quality_floor"] = _drop_reasons.get("quality_floor", 0) + 1
                     continue
                 available_drafts.append({
                     "dir": os.path.join(drafts_dir, d),
@@ -1876,7 +1993,11 @@ def main():
                 rec = publish_draft(cfg, draft["dir"], args.dry_run, publish_at)
                 if isinstance(rec, dict):
                     made.append(rec)
-                ok += 1
+                    ok += 1
+                else:
+                    fail += 1
+                    log(f"ERROR publishing draft {draft['dir']}: no publish result was returned")
+                    flag("A video draft had no publish result and was not counted as successful.")
             except Exception as e:
                 _emsg = str(e)
                 # Quota / daily upload limit: stop the batch and KEEP the remaining drafts for the
@@ -1917,6 +2038,12 @@ def main():
                 compilation.run_weekly_compilation(cfg, log)
         except Exception as e:
             log(f"weekly compilation failed (non-fatal): {e}")
+    if ok == 0:
+        # A fully green process that produced no Short is not a successful run. Make the
+        # scheduler/Actions job fail visibly after the digest is sent so this cannot look done.
+        fail = max(fail, 1)
+        flag("No video was successfully generated or published in this run.")
+        log("ERROR: no video was successfully generated or published.")
     log(f"Done. {ok} succeeded, {fail} failed.")
     # Cumulative slot tracking
     try:
@@ -1979,6 +2106,8 @@ def main():
             log(f"auto-replies failed (non-fatal): {e}")
     if not args.dry_run:
         _send_digest(cfg, ok=ok, fail=fail, made=made, replies_posted=replies_posted)
+    if ok == 0:
+        raise SystemExit("No videos were created. Review the errors above and the run log.")
 
 
 if __name__ == "__main__":

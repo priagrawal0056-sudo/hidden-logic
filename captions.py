@@ -1,13 +1,18 @@
 """
-captions.py - v2
-Word timings -> .ass subtitles with the modern Shorts look:
-pop-in scale animation per caption, gold highlight on emphasis words
-(numbers, names, superlatives picked by the script generator).
+captions.py - quiet phrase-level captions for the Hidden Logic editorial pilot.
+Uses the verified word timings, conservative safe-area geometry, and only one or two
+meaningful highlights. No repeated pop animation or caption-led visual treatment.
 """
 import json
 import re
 
-ASS_HEADER = """[Script Info]
+CAPTION_FONT_SIZE = 62
+CAPTION_MARGIN_L = 145
+CAPTION_MARGIN_R = 145
+CAPTION_MARGIN_V = 390
+MAX_LINE_CHARS = 24
+
+ASS_HEADER = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: 1080
 PlayResY: 1920
@@ -15,16 +20,13 @@ WrapStyle: 0
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Word,Anton,112,&H00FFFFFF,&H00FFFFFF,&H00101010,&HC8000000,0,0,0,0,100,100,1,0,1,10,4,8,140,140,540,1
+Style: Word,Lora,{CAPTION_FONT_SIZE},&H00FFFFFF,&H00FFFFFF,&H00101010,&H64000000,0,0,0,0,100,100,0,0,1,4,1,2,{CAPTION_MARGIN_L},{CAPTION_MARGIN_R},{CAPTION_MARGIN_V},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
-# Alignment 8 = top-center anchor; MarginV 540 drops the caption block to ~28% from the
-# top, parking it in the SAFE central band. This keeps text clear of YouTube's Shorts UI:
-# the bottom ~15% (progress bar, title, channel) and the right ~12% (like/comment/share/
-# remix buttons). Left/right margins of 140px add extra horizontal safety. Research: text
-# under the UI overlays gets covered and drives instant swipes.
+# Bottom-center alignment is positioned above the Shorts title/progress overlay. The type
+# is intentionally smaller and calmer; action remains the visual priority.
 
 GOLD = r"{\c&H00C8FF&}"   # gold/amber in BGR (default emphasis color)
 WHITE = r"{\c&HFFFFFF&}"
@@ -37,12 +39,7 @@ ACCENT_PALETTE = {
     "green":  r"{\c&H66FF66&}",   # lime
     "orange": r"{\c&H1488FF&}",   # vivid orange
 }
-POP = r"{\fad(50,0)\fscx70\fscy70\t(0,90,\fscx100\fscy100)}"
-POP_FIRST = r"{\fad(50,0)\fscx80\fscy80\t(0,90,\fscx115\fscy115)}"  # opening caption pops to 115%: frame 0 doubles as the thumbnail
-# OPENING HOOK style: holds a full hook PHRASE (several words) on the first frame, which is
-# what the Shorts feed grabs as the de-facto thumbnail. Pops in but stays at 100% (not 115%)
-# so a longer phrase doesn't overflow, and \q2 keeps natural word-wrapping to 2-3 lines.
-POP_HOOK = r"{\q2\fad(60,0)\fscx88\fscy88\t(0,110,\fscx100\fscy100)}"
+CAPTION_FADE = ""
 
 
 def _ts(seconds: float) -> str:
@@ -57,9 +54,12 @@ def _norm(w: str) -> str:
 
 
 def _ends_sentence(w: str) -> bool:
-    """True if the word visually ends a sentence/clause, so a caption group should not
-    pair it with the first word of the next sentence (e.g. avoid 'TRICK. THE' cards)."""
+    """True if the word ends a complete sentence."""
     return bool(re.search(r"[.!?][\"'\)\]]*\s*$", str(w)))
+
+
+def _ends_phrase(w: str) -> bool:
+    return bool(re.search(r"[,;:][\"'\)\]]*\s*$", str(w)))
 
 
 def _visible_len(token: str) -> int:
@@ -68,9 +68,8 @@ def _visible_len(token: str) -> int:
     return len(re.sub(r"\{[^}]*\}", "", token))
 
 
-def _wrap_ass(parts: list[str], max_chars_per_line: int = 14) -> str:
-    """Join colored tokens into ASS text with hard line breaks (\\N) so a long opening hook
-    phrase wraps to 2-3 balanced lines instead of overflowing one line off-screen."""
+def _wrap_ass(parts: list[str], max_chars_per_line: int = MAX_LINE_CHARS) -> str:
+    """Join phrase tokens into balanced ASS lines with a hard break before overflow."""
     lines, cur, cur_len = [], [], 0
     for tok in parts:
         vlen = _visible_len(tok)
@@ -87,14 +86,16 @@ def _wrap_ass(parts: list[str], max_chars_per_line: int = 14) -> str:
 
 
 def build_ass(timings_path: str, ass_path: str, emphasis_words: list[str] | None = None,
-              group_size: int = 2, accent: str | None = None, opening_group: int = 5):
+              group_size: int = 5, accent: str | None = None, opening_group: int = 5):
     # Build emphasis lookups: single words AND multi-word phrases ("on purpose",
     # "empty space"). The old code matched single tokens only, so any multi-word emphasis
     # the script author flagged (e.g. "ONE THING") never received the gold pop.
     raw_emphasis = emphasis_words or []
     emph_single: set[str] = set()
     emph_phrases: list[list[str]] = []
-    for e in raw_emphasis:
+    # Highlight at most two meaningful words/phrases per episode; do not auto-highlight
+    # every number or every phrase boundary.
+    for e in raw_emphasis[:2]:
         toks = [_norm(t) for t in str(e).split() if _norm(t)]
         if len(toks) == 1:
             emph_single.add(toks[0])
@@ -106,11 +107,10 @@ def build_ass(timings_path: str, ass_path: str, emphasis_words: list[str] | None
         words = json.load(f)
     n = len(words)
     norm_words = [_norm(w["word"]) for w in words]
-    # Precompute which word indices get the accent color (singles, any token with a digit,
-    # and every token inside a matched multi-word emphasis phrase).
+    # Precompute emphasis only for the one or two selected words/phrases.
     emph_flags = [False] * n
     for idx in range(n):
-        if norm_words[idx] in emph_single or re.search(r"\d", words[idx]["word"]):
+        if norm_words[idx] in emph_single:
             emph_flags[idx] = True
     for phrase in emph_phrases:
         L = len(phrase)
@@ -120,24 +120,24 @@ def build_ass(timings_path: str, ass_path: str, emphasis_words: list[str] | None
                     emph_flags[k] = True
 
     lines = [ASS_HEADER]
-    # THE OPENING FRAME doubles as the feed's de-facto thumbnail (Shorts shows an auto-grabbed
-    # first frame, not a custom thumbnail). So the FIRST caption shows a coherent hook phrase
-    # (a complete claim stops the scroll far better than a 2-word fragment). After that, fall
-    # back to fast 2-word pops. Grouping is SENTENCE-AWARE: a group never pairs the last word
-    # of one sentence with the first word of the next ("TRICK. THE").
+    # Captions follow actual word boundaries in small phrase groups. Sentence boundaries always
+    # end a card, and a short final hold gives the takeaway time to register without an end card.
+    if not words:
+        raise ValueError("Caption timing input contains no word boundaries")
     i = 0
-    first = True
-    HOLD = 0.12          # small hold so a caption doesn't vanish the instant the word ends
-    OPENING_HOLD = 0.6   # the hook claim lingers a touch longer (it is the de-facto thumbnail)
+    HOLD = 0.10
     while i < n:
-        size = opening_group if first else group_size
-        # Accumulate up to `size` words, but stop early at a sentence boundary so the
-        # sentence-ending word is the LAST word in its card.
+        size = group_size
+        # Group words into phrase-sized cards. A sentence boundary always ends a card;
+        # commas and semicolons may end one after at least three words.
         chunk_idx = []
         j = i
         while j < n and len(chunk_idx) < size:
             chunk_idx.append(j)
             if _ends_sentence(words[j]["word"]):
+                j += 1
+                break
+            if len(chunk_idx) >= 3 and _ends_phrase(words[j]["word"]):
                 j += 1
                 break
             j += 1
@@ -146,33 +146,106 @@ def build_ass(timings_path: str, ass_path: str, emphasis_words: list[str] | None
         nxt = j
         chunk = [words[k] for k in chunk_idx]
         natural_end = chunk[-1]["end"]
-        start = 0.0 if first else chunk[0]["start"]   # hook text on screen from frame 0
+        start = float(chunk[0]["start"])
         # End each caption at its OWN last spoken word (+ a small hold), NOT at the next
         # group's start. The old code stretched every caption to fill the gap until the next
         # one, so on every sentence pause a word was shown 0.5-1.5s BEFORE it was spoken.
-        end = natural_end + (OPENING_HOLD if first else HOLD)
+        end = natural_end + HOLD
         if nxt < n:
             end = min(end, words[nxt]["start"])   # never overlap / pre-empt the next caption
         else:
-            end = natural_end + 0.5               # hold the final card a little longer
+            end = natural_end + 0.9               # hold the final takeaway long enough to read
         if end <= start:
             end = max(natural_end, start + 0.3)
         parts = []
         for k in chunk_idx:
-            token = words[k]["word"].upper()
+            token = words[k]["word"]
             if emph_flags[k]:
                 parts.append(f"{accent_color}{token}{WHITE}")
             else:
                 parts.append(token)
-        if first:
-            # the opening phrase can overflow one line, so wrap it manually into ~2-3
-            # balanced lines using ASS hard breaks (\N).
-            text = _wrap_ass(parts, max_chars_per_line=14)
-        else:
-            text = " ".join(parts)
-        style = POP_HOOK if first else POP
-        lines.append(f"Dialogue: 0,{_ts(start)},{_ts(end)},Word,,0,0,0,,{style}{text}")
+        text = _wrap_ass(parts, max_chars_per_line=MAX_LINE_CHARS)
+        lines.append(f"Dialogue: 0,{_ts(start)},{_ts(end)},Word,,0,0,0,,{CAPTION_FADE}{text}")
         i = nxt
-        first = False
+    from editorial_quality import validate_word_timings
+    timing_issues = validate_word_timings(words)
+    if timing_issues:
+        raise ValueError("Caption timing validation failed: " + ", ".join(timing_issues))
     with open(ass_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
+    caption_issues = validate_ass(ass_path, word_timings=words)
+    if caption_issues:
+        raise ValueError("Caption layout validation failed: " + ", ".join(caption_issues))
+
+
+def validate_ass(ass_path: str, word_timings: list[dict] | None = None) -> list[str]:
+    """Validate caption geometry, event timing, safe area, and transcript alignment."""
+    issues = []
+    with open(ass_path, encoding="utf-8") as fh:
+        content = fh.read()
+    if "Style: Word,Lora" not in content:
+        issues.append("caption_style_missing")
+    if f"Style: Word,Lora,{CAPTION_FONT_SIZE}" not in content:
+        issues.append("caption_font_or_size_invalid")
+    if f",2,{CAPTION_MARGIN_L},{CAPTION_MARGIN_R},{CAPTION_MARGIN_V},1" not in content:
+        issues.append("caption_outside_safe_area")
+    if "PlayResX: 1080" not in content or "PlayResY: 1920" not in content:
+        issues.append("caption_resolution_mismatch")
+
+    def parse_ts(value: str) -> float:
+        h, m, s = value.split(":")
+        return int(h) * 3600 + int(m) * 60 + float(s)
+
+    events = []
+    for line in content.splitlines():
+        if not line.startswith("Dialogue:"):
+            continue
+        fields = line.split(",", 9)
+        if len(fields) < 10:
+            issues.append("malformed_caption_event")
+            continue
+        try:
+            start, end = parse_ts(fields[1]), parse_ts(fields[2])
+        except (ValueError, IndexError):
+            issues.append("malformed_caption_timing")
+            continue
+        if start < 0 or end <= start:
+            issues.append("invalid_caption_timing")
+        events.append((start, end, fields[9]))
+
+    if not events:
+        issues.append("no_caption_events")
+    events.sort(key=lambda event: event[0])
+    for previous, current in zip(events, events[1:]):
+        if current[0] < previous[1] - 0.02:
+            issues.append("caption_events_overlap")
+    for _, _, text in events:
+        clean = re.sub(r"\{[^}]*\}", "", text).replace(r"\N", "\n")
+        if any(len(line) > MAX_LINE_CHARS for line in clean.splitlines()):
+            issues.append("caption_width_overflow")
+
+    if word_timings is not None:
+        expected = [_norm(item.get("word", "")) for item in word_timings]
+        expected = [word for word in expected if word]
+        spoken_index = 0
+        for event_start, event_end, text in events:
+            clean = re.sub(r"\{[^}]*\}", "", text).replace(r"\N", " ")
+            visible = [_norm(token) for token in clean.split()]
+            visible = [word for word in visible if word]
+            if not visible or expected[spoken_index:spoken_index + len(visible)] != visible:
+                issues.append("caption_transcript_mismatch")
+                continue
+            first_word = word_timings[spoken_index]
+            last_word = word_timings[spoken_index + len(visible) - 1]
+            if abs(event_start - float(first_word["start"])) > 0.05:
+                issues.append("caption_not_aligned_to_word_boundary")
+            if event_end < float(last_word["end"]) - 0.02:
+                issues.append("caption_cuts_off_before_word_end")
+            if event_end - float(last_word["end"]) > 1.25:
+                issues.append("caption_hold_too_long")
+            spoken_index += len(visible)
+        if spoken_index != len(expected):
+            issues.append("caption_missing_or_extra_words")
+        if events and events[-1][1] - float(word_timings[-1]["end"]) < 0.6:
+            issues.append("final_takeaway_hold_too_short")
+    return sorted(set(issues))
