@@ -885,7 +885,7 @@ def _call_claude_code(prompt: str, allow_search: bool = False) -> dict:
 _dead_models = set()
 
 # lightweight signals the orchestrator reads for the attention digest
-RUN_EVENTS = {"used_claude_fallback": False, "gate_fallbacks": 0, "all_gemini_down": 0, "gemini_exhausted": False, "waited_for_perminute": False}
+RUN_EVENTS = {"used_claude_fallback": False, "gate_fallbacks": 0, "all_gemini_down": 0, "gemini_exhausted": False, "gemini_daily_exhausted": False, "waited_for_perminute": False}
 
 # Editorial pilots use a fixed word band and story contract; do not append a second
 # template, suspense hook, or delivery instruction to the spoken script prompt.
@@ -903,15 +903,13 @@ def _rotate_style() -> tuple[str, str]:
 
 
 class _GeminiQuotaExhausted(RuntimeError):
-    """Raised when Gemini is persistently rate-limited this call, to trip the Claude
-    fallback fast instead of grinding 15s per model across the whole chain.
+    """Raised after compatible Gemini model fallbacks stay rate-limited or overloaded.
 
-    is_daily=True means the daily/credit cap is hit (Gemini dead for hours -> latch to
-    Claude). is_daily=False means a per-minute throttle (Gemini back in ~60s -> waiting one
-    minute and retrying Gemini is far faster than routing the whole run through the slow CLI).
-    is_server_busy=True means a Google-side 5xx outage: NOT our quota, no fixed clear-time, so
-    don't do the 60s per-minute wait and don't latch Gemini off for the whole run - just use
-    Claude for THIS video and let the next video retry Gemini fresh (the outage may have lifted).
+    is_daily=True means the daily/credit cap was reported (Gemini is likely unavailable until
+    reset). is_daily=False means a per-minute throttle, so _call() makes one delayed retry.
+    is_server_busy=True means a Google-side 5xx outage: this is not user quota, and no fixed
+    clear-time is known, so _call() can fail over for the current video without latching Gemini
+    off for the rest of the run.
     """
     def __init__(self, message, is_daily=False, is_server_busy=False):
         super().__init__(message)
@@ -958,10 +956,9 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
         # are retained separately from the model-authored response fields below.
         body["tools"] = [{"googleSearch": {}}]
     last_err = None
-    rate_limit_hits = 0          # how many models rejected us with a per-minute 429 this call
-    daily_hits = 0               # how many of those were the DAILY cap (Gemini dead for hours)
+    rate_limit_hits = 0          # number of HTTP 429 responses seen across models
+    daily_hits = 0               # number identified as daily caps (Gemini may be unavailable until reset)
     server_busy_hits = 0         # how many models returned 5xx (Google-side outage, NOT our quota)
-    RATE_LIMIT_TRIP = 3          # after this many 429s, stop grinding and hand off to Claude fast
     SERVER_BUSY_TRIP = 3         # after this many 5xx, the whole Gemini fleet is busy - bail to Claude
     for _model_idx, model in enumerate(_best_models(api_key)):
         if model in _dead_models:
@@ -991,27 +988,22 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
                     rate_limit_hits += 1
                     if is_daily:
                         daily_hits += 1
-                    # FAST FALLBACK: if Gemini is persistently throttled this call, stop the
-                    # 15s-per-model grind and raise so _call() decides what to do. We tag whether
-                    # it's the DAILY cap (latch to Claude) or just per-minute (wait it out).
-                    if rate_limit_hits >= RATE_LIMIT_TRIP:
-                        raise _GeminiQuotaExhausted(
-                            f"Gemini rate-limited ({rate_limit_hits} models hit 429 this call, "
-                            f"{daily_hits} daily). Last: {err_msg[:80]}",
-                            is_daily=(daily_hits >= 1),
-                        )
                     if is_daily:
-                        print(f"[scriptgen] {model} daily limit exceeded. Banning for this run.")
+                        # Daily ceilings can be model-specific. Mark this model unavailable
+                        # for this run, but keep walking the discovered chain: Lite tiers may
+                        # have separate, higher free-tier limits.
+                        print(f"[scriptgen] {model} daily limit exceeded; trying the next model.")
                         _dead_models.add(model)
                         break
-                    # per-minute: try the NEXT model right away (no long sleep). Only the very
-                    # first hit waits briefly, to let a momentary spike clear.
+                    # Retry the first per-minute hit once, then try the next discovered model.
+                    # Do not trip to Claude after only three premium models: that used to make
+                    # the lower-limit Flash-Lite fallbacks unreachable in GitHub Actions.
                     if attempt == 0 and rate_limit_hits == 1:
                         print(f"[scriptgen] {model} rate limited (daily={is_daily}), brief 5s wait...")
                         time.sleep(5)
                         continue
-                    print(f"[scriptgen] {model} per-minute limit, moving on immediately.")
-                    break  # move on to the next model with no further sleep
+                    print(f"[scriptgen] {model} per-minute limit; trying the next compatible model.")
+                    break
                 if r.status_code in (500, 502, 503):
                     # 5xx is a Google-SIDE outage (server busy / overloaded), which is DIFFERENT
                     # from 429 (our quota). Count a hit only when a MODEL IS EXHAUSTED (all its
@@ -1061,12 +1053,14 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
             except Exception as e:
                 last_err = e
                 time.sleep(2)
-    hint = ""
-    if last_err and "429" in str(last_err):
-        hint = (" This looks like the free-tier quota. Per-minute limits clear in ~1 minute; "
-                "the daily limit resets at midnight US Pacific time. Your normal daily run uses "
-                "only 6-12 calls, so this mainly happens during heavy testing.")
-    raise RuntimeError(f"All Gemini models failed after retries. Last error: {last_err}.{hint}")
+    if rate_limit_hits:
+        all_daily = daily_hits == rate_limit_hits
+        raise _GeminiQuotaExhausted(
+            "Gemini returned HTTP 429 across the discovered model fallbacks "
+            f"({rate_limit_hits} limited attempts; {daily_hits} identified as daily caps).",
+            is_daily=all_daily,
+        )
+    raise RuntimeError(f"All Gemini models failed after retries. Last error: {last_err}.")
 
 
 # provider order: primary first, then the other as automatic fallback.
@@ -1091,6 +1085,41 @@ def _claude_cli_available() -> bool:
     return bool(shutil.which("claude") or shutil.which("claude.cmd") or shutil.which("claude.exe"))
 
 
+def _no_fallback_message(*, daily: bool = False, server_busy: bool = False,
+                         api_unknown: bool = False) -> str:
+    """Give headless Actions runs API-specific recovery advice, not local CLI setup steps."""
+    if os.environ.get("GITHUB_ACTIONS", "").strip().lower() == "true":
+        if api_unknown:
+            return (
+                "Gemini could not complete generation with any supported model. GitHub Actions "
+                "has no authenticated Claude Code CLI or API fallback configured; check Gemini "
+                "model access, usage/quota, and service status, then rerun. No draft was generated."
+            )
+        if server_busy:
+            return (
+                "Gemini returned repeated temporary server errors across the available models. "
+                "GitHub Actions has no authenticated Claude Code CLI or API fallback configured; "
+                "retry after the Gemini service recovers. No draft was generated."
+            )
+        if daily:
+            return (
+                "Gemini daily limits blocked script generation across the available model fallbacks. "
+                "GitHub Actions has no authenticated Claude Code CLI or API fallback configured; "
+                "check the Gemini project's quota/billing or retry after its daily reset. No draft was generated."
+            )
+        return (
+            "Gemini HTTP 429 rate limits persisted across the available model fallbacks and the "
+            "one-minute retry. GitHub Actions has no authenticated Claude Code CLI or API fallback "
+            "configured; check the Gemini project's usage/rate limits or retry after the limit resets. "
+            "No draft was generated."
+        )
+    return (
+        "Ran out of Gemini credits/quota and no Claude fallback is available. "
+        "Install the Claude Code CLI and run 'claude' once to log in "
+        "(https://docs.claude.com/en/docs/claude-code/overview)."
+    )
+
+
 def _call(api_key: str, prompt: str, temperature: float, allow_search: bool = False) -> dict:
     """Primary LLM dispatch. Tries Gemini first; if Gemini is out of credits / quota /
     fully unavailable, automatically falls back to the Claude Code CLI (billed to the
@@ -1104,10 +1133,15 @@ def _call(api_key: str, prompt: str, temperature: float, allow_search: bool = Fa
     if PROVIDER == "claude_code":
         return _call_claude_code(prompt, allow_search=allow_search)
 
-    # Run-level latch: once Gemini has run out this run, don't keep hammering it on every
-    # subsequent call (that's what burned ~15 min on rate-limit waits). Go straight to Claude.
-    if RUN_EVENTS.get("gemini_exhausted") and _claude_cli_available():
-        return _call_claude_code(prompt, allow_search=allow_search)
+    # Run-level latch: once Gemini has run out this run, don't keep hammering the API on
+    # every subsequent call. Local runs can switch to the CLI; headless Actions fails fast.
+    if RUN_EVENTS.get("gemini_exhausted"):
+        if _claude_cli_available():
+            return _call_claude_code(prompt, allow_search=allow_search)
+        if os.environ.get("GITHUB_ACTIONS", "").strip().lower() == "true":
+            raise RuntimeError(_no_fallback_message(
+                daily=RUN_EVENTS.get("gemini_daily_exhausted", False)
+            ))
 
     try:
         return _call_gemini(api_key, prompt, temperature, allow_search=allow_search)
@@ -1140,6 +1174,7 @@ def _call(api_key: str, prompt: str, temperature: float, allow_search: bool = Fa
             RUN_EVENTS["gemini_exhausted"] = True
         elif e.is_daily:
             RUN_EVENTS["gemini_exhausted"] = True  # daily cap -> dead for hours
+            RUN_EVENTS["gemini_daily_exhausted"] = True
         # Fall back to Claude.
         if not _is_quota_error(e):
             raise
@@ -1153,11 +1188,9 @@ def _call(api_key: str, prompt: str, temperature: float, allow_search: bool = Fa
                 return _call_claude_code(prompt, allow_search=allow_search)
             except Exception as ce:
                 raise RuntimeError(f"Gemini exhausted AND Claude fallback failed: {ce}") from ce
-        raise RuntimeError(
-            "Ran out of Gemini quota and no Claude fallback is available. "
-            "Install the Claude Code CLI and run 'claude' once to log in "
-            "(https://docs.claude.com/en/docs/claude-code/overview)."
-        ) from e
+        raise RuntimeError(_no_fallback_message(
+            daily=e.is_daily, server_busy=e.is_server_busy
+        )) from e
     except Exception as e:
         if not _is_quota_error(e):
             raise  # a real error (bad prompt, network, etc.) - don't mask it
@@ -1175,13 +1208,8 @@ def _call(api_key: str, prompt: str, temperature: float, allow_search: bool = Fa
                 raise RuntimeError(
                     f"Gemini out of credits AND Claude fallback failed: {ce}"
                 ) from ce
-        # No Claude CLI installed - tell the user exactly how to enable the fallback.
-        raise RuntimeError(
-            "Ran out of Gemini credits and no Claude fallback is available. "
-            "Install the Claude Code CLI and run 'claude' once to log in so the pipeline "
-            "can fall back to your Claude subscription automatically "
-            "(https://docs.claude.com/en/docs/claude-code/overview)."
-        ) from e
+        # On Actions, a local subscription CLI cannot be assumed to exist or be logged in.
+        raise RuntimeError(_no_fallback_message(api_unknown=True)) from e
 
 
 MIN_SCORE = 8       # target score; overridden by 'min_quality' in config.json

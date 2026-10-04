@@ -93,6 +93,8 @@ redo this step. The failure alert (Step 7) tells you when this happens.
 
 A manual pilot run needs `HL_GEMINI_API_KEY` and at least one stock-footage secret. Only a separate approved production run requires `YT_TOKEN_B64` and `CLIENT_SECRET_JSON`. The workflow reports missing secret names, never their values.
 
+**Gemini HTTP 429 during script generation:** this is API rate/quota exhaustion, not an artifact-path or test-suite failure. The runner tries the discovered Gemini model fallbacks, including Flash-Lite, and retries a per-minute limit once; if all remain limited it fails closed and makes no video. GitHub-hosted Actions cannot use the local, logged-in Claude Code CLI fallback, so check the Gemini project’s usage/quota or wait for the limit to reset, then rerun. Do not replace the voice or relax editorial gates to work around a model quota.
+
 ────────────────────────────────────────────────────────────────────────
 ## STEP 7 — The safety net (so you KNOW if it dies while you're busy)
 Your pipeline already sends a Discord digest on each run (success + failures).
