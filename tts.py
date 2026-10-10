@@ -1,7 +1,7 @@
 """
 tts.py - Hidden Logic production TTS path.
-Gemini TTS with the fixed Orus voice and turn-level delivery metadata. The narration
-transcript is passed verbatim; directions are never concatenated into spoken text.
+Gemini TTS with the fixed Orus voice. The narration transcript is the only text sent to
+Gemini; the editorial delivery direction is kept as review metadata and never sent.
 Every take is transcribed and measured before acceptance. A single alternate take is
 allowed only after a measurable delivery-quality failure; failures never fall back to
 Edge or a different voice.
@@ -94,7 +94,11 @@ def _extract_interaction_audio(payload: dict) -> tuple[bytes, str]:
 
 
 def _gemini_tts_request_body(transcript: str, voice: str, direction: str, model: str) -> dict:
-    """Separate exact narration text from non-spoken, structured delivery metadata."""
+    """Build a Gemini TTS request whose only text input is the exact narration.
+
+    The editorial delivery direction is validated and kept for metadata/review only. It is
+    never sent to Gemini: no style prompt, annotation, or instruction text is included.
+    """
     if voice != "Orus":
         raise RuntimeError(f"Production voice is locked to Orus, not {voice!r}")
     if direction not in DELIVERY_DIRECTIONS:
@@ -112,10 +116,6 @@ def _gemini_tts_request_body(transcript: str, voice: str, direction: str, model:
             "content": [{
                 "type": "text",
                 "text": transcript,
-                "annotations": [{
-                    "type": "speech_metadata",
-                    "style": DELIVERY_DIRECTIONS[direction],
-                }],
             }],
         }],
         "response_format": {"type": "audio", "mime_type": "audio/wav", "sample_rate": 24000},
@@ -125,7 +125,7 @@ def _gemini_tts_request_body(transcript: str, voice: str, direction: str, model:
 
 def _write_gemini_audio(text: str, mp3_path: str, api_key: str, voice: str,
                         direction: str, model: str) -> None:
-    """Synthesize the transcript verbatim; delivery metadata is never part of the text."""
+    """Synthesize the transcript verbatim. `direction` is not sent to Gemini."""
     import requests
     body = _gemini_tts_request_body(text, voice, direction, model)
     response = requests.post(
@@ -261,14 +261,6 @@ class TTSQualityError(RuntimeError):
     """Both permitted Orus takes failed measurable delivery checks."""
 
 
-def _next_direction(direction: str) -> str:
-    try:
-        index = DIRECTION_ORDER.index(direction)
-    except ValueError:
-        index = 0
-    return DIRECTION_ORDER[(index + 1) % len(DIRECTION_ORDER)]
-
-
 def _set_voice_metadata(metadata: dict | None, *, voice: str, direction: str, model: str,
                         take: int, metrics: dict) -> None:
     if metadata is None:
@@ -276,6 +268,8 @@ def _set_voice_metadata(metadata: dict | None, *, voice: str, direction: str, mo
     metadata["voice"] = voice
     metadata["voice_identity"] = "Orus"
     metadata["voice_direction"] = direction
+    metadata["tts_style_prompt"] = "none"
+    metadata["tts_style_prompt_sent"] = False
     metadata["tts_engine"] = "gemini"
     metadata["tts_model"] = model
     metadata["tts_take"] = take
@@ -319,14 +313,13 @@ def synthesize(text: str, mp3_path: str, timings_path: str, voice: str = DEFAULT
         raise TTSQualityError(
             "Narration contains an internal TTS/production instruction; refusing to synthesize it"
         )
-    current_direction = direction
     last_issues: list[str] = []
     for take in (1, 2):
         temp_mp3 = f"{mp3_path}.take{take}.tmp.mp3"
         try:
             # API/network/codec errors are not delivery failures; stop immediately instead of
             # spending another take or falling back to another engine.
-            _write_gemini_audio(text, temp_mp3, api_key, selected_voice, current_direction, model)
+            _write_gemini_audio(text, temp_mp3, api_key, selected_voice, direction, model)
             words, metrics, issues = _take_metrics(text, temp_mp3)
             issues.extend(editorial_quality.validate_word_timings(
                 words, duration_seconds=metrics.get("duration_seconds")
@@ -341,7 +334,6 @@ def synthesize(text: str, mp3_path: str, timings_path: str, voice: str = DEFAULT
                 last_issues = issues
                 print(f"[tts] Orus take {take} rejected: {', '.join(issues)}")
                 if take == 1:
-                    current_direction = _next_direction(direction)
                     continue
                 raise TTSQualityError(
                     "Both Orus takes failed delivery checks: " + ", ".join(last_issues)
@@ -350,10 +342,10 @@ def synthesize(text: str, mp3_path: str, timings_path: str, voice: str = DEFAULT
             os.replace(temp_mp3, mp3_path)
             with open(timings_path, "w", encoding="utf-8") as fh:
                 json.dump(words, fh, indent=2)
-            _set_voice_metadata(metadata, voice=selected_voice, direction=current_direction,
+            _set_voice_metadata(metadata, voice=selected_voice, direction=direction,
                                 model=model, take=take, metrics=metrics)
             print(
-                f"[tts] Accepted Orus take {take} ({current_direction}, {model}, "
+                f"[tts] Accepted Orus take {take} ({direction}, {model}, "
                 f"accuracy={metrics['transcript_accuracy']:.3f}, "
                 f"duration={metrics['duration_seconds']:.1f}s)"
             )

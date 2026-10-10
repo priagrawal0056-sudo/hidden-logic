@@ -10,6 +10,7 @@ Free key: https://aistudio.google.com/apikey
 import json
 import os
 import random
+import re
 import requests
 import winner_memory
 from editorial_quality import validate_script
@@ -945,6 +946,42 @@ def _merge_grounding_sources(*responses: dict) -> list[dict]:
     return merged
 
 
+_KEY_LIKE_RE = re.compile(r"AIza[0-9A-Za-z_\-]{8,}|key=[^&\s\"']+", re.I)
+
+
+def _gemini_error_fields(response) -> tuple[str, str, list[str]]:
+    """Return (status, message, reasons) from a Gemini error body, redacted and bounded."""
+    status, message, reasons = "", "", []
+    try:
+        err = (response.json() or {}).get("error") or {}
+        status = str(err.get("status") or "")
+        message = str(err.get("message") or "")
+        for detail in err.get("details") or []:
+            if isinstance(detail, dict) and detail.get("reason"):
+                reasons.append(str(detail["reason"]))
+    except Exception:
+        message = str(getattr(response, "text", "") or "")
+    return (_KEY_LIKE_RE.sub("[redacted]", status)[:100],
+            _KEY_LIKE_RE.sub("[redacted]", message)[:300],
+            [_KEY_LIKE_RE.sub("[redacted]", reason)[:100] for reason in reasons])
+
+
+def _gemini_error_summary(response, limit: int = 300) -> str:
+    """Summarize a Gemini error response for logs. Never includes anything key-shaped."""
+    status, message, reasons = _gemini_error_fields(response)
+    parts = [status, message] + ([f"reason={','.join(reasons)}"] if reasons else [])
+    summary = " ".join(part for part in parts if part).strip() or "no error body"
+    return summary[:limit]
+
+
+def _gemini_key_explicitly_invalid(response) -> bool:
+    """True only when Google's own error details say the API key is invalid."""
+    status, message, reasons = _gemini_error_fields(response)
+    if any(reason.upper() == "API_KEY_INVALID" for reason in reasons):
+        return True
+    return "API_KEY_INVALID" in status.upper() or "api key not valid" in message.lower()
+
+
 def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bool = False) -> dict:
     import time
     body = {
@@ -1027,10 +1064,25 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
                     _dead_models.add(model)
                     break
                 if r.status_code in (400, 401, 403):
+                    # Only Google's explicit invalid-key details (API_KEY_INVALID / "API key not
+                    # valid") may be reported as a bad key. Generic 401/403 and request-level 400s
+                    # report the status, model and provider reason without claiming the key is invalid.
+                    detail = _gemini_error_summary(r)
+                    if _gemini_key_explicitly_invalid(r):
+                        raise RuntimeError(
+                            f"Gemini reports the API key is invalid ({r.status_code}) for {model}: {detail}. "
+                            "Get a fresh key at https://aistudio.google.com/apikey (it should start with AIza) "
+                            "and update the HL_GEMINI_API_KEY secret or config.json."
+                        )
+                    if r.status_code in (401, 403):
+                        raise RuntimeError(
+                            f"Gemini returned {r.status_code} for {model}: {detail}. "
+                            "This is an authorization/permission response; Google did not report the key "
+                            "itself as bad. Check the key's API access and the model's availability."
+                        )
                     raise RuntimeError(
-                        f"Gemini rejected the API key ({r.status_code}). Your key looks wrong or revoked. "
-                        "Get a fresh one at https://aistudio.google.com/apikey (it should start with AIza) "
-                        "and update config.json."
+                        f"Gemini rejected the request ({r.status_code}) for {model}: {detail}. "
+                        "No invalid-key report was returned; check the model and request payload."
                     )
                 r.raise_for_status()
                 response = r.json()

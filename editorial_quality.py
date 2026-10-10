@@ -55,6 +55,24 @@ PROMPT_LEAK_PATTERNS = (
     r"\bconfident practical explanation\b",
     r"\bdo not read (?:the )?instructions\b",
     r"\bspeech metadata\b",
+    # Explicit TTS directions only: an imperative that opens a sentence (or line), followed by
+    # a delivery descriptor and a tone/voice noun, or by a delivery adverb. Ordinary uses of
+    # "say", "read", "sound" or "tone" in narration ("Scientists say in a study...", "The warm
+    # tone of the bell...") are deliberately not matched.
+    r"(?:^|[.!?:]\s+|\n\s*)(?:read|speak|say|narrate|deliver)\s+"
+    r"(?:(?:this|it|these lines|the (?:script|narration|line|following))\s+)?"
+    r"(?:in|with)\s+an?\s+"
+    r"(?:warm|friendly|natural|curious|conversational|confident|understated|calm|playful|dry|wry|casual|gentle)"
+    r"(?:(?:,\s*|\s+and\s+|\s+)(?:warm|friendly|natural|curious|conversational|confident|understated|calm|"
+    r"playful|dry|wry|casual|gentle))?\s+(?:tone|voice|delivery|cadence|manner|style)\b",
+    r"(?:^|[.!?:]\s+|\n\s*)(?:read|speak|say|narrate|deliver)\s+"
+    r"(?:(?:this|it|these lines|the (?:script|narration|line|following))\s+)?"
+    r"(?:warmly|curiously|calmly|playfully|dryly|wryly|naturally|casually)\b",
+    r"(?:^|[.!?:]\s+|\n\s*)(?:warm|friendly|natural|curious|conversational|confident|understated|calm|playful|dry|wry)"
+    r"(?:(?:,\s*|\s+and\s+|\s+)(?:warm|friendly|natural|curious|conversational|confident|understated|calm|"
+    r"playful|dry|wry))?\s+(?:tone|delivery|cadence|speaking style)\b",
+    r"\bstyle (?:prompt|direction|instruction|note)s?\b",
+    r"(?:^|[.!?]\s+|\n\s*)sounds? (?:playful|curious|understated|conversational|confident|wry)\b",
 )
 
 
