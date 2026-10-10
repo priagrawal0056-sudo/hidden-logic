@@ -88,7 +88,15 @@ class ScriptAndTimingTests(unittest.TestCase):
         self.assertTrue(eq.contains_spoken_instruction("Read this in a warm curious tone. " + SCRIPT))
         self.assertTrue(eq.contains_spoken_instruction("Read in a friendly, natural voice. " + SCRIPT))
         self.assertTrue(eq.contains_spoken_instruction("Use a calm conversational tone. " + SCRIPT))
+        self.assertTrue(eq.contains_spoken_instruction("Speak in a warm, curious tone. " + SCRIPT))
+        self.assertTrue(eq.contains_spoken_instruction("Say this warmly and curiously. " + SCRIPT))
+        self.assertTrue(eq.contains_spoken_instruction("Narrate it with a calm voice. " + SCRIPT))
+        self.assertTrue(eq.contains_spoken_instruction("Sound playful and natural. " + SCRIPT))
+        self.assertTrue(eq.contains_spoken_instruction("Style prompt: warm and curious. " + SCRIPT))
         self.assertFalse(eq.contains_spoken_instruction(SCRIPT))
+        self.assertFalse(eq.contains_spoken_instruction(
+            "The warm air rises from the vent. Engineers say the wire can break. "
+            "The calm lake reflects the sky. A shopper reads the unit price."))
 
     def test_prompt_leak_and_forced_suspense_are_rejected(self):
         leaky = SCRIPT.replace("A shopper lifts", "Use a curious observation as a shopper lifts")

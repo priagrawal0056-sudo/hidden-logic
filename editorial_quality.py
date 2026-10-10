@@ -55,6 +55,12 @@ PROMPT_LEAK_PATTERNS = (
     r"\bconfident practical explanation\b",
     r"\bdo not read (?:the )?instructions\b",
     r"\bspeech metadata\b",
+    r"\b(?:speak|say|narrate|deliver|sound|read)\s+(?:this|it|these lines|the (?:script|narration|line|following))?\s*"
+    r"(?:in an? |with an? |warmly|curiously|calmly|playfully|dryly|wryly|naturally)\b",
+    r"\b(?:curious|conversational|understated|wry|dry|confident|warm|friendly|calm|natural|playful)\s+"
+    r"(?:tone|delivery|cadence|speaking style)\b",
+    r"\bstyle (?:prompt|direction|instruction|note)s?\b",
+    r"\bsounds? (?:playful|curious|understated|conversational|confident|wry)\b",
 )
 
 
