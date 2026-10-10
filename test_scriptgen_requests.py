@@ -126,31 +126,57 @@ class GeminiErrorReportingTests(unittest.TestCase):
                 scriptgen._call_gemini(key, "offline prompt", 0.1)
         return str(caught.exception)
 
-    def test_bad_key_400_is_reported_as_key_problem(self):
+    def test_explicit_invalid_key_400_is_labelled_invalid(self):
         message = self._call_with_error(400, {"error": {
             "code": 400, "status": "INVALID_ARGUMENT",
             "message": "API key not valid. Please pass a valid API key.",
             "details": [{"reason": "API_KEY_INVALID"}],
         }})
-        self.assertIn("rejected the API key (400)", message)
-        self.assertIn("API key not valid", message)
+        self.assertIn("reports the API key is invalid (400)", message)
+        self.assertIn("gemini-test", message)
+        self.assertIn("API_KEY_INVALID", message)
         self.assertNotIn("offline-test-secret-never-log", message)
 
-    def test_request_400_is_not_misreported_as_key_problem(self):
+    def test_explicit_invalid_key_401_is_labelled_invalid(self):
+        message = self._call_with_error(401, {"error": {
+            "code": 401, "status": "UNAUTHENTICATED",
+            "message": "Request had invalid authentication credentials.",
+            "details": [{"reason": "API_KEY_INVALID"}],
+        }})
+        self.assertIn("reports the API key is invalid (401)", message)
+
+    def test_generic_401_reports_status_and_message_without_claiming_invalid_key(self):
+        message = self._call_with_error(401, {"error": {
+            "code": 401, "status": "UNAUTHENTICATED",
+            "message": "Expired OAuth token.",
+        }})
+        self.assertIn("Gemini returned 401 for gemini-test", message)
+        self.assertIn("UNAUTHENTICATED", message)
+        self.assertIn("Expired OAuth token.", message)
+        self.assertNotIn("invalid", message.lower())
+        self.assertNotIn("rejected the API key", message)
+
+    def test_generic_403_reports_status_and_reason_without_claiming_invalid_key(self):
+        message = self._call_with_error(403, {"error": {
+            "code": 403, "status": "PERMISSION_DENIED", "message": "Permission denied on resource.",
+            "details": [{"reason": "SERVICE_DISABLED"}],
+        }})
+        self.assertIn("Gemini returned 403 for gemini-test", message)
+        self.assertIn("PERMISSION_DENIED", message)
+        self.assertIn("reason=SERVICE_DISABLED", message)
+        self.assertNotIn("invalid", message.lower())
+        self.assertNotIn("reports the API key is invalid", message)
+
+    def test_request_level_400_is_not_labelled_as_key_problem(self):
         message = self._call_with_error(400, {"error": {
             "code": 400, "status": "INVALID_ARGUMENT",
             "message": "Invalid JSON payload received. Unknown name \"tools\".",
         }})
-        self.assertIn("rejected the request (400)", message)
+        self.assertIn("rejected the request (400) for gemini-test", message)
         self.assertIn("Invalid JSON payload", message)
+        self.assertIn("No invalid-key report was returned", message)
+        self.assertNotIn("reports the API key is invalid", message)
         self.assertNotIn("rejected the API key", message)
-
-    def test_403_is_reported_as_key_problem(self):
-        message = self._call_with_error(403, {"error": {
-            "code": 403, "status": "PERMISSION_DENIED", "message": "Permission denied.",
-        }})
-        self.assertIn("rejected the API key (403)", message)
-        self.assertIn("gemini-test", message)
 
     def test_error_summary_redacts_key_shaped_values(self):
         leaked = "AIzaSyD-example_leaked_value_1234567890"
@@ -162,6 +188,13 @@ class GeminiErrorReportingTests(unittest.TestCase):
         self.assertNotIn(leaked, summary)
         self.assertNotIn("abc123secret", summary)
         self.assertIn("[redacted]", summary)
+
+    def test_redaction_applies_to_fields_used_for_key_decision(self):
+        response = self._error_response(401, {"error": {
+            "status": "UNAUTHENTICATED", "message": "bad AIzaSyD-leaked_value_1234567890",
+        }})
+        self.assertFalse(scriptgen._gemini_key_explicitly_invalid(response))
+        self.assertNotIn("AIzaSyD-leaked_value_1234567890", scriptgen._gemini_error_summary(response))
 
     def test_error_summary_handles_non_json_body(self):
         response = mock.Mock()
