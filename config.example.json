@@ -35,7 +35,7 @@
 
   "_NOTE_secrets": "Do NOT commit config.json. Prefer HL_GEMINI_API_KEY, HL_PEXELS_API_KEY, HL_PIXABAY_API_KEY, and HL_ALERT_WEBHOOK_URL environment variables. Never share secret values.",
   "_NOTE_rollout": "Keep rollout_enabled false until all six unpublished Orus pilots pass human review. A slot may be skipped rather than filled with weak narration or footage.",
-  "_NOTE_tts": "Gemini TTS with the fixed Orus identity only. Delivery directions are structured metadata, never spoken transcript text; there is no alternate voice or time-stretch fallback.",
+  "_NOTE_tts": "Gemini TTS with the fixed Orus identity only. Only the exact narration is sent to Gemini; no style prompt is sent, and the delivery direction is review metadata only. There is no alternate voice or time-stretch fallback.",
   "_NOTE_footage": "Exactly five distinct stock clips, sampled-frame reviewed and mapped to the five story beats. Each crop and source start is reviewed; no clip reuse or weak-gap filling.",
   "_NOTE_music": "Editorial music is opt-in. Quiet, clear narration and natural footage are the default.",
   "_NOTE_publish_slots": "Publish cadence is secondary to editorial quality. Keep rollout disabled until the unpublished pilot batch has been reviewed."
