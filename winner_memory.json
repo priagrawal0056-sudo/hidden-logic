@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "channel_avg_views": 1698.1,
   "topic_clusters": {
     "airport": {
@@ -26,6 +27,18 @@
         1194,
         987,
         930,
+=======
+  "channel_avg_views": 1365.5,
+  "topic_clusters": {
+    "airport": {
+      "videos": 12,
+      "avg_views": 664.7,
+      "best_views": 1615,
+      "recent_views": [
+        1191,
+        943,
+        923,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
         544,
         363,
         4,
@@ -107,9 +120,15 @@
       "avg_avd": null
     },
     "mall": {
+<<<<<<< HEAD
       "videos": 13,
       "avg_views": 224.7,
       "best_views": 1078,
+=======
+      "videos": 9,
+      "avg_views": 143.5,
+      "best_views": 1076,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       "recent_views": [
         995,
         6,
@@ -121,14 +140,20 @@
         13,
         4,
         12,
+<<<<<<< HEAD
         15,
         2,
+=======
+        8,
+        1,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
         201
       ],
       "avg_stayed_to_watch": 55.0,
       "avg_avd": 12.4
     },
     "traffic": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       "videos": 56,
@@ -170,6 +195,13 @@
         3,
         8,
         3,
+=======
+      "videos": 22,
+      "avg_views": 542.7,
+      "best_views": 1769,
+      "recent_views": [
+        2,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
         68,
         29,
         51,
@@ -228,9 +260,15 @@
     },
     "elevator": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "videos": 11,
       "avg_views": 424.4,
       "best_views": 1142,
+=======
+      "videos": 7,
+      "avg_views": 155.7,
+      "best_views": 1086,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       "recent_views": [
         1142,
         921,
@@ -252,7 +290,11 @@
         5,
         2,
         9,
+<<<<<<< HEAD
         1092
+=======
+        1086
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       ],
       "avg_stayed_to_watch": 62.2,
       "avg_avd": 14.0
@@ -271,19 +313,27 @@
     },
     "restaurant": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "videos": 10,
       "avg_views": 799.8,
       "best_views": 2771,
 =======
       "videos": 6,
       "avg_views": 459.9,
+=======
+      "videos": 6,
+      "avg_views": 463.0,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       "best_views": 902,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "recent_views": [
+<<<<<<< HEAD
         2771,
         1029,
         5,
         4,
+=======
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
         795,
         40,
         513,
@@ -297,9 +347,15 @@
     "supermarket": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "videos": 30,
       "avg_views": 383.2,
       "best_views": 1374,
+=======
+      "videos": 19,
+      "avg_views": 530.9,
+      "best_views": 1357,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       "recent_views": [
         638,
         495,
@@ -318,7 +374,11 @@
         776,
         761,
         976,
+<<<<<<< HEAD
         1353,
+=======
+        1357,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
         835,
         866,
         944,
@@ -428,6 +488,7 @@
     "attention": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "videos": 6,
       "avg_views": 399.1,
       "best_views": 1055,
@@ -435,6 +496,12 @@
         989,
         7,
         6,
+=======
+      "videos": 3,
+      "avg_views": 398.3,
+      "best_views": 1055,
+      "recent_views": [
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
         1055,
 =======
       "videos": 3,
@@ -469,6 +536,7 @@
     },
     "social_behavior": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "videos": 7,
       "avg_views": 489.7,
       "best_views": 1102,
@@ -477,6 +545,13 @@
         1102,
         7,
         2,
+=======
+      "videos": 4,
+      "avg_views": 153.0,
+      "best_views": 713,
+      "recent_views": [
+        0,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
         30,
         718,
 =======
@@ -505,9 +580,15 @@
     "technology": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "videos": 28,
       "avg_views": 116.1,
       "best_views": 1001,
+=======
+      "videos": 14,
+      "avg_views": 50.9,
+      "best_views": 265,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       "recent_views": [
         5,
         1,
@@ -521,12 +602,18 @@
         5,
         0,
         2,
+<<<<<<< HEAD
         3,
         6,
         6,
         7,
         16,
         19,
+=======
+        5,
+        10,
+        18,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
         36,
         29,
         39,
@@ -652,6 +739,7 @@
   },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "last_updated": "2026-10-03T18:56:10.307228"
 =======
   "last_updated": "2026-07-15T19:58:57.159844"
@@ -659,4 +747,7 @@
 =======
   "last_updated": "2026-07-15T19:58:57.159844"
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+  "last_updated": "2026-07-23T20:19:31.486130"
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
 }

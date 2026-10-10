@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "date": "2026-10-03",
   "sample_size": 42,
   "avg_retention": 80.0,
@@ -9,6 +10,10 @@
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
   "date": "2026-07-15",
   "sample_size": 40,
+=======
+  "date": "2026-07-23",
+  "sample_size": 41,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
   "avg_retention": null,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
   "best_formats": [

@@ -1671,6 +1671,7 @@
     "hook_type": "physical_moment",
     "cluster": "elevator",
     "quality_score": 46.0
+<<<<<<< HEAD
   },
   {
     "title": "Why Photo Finishes Always Fool Your Eyes",
@@ -2863,5 +2864,7 @@
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
   }
 ]

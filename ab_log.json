@@ -1340,7 +1340,7 @@
     "visual_thesis": "A grocery store's floor plan is deliberately engineered \u2014 and periodically re-scrambled \u2014 to keep shoppers disoriented so they wander past more products.",
     "first_frame_description": "POV/overhead shot of a hand pulling a milk jug from a fridge at the very back of a grocery store, with long fluorescent-lit aisles stretching away toward a distant entrance.",
     "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 4.61,
+    "likes_per_1000_views": 4.62,
     "views_first_60m": 213,
     "views_first_6h": 519
   },
@@ -2228,6 +2228,7 @@
     "comments_per_1000_views": 0.0,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "likes_per_1000_views": 54.05,
 =======
     "likes_per_1000_views": 90.91,
@@ -2235,6 +2236,9 @@
 =======
     "likes_per_1000_views": 90.91,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+    "likes_per_1000_views": 60.61,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
     "views_first_60m": 3,
     "views_first_6h": 3
   },
@@ -2935,11 +2939,7 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The brain is a pattern-matching machine that gets stuck on 'unfinished' loops, a glitch exploited by both music and social media algorithms.",
-    "first_frame_description": "A close-up of a person scrubbing a plate with a frustrated expression, while a glowing 'loading' circle pulses over their forehead.",
-    "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 0.0,
-    "views_first_60m": 1,
-    "views_first_6h": 1
+    "first_frame_description": "A close-up of a person scrubbing a plate with a frustrated expression, while a glowing 'loading' circle pulses over their forehead."
   },
   "UldoEV5-g5M": {
     "variant": "B",
@@ -2956,11 +2956,7 @@
     "first_frame_score": 10.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "The oversized menu acts as a physical blinder to isolate the diner and increase spending.",
-    "first_frame_description": "A diner's POV of a massive, leather-bound menu unfolding to cover the entire table and block the view of the restaurant.",
-    "comments_per_1000_views": 0.0,
-    "likes_per_1000_views": 0.0,
-    "views_first_60m": 1,
-    "views_first_6h": 1
+    "first_frame_description": "A diner's POV of a massive, leather-bound menu unfolding to cover the entire table and block the view of the restaurant."
   },
   "V4k4YUWgHpo": {
     "variant": "A",
@@ -2977,6 +2973,7 @@
     "first_frame_score": 9.0,
     "viewer_identity_score": 9.0,
     "visual_thesis": "Demonstrate that photo finish images plot time along the horizontal axis rather than spatial width.",
+<<<<<<< HEAD
     "first_frame_description": "A high-resolution frozen photo finish image of two Olympic sprinters crossing a finish line, with a red digital line scanning across.",
     "comments_per_1000_views": 0.0,
     "likes_per_1000_views": 111.11,
@@ -5801,5 +5798,8 @@
 =======
     "first_frame_description": "A hand scrolling down a social media feed on a smartphone, a specific viral video or meme appearing multiple times."
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+    "first_frame_description": "A high-resolution frozen photo finish image of two Olympic sprinters crossing a finish line, with a red digital line scanning across."
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
   }
 }

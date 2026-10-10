@@ -548,6 +548,7 @@
       "avg_returning_viewers": null
     },
     "Why a photo finish fools your eyes": {
+<<<<<<< HEAD
       "count": 5,
       "avg_views_first_60m": 260.2,
       "avg_views_first_6h": 261.0,
@@ -556,6 +557,16 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 31.1,
+=======
+      "count": 1,
+      "avg_views_first_60m": null,
+      "avg_views_first_6h": null,
+      "avg_views_first_24h": null,
+      "avg_stayed_to_watch": null,
+      "avg_avd": null,
+      "avg_comments_per_1000_views": null,
+      "avg_likes_per_1000_views": null,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       "avg_returning_viewers": null
     },
     "Why Steering Wheels Are Round": {
@@ -771,6 +782,7 @@
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 54.0,
 =======
       "avg_likes_per_1000_views": 90.9,
@@ -778,6 +790,9 @@
 =======
       "avg_likes_per_1000_views": 90.9,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+      "avg_likes_per_1000_views": 60.6,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       "avg_returning_viewers": null
     },
     "Why apps begging for a review at the perfect moment keeps happening no matter what": {
@@ -1064,6 +1079,7 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+<<<<<<< HEAD
     },
     "Why you can never escape songs getting stuck in your head": {
       "count": 1,
@@ -1320,6 +1336,8 @@
     },
     "Why rewatching the same shows keeps happening no matter what": {
 =======
+=======
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
     }
   },
   "clusters": {
@@ -2441,6 +2459,7 @@
     "Psychology": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "count": 12,
       "avg_views_first_60m": 110.2,
       "avg_views_first_6h": 111.0,
@@ -2451,6 +2470,11 @@
       "count": 6,
       "avg_views_first_60m": 3.0,
       "avg_views_first_6h": 3.0,
+=======
+      "count": 7,
+      "avg_views_first_60m": 7.0,
+      "avg_views_first_6h": 7.0,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       "avg_views_first_24h": null,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "avg_stayed_to_watch": null,
@@ -3051,6 +3075,7 @@
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 54.0,
 =======
       "avg_likes_per_1000_views": 90.9,
@@ -3058,6 +3083,9 @@
 =======
       "avg_likes_per_1000_views": 90.9,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+      "avg_likes_per_1000_views": 60.6,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       "avg_returning_viewers": null
     },
     "Social Behavior": {
@@ -3311,6 +3339,7 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+<<<<<<< HEAD
     },
     "Cognitive Biases": {
       "count": 2,
@@ -4371,10 +4400,13 @@
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
     }
   },
   "hook_types": {
     "physical_moment": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       "count": 246,
@@ -4400,6 +4432,16 @@
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+      "count": 111,
+      "avg_views_first_60m": 208.7,
+      "avg_views_first_6h": 243.4,
+      "avg_views_first_24h": 828.5,
+      "avg_stayed_to_watch": 64.5,
+      "avg_avd": 14.4,
+      "avg_comments_per_1000_views": 19.7,
+      "avg_likes_per_1000_views": 33.9,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
       "avg_returning_viewers": 180.0
     },
     "explainer": {

@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "generated": 215,
   "published": 214,
 =======
@@ -11,6 +12,10 @@
   "generated": 63,
   "published": 62,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+  "generated": 81,
+  "published": 80,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
   "dropped": 1,
   "avg_quality": 46.4,
   "drop_reasons": {
@@ -23,6 +28,7 @@
     "quality_floor": 0,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "other": 352,
     "winner_clone": 4,
 =======
@@ -31,6 +37,10 @@
     "other": 61,
     "winner_clone": 1,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+    "other": 96,
+    "winner_clone": 2,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
     "subcluster_clone": 0
   }
 }

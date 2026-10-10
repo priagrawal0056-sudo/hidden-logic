@@ -8,6 +8,7 @@
     "avd": null
   },
   "physical_moment": {
+<<<<<<< HEAD
     "videos": 274,
     "avg_views": 339.1,
     "stayed_to_watch": 59.8,
@@ -19,12 +20,21 @@
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
     "videos": 118,
     "avg_views": 477.2,
+=======
+    "videos": 136,
+    "avg_views": 422.0,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
     "stayed_to_watch": 59.8,
     "avd": 13.4
   },
   "explainer": {
+<<<<<<< HEAD
     "videos": 101,
     "avg_views": 2627.5,
+=======
+    "videos": 103,
+    "avg_views": 2857.2,
+>>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
     "stayed_to_watch": null,
     "avd": null
 <<<<<<< HEAD
