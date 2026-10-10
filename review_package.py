@@ -177,7 +177,9 @@ def _voice_checks(meta: dict) -> str:
     first_answer = _finite_seconds(quality.get("first_answer_seconds"))
     rows = [
         ("Identity", meta.get("voice_identity") or meta.get("voice")),
-        ("Delivery direction", meta.get("voice_direction")),
+        ("Editorial direction (review only)", meta.get("voice_direction")),
+        ("Style prompt sent to TTS", "no" if meta.get("tts_style_prompt_sent") is False else meta.get("tts_style_prompt_sent")),
+        ("Style prompt", meta.get("tts_style_prompt")),
         ("Engine / model", f"{meta.get('tts_engine', '')} / {meta.get('tts_model', '')}".strip(" /")),
         ("Take", meta.get("tts_take")),
         ("Transcript match", accuracy_display),

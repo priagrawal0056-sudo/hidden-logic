@@ -43,11 +43,16 @@ class GeminiRequestTests(unittest.TestCase):
             SCRIPT, "Orus", "curious_observation", "gemini-3.8-flash-tts"
         )
         content = body["input"][0]["content"][0]
-        self.assertEqual(content["text"], SCRIPT)
-        self.assertEqual(content["annotations"][0]["type"], "speech_metadata")
-        self.assertIn("curious", content["annotations"][0]["style"].lower())
+        self.assertEqual(content, {"type": "text", "text": SCRIPT})
         self.assertEqual(body["generation_config"]["speech_config"][0]["voice"], "Orus")
-        self.assertNotIn("curious observation", content["text"].lower())
+        self.assertEqual(body["model"], "gemini-3.8-flash-tts")
+        self.assertEqual(body["response_format"]["mime_type"], "audio/wav")
+        # No style/delivery text of any kind may reach Gemini.
+        serialized = json.dumps(body).lower()
+        self.assertNotIn("annotations", serialized)
+        self.assertNotIn("speech_metadata", serialized)
+        self.assertNotIn("curious", serialized)
+        self.assertNotIn("style", serialized)
 
     def test_voice_transcript_and_direction_are_locked(self):
         with self.assertRaises(RuntimeError):
@@ -111,6 +116,8 @@ class SynthesisTakeTests(unittest.TestCase):
         self.assertEqual(metadata["voice_identity"], "Orus")
         self.assertEqual(metadata["tts_take"], 1)
         self.assertEqual(metadata["tts_engine"], "gemini")
+        self.assertEqual(metadata["tts_style_prompt"], "none")
+        self.assertIs(metadata["tts_style_prompt_sent"], False)
         self.assertTrue(metadata["transcript_verified"])
         self.assertEqual(metadata["timing_source"], "faster-whisper-word-timestamps")
         self.assertLessEqual(metadata["tts_quality"]["first_answer_seconds"], 6.0)
@@ -126,9 +133,12 @@ class SynthesisTakeTests(unittest.TestCase):
                 direction="curious_observation",
             )
         self.assertEqual(mocked_write.call_count, 2)
-        self.assertEqual(directions, ["curious_observation", "understated_dry_amusement"])
+        # Retries keep the same editorial label; only the audio is regenerated.
+        self.assertEqual(directions, ["curious_observation", "curious_observation"])
         self.assertEqual(metadata["tts_take"], 2)
-        self.assertEqual(metadata["voice_direction"], "understated_dry_amusement")
+        self.assertEqual(metadata["voice_direction"], "curious_observation")
+        self.assertEqual(metadata["tts_style_prompt"], "none")
+        self.assertIs(metadata["tts_style_prompt_sent"], False)
 
     def test_both_bad_takes_fail_without_saving_audio_or_timing_fallback(self):
         temp, audio, timings, metadata, directions, writer, metric_reader = self._synthesize([
