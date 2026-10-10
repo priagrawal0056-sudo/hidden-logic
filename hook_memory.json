@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "explainer": {
     "videos": 131,
     "avg_views": 3934.4,
@@ -10,5 +11,18 @@
     "avg_views": 339.1,
     "stayed_to_watch": 59.8,
     "avd": 11.5
+=======
+  "physical_moment": {
+    "videos": 118,
+    "avg_views": 477.2,
+    "stayed_to_watch": 59.8,
+    "avd": 13.4
+  },
+  "explainer": {
+    "videos": 101,
+    "avg_views": 2627.5,
+    "stayed_to_watch": null,
+    "avd": null
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
   }
 }

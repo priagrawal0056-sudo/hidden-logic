@@ -4388,6 +4388,7 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
+<<<<<<< HEAD
   },
   {
     "video_id": "Mr2zhAukiNE",
@@ -7109,5 +7110,7 @@
     "quality_score": 46.0,
     "variant": "B",
     "hook_type": "physical_moment"
+=======
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
   }
 ]

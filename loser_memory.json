@@ -1460,6 +1460,7 @@
     "hook_type": "physical_moment",
     "cluster": "supermarket",
     "quality_score": 46.0
+<<<<<<< HEAD
   },
   {
     "title": "cute kitten!",
@@ -2857,5 +2858,7 @@
     "hook_type": "physical_moment",
     "cluster": "traffic",
     "quality_score": 46.0
+=======
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
   }
 ]

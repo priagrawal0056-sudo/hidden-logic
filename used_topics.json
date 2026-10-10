@@ -611,6 +611,7 @@
   "TRENDING NOW: why the leader almost never gets overtaken on the last lap",
   "TRENDING NOW: why you can't look away from a crash replay",
   "TRENDING NOW: why drivers in red cars feel faster to you",
+<<<<<<< HEAD
   "TRENDING NOW: why you can't look away from a crash replay",
   "The psychological reason behind a room feeling smaller in the dark",
   "The psychological reason behind assuming expensive means better",
@@ -1081,4 +1082,7 @@
   "Why nobody wanting to sit in the middle seat is a universal experience",
   "Why names being so easy to forget is definitely not an accident",
   "Why everyone is secretly annoyed by remembering embarrassing moments forever"
+=======
+  "TRENDING NOW: why you can't look away from a crash replay"
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 ]

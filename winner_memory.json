@@ -1,10 +1,19 @@
 {
+<<<<<<< HEAD
   "channel_avg_views": 1698.1,
   "topic_clusters": {
     "airport": {
       "videos": 14,
       "avg_views": 687.4,
       "best_views": 1616,
+=======
+  "channel_avg_views": 1695.1,
+  "topic_clusters": {
+    "airport": {
+      "videos": 12,
+      "avg_views": 663.5,
+      "best_views": 1608,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "recent_views": [
         1135,
         7,
@@ -19,13 +28,18 @@
         1247,
         4,
         269,
+<<<<<<< HEAD
         1616
+=======
+        1608
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     },
     "hotel": {
       "videos": 11,
+<<<<<<< HEAD
       "avg_views": 482.4,
       "best_views": 1412,
       "recent_views": [
@@ -36,10 +50,26 @@
         386,
         561,
         698,
+=======
+      "avg_views": 441.6,
+      "best_views": 1402,
+      "recent_views": [
+        36,
+        88,
+        371,
+        45,
+        383,
+        557,
+        694,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         279,
         861,
         522,
+<<<<<<< HEAD
         1412
+=======
+        1402
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
@@ -79,6 +109,7 @@
       "avg_avd": 12.4
     },
     "traffic": {
+<<<<<<< HEAD
       "videos": 56,
       "avg_views": 486.4,
       "best_views": 1774,
@@ -129,6 +160,23 @@
         306,
         1774,
         1045,
+=======
+      "videos": 21,
+      "avg_views": 622.2,
+      "best_views": 1756,
+      "recent_views": [
+        4,
+        12,
+        27,
+        905,
+        1259,
+        1395,
+        293,
+        774,
+        306,
+        1756,
+        1043,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         488,
         695,
         302,
@@ -152,6 +200,7 @@
       "avg_avd": null
     },
     "elevator": {
+<<<<<<< HEAD
       "videos": 11,
       "avg_views": 424.4,
       "best_views": 1142,
@@ -162,6 +211,13 @@
         2,
         7,
         58,
+=======
+      "videos": 6,
+      "avg_views": 178.5,
+      "best_views": 1085,
+      "recent_views": [
+        5,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         52,
         5,
         2,
@@ -184,9 +240,15 @@
       "avg_avd": null
     },
     "restaurant": {
+<<<<<<< HEAD
       "videos": 10,
       "avg_views": 799.8,
       "best_views": 2771,
+=======
+      "videos": 6,
+      "avg_views": 459.9,
+      "best_views": 902,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "recent_views": [
         2771,
         1029,
@@ -203,6 +265,7 @@
       "avg_avd": null
     },
     "supermarket": {
+<<<<<<< HEAD
       "videos": 30,
       "avg_views": 383.2,
       "best_views": 1374,
@@ -213,6 +276,23 @@
         56,
         2,
         8,
+=======
+      "videos": 17,
+      "avg_views": 620.1,
+      "best_views": 1353,
+      "recent_views": [
+        5,
+        776,
+        761,
+        976,
+        1353,
+        835,
+        866,
+        944,
+        855,
+        592,
+        4,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         1,
         2,
         1,
@@ -261,15 +341,23 @@
     },
     "social": {
       "videos": 1,
+<<<<<<< HEAD
       "avg_views": 272.0,
       "best_views": 272,
       "recent_views": [
         272
+=======
+      "avg_views": 266.0,
+      "best_views": 266,
+      "recent_views": [
+        266
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     },
     "memory": {
+<<<<<<< HEAD
       "videos": 9,
       "avg_views": 233.7,
       "best_views": 927,
@@ -280,6 +368,13 @@
         3,
         1,
         35,
+=======
+      "videos": 4,
+      "avg_views": 86.9,
+      "best_views": 266,
+      "recent_views": [
+        12,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         100,
         266,
         7
@@ -288,6 +383,7 @@
       "avg_avd": null
     },
     "attention": {
+<<<<<<< HEAD
       "videos": 6,
       "avg_views": 399.1,
       "best_views": 1055,
@@ -296,6 +392,13 @@
         7,
         6,
         1055,
+=======
+      "videos": 3,
+      "avg_views": 446.2,
+      "best_views": 1051,
+      "recent_views": [
+        1051,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         137,
         3
       ],
@@ -314,6 +417,7 @@
       "avg_avd": null
     },
     "social_behavior": {
+<<<<<<< HEAD
       "videos": 7,
       "avg_views": 489.7,
       "best_views": 1102,
@@ -324,6 +428,14 @@
         2,
         30,
         718,
+=======
+      "videos": 3,
+      "avg_views": 206.9,
+      "best_views": 711,
+      "recent_views": [
+        4,
+        711,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         7
       ],
       "avg_stayed_to_watch": null,
@@ -340,6 +452,7 @@
       "avg_avd": null
     },
     "technology": {
+<<<<<<< HEAD
       "videos": 28,
       "avg_views": 116.1,
       "best_views": 1001,
@@ -367,6 +480,17 @@
         39,
         36,
         266,
+=======
+      "videos": 10,
+      "avg_views": 63.1,
+      "best_views": 264,
+      "recent_views": [
+        9,
+        13,
+        17,
+        36,
+        264,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         111,
         2,
         6,
@@ -411,18 +535,29 @@
       "avg_avd": null
     },
     "emotions": {
+<<<<<<< HEAD
       "videos": 3,
       "avg_views": 719.3,
       "best_views": 1272,
+=======
+      "videos": 2,
+      "avg_views": 1033.4,
+      "best_views": 1268,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "recent_views": [
         9,
         877,
+<<<<<<< HEAD
         1272
+=======
+        1268
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     },
     "money_psychology": {
+<<<<<<< HEAD
       "videos": 5,
       "avg_views": 636.4,
       "best_views": 1107,
@@ -432,10 +567,22 @@
         1,
         32,
         1107
+=======
+      "videos": 2,
+      "avg_views": 559.5,
+      "best_views": 1102,
+      "recent_views": [
+        17,
+        1102
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       ],
       "avg_stayed_to_watch": null,
       "avg_avd": null
     }
   },
+<<<<<<< HEAD
   "last_updated": "2026-10-03T18:56:10.307228"
+=======
+  "last_updated": "2026-07-15T19:58:57.159844"
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 }

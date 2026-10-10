@@ -388,6 +388,7 @@
     "topic": "TRENDING NOW: why the leader almost never gets overtaken on the last lap",
     "visual_thesis": "The algorithm creates an inescapable 'invisible wall' of trending content.",
     "script": "You scroll past it. Then you see it again. It's everywhere. You didn't even like it. The algorithm isn't just showing you what's popular. It's throwing 'dirty air' backward. A chaotic wake of engagement that destroys your ability to ignore it. It builds an invisible wall ensuring you can't escape what's trending."
+<<<<<<< HEAD
   },
   "CjMzFyxU1Xc": {
     "title": "Why Your Room Shrinks In The Dark",
@@ -1300,5 +1301,7 @@
     "topic": "Why penalty takers look the wrong way on purpose",
     "visual_thesis": "The script uses the contrast between a striker's eye direction and their foot's contact point to demonstrate a biological 'hack' of the goalkeeper's nervous system.",
     "script": "You’re standing on the penalty spot, staring at the wrong post. You’re aiming right, but your eyes say left. This isn't a distraction; it's a neurological heist. Human reflexes are hardwired to prioritize eyes over feet by 100 milliseconds. You’re forcing the keeper’s brain to jump before your foot even strikes. You’re not kicking a ball; you’re hacking a nervous system. Which is why"
+=======
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
   }
 }
