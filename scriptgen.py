@@ -982,6 +982,76 @@ def _gemini_key_explicitly_invalid(response) -> bool:
     return "API_KEY_INVALID" in status.upper() or "api key not valid" in message.lower()
 
 
+def _gemini_search_json_mode_unsupported(response) -> bool:
+    """Detect Google's specific 400 for combining Search grounding and JSON MIME mode."""
+    _, message, _ = _gemini_error_fields(response)
+    message = " ".join(message.casefold().split())
+    return (
+        "tool use with a response mime type" in message
+        and "application/json" in message
+        and "unsupported" in message
+    )
+
+
+def _without_gemini_json_mode(body: dict) -> dict:
+    """Copy a Gemini request without the response MIME constraint, keeping tools intact."""
+    compatible = dict(body)
+    compatible["generationConfig"] = dict(body.get("generationConfig") or {})
+    compatible["generationConfig"].pop("responseMimeType", None)
+    return compatible
+
+
+def _first_json_object(text: str) -> str:
+    """Extract the first balanced JSON object from a response with optional prose/fences."""
+    start = text.find("{")
+    if start < 0:
+        raise ValueError("Gemini response did not contain a JSON object")
+
+    depth = 0
+    in_string = False
+    escaped = False
+    for index in range(start, len(text)):
+        char = text[index]
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            continue
+        if char == '"':
+            in_string = True
+        elif char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start:index + 1]
+    raise ValueError("Gemini response contained an incomplete JSON object")
+
+
+def _parse_gemini_json(text: str) -> dict:
+    """Parse model JSON, tolerating a code fence or brief preamble in unconstrained mode."""
+    text = (text or "").strip()
+    try:
+        result = json.loads(text)
+    except json.JSONDecodeError:
+        candidate = _first_json_object(text)
+        try:
+            result = json.loads(candidate)
+        except json.JSONDecodeError:
+            result = json.loads(_repair_json_quotes(candidate))
+    if not isinstance(result, dict):
+        raise ValueError("Gemini response JSON must be an object")
+    return result
+
+
+# Gemini model capability is stable during a run; remember models that reject the Search +
+# application/json combination so subsequent calls can skip the known-incompatible mode.
+_gemini_search_json_mode_unsupported_models = set()
+
+
 def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bool = False) -> dict:
     import time
     body = {
@@ -989,8 +1059,9 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
         "generationConfig": {"temperature": temperature, "responseMimeType": "application/json"},
     }
     if allow_search:
-        # Gemini supports Google Search grounding alongside JSON responses. Grounding citations
-        # are retained separately from the model-authored response fields below.
+        # Grounding citations are retained separately from the model-authored response fields.
+        # Some fallback models reject Search when responseMimeType is application/json; the
+        # targeted compatibility retry below keeps Search enabled and lets the prompt enforce JSON.
         body["tools"] = [{"googleSearch": {}}]
     last_err = None
     rate_limit_hits = 0          # number of HTTP 429 responses seen across models
@@ -1005,12 +1076,33 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
         # Give the first two premium models 3 attempts with growing backoff before sliding
         # down; everything below keeps the fast 2-attempt behavior.
         _max_tries = 3 if _model_idx < 2 else 2
+        request_body = body
+        if allow_search and model in _gemini_search_json_mode_unsupported_models:
+            request_body = _without_gemini_json_mode(body)
         for attempt in range(_max_tries):
             try:
                 r = requests.post(
                     GEMINI_URL.format(model=model),
-                    headers={"x-goog-api-key": api_key}, json=body, timeout=90,
+                    headers={"x-goog-api-key": api_key}, json=request_body, timeout=90,
                 )
+                if (
+                    allow_search
+                    and r.status_code == 400
+                    and request_body.get("generationConfig", {}).get(
+                        "responseMimeType"
+                    ) == "application/json"
+                    and _gemini_search_json_mode_unsupported(r)
+                ):
+                    _gemini_search_json_mode_unsupported_models.add(model)
+                    request_body = _without_gemini_json_mode(body)
+                    print(
+                        f"[scriptgen] {model} does not support Google Search with "
+                        "responseMimeType=application/json; retrying with prompt-enforced JSON."
+                    )
+                    r = requests.post(
+                        GEMINI_URL.format(model=model),
+                        headers={"x-goog-api-key": api_key}, json=request_body, timeout=90,
+                    )
                 if r.status_code == 404:
                     _dead_models.add(model)
                     break  # model retired, try next model
@@ -1092,8 +1184,7 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
                     for part in candidate.get("content", {}).get("parts", [])
                     if part.get("text")
                 )
-                text = text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-                result = json.loads(text)
+                result = _parse_gemini_json(text)
                 grounded = _extract_grounding_sources(candidate.get("groundingMetadata", {}))
                 if grounded:
                     result["_grounding_sources"] = grounded

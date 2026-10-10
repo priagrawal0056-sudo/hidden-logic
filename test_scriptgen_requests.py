@@ -1,4 +1,5 @@
 """Ensure Gemini credentials stay in headers and API fallbacks work headlessly."""
+import json
 import os
 import sys
 import types
@@ -77,6 +78,62 @@ class GeminiCredentialTransportTests(unittest.TestCase):
         self.assertEqual(result, {"ok": True})
         self.assertEqual(request.call_count, 4)
         self.assertIn("gemini-2.5-flash-lite", request.call_args_list[-1].args[0])
+
+    def test_search_json_mode_conflict_retries_without_mime_and_keeps_grounding(self):
+        incompatible = mock.Mock()
+        incompatible.status_code = 400
+        incompatible.json.return_value = {"error": {
+            "status": "INVALID_ARGUMENT",
+            "message": "Tool use with a response mime type: 'application/json' is unsupported.",
+        }}
+        success = mock.Mock()
+        success.status_code = 200
+        success.json.return_value = {
+            "candidates": [{
+                "content": {"parts": [{
+                    "text": 'Here is the JSON:\n```json\n{"ok": true}\n```'
+                }]},
+                "groundingMetadata": {"groundingChunks": [{"web": {
+                    "title": "Grounding source", "uri": "https://example.org/source",
+                }}]},
+            }]
+        }
+        incompatible_models = set()
+        with (
+            mock.patch.object(scriptgen, "_dead_models", set()),
+            mock.patch.object(
+                scriptgen,
+                "_gemini_search_json_mode_unsupported_models",
+                incompatible_models,
+            ),
+            mock.patch.object(scriptgen, "_best_models", return_value=["gemini-2.5-flash"]),
+            mock.patch.object(
+                scriptgen.requests, "post", side_effect=[incompatible, success, success]
+            ) as request,
+        ):
+            first_result = scriptgen._call_gemini(
+                "offline-key", "Return only JSON", 0.1, allow_search=True
+            )
+            second_result = scriptgen._call_gemini(
+                "offline-key", "Return only JSON", 0.1, allow_search=True
+            )
+
+        self.assertTrue(first_result["ok"])
+        self.assertEqual(first_result["_grounding_sources"], [{
+            "title": "Grounding source", "url": "https://example.org/source",
+        }])
+        self.assertTrue(second_result["ok"])
+        self.assertIn("gemini-2.5-flash", incompatible_models)
+        self.assertEqual(request.call_count, 3)
+
+        strict_body = request.call_args_list[0].kwargs["json"]
+        compatible_body = request.call_args_list[1].kwargs["json"]
+        cached_body = request.call_args_list[2].kwargs["json"]
+        self.assertEqual(strict_body["generationConfig"]["responseMimeType"], "application/json")
+        self.assertNotIn("responseMimeType", compatible_body["generationConfig"])
+        self.assertNotIn("responseMimeType", cached_body["generationConfig"])
+        self.assertEqual(compatible_body["tools"], strict_body["tools"])
+        self.assertEqual(cached_body["tools"], strict_body["tools"])
 
     def test_actions_rate_limit_error_does_not_recommend_local_cli_install(self):
         quota_error = scriptgen._GeminiQuotaExhausted(
@@ -201,6 +258,15 @@ class GeminiErrorReportingTests(unittest.TestCase):
         response.json.side_effect = ValueError("not json")
         response.text = "upstream proxy error"
         self.assertEqual(scriptgen._gemini_error_summary(response), "upstream proxy error")
+
+
+class RepositoryStateIntegrityTests(unittest.TestCase):
+    def test_channel_index_is_valid_json_for_quality_threshold(self):
+        index_path = os.path.join(os.path.dirname(__file__), "channel_index.json")
+        with open(index_path, encoding="utf-8") as index_file:
+            channel_index = json.load(index_file)
+        self.assertIsInstance(channel_index, list)
+        self.assertTrue(channel_index)
 
 
 if __name__ == "__main__":

@@ -4388,8 +4388,6 @@
     "trend_heat": 0.0,
     "variant": "B",
     "hook_type": "physical_moment"
-<<<<<<< HEAD
-<<<<<<< HEAD
   },
   {
     "video_id": "Mr2zhAukiNE",
@@ -4698,7 +4696,6 @@
     "trend_heat": 0.0,
     "variant": "A",
     "hook_type": "physical_moment"
-<<<<<<< HEAD
   },
   {
     "video_id": "P7zFoiNFoCA",
@@ -7112,11 +7109,5 @@
     "quality_score": 46.0,
     "variant": "B",
     "hook_type": "physical_moment"
-=======
->>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
-=======
->>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
-=======
->>>>>>> parent of 3c6c518 (autopilot state update 2026-07-24T21:13:11Z)
   }
 ]
