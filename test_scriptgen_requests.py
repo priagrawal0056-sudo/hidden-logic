@@ -109,5 +109,66 @@ class GeminiCredentialTransportTests(unittest.TestCase):
         self.assertEqual(api_call.call_count, 2)
 
 
+class GeminiErrorReportingTests(unittest.TestCase):
+    def _error_response(self, status_code, body):
+        response = mock.Mock()
+        response.status_code = status_code
+        response.json.return_value = body
+        response.text = str(body)
+        return response
+
+    def _call_with_error(self, status_code, body, key="offline-test-secret-never-log"):
+        response = self._error_response(status_code, body)
+        with mock.patch.object(scriptgen, "_best_models", return_value=["gemini-test"]), \
+                mock.patch.object(scriptgen.requests, "post", return_value=response), \
+                mock.patch("time.sleep"):
+            with self.assertRaises(RuntimeError) as caught:
+                scriptgen._call_gemini(key, "offline prompt", 0.1)
+        return str(caught.exception)
+
+    def test_bad_key_400_is_reported_as_key_problem(self):
+        message = self._call_with_error(400, {"error": {
+            "code": 400, "status": "INVALID_ARGUMENT",
+            "message": "API key not valid. Please pass a valid API key.",
+            "details": [{"reason": "API_KEY_INVALID"}],
+        }})
+        self.assertIn("rejected the API key (400)", message)
+        self.assertIn("API key not valid", message)
+        self.assertNotIn("offline-test-secret-never-log", message)
+
+    def test_request_400_is_not_misreported_as_key_problem(self):
+        message = self._call_with_error(400, {"error": {
+            "code": 400, "status": "INVALID_ARGUMENT",
+            "message": "Invalid JSON payload received. Unknown name \"tools\".",
+        }})
+        self.assertIn("rejected the request (400)", message)
+        self.assertIn("Invalid JSON payload", message)
+        self.assertNotIn("rejected the API key", message)
+
+    def test_403_is_reported_as_key_problem(self):
+        message = self._call_with_error(403, {"error": {
+            "code": 403, "status": "PERMISSION_DENIED", "message": "Permission denied.",
+        }})
+        self.assertIn("rejected the API key (403)", message)
+        self.assertIn("gemini-test", message)
+
+    def test_error_summary_redacts_key_shaped_values(self):
+        leaked = "AIzaSyD-example_leaked_value_1234567890"
+        response = self._error_response(400, {"error": {
+            "status": "INVALID_ARGUMENT",
+            "message": f"Bad request for key {leaked} and https://x/y?key=abc123secret",
+        }})
+        summary = scriptgen._gemini_error_summary(response)
+        self.assertNotIn(leaked, summary)
+        self.assertNotIn("abc123secret", summary)
+        self.assertIn("[redacted]", summary)
+
+    def test_error_summary_handles_non_json_body(self):
+        response = mock.Mock()
+        response.json.side_effect = ValueError("not json")
+        response.text = "upstream proxy error"
+        self.assertEqual(scriptgen._gemini_error_summary(response), "upstream proxy error")
+
+
 if __name__ == "__main__":
     unittest.main()

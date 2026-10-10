@@ -10,6 +10,7 @@ Free key: https://aistudio.google.com/apikey
 import json
 import os
 import random
+import re
 import requests
 import winner_memory
 from editorial_quality import validate_script
@@ -945,6 +946,27 @@ def _merge_grounding_sources(*responses: dict) -> list[dict]:
     return merged
 
 
+_KEY_LIKE_RE = re.compile(r"AIza[0-9A-Za-z_\-]{8,}|key=[^&\s\"']+", re.I)
+
+
+def _gemini_error_summary(response, limit: int = 300) -> str:
+    """Summarize a Gemini error response for logs. Never includes anything key-shaped."""
+    status, message, reasons = "", "", []
+    try:
+        err = (response.json() or {}).get("error") or {}
+        status = str(err.get("status") or "")
+        message = str(err.get("message") or "")
+        for detail in err.get("details") or []:
+            if isinstance(detail, dict) and detail.get("reason"):
+                reasons.append(str(detail["reason"]))
+    except Exception:
+        message = str(getattr(response, "text", "") or "")
+    parts = [status, message] + ([f"reason={','.join(reasons)}"] if reasons else [])
+    summary = " ".join(part for part in parts if part).strip() or "no error body"
+    summary = _KEY_LIKE_RE.sub("[redacted]", summary)
+    return summary[:limit]
+
+
 def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bool = False) -> dict:
     import time
     body = {
@@ -1027,10 +1049,18 @@ def _call_gemini(api_key: str, prompt: str, temperature: float, allow_search: bo
                     _dead_models.add(model)
                     break
                 if r.status_code in (400, 401, 403):
+                    # Google's 400 can mean a bad key (API_KEY_INVALID) or a rejected request for
+                    # this model. Report the sanitized error body so the two can be told apart.
+                    detail = _gemini_error_summary(r)
+                    if r.status_code in (401, 403) or "API_KEY" in detail.upper():
+                        raise RuntimeError(
+                            f"Gemini rejected the API key ({r.status_code}) for {model}: {detail}. "
+                            "Get a fresh one at https://aistudio.google.com/apikey (it should start with AIza) "
+                            "and update the HL_GEMINI_API_KEY secret or config.json."
+                        )
                     raise RuntimeError(
-                        f"Gemini rejected the API key ({r.status_code}). Your key looks wrong or revoked. "
-                        "Get a fresh one at https://aistudio.google.com/apikey (it should start with AIza) "
-                        "and update config.json."
+                        f"Gemini rejected the request ({r.status_code}) for {model}: {detail}. "
+                        "The API key may be fine; check the model and request payload."
                     )
                 r.raise_for_status()
                 response = r.json()
