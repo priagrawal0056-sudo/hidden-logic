@@ -530,6 +530,9 @@
 =======
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 17.6,
+<<<<<<< HEAD
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "avg_returning_viewers": null
     },
@@ -718,7 +721,11 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 18.0,
+=======
+      "avg_likes_per_1000_views": 30.3,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "avg_likes_per_1000_views": 30.3,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -733,7 +740,11 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 16.1,
+=======
+      "avg_likes_per_1000_views": 27.8,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "avg_likes_per_1000_views": 27.8,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -759,7 +770,11 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 54.0,
+=======
+      "avg_likes_per_1000_views": 90.9,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "avg_likes_per_1000_views": 90.9,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -807,7 +822,11 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 34.5,
+=======
+      "avg_likes_per_1000_views": 76.9,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "avg_likes_per_1000_views": 76.9,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -889,6 +908,7 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+<<<<<<< HEAD
 <<<<<<< HEAD
     },
     "Why buying things you don't need makes everyone act predictably": {
@@ -1299,6 +1319,12 @@
       "avg_returning_viewers": null
     },
     "Why rewatching the same shows keeps happening no matter what": {
+=======
+    }
+  },
+  "clusters": {
+    "gas_station": {
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "count": 1,
       "avg_views_first_60m": null,
       "avg_views_first_6h": null,
@@ -2019,6 +2045,9 @@
 =======
       "avg_comments_per_1000_views": 300.0,
       "avg_likes_per_1000_views": 309.7,
+<<<<<<< HEAD
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "avg_returning_viewers": 150.0
     },
@@ -2411,11 +2440,14 @@
     },
     "Psychology": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "count": 12,
       "avg_views_first_60m": 110.2,
       "avg_views_first_6h": 111.0,
       "avg_views_first_24h": 8.0,
 =======
+=======
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "count": 6,
       "avg_views_first_60m": 3.0,
       "avg_views_first_6h": 3.0,
@@ -2744,7 +2776,11 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 4.0,
+=======
+      "avg_likes_per_1000_views": 12.2,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "avg_likes_per_1000_views": 12.2,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -2884,6 +2920,9 @@
 =======
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 17.6,
+<<<<<<< HEAD
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "avg_returning_viewers": null
     },
@@ -2973,7 +3012,11 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 18.9,
+=======
+      "avg_likes_per_1000_views": 30.3,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "avg_likes_per_1000_views": 30.3,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -2988,7 +3031,11 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 16.1,
+=======
+      "avg_likes_per_1000_views": 27.8,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "avg_likes_per_1000_views": 27.8,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -3003,7 +3050,11 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 54.0,
+=======
+      "avg_likes_per_1000_views": 90.9,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "avg_likes_per_1000_views": 90.9,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -3040,7 +3091,11 @@
       "avg_avd": null,
       "avg_comments_per_1000_views": 0.0,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_likes_per_1000_views": 34.5,
+=======
+      "avg_likes_per_1000_views": 76.9,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "avg_likes_per_1000_views": 76.9,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -3100,6 +3155,7 @@
       "avg_comments_per_1000_views": 0.0,
       "avg_likes_per_1000_views": 0.0,
       "avg_returning_viewers": null
+<<<<<<< HEAD
 <<<<<<< HEAD
     },
     "retail_tricks": {
@@ -4313,10 +4369,13 @@
       "avg_returning_viewers": null
 =======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
     }
   },
   "hook_types": {
     "physical_moment": {
+<<<<<<< HEAD
 <<<<<<< HEAD
       "count": 246,
       "avg_views_first_60m": 186.4,
@@ -4327,6 +4386,8 @@
       "avg_comments_per_1000_views": 7.2,
       "avg_likes_per_1000_views": 19.3,
 =======
+=======
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "count": 93,
       "avg_views_first_60m": 278.6,
       "avg_views_first_6h": 326.9,
@@ -4335,6 +4396,9 @@
       "avg_avd": 14.4,
       "avg_comments_per_1000_views": 25.6,
       "avg_likes_per_1000_views": 45.9,
+<<<<<<< HEAD
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "avg_returning_viewers": 180.0
     },

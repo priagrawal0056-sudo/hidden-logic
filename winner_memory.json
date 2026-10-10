@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "channel_avg_views": 1698.1,
   "topic_clusters": {
     "airport": {
@@ -7,12 +8,17 @@
       "avg_views": 687.4,
       "best_views": 1616,
 =======
+=======
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
   "channel_avg_views": 1695.1,
   "topic_clusters": {
     "airport": {
       "videos": 12,
       "avg_views": 663.5,
       "best_views": 1608,
+<<<<<<< HEAD
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "recent_views": [
         1135,
@@ -29,7 +35,11 @@
         4,
         269,
 <<<<<<< HEAD
+<<<<<<< HEAD
         1616
+=======
+        1608
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
         1608
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -39,6 +49,7 @@
     },
     "hotel": {
       "videos": 11,
+<<<<<<< HEAD
 <<<<<<< HEAD
       "avg_views": 482.4,
       "best_views": 1412,
@@ -54,6 +65,11 @@
       "avg_views": 441.6,
       "best_views": 1402,
       "recent_views": [
+=======
+      "avg_views": 441.6,
+      "best_views": 1402,
+      "recent_views": [
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         36,
         88,
         371,
@@ -66,7 +82,11 @@
         861,
         522,
 <<<<<<< HEAD
+<<<<<<< HEAD
         1412
+=======
+        1402
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
         1402
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -109,6 +129,7 @@
       "avg_avd": 12.4
     },
     "traffic": {
+<<<<<<< HEAD
 <<<<<<< HEAD
       "videos": 56,
       "avg_views": 486.4,
@@ -165,6 +186,12 @@
       "avg_views": 622.2,
       "best_views": 1756,
       "recent_views": [
+=======
+      "videos": 21,
+      "avg_views": 622.2,
+      "best_views": 1756,
+      "recent_views": [
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         4,
         12,
         27,
@@ -217,6 +244,9 @@
       "best_views": 1085,
       "recent_views": [
         5,
+<<<<<<< HEAD
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         52,
         5,
@@ -266,6 +296,7 @@
     },
     "supermarket": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "videos": 30,
       "avg_views": 383.2,
       "best_views": 1374,
@@ -277,6 +308,8 @@
         2,
         8,
 =======
+=======
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "videos": 17,
       "avg_views": 620.1,
       "best_views": 1353,
@@ -342,10 +375,17 @@
     "social": {
       "videos": 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "avg_views": 272.0,
       "best_views": 272,
       "recent_views": [
         272
+=======
+      "avg_views": 266.0,
+      "best_views": 266,
+      "recent_views": [
+        266
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "avg_views": 266.0,
       "best_views": 266,
@@ -374,6 +414,9 @@
       "best_views": 266,
       "recent_views": [
         12,
+<<<<<<< HEAD
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
         100,
         266,
@@ -384,6 +427,7 @@
     },
     "attention": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "videos": 6,
       "avg_views": 399.1,
       "best_views": 1055,
@@ -392,6 +436,13 @@
         7,
         6,
         1055,
+=======
+      "videos": 3,
+      "avg_views": 446.2,
+      "best_views": 1051,
+      "recent_views": [
+        1051,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "videos": 3,
       "avg_views": 446.2,
@@ -453,6 +504,7 @@
     },
     "technology": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "videos": 28,
       "avg_views": 116.1,
       "best_views": 1001,
@@ -480,6 +532,17 @@
         39,
         36,
         266,
+=======
+      "videos": 10,
+      "avg_views": 63.1,
+      "best_views": 264,
+      "recent_views": [
+        9,
+        13,
+        17,
+        36,
+        264,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
       "videos": 10,
       "avg_views": 63.1,
@@ -543,12 +606,19 @@
       "videos": 2,
       "avg_views": 1033.4,
       "best_views": 1268,
+<<<<<<< HEAD
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
+=======
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
       "recent_views": [
         9,
         877,
 <<<<<<< HEAD
+<<<<<<< HEAD
         1272
+=======
+        1268
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
         1268
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
@@ -581,7 +651,11 @@
     }
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
   "last_updated": "2026-10-03T18:56:10.307228"
+=======
+  "last_updated": "2026-07-15T19:58:57.159844"
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
   "last_updated": "2026-07-15T19:58:57.159844"
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)

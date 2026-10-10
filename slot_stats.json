@@ -1,7 +1,12 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "generated": 215,
   "published": 214,
+=======
+  "generated": 63,
+  "published": 62,
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
 =======
   "generated": 63,
   "published": 62,
@@ -17,9 +22,12 @@
     "title_score_low": 0,
     "quality_floor": 0,
 <<<<<<< HEAD
+<<<<<<< HEAD
     "other": 352,
     "winner_clone": 4,
 =======
+=======
+>>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
     "other": 61,
     "winner_clone": 1,
 >>>>>>> parent of 78a67ff (autopilot state update 2026-07-16T20:28:06Z)
